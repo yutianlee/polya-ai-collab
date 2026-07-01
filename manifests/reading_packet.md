@@ -20,6 +20,15 @@ N_D(Omega,Lambda) = #{j : lambda_j^D(Omega) < Lambda}.
 
 No theorem has been proved by this repository yet.
 
+## Connected Repository Source
+
+The ChatGPT GitHub connector is connected for this project. When available, use `yutianlee/polya-ai-collab` as a source for the current repository files. The most important files for this round are:
+
+- `state/proof_obligations.yml`
+- `manifests/reading_packet.md`
+- `problems/polya_conjecture.md`
+- `sources/seed_reports/`
+
 ## Round 1 Target Obligations
 
 - `CONV-strict-counting`

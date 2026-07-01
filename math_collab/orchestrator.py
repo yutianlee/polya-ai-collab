@@ -127,8 +127,14 @@ Do not mention, score, or assign tasks to inactive agents. If older state text r
 
 def public_audit_trail() -> str:
     return (
-        "Public audit trail: https://github.com/yutianlee/polya-ai-collab. "
-        "Use the included prompt context as authoritative for this stage."
+        "Public audit trail and durable project memory: "
+        "https://github.com/yutianlee/polya-ai-collab. "
+        "If your ChatGPT environment has the GitHub connector enabled, use the "
+        "connected repository `yutianlee/polya-ai-collab` as a source for current "
+        "repo files, especially `state/proof_obligations.yml`, "
+        "`manifests/reading_packet.md`, `problems/polya_conjecture.md`, and "
+        "`sources/seed_reports/`. Use the included prompt context as authoritative "
+        "for this stage if connector access is unavailable or stale."
     )
 
 

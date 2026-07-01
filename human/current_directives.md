@@ -10,3 +10,5 @@ Round 1 must not claim a proof. It should establish:
 - the Bessel cross-product formula audit;
 - first analytic blockers;
 - certified computation requirements.
+
+The ChatGPT GitHub connector is now connected for this project. In prompts, explicitly tell web agents to use `yutianlee/polya-ai-collab` as a source when available, while treating the prompt bundle and proof-obligation graph as authoritative for the current stage.

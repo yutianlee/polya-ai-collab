@@ -2,7 +2,7 @@ You are Deepseek V4-Pro, acting as API-based proof auditor, formula checker, and
 
 We are running a public GitHub based multi-AI mathematics research workflow.
 
-Public audit trail: https://github.com/yutianlee/polya-ai-collab. Use the included prompt context as authoritative for this stage.
+Public audit trail and durable project memory: https://github.com/yutianlee/polya-ai-collab. If your ChatGPT environment has the GitHub connector enabled, use the connected repository `yutianlee/polya-ai-collab` as a source for current repo files, especially `state/proof_obligations.yml`, `manifests/reading_packet.md`, `problems/polya_conjecture.md`, and `sources/seed_reports/`. Use the included prompt context as authoritative for this stage if connector access is unavailable or stale.
 
 Follow the protocol and be strict about separating proved claims from conjectural ideas.
 
@@ -883,6 +883,15 @@ N_D(Omega,Lambda) = #{j : lambda_j^D(Omega) < Lambda}.
 
 No theorem has been proved by this repository yet.
 
+## Connected Repository Source
+
+The ChatGPT GitHub connector is connected for this project. When available, use `yutianlee/polya-ai-collab` as a source for the current repository files. The most important files for this round are:
+
+- `state/proof_obligations.yml`
+- `manifests/reading_packet.md`
+- `problems/polya_conjecture.md`
+- `sources/seed_reports/`
+
 ## Round 1 Target Obligations
 
 - `CONV-strict-counting`
@@ -922,6 +931,8 @@ Use `state/next_round_prompts.md` for the initial agent-specific tasks.
 # Next Round Prompts
 
 Initial prompts for `polya-main` round 1.
+
+Repository source: use the connected GitHub repository `yutianlee/polya-ai-collab` when available. Treat `state/proof_obligations.yml`, `manifests/reading_packet.md`, `problems/polya_conjecture.md`, and `sources/seed_reports/` as the primary repo files for this round.
 
 ## For A1
 
@@ -1089,6 +1100,8 @@ Round 1 must not claim a proof. It should establish:
 - the Bessel cross-product formula audit;
 - first analytic blockers;
 - certified computation requirements.
+
+The ChatGPT GitHub connector is now connected for this project. In prompts, explicitly tell web agents to use `yutianlee/polya-ai-collab` as a source when available, while treating the prompt bundle and proof-obligation graph as authoritative for the current stage.
 
 --- HUMAN FILE: human/goals.md ---
 # Goals
