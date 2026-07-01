@@ -9,7 +9,7 @@
       "role": "broad strategist, literature scout, synthesis writer, and default judge",
       "web_url": "https://chatgpt.com/",
       "copy_response_mode": "raw_markdown_fence",
-      "instructions": "Use GPT Pro Extended. For the Pólya project, prioritize exact theorem statements, source-audit discipline, Bessel/Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and conservative State Patch updates."
+      "instructions": "Use GPT Pro Extended. Action for A1/GPT: use the connected GitHub repo `yutianlee/polya-ai-collab`; prioritize `state/proof_obligations.yml`, `manifests/reading_packet.md`, and this pasted prompt. For the Pólya project, prioritize exact theorem statements, source-audit discipline, Bessel/Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and conservative State Patch updates."
     },
     {
       "id": "A2",

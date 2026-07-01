@@ -10,7 +10,7 @@
       "web_url": "https://chatgpt.com/",
       "copy_response_mode": "raw_markdown_fence",
       "legacy_ids": ["gpt_pro_extended"],
-      "instructions": "Use GPT Pro Extended. Act as research strategist and conservative synthesis writer for the Pólya project. Prioritize exact theorem statements, source-audit discipline, Bessel and Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and state-patch calibration. In Round 1, draft the target theorem memo and source-audit priorities; do not claim any new Pólya theorem.",
+      "instructions": "Use GPT Pro Extended. Action for A1/GPT: use the connected GitHub repo `yutianlee/polya-ai-collab`; prioritize `state/proof_obligations.yml`, `manifests/reading_packet.md`, and this pasted prompt. Act as research strategist and conservative synthesis writer for the Pólya project. Prioritize exact theorem statements, source-audit discipline, Bessel and Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and state-patch calibration. In Round 1, draft the target theorem memo and source-audit priorities; do not claim any new Pólya theorem.",
       "depth_contract": {
         "reasoning": "Write a deep long-form reasoning attempt. Include exact claim statements, parameter ranges, derivations, gap labels, falsification tests, source-audit needs, and a 20% section for divergent alternatives such as ellipses or certificate families.",
         "review": "Write a referee-style report on A2, A3, and A4. Include a score table, hidden assumptions, exact claims needing proof, concrete verification tasks, and a research-strategy adjustment recommendation.",

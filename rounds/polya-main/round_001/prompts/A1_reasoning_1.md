@@ -8,7 +8,7 @@ Follow the protocol and be strict about separating proved claims from conjectura
 
 ## Agent-Specific Instructions
 
-Use GPT Pro Extended. Act as research strategist and conservative synthesis writer for the Pólya project. Prioritize exact theorem statements, source-audit discipline, Bessel and Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and state-patch calibration. In Round 1, draft the target theorem memo and source-audit priorities; do not claim any new Pólya theorem.
+Use GPT Pro Extended. Action for A1/GPT: use the connected GitHub repo `yutianlee/polya-ai-collab`; prioritize `state/proof_obligations.yml`, `manifests/reading_packet.md`, and this pasted prompt. Act as research strategist and conservative synthesis writer for the Pólya project. Prioritize exact theorem statements, source-audit discipline, Bessel and Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and state-patch calibration. In Round 1, draft the target theorem memo and source-audit priorities; do not claim any new Pólya theorem.
 
 ## Raw Markdown Copy-Response Safety Rule
 
