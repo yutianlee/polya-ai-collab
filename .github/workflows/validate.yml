@@ -1,0 +1,20 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile
+        run: python -m py_compile math_collab/orchestrator.py math_collab/human.py math_collab/normalize_markdown.py
+      - name: Validate graph
+        run: python -m math_collab.validate_state_patch --graph state/proof_obligations.yml
+      - name: Dry run
+        run: python -m math_collab.orchestrator --config config/agents.example.json --problem problems/polya_conjecture.md --rounds 1 --dry-run --run-id ci-smoke --no-state-update

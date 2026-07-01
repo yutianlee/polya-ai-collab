@@ -1,0 +1,32 @@
+.env
+__pycache__/
+*.pyc
+*.baiduyun.uploading.cfg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local generated handoff prompts and copied web responses.
+handoff/
+
+# Keep research outputs versioned by default. If a run becomes too large,
+# move bulky artifacts under artifacts/ and ignore them explicitly.
+artifacts/
+previews/
+rounds/**/*.html
+
+# Root copies supplied before repository initialization. Canonical tracked copies
+# live under sources/seed_reports/.
+/Strategy.md
+/background-strategy-01.md
+/background-strategy-02.md
+/background-strategy-03.md
+
+# Local reference downloads kept out of the public repo unless explicitly curated.
+Pólya conjecture.html
+Pólya conjecture.pdf
+Pólya conjecture.tex
+Polya conjecture.html
+Polya conjecture.pdf
+Polya conjecture.tex
+*_files/

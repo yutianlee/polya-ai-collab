@@ -1,0 +1,69 @@
+{
+  "judge_agent": "A1",
+  "prompt_exclusions": ["qwen", "qwen_api", "gauss circle", "M9"],
+  "agents": [
+    {
+      "id": "A1",
+      "display_name": "GPT Pro Extended",
+      "provider": "web_manual",
+      "role": "broad strategist, literature scout, synthesis writer, and default judge",
+      "web_url": "https://chatgpt.com/",
+      "copy_response_mode": "raw_markdown_fence",
+      "instructions": "Use GPT Pro Extended. For the Pólya project, prioritize exact theorem statements, source-audit discipline, Bessel/Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and conservative State Patch updates."
+    },
+    {
+      "id": "A2",
+      "display_name": "Claude Opus 4.8 Max",
+      "provider": "web_manual",
+      "role": "focused analytic proof-surgeon and conservative referee",
+      "web_url": "https://claude.ai/",
+      "copy_response_mode": "raw_markdown_fence",
+      "instructions": "Use Claude Opus 4.8 Max. Attack narrow lemmas at formula level. Preserve status discipline: do not mark the shell theorem, ellipse theorem, or certificate-family theorem as proved without complete proof and dependencies."
+    },
+    {
+      "id": "A3",
+      "display_name": "Gemini Pro Deep Think",
+      "provider": "web_manual",
+      "role": "independent deep-think critic, route comparator, and obstruction finder",
+      "web_url": "https://gemini.google.com/",
+      "copy_response_mode": "raw_markdown_fence",
+      "instructions": "Use Gemini Pro Deep Think. Compare the shell, ellipse, and certificate-family routes conservatively. Surface missing hypotheses, parameter-uniformity gaps, source-audit needs, and finite-verification risks."
+    },
+    {
+      "id": "A4",
+      "display_name": "Deepseek V4-Pro",
+      "provider": "openai_compatible",
+      "role": "API-based proof auditor, formula checker, and reproducible computation planner",
+      "endpoint": "https://api.deepseek.com/chat/completions",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model_env": "DEEPSEEK_MODEL",
+      "default_model": "deepseek-v4-pro",
+      "temperature": 0.1,
+      "system_prompt": "You are A4, Deepseek V4-Pro, acting as a meticulous mathematical proof auditor for a Pólya conjecture collaboration. Think deeply before answering, but output only the final auditable research report. Your comparative advantage is formula checking, theorem-hypothesis auditing, normalization verification, and reproducible computation planning. You do not have web-search tools in this pipeline, so do not invent citations or claim to have checked external literature.",
+      "extra_payload": {
+        "thinking": {"type": "enabled"},
+        "reasoning_effort": "max",
+        "max_tokens": 32768
+      },
+      "depth_contract": {
+        "reasoning": "Write a rigorous audit memo of at least 2200 words unless the prompt explicitly asks for a smaller smoke test. Include exact formula checks, source-dependency checks, parameter ranges, hidden assumptions, verification plans, and confidence calibration.",
+        "review": "Write a compact but serious Stage B referee report of at least 1400 words. Focus on formula correctness, missing hypotheses, source dependencies, and claims needing proof."
+      },
+      "quality_gate": {
+        "reasoning": {
+          "min_words": 1200,
+          "min_headings": 6,
+          "must_contain": ["Summary", "Theorem-dependency", "Hidden assumptions", "Verification", "What should be tested next", "Confidence"]
+        },
+        "review": {
+          "min_words": 900,
+          "min_headings": 5,
+          "must_contain": ["Claims that look correct", "Claims that need proof", "Possible errors", "Verification", "Confidence"]
+        }
+      },
+      "retry_on_quality_gate": true,
+      "quality_gate_retries": 1,
+      "instructions": "Audit the shell eigenvalue equation, angular multiplicities, counting convention, lattice-counting reductions, and finite-verification plans. Treat all numerical output as diagnostic unless the obligation is explicitly a certified finite-window check."
+    }
+  ]
+}
