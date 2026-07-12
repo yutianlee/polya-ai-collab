@@ -1,10 +1,21 @@
 # Last State Patch Validation
 
-Round: 1
+Round: 2
 Run: `polya-main`
-Judge: `rounds/polya-main/round_001/judge/judge-001.md`
-Timestamp: 2026-07-12 19:52:28
+Mathematical amendment: `rounds/polya-main/round_002/judge/judge-002-amendment.md`
+Final hygiene patch: `rounds/polya-main/round_002/judge/judge-002-cleanup.md`
+Date: 2026-07-12
 
 Status: applied
 
-created: SHELL-sturm-liouville-completeness, SHELL-exact-phase-rep, SHELL-phase-monotonicity, SHELL-count-floor-identity, SHELL-angular-cutoff, SHELL-inner-turning, SHELL-fixed-rho-high-energy, SHELL-weighted-lattice-fractional, SHELL-spherical-bessel-algebraic; updated: CONV-strict-counting, TARGET-shell-d3, SHELL-cross-product-formula, SRC-bessel-phase, SRC-annuli, SRC-shell-weyl, SRC-FLPS-balls, FLPS-disk-ball-reproduction, SHELL-phase-enclosures, SHELL-lattice-count, COMP-certified-bessel, SHELL-rho-uniformity, ELLIPSE-near-circular, CERT-certificate-family; rejected: A3-proposed-blocked-statuses, toy-weighted-fractional-test, raw-floating-point-computation-as-proof, bare-two-term-weyl-proof, judge1-progress-score-7; no_change: POLYA-program-target, SRC-mathieu-ellipse, SRC-jiang-lin; round score: 3; Structural de-risking only: exact monotone phase scaffold, a proved angular cutoff, and a proved counting convention; no shell Polya theorem and both quantitative blockers, inner-turning enclosure and 2D weighted lattice control, remain open. The final synthesis adopts judge2 calibration while importing judge1 completeness and diagnostic coverage.
+Created: `SHELL-annulus-phase-transfer`.
+
+Updated: `SRC-bessel-phase`, `SRC-annuli`, `SHELL-exact-phase-rep`, `SHELL-phase-monotonicity`, `SHELL-phase-enclosures`, `SHELL-inner-turning`, phase fallback obligations, `SHELL-fixed-rho-high-energy`, `SHELL-weighted-lattice-fractional`, `COMP-certified-bessel`, and `SHELL-spherical-bessel-algebraic`.
+
+No change: `TARGET-shell-d3`, `SHELL-lattice-count`.
+
+Amendment status: applied. Final hygiene status: applied; no mathematical status changed.
+
+The global half-integer shell phase enclosure was promoted to `proved_internal` after incumbent, strictly isolated clean-room, and adversarial proof gates passed. The weighted lattice obligation is now the primary bottleneck with distinct A2/A3/A4 roles.
+
+Round score after amendment: 5/10. The weighted lattice bound remains open.

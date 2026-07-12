@@ -25,15 +25,10 @@
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
     "target_obligations": [
-      "SHELL-phase-oscillatory",
-      "SHELL-phase-outer-turning",
-      "SHELL-inner-turning",
-      "SHELL-phase-evanescent",
-      "SHELL-phase-overlap",
-      "SHELL-phase-enclosures",
+      "SHELL-weighted-lattice-fractional",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Run obligation-specific roles. A2 develops the incumbent analytic lemma, A3 receives a clean-room packet without the incumbent proof, A4 adversarially audits frozen attempts and owns computation classification, and A1 integrates only validated obligations. No theorem-level Pólya claim may be promoted without independent review and required certification."
+    "round_rule": "Primary: test the exact 2ell+1 weighted inequality using the transferred G_K-F_{rho K} phase bound and isolate the total +1/4 slack, including rho->1 stress tests. Secondary: design an interval/ball successor to the floating-point diagnostic without calling it certified until all metadata and coverage gates pass. A2 is incumbent author, A3 receives a clean-room packet, A4 adversarially audits frozen attempts, and A1 integrates only validated evidence."
   },
   "proof_obligations": [
     {
@@ -49,7 +44,6 @@
       ],
       "implies": [],
       "blockers": [
-        "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "COMP-certified-bessel"
       ],
@@ -62,7 +56,9 @@
         "inconclusive": []
       },
       "owner": "A1",
-      "next_action": "Keep the global program target open while Round 1 sharpens the first theorem statement and proof-obligation graph."
+      "next_action": "Keep the global program target open while Round 1 sharpens the first theorem statement and proof-obligation graph.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "CONV-strict-counting",
@@ -111,7 +107,6 @@
         "POLYA-program-target"
       ],
       "blockers": [
-        "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "COMP-certified-bessel",
         "SHELL-rho-uniformity",
@@ -152,9 +147,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "Keep the theorem open. First prove the fixed-rho high-energy estimate and a certified finite window; defer compact rho-uniformity and endpoint regimes.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Keep the theorem open. The primary analytic blocker is now the multiplicity-weighted lattice count; certified computation and rho-uniformity also remain open.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:11:52"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -188,7 +183,7 @@
       "type": "source_audit",
       "track": "source_audit",
       "title": "Source audit: uniform Bessel phase and zero enclosures",
-      "status": "source_audit_required",
+      "status": "proved_external_dependency",
       "statement_tex": "Record the uniform two-sided Bessel phase and zero enclosure statements needed to reproduce the FLPS phase-to-lattice pipeline and assess whether they extend to shell cross-products.",
       "dependencies": [],
       "implies": [
@@ -199,43 +194,50 @@
       "source_card": "sources/bessel_phase_enclosures.md",
       "evidence": {
         "positive": [
-          "sources/seed_reports/background-strategy-03.md"
+          "sources/seed_reports/background-strategy-03.md",
+          "sources/bessel_phase_enclosures.md",
+          "rounds/polya-main/round_002/reviews/phase-source-transfer-audit.md"
         ],
         "negative": [],
         "inconclusive": []
       },
       "owner": "A1",
-      "next_action": "Audit Bessel phase definitions, modulus positivity, Wronskian sign, theta_nu'=2/(pi z M_nu^2), Nicholson's formula and strict decrease of M_nu^2, validity for nu>=1/2 and z>0, Airy transition constants, and whether independent phase bounds can be safely differenced for shell cross-products.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Use the audited formulas through SHELL-annulus-phase-transfer; reopen the source audit only if a sharper explicit Airy margin is shown to be necessary.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T20:56:03",
+      "reason_for_promotion": "The primary SIAM paper, DLMF formulas, exact validity ranges, branch convention, constants, differencing rule, and limitations have been audited."
     },
     {
       "id": "SRC-annuli",
       "type": "source_audit",
       "track": "source_audit",
       "title": "Source audit: Dirichlet P\u00f3lya for annuli",
-      "status": "source_audit_required",
+      "status": "proved_external_dependency",
       "statement_tex": "Record the exact annulus theorem, Bessel cross-product setup, trapezoidal floor-sum lemmas, concave/convex lattice estimates, and finite verification strategy.",
       "dependencies": [],
       "implies": [
         "SHELL-cross-product-formula",
         "SHELL-lattice-count",
-        "COMP-certified-bessel"
+        "COMP-certified-bessel",
+        "SHELL-annulus-phase-transfer"
       ],
       "blockers": [],
       "source_card": "sources/annuli_polya.md",
       "evidence": {
         "positive": [
           "sources/seed_reports/background-strategy-01.md",
-          "sources/seed_reports/Strategy.md"
+          "sources/seed_reports/Strategy.md",
+          "sources/annuli_polya.md",
+          "rounds/polya-main/round_002/reviews/phase-source-transfer-audit.md"
         ],
         "negative": [],
         "inconclusive": []
       },
       "owner": "A1",
-      "next_action": "Extract the annulus theorem, counting convention, cross-product setup, phase estimates, trapezoidal and convex/concave floor-sum lemmas, finite verification strategy, and exactly which lemmas are dimension-independent versus planar-multiplicity dependent.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Use only the real-order phase results directly; rebuild the multiplicity-weighted lattice and finite-certificate components for 3D shells.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T20:56:03",
+      "reason_for_promotion": "The published annulus theorem, real-order phase bounds, lattice lemmas, computation method, counting convention, and exact transfer boundary have been audited."
     },
     {
       "id": "SRC-shell-weyl",
@@ -279,8 +281,7 @@
         "SHELL-lattice-count"
       ],
       "blockers": [
-        "SRC-FLPS-balls",
-        "SRC-bessel-phase"
+        "SRC-FLPS-balls"
       ],
       "evidence": {
         "positive": [],
@@ -291,8 +292,8 @@
       },
       "owner": "A2",
       "next_action": "Draft a reproduction checklist with formulas, theorem dependencies, and verification scripts to import or reimplement; keep it as infrastructure until source cards exist.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "SHELL-cross-product-formula",
@@ -333,38 +334,26 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Uniform phase enclosures for Bessel cross-product zeros",
-      "status": "open",
+      "status": "proved_internal",
       "statement_tex": "Construct explicit monotone phase functions Phi_{nu,rho}(k) with certified one-sided error bounds that trap zeros of F_{nu,rho}(k) across oscillatory, Airy/turning-point, inner-boundary transition, and evanescent regimes.",
       "dependencies": [
-        "SHELL-cross-product-formula",
-        "SRC-bessel-phase",
-        "SRC-annuli",
-        "SRC-shell-weyl",
         "SHELL-exact-phase-rep",
         "SHELL-phase-monotonicity",
-        "SHELL-phase-oscillatory",
-        "SHELL-phase-outer-turning",
-        "SHELL-inner-turning",
-        "SHELL-phase-evanescent",
-        "SHELL-phase-overlap"
+        "SHELL-annulus-phase-transfer"
       ],
       "implies": [
         "TARGET-shell-d3",
         "SHELL-lattice-count",
         "COMP-certified-bessel"
       ],
-      "blockers": [
-        "SRC-bessel-phase",
-        "SRC-annuli",
-        "SRC-shell-weyl",
-        "SHELL-phase-oscillatory",
-        "SHELL-phase-outer-turning",
-        "SHELL-inner-turning",
-        "SHELL-phase-evanescent",
-        "SHELL-phase-overlap"
-      ],
+      "blockers": [],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-phase-enclosures.md",
+          "rounds/polya-main/round_002/responses/phase-enclosure-incumbent.md",
+          "rounds/polya-main/round_002/reviews/phase-enclosure-clean-room.md",
+          "rounds/polya-main/round_002/reviews/phase-enclosure-adversarial.md"
+        ],
         "negative": [],
         "inconclusive": [
           "sources/seed_reports/Strategy.md"
@@ -392,18 +381,23 @@
         "all pairwise regime overlaps",
         "loss caused by subtracting two phase enclosures"
       ],
-      "clean_room_artifacts": [],
-      "adversarial_review_artifacts": [],
-      "next_action": "Integrate only after each regime obligation and the overlap obligation have explicit one-sided bounds. Give A3 a clean-room lemma packet without the incumbent proof, then give both frozen attempts to A4 for adversarial audit.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_002/reviews/phase-enclosure-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_002/reviews/phase-enclosure-adversarial.md"
+      ],
+      "next_action": "Use the proved global bound in the 2ell+1 weighted lattice obligation; retain the explicit warning that the absolute 1/4 slack may fail as rho approaches 1.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:11:52",
+      "reason_for_promotion": "The published real-order enclosure was specialized to half-integer shell orders, the determinant sign and strict endpoint count were reconstructed, and distinct incumbent, isolated clean-room, and adversarial checks passed. The promotion makes no weighted-sum or rho-uniform claim."
     },
     {
       "id": "SHELL-phase-oscillatory",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Shell phase enclosure in the ordinary oscillatory regime",
-      "status": "open",
+      "status": "proposed",
       "statement_tex": "For fixed 0<rho<1, give explicit one-sided bounds for Psi_{nu,rho}(k)=theta_nu(k)-theta_nu(rho k) when both k and rho k lie outside their Airy transition zones on the oscillatory side, with constants and error direction suitable for the counting upper bound.",
       "dependencies": [
         "SHELL-exact-phase-rep",
@@ -414,24 +408,28 @@
         "SHELL-phase-enclosures",
         "SHELL-phase-overlap"
       ],
-      "blockers": [
-        "SRC-bessel-phase"
-      ],
-      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "blockers": [],
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": []
+      },
       "owner": "A2",
       "falsification_cases": [
         "approach to outer Airy boundary",
         "approach to inner Airy boundary",
         "phase-differencing error larger than the desired margin"
       ],
-      "next_action": "State a quantitative domain separated from both turning layers and derive the required one-sided differenced phase bound with explicit constants."
+      "next_action": "Treat as a fallback sharpening obligation only if the transferred annulus phase bound lacks sufficient weighted-lattice margin.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "SHELL-phase-outer-turning",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Shell phase enclosure at the outer turning point",
-      "status": "open",
+      "status": "proposed",
       "statement_tex": "For fixed 0<rho<1, give an explicit one-sided enclosure for Psi_{nu,rho}(k) when k-nu=O(nu^{1/3}), including constants and overlap bounds with the oscillatory and evanescent descriptions.",
       "dependencies": [
         "SHELL-exact-phase-rep",
@@ -442,24 +440,28 @@
         "SHELL-phase-enclosures",
         "SHELL-phase-overlap"
       ],
-      "blockers": [
-        "SRC-bessel-phase"
-      ],
-      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "blockers": [],
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": []
+      },
       "owner": "A2",
       "falsification_cases": [
         "both turning layers close when rho is near 1",
         "Airy remainder sign at overlap boundaries",
         "small nu not covered by asymptotics"
       ],
-      "next_action": "Formulate the Airy-scale outer-turning enclosure with explicit constants, error direction, and a declared finite small-order remainder."
+      "next_action": "Treat as a fallback sharpening obligation only if the transferred annulus phase bound lacks sufficient weighted-lattice margin.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "SHELL-phase-evanescent",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Mixed and fully evanescent shell phase control",
-      "status": "open",
+      "status": "proposed",
       "statement_tex": "Control Psi_{nu,rho}(k) in the mixed region rho k<nu<k and the fully evanescent region k<nu strongly enough to bound or exclude radial zeros contributing to the shell count.",
       "dependencies": [
         "SHELL-exact-phase-rep",
@@ -471,24 +473,28 @@
         "SHELL-phase-enclosures",
         "SHELL-phase-overlap"
       ],
-      "blockers": [
-        "SRC-bessel-phase"
-      ],
-      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "blockers": [],
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": []
+      },
       "owner": "A2",
       "falsification_cases": [
         "first possible radial zero near a turning boundary",
         "nonuniform exponential constants",
         "conflict with the angular cutoff"
       ],
-      "next_action": "Prove a zero-exclusion or one-sided count bound in each evanescent subregion and state how it overlaps the Airy regimes."
+      "next_action": "Use the global one-sided annulus bound first; seek a sharper evanescent estimate only if the weighted-lattice margin fails.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "SHELL-phase-overlap",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Compatibility and complete coverage of shell phase regimes",
-      "status": "open",
+      "status": "proposed",
       "statement_tex": "Choose explicit regime boundaries and prove that the oscillatory, outer-turning, inner-turning, mixed-evanescent, and fully evanescent phase estimates cover the full (nu,k,rho) domain required for fixed-rho counting, agree in every overlap, and preserve the needed one-sided inequality.",
       "dependencies": [
         "SHELL-phase-oscillatory",
@@ -505,7 +511,11 @@
         "SHELL-inner-turning",
         "SHELL-phase-evanescent"
       ],
-      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": []
+      },
       "owner": "A1",
       "criticality": "bottleneck",
       "lead_author": "A1",
@@ -526,7 +536,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "After the four regime lemmas are explicit, build a coverage table and give it independently to A3 before A4 audits both constructions."
+      "next_action": "The transferred global bound removes regime-coverage gaps at the present precision. Reactivate only if fallback regime sharpenings are introduced.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T20:56:03"
     },
     {
       "id": "SHELL-lattice-count",
@@ -546,7 +558,6 @@
         "TARGET-shell-d3"
       ],
       "blockers": [
-        "SHELL-phase-enclosures",
         "SHELL-weighted-lattice-fractional"
       ],
       "evidence": {
@@ -559,9 +570,9 @@
         ]
       },
       "owner": "A3",
-      "next_action": "Replace the broad lattice target with a precise black-box theorem: assuming explicit one-sided phase bounds, prove the 2ell+1 weighted count is below (2/(9 pi))(1-rho^3)K^3 in the fixed-rho high-energy range.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Treat SHELL-weighted-lattice-fractional as the sole active analytic blocker and preserve strict endpoint counting.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:11:52"
     },
     {
       "id": "SHELL-rho-uniformity",
@@ -608,21 +619,28 @@
         "SHELL-fixed-rho-high-energy",
         "COMP-certified-bessel"
       ],
-      "implies": ["SHELL-rho-uniformity"],
+      "implies": [
+        "SHELL-rho-uniformity"
+      ],
       "blockers": [
-        "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
         "COMP-certified-bessel"
       ],
-      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": []
+      },
       "owner": "A2",
       "falsification_cases": [
         "certificate gaps between rho subdivisions",
         "threshold blow-up inside a compact interval",
         "loss of monotonicity under interval evaluation"
       ],
-      "next_action": "After the fixed-rho proof is explicit, identify every rho-dependent constant and formulate a finite subdivision and interval-Lipschitz certificate."
+      "next_action": "After the fixed-rho proof is explicit, identify every rho-dependent constant and formulate a finite subdivision and interval-Lipschitz certificate.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -630,7 +648,7 @@
       "track": "shell_analytic",
       "title": "Small-hole endpoint rho -> 0",
       "status": "open",
-      "statement_tex": "Prove the shell Pólya estimate uniformly for 0<rho<=rho_0 by controlling the small-hole limit relative to the ball, including low angular orders, phase normalization, and a certified finite window.",
+      "statement_tex": "Prove the shell P\u00f3lya estimate uniformly for 0<rho<=rho_0 by controlling the small-hole limit relative to the ball, including low angular orders, phase normalization, and a certified finite window.",
       "dependencies": [
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
@@ -638,20 +656,27 @@
         "SRC-shell-weyl",
         "COMP-certified-bessel"
       ],
-      "implies": ["SHELL-rho-uniformity"],
+      "implies": [
+        "SHELL-rho-uniformity"
+      ],
       "blockers": [
-        "SHELL-phase-enclosures",
         "SRC-FLPS-balls",
         "COMP-certified-bessel"
       ],
-      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": []
+      },
       "owner": "A2",
       "falsification_cases": [
         "rho-dependent constants diverging as rho -> 0",
         "low-order radial roots not converging uniformly",
         "volume-margin loss relative to the ball"
       ],
-      "next_action": "Derive an explicit small-hole comparison or phase limit and identify a rho_0 with a certifiable residual window."
+      "next_action": "Derive an explicit small-hole comparison or phase limit and identify a rho_0 with a certifiable residual window.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "SHELL-rho-one-endpoint",
@@ -659,26 +684,33 @@
       "track": "shell_analytic",
       "title": "Thin-shell endpoint rho -> 1",
       "status": "open",
-      "statement_tex": "Prove the shell Pólya estimate uniformly for rho_1<=rho<1 using thin-shell scaling, with explicit control when the outer and inner turning layers approach one another and with a certified finite window.",
+      "statement_tex": "Prove the shell P\u00f3lya estimate uniformly for rho_1<=rho<1 using thin-shell scaling, with explicit control when the outer and inner turning layers approach one another and with a certified finite window.",
       "dependencies": [
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SRC-shell-weyl",
         "COMP-certified-bessel"
       ],
-      "implies": ["SHELL-rho-uniformity"],
+      "implies": [
+        "SHELL-rho-uniformity"
+      ],
       "blockers": [
-        "SHELL-phase-enclosures",
         "COMP-certified-bessel"
       ],
-      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": []
+      },
       "owner": "A2",
       "falsification_cases": [
         "coalescing inner and outer Airy layers",
         "threshold growth faster than the thin-shell scaling permits",
         "loss of interval conditioning as 1-rho -> 0"
       ],
-      "next_action": "Choose thin-shell variables, derive the leading radial quantization with explicit remainder, and state the overlap with compact-rho estimates."
+      "next_action": "Choose thin-shell variables, derive the leading radial quantization with explicit remainder, and state the overlap with compact-rho estimates.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "COMP-certified-bessel",
@@ -698,9 +730,7 @@
       "implies": [
         "TARGET-shell-d3"
       ],
-      "blockers": [
-        "SHELL-phase-enclosures"
-      ],
+      "blockers": [],
       "required_output": [
         "script",
         "exact command",
@@ -714,15 +744,18 @@
         "inconclusive": [
           "sources/seed_reports/Strategy.md",
           "rounds/polya-main/round_001/responses/A4-001.md",
-          "rounds/polya-main/round_001/reviews/A4.md"
+          "rounds/polya-main/round_001/reviews/A4.md",
+          "computations/bessel_cross_product_diagnostic.py",
+          "computations/results/bessel_cross_product_rho_half.md",
+          "computations/tests/test_bessel_cross_product_diagnostic.py"
         ]
       },
       "owner": "A4",
       "evidence_class": "floating_point_experiment",
       "certification_artifacts": [],
-      "next_action": "Implement a minimal diagnostic root-isolation prototype for rho=1/2, ell=0,1,2, 0<k<20. Compare raw Bessel interval evaluation against phase-based, recurrence-scaled, and spherical-Bessel algebraic evaluation. Add exact-root signed-defect, thin-shell, small-hole, and stability diagnostics, but treat all outputs as diagnostic.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Build an interval/ball root-isolation successor using the proved monotone phase structure; retain diagnostic_only until rigorous coverage and metadata gates pass.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:11:52"
     },
     {
       "id": "SRC-mathieu-ellipse",
@@ -865,10 +898,9 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Exact Bessel cross-product phase factorization",
-      "status": "derived_under_assumptions",
+      "status": "proved_internal",
       "statement_tex": "For a fixed Bessel phase/modulus convention J_nu=M_nu cos(theta_nu), Y_nu=M_nu sin(theta_nu), with M_nu(z)>0 for z>0, the shell determinant satisfies F_{nu,rho}(k)=M_nu(rho k) M_nu(k) sin(theta_nu(k)-theta_nu(rho k)), up to the fixed sign convention. Hence positive zeros of F_{nu,rho} occur exactly when Psi_{nu,rho}(k):=theta_nu(k)-theta_nu(rho k) lies in pi Z.",
       "dependencies": [
-        "SHELL-cross-product-formula",
         "SRC-bessel-phase"
       ],
       "implies": [
@@ -876,13 +908,14 @@
         "SHELL-phase-monotonicity",
         "SHELL-phase-enclosures"
       ],
-      "blockers": [
-        "SRC-bessel-phase"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
           "rounds/polya-main/round_001/responses/A2-001.md",
-          "rounds/polya-main/round_001/reviews/A2.md"
+          "rounds/polya-main/round_001/reviews/A2.md",
+          "sources/bessel_phase_enclosures.md",
+          "sources/annuli_polya.md",
+          "rounds/polya-main/round_002/reviews/phase-source-transfer-audit.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -890,16 +923,17 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Source-card the phase/modulus definitions and Wronskian sign convention; then promote only after the convention is fixed.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Use the fixed sign convention and branch in every shell count; spectral completeness remains a separate obligation.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57",
+      "reason_for_promotion": "The factorization is a direct algebraic substitution into the audited positive-modulus phase convention; determinant sign and zero-set invariance were independently checked."
     },
     {
       "id": "SHELL-phase-monotonicity",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Global strict monotonicity of the shell phase difference",
-      "status": "derived_under_assumptions",
+      "status": "proved_internal",
       "statement_tex": "For nu>=1/2 and 0<rho<1, Psi_{nu,rho} is strictly increasing on (0,infty), using theta_nu'(z)=2/(pi z M_nu(z)^2) and strict decrease of M_nu(z)^2=J_nu(z)^2+Y_nu(z)^2 from Nicholson's formula. The branch normalization must also give Psi_{nu,rho}(0+)=0 and Psi_{nu,rho}(k)->infty.",
       "dependencies": [
         "SHELL-exact-phase-rep",
@@ -909,13 +943,14 @@
         "SHELL-count-floor-identity",
         "SHELL-phase-enclosures"
       ],
-      "blockers": [
-        "SRC-bessel-phase"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
           "rounds/polya-main/round_001/responses/A2-001.md",
-          "rounds/polya-main/round_001/reviews/A4.md"
+          "rounds/polya-main/round_001/reviews/A4.md",
+          "sources/bessel_phase_enclosures.md",
+          "sources/annuli_polya.md",
+          "rounds/polya-main/round_002/reviews/phase-source-transfer-audit.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -924,9 +959,10 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Card Nicholson's integral, validity range in nu and z, differentiation under the integral, sign convention for theta_nu', and the branch normalization.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Use global monotonicity to index cross-product roots after Sturm-Liouville completeness is discharged.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57",
+      "reason_for_promotion": "DLMF 10.18.8 and Nicholson 10.9.30 give an explicit positive derivative for the phase difference for every real nu>=0; endpoint limits were checked with the fixed branch."
     },
     {
       "id": "SHELL-count-floor-identity",
@@ -948,8 +984,7 @@
         "SHELL-fixed-rho-high-energy"
       ],
       "blockers": [
-        "SHELL-sturm-liouville-completeness",
-        "SHELL-phase-monotonicity"
+        "SHELL-sturm-liouville-completeness"
       ],
       "evidence": {
         "positive": [
@@ -963,8 +998,8 @@
       },
       "owner": "A2",
       "next_action": "After monotonicity and completeness are promoted, upgrade; preserve the strict endpoint rule n pi < Psi(K).",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:13:57"
     },
     {
       "id": "SHELL-angular-cutoff",
@@ -1002,22 +1037,21 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Inner-boundary turning regime for shell phase differences",
-      "status": "open",
+      "status": "proposed",
       "statement_tex": "For fixed 0<rho<1, construct explicit one-sided control of theta_nu(rho k) and Psi_{nu,rho}(k) when rho k lies within the Airy scale of nu, for example rho k-nu=O(nu^{1/3}), with constants and error direction strong enough for the shell counting upper bound.",
       "dependencies": [
         "SHELL-exact-phase-rep",
         "SHELL-phase-monotonicity",
         "SRC-bessel-phase",
-        "SRC-shell-weyl"
+        "SRC-shell-weyl",
+        "SRC-annuli",
+        "SHELL-annulus-phase-transfer"
       ],
       "implies": [
         "SHELL-phase-enclosures",
         "SHELL-fixed-rho-high-energy"
       ],
-      "blockers": [
-        "SRC-bessel-phase",
-        "SRC-shell-weyl"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [],
         "negative": [],
@@ -1028,9 +1062,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Formulate the Airy-scale statement precisely and test whether FLPS single-Bessel Airy bounds survive subtraction in theta_nu(k)-theta_nu(rho k).",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Defer a new Airy enclosure. First test whether FLPS annuli Lemma 5.2, including the global bound on rho K<nu<=K and the correlated 1/4 bound on nu<=rho K, closes the weighted lattice estimate.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T20:56:03"
     },
     {
       "id": "SHELL-fixed-rho-high-energy",
@@ -1042,16 +1076,14 @@
       "dependencies": [
         "SHELL-count-floor-identity",
         "SHELL-phase-enclosures",
-        "SHELL-inner-turning",
         "SHELL-weighted-lattice-fractional",
-        "SRC-annuli"
+        "SRC-annuli",
+        "SHELL-annulus-phase-transfer"
       ],
       "implies": [
         "TARGET-shell-d3"
       ],
       "blockers": [
-        "SHELL-phase-enclosures",
-        "SHELL-inner-turning",
         "SHELL-weighted-lattice-fractional"
       ],
       "evidence": {
@@ -1064,9 +1096,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "State the first black-box fixed-rho theorem with exact phase hypotheses, lattice hypotheses, and a computable analytic threshold K_0(rho).",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Await the weighted lattice gate; the phase enclosure is now discharged, but no high-energy P\u00f3lya inequality has been proved.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:11:52"
     },
     {
       "id": "SHELL-weighted-lattice-fractional",
@@ -1078,16 +1110,14 @@
       "dependencies": [
         "SHELL-count-floor-identity",
         "SHELL-phase-enclosures",
-        "SRC-annuli"
+        "SRC-annuli",
+        "SHELL-annulus-phase-transfer"
       ],
       "implies": [
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy"
       ],
-      "blockers": [
-        "SHELL-phase-enclosures",
-        "SRC-annuli"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [],
         "negative": [],
@@ -1098,10 +1128,32 @@
           "rounds/polya-main/round_001/judge/judge-001.md"
         ]
       },
-      "owner": "A3",
-      "next_action": "Formulate the weighted inequality abstractly under black-box phase hypotheses; identify minimal monotonicity, convexity, and error assumptions; audit which annulus lemmas survive the 2ell+1 weight.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "owner": "A2",
+      "next_action": "Prove or falsify the exact weighted inequality using G_K-F_{rho K}; compute the full weighted contribution of the 1/4 slack before attempting asymptotic simplification.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T21:11:52",
+      "criticality": "bottleneck",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-count-floor-identity",
+        "SHELL-annulus-phase-transfer",
+        "SHELL-phase-enclosures",
+        "SRC-annuli"
+      ],
+      "falsification_cases": [
+        "K equal to a shell eigenfrequency",
+        "accumulated 1/4 slack under the 2ell+1 weight",
+        "rho approaching 1",
+        "rho approaching 0",
+        "modes with rho K<nu<=K",
+        "half-integer midpoint and endpoint corrections"
+      ],
+      "clean_room_artifacts": [],
+      "adversarial_review_artifacts": []
     },
     {
       "id": "SHELL-spherical-bessel-algebraic",
@@ -1126,13 +1178,50 @@
         "inconclusive": [
           "rounds/polya-main/round_001/responses/A3-001.md",
           "rounds/polya-main/round_001/responses/A4-001.md",
-          "rounds/polya-main/round_001/judge/judge-001.md"
+          "rounds/polya-main/round_001/judge/judge-001.md",
+          "computations/bessel_cross_product_diagnostic.py",
+          "computations/results/bessel_cross_product_rho_half.md"
         ]
       },
       "owner": "A4",
-      "next_action": "Derive ell=0,1,2 explicitly; check whether only sin((1-rho)k) and cos((1-rho)k) remain after cancellation; estimate coefficient growth and conditioning.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Promote only after the all-ell recurrence identity and its numerical-conditioning domain are proved; current low-order tests remain diagnostic.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T20:56:03"
+    },
+    {
+      "id": "SHELL-annulus-phase-transfer",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Real-order annulus phase bounds specialized to 3D shell orders",
+      "status": "proved_internal",
+      "statement_tex": "Let 0<rho<1, K>0, and nu=ell+1/2 with ell>=0 and 0<=nu<=K. With mu=rho K and the audited branch of theta_nu, the normalized shell phase gamma=(theta_nu(K)-theta_nu(mu))/pi satisfies the FLPS annulus Lemma 5.2 bounds after the substitution (lambda,mu,z)=(K,rho K,nu): globally gamma<G_K(nu)-F_mu(nu)<=G_K(nu)+1/4; when nu<=mu, Phi_{K,mu}(nu)<gamma<Phi_{K,mu}(nu)+1/4. On mu<nu<=K only the global one-sided bound is asserted.",
+      "dependencies": [
+        "SRC-bessel-phase",
+        "SRC-annuli",
+        "SHELL-exact-phase-rep",
+        "SHELL-phase-monotonicity"
+      ],
+      "implies": [
+        "SHELL-phase-enclosures",
+        "SHELL-weighted-lattice-fractional",
+        "SHELL-inner-turning"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "sources/bessel_phase_enclosures.md",
+          "sources/annuli_polya.md",
+          "rounds/polya-main/round_002/reviews/phase-source-transfer-audit.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_002\\judge\\judge-002.md"
+        ]
+      },
+      "owner": "A1",
+      "next_action": "Use the transferred bounds as hypotheses in the 2ell+1 weighted lattice inequality; do not infer that the additive 1/4 slack is sufficient without proving the weighted sum.",
+      "last_updated_round": 2,
+      "last_updated_at": "2026-07-12T20:56:03"
     }
   ],
   "rejected_claims": [
