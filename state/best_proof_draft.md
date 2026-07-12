@@ -1,14 +1,75 @@
 # Best Proof Draft
 
-No complete shell Pólya proof exists.
+No complete all-$K$, all-$\rho$ shell Pólya proof exists.
 
-The fixed-$\rho$ high-energy weighted lattice step is now proved. Its frozen artifacts are:
+## Exact spectral bridge
 
-- `state/lemma_packets/SHELL-weighted-lattice-fractional.md`;
-- `state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md`;
-- `rounds/polya-main/round_003/responses/weighted-lattice-incumbent.md`;
-- `rounds/polya-main/round_003/responses/low-interface-fixed-rho-incumbent.md`;
-- the corresponding clean-room and adversarial reviews.
+For every fixed $0<\rho<1$, spherical-harmonic expansion followed by
+$u=rR$ gives
+
+$$
+-\Delta_{A_{\rho,1}}^D
+\simeq
+\bigoplus_{\ell=0}^{\infty}
+\bigoplus_{m=-\ell}^{\ell}
+\left(
+-\frac{d^2}{dr^2}+\frac{\ell(\ell+1)}{r^2}
+\right).
+$$
+
+The exact form and operator domains are recorded in
+state/lemma_packets/SHELL-sturm-liouville-completeness.md. Compactness of the
+full resolvent uses the angular-tail estimate
+
+$$
+\|(L_\ell+1)^{-1}\|
+\le
+\frac1{1+\ell(\ell+1)}
+\longrightarrow0,
+$$
+
+not merely blockwise compactness.
+
+Each radial block has a positive simple complete spectrum. For
+$\nu=\ell+\tfrac12$, its eigenfrequencies are exactly the positive simple
+roots of
+
+$$
+F_{\nu,\rho}(k)
+=
+J_\nu(\rho k)Y_\nu(k)
+-Y_\nu(\rho k)J_\nu(k).
+$$
+
+With the audited phase convention,
+
+$$
+\Psi_{\nu,\rho}(k)
+=
+\theta_\nu(k)-\theta_\nu(\rho k)
+$$
+
+is strictly increasing from zero to infinity, and the positive roots satisfy
+
+$$
+\Psi_{\nu,\rho}(k_{\ell,n})=n\pi,
+\qquad n=1,2,\ldots.
+$$
+
+Thus strict counting is exactly
+
+$$
+N_D(A_{\rho,1},K^2)
+=
+\sum_{\ell=0}^{\infty}(2\ell+1)
+\#\{n\ge1:n\pi<\Psi_{\ell+1/2,\rho}(K)\}.
+$$
+
+At a phase wall $\Psi(K)=m\pi$, the channel contribution is $m-1$.
+Accidental equality across different $\ell$ channels is allowed and the
+orthogonal multiplicities add.
+
+## Fixed-rho high-energy theorem
 
 For
 
@@ -16,23 +77,26 @@ $$
 A_{\rho,K}=G_K-G_{\rho K},
 $$
 
-the multiplicity scaffold reduces the coarse proxy to shifted tails. High-angular tails are controlled directly by the convex theorem. For tails crossing the inner interface, the first constant-floor plateau on the concave head has length
+the multiplicity scaffold reduces the coarse proxy to shifted tails. The
+Round 3 high- and low-interface estimates prove
 
 $$
-p<\sqrt{\frac{2\pi\rho}{1-\rho}K}.
+\sum_{\nu_\ell<K}2\nu_\ell
+\left\lfloor A_{\rho,K}(\nu_\ell)+\frac14\right\rfloor
+\le
+\frac{2}{9\pi}(1-\rho^3)K^3
+\qquad(K\ge K_0(\rho)),
 $$
 
-The sharpened concave theorem and the convex-tail gain then prove every low-interface tail once
+where
 
 $$
-K\ge K_0(\rho)=
+K_0(\rho)=
 \left(
 \frac{\sqrt{a_\rho}+\sqrt{a_\rho+4\eta_\rho C_0}}
 {2\eta_\rho}
 \right)^2,
 $$
-
-where
 
 $$
 a_\rho=\frac{2\pi\rho}{1-\rho},\qquad
@@ -40,19 +104,36 @@ a_\rho=\frac{2\pi\rho}{1-\rho},\qquad
 C_0=1+\frac{8\sqrt2}{15}.
 $$
 
-Consequently,
+The strict phase proxy is no larger. Combining it with the now-proved exact
+spectral bridge gives the unconditional theorem
 
 $$
-\sum_{\nu_\ell<K}2\nu_\ell
-\left\lfloor A_{\rho,K}(\nu_\ell)+\frac14\right\rfloor
-\le\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(K\ge K_0(\rho)).
+\boxed{
+N_D(A_{\rho,1},K^2)
+\le
+\frac{2}{9\pi}(1-\rho^3)K^3
+\quad\text{for every fixed }0<\rho<1
+\text{ and }K\ge K_0(\rho).
+}
 $$
 
-The strict and optimized phase proxies are no larger.
+Also,
 
-This file must not be cited as a shell theorem proof. The remaining gates are:
+$$
+(1-\rho)K\le\pi
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)=0.
+$$
 
-- separated Sturm--Liouville completeness and the unconditional strict phase-count identity;
-- a $\rho$-uniform covering, especially near $\rho\to1$, because $K_0(\rho)$ diverges;
-- certified closure of the residual finite parameter region and every eigenvalue/floor wall.
+## Remaining gates
+
+This file must not be cited as a proof of the full shell theorem. The open
+gates are:
+
+- a uniform thin-shell estimate for optical widths
+  $(1-\rho)K>\pi$;
+- a quantitative small-hole endpoint and explicit compact-$\rho$ overlap;
+- interval-certified closure of the bounded residual parameter set,
+  including every determinant, phase, floor, and strict spectral wall;
+- a fresh final theorem-level clean-room reconstruction and adversarial
+  review.

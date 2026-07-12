@@ -1,12 +1,12 @@
 # Reading Packet
 
-Generated after round 3 in run `polya-main`.
+Generated after round 4 in run `polya-main`.
 
 ## Current Theorem Target
 
 Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.
 
-Current status: no complete Pólya theorem has been proved. The fixed-rho high-energy shell proxy is proved; spectral completeness, endpoint uniformity, and certified closure remain open.
+Current status: no complete Pólya theorem has been proved. The exact d=3 shell spectrum and the fixed-rho high-energy shell theorem are proved; endpoint uniformity and certified finite-window closure remain open.
 
 ## Current Route
 
@@ -19,19 +19,17 @@ Prove N_D(Omega,Lambda) <= L_d |Omega| Lambda^{d/2} for all Lambda >= 0 for at l
 For A_{rho,1}={x in R^3: rho<|x|<1}, 0<rho<1, prove N_D(A_{rho,1},Lambda) <= (2/(9 pi))(1-rho^3)Lambda^{3/2} for all Lambda>=0 using strict counting; equivalently, with K=sqrt(Lambda), prove N_D(A_{rho,1},K^2) <= (2/(9 pi))(1-rho^3)K^3 for all K>=0.
 
 Current blockers:
-- `SHELL-lattice-count` (derived_under_assumptions): Multiplicity-weighted lattice count below shell phase curves
 - `COMP-certified-bessel` (diagnostic_only): Certified finite-window verification for Bessel cross-products
 - `SHELL-rho-uniformity` (open): Uniformity in shell ratio rho
-- `SHELL-fixed-rho-high-energy` (derived_under_assumptions): Fixed-rho high-energy shell Polya estimate
 
 ## Round Target Obligations
 
-- `SHELL-sturm-liouville-completeness` (open, owner `A4`): Sturm-Liouville completeness for the separated shell spectrum
-  Next action: Write the full separation-of-variables and regular Sturm-Liouville proof, including no k=0 eigenvalue, positivity of roots, radial simplicity, and harmless cross-ell degeneracy.
-- `SHELL-rho-uniformity` (open, owner `A2`): Uniformity in shell ratio rho
-  Next action: Combine the explicit fixed-rho threshold with the exact zero region (1-rho)K<=pi and derive a compact covering near rho=0 and rho=1. The current K_0(rho) diverges as rho approaches one and is not a uniform endpoint argument.
+- `SHELL-rho-one-endpoint` (open, owner `A2`): Thin-shell endpoint rho -> 1
+  Next action: The lower optical-width region (1-rho)K<=pi now has zero actual strict shell count. Prove a uniform estimate for widths above pi and overlap it with compact-rho certification.
+- `SHELL-rho-zero-endpoint` (open, owner `A2`): Small-hole endpoint rho -> 0
+  Next action: Use the audited ball limit together with certified computation; the FLPS ball source audit is discharged.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: Use the explicit K_0(rho) to define the fixed-rho finite window. Before certification, combine it with rho-endpoint analysis because K_0(rho) is not uniform as rho approaches one; retain rigorous interval handling of all floor and eigenvalue walls.
+  Next action: Use the proved determinant spectrum, root simplicity, angular cutoff, and strict endpoint identity to design interval root isolation and wall handling. Retain diagnostic_only until rho-uniformity yields bounded coverage and all certificate artifacts, commands, versions, and hashes exist.
 
 ## Do-Not-Claim Rules
 
@@ -65,31 +63,32 @@ Current functional split:
 
 ## Last State Patch
 
-Created and proved SHELL-low-interface-fixed-rho-high-energy; promoted the unconditional fixed-rho weighted lattice proxy; kept eigenvalue-level claims conditional on Sturm-Liouville completeness and left endpoint/certification gates open.
+Proved the exact d=3 separated shell spectrum and strict phase count; promoted the fixed-rho high-energy shell theorem; left endpoint uniformity and interval-certified finite closure open.
 
 ## Active Obligation Briefs
 
-### SHELL-sturm-liouville-completeness: Sturm-Liouville completeness for the separated shell spectrum
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A4`
-- Next action: Write the full separation-of-variables and regular Sturm-Liouville proof, including no k=0 eigenvalue, positivity of roots, radial simplicity, and harmless cross-ell degeneracy.
-
-### SHELL-rho-uniformity: Uniformity in shell ratio rho
+### SHELL-rho-one-endpoint: Thin-shell endpoint rho -> 1
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `SHELL-rho-compact`, `SHELL-rho-zero-endpoint`, `SHELL-rho-one-endpoint`
-- Next action: Combine the explicit fixed-rho threshold with the exact zero region (1-rho)K<=pi and derive a compact covering near rho=0 and rho=1. The current K_0(rho) diverges as rho approaches one and is not a uniform endpoint argument.
+- Blockers: `COMP-certified-bessel`
+- Next action: The lower optical-width region (1-rho)K<=pi now has zero actual strict shell count. Prove a uniform estimate for widths above pi and overlap it with compact-rho certification.
+
+### SHELL-rho-zero-endpoint: Small-hole endpoint rho -> 0
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A2`
+- Blockers: `COMP-certified-bessel`
+- Next action: Use the audited ball limit together with certified computation; the FLPS ball source audit is discharged.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: Use the explicit K_0(rho) to define the fixed-rho finite window. Before certification, combine it with rho-endpoint analysis because K_0(rho) is not uniform as rho approaches one; retain rigorous interval handling of all floor and eigenvalue walls.
+- Next action: Use the proved determinant spectrum, root simplicity, angular cutoff, and strict endpoint identity to design interval root isolation and wall handling. Retain diagnostic_only until rho-uniformity yields bounded coverage and all certificate artifacts, commands, versions, and hashes exist.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -119,16 +118,8 @@ Created and proved SHELL-low-interface-fixed-rho-high-energy; promoted the uncon
 - Status: `open`
 - Track: `target_conventions`
 - Owner: `A1`
-- Blockers: `SHELL-lattice-count`, `COMP-certified-bessel`
-- Next action: Keep the global program target open while Round 1 sharpens the first theorem statement and proof-obligation graph.
-
-### SHELL-cross-product-formula: Dirichlet shell spectral decomposition and Bessel cross-product formula
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A4`
-- Blockers: `SHELL-sturm-liouville-completeness`
-- Next action: Complete the Sturm-Liouville and spherical-harmonic proof; do not require absence of accidental equality across ell, only correct multiplicity summation.
+- Blockers: `COMP-certified-bessel`
+- Next action: Keep the program target open until TARGET-shell-d3 passes rho-uniformity, finite certification, and final theorem-level clean-room review.
 
 ### SHELL-inner-turning: Inner-boundary turning regime for shell phase differences
 
@@ -186,24 +177,16 @@ Created and proved SHELL-low-interface-fixed-rho-high-energy; promoted the uncon
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `SHELL-lattice-count`, `SHELL-fixed-rho-high-energy`, `COMP-certified-bessel`
-- Next action: After the fixed-rho proof is explicit, identify every rho-dependent constant and formulate a finite subdivision and interval-Lipschitz certificate.
+- Blockers: `COMP-certified-bessel`
+- Next action: Bound K_0(rho) explicitly on each compact rho interval and formulate the remaining bounded interval certificate. COMP-certified-bessel is the remaining blocker.
 
-### SHELL-rho-one-endpoint: Thin-shell endpoint rho -> 1
+### SHELL-rho-uniformity: Uniformity in shell ratio rho
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `COMP-certified-bessel`
-- Next action: Split the endpoint analysis at optical width (1-rho)K=pi. The lower-width region has zero radial phase count; control widths above pi and overlap with compact-rho estimates.
-
-### SHELL-rho-zero-endpoint: Small-hole endpoint rho -> 0
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Blockers: `COMP-certified-bessel`
-- Next action: Use the audited ball limit together with certified computation; the FLPS ball source audit is discharged.
+- Blockers: `SHELL-rho-compact`, `SHELL-rho-zero-endpoint`, `SHELL-rho-one-endpoint`
+- Next action: Combine the explicit fixed-rho threshold with the exact zero region (1-rho)K<=pi and derive a compact covering near rho=0 and rho=1. The current K_0(rho) diverges as rho approaches one and is not a uniform endpoint argument.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 
@@ -225,3 +208,22 @@ Created and proved SHELL-low-interface-fixed-rho-high-energy; promoted the uncon
 - Track: `ellipse_parallel`
 - Owner: `A1`
 - Next action: Keep this as a parallel source-audit track until the shell Round 1 target theorem memo is stable.
+
+### SRC-shell-weyl: Source audit: Bessel functions and Weyl law for balls and spherical shells
+
+- Status: `source_audit_required`
+- Track: `source_audit`
+- Owner: `A1`
+- Next action: The structural spectrum component is audited. Audit only the unresolved quantitative Weyl remainder, endpoint-uniform constants, one-sided Polya-strength estimates, and finite-window certification scope.
+
+### TARGET-shell-d3: First theorem target: Dirichlet Pólya for 3D spherical shells
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A1`
+- Criticality: `theorem`
+- Lead author: `A1`
+- Clean-room reviewer: `A3`
+- Adversarial reviewer: `A2`
+- Blockers: `COMP-certified-bessel`, `SHELL-rho-uniformity`
+- Next action: The exact spectral bridge and fixed-rho high-energy theorem are discharged. Prioritize rho-endpoint uniformity and interval-certified closure of the residual finite region; no all-K shell theorem is yet proved.

@@ -1,43 +1,104 @@
 # Next Round Prompts
 
-Generated after the fixed-$\rho$ continuation of round 3 in run `polya-main`.
+Generated after Round 4 in run polya-main.
 
-Source synthesis: `rounds/polya-main/round_003/judge/judge-003-fixed-rho.md`.
+Source synthesis: rounds/polya-main/round_004/judge/judge-004.md.
 
 ## For A1
 
-Prepare a reduced packet for `SHELL-sturm-liouville-completeness`. State the spherical-harmonic orthogonal decomposition, the radial weighted space and unitary one-dimensional transform, Dirichlet endpoint conditions on $[\rho,1]$, the $k=0$ exclusion, radial simplicity, and how accidental equality across distinct $\ell$ channels contributes multiplicity. Keep the strict count convention explicit.
-
-In parallel, map the residual parameter region using
+Prepare the reduced packet for SHELL-rho-one-endpoint. Use
 
 $$
-K_0(\rho)=
-\left(
-\frac{\sqrt{a_\rho}+\sqrt{a_\rho+4\eta_\rho C_0}}
-{2\eta_\rho}
-\right)^2
+\varepsilon=1-\rho,\qquad a=\varepsilon K.
 $$
 
-and the exact zero region $(1-\rho)K\le\pi$.
+The region $a\le\pi$ already has zero actual strict shell count. For
+$a>\pi$, test the exact comparison obtained from
+
+$$
+L_\ell
+\ge
+-\frac{d^2}{dr^2}+\ell(\ell+1),
+$$
+
+namely
+
+$$
+\lambda_{\ell,n}(\rho)
+\ge
+\frac{n^2\pi^2}{\varepsilon^2}+\ell(\ell+1).
+$$
+
+Reduce the thin-shell endpoint to an explicit weighted integer inequality in
+$(\varepsilon,a)$. State every strict wall and the overlap needed with the
+fixed-$\rho$ theorem. If the comparison is too coarse, identify its first
+counterexample rather than weakening the target silently.
 
 ## For A2
 
-Develop the endpoint-uniformity incumbent. Determine whether the fixed-$\rho$ threshold, the zero strip, and compact-$\rho$ subdivision leave a bounded set in variables such as $(\mu,K)$ or optical width $(1-\rho)K$. If not, isolate the precise thin-shell analytic estimate still missing. Do not label a pointwise-in-$\rho$ threshold uniform.
+Attack the product-cylinder proxy. For each $n\pi<a$, let $L_n$ be the largest
+integer satisfying
+
+$$
+L_n(L_n+1)
+<
+\frac{a^2-n^2\pi^2}{\varepsilon^2}.
+$$
+
+The comparison count is
+
+$$
+\sum_{n\pi<a}(L_n+1)^2.
+$$
+
+Seek an explicit $\varepsilon_0>0$ and a rigorously covered range of $a>\pi$
+for which this is at most
+
+$$
+\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)
+\frac{a^3}{\varepsilon^3}.
+$$
+
+Preserve strict inequalities at $n\pi=a$ and at
+$L_n(L_n+1)=(a^2-n^2\pi^2)/\varepsilon^2$. Quantify the discrete margin
+against the angular-rounding error and show how large optical widths overlap
+the existing $K_0(\rho)$ theorem.
 
 ## For A3
 
-Receive only the reduced Sturm--Liouville packet and permitted standard references. Independently reconstruct the separated spectrum and strict count bridge. Check $k=0$, positivity, completeness, radial simplicity, angular multiplicity $2\ell+1$, and cross-channel degeneracy.
+Receive only the reduced thin-shell packet and independently reconstruct or
+falsify the proposed integer inequality. Search especially near
+$a=m\pi$, angular walls, $\varepsilon\downarrow0$, and the first nonzero
+radial mode.
 
-For endpoint work, independently audit any proposed compact covering and search for unbounded escape paths as $\rho\to0,1$.
+As an independent secondary task, audit SHELL-rho-zero-endpoint. Determine
+whether a quantitative comparison with the audited ball theorem gives a
+uniform small-hole range, and identify the low angular modes or shrinking
+volume margin that prevent a direct perturbative argument.
 
 ## For A4
 
-Adversarially review the frozen spectral proof. Separately design interval/ball arithmetic only after A1--A2 identify a bounded residual region. The certificate must isolate roots or phase walls rigorously, preserve strict endpoints, state software versions and commands, and produce coverage and artifact hashes. Existing floating diagnostics remain `diagnostic_only`.
+Adversarially audit the frozen thin-shell proof, including the direction of
+the operator comparison and every strict lattice wall. In parallel, specify
+the interval-certificate interface but do not certify an unbounded domain.
+The eventual artifact must include:
+
+- the exact compact parameter boxes left by both endpoint arguments;
+- interval or ball arithmetic versions and commands;
+- determinant or phase-wall isolation with the proved root simplicity;
+- angular cutoff and total multiplicity handling;
+- strict endpoint decisions;
+- coverage tables and artifact hashes.
+
+Existing floating diagnostics remain diagnostic_only.
 
 ## Promotion constraint
 
-`SHELL-weighted-lattice-fractional` is proved only in the stated fixed-$\rho$ high-energy sense. Do not promote the shell theorem until:
+Round 4 proves the exact spectrum and the fixed-$\rho$ high-energy theorem.
+Do not promote the all-$K$ shell theorem until:
 
-1. separated Sturm--Liouville completeness makes the strict count identity unconditional;
-2. compact and endpoint regimes cover all $0<\rho<1$;
-3. the remaining parameter set is rigorously certified.
+1. the thin-shell and small-hole endpoints have explicit uniform coverage;
+2. their overlap with compact-$\rho$ bounds leaves a bounded residual set;
+3. that set is interval-certified; and
+4. a fresh theorem-level clean-room and adversarial review pass.

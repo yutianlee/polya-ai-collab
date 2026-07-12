@@ -47,3 +47,23 @@ See `rounds/polya-main/round_003/judge/judge-003-fixed-rho.md`.
 The low-interface bottleneck is closed in the fixed-$\rho$ high-energy range for every $0<\rho<1$. The proof bounds the initial constant-floor plateau by $O_\rho(\sqrt K)$ using the shell action's quantitative curvature, then uses the sharpened concave and convex trapezoidal estimates to obtain an $O_\rho(K)$ compensating margin. This gives an explicit $K_0(\rho)$ and promotes `SHELL-weighted-lattice-fractional` to `proved_internal`.
 
 The eigenvalue-level fixed-$\rho$ result remains `derived_under_assumptions` because `SHELL-sturm-liouville-completeness` is open. The threshold is not uniform as $\rho\to1$, and the remaining parameter region is not certified. No shell Pólya theorem has been proved.
+
+## Round 4 Update
+
+Date: 2026-07-13
+
+See rounds/polya-main/round_004/judge/judge-004.md.
+
+The exact three-dimensional separated shell spectrum passed a frozen
+incumbent proof, isolated clean-room reconstruction, and adversarial audit.
+The Dirichlet Laplacian is now rigorously identified with the orthogonal
+direct sum of the regular radial operators, including exact form and operator
+domains, compactness of the infinite direct-sum resolvent, Bessel
+cross-product normalization, positive-root simplicity, angular multiplicity,
+cross-channel coincidences, and strict spectral endpoints.
+
+Consequently the Round 3 weighted lattice theorem now gives an unconditional
+eigenvalue result: for every fixed $0<\rho<1$, the shell Pólya inequality
+holds for every $K\ge K_0(\rho)$. The full all-$K$, all-$\rho$ theorem remains
+open because endpoint uniformity and interval-certified closure of the
+residual finite region are not proved.
