@@ -1,6 +1,6 @@
 # Reading Packet
 
-Generated after round 2 in run `polya-main`.
+Generated after round 3 in run `polya-main`.
 
 ## Current Theorem Target
 
@@ -26,10 +26,10 @@ Current blockers:
 
 ## Round Target Obligations
 
-- `SHELL-weighted-lattice-fractional` (open, owner `A2`): Multiplicity-weighted lattice bound for the 3D shell phase count
-  Next action: Prove or falsify the exact weighted inequality using G_K-F_{rho K}; compute the full weighted contribution of the 1/4 slack before attempting asymptotic simplification.
+- `SHELL-low-interface-shifted-tails` (open, owner `A2`): Shifted shell tails crossing the inner interface
+  Next action: Prove the concave-to-convex shifted-tail inequality using horizontal-level blocks or an audited annulus floor-sum refinement; if it fails, locate an exact counterexample and retry with the optimized H_mu cap.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: Build an interval/ball root-isolation successor using the proved monotone phase structure; retain diagnostic_only until rigorous coverage and metadata gates pass.
+  Next action: Retain diagnostic_only. Design rigorous wall handling and interval evaluation for the finite shell window after the analytic low-interface tail range is explicit.
 
 ## Do-Not-Claim Rules
 
@@ -63,11 +63,11 @@ Current functional split:
 
 ## Last State Patch
 
-Round 2 closed the Bessel phase prerequisite chain; the weighted lattice fractional-part estimate remains the primary bottleneck.
+Round 3 proved the weighted scaffold, all high-angular shifted tails, and the thin-width phase-zero region. The low inner-interface shifted-tail inequality remains the sole weighted bottleneck.
 
 ## Active Obligation Briefs
 
-### SHELL-weighted-lattice-fractional: Multiplicity-weighted lattice bound for the 3D shell phase count
+### SHELL-low-interface-shifted-tails: Shifted shell tails crossing the inner interface
 
 - Status: `open`
 - Track: `shell_analytic`
@@ -76,14 +76,14 @@ Round 2 closed the Bessel phase prerequisite chain; the weighted lattice fractio
 - Lead author: `A2`
 - Clean-room reviewer: `A3`
 - Adversarial reviewer: `A4`
-- Next action: Prove or falsify the exact weighted inequality using G_K-F_{rho K}; compute the full weighted contribution of the 1/4 slack before attempting asymptotic simplification.
+- Next action: Prove the concave-to-convex shifted-tail inequality using horizontal-level blocks or an audited annulus floor-sum refinement; if it fails, locate an exact counterexample and retry with the optimized H_mu cap.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: Build an interval/ball root-isolation successor using the proved monotone phase structure; retain diagnostic_only until rigorous coverage and metadata gates pass.
+- Next action: Retain diagnostic_only. Design rigorous wall handling and interval evaluation for the finite shell window after the analytic low-interface tail range is explicit.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -106,8 +106,7 @@ Round 2 closed the Bessel phase prerequisite chain; the weighted lattice fractio
 - Status: `open`
 - Track: `flps_reproduction`
 - Owner: `A2`
-- Blockers: `SRC-FLPS-balls`
-- Next action: Draft a reproduction checklist with formulas, theorem dependencies, and verification scripts to import or reimplement; keep it as infrastructure until source cards exist.
+- Next action: Reproduce only the remaining proof infrastructure needed by active obligations; the FLPS ball source card is now audited.
 
 ### POLYA-program-target: Program target: exact Dirichlet Pólya for a new non-tiling Euclidean class
 
@@ -195,7 +194,7 @@ Round 2 closed the Bessel phase prerequisite chain; the weighted lattice fractio
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `COMP-certified-bessel`
-- Next action: Choose thin-shell variables, derive the leading radial quantization with explicit remainder, and state the overlap with compact-rho estimates.
+- Next action: Split the endpoint analysis at optical width (1-rho)K=pi. The lower-width region has zero radial phase count; control widths above pi and overlap with compact-rho estimates.
 
 ### SHELL-rho-uniformity: Uniformity in shell ratio rho
 
@@ -210,8 +209,8 @@ Round 2 closed the Bessel phase prerequisite chain; the weighted lattice fractio
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `SRC-FLPS-balls`, `COMP-certified-bessel`
-- Next action: Derive an explicit small-hole comparison or phase limit and identify a rho_0 with a certifiable residual window.
+- Blockers: `COMP-certified-bessel`
+- Next action: Use the audited ball limit together with certified computation; the FLPS ball source audit is discharged.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 

@@ -25,10 +25,10 @@
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
     "target_obligations": [
-      "SHELL-weighted-lattice-fractional",
+      "SHELL-low-interface-shifted-tails",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Primary: test the exact 2ell+1 weighted inequality using the transferred G_K-F_{rho K} phase bound and isolate the total +1/4 slack, including rho->1 stress tests. Secondary: design an interval/ball successor to the floating-point diagnostic without calling it certified until all metadata and coverage gates pass. A2 is incumbent author, A3 receives a clean-room packet, A4 adversarially audits frozen attempts, and A1 integrates only validated evidence."
+    "round_rule": "Primary: prove or falsify the ordinary-floor shifted-tail inequality for starts r+1/2<rho K, where A_{rho,K}=G_K-G_{rho K} crosses from concave to convex. Preserve strict lattice walls and retry with the optimized H_{rho K} cap if the coarse tail fails. Secondary: design rigorous interval handling for finite walls without calling diagnostics certified. A2 is incumbent author, A3 receives a clean-room packet, A4 adversarially audits frozen attempts, and A1 integrates only validated evidence."
   },
   "proof_obligations": [
     {
@@ -156,7 +156,7 @@
       "type": "source_audit",
       "track": "source_audit",
       "title": "Source audit: FLPS Euclidean balls proof",
-      "status": "source_audit_required",
+      "status": "proved_external_dependency",
       "statement_tex": "Record the exact theorem statements, boundary conditions, counting convention, Bessel phase definitions, lattice-counting lemmas, and computer-assisted components from the FLPS Euclidean balls proof.",
       "dependencies": [],
       "implies": [
@@ -168,15 +168,19 @@
       "evidence": {
         "positive": [
           "sources/seed_reports/background-strategy-01.md",
-          "sources/seed_reports/Strategy.md"
+          "sources/seed_reports/Strategy.md",
+          "sources/flps_balls.md",
+          "rounds/polya-main/round_003/reviews/flps-ball-weight-transfer-audit.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
         ],
         "negative": [],
         "inconclusive": []
       },
       "owner": "A1",
-      "next_action": "Create the source card for FLPS balls, disks, and sectors: theorem statements, boundary conditions, counting convention, Bessel phase definitions, lattice-counting lemmas, and computer-assisted components to reproduce before shell transfer.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Use only the audited convex-tail and multiplicity components; do not transfer the ball theorem across the shell inner interface.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44",
+      "reason_for_promotion": "The published theorem, counting convention, uniform zero comparison, convex shifted floor theorem, dimension reduction, exact integral, computation boundary, and shell transfer limitations have been audited from the primary source."
     },
     {
       "id": "SRC-bessel-phase",
@@ -280,9 +284,7 @@
         "SHELL-phase-enclosures",
         "SHELL-lattice-count"
       ],
-      "blockers": [
-        "SRC-FLPS-balls"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [],
         "negative": [],
@@ -291,9 +293,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Draft a reproduction checklist with formulas, theorem dependencies, and verification scripts to import or reimplement; keep it as infrastructure until source cards exist.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:13:57"
+      "next_action": "Reproduce only the remaining proof infrastructure needed by active obligations; the FLPS ball source card is now audited.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
     },
     {
       "id": "SHELL-cross-product-formula",
@@ -660,7 +662,6 @@
         "SHELL-rho-uniformity"
       ],
       "blockers": [
-        "SRC-FLPS-balls",
         "COMP-certified-bessel"
       ],
       "evidence": {
@@ -674,9 +675,9 @@
         "low-order radial roots not converging uniformly",
         "volume-margin loss relative to the ball"
       ],
-      "next_action": "Derive an explicit small-hole comparison or phase limit and identify a rho_0 with a certifiable residual window.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:13:57"
+      "next_action": "Use the audited ball limit together with certified computation; the FLPS ball source audit is discharged.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
     },
     {
       "id": "SHELL-rho-one-endpoint",
@@ -689,7 +690,8 @@
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SRC-shell-weyl",
-        "COMP-certified-bessel"
+        "COMP-certified-bessel",
+        "SHELL-thin-width-phase-zero"
       ],
       "implies": [
         "SHELL-rho-uniformity"
@@ -698,7 +700,10 @@
         "COMP-certified-bessel"
       ],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-thin-width-zero-count.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+        ],
         "negative": [],
         "inconclusive": []
       },
@@ -708,9 +713,9 @@
         "threshold growth faster than the thin-shell scaling permits",
         "loss of interval conditioning as 1-rho -> 0"
       ],
-      "next_action": "Choose thin-shell variables, derive the leading radial quantization with explicit remainder, and state the overlap with compact-rho estimates.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:13:57"
+      "next_action": "Split the endpoint analysis at optical width (1-rho)K=pi. The lower-width region has zero radial phase count; control widths above pi and overlap with compact-rho estimates.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
     },
     {
       "id": "COMP-certified-bessel",
@@ -747,15 +752,18 @@
           "rounds/polya-main/round_001/reviews/A4.md",
           "computations/bessel_cross_product_diagnostic.py",
           "computations/results/bessel_cross_product_rho_half.md",
-          "computations/tests/test_bessel_cross_product_diagnostic.py"
+          "computations/tests/test_bessel_cross_product_diagnostic.py",
+          "computations/shell_weighted_lattice_fractional_diagnostic.py",
+          "computations/SHELL-weighted-lattice-fractional-diagnostic.md",
+          "computations/tests/test_shell_weighted_lattice_fractional_diagnostic.py"
         ]
       },
       "owner": "A4",
       "evidence_class": "floating_point_experiment",
       "certification_artifacts": [],
-      "next_action": "Build an interval/ball root-isolation successor using the proved monotone phase structure; retain diagnostic_only until rigorous coverage and metadata gates pass.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:11:52"
+      "next_action": "Retain diagnostic_only. Design rigorous wall handling and interval evaluation for the finite shell window after the analytic low-interface tail range is explicit.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
     },
     {
       "id": "SRC-mathieu-ellipse",
@@ -1106,32 +1114,45 @@
       "track": "shell_analytic",
       "title": "Multiplicity-weighted lattice bound for the 3D shell phase count",
       "status": "open",
-      "statement_tex": "Given explicit one-sided phase bounds for Psi_{ell+1/2,rho}(K), prove the 2ell+1 weighted floor or phase-sum estimate needed to bound the fixed-rho high-energy shell count by (2/(9 pi))(1-rho^3) K^3. Annulus floor-sum lemmas must be audited because planar multiplicity does not transfer directly to the 2ell+1 weight.",
+      "statement_tex": "For fixed 0<rho<1, prove an explicit high-energy bound for the strict 2ell+1 weighted proxy derived from U_{rho,K}=G_K-G_{rho K}+s_{rho K}, with exact endpoint counting and Weyl target (2/(9 pi))(1-rho^3)K^3.",
       "dependencies": [
         "SHELL-count-floor-identity",
         "SHELL-phase-enclosures",
         "SRC-annuli",
-        "SHELL-annulus-phase-transfer"
+        "SHELL-annulus-phase-transfer",
+        "SRC-FLPS-balls",
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SHELL-low-interface-shifted-tails",
+        "SHELL-thin-width-phase-zero"
       ],
       "implies": [
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy"
       ],
-      "blockers": [],
+      "blockers": [
+        "SHELL-low-interface-shifted-tails"
+      ],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-weighted-lattice-fractional.md"
+        ],
         "negative": [],
         "inconclusive": [
           "rounds/polya-main/round_001/responses/A3-001.md",
           "rounds/polya-main/round_001/reviews/A1.md",
           "rounds/polya-main/round_001/reviews/A2.md",
-          "rounds/polya-main/round_001/judge/judge-001.md"
+          "rounds/polya-main/round_001/judge/judge-001.md",
+          "rounds/polya-main/round_003/responses/weighted-lattice-incumbent.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md",
+          "computations/SHELL-weighted-lattice-fractional-diagnostic.md"
         ]
       },
       "owner": "A2",
-      "next_action": "Prove or falsify the exact weighted inequality using G_K-F_{rho K}; compute the full weighted contribution of the 1/4 slack before attempting asymptotic simplification.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:11:52",
+      "next_action": "Close SHELL-low-interface-shifted-tails. The continuous phase sum and blanket quarter-slack estimates are rejected proof routes; retain strict integerization.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44",
       "criticality": "bottleneck",
       "lead_author": "A2",
       "clean_room_reviewer": "A3",
@@ -1152,8 +1173,12 @@
         "modes with rho K<nu<=K",
         "half-integer midpoint and endpoint corrections"
       ],
-      "clean_room_artifacts": [],
-      "adversarial_review_artifacts": []
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+      ]
     },
     {
       "id": "SHELL-spherical-bessel-algebraic",
@@ -1222,6 +1247,196 @@
       "next_action": "Use the transferred bounds as hypotheses in the 2ell+1 weighted lattice inequality; do not infer that the additive 1/4 slack is sufficient without proving the weighted sum.",
       "last_updated_round": 2,
       "last_updated_at": "2026-07-12T20:56:03"
+    },
+    {
+      "id": "SHELL-weighted-lattice-scaffold",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Exact weighted shell lattice scaffold and tail reduction",
+      "status": "proved_internal",
+      "statement_tex": "For A_{rho,K}=G_K-G_{rho K}, the strict coarse proxy has an exact square-level formulation and an exact 2ell+1 multiplicity-to-shifted-tail decomposition. If every ordinary-floor shifted tail T_r is at most 2 int_{r+1/2}^K A_{rho,K}, then the complete weighted coarse proxy is at most int_0^K 2z A_{rho,K}(z) dz = (2/(9 pi))(1-rho^3)K^3.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-annulus-phase-transfer",
+        "SRC-annuli",
+        "SRC-FLPS-balls"
+      ],
+      "implies": [
+        "SHELL-weighted-lattice-fractional",
+        "SHELL-low-interface-shifted-tails"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-weighted-lattice-fractional.md",
+          "rounds/polya-main/round_003/responses/weighted-lattice-incumbent.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+        ]
+      },
+      "owner": "A2",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+      ],
+      "reason_for_promotion": "The incumbent derivation, independent clean-room reconstruction, and adversarial audit agree on every algebraic identity, strict endpoint, integral, and inequality direction in the conditional tail reduction.",
+      "next_action": "Use the scaffold only through an explicitly proved shifted-tail estimate; do not infer the missing low-interface tails from diagnostics.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
+    },
+    {
+      "id": "SHELL-high-angular-shifted-tails",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Shifted shell tails above the inner interface",
+      "status": "proved_internal",
+      "statement_tex": "For every integer r>=0 with r+1/2>=rho K, the ordinary-floor tail of A_{rho,K}(r+j+1/2)+1/4 is at most 2 int_{r+1/2}^K A_{rho,K}(z) dz.",
+      "dependencies": [
+        "SHELL-weighted-lattice-scaffold",
+        "SRC-FLPS-balls"
+      ],
+      "implies": [
+        "SHELL-weighted-lattice-fractional"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "sources/flps_balls.md",
+          "rounds/polya-main/round_003/reviews/flps-ball-weight-transfer-audit.md",
+          "rounds/polya-main/round_003/responses/weighted-lattice-incumbent.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+        ]
+      },
+      "owner": "A2",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+      ],
+      "reason_for_promotion": "Above the inner interface A_{rho,K}=G_K; the translated function satisfies every hypothesis of the audited FLPS ball convex 1/2-Lipschitz floor-sum theorem.",
+      "next_action": "Treat these tails as discharged and concentrate analytic work on starts below rho K.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
+    },
+    {
+      "id": "SHELL-low-interface-shifted-tails",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Shifted shell tails crossing the inner interface",
+      "status": "open",
+      "statement_tex": "For every integer r>=0 with r+1/2<rho K, prove that the ordinary-floor tail of A_{rho,K}(r+j+1/2)+1/4 is at most 2 int_{r+1/2}^K A_{rho,K}(z) dz, or prove the corresponding optimized-envelope bound if the coarse statement fails.",
+      "dependencies": [
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SRC-annuli",
+        "SRC-FLPS-balls"
+      ],
+      "implies": [
+        "SHELL-weighted-lattice-fractional"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [],
+        "negative": [],
+        "inconclusive": [
+          "rounds/polya-main/round_003/responses/weighted-lattice-incumbent.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md",
+          "computations/SHELL-weighted-lattice-fractional-diagnostic.md",
+          "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "bottleneck",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SRC-annuli",
+        "SRC-FLPS-balls"
+      ],
+      "falsification_cases": [
+        "rho K equal to a half-integer grid point",
+        "tail start immediately below rho K",
+        "coarse proxy on an integer wall",
+        "rho approaching zero",
+        "rho approaching one with fixed optical width",
+        "loss of floor margin when splitting at a nonintegral inner interface"
+      ],
+      "clean_room_artifacts": [],
+      "adversarial_review_artifacts": [],
+      "next_action": "Prove the concave-to-convex shifted-tail inequality using horizontal-level blocks or an audited annulus floor-sum refinement; if it fails, locate an exact counterexample and retry with the optimized H_mu cap.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
+    },
+    {
+      "id": "SHELL-thin-width-phase-zero",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Zero strict radial phase count at shell width at most pi",
+      "status": "proved_internal",
+      "statement_tex": "For every half-integer nu>=1/2, theta_nu'(x)<=1 and Psi_{nu,rho}(K)<=(1-rho)K. Hence every strict radial phase count is zero whenever (1-rho)K<=pi, including the equality endpoint.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SRC-bessel-phase",
+        "SHELL-exact-phase-rep",
+        "SHELL-phase-monotonicity"
+      ],
+      "implies": [
+        "SHELL-rho-one-endpoint",
+        "SHELL-weighted-lattice-fractional"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-thin-width-zero-count.md",
+          "rounds/polya-main/round_003/responses/weighted-lattice-incumbent.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md",
+          "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+        ]
+      },
+      "owner": "A2",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
+      ],
+      "reason_for_promotion": "Nicholson's positive integral compares M_nu to the explicit half-order modulus, giving theta_nu'<=1; strict endpoint counting then gives zero radial levels at width pi.",
+      "next_action": "Use this exact phase-level result in the thin-shell split. Do not state a full spectral zero theorem without the separate completeness/count dependency.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T22:05:44"
     }
   ],
   "rejected_claims": [
@@ -1268,6 +1483,33 @@
       "last_updated_round": 1,
       "evidence": [
         "rounds/polya-main/round_001/judge/judge-001.md"
+      ]
+    },
+    {
+      "id": "floor-free-weighted-phase-sum",
+      "reason": "Reject replacing strict integer counts by the continuous phase or G-F sum. At K=1 and rho K=1/4 the strict proxy is zero while the floor-free sampled bound already exceeds the Weyl target.",
+      "last_updated_at": "2026-07-12T22:05:44",
+      "last_updated_round": 3,
+      "evidence": [
+        "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+      ]
+    },
+    {
+      "id": "blanket-quarter-slack-as-uniform-lower-order-error",
+      "reason": "Reject uniform absorption of the accumulated 1/4 slack. In fixed optical-width scaling its ratio to the Weyl term tends to 3 pi/(8a).",
+      "last_updated_at": "2026-07-12T22:05:44",
+      "last_updated_round": 3,
+      "evidence": [
+        "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+      ]
+    },
+    {
+      "id": "floating-shifted-tail-grid-as-proof",
+      "reason": "Reject promotion from the finite floating grid. Floor walls, endpoint classification, quadrature, and the reported margins are not interval-certified.",
+      "last_updated_at": "2026-07-12T22:05:44",
+      "last_updated_round": 3,
+      "evidence": [
+        "rounds\\polya-main\\round_003\\judge\\judge-003.md"
       ]
     }
   ]

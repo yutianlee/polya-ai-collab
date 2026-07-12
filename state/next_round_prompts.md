@@ -1,25 +1,32 @@
 # Next Round Prompts
 
-Generated after prerequisite round 2 in run `polya-main`.
+Generated after weighted-lattice round 3 in run `polya-main`.
 
-Source synthesis: `rounds/polya-main/round_002/judge/judge-002.md`.
+Source synthesis: `rounds/polya-main/round_003/judge/judge-003.md`.
 
 ## For A1
 
-Prepare the exact `SHELL-weighted-lattice-fractional` packet using the transferred $G_K-F_{\rho K}$ phase bound. State the strict count, half-integer sampling points, $2\ell+1$ weights, admissible $\ell$ cutoff, target Weyl integral, and the exact error budget. Keep the finite certificate separate.
+Prepare a reduced packet for `SHELL-low-interface-shifted-tails`. State the ordinary-floor tail exactly, the start condition $r+1/2<\mu=\rho K$, the concave-to-convex derivative signs, the integral target, and every lattice-wall convention. Include the optimized $H_\mu$-capped fallback, but keep it separate from the coarse claim.
 
 ## For A2
 
-Develop the incumbent weighted-count proof. Derive the $2\ell+1$ weighted sum and isolate the complete contribution of the additive $1/4$ normalized phase slack. Stress-test fixed $\rho$, $\rho\to0$, and especially $\rho\to1$. Freeze the attempt before review.
+Develop the incumbent proof of
+
+$$
+\mathcal T_r\le2\int_{r+1/2}^{K}
+\bigl(G_K(z)-G_{\rho K}(z)\bigr)\,dz
+$$
+
+for starts below $\rho K$. Work horizontally by integer phase levels or adapt the audited annulus concave/convex trapezoidal lemmas with explicit interface corrections. Do not reuse the already-discharged high-tail proof as though it crossed the interface. Freeze the attempt before review.
 
 ## For A3
 
-Receive only the clean-room weighted-lattice packet. Independently prove or falsify the required inequality without consulting A2’s derivation. Search for a parameter range where the accumulated $1/4$ slack exceeds the available boundary or midpoint margin.
+Receive only the reduced low-tail packet and permitted source cards. Independently prove the tail inequality or produce the first exact counterexample. Stress-test $\rho K$ on a half-integer, starts immediately below the interface, and coarse-proxy integer walls. If the coarse statement fails, test the optimized $\min\{H_\mu,1/4\}$ envelope.
 
 ## For A4
 
-Adversarially compare the frozen A2/A3 weighted-count attempts and identify the first unsupported implication. Separately design the interval/ball successor to the diagnostic Bessel script, but do not call it certified until it has rigorous coverage, versions, commands, hashes, and artifacts.
+After A2 and A3 are frozen, reconstruct every horizontal block, floor endpoint, and nonintegral-interface correction. Separately design interval/ball checks for any finite exceptional parameter region. The current floating grid remains `diagnostic_only`.
 
 ## Promotion constraint
 
-Do not promote the shell theorem. The weighted lattice obligation requires explicit proof evidence, a clean-room reconstruction, and an adversarial review. The computation obligation remains `diagnostic_only` until the certification gates pass.
+Do not promote `SHELL-weighted-lattice-fractional`, the parent lattice count, or the shell theorem unless every low-interface shifted tail is discharged through a complete proof or a rigorously certified finite partition. The thin-width phase-zero lemma and high-angular tails are already closed and should not be reproved.

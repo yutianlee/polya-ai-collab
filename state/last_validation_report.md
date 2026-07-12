@@ -1,21 +1,29 @@
 # Last State Patch Validation
 
-Round: 2
+Round: 3
 Run: `polya-main`
-Mathematical amendment: `rounds/polya-main/round_002/judge/judge-002-amendment.md`
-Final hygiene patch: `rounds/polya-main/round_002/judge/judge-002-cleanup.md`
+Judge: `rounds/polya-main/round_003/judge/judge-003.md`
 Date: 2026-07-12
 
-Status: applied
+Status: applied.
 
-Created: `SHELL-annulus-phase-transfer`.
+Created:
 
-Updated: `SRC-bessel-phase`, `SRC-annuli`, `SHELL-exact-phase-rep`, `SHELL-phase-monotonicity`, `SHELL-phase-enclosures`, `SHELL-inner-turning`, phase fallback obligations, `SHELL-fixed-rho-high-energy`, `SHELL-weighted-lattice-fractional`, `COMP-certified-bessel`, and `SHELL-spherical-bessel-algebraic`.
+- `SHELL-weighted-lattice-scaffold` — `proved_internal`;
+- `SHELL-high-angular-shifted-tails` — `proved_internal`;
+- `SHELL-low-interface-shifted-tails` — `open` and the active bottleneck;
+- `SHELL-thin-width-phase-zero` — `proved_internal`.
 
-No change: `TARGET-shell-d3`, `SHELL-lattice-count`.
+Updated:
 
-Amendment status: applied. Final hygiene status: applied; no mathematical status changed.
+- `SRC-FLPS-balls` — `proved_external_dependency`;
+- `SHELL-weighted-lattice-fractional` — remains `open`, blocked only by the low-interface tails;
+- `SHELL-rho-one-endpoint`, `FLPS-disk-ball-reproduction`, `SHELL-rho-zero-endpoint`, and `COMP-certified-bessel` — evidence and next actions refined.
 
-The global half-integer shell phase enclosure was promoted to `proved_internal` after incumbent, strictly isolated clean-room, and adversarial proof gates passed. The weighted lattice obligation is now the primary bottleneck with distinct A2/A3/A4 roles.
+Rejected proof routes:
 
-Round score after amendment: 5/10. The weighted lattice bound remains open.
+- floor-free weighted phase summation;
+- treating the blanket quarter slack as uniformly lower order;
+- treating the floating shifted-tail grid as proof.
+
+Round score: 4/10. Exact reductions, high-angular tails, and the thin-width phase-zero region are closed. The mixed-curvature low tails and every theorem-level shell claim remain open.
