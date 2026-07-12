@@ -169,6 +169,70 @@ Definition 1.3 introduces a trapezoidal floor sum. The principal reusable unweig
 
 These results count the planar multiplicity pattern through an unweighted/trapezoidal sum. They do **not** directly prove the required $3$D estimate with weight $2\ell+1$.
 
+### Exact estimates used by the shell low-interface split
+
+For integers $a<b$, Definition 1.3 uses
+
+$$
+\mathbf T(g,a,b)=\frac12\lfloor g(a)\rfloor+
+\sum_{m=a+1}^{b-1}\lfloor g(m)\rfloor+
+\frac12\lfloor g(b)\rfloor.
+$$
+
+Proposition 3.1 states that if $g$ is concave, then
+
+$$
+\mathbf T(g,a,b)\le\int_a^b g(z)\,dz.
+$$
+
+Theorem 1.4 states that if $g$ is decreasing, concave, and $\operatorname{Lip}_c$ on an integer interval $[\alpha,\beta]$, with $0<c<1$, and if for some integer $p\in[\alpha,\beta)$,
+
+$$
+\lfloor g(\alpha)\rfloor=\lfloor g(p)\rfloor
+>\lfloor g(p+1)\rfloor,
+$$
+
+then
+
+$$
+\mathbf T(g,\alpha,\beta)
+\le\int_\alpha^\beta g(z)\,dz
+-\frac{1-c}{2}(\beta-p).
+$$
+
+When no floor drop occurs, Proposition 3.1 supplies the same formula with the formal choice $p=\beta$ and zero improvement; Theorem 1.4 itself should not be cited with $p=\beta$.
+
+Theorem 3.4 states that if $g$ is decreasing, convex, $\operatorname{Lip}_{1/2}$ on $[a,b]$, satisfies $g(b)=0$, and is $\operatorname{Lip}_{1/3}$ on $[t,b]$ for some $t\in[a,b]$, then
+
+$$
+\mathbf T\left(g+\frac14,a,b\right)
+\le\int_a^b g(z)\,dz-\frac14\lfloor g(t)\rfloor.
+$$
+
+For $g(z)=G_K(z)$, the choice $t=K/2$ gives
+
+$$
+G_K(K/2)=\omega_0K,\qquad
+\omega_0:=\frac{\sqrt3}{2\pi}-\frac16.
+$$
+
+Lemma 6.2 gives, for $0<z<\mu$,
+
+$$
+G_\mu(z)<\frac\mu3\left(1-\frac z\mu\right)^{3/2}
+=\frac{(\mu-z)^{3/2}}{3\sqrt\mu}.
+$$
+
+Consequently, for any $q\le\mu$ with $0\le\mu-q<1$ and $q>0$,
+
+$$
+0\le\int_q^\mu G_\mu(z)\,dz
+\le\frac{2(\mu-q)^{5/2}}{15\sqrt\mu}
+\le\frac{2}{15\sqrt\mu}.
+$$
+
+The first upper inequality is strict when $q<\mu$; equality occurs in the degenerate case $q=\mu$. This consequence is the correct form for a shell split at a half-integer $q$. Corollary 6.3 in the paper instead starts at $\lfloor\mu\rfloor$ and must not be quoted as though the two split points always coincide.
+
 ## Computer-assisted closure
 
 Theorem 8.1 bounds the residual analytic gap by

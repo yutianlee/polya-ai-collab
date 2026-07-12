@@ -574,7 +574,7 @@ def generate_reading_packet(
         "",
         "Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.",
         "",
-        "Current status: initialization/audit only. No new Pólya theorem has been proved.",
+        "Current status: no complete Pólya theorem has been proved. The fixed-rho high-energy shell proxy is proved; spectral completeness, endpoint uniformity, and certified closure remain open.",
         "",
         "## Current Route",
         "",

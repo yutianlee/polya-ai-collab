@@ -6,7 +6,7 @@ Generated after round 3 in run `polya-main`.
 
 Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.
 
-Current status: initialization/audit only. No new Pólya theorem has been proved.
+Current status: no complete Pólya theorem has been proved. The fixed-rho high-energy shell proxy is proved; spectral completeness, endpoint uniformity, and certified closure remain open.
 
 ## Current Route
 
@@ -19,17 +19,19 @@ Prove N_D(Omega,Lambda) <= L_d |Omega| Lambda^{d/2} for all Lambda >= 0 for at l
 For A_{rho,1}={x in R^3: rho<|x|<1}, 0<rho<1, prove N_D(A_{rho,1},Lambda) <= (2/(9 pi))(1-rho^3)Lambda^{3/2} for all Lambda>=0 using strict counting; equivalently, with K=sqrt(Lambda), prove N_D(A_{rho,1},K^2) <= (2/(9 pi))(1-rho^3)K^3 for all K>=0.
 
 Current blockers:
-- `SHELL-lattice-count` (open): Multiplicity-weighted lattice count below shell phase curves
+- `SHELL-lattice-count` (derived_under_assumptions): Multiplicity-weighted lattice count below shell phase curves
 - `COMP-certified-bessel` (diagnostic_only): Certified finite-window verification for Bessel cross-products
 - `SHELL-rho-uniformity` (open): Uniformity in shell ratio rho
-- `SHELL-fixed-rho-high-energy` (open): Fixed-rho high-energy shell Polya estimate
+- `SHELL-fixed-rho-high-energy` (derived_under_assumptions): Fixed-rho high-energy shell Polya estimate
 
 ## Round Target Obligations
 
-- `SHELL-low-interface-shifted-tails` (open, owner `A2`): Shifted shell tails crossing the inner interface
-  Next action: Prove the concave-to-convex shifted-tail inequality using horizontal-level blocks or an audited annulus floor-sum refinement; if it fails, locate an exact counterexample and retry with the optimized H_mu cap.
+- `SHELL-sturm-liouville-completeness` (open, owner `A4`): Sturm-Liouville completeness for the separated shell spectrum
+  Next action: Write the full separation-of-variables and regular Sturm-Liouville proof, including no k=0 eigenvalue, positivity of roots, radial simplicity, and harmless cross-ell degeneracy.
+- `SHELL-rho-uniformity` (open, owner `A2`): Uniformity in shell ratio rho
+  Next action: Combine the explicit fixed-rho threshold with the exact zero region (1-rho)K<=pi and derive a compact covering near rho=0 and rho=1. The current K_0(rho) diverges as rho approaches one and is not a uniform endpoint argument.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: Retain diagnostic_only. Design rigorous wall handling and interval evaluation for the finite shell window after the analytic low-interface tail range is explicit.
+  Next action: Use the explicit K_0(rho) to define the fixed-rho finite window. Before certification, combine it with rho-endpoint analysis because K_0(rho) is not uniform as rho approaches one; retain rigorous interval handling of all floor and eigenvalue walls.
 
 ## Do-Not-Claim Rules
 
@@ -63,27 +65,31 @@ Current functional split:
 
 ## Last State Patch
 
-Round 3 proved the weighted scaffold, all high-angular shifted tails, and the thin-width phase-zero region. The low inner-interface shifted-tail inequality remains the sole weighted bottleneck.
+Created and proved SHELL-low-interface-fixed-rho-high-energy; promoted the unconditional fixed-rho weighted lattice proxy; kept eigenvalue-level claims conditional on Sturm-Liouville completeness and left endpoint/certification gates open.
 
 ## Active Obligation Briefs
 
-### SHELL-low-interface-shifted-tails: Shifted shell tails crossing the inner interface
+### SHELL-sturm-liouville-completeness: Sturm-Liouville completeness for the separated shell spectrum
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A4`
+- Next action: Write the full separation-of-variables and regular Sturm-Liouville proof, including no k=0 eigenvalue, positivity of roots, radial simplicity, and harmless cross-ell degeneracy.
+
+### SHELL-rho-uniformity: Uniformity in shell ratio rho
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Criticality: `bottleneck`
-- Lead author: `A2`
-- Clean-room reviewer: `A3`
-- Adversarial reviewer: `A4`
-- Next action: Prove the concave-to-convex shifted-tail inequality using horizontal-level blocks or an audited annulus floor-sum refinement; if it fails, locate an exact counterexample and retry with the optimized H_mu cap.
+- Blockers: `SHELL-rho-compact`, `SHELL-rho-zero-endpoint`, `SHELL-rho-one-endpoint`
+- Next action: Combine the explicit fixed-rho threshold with the exact zero region (1-rho)K<=pi and derive a compact covering near rho=0 and rho=1. The current K_0(rho) diverges as rho approaches one and is not a uniform endpoint argument.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: Retain diagnostic_only. Design rigorous wall handling and interval evaluation for the finite shell window after the analytic low-interface tail range is explicit.
+- Next action: Use the explicit K_0(rho) to define the fixed-rho finite window. Before certification, combine it with rho-endpoint analysis because K_0(rho) is not uniform as rho approaches one; retain rigorous interval handling of all floor and eigenvalue walls.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -124,14 +130,6 @@ Round 3 proved the weighted scaffold, all high-angular shifted tails, and the th
 - Blockers: `SHELL-sturm-liouville-completeness`
 - Next action: Complete the Sturm-Liouville and spherical-harmonic proof; do not require absence of accidental equality across ell, only correct multiplicity summation.
 
-### SHELL-fixed-rho-high-energy: Fixed-rho high-energy shell Polya estimate
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Blockers: `SHELL-weighted-lattice-fractional`
-- Next action: Await the weighted lattice gate; the phase enclosure is now discharged, but no high-energy Pólya inequality has been proved.
-
 ### SHELL-inner-turning: Inner-boundary turning regime for shell phase differences
 
 - Status: `proposed`
@@ -139,13 +137,16 @@ Round 3 proved the weighted scaffold, all high-angular shifted tails, and the th
 - Owner: `A2`
 - Next action: Defer a new Airy enclosure. First test whether FLPS annuli Lemma 5.2, including the global bound on rho K<nu<=K and the correlated 1/4 bound on nu<=rho K, closes the weighted lattice estimate.
 
-### SHELL-lattice-count: Multiplicity-weighted lattice count below shell phase curves
+### SHELL-low-interface-shifted-tails: Shifted shell tails crossing the inner interface
 
 - Status: `open`
 - Track: `shell_analytic`
-- Owner: `A3`
-- Blockers: `SHELL-weighted-lattice-fractional`
-- Next action: Treat SHELL-weighted-lattice-fractional as the sole active analytic blocker and preserve strict endpoint counting.
+- Owner: `A2`
+- Criticality: `bottleneck`
+- Lead author: `A2`
+- Clean-room reviewer: `A3`
+- Adversarial reviewer: `A4`
+- Next action: The fixed-rho high-energy part is discharged and no longer blocks the weighted proxy. The unrestricted all-K strengthening remains open; finite theorem closure belongs to certified computation and endpoint analysis.
 
 ### SHELL-phase-evanescent: Mixed and fully evanescent shell phase control
 
@@ -196,14 +197,6 @@ Round 3 proved the weighted scaffold, all high-angular shifted tails, and the th
 - Blockers: `COMP-certified-bessel`
 - Next action: Split the endpoint analysis at optical width (1-rho)K=pi. The lower-width region has zero radial phase count; control widths above pi and overlap with compact-rho estimates.
 
-### SHELL-rho-uniformity: Uniformity in shell ratio rho
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Blockers: `SHELL-rho-compact`, `SHELL-rho-zero-endpoint`, `SHELL-rho-one-endpoint`
-- Next action: Keep the integration obligation deferred until compact-rho, small-hole, and thin-shell obligations are separately discharged and their parameter intervals cover all 0<rho<1.
-
 ### SHELL-rho-zero-endpoint: Small-hole endpoint rho -> 0
 
 - Status: `open`
@@ -219,9 +212,16 @@ Round 3 proved the weighted scaffold, all high-angular shifted tails, and the th
 - Owner: `A4`
 - Next action: Promote only after the all-ell recurrence identity and its numerical-conditioning domain are proved; current low-order tests remain diagnostic.
 
-### SHELL-sturm-liouville-completeness: Sturm-Liouville completeness for the separated shell spectrum
+### SRC-jiang-lin: Source audit: Jiang-Lin epsilon-loss and certificate strategy
 
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A4`
-- Next action: Write the full separation-of-variables and regular Sturm-Liouville proof, including no k=0 eigenvalue, positivity of roots, radial simplicity, and harmless cross-ell degeneracy.
+- Status: `source_audit_required`
+- Track: `source_audit`
+- Owner: `A1`
+- Next action: Create a source card before using Jiang-Lin as a proof dependency.
+
+### SRC-mathieu-ellipse: Source audit: Mathieu-function tools for Dirichlet ellipses
+
+- Status: `source_audit_required`
+- Track: `ellipse_parallel`
+- Owner: `A1`
+- Next action: Keep this as a parallel source-audit track until the shell Round 1 target theorem memo is stable.

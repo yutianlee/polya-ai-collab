@@ -1,29 +1,35 @@
 # Last State Patch Validation
 
-Round: 3
+Round: 3 fixed-$\rho$ continuation
+
 Run: `polya-main`
-Judge: `rounds/polya-main/round_003/judge/judge-003.md`
+
+Judge: `rounds/polya-main/round_003/judge/judge-003-fixed-rho.md`
+
 Date: 2026-07-12
 
 Status: applied.
 
+Graph hygiene: `rounds/polya-main/round_003/judge/judge-003-fixed-rho-cleanup.md` removed the conditional spectral-count dependency from the pure lattice proxy and refreshed the fixed-$\rho$ theorem statement. No verdict changed.
+
 Created:
 
-- `SHELL-weighted-lattice-scaffold` — `proved_internal`;
-- `SHELL-high-angular-shifted-tails` — `proved_internal`;
-- `SHELL-low-interface-shifted-tails` — `open` and the active bottleneck;
-- `SHELL-thin-width-phase-zero` — `proved_internal`.
+- `SHELL-low-interface-fixed-rho-high-energy` — `proved_internal`.
 
-Updated:
+Promoted:
 
-- `SRC-FLPS-balls` — `proved_external_dependency`;
-- `SHELL-weighted-lattice-fractional` — remains `open`, blocked only by the low-interface tails;
-- `SHELL-rho-one-endpoint`, `FLPS-disk-ball-reproduction`, `SHELL-rho-zero-endpoint`, and `COMP-certified-bessel` — evidence and next actions refined.
+- `SHELL-weighted-lattice-fractional` — `proved_internal` for every fixed $0<\rho<1$ and $K\ge K_0(\rho)$;
+- `SHELL-lattice-count` — `derived_under_assumptions`, pending separated-spectrum completeness;
+- `SHELL-fixed-rho-high-energy` — `derived_under_assumptions` for the same reason.
 
-Rejected proof routes:
+Still open or diagnostic:
 
-- floor-free weighted phase summation;
-- treating the blanket quarter slack as uniformly lower order;
-- treating the floating shifted-tail grid as proof.
+- `SHELL-sturm-liouville-completeness`;
+- `SHELL-rho-uniformity` and its compact/endpoint components;
+- `COMP-certified-bessel`.
 
-Round score: 4/10. Exact reductions, high-angular tails, and the thin-width phase-zero region are closed. The mixed-curvature low tails and every theorem-level shell claim remain open.
+Rejected proof route:
+
+- a generic $C^1$, concave-to-convex, $\operatorname{Lip}_{<1/2}$ tail theorem without shell-specific curvature; an exact counterexample is recorded in the adversarial review.
+
+Round score: 7/10. The main fixed-$\rho$ high-energy weighted analytic bottleneck is solved with an explicit threshold, but no full shell Pólya theorem is proved.

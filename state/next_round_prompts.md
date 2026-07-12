@@ -1,32 +1,43 @@
 # Next Round Prompts
 
-Generated after weighted-lattice round 3 in run `polya-main`.
+Generated after the fixed-$\rho$ continuation of round 3 in run `polya-main`.
 
-Source synthesis: `rounds/polya-main/round_003/judge/judge-003.md`.
+Source synthesis: `rounds/polya-main/round_003/judge/judge-003-fixed-rho.md`.
 
 ## For A1
 
-Prepare a reduced packet for `SHELL-low-interface-shifted-tails`. State the ordinary-floor tail exactly, the start condition $r+1/2<\mu=\rho K$, the concave-to-convex derivative signs, the integral target, and every lattice-wall convention. Include the optimized $H_\mu$-capped fallback, but keep it separate from the coarse claim.
+Prepare a reduced packet for `SHELL-sturm-liouville-completeness`. State the spherical-harmonic orthogonal decomposition, the radial weighted space and unitary one-dimensional transform, Dirichlet endpoint conditions on $[\rho,1]$, the $k=0$ exclusion, radial simplicity, and how accidental equality across distinct $\ell$ channels contributes multiplicity. Keep the strict count convention explicit.
+
+In parallel, map the residual parameter region using
+
+$$
+K_0(\rho)=
+\left(
+\frac{\sqrt{a_\rho}+\sqrt{a_\rho+4\eta_\rho C_0}}
+{2\eta_\rho}
+\right)^2
+$$
+
+and the exact zero region $(1-\rho)K\le\pi$.
 
 ## For A2
 
-Develop the incumbent proof of
-
-$$
-\mathcal T_r\le2\int_{r+1/2}^{K}
-\bigl(G_K(z)-G_{\rho K}(z)\bigr)\,dz
-$$
-
-for starts below $\rho K$. Work horizontally by integer phase levels or adapt the audited annulus concave/convex trapezoidal lemmas with explicit interface corrections. Do not reuse the already-discharged high-tail proof as though it crossed the interface. Freeze the attempt before review.
+Develop the endpoint-uniformity incumbent. Determine whether the fixed-$\rho$ threshold, the zero strip, and compact-$\rho$ subdivision leave a bounded set in variables such as $(\mu,K)$ or optical width $(1-\rho)K$. If not, isolate the precise thin-shell analytic estimate still missing. Do not label a pointwise-in-$\rho$ threshold uniform.
 
 ## For A3
 
-Receive only the reduced low-tail packet and permitted source cards. Independently prove the tail inequality or produce the first exact counterexample. Stress-test $\rho K$ on a half-integer, starts immediately below the interface, and coarse-proxy integer walls. If the coarse statement fails, test the optimized $\min\{H_\mu,1/4\}$ envelope.
+Receive only the reduced Sturm--Liouville packet and permitted standard references. Independently reconstruct the separated spectrum and strict count bridge. Check $k=0$, positivity, completeness, radial simplicity, angular multiplicity $2\ell+1$, and cross-channel degeneracy.
+
+For endpoint work, independently audit any proposed compact covering and search for unbounded escape paths as $\rho\to0,1$.
 
 ## For A4
 
-After A2 and A3 are frozen, reconstruct every horizontal block, floor endpoint, and nonintegral-interface correction. Separately design interval/ball checks for any finite exceptional parameter region. The current floating grid remains `diagnostic_only`.
+Adversarially review the frozen spectral proof. Separately design interval/ball arithmetic only after A1--A2 identify a bounded residual region. The certificate must isolate roots or phase walls rigorously, preserve strict endpoints, state software versions and commands, and produce coverage and artifact hashes. Existing floating diagnostics remain `diagnostic_only`.
 
 ## Promotion constraint
 
-Do not promote `SHELL-weighted-lattice-fractional`, the parent lattice count, or the shell theorem unless every low-interface shifted tail is discharged through a complete proof or a rigorously certified finite partition. The thin-width phase-zero lemma and high-angular tails are already closed and should not be reproved.
+`SHELL-weighted-lattice-fractional` is proved only in the stated fixed-$\rho$ high-energy sense. Do not promote the shell theorem until:
+
+1. separated Sturm--Liouville completeness makes the strict count identity unconditional;
+2. compact and endpoint regimes cover all $0<\rho<1$;
+3. the remaining parameter set is rigorously certified.

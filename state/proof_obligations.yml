@@ -25,10 +25,11 @@
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
     "target_obligations": [
-      "SHELL-low-interface-shifted-tails",
+      "SHELL-sturm-liouville-completeness",
+      "SHELL-rho-uniformity",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Primary: prove or falsify the ordinary-floor shifted-tail inequality for starts r+1/2<rho K, where A_{rho,K}=G_K-G_{rho K} crosses from concave to convex. Preserve strict lattice walls and retry with the optimized H_{rho K} cap if the coarse tail fails. Secondary: design rigorous interval handling for finite walls without calling diagnostics certified. A2 is incumbent author, A3 receives a clean-room packet, A4 adversarially audits frozen attempts, and A1 integrates only validated evidence."
+    "round_rule": "Primary: complete the separated spherical-harmonic and regular Sturm-Liouville proof so the strict phase count becomes unconditional. Secondary: combine the explicit fixed-rho threshold K_0(rho) with the exact thin-width zero region and compact-rho covering; only then define the bounded parameter set for rigorous interval certification. Preserve all strict spectral and floor walls. A2 is incumbent analyst, A3 receives clean-room packets, A4 adversarially audits and owns certification, and A1 integrates only validated evidence."
   },
   "proof_obligations": [
     {
@@ -147,9 +148,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "Keep the theorem open. The primary analytic blocker is now the multiplicity-weighted lattice count; certified computation and rho-uniformity also remain open.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:11:52"
+      "next_action": "The high-energy weighted analytic blocker is discharged. Prioritize separated Sturm-Liouville completeness, rho-endpoint uniformity, and certified closure of the remaining parameter region; no shell Polya theorem is yet proved.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T23:54:19"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -547,7 +548,7 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Multiplicity-weighted lattice count below shell phase curves",
-      "status": "open",
+      "status": "derived_under_assumptions",
       "statement_tex": "Convert the shell eigenvalue count into a multiplicity-weighted count over (ell,n), then prove the discrete count is bounded by L_d |A_{rho,1}| Lambda^{d/2} in the analytic high-energy range.",
       "dependencies": [
         "SHELL-cross-product-formula",
@@ -560,10 +561,16 @@
         "TARGET-shell-d3"
       ],
       "blockers": [
-        "SHELL-weighted-lattice-fractional"
+        "SHELL-sturm-liouville-completeness"
       ],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-weighted-lattice-fractional.md",
+          "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
+          "rounds/polya-main/round_003/responses/low-interface-fixed-rho-incumbent.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md"
+        ],
         "negative": [],
         "inconclusive": [
           "sources/seed_reports/Strategy.md",
@@ -572,9 +579,10 @@
         ]
       },
       "owner": "A3",
-      "next_action": "Treat SHELL-weighted-lattice-fractional as the sole active analytic blocker and preserve strict endpoint counting.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:11:52"
+      "next_action": "Discharge SHELL-sturm-liouville-completeness, then upgrade the conditional phase-count bridge.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T23:54:19",
+      "reason_for_promotion": "The multiplicity-weighted proxy is proved in the fixed-rho high-energy range. Converting it into an eigenvalue count still uses the strict phase-count identity under the open separated-spectrum completeness assumption."
     },
     {
       "id": "SHELL-rho-uniformity",
@@ -597,16 +605,18 @@
         "SHELL-rho-one-endpoint"
       ],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md"
+        ],
         "negative": [],
         "inconclusive": [
           "sources/seed_reports/Strategy.md"
         ]
       },
       "owner": "A2",
-      "next_action": "Keep the integration obligation deferred until compact-rho, small-hole, and thin-shell obligations are separately discharged and their parameter intervals cover all 0<rho<1.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "next_action": "Combine the explicit fixed-rho threshold with the exact zero region (1-rho)K<=pi and derive a compact covering near rho=0 and rho=1. The current K_0(rho) diverges as rho approaches one and is not a uniform endpoint argument.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T23:54:19"
     },
     {
       "id": "SHELL-rho-compact",
@@ -761,9 +771,9 @@
       "owner": "A4",
       "evidence_class": "floating_point_experiment",
       "certification_artifacts": [],
-      "next_action": "Retain diagnostic_only. Design rigorous wall handling and interval evaluation for the finite shell window after the analytic low-interface tail range is explicit.",
+      "next_action": "Use the explicit K_0(rho) to define the fixed-rho finite window. Before certification, combine it with rho-endpoint analysis because K_0(rho) is not uniform as rho approaches one; retain rigorous interval handling of all floor and eigenvalue walls.",
       "last_updated_round": 3,
-      "last_updated_at": "2026-07-12T22:05:44"
+      "last_updated_at": "2026-07-12T23:54:19"
     },
     {
       "id": "SRC-mathieu-ellipse",
@@ -1005,9 +1015,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "After monotonicity and completeness are promoted, upgrade; preserve the strict endpoint rule n pi < Psi(K).",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:13:57"
+      "next_action": "The phase representation and monotonicity inputs are proved. Discharge SHELL-sturm-liouville-completeness, then promote this strict endpoint-aware count identity.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T23:58:58"
     },
     {
       "id": "SHELL-angular-cutoff",
@@ -1079,8 +1089,8 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Fixed-rho high-energy shell Polya estimate",
-      "status": "open",
-      "statement_tex": "For each fixed 0<rho<1, prove an explicit K_0(rho) such that N_D(A_{rho,1},K^2) <= (2/(9 pi))(1-rho^3) K^3 for all K>=K_0(rho), using the strict phase-count identity, one-sided shell phase enclosures, and the multiplicity-weighted lattice estimate. Candidate primary mechanism: the floor-free phase sum should capture the negative Dirichlet boundary term, while half-integer orders nu=ell+1/2 give a midpoint-quadrature advantage; this mechanism remains to be proved.",
+      "status": "derived_under_assumptions",
+      "statement_tex": "For fixed 0<rho<1, let eta_rho=G_1(max{rho,1/2}), a_rho=2 pi rho/(1-rho), C_0=1+8 sqrt(2)/15, and K_0(rho)=((sqrt(a_rho)+sqrt(a_rho+4 eta_rho C_0))/(2 eta_rho))^2. Derive N_D(A_{rho,1},K^2) <= (2/(9 pi))(1-rho^3)K^3 for K>=K_0(rho) from the proved phase enclosure and weighted proxy, conditional on separated Sturm-Liouville completeness and the strict count identity.",
       "dependencies": [
         "SHELL-count-floor-identity",
         "SHELL-phase-enclosures",
@@ -1092,10 +1102,15 @@
         "TARGET-shell-d3"
       ],
       "blockers": [
-        "SHELL-weighted-lattice-fractional"
+        "SHELL-sturm-liouville-completeness"
       ],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
+          "rounds/polya-main/round_003/responses/low-interface-fixed-rho-incumbent.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md"
+        ],
         "negative": [],
         "inconclusive": [
           "rounds/polya-main/round_001/reviews/A2.md",
@@ -1104,38 +1119,40 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Await the weighted lattice gate; the phase enclosure is now discharged, but no high-energy P\u00f3lya inequality has been proved.",
-      "last_updated_round": 2,
-      "last_updated_at": "2026-07-12T21:11:52"
+      "next_action": "Prove SHELL-sturm-liouville-completeness and promote the strict count bridge; do not call the conditional result a shell theorem before then.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T23:58:58",
+      "reason_for_promotion": "For every fixed rho the phase enclosure and weighted lattice proxy now give the claimed high-energy Weyl bound with explicit K_0(rho), conditional only on the recorded separated-spectrum completeness/count bridge."
     },
     {
       "id": "SHELL-weighted-lattice-fractional",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Multiplicity-weighted lattice bound for the 3D shell phase count",
-      "status": "open",
+      "status": "proved_internal",
       "statement_tex": "For fixed 0<rho<1, prove an explicit high-energy bound for the strict 2ell+1 weighted proxy derived from U_{rho,K}=G_K-G_{rho K}+s_{rho K}, with exact endpoint counting and Weyl target (2/(9 pi))(1-rho^3)K^3.",
       "dependencies": [
-        "SHELL-count-floor-identity",
         "SHELL-phase-enclosures",
         "SRC-annuli",
         "SHELL-annulus-phase-transfer",
         "SRC-FLPS-balls",
         "SHELL-weighted-lattice-scaffold",
         "SHELL-high-angular-shifted-tails",
-        "SHELL-low-interface-shifted-tails",
-        "SHELL-thin-width-phase-zero"
+        "SHELL-thin-width-phase-zero",
+        "SHELL-low-interface-fixed-rho-high-energy"
       ],
       "implies": [
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy"
       ],
-      "blockers": [
-        "SHELL-low-interface-shifted-tails"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
-          "state/lemma_packets/SHELL-weighted-lattice-fractional.md"
+          "state/lemma_packets/SHELL-weighted-lattice-fractional.md",
+          "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
+          "rounds/polya-main/round_003/responses/low-interface-fixed-rho-incumbent.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -1150,9 +1167,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Close SHELL-low-interface-shifted-tails. The continuous phase sum and blanket quarter-slack estimates are rejected proof routes; retain strict integerization.",
+      "next_action": "Use this unconditional lattice-proxy inequality inside the separately conditional strict spectral count. Do not extend it to the finite window or a rho-uniform theorem without separate evidence.",
       "last_updated_round": 3,
-      "last_updated_at": "2026-07-12T22:05:44",
+      "last_updated_at": "2026-07-12T23:58:58",
       "criticality": "bottleneck",
       "lead_author": "A2",
       "clean_room_reviewer": "A3",
@@ -1160,10 +1177,13 @@
       "review_independence": "clean_room",
       "permitted_dependencies": [
         "CONV-strict-counting",
-        "SHELL-count-floor-identity",
         "SHELL-annulus-phase-transfer",
         "SHELL-phase-enclosures",
-        "SRC-annuli"
+        "SRC-annuli",
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SHELL-low-interface-fixed-rho-high-energy",
+        "SRC-FLPS-balls"
       ],
       "falsification_cases": [
         "K equal to a shell eigenfrequency",
@@ -1174,11 +1194,14 @@
         "half-integer midpoint and endpoint corrections"
       ],
       "clean_room_artifacts": [
-        "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md"
+        "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md",
+        "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md"
       ],
       "adversarial_review_artifacts": [
-        "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md"
-      ]
+        "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md",
+        "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md"
+      ],
+      "reason_for_promotion": "The exact weighted scaffold, all high-angular tails, and the new fixed-rho low-interface high-energy lemma together prove the coarse ordinary-floor proxy, hence also the strict and optimized phase proxies, for every fixed rho above the explicit K_0(rho). Independent and adversarial reviews passed."
     },
     {
       "id": "SHELL-spherical-bessel-algebraic",
@@ -1349,14 +1372,19 @@
         "SHELL-weighted-lattice-scaffold",
         "SHELL-high-angular-shifted-tails",
         "SRC-annuli",
-        "SRC-FLPS-balls"
+        "SRC-FLPS-balls",
+        "SHELL-low-interface-fixed-rho-high-energy"
       ],
       "implies": [
         "SHELL-weighted-lattice-fractional"
       ],
       "blockers": [],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md"
+        ],
         "negative": [],
         "inconclusive": [
           "rounds/polya-main/round_003/responses/weighted-lattice-incumbent.md",
@@ -1388,9 +1416,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "Prove the concave-to-convex shifted-tail inequality using horizontal-level blocks or an audited annulus floor-sum refinement; if it fails, locate an exact counterexample and retry with the optimized H_mu cap.",
+      "next_action": "The fixed-rho high-energy part is discharged and no longer blocks the weighted proxy. The unrestricted all-K strengthening remains open; finite theorem closure belongs to certified computation and endpoint analysis.",
       "last_updated_round": 3,
-      "last_updated_at": "2026-07-12T22:05:44"
+      "last_updated_at": "2026-07-12T23:54:19"
     },
     {
       "id": "SHELL-thin-width-phase-zero",
@@ -1437,6 +1465,73 @@
       "next_action": "Use this exact phase-level result in the thin-shell split. Do not state a full spectral zero theorem without the separate completeness/count dependency.",
       "last_updated_round": 3,
       "last_updated_at": "2026-07-12T22:05:44"
+    },
+    {
+      "id": "SHELL-low-interface-fixed-rho-high-energy",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Fixed-rho high-energy shifted tails across the inner interface",
+      "status": "proved_internal",
+      "statement_tex": "Let eta_rho=G_1(max{rho,1/2}), a_rho=2 pi rho/(1-rho), C_0=1+8 sqrt(2)/15, and K_0(rho)=((sqrt(a_rho)+sqrt(a_rho+4 eta_rho C_0))/(2 eta_rho))^2. For every fixed 0<rho<1, every K>=K_0(rho), and every integer r>=0 with r+1/2<rho K, the coarse ordinary-floor shifted tail of A_{rho,K}+1/4 is at most 2 int_{r+1/2}^K A_{rho,K}(z) dz.",
+      "dependencies": [
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SRC-annuli",
+        "SRC-FLPS-balls"
+      ],
+      "implies": [
+        "SHELL-weighted-lattice-fractional",
+        "SHELL-fixed-rho-high-energy"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
+          "rounds/polya-main/round_003/responses/low-interface-fixed-rho-incumbent.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md",
+          "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md",
+          "rounds/polya-main/round_003/reviews/low-interface-small-hole-adversarial.md",
+          "sources/annuli_polya.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "computations/SHELL-weighted-lattice-fractional-diagnostic.md",
+          "rounds\\polya-main\\round_003\\judge\\judge-003-fixed-rho.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "bottleneck",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SRC-annuli",
+        "SRC-FLPS-balls"
+      ],
+      "falsification_cases": [
+        "n=0",
+        "no floor drop on the concave head",
+        "immediate first floor drop",
+        "rho K on a half-integer",
+        "the split point on either side of K/2",
+        "rho=1/2",
+        "K eta_rho on an integer wall",
+        "K=K_0(rho)",
+        "rho approaching zero or one"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md"
+      ],
+      "reason_for_promotion": "The frozen proof passed a clean-room reconstruction, a separate targeted falsification pass, and an adversarial review. The reviews verified the first-floor-drop theorem, no-drop and n=0 branches, quantitative curvature bound, convex-tail theorem, interface estimate, compensation algebra, integer walls, and explicit positive-root threshold.",
+      "next_action": "Use this lemma only for the fixed-rho high-energy proxy. The finite region, rho-endpoint uniformity, and separated spectral completeness remain separate obligations.",
+      "last_updated_round": 3,
+      "last_updated_at": "2026-07-12T23:54:19"
     }
   ],
   "rejected_claims": [
@@ -1510,6 +1605,15 @@
       "last_updated_round": 3,
       "evidence": [
         "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+      ]
+    },
+    {
+      "id": "abstract-s-shape-lipschitz-tail-theorem",
+      "reason": "Reject deriving the shifted-tail inequality solely from nonnegativity, strict decrease, C1 regularity, one concave-to-convex transition, and Lipschitz constant below 1/2. The exact C1 counterexample in the adversarial review has shifted floor count 3 but twice its integral is 191/64<3. The successful shell proof requires the quantitative curvature/no-shelf bound.",
+      "last_updated_at": "2026-07-12T23:54:19",
+      "last_updated_round": 3,
+      "evidence": [
+        "rounds\\polya-main\\round_003\\judge\\judge-003-fixed-rho.md"
       ]
     }
   ]
