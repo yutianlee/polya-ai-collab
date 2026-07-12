@@ -1,12 +1,12 @@
 # Reading Packet
 
-Generated after round 4 in run `polya-main`.
+Generated after round 5 in run `polya-main`.
 
 ## Current Theorem Target
 
 Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.
 
-Current status: no complete Pólya theorem has been proved. The exact d=3 shell spectrum and the fixed-rho high-energy shell theorem are proved; endpoint uniformity and certified finite-window closure remain open.
+Current status: no complete Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, and a uniform low-optical thin-shell window are proved; a radius-sensitive thin intermediate range, small-hole uniformity, and certified finite-window closure remain open.
 
 ## Current Route
 
@@ -24,12 +24,12 @@ Current blockers:
 
 ## Round Target Obligations
 
-- `SHELL-rho-one-endpoint` (open, owner `A2`): Thin-shell endpoint rho -> 1
-  Next action: The lower optical-width region (1-rho)K<=pi now has zero actual strict shell count. Prove a uniform estimate for widths above pi and overlap it with compact-rho certification.
+- `SHELL-thin-curvature-intermediate` (open, owner `A2`): Radius-sensitive intermediate thin-shell estimate
+  Next action: Develop a curvature-corrected comparison or a thin-scaled aggregate phase-lattice estimate. It must match the factor epsilon^{-1} int_{1-epsilon}^1 r^2 dr=1-epsilon+epsilon^2/3 and explicitly overlap either the proved low-optical range or K_0.
 - `SHELL-rho-zero-endpoint` (open, owner `A2`): Small-hole endpoint rho -> 0
   Next action: Use the audited ball limit together with certified computation; the FLPS ball source audit is discharged.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: Use the proved determinant spectrum, root simplicity, angular cutoff, and strict endpoint identity to design interval root isolation and wall handling. Retain diagnostic_only until rho-uniformity yields bounded coverage and all certificate artifacts, commands, versions, and hashes exist.
+  Next action: Do not attempt to certify the unbounded thin intermediate region. First close SHELL-thin-curvature-intermediate and the small-hole endpoint, then certify the resulting bounded residual boxes with strict root and floor walls.
 
 ## Do-Not-Claim Rules
 
@@ -63,17 +63,20 @@ Current functional split:
 
 ## Last State Patch
 
-Proved the exact d=3 separated shell spectrum and strict phase count; promoted the fixed-rho high-energy shell theorem; left endpoint uniformity and interval-certified finite closure open.
+Proved a uniform low-optical thin-shell window; exactly rejected the flat product majorant as a global endpoint route; created the radius-sensitive intermediate thin-shell bottleneck.
 
 ## Active Obligation Briefs
 
-### SHELL-rho-one-endpoint: Thin-shell endpoint rho -> 1
+### SHELL-thin-curvature-intermediate: Radius-sensitive intermediate thin-shell estimate
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `COMP-certified-bessel`
-- Next action: The lower optical-width region (1-rho)K<=pi now has zero actual strict shell count. Prove a uniform estimate for widths above pi and overlap it with compact-rho certification.
+- Criticality: `bottleneck`
+- Lead author: `A2`
+- Clean-room reviewer: `A3`
+- Adversarial reviewer: `A4`
+- Next action: Develop a curvature-corrected comparison or a thin-scaled aggregate phase-lattice estimate. It must match the factor epsilon^{-1} int_{1-epsilon}^1 r^2 dr=1-epsilon+epsilon^2/3 and explicitly overlap either the proved low-optical range or K_0.
 
 ### SHELL-rho-zero-endpoint: Small-hole endpoint rho -> 0
 
@@ -88,7 +91,7 @@ Proved the exact d=3 separated shell spectrum and strict phase count; promoted t
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: Use the proved determinant spectrum, root simplicity, angular cutoff, and strict endpoint identity to design interval root isolation and wall handling. Retain diagnostic_only until rho-uniformity yields bounded coverage and all certificate artifacts, commands, versions, and hashes exist.
+- Next action: Do not attempt to certify the unbounded thin intermediate region. First close SHELL-thin-curvature-intermediate and the small-hole endpoint, then certify the resulting bounded residual boxes with strict root and floor walls.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -178,7 +181,15 @@ Proved the exact d=3 separated shell spectrum and strict phase count; promoted t
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `COMP-certified-bessel`
-- Next action: Bound K_0(rho) explicitly on each compact rho interval and formulate the remaining bounded interval certificate. COMP-certified-bessel is the remaining blocker.
+- Next action: Use rho<=0.99 as the compact side of the new thin split. Bound K_0 on the chosen compact interval and formulate its bounded interval certificate; COMP-certified-bessel remains open.
+
+### SHELL-rho-one-endpoint: Thin-shell endpoint rho -> 1
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A2`
+- Blockers: `COMP-certified-bessel`, `SHELL-thin-curvature-intermediate`
+- Next action: The actual shell inequality is proved for epsilon<=1/100 and K<=pi/(4 epsilon^2), while fixed-rho high energy starts only at K_0(1-epsilon). Close the radius-sensitive intermediate gap; the flat product majorant is rejected as a global route.
 
 ### SHELL-rho-uniformity: Uniformity in shell ratio rho
 
@@ -186,7 +197,7 @@ Proved the exact d=3 separated shell spectrum and strict phase count; promoted t
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `SHELL-rho-compact`, `SHELL-rho-zero-endpoint`, `SHELL-rho-one-endpoint`
-- Next action: Combine the explicit fixed-rho threshold with the exact zero region (1-rho)K<=pi and derive a compact covering near rho=0 and rho=1. The current K_0(rho) diverges as rho approaches one and is not a uniform endpoint argument.
+- Next action: The thin endpoint now has a proved low-optical range but an explicit unbounded intermediate gap. Close SHELL-thin-curvature-intermediate, then combine it with compact-rho and small-hole coverage.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 
@@ -215,15 +226,3 @@ Proved the exact d=3 separated shell spectrum and strict phase count; promoted t
 - Track: `source_audit`
 - Owner: `A1`
 - Next action: The structural spectrum component is audited. Audit only the unresolved quantitative Weyl remainder, endpoint-uniform constants, one-sided Polya-strength estimates, and finite-window certification scope.
-
-### TARGET-shell-d3: First theorem target: Dirichlet Pólya for 3D spherical shells
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A1`
-- Criticality: `theorem`
-- Lead author: `A1`
-- Clean-room reviewer: `A3`
-- Adversarial reviewer: `A2`
-- Blockers: `COMP-certified-bessel`, `SHELL-rho-uniformity`
-- Next action: The exact spectral bridge and fixed-rho high-energy theorem are discharged. Prioritize rho-endpoint uniformity and interval-certified closure of the residual finite region; no all-K shell theorem is yet proved.

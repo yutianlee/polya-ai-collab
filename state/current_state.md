@@ -67,3 +67,32 @@ eigenvalue result: for every fixed $0<\rho<1$, the shell Pólya inequality
 holds for every $K\ge K_0(\rho)$. The full all-$K$, all-$\rho$ theorem remains
 open because endpoint uniformity and interval-certified closure of the
 residual finite region are not proved.
+
+## Round 5 Update
+
+Date: 2026-07-13
+
+See rounds/polya-main/round_005/judge/judge-005.md.
+
+Writing $\varepsilon=1-\rho$, the exact product comparison proves the actual
+shell Pólya estimate uniformly for
+
+$$
+0<\varepsilon\le\frac1{100},
+\qquad
+0\le K\le\frac{\pi}{4\varepsilon^2}.
+$$
+
+The proof passed isolated clean-room, adversarial, and corrected constants
+audits. It preserves strict radial and angular walls and uses the exact
+$2\ell+1$ multiplicities.
+
+The same round exactly disproves the flat product majorant as a global
+thin-shell route. That majorant exceeds the shell Weyl target at infinitely
+many parameter walls, including an exact family with
+$\varepsilon\downarrow0$. This is not a counterexample to the shell theorem.
+
+The remaining thin-shell gap is now explicit: a radius-sensitive estimate
+must bridge the new low-optical theorem to the pointwise high-energy threshold
+$K_0(1-\varepsilon)$. Small-hole analysis and interval certification also
+remain open.

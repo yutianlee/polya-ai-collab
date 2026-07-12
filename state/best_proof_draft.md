@@ -125,13 +125,69 @@ $$
 N_D(A_{\rho,1},K^2)=0.
 $$
 
+## Uniform low-optical thin-shell theorem
+
+Put
+
+$$
+\varepsilon=1-\rho,\qquad a=\varepsilon K.
+$$
+
+Since
+
+$$
+L_\ell
+\ge
+-\frac{d^2}{dr^2}+\ell(\ell+1)
+$$
+
+on the interval of length $\varepsilon$, min--max gives
+
+$$
+\lambda_{\ell,n}
+\ge
+\left(\frac{n\pi}{\varepsilon}\right)^2+\ell(\ell+1).
+$$
+
+Counting the resulting product levels with strict radial and angular walls
+and the exact multiplicity sum yields
+
+$$
+\boxed{
+0<\varepsilon\le\frac1{100},
+\quad
+0\le K\le\frac{\pi}{4\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le
+\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3.
+}
+$$
+
+The proof and exact lattice margin are recorded in
+state/lemma_packets/SHELL-thin-product-low-optical.md.
+
+This comparison cannot be extrapolated. Its majorant exceeds the shell Weyl
+target at exact walls of order $a\asymp\varepsilon^{-1}$, including an exact
+family with $\varepsilon\downarrow0$. The current high-energy theorem begins
+only at
+
+$$
+\varepsilon K_0(1-\varepsilon)
+\asymp
+\frac{9\pi^3}{4}\varepsilon^{-3}.
+$$
+
+The two ranges therefore leave a genuine radius-sensitive intermediate gap.
+
 ## Remaining gates
 
 This file must not be cited as a proof of the full shell theorem. The open
 gates are:
 
-- a uniform thin-shell estimate for optical widths
-  $(1-\rho)K>\pi$;
+- a radius-sensitive thin-shell estimate between
+  $K=\pi/[4(1-\rho)^2]$ and $K_0(\rho)$ near $\rho=1$;
 - a quantitative small-hole endpoint and explicit compact-$\rho$ overlap;
 - interval-certified closure of the bounded residual parameter set,
   including every determinant, phase, floor, and strict spectral wall;

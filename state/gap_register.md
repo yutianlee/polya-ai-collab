@@ -4,9 +4,11 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Prove a thin-shell estimate for optical widths $(1-\rho)K>\pi$ and
-  overlap it with the already-proved zero-count strip
-  $(1-\rho)K\le\pi$.
+- With $\varepsilon=1-\rho\le1/100$, prove a radius-sensitive thin-shell
+  estimate between the discharged range
+  $K\le\pi/(4\varepsilon^2)$ and the pointwise high-energy range
+  $K\ge K_0(1-\varepsilon)$. The flat outer-radius product comparison is
+  provably too large in this gap.
 - Prove the small-hole endpoint and combine both endpoints with explicit
   compact-$\rho$ bounds. The pointwise threshold $K_0(\rho)$ is not a
   uniform covering.
@@ -29,6 +31,17 @@ The authoritative statuses are in state/proof_obligations.yml.
 - The actual fixed-$\rho$ high-energy shell Pólya estimate for
   $K\ge K_0(\rho)$.
 - The exact spectral zero-count region $(1-\rho)K\le\pi$.
+- The uniform thin-shell product range
+  $0<1-\rho\le1/100$ and
+  $K\le\pi/[4(1-\rho)^2]$.
+
+## Rejected shell routes
+
+- Replacing $r^{-2}$ by its outer-boundary minimum $1$ cannot close the full
+  thin-shell endpoint. The resulting product majorant has exact failures at
+  optical width of order $(1-\rho)^{-1}$.
+- The proved product range does not overlap the current
+  $K_0(1-\varepsilon)$ high-energy threshold.
 
 ## Parallel-track gaps
 
