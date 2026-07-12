@@ -28,25 +28,30 @@ for all `Lambda >= 0`, first for fixed `rho`, then uniformly over useful paramet
 
 The parallel flagship track is the Dirichlet ellipse / Mathieu-function program. A lower-risk backup track is a Jiang-Lin-style certificate theorem for a smooth non-tiling comparison family.
 
-## Agents
+## Functional Roles
 
-- `A1`: GPT Pro Extended through the web UI. Broad strategist, literature scout, synthesis writer, and default judge.
-- `A2`: Claude Opus 4.8 Max through the web UI. Focused analytic proof-surgeon and conservative referee.
-- `A3`: Gemini Pro Deep Think through the web UI. Independent deep-think critic, route comparator, and obstruction finder.
-- `A4`: Deepseek V4-Pro through the API. Automatic proof auditor, formula checker, and reproducible computation planner.
+- `A1`: project lead, proof-obligation mapper, integrator, and State Patch author.
+- `A2`: incumbent proof author for the selected analytic bottleneck.
+- `A3`: clean-room solver working from a reduced packet without the incumbent proof.
+- `A4`: adversarial referee, formula checker, and certified-computation engineer.
 
 A1, A2, and A3 are semi-manual: paste prompts into persistent web conversations and save copied Markdown responses into `handoff/`. A4 is automatic when `DEEPSEEK_API_KEY` is configured.
 
-## Round Protocol
+These are configurable functional roles, not a permanent mathematical hierarchy. For a bottleneck obligation, lead author, clean-room reviewer, and adversarial reviewer must be distinct.
 
-Each round uses four synchronized stages:
+## Obligation Protocol
 
-1. Stage A: every active agent independently attacks selected proof obligations.
-2. Stage B: every active agent reviews proposed state changes, blockers, evidence, and status claims from the other agents.
-3. Stage C: A1 writes a judge synthesis, next-round prompts, and a machine-readable `State Patch`.
-4. Stage D: the orchestrator validates the `State Patch`, applies accepted changes to `state/proof_obligations.yml`, regenerates the compact reading packet, and commits/pushes the completed round unless `-NoAutoPublish` is set.
+Each cycle is organized around one primary proof obligation and at most one independent secondary obligation:
 
-The barrier is strict: reviews do not start until all four reasoning responses are present; judging does not start until all four reviews are present; state mutation does not happen until the judge synthesis has a valid patch.
+1. The project lead prepares an exact obligation packet and assigns only needed roles.
+2. The incumbent author and clean-room solver work independently.
+3. The adversarial reviewer audits the frozen attempts and identifies the first unsupported implication.
+4. Codex-style computation work produces diagnostic or certified artifacts under an explicit evidence class.
+5. One lead integrates discharged obligations and writes a machine-readable `State Patch`.
+6. The validator applies accepted changes and regenerates the reading packet.
+7. A fresh final referee audits an assembled theorem before promotion.
+
+Barriers are enforced only at genuine mathematical dependencies. The configured workflow currently gives A1 an integration review of A2/A3/A4 and gives A4 an adversarial review of the frozen A2/A3 attempts; A2 and A3 do not perform universal cross-reviews.
 
 ## Layout
 
@@ -162,7 +167,7 @@ Edit these files before the next stage or round:
 You can also add a note from the command line:
 
 ```powershell
-python -m math_collab.human --kind idea --title "Check shell phase" --text "Ask all agents to compare annulus cross-product phases with 3D shell multiplicity weights." --activate
+python -m math_collab.human --kind idea --title "Check shell phase" --text "Assign a lead proof, a clean-room reconstruction, and an adversarial audit for the shell phase bottleneck." --activate
 ```
 
 ## Safety Rules

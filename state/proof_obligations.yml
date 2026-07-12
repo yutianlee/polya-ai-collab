@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "allowed_statuses": [
     "proposed",
     "open",
@@ -9,6 +9,7 @@
     "derived_under_assumptions",
     "proved_internal",
     "proved_external_dependency",
+    "certified",
     "rejected"
   ],
   "tracks": [
@@ -21,18 +22,18 @@
     "certificate_family"
   ],
   "round_selection": {
-    "primary_track": "target_conventions",
-    "secondary_track": "shell_analytic",
+    "primary_track": "shell_analytic",
+    "secondary_track": "certified_computation",
     "target_obligations": [
-      "CONV-strict-counting",
-      "TARGET-shell-d3",
-      "SRC-FLPS-balls",
-      "SRC-annuli",
-      "SHELL-cross-product-formula",
-      "SHELL-lattice-count",
+      "SHELL-phase-oscillatory",
+      "SHELL-phase-outer-turning",
+      "SHELL-inner-turning",
+      "SHELL-phase-evanescent",
+      "SHELL-phase-overlap",
+      "SHELL-phase-enclosures",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Round 1 should establish the target theorem memo, source-audit priorities, shell formula checks, and finite-verification requirements. No theorem-level P\u00f3lya claim may be promoted in Round 1."
+    "round_rule": "Run obligation-specific roles. A2 develops the incumbent analytic lemma, A3 receives a clean-room packet without the incumbent proof, A4 adversarially audits frozen attempts and owns computation classification, and A1 integrates only validated obligations. No theorem-level Pólya claim may be promoted without independent review and required certification."
   },
   "proof_obligations": [
     {
@@ -128,6 +129,29 @@
         ]
       },
       "owner": "A1",
+      "criticality": "theorem",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A2",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-cross-product-formula",
+        "SHELL-phase-enclosures",
+        "SHELL-lattice-count",
+        "COMP-certified-bessel",
+        "SHELL-fixed-rho-high-energy",
+        "SHELL-rho-uniformity"
+      ],
+      "falsification_cases": [
+        "strict-count endpoints at shell eigenvalues",
+        "outer and inner turning regimes",
+        "rho -> 0 small-hole limit",
+        "rho -> 1 thin-shell limit",
+        "angular multiplicity and accidental cross-channel equality"
+      ],
+      "clean_room_artifacts": [],
+      "adversarial_review_artifacts": [],
       "next_action": "Keep the theorem open. First prove the fixed-rho high-energy estimate and a certified finite window; defer compact rho-uniformity and endpoint regimes.",
       "last_updated_round": 1,
       "last_updated_at": "2026-07-12T19:52:28"
@@ -318,7 +342,11 @@
         "SRC-shell-weyl",
         "SHELL-exact-phase-rep",
         "SHELL-phase-monotonicity",
-        "SHELL-inner-turning"
+        "SHELL-phase-oscillatory",
+        "SHELL-phase-outer-turning",
+        "SHELL-inner-turning",
+        "SHELL-phase-evanescent",
+        "SHELL-phase-overlap"
       ],
       "implies": [
         "TARGET-shell-d3",
@@ -329,7 +357,11 @@
         "SRC-bessel-phase",
         "SRC-annuli",
         "SRC-shell-weyl",
-        "SHELL-inner-turning"
+        "SHELL-phase-oscillatory",
+        "SHELL-phase-outer-turning",
+        "SHELL-inner-turning",
+        "SHELL-phase-evanescent",
+        "SHELL-phase-overlap"
       ],
       "evidence": {
         "positive": [],
@@ -339,9 +371,162 @@
         ]
       },
       "owner": "A2",
-      "next_action": "For fixed rho, formulate quantitative one-sided enclosures for Psi_{nu,rho}(k) in oscillatory, outer-turning, inner-turning, mixed evanescent/oscillatory, and fully evanescent regimes; explicitly track differencing loss.",
+      "criticality": "bottleneck",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-cross-product-formula",
+        "SRC-bessel-phase",
+        "SRC-annuli",
+        "SRC-shell-weyl",
+        "SHELL-exact-phase-rep",
+        "SHELL-phase-monotonicity"
+      ],
+      "falsification_cases": [
+        "k-nu on the Airy scale",
+        "rho*k-nu on the Airy scale",
+        "mixed evanescent/oscillatory region",
+        "fully evanescent region",
+        "all pairwise regime overlaps",
+        "loss caused by subtracting two phase enclosures"
+      ],
+      "clean_room_artifacts": [],
+      "adversarial_review_artifacts": [],
+      "next_action": "Integrate only after each regime obligation and the overlap obligation have explicit one-sided bounds. Give A3 a clean-room lemma packet without the incumbent proof, then give both frozen attempts to A4 for adversarial audit.",
       "last_updated_round": 1,
       "last_updated_at": "2026-07-12T19:52:28"
+    },
+    {
+      "id": "SHELL-phase-oscillatory",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Shell phase enclosure in the ordinary oscillatory regime",
+      "status": "open",
+      "statement_tex": "For fixed 0<rho<1, give explicit one-sided bounds for Psi_{nu,rho}(k)=theta_nu(k)-theta_nu(rho k) when both k and rho k lie outside their Airy transition zones on the oscillatory side, with constants and error direction suitable for the counting upper bound.",
+      "dependencies": [
+        "SHELL-exact-phase-rep",
+        "SHELL-phase-monotonicity",
+        "SRC-bessel-phase"
+      ],
+      "implies": [
+        "SHELL-phase-enclosures",
+        "SHELL-phase-overlap"
+      ],
+      "blockers": [
+        "SRC-bessel-phase"
+      ],
+      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "owner": "A2",
+      "falsification_cases": [
+        "approach to outer Airy boundary",
+        "approach to inner Airy boundary",
+        "phase-differencing error larger than the desired margin"
+      ],
+      "next_action": "State a quantitative domain separated from both turning layers and derive the required one-sided differenced phase bound with explicit constants."
+    },
+    {
+      "id": "SHELL-phase-outer-turning",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Shell phase enclosure at the outer turning point",
+      "status": "open",
+      "statement_tex": "For fixed 0<rho<1, give an explicit one-sided enclosure for Psi_{nu,rho}(k) when k-nu=O(nu^{1/3}), including constants and overlap bounds with the oscillatory and evanescent descriptions.",
+      "dependencies": [
+        "SHELL-exact-phase-rep",
+        "SHELL-phase-monotonicity",
+        "SRC-bessel-phase"
+      ],
+      "implies": [
+        "SHELL-phase-enclosures",
+        "SHELL-phase-overlap"
+      ],
+      "blockers": [
+        "SRC-bessel-phase"
+      ],
+      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "owner": "A2",
+      "falsification_cases": [
+        "both turning layers close when rho is near 1",
+        "Airy remainder sign at overlap boundaries",
+        "small nu not covered by asymptotics"
+      ],
+      "next_action": "Formulate the Airy-scale outer-turning enclosure with explicit constants, error direction, and a declared finite small-order remainder."
+    },
+    {
+      "id": "SHELL-phase-evanescent",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Mixed and fully evanescent shell phase control",
+      "status": "open",
+      "statement_tex": "Control Psi_{nu,rho}(k) in the mixed region rho k<nu<k and the fully evanescent region k<nu strongly enough to bound or exclude radial zeros contributing to the shell count.",
+      "dependencies": [
+        "SHELL-exact-phase-rep",
+        "SHELL-phase-monotonicity",
+        "SRC-bessel-phase",
+        "SHELL-angular-cutoff"
+      ],
+      "implies": [
+        "SHELL-phase-enclosures",
+        "SHELL-phase-overlap"
+      ],
+      "blockers": [
+        "SRC-bessel-phase"
+      ],
+      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "owner": "A2",
+      "falsification_cases": [
+        "first possible radial zero near a turning boundary",
+        "nonuniform exponential constants",
+        "conflict with the angular cutoff"
+      ],
+      "next_action": "Prove a zero-exclusion or one-sided count bound in each evanescent subregion and state how it overlaps the Airy regimes."
+    },
+    {
+      "id": "SHELL-phase-overlap",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Compatibility and complete coverage of shell phase regimes",
+      "status": "open",
+      "statement_tex": "Choose explicit regime boundaries and prove that the oscillatory, outer-turning, inner-turning, mixed-evanescent, and fully evanescent phase estimates cover the full (nu,k,rho) domain required for fixed-rho counting, agree in every overlap, and preserve the needed one-sided inequality.",
+      "dependencies": [
+        "SHELL-phase-oscillatory",
+        "SHELL-phase-outer-turning",
+        "SHELL-inner-turning",
+        "SHELL-phase-evanescent"
+      ],
+      "implies": [
+        "SHELL-phase-enclosures"
+      ],
+      "blockers": [
+        "SHELL-phase-oscillatory",
+        "SHELL-phase-outer-turning",
+        "SHELL-inner-turning",
+        "SHELL-phase-evanescent"
+      ],
+      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "owner": "A1",
+      "criticality": "bottleneck",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-phase-oscillatory",
+        "SHELL-phase-outer-turning",
+        "SHELL-inner-turning",
+        "SHELL-phase-evanescent"
+      ],
+      "falsification_cases": [
+        "gaps between declared regimes",
+        "inconsistent inequality directions in overlaps",
+        "simultaneous outer and inner turning layers as rho -> 1",
+        "uncovered finite-order parameter cells"
+      ],
+      "clean_room_artifacts": [],
+      "adversarial_review_artifacts": [],
+      "next_action": "After the four regime lemmas are explicit, build a coverage table and give it independently to A3 before A4 audits both constructions."
     },
     {
       "id": "SHELL-lattice-count",
@@ -386,16 +571,17 @@
       "status": "open",
       "statement_tex": "Upgrade fixed-rho shell estimates to rho in compact subintervals of (0,1), then separately treat rho -> 0 and rho -> 1.",
       "dependencies": [
-        "SHELL-phase-enclosures",
-        "SHELL-lattice-count",
-        "SRC-shell-weyl"
+        "SHELL-rho-compact",
+        "SHELL-rho-zero-endpoint",
+        "SHELL-rho-one-endpoint"
       ],
       "implies": [
         "TARGET-shell-d3"
       ],
       "blockers": [
-        "SHELL-phase-enclosures",
-        "COMP-certified-bessel"
+        "SHELL-rho-compact",
+        "SHELL-rho-zero-endpoint",
+        "SHELL-rho-one-endpoint"
       ],
       "evidence": {
         "positive": [],
@@ -405,9 +591,94 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Keep rho-uniformity deferred. After fixed-rho high-energy and finite-window methods are formulated, separately plan compact rho intervals, rho->0 small-hole behavior, and rho->1 thin-shell behavior.",
+      "next_action": "Keep the integration obligation deferred until compact-rho, small-hole, and thin-shell obligations are separately discharged and their parameter intervals cover all 0<rho<1.",
       "last_updated_round": 1,
       "last_updated_at": "2026-07-12T19:52:28"
+    },
+    {
+      "id": "SHELL-rho-compact",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Uniform shell estimates on compact rho intervals",
+      "status": "open",
+      "statement_tex": "For every fixed 0<rho_0<rho_1<1, make the analytic threshold, phase bounds, lattice estimate, and finite-window certificate uniform for rho in [rho_0,rho_1].",
+      "dependencies": [
+        "SHELL-phase-enclosures",
+        "SHELL-lattice-count",
+        "SHELL-fixed-rho-high-energy",
+        "COMP-certified-bessel"
+      ],
+      "implies": ["SHELL-rho-uniformity"],
+      "blockers": [
+        "SHELL-phase-enclosures",
+        "SHELL-lattice-count",
+        "SHELL-fixed-rho-high-energy",
+        "COMP-certified-bessel"
+      ],
+      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "owner": "A2",
+      "falsification_cases": [
+        "certificate gaps between rho subdivisions",
+        "threshold blow-up inside a compact interval",
+        "loss of monotonicity under interval evaluation"
+      ],
+      "next_action": "After the fixed-rho proof is explicit, identify every rho-dependent constant and formulate a finite subdivision and interval-Lipschitz certificate."
+    },
+    {
+      "id": "SHELL-rho-zero-endpoint",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Small-hole endpoint rho -> 0",
+      "status": "open",
+      "statement_tex": "Prove the shell Pólya estimate uniformly for 0<rho<=rho_0 by controlling the small-hole limit relative to the ball, including low angular orders, phase normalization, and a certified finite window.",
+      "dependencies": [
+        "SHELL-phase-enclosures",
+        "SHELL-lattice-count",
+        "SRC-FLPS-balls",
+        "SRC-shell-weyl",
+        "COMP-certified-bessel"
+      ],
+      "implies": ["SHELL-rho-uniformity"],
+      "blockers": [
+        "SHELL-phase-enclosures",
+        "SRC-FLPS-balls",
+        "COMP-certified-bessel"
+      ],
+      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "owner": "A2",
+      "falsification_cases": [
+        "rho-dependent constants diverging as rho -> 0",
+        "low-order radial roots not converging uniformly",
+        "volume-margin loss relative to the ball"
+      ],
+      "next_action": "Derive an explicit small-hole comparison or phase limit and identify a rho_0 with a certifiable residual window."
+    },
+    {
+      "id": "SHELL-rho-one-endpoint",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Thin-shell endpoint rho -> 1",
+      "status": "open",
+      "statement_tex": "Prove the shell Pólya estimate uniformly for rho_1<=rho<1 using thin-shell scaling, with explicit control when the outer and inner turning layers approach one another and with a certified finite window.",
+      "dependencies": [
+        "SHELL-phase-enclosures",
+        "SHELL-lattice-count",
+        "SRC-shell-weyl",
+        "COMP-certified-bessel"
+      ],
+      "implies": ["SHELL-rho-uniformity"],
+      "blockers": [
+        "SHELL-phase-enclosures",
+        "COMP-certified-bessel"
+      ],
+      "evidence": {"positive": [], "negative": [], "inconclusive": []},
+      "owner": "A2",
+      "falsification_cases": [
+        "coalescing inner and outer Airy layers",
+        "threshold growth faster than the thin-shell scaling permits",
+        "loss of interval conditioning as 1-rho -> 0"
+      ],
+      "next_action": "Choose thin-shell variables, derive the leading radial quantization with explicit remainder, and state the overlap with compact-rho estimates."
     },
     {
       "id": "COMP-certified-bessel",
@@ -447,6 +718,8 @@
         ]
       },
       "owner": "A4",
+      "evidence_class": "floating_point_experiment",
+      "certification_artifacts": [],
       "next_action": "Implement a minimal diagnostic root-isolation prototype for rho=1/2, ell=0,1,2, 0<k<20. Compare raw Bessel interval evaluation against phase-based, recurrence-scaled, and spherical-Bessel algebraic evaluation. Add exact-root signed-defect, thin-shell, small-hole, and stability diagnostics, but treat all outputs as diagnostic.",
       "last_updated_round": 1,
       "last_updated_at": "2026-07-12T19:52:28"

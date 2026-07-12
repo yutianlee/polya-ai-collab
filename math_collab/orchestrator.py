@@ -253,9 +253,16 @@ def prepare_prompt_context(
     return protocol, state, human, active_agents_block(agents), exclusions
 
 
-def state_bundle(root: Path) -> str:
+def state_bundle(root: Path, *, include_incumbent: bool = True) -> str:
     chunks: list[str] = []
     for rel in STATE_FILES:
+        if not include_incumbent and rel in {
+            "state/next_round_prompts.md",
+            "state/best_proof_draft.md",
+            "state/lemma_bank.md",
+            "state/gap_register.md",
+        }:
+            continue
         path = root / rel
         chunks.append(f"\n\n--- FILE: {rel} ---\n{read_text(path).strip()}\n")
     return "\n".join(chunks).strip()
@@ -359,12 +366,14 @@ def compact_protocol() -> str:
     return """# Compact Multi-AI Math Research Protocol
 
 Stages:
-1. Independent reasoning by every agent on selected proof obligations.
-2. Cross review only after all reasoning responses are present; review proposed state changes, not just prose.
-3. Judge synthesis only after all reviews are present; the judge must produce a machine-readable State Patch.
-4. State update only after the State Patch is validated against `state/proof_obligations.yml`.
+1. Select bounded proof obligations and assign only the needed roles.
+2. Run the lead proof and clean-room reconstruction independently.
+3. Adversarially audit frozen attempts; use certified computation only for finite computation obligations.
+4. Let one lead synthesize a coherent proof and machine-readable State Patch.
+5. Update state only after validation; require a fresh final referee before theorem promotion.
 
 Always separate proved claims, conjectures, gaps, counterexample checks, dependencies, and confidence.
+Use barriers only at genuine dependency boundaries. Agent consensus is evidence, not verification.
 Human directives override prior AI suggestions.
 The proof-obligation graph is authoritative; transcripts are audit evidence."""
 
@@ -378,7 +387,9 @@ Rules:
 
 - Focus on the round target obligations named in the reading packet or judge task.
 - Do not promote an obligation unless you provide an exact statement, dependencies, evidence files, and remaining caveats.
-- Computations may add diagnostic evidence or next actions, but may not prove theorem or lemma obligations.
+- A bottleneck lead, clean-room reviewer, and adversarial reviewer must be distinct.
+- Clean-room work must not consult the incumbent proof or prior reviews of it.
+- Computations are diagnostic unless interval-certified or formally verified; even certified computation proves only its finite computation obligation.
 - External theorem obligations require source cards before they can be used as proof dependencies.
 - The final judge synthesis must include `## State Patch` using JSON-compatible YAML."""
 
@@ -407,6 +418,13 @@ Shape:
         "blockers": [],
         "evidence": {"positive": [], "negative": [], "inconclusive": ["rounds/..."]},
         "owner": "A2",
+        "criticality": "bottleneck",
+        "lead_author": "A2",
+        "clean_room_reviewer": "A3",
+        "adversarial_reviewer": "A4",
+        "review_independence": "clean_room",
+        "clean_room_artifacts": [],
+        "adversarial_review_artifacts": [],
         "next_action": "Concrete next verification action."
       }
     ],
@@ -435,7 +453,9 @@ Shape:
   }
 }
 
-Allowed statuses: proposed, open, blocked, diagnostic_only, source_audit_required, derived_under_assumptions, proved_internal, proved_external_dependency, rejected."""
+Allowed statuses: proposed, open, blocked, diagnostic_only, source_audit_required, derived_under_assumptions, proved_internal, proved_external_dependency, certified, rejected.
+
+`certified` is reserved for computation obligations with interval-certified or formally verified evidence and complete reproducibility metadata."""
 
 
 def round_name(index: int) -> str:
@@ -1384,11 +1404,40 @@ def run_round(
 ) -> None:
     agents, judge_id, config = load_config(config_path)
     agents_by_id = {agent.id: agent for agent in agents}
-    judge = agents_by_id.get(judge_id, agents[-1])
+    workflow = config.get("workflow", {}) if isinstance(config.get("workflow"), dict) else {}
+    synthesis_id = str(workflow.get("synthesis_agent", judge_id))
+    judge = agents_by_id.get(synthesis_id, agents_by_id.get(judge_id, agents[-1]))
+    configured_reasoners = workflow.get("reasoning_agents", [agent.id for agent in agents])
+    reasoning_ids = {
+        str(agent_id) for agent_id in configured_reasoners if str(agent_id) in agents_by_id
+    }
+    clean_room_ids = {
+        str(agent_id)
+        for agent_id in workflow.get("clean_room_agents", [])
+        if str(agent_id) in agents_by_id
+    }
+    configured_reviews = workflow.get("review_assignments")
+    selective_workflow = isinstance(configured_reviews, dict)
+    if selective_workflow:
+        review_assignments = {
+            str(reviewer): [
+                str(author)
+                for author in (authors if isinstance(authors, list) else [authors])
+                if str(author) in reasoning_ids and str(author) != str(reviewer)
+            ]
+            for reviewer, authors in configured_reviews.items()
+            if str(reviewer) in agents_by_id
+        }
+    else:
+        review_assignments = {
+            agent.id: [author_id for author_id in reasoning_ids if author_id != agent.id]
+            for agent in agents
+        }
 
     problem = read_text(problem_path)
     protocol = compact_protocol() if compact_prompts else read_text(root / "protocol.md")
     state = state_bundle(root)
+    clean_room_state = state_bundle(root, include_incumbent=False)
     human = human_bundle(root, run_id=run_id, round_index=round_index)
     protocol, state, human, active_agents, exclusions = prepare_prompt_context(
         protocol=protocol,
@@ -1397,6 +1446,10 @@ def run_round(
         agents=agents,
         config=config,
     )
+    exclusions = configured_exclusions(config)
+    if exclusions:
+        clean_room_state = scrub_excluded_agent_text(clean_room_state, exclusions)
+    clean_room_state = scrub_stale_active_agent_constraints(clean_room_state)
     judge_tasks = {
         agent.id: extract_agent_judge_prompt(state, agent_prompt_identifiers(agent))
         for agent in agents
@@ -1404,6 +1457,7 @@ def run_round(
     if compact_prompts:
         problem = clip_text(problem, max_section_chars)
         state = clip_text(state, max_section_chars)
+        clean_room_state = clip_text(clean_room_state, max_section_chars)
         human = clip_text(human, max_section_chars)
         judge_tasks = {
             agent_id: clip_text(text, max_section_chars)
@@ -1415,12 +1469,15 @@ def run_round(
     responses: dict[str, str] = {}
 
     for agent in agents:
+        if agent.id not in reasoning_ids:
+            continue
+        agent_state = clean_room_state if agent.id in clean_room_ids else state
         prompt = build_reasoning_prompt(
             agent=agent,
             problem=problem,
             protocol=protocol,
             active_agents=active_agents,
-            state=state,
+            state=agent_state,
             human=human,
             judge_task=judge_tasks.get(agent.id, ""),
             round_index=round_index,
@@ -1441,21 +1498,32 @@ def run_round(
         if output:
             responses[agent.id] = output
 
-    missing_responses = [agent.id for agent in agents if agent.id not in responses]
+    missing_responses = sorted(reasoning_ids - responses.keys())
     if missing_responses and not allow_partial:
+        if not selective_workflow:
+            print(
+                "Round barrier active: waiting for all reasoning responses before review stage. "
+                f"Missing: {', '.join(missing_responses)}"
+            )
+            print(f"Rerun this command after filling web responses or configuring API keys.")
+            print(f"Public archive files: {round_dir}")
+            print(f"Web handoff files, if needed: {handoff_dir}")
+            return
         print(
-            "Round barrier active: waiting for all reasoning responses before review stage. "
+            "Dependency-aware workflow: some reasoning responses are pending, but reviews "
+            "whose assigned inputs are complete may proceed. "
             f"Missing: {', '.join(missing_responses)}"
         )
-        print(f"Rerun this command after filling web responses or configuring API keys.")
-        print(f"Public archive files: {round_dir}")
-        print(f"Web handoff files, if needed: {handoff_dir}")
-        return
 
     reviews: dict[str, str] = {}
-    if len(responses) >= 2:
+    if responses:
         for agent in agents:
-            peer_outputs = {k: v for k, v in responses.items() if k != agent.id}
+            assigned_authors = review_assignments.get(agent.id)
+            if assigned_authors is None:
+                continue
+            if any(author not in responses for author in assigned_authors):
+                continue
+            peer_outputs = {k: responses[k] for k in assigned_authors if k in responses}
             if not peer_outputs:
                 continue
             if exclusions:
@@ -1490,7 +1558,10 @@ def run_round(
             if output:
                 reviews[agent.id] = output
 
-    missing_reviews = [agent.id for agent in agents if agent.id not in reviews]
+    expected_reviewers = {
+        reviewer for reviewer, authors in review_assignments.items() if authors
+    }
+    missing_reviews = sorted(expected_reviewers - reviews.keys())
     if missing_reviews and not allow_partial:
         print(
             "Round barrier active: waiting for all cross reviews before judge stage. "
@@ -1501,8 +1572,16 @@ def run_round(
         print(f"Web handoff files, if needed: {handoff_dir}")
         return
 
+    if missing_responses and not allow_partial:
+        print(
+            "Synthesis barrier active: assigned reviews may be complete, but reasoning "
+            f"responses are still missing: {', '.join(missing_responses)}"
+        )
+        print(f"Rerun this command after filling web responses or configuring API keys.")
+        return
+
     judge_text: str | None = None
-    if responses and reviews:
+    if responses and (reviews or not expected_reviewers):
         prompt_responses = responses
         prompt_reviews = reviews
         if exclusions:

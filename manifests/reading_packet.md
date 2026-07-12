@@ -27,37 +27,38 @@ Current blockers:
 
 ## Round Target Obligations
 
-- `CONV-strict-counting` (proved_internal, owner `A1`): Strict Dirichlet counting convention
-  Next action: Use this endpoint rule in all imported source statements, phase-count identities, eigenvalue formulations, and certified finite-window checks.
-- `TARGET-shell-d3` (open, owner `A1`): First theorem target: Dirichlet Pólya for 3D spherical shells
-  Next action: Keep the theorem open. First prove the fixed-rho high-energy estimate and a certified finite window; defer compact rho-uniformity and endpoint regimes.
-- `SRC-FLPS-balls` (source_audit_required, owner `A1`): Source audit: FLPS Euclidean balls proof
-  Next action: Create the source card for FLPS balls, disks, and sectors: theorem statements, boundary conditions, counting convention, Bessel phase definitions, lattice-counting lemmas, and computer-assisted components to reproduce before shell transfer.
-- `SRC-annuli` (source_audit_required, owner `A1`): Source audit: Dirichlet Pólya for annuli
-  Next action: Extract the annulus theorem, counting convention, cross-product setup, phase estimates, trapezoidal and convex/concave floor-sum lemmas, finite verification strategy, and exactly which lemmas are dimension-independent versus planar-multiplicity dependent.
-- `SHELL-cross-product-formula` (open, owner `A4`): Dirichlet shell spectral decomposition and Bessel cross-product formula
-  Next action: Complete the Sturm-Liouville and spherical-harmonic proof; do not require absence of accidental equality across ell, only correct multiplicity summation.
-- `SHELL-lattice-count` (open, owner `A3`): Multiplicity-weighted lattice count below shell phase curves
-  Next action: Replace the broad lattice target with a precise black-box theorem: assuming explicit one-sided phase bounds, prove the 2ell+1 weighted count is below (2/(9 pi))(1-rho^3)K^3 in the fixed-rho high-energy range.
+- `SHELL-phase-oscillatory` (open, owner `A2`): Shell phase enclosure in the ordinary oscillatory regime
+  Next action: State a quantitative domain separated from both turning layers and derive the required one-sided differenced phase bound with explicit constants.
+- `SHELL-phase-outer-turning` (open, owner `A2`): Shell phase enclosure at the outer turning point
+  Next action: Formulate the Airy-scale outer-turning enclosure with explicit constants, error direction, and a declared finite small-order remainder.
+- `SHELL-inner-turning` (open, owner `A2`): Inner-boundary turning regime for shell phase differences
+  Next action: Formulate the Airy-scale statement precisely and test whether FLPS single-Bessel Airy bounds survive subtraction in theta_nu(k)-theta_nu(rho k).
+- `SHELL-phase-evanescent` (open, owner `A2`): Mixed and fully evanescent shell phase control
+  Next action: Prove a zero-exclusion or one-sided count bound in each evanescent subregion and state how it overlaps the Airy regimes.
+- `SHELL-phase-overlap` (open, owner `A1`): Compatibility and complete coverage of shell phase regimes
+  Next action: After the four regime lemmas are explicit, build a coverage table and give it independently to A3 before A4 audits both constructions.
+- `SHELL-phase-enclosures` (open, owner `A2`): Uniform phase enclosures for Bessel cross-product zeros
+  Next action: Integrate only after each regime obligation and the overlap obligation have explicit one-sided bounds. Give A3 a clean-room lemma packet without the incumbent proof, then give both frozen attempts to A4 for adversarial audit.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
   Next action: Implement a minimal diagnostic root-isolation prototype for rho=1/2, ell=0,1,2, 0<k<20. Compare raw Bessel interval evaluation against phase-based, recurrence-scaled, and spherical-Bessel algebraic evaluation. Add exact-root signed-defect, thin-shell, small-hole, and stability diagnostics, but treat all outputs as diagnostic.
 
 ## Do-Not-Claim Rules
 
 - Do not claim the shell theorem, ellipse theorem, or certificate-family theorem has been proved.
-- Do not treat computation as proof; computation evidence is diagnostic only.
+- Floating-point and symbolic computation are diagnostic only; interval/formal certification discharges only an explicit finite computation obligation.
 - Do not use external theorems as proof dependencies without completed source cards.
-- Do not promote a claim without exact statement, dependencies, evidence, and remaining caveats.
+- Do not promote a bottleneck without exact proof evidence, a clean-room reconstruction, and an adversarial-review artifact.
 
-## Agent Assignments
+## Obligation Roles
 
-Use `state/next_round_prompts.md` for any judge-assigned A1/A2/A3/A4 tasks.
+Use `state/next_round_prompts.md` for role-specific tasks selected from the graph.
 
-Default target split:
-- `A1`: target theorem memo, source-card discipline, synthesis, and State Patch authoring.
-- `A2`: conservative shell-route proof surgery and obstruction analysis.
-- `A3`: route comparison and independent obstruction search.
-- `A4`: API formula audit and certified-computation planning.
+Current functional split:
+- `A1`: project lead, obligation mapping, proof integration, and State Patch authoring.
+- `A2`: incumbent analytic proof author for the selected bottleneck.
+- `A3`: clean-room reconstruction from a reduced packet with no incumbent proof.
+- `A4`: adversarial referee and certified-computation engineer.
+- Only assigned reviewers receive peer outputs; universal all-agent cross-review is not required.
 
 ## Relevant Files
 
@@ -73,47 +74,65 @@ Default target split:
 
 ## Last State Patch
 
-created: SHELL-sturm-liouville-completeness, SHELL-exact-phase-rep, SHELL-phase-monotonicity, SHELL-count-floor-identity, SHELL-angular-cutoff, SHELL-inner-turning, SHELL-fixed-rho-high-energy, SHELL-weighted-lattice-fractional, SHELL-spherical-bessel-algebraic; updated: CONV-strict-counting, TARGET-shell-d3, SHELL-cross-product-formula, SRC-bessel-phase, SRC-annuli, SRC-shell-weyl, SRC-FLPS-balls, FLPS-disk-ball-reproduction, SHELL-phase-enclosures, SHELL-lattice-count, COMP-certified-bessel, SHELL-rho-uniformity, ELLIPSE-near-circular, CERT-certificate-family; rejected: A3-proposed-blocked-statuses, toy-weighted-fractional-test, raw-floating-point-computation-as-proof, bare-two-term-weyl-proof, judge1-progress-score-7; no_change: POLYA-program-target, SRC-mathieu-ellipse, SRC-jiang-lin; round score: 3; Structural de-risking only: exact monotone phase scaffold, a proved angular cutoff, and a proved counting convention; no shell Polya theorem and both quantitative blockers, inner-turning enclosure and 2D weighted lattice control, remain open. The final synthesis adopts judge2 calibration while importing judge1 completeness and diagnostic coverage.
+Workflow revised after round 1: obligation-specific roles, clean-room review, adversarial audit, and certification classes are now active. No mathematical claim was promoted.
 
 ## Active Obligation Briefs
 
-### TARGET-shell-d3: First theorem target: Dirichlet Pólya for 3D spherical shells
+### SHELL-phase-oscillatory: Shell phase enclosure in the ordinary oscillatory regime
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A2`
+- Blockers: `SRC-bessel-phase`
+- Next action: State a quantitative domain separated from both turning layers and derive the required one-sided differenced phase bound with explicit constants.
+
+### SHELL-phase-outer-turning: Shell phase enclosure at the outer turning point
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A2`
+- Blockers: `SRC-bessel-phase`
+- Next action: Formulate the Airy-scale outer-turning enclosure with explicit constants, error direction, and a declared finite small-order remainder.
+
+### SHELL-inner-turning: Inner-boundary turning regime for shell phase differences
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A2`
+- Blockers: `SRC-bessel-phase`, `SRC-shell-weyl`
+- Next action: Formulate the Airy-scale statement precisely and test whether FLPS single-Bessel Airy bounds survive subtraction in theta_nu(k)-theta_nu(rho k).
+
+### SHELL-phase-evanescent: Mixed and fully evanescent shell phase control
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A2`
+- Blockers: `SRC-bessel-phase`
+- Next action: Prove a zero-exclusion or one-sided count bound in each evanescent subregion and state how it overlaps the Airy regimes.
+
+### SHELL-phase-overlap: Compatibility and complete coverage of shell phase regimes
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A1`
-- Blockers: `SHELL-phase-enclosures`, `SHELL-lattice-count`, `COMP-certified-bessel`, `SHELL-rho-uniformity`, `SHELL-fixed-rho-high-energy`
-- Next action: Keep the theorem open. First prove the fixed-rho high-energy estimate and a certified finite window; defer compact rho-uniformity and endpoint regimes.
+- Criticality: `bottleneck`
+- Lead author: `A1`
+- Clean-room reviewer: `A3`
+- Adversarial reviewer: `A4`
+- Blockers: `SHELL-phase-oscillatory`, `SHELL-phase-outer-turning`, `SHELL-inner-turning`, `SHELL-phase-evanescent`
+- Next action: After the four regime lemmas are explicit, build a coverage table and give it independently to A3 before A4 audits both constructions.
 
-### SRC-FLPS-balls: Source audit: FLPS Euclidean balls proof
-
-- Status: `source_audit_required`
-- Track: `source_audit`
-- Owner: `A1`
-- Next action: Create the source card for FLPS balls, disks, and sectors: theorem statements, boundary conditions, counting convention, Bessel phase definitions, lattice-counting lemmas, and computer-assisted components to reproduce before shell transfer.
-
-### SRC-annuli: Source audit: Dirichlet Pólya for annuli
-
-- Status: `source_audit_required`
-- Track: `source_audit`
-- Owner: `A1`
-- Next action: Extract the annulus theorem, counting convention, cross-product setup, phase estimates, trapezoidal and convex/concave floor-sum lemmas, finite verification strategy, and exactly which lemmas are dimension-independent versus planar-multiplicity dependent.
-
-### SHELL-cross-product-formula: Dirichlet shell spectral decomposition and Bessel cross-product formula
+### SHELL-phase-enclosures: Uniform phase enclosures for Bessel cross-product zeros
 
 - Status: `open`
 - Track: `shell_analytic`
-- Owner: `A4`
-- Blockers: `SHELL-sturm-liouville-completeness`
-- Next action: Complete the Sturm-Liouville and spherical-harmonic proof; do not require absence of accidental equality across ell, only correct multiplicity summation.
-
-### SHELL-lattice-count: Multiplicity-weighted lattice count below shell phase curves
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A3`
-- Blockers: `SHELL-phase-enclosures`, `SHELL-weighted-lattice-fractional`
-- Next action: Replace the broad lattice target with a precise black-box theorem: assuming explicit one-sided phase bounds, prove the 2ell+1 weighted count is below (2/(9 pi))(1-rho^3)K^3 in the fixed-rho high-energy range.
+- Owner: `A2`
+- Criticality: `bottleneck`
+- Lead author: `A2`
+- Clean-room reviewer: `A3`
+- Adversarial reviewer: `A4`
+- Blockers: `SRC-bessel-phase`, `SRC-annuli`, `SRC-shell-weyl`, `SHELL-phase-oscillatory`, `SHELL-phase-outer-turning`, `SHELL-inner-turning`, `SHELL-phase-evanescent`, `SHELL-phase-overlap`
+- Next action: Integrate only after each regime obligation and the overlap obligation have explicit one-sided bounds. Give A3 a clean-room lemma packet without the incumbent proof, then give both frozen attempts to A4 for adversarial audit.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
@@ -155,6 +174,14 @@ created: SHELL-sturm-liouville-completeness, SHELL-exact-phase-rep, SHELL-phase-
 - Blockers: `SHELL-phase-enclosures`, `SHELL-lattice-count`, `COMP-certified-bessel`
 - Next action: Keep the global program target open while Round 1 sharpens the first theorem statement and proof-obligation graph.
 
+### SHELL-cross-product-formula: Dirichlet shell spectral decomposition and Bessel cross-product formula
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A4`
+- Blockers: `SHELL-sturm-liouville-completeness`
+- Next action: Complete the Sturm-Liouville and spherical-harmonic proof; do not require absence of accidental equality across ell, only correct multiplicity summation.
+
 ### SHELL-fixed-rho-high-energy: Fixed-rho high-energy shell Polya estimate
 
 - Status: `open`
@@ -163,29 +190,45 @@ created: SHELL-sturm-liouville-completeness, SHELL-exact-phase-rep, SHELL-phase-
 - Blockers: `SHELL-phase-enclosures`, `SHELL-inner-turning`, `SHELL-weighted-lattice-fractional`
 - Next action: State the first black-box fixed-rho theorem with exact phase hypotheses, lattice hypotheses, and a computable analytic threshold K_0(rho).
 
-### SHELL-inner-turning: Inner-boundary turning regime for shell phase differences
+### SHELL-lattice-count: Multiplicity-weighted lattice count below shell phase curves
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A3`
+- Blockers: `SHELL-phase-enclosures`, `SHELL-weighted-lattice-fractional`
+- Next action: Replace the broad lattice target with a precise black-box theorem: assuming explicit one-sided phase bounds, prove the 2ell+1 weighted count is below (2/(9 pi))(1-rho^3)K^3 in the fixed-rho high-energy range.
+
+### SHELL-rho-compact: Uniform shell estimates on compact rho intervals
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `SRC-bessel-phase`, `SRC-shell-weyl`
-- Next action: Formulate the Airy-scale statement precisely and test whether FLPS single-Bessel Airy bounds survive subtraction in theta_nu(k)-theta_nu(rho k).
+- Blockers: `SHELL-phase-enclosures`, `SHELL-lattice-count`, `SHELL-fixed-rho-high-energy`, `COMP-certified-bessel`
+- Next action: After the fixed-rho proof is explicit, identify every rho-dependent constant and formulate a finite subdivision and interval-Lipschitz certificate.
 
-### SHELL-phase-enclosures: Uniform phase enclosures for Bessel cross-product zeros
+### SHELL-rho-one-endpoint: Thin-shell endpoint rho -> 1
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `SRC-bessel-phase`, `SRC-annuli`, `SRC-shell-weyl`, `SHELL-inner-turning`
-- Next action: For fixed rho, formulate quantitative one-sided enclosures for Psi_{nu,rho}(k) in oscillatory, outer-turning, inner-turning, mixed evanescent/oscillatory, and fully evanescent regimes; explicitly track differencing loss.
+- Blockers: `SHELL-phase-enclosures`, `COMP-certified-bessel`
+- Next action: Choose thin-shell variables, derive the leading radial quantization with explicit remainder, and state the overlap with compact-rho estimates.
 
 ### SHELL-rho-uniformity: Uniformity in shell ratio rho
 
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `SHELL-phase-enclosures`, `COMP-certified-bessel`
-- Next action: Keep rho-uniformity deferred. After fixed-rho high-energy and finite-window methods are formulated, separately plan compact rho intervals, rho->0 small-hole behavior, and rho->1 thin-shell behavior.
+- Blockers: `SHELL-rho-compact`, `SHELL-rho-zero-endpoint`, `SHELL-rho-one-endpoint`
+- Next action: Keep the integration obligation deferred until compact-rho, small-hole, and thin-shell obligations are separately discharged and their parameter intervals cover all 0<rho<1.
+
+### SHELL-rho-zero-endpoint: Small-hole endpoint rho -> 0
+
+- Status: `open`
+- Track: `shell_analytic`
+- Owner: `A2`
+- Blockers: `SHELL-phase-enclosures`, `SRC-FLPS-balls`, `COMP-certified-bessel`
+- Next action: Derive an explicit small-hole comparison or phase limit and identify a rho_0 with a certifiable residual window.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 
@@ -200,32 +243,3 @@ created: SHELL-sturm-liouville-completeness, SHELL-exact-phase-rep, SHELL-phase-
 - Track: `shell_analytic`
 - Owner: `A4`
 - Next action: Write the full separation-of-variables and regular Sturm-Liouville proof, including no k=0 eigenvalue, positivity of roots, radial simplicity, and harmless cross-ell degeneracy.
-
-### SHELL-weighted-lattice-fractional: Multiplicity-weighted lattice bound for the 3D shell phase count
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A3`
-- Blockers: `SHELL-phase-enclosures`, `SRC-annuli`
-- Next action: Formulate the weighted inequality abstractly under black-box phase hypotheses; identify minimal monotonicity, convexity, and error assumptions; audit which annulus lemmas survive the 2ell+1 weight.
-
-### SRC-bessel-phase: Source audit: uniform Bessel phase and zero enclosures
-
-- Status: `source_audit_required`
-- Track: `source_audit`
-- Owner: `A1`
-- Next action: Audit Bessel phase definitions, modulus positivity, Wronskian sign, theta_nu'=2/(pi z M_nu^2), Nicholson's formula and strict decrease of M_nu^2, validity for nu>=1/2 and z>0, Airy transition constants, and whether independent phase bounds can be safely differenced for shell cross-products.
-
-### SRC-jiang-lin: Source audit: Jiang-Lin epsilon-loss and certificate strategy
-
-- Status: `source_audit_required`
-- Track: `source_audit`
-- Owner: `A1`
-- Next action: Create a source card before using Jiang-Lin as a proof dependency.
-
-### SRC-mathieu-ellipse: Source audit: Mathieu-function tools for Dirichlet ellipses
-
-- Status: `source_audit_required`
-- Track: `ellipse_parallel`
-- Owner: `A1`
-- Next action: Keep this as a parallel source-audit track until the shell Round 1 target theorem memo is stable.

@@ -1,96 +1,72 @@
-# Architecture And Workflow: Pólya AI Collaboration
+# Architecture and Workflow: Pólya AI Collaboration
 
-This repository adapts the Gauss open-circle workflow to a new mathematical target: Pólya's conjecture for non-tiling Euclidean domains.
-
-The central architectural rule is:
+The durable architectural rule is:
 
 ```text
-claims, not transcripts, are the unit of progress.
+claims, dependencies, and certificates—not transcripts or consensus—are the unit of progress.
 ```
 
-`state/proof_obligations.yml` is the durable mathematical state. Rounds are evidence. A judge synthesis may propose state changes, but only the validator may apply them.
+`state/proof_obligations.yml` is authoritative. Work artifacts are evidence. A project lead may propose state changes, but only the validator may apply them.
 
-## Project-Specific Changes From Gauss
+## Research Architecture
 
-- The first theorem target is Dirichlet Pólya for spherical shells in `R^3`.
-- The flagship parallel track is the Dirichlet ellipse / Mathieu-function program.
-- The fallback publication track is a certified Jiang-Lin-style smooth non-tiling comparison family.
-- A1/A2/A3 are WebUI agents.
-- A4 is the Deepseek API agent.
-- Round 1 is a setup and target-audit round, not a theorem-proving round.
+The whole Pólya program is coordinated as a graph of bounded workstreams:
 
-## Proof-Obligation Graph
+1. Bessel cross-product phase and zero estimates;
+2. oscillatory, turning-point, inner-boundary, and evanescent regimes;
+3. multiplicity-weighted lattice counting;
+4. compact-parameter and endpoint analysis as $\rho\to0,1$;
+5. certified finite-window verification;
+6. independent clean-room and adversarial review;
+7. coherent manuscript assembly.
 
-The graph contains theorem targets, normalization conventions, source audits, analytic lemmas, computation targets, and rejected claims.
+The first theorem target remains exact Dirichlet Pólya for spherical shells in $\mathbb R^3$. The ellipse/Mathieu program remains the flagship parallel track, and a Jiang–Lin-style comparison family remains the fallback publication track.
 
-Every open-like obligation must have:
+## Obligation-Centered Assignment
 
-- an exact statement,
-- a status from the allowed vocabulary,
-- an owner,
-- dependencies and blockers,
-- evidence lists,
-- a concrete `next_action`.
+The old fixed-panel assumption is retired. A cycle does not require every agent to attack and review every output. Instead, the selected obligation declares the roles it requires:
 
-Computations are allowed to be `diagnostic_only` or to certify explicitly finite windows. Computations may not silently promote an infinite analytic theorem.
+- a lead author;
+- a clean-room reviewer for bottlenecks;
+- an adversarial reviewer for bottlenecks;
+- a computational verifier when finite certification is relevant;
+- a project lead for integration.
 
-## Round 1 Design
+Independent workstreams may run concurrently. Barriers exist only at actual dependency boundaries: an adversarial audit waits for frozen proof attempts, manuscript assembly waits for its component obligations, and theorem promotion waits for required certificates and reviews.
 
-Round 1 target obligations:
+## Shell Phase Decomposition
 
-- `CONV-strict-counting`
-- `TARGET-shell-d3`
-- `SRC-FLPS-balls`
-- `SRC-annuli`
-- `SHELL-cross-product-formula`
-- `SHELL-lattice-count`
-- `COMP-certified-bessel`
+`SHELL-phase-enclosures` is an integration obligation, not a single indivisible lemma. It depends on separate regime obligations for oscillatory behavior, the outer turning point, the inner-boundary transition, evanescent exclusion, and global overlap compatibility. Parameter uniformity and the two endpoint limits remain separate downstream obligations.
 
-Agent split:
+This structure prevents a proof in one asymptotic regime from being mistaken for a global phase enclosure.
 
-- A1 writes the target theorem memo and source-audit priorities.
-- A2 identifies shell-route blockers and missing lemmas.
-- A3 compares shell, ellipse, and certificate-family route risks.
-- A4 audits formulas, multiplicities, and the computation plan.
+## Independence Boundary
 
-Expected outcome: a cleaner graph and sharper next-round prompts. No theorem should be promoted.
+A bottleneck's clean-room reviewer receives an exact lemma packet but not the incumbent proof. After both attempts are frozen, an adversarial reviewer receives both and searches for the first unsupported implication. Agent agreement is logged as evidence only.
 
-## Runner Adaptations
+The graph records `lead_author`, `clean_room_reviewer`, `adversarial_reviewer`, `review_independence`, `clean_room_artifacts`, and `adversarial_review_artifacts`. These roles must be distinct for bottleneck and theorem obligations.
 
-The scripts use:
+## Certification Boundary
+
+Computational work uses four evidence classes:
 
 ```text
-config/agents.web-polya.json
-problems/polya_conjecture.md
-run id: polya-main
+floating_point_experiment
+symbolic_sanity_check
+interval_certified
+formal_verified
 ```
 
-Manual WebUI response files:
+Only the last two may produce a `certified` computation obligation. Certification must be deterministic and reproducible and must state exactly which finite parameter window it covers. A certified computation discharges only the computation dependency named in the graph; it does not silently prove an analytic theorem.
 
-```text
-handoff/<run-id>/round_XXX/responses/A1.md
-handoff/<run-id>/round_XXX/responses/A2.md
-handoff/<run-id>/round_XXX/responses/A3.md
-handoff/<run-id>/round_XXX/reviews/A1.md
-handoff/<run-id>/round_XXX/reviews/A2.md
-handoff/<run-id>/round_XXX/reviews/A3.md
-```
+## Proof Assembly and Final Review
 
-API files:
+Once component obligations are discharged, one lead assembles a linear manuscript proof with stable notation, explicit constants, complete parameter coverage, and obligation IDs attached to claims. A fresh final referee then receives a clean manuscript/dependency packet and conducts an independent adversarial audit.
 
-```text
-rounds/<run-id>/round_XXX/responses/A4-XXX.md
-rounds/<run-id>/round_XXX/reviews/A4.md
-```
+The validator promotes a bottleneck or theorem only when the graph contains the explicit proof evidence, clean-room reconstruction, adversarial report, discharged dependencies, and any required certified computation.
 
-## Validation Policy
+## Runner Direction
 
-The validator rejects:
+The orchestration layer should support obligation-specific `reasoning_agents` and `review_assignments` rather than assuming universal participation. Clean-room prompts must omit incumbent proof drafts and prior reviews. Existing all-agent rounds remain historical evidence, not the default future workflow.
 
-- unknown statuses,
-- missing owners or next actions on open-like obligations,
-- source obligations without source cards,
-- computations promoted as proof,
-- proof promotions without positive evidence and a reason.
-
-The reading packet is regenerated from the graph so prompts stay compact as the archive grows.
+See [protocol.md](protocol.md) for stage rules and [docs/proof-obligation-workflow.md](docs/proof-obligation-workflow.md) for patch and validation mechanics.

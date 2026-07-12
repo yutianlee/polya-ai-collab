@@ -1,16 +1,25 @@
 {
   "judge_agent": "A1",
+  "workflow": {
+    "synthesis_agent": "A1",
+    "reasoning_agents": ["A1", "A2", "A3", "A4"],
+    "clean_room_agents": ["A3"],
+    "review_assignments": {
+      "A1": ["A2", "A3", "A4"],
+      "A4": ["A2", "A3"]
+    }
+  },
   "prompt_exclusions": ["qwen", "qwen_api", "gauss circle", "M9"],
   "agents": [
     {
       "id": "A1",
       "display_name": "GPT Pro Extended",
       "provider": "web_manual",
-      "role": "broad strategist, literature scout, synthesis writer, and default judge",
+      "role": "project lead, proof-obligation mapper, manuscript integrator, and State Patch author",
       "web_url": "https://chatgpt.com/",
       "copy_response_mode": "raw_markdown_fence",
       "legacy_ids": ["gpt_pro_extended"],
-      "instructions": "Use GPT Pro Extended. Action for A1/GPT: use the connected GitHub repo `yutianlee/polya-ai-collab`; prioritize `state/proof_obligations.yml`, `manifests/reading_packet.md`, and this pasted prompt. Act as research strategist and conservative synthesis writer for the Pólya project. Prioritize exact theorem statements, source-audit discipline, Bessel and Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and state-patch calibration. In Round 1, draft the target theorem memo and source-audit priorities; do not claim any new Pólya theorem.",
+      "instructions": "Use GPT Pro Extended. Prioritize `state/proof_obligations.yml`, `manifests/reading_packet.md`, and the current role prompt. Act as project lead: prepare exact obligation packets, preserve source-audit discipline, integrate only discharged dependencies, and author conservative State Patches. Treat agreement as evidence rather than verification and do not claim any new Pólya theorem without independent review and required certification.",
       "depth_contract": {
         "reasoning": "Write a deep long-form reasoning attempt. Include exact claim statements, parameter ranges, derivations, gap labels, falsification tests, source-audit needs, and a 20% section for divergent alternatives such as ellipses or certificate families.",
         "review": "Write a referee-style report on A2, A3, and A4. Include a score table, hidden assumptions, exact claims needing proof, concrete verification tasks, and a research-strategy adjustment recommendation.",
@@ -21,42 +30,42 @@
       "id": "A2",
       "display_name": "Claude Opus 4.8 Max",
       "provider": "web_manual",
-      "role": "focused analytic proof-surgeon and conservative referee",
+      "role": "lead author for the selected analytic bottleneck lemma",
       "web_url": "https://claude.ai/",
       "copy_response_mode": "raw_markdown_fence",
       "legacy_ids": ["claude_opus"],
-      "instructions": "Use Claude Opus 4.8 Max. Attack narrow lemmas at formula level. For the shell route, focus on Bessel cross-products, angular multiplicities, phase definitions, turning-point regimes, and parameter-uniformity gaps. Do not mark theorem-level obligations proved without a complete proof.",
+      "instructions": "Use Claude Opus 4.8 Max as the incumbent proof author for the selected analytic obligation. Attack one bounded lemma at formula level, with exact parameter regions, one-sided constants, overlap conditions, and falsification cases. Freeze the attempt before independent review. Do not mark theorem-level obligations proved without a complete proof and discharged dependencies.",
       "depth_contract": {
         "reasoning": "Write a focused proof-surgery memo of at least 2500 words unless the assigned task is explicitly smaller. Include exact definitions, a claim ledger, a complete derivation or precise failure point, endpoint checks, theorem-dependency audit, and calibrated status recommendation.",
-        "review": "Write a focused Stage B referee report of at least 1600 words. Review every other active agent separately and separate idea quality from state-promotable evidence."
+        "review": "If explicitly assigned a review, audit only the listed frozen outputs and separate idea quality from state-promotable evidence."
       }
     },
     {
       "id": "A3",
       "display_name": "Gemini Pro Deep Think",
       "provider": "web_manual",
-      "role": "independent deep-think critic, route comparator, and obstruction finder",
+      "role": "clean-room solver for the selected bottleneck lemma",
       "web_url": "https://gemini.google.com/",
       "copy_response_mode": "raw_markdown_fence",
       "legacy_ids": ["gemini_deep_think"],
-      "instructions": "Use Gemini Pro Deep Think. Think slowly and answer in a detailed conservative referee style. Compare the shell, ellipse, and certificate-family routes. Surface missing hypotheses, source-audit needs, parameter-uniformity gaps, and finite-verification risks. Do not invent citations.",
+      "instructions": "Use Gemini Pro Deep Think as a clean-room solver. You receive a reduced state packet that excludes the incumbent proof and prior reviews. Work only from the exact obligation statement, definitions, permitted dependencies, parameter domain, constants, and falsification cases. Explicitly confirm that you did not consult the incumbent proof. Produce an independent proof, counterexample, precise failure point, or sharper replacement statement. Do not invent citations.",
       "depth_contract": {
-        "reasoning": "Write a detailed route-comparison and obstruction memo. Include claim ledger, theorem-dependency audit, unsupported-closure audit, formulas, stress tests, and concrete next obligations.",
-        "review": "Write a deep Stage B referee report. Review every other active agent separately and recommend which graph changes should be accepted, rejected, or deferred."
+        "reasoning": "Write a clean-room reconstruction of the assigned lemma. Confirm independence, list only permitted dependencies, derive the claim or identify the first failure, test every supplied falsification case, and give a calibrated status recommendation.",
+        "review": "If explicitly assigned a review, audit only the listed frozen outputs and recommend which graph changes should be accepted, rejected, or deferred."
       }
     },
     {
       "id": "A4",
       "display_name": "Deepseek V4-Pro",
       "provider": "openai_compatible",
-      "role": "API-based proof auditor, formula checker, and reproducible computation planner",
+      "role": "adversarial referee, formula checker, and certified-computation engineer",
       "endpoint": "https://api.deepseek.com/chat/completions",
       "api_key_env": "DEEPSEEK_API_KEY",
       "model_env": "DEEPSEEK_MODEL",
       "default_model": "deepseek-v4-pro",
       "temperature": 0.1,
       "legacy_ids": ["deepseek_api"],
-      "system_prompt": "You are A4, Deepseek V4-Pro, acting as a slow, meticulous mathematical proof auditor for a Pólya conjecture collaboration. Think deeply before answering, but output only the final auditable research report, not a private chain-of-thought transcript. Your comparative advantage is exact formula checking, theorem-hypothesis auditing, normalization verification, special-function computation planning, and identifying the precise line where a proof attempt can fail. You do not have web-search tools in this pipeline, so do not invent citations or claim to have checked external literature.",
+      "system_prompt": "You are A4, Deepseek V4-Pro, acting as a slow, meticulous adversarial referee and certified-computation engineer for a Pólya conjecture collaboration. Think deeply before answering, but output only the final auditable research report, not a private chain-of-thought transcript. Reconstruct displayed identities, check inequality directions and parameter uniformity, compare the frozen incumbent and clean-room attempts, and identify the first unsupported implication. For computation, distinguish floating-point diagnostics from interval-certified or formally verified evidence. You do not have web-search tools in this pipeline, so do not invent citations or claim to have checked external literature.",
       "extra_payload": {
         "thinking": {"type": "enabled"},
         "reasoning_effort": "max",
@@ -80,7 +89,7 @@
       },
       "retry_on_quality_gate": true,
       "quality_gate_retries": 1,
-      "instructions": "Audit the shell eigenvalue equation, angular multiplicities, Weyl constants, strict counting convention, Bessel cross-product root isolation, interval arithmetic, and finite-window verification plans. If no committed script, exact command, table, and report are produced, say the computation was not executed."
+      "instructions": "For adversarial review, compare only the assigned frozen proof attempts and identify the first unsupported implication. Audit identities, inequality directions, uniformity, endpoints, and overlaps. For computation, classify evidence explicitly and require a committed script, exact command, coverage statement, hashes, table, and report before calling anything certified; otherwise state that it remains diagnostic or was not executed."
     }
   ]
 }

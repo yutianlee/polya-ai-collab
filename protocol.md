@@ -1,134 +1,121 @@
-# Multi-AI Mathematical Research Protocol
+# Proof-Obligation Research Protocol
 
-## Agents
+The project is organized around proof obligations, not fixed all-agent panels. Agents are assigned only when their role is needed for the selected obligation. Agreement is evidence; it is never mathematical verification.
 
-The default Pólya panel has exactly four active agents:
+## Authoritative State
 
-1. `A1`: GPT Pro Extended through the web UI. Broad strategist, literature scout, synthesis writer, and default judge.
-2. `A2`: Claude Opus 4.8 Max through the web UI. Focused analytic proof-surgeon and conservative referee.
-3. `A3`: Gemini Pro Deep Think through the web UI. Independent deep-think critic, route comparator, and obstruction finder.
-4. `A4`: Deepseek V4-Pro through the API. Automatic proof auditor, formula checker, and reproducible computation planner.
+`state/proof_obligations.yml` is the authoritative mathematical state. Round artifacts under `rounds/` are evidence and audit trail. Only a validated `State Patch` may mutate the graph.
 
-Do not mention, score, or assign tasks to inactive agents. Older state text from template repositories may contain Gauss-circle-specific names or agent roles; treat them as historical template material only.
+Every open-like obligation must have an exact statement, dependencies, blockers, an owner, and a concrete next action. A bottleneck or theorem obligation must additionally identify three distinct roles:
 
-## Authoritative Mathematical State
+- `lead_author`: develops and maintains the incumbent proof;
+- `clean_room_reviewer`: attempts the lemma from its statement without seeing the incumbent proof;
+- `adversarial_reviewer`: later audits the incumbent and clean-room arguments for the first unsupported implication.
 
-The authoritative state is `state/proof_obligations.yml`.
+## Selecting Work
 
-A proof obligation is any theorem, lemma, reduction, external theorem, normalization convention, computation target, source audit, obstruction, or counterexample search whose status matters for the project. Round transcripts in `rounds/` are evidence and audit trail; they are not the state itself.
+Each cycle selects one primary obligation and at most one independent secondary obligation. Workstreams that do not depend on one another may proceed concurrently. A global barrier is used only where a genuine mathematical dependency requires it.
 
-The compact reading packet in `manifests/reading_packet.md` is generated from the proof-obligation graph. Agents should normally read the packet and graph, not the full transcript history.
+The project lead maintains the obligation graph and integrates results. The lead is not allowed to promote a claim merely because several agents agree.
 
-## Round Structure
+## Obligation Packet
 
-Rounds use strict barrier synchronization:
+Before assigning a bottleneck lemma, prepare a compact packet containing:
 
-- Stage B cannot begin until A1, A2, A3, and A4 have completed Stage A.
-- Stage C cannot begin until A1, A2, A3, and A4 have completed Stage B.
-- Stage D cannot begin until the A1 judge synthesis is complete.
-- The next round cannot begin until Stage D has validated or rejected the judge's `State Patch` and regenerated the compact reading packet.
+1. the exact statement and all quantifiers;
+2. definitions and notation;
+3. the complete parameter domain;
+4. permitted previous results and dependency IDs;
+5. required explicit constants and error directions;
+6. boundary, endpoint, and falsification cases;
+7. the expected proof or certificate artifact.
 
-### Stage A: Independent Reasoning
+The clean-room packet must exclude the incumbent proof, previous reviews of that proof, and judge commentary that reveals its argument. It may include audited source statements listed as permitted dependencies.
 
-Each agent receives:
+## Workflow Stages
 
-- the problem statement,
-- the current reading packet,
-- the proof-obligation graph,
-- the current next-round prompts,
-- the prior judge decision if available,
-- the agent-specific judge prompt if available,
-- the human steering bundle,
-- the agent-specific task.
+### Stage A — Decomposition and assignment
 
-The agent must output:
+The project lead selects obligations, checks their dependency boundaries, and assigns only the roles needed for the cycle. Large targets are split into bounded obligations before proof attempts begin.
 
-```text
-## Summary
-## Target proof obligation
-## Main claim or direction
-## Detailed reasoning
-## Theorem-dependency audit
-## Hidden assumptions and potential gaps
-## Counterexample or obstruction search
-## Verification
-## Divergent alternatives and 20% exploration
-## Useful lemmas
-## What should be tested next
-## Proposed state patch, if any
-## Confidence
-```
+For the shell phase problem, the minimum decomposition is:
 
-Stage A is not a full-project continuation by default. It should attack the selected proof obligation or obligations for the round.
+- ordinary oscillatory regime;
+- outer turning point $k\sim\nu$;
+- inner-boundary transition $\rho k\sim\nu$;
+- mixed and fully evanescent regimes;
+- overlap and compatibility between the regime estimates;
+- compact-$\rho$ uniformity;
+- the endpoint limits $\rho\to0$ and $\rho\to1$.
 
-### Stage B: Cross Review
+### Stage B — Primary and clean-room attempts
 
-Each agent reviews all other active agents' Stage A outputs, with special attention to proposed state changes.
+The lead author develops the incumbent proof. Independently, the clean-room reviewer receives only the obligation packet and produces either:
 
-The review must output:
+- a complete reconstruction;
+- a counterexample;
+- a precise failure point;
+- or a sharper replacement statement.
 
-```text
-## Most valuable input from others
-## Claims that look correct
-## Claims that need proof
-## Possible errors or hidden assumptions
-## Suggested synthesis
-## Research strategy
-## Verification
-## Proposed state changes to accept or reject
-## Score by agent
-| Agent reviewed | Score (0-10) | Main reason | Must verify next |
-|---|---:|---|---|
-## Next-round recommendation
-## Confidence
-```
+The clean-room reviewer must state which dependencies were used and confirm that the incumbent proof was not consulted.
 
-### Stage C: Judge Synthesis
+### Stage C — Adversarial audit
 
-A1 reads all Stage A outputs and Stage B reviews, then writes the judge synthesis.
+After both attempts are frozen, the adversarial reviewer receives them and checks:
 
-The judge must output:
+- every displayed identity and inequality direction;
+- quantifier order and parameter uniformity;
+- branch, endpoint, multiplicity, and counting conventions;
+- transition and overlap regions;
+- circular or undeclared dependencies;
+- the first unsupported implication.
 
-```text
-## Selected main route
-## Useful fragments by source
-## Rejected or risky ideas
-## Known gaps
-## New lemmas to add
-## Counterexample checks to run
-## Research strategy adjustment
-## State Patch
-## Next-round prompts by agent
-### For A1
-### For A2
-### For A3
-### For A4
-## Round Assessment
-## Confidence
-```
+This is reconstruction and falsification, not a popularity vote or broad scorecard.
 
-The `State Patch` block is the only mechanism for mutating `state/proof_obligations.yml`. Use JSON-compatible YAML so the local validator can parse it without optional dependencies. The `For A1`, `For A2`, `For A3`, and `For A4` blocks are extracted into `state/next_round_prompts.md`.
+### Stage D — Certified computation
 
-### Stage D: State Update
+Use this stage only when the obligation genuinely contains a finite computational component. Computation evidence is classified as:
 
-The orchestrator validates the judge's `State Patch` and then updates:
+- `floating_point_experiment`;
+- `symbolic_sanity_check`;
+- `interval_certified`;
+- `formal_verified`.
 
-- `state/proof_obligations.yml`: authoritative proof-obligation graph.
-- `state/next_round_prompts.md`: extracted agent-specific next-round tasks.
-- `state/last_validation_report.md`: validator result for the latest patch.
-- `manifests/reading_packet.md`: compact graph-derived packet for the next round.
-- `state/current_state.md`: compact pointer to the latest round and validation result.
+Only `interval_certified` and `formal_verified` evidence may give a computation obligation status `certified`. A certified artifact must record the software and version, deterministic reproduction command, precision or interval backend, parameter subdivision, coverage statement, code/input hashes, root-isolation or proof method, and limitations.
 
-The orchestrator refuses to apply a patch if:
+Floating-point plots, tables, and high-precision experiments remain diagnostic evidence even when they are persuasive.
 
-- an unknown status appears;
-- an obligation has duplicate or missing required identifiers;
-- an open-like obligation lacks `next_action`;
-- a computation is promoted as proof;
-- an external theorem or source audit lacks a source card;
-- a claim is promoted without evidence and a reason.
+### Stage E — Lead synthesis and manuscript assembly
 
-Allowed statuses:
+One lead agent assembles accepted obligations into a single coherent proof. This stage must:
+
+- normalize notation and strict-counting conventions;
+- propagate constants and hypotheses through dependencies;
+- prove that all parameter regimes and overlaps are covered;
+- remove duplicated or incompatible assumptions;
+- map every manuscript claim to an obligation ID.
+
+Assembly does not repair missing lemmas by prose. Missing links return to Stage A as new obligations.
+
+### Stage F — Fresh final referee audit
+
+A fresh reviewer receives the assembled manuscript and an audited dependency packet, but not the development discussion. The referee reconstructs the bottleneck lemmas, checks all endpoint regimes, and identifies the first unsupported implication. Findings become graph evidence; the referee does not directly mutate state.
+
+### Stage G — Validation and state update
+
+The validator applies or rejects the lead's JSON-compatible YAML `State Patch`, regenerates the reading packet, and records the result. Promotion of a bottleneck or theorem requires explicit proof evidence, a clean-room artifact, an adversarial-review artifact, and all required certified computation.
+
+## Role Guidance
+
+Use the strongest whole-project work environment for obligation mapping, workstream coordination, and integration. Use a fresh high-capability chat for a single bottleneck lemma and a separate fresh chat for adversarial review. Use Codex for interval arithmetic, certified eigenvalue calculations, symbolic checks, reproducible scripts, tests, and formalization. Use a coherent single-agent pass for final manuscript assembly.
+
+Roles are functional rather than permanently tied to A1–A4. The same agent must not be lead author and independent reviewer for the same bottleneck.
+
+## State Patch Rules
+
+The lead synthesis is the only artifact that may contain `## State Patch`. The patch may create, update, reject, or record no change for obligations. It must not promote a claim without exact evidence and a reason.
+
+Allowed statuses are:
 
 ```text
 proposed
@@ -139,36 +126,22 @@ source_audit_required
 derived_under_assumptions
 proved_internal
 proved_external_dependency
+certified
 rejected
 ```
 
-## Public Repo Rule
-
-The public GitHub repo is the permanent log. Every completed round should be committed and pushed unless the runner is invoked with `-NoAutoPublish`.
-
-## Human Intervention Rule
-
-Human intervention is allowed at any time between stages or rounds.
-
-Human input can appear in:
-
-- `human/current_directives.md`
-- `human/goals.md`
-- `human/ideas.md`
-- `human/references.md`
-- `human/inbox/*.md`
-- GitHub issues or comments that are manually copied into the files above
-
-Human instructions override previous AI suggestions when they change the target, introduce a reference, reject a route, add a constraint, or change the success criterion.
-
-Agents must explicitly acknowledge relevant human interventions in their next output.
+`certified` is reserved for computation obligations backed by interval or formal evidence. It is not a mathematical proof status.
 
 ## Mathematical Safety Rules
 
-- Do not mark a claim as proved unless the proof is explicit.
-- Preserve failed attempts; they help avoid repeated false starts.
-- When a proof step uses an external theorem, name the theorem and state the needed hypotheses.
-- Require counterexample or stress-test search for any new lemma.
-- Prefer small checkable lemmas over broad vague routes.
-- Keep notation stable across rounds.
-- Do not claim Dirichlet Pólya for shells, ellipses, or any new domain class unless every analytic reduction, source dependency, parameter-uniformity condition, and finite verification obligation is supplied.
+- Do not mark a claim proved unless the proof is explicit and its dependencies are discharged.
+- Preserve failed attempts and counterexamples.
+- Name every external theorem and verify its hypotheses in a source card.
+- Require falsification tests for every new bottleneck lemma.
+- Treat strict versus non-strict counting and eigenvalue multiplicities explicitly.
+- Do not claim the shell, ellipse, or another new Pólya theorem until analytic reductions, parameter uniformity, regime overlaps, and finite verification are complete.
+- A human must reconstruct every decisive bottleneck lemma before a public theorem claim.
+
+## Public Record
+
+Completed cycles should be committed and pushed unless the runner is invoked with `-NoAutoPublish`. Human directives in `human/` override earlier AI strategy while remaining subject to mathematical validation.

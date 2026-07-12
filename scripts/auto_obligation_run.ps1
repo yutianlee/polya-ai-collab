@@ -173,14 +173,8 @@ function Process-Round([int] $Round) {
     Invoke-Orchestrator $Round
 
     $A1ReviewPrompt = Get-PromptPath $PromptBase "A1_review" $Round
-    $A2ReviewPrompt = Get-PromptPath $PromptBase "A2_review" $Round
-    $A3ReviewPrompt = Get-PromptPath $PromptBase "A3_review" $Round
     $A1ReviewOut = "$HandoffBase\reviews\A1.md"
-    $A2ReviewOut = "$HandoffBase\reviews\A2.md"
-    $A3ReviewOut = "$HandoffBase\reviews\A3.md"
-    Capture-WebResponse $A1ReviewPrompt $A1ReviewOut "A1 review"
-    Capture-WebResponse $A2ReviewPrompt $A2ReviewOut "A2 review"
-    Capture-WebResponse $A3ReviewPrompt $A3ReviewOut "A3 review"
+    Capture-WebResponse $A1ReviewPrompt $A1ReviewOut "A1 integration review"
 
     Invoke-Orchestrator $Round
     Wait-ForApiFile "$ArchiveBase\reviews\A4.md" "A4 review" $Round
