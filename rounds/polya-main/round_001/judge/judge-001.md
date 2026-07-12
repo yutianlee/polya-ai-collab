@@ -327,7 +327,7 @@ Do not broaden the search in Round 2. Ellipse and certificate-family tracks rema
       },
       {
         "id": "COMP-certified-bessel",
-        "status": " diagnostic_only",
+        "status": "diagnostic_only",
         "dependencies_added": ["SHELL-sturm-liouville-completeness", "SHELL-angular-cutoff", "SHELL-spherical-bessel-algebraic"],
         "required_output": ["script", "exact command", "root-enclosure report", "counting verification table", "limitations"],
         "evidence_added": {
