@@ -387,14 +387,118 @@ $K_*=1/(2\rho_*)$, and both endpoints are included. This theorem is also
 fully analytic; pointwise root convergence to the ball and small-hole
 certification are unnecessary.
 
+## Compact-ratio analytic envelope
+
+On the remaining ratio interval
+
+$$
+I_*=[\rho_*,1-2^{-18}],
+$$
+
+use three exact zones.
+
+For $\rho_*\le\rho\le1/16$, the high-angular theorem proves the target for
+$K\le1/(2\rho)$ and the small-hole low-interface theorem proves it for
+
+$$
+K\ge H_0(\rho)=\frac{C_*}{\omega_0-\rho}.
+$$
+
+The thresholds meet at $\rho_*$, $H_0$ is increasing, and the elementary
+bounds $\sqrt3>5/3$, $\sqrt2<3/2$, and $\pi<22/7$ give
+
+$$
+H_0(1/16)<64.
+$$
+
+For $1/16\le\rho\le99/100$, the strict count is zero below
+$\pi/(1-\rho)$ and the fixed-ratio theorem applies above $K_0(\rho)$. The
+positive-root equation
+
+$$
+\eta y^2-\sqrt a\,y-C_0=0,
+\qquad y=\sqrt{K_0},
+$$
+
+shows that $K_0$ increases with $a$ and decreases with $\eta$. Since
+$a_\rho$ increases and $\eta_\rho$ does not, $K_0(\rho)$ is increasing.
+Exact endpoint estimates give
+
+$$
+K_0(99/100)<180000^2<2^{35}.
+$$
+
+For $99/100\le\rho\le1-2^{-18}$, write
+$\varepsilon=1-\rho$. The aggregate-action and local-plateau theorems cover
+
+$$
+K\le\frac1{8\varepsilon^{5/2}}
+\qquad\hbox{and}\qquad
+K\ge\frac{64}{\varepsilon^2}.
+$$
+
+At $\varepsilon=2^{-18}$ both thresholds equal $2^{42}$, including
+equality. Therefore
+
+$$
+\boxed{
+\rho\in I_*,\quad K\ge2^{42}
+\Longrightarrow
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+The closed union of the three displayed gap envelopes is only a planning set
+$\mathcal E$. The actual certificate target is
+
+$$
+\mathcal D=(I_*\times[0,\infty))\setminus\mathcal A,
+$$
+
+where $\mathcal A$ contains every analytically covered point and threshold
+face.
+
+## First certified residual box
+
+On the closed box
+
+$$
+\rho\in\left[\frac{999}{2000},\frac{1001}{2000}\right],
+\qquad
+K\in\left[\frac{67}{10},\frac{168}{25}\right],
+$$
+
+outward-rounded Arb evaluation of the Riccati--spherical determinant gives
+one root in each of $\ell=0,1$. The exact Poincare--Sturm lower bound
+
+$$
+\lambda_{n,\ell}
+\ge\left(\frac{n\pi}{1-\rho}\right)^2+\ell(\ell+1)
+$$
+
+excludes the second radial levels and all $\ell\ge2$. Thus the exact strict
+count is $1+3=4$. An independent checker using only rational Machin and
+Taylor enclosures reconstructs every determinant sign, truncation, and Weyl
+corner. It proves
+
+$$
+\inf_B\frac{2}{9\pi}(1-\rho^3)K^3
+>18.6073155354,
+$$
+
+so the certified margin exceeds $14.6073155354$. This is one local box, not
+a cover of $\mathcal D$.
+
 ## Remaining gates
 
 This file must not be cited as a proof of the full shell theorem. The open
 gates are:
 
-- a practical uniform high-energy threshold on
-  $[\rho_*,1-2^{-18}]$ and interval-certified closure of the resulting
-  bounded residual parameter set,
-  including every determinant, phase, floor, and strict spectral wall;
+- analytic or symbolic compression of the current compact planning envelope,
+  followed by an exact face-connected certificate of every point of
+  $\mathcal D$. The next analytic target is a self-consistent optimization of
+  the Round 6 local-plateau constant; literal enumeration of the current
+  $2^{35}$ and $2^{42}$ ceilings is infeasible;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review.

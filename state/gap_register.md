@@ -4,18 +4,30 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Make the analytic high-energy threshold uniform on the explicit compact
-  interval $[\rho_*,1-2^{-18}]$, then formulate the remaining finite parameter
-  set as bounded boxes, where
+- Compress the proved analytic envelope on the explicit compact interval
+  $[\rho_*,1-2^{-18}]$, where
 
   $$
   \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-- Build interval-certified verification for those bounded boxes, including
-  every determinant root, phase wall, floor wall, and strict spectral
-  endpoint. Neither endpoint neighborhood requires certification.
+  The uniform threshold $K\ge2^{42}$ is rigorous but too coarse for global
+  enumeration. The next target is a self-consistent optimization of the
+  local-plateau constant in $K\ge C\varepsilon^{-2}$ and the resulting exact
+  overlap with the aggregate-action range.
+
+- Extend the certified central pilot into an exact face-connected cover of
+  the true residual set
+
+  $$
+  \mathcal D=(I_*\times[0,\infty))\setminus\mathcal A,
+  $$
+
+  not of the larger closed planning envelope. Every box needs an analytic or
+  certified face owner, rigorous angular/radial truncation, provenance
+  hashes, and independent cover checking. Neither endpoint neighborhood
+  requires certification.
 - After the compact piece closes, perform a fresh theorem-level
   clean-room reconstruction and adversarial audit before promoting the global
   shell theorem.
@@ -51,6 +63,12 @@ The authoritative statuses are in state/proof_obligations.yml.
 - The complete small-hole endpoint
   $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
   $\rho K=1/2$. The apparent finite small-hole residual is empty.
+- The piecewise compact-ratio analytic envelope and the uniform theorem
+  $K\ge2^{42}$ on $[\rho_*,1-2^{-18}]$, including exact threshold and switch
+  faces.
+- One independently checked interval-certified central residual box,
+  $\rho\in[999/2000,1001/2000]$ and
+  $K\in[67/10,168/25]$, with exact strict count $4$.
 
 ## Rejected shell routes
 
@@ -69,6 +87,11 @@ The authoritative statuses are in state/proof_obligations.yml.
 - Bare domain monotonicity to the ball does not pay the missing volume factor
   $1-\rho^3$. Subtracting two one-sided ball Pólya bounds is also invalid
   across ball spectral jumps.
+
+- Literal wall-by-wall certification of the current coarse compact envelope
+  is not a scalable route. At $\varepsilon=2^{-17}$, one thin residual slice
+  crosses more than $2^{38}$ angular half-integer walls. Monotone-corner,
+  symbolic, or analytic aggregation is required.
 
 ## Parallel-track gaps
 

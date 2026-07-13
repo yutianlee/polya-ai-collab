@@ -88,9 +88,38 @@ $$
 \qquad K\ge0.
 $$
 
-The next primary packet is `SHELL-rho-compact`. It must derive a practical
-uniform analytic threshold on
-$[\rho_*,1-2^{-18}]$ and reduce the remaining all-$K$ problem to explicit
-bounded boxes. `COMP-certified-bessel` may certify only those boxes; both
-endpoint neighborhoods are analytically discharged and excluded from the
-certificate.
+- the compact-ratio analytic envelope: on
+
+$$
+I_*=[\rho_*,1-2^{-18}],
+$$
+
+  the possible left, central, and thin residual families lie below $64$,
+  $2^{35}$, and $2^{42}$ respectively, and therefore
+
+$$
+K\ge2^{42}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3
+\qquad(\rho\in I_*);
+$$
+
+- the independently checked certified pilot
+
+$$
+\rho\in\left[\frac{999}{2000},\frac{1001}{2000}\right],
+\qquad
+K\in\left[\frac{67}{10},\frac{168}{25}\right],
+$$
+
+  where the exact strict count is $4$ and the certified Weyl margin exceeds
+  $14.6073155354$. The Arb producer and independent rational checker are
+  local evidence only; they do not certify the rest of the compact residual.
+
+`SHELL-rho-compact` remains open. The next primary analytic task is to
+optimize the Round 6 local-plateau threshold without assuming the old
+constant $64$ inside the proof, then recompute its exact overlap with the
+aggregate-action range. Certification may expand only through an exact
+face-connected manifest for the true residual $\mathcal D$; raw enumeration
+of the present $2^{35}$ and $2^{42}$ planning ceilings is not viable.

@@ -1,0 +1,217 @@
+{
+  "angular_cutoff": {
+    "first_excluded_ell": 7,
+    "largest_possibly_active_ell": 6,
+    "rule": "ell+1/2 < K"
+  },
+  "arithmetic": {
+    "input_convention": "exact rational endpoints; closed Arb hull",
+    "output_convention": "parseable outward Arb ball plus mid_rad_10exp decimal triple",
+    "precision_bits": 256,
+    "producer": "python-flint Arb",
+    "python_flint_version": "0.8.0"
+  },
+  "boundary_policy": {
+    "future_neighbors_must_overlap_or_share_each_closed_face": true,
+    "root_brackets_end_strictly_below_K_lower": true,
+    "target_box_faces_are_included": true
+  },
+  "channels": [
+    {
+      "determinant_lower_face": {
+        "enclosure": {
+          "arb": "[0.0415804626383633315173112779503764072806554855049083156071657140807910670929908984688247305 +/- 3.10e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "415804626383633315173112779503764072806554855049083156071657140807910670929908984",
+            "radius_integer": "30973150722158808512192209947124590590058080553516575253248319723588647510867969"
+          }
+        },
+        "sign": "positive"
+      },
+      "determinant_on_target_box": {
+        "enclosure": {
+          "arb": "[-0.211773183356903616949956522599148829743638988628982216047558218008362018736079335212707520 +/- 0.0180]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -81,
+            "midpoint_integer": "-211773183356903616949956522599148829743638988628982216047558218008362018736079335",
+            "radius_integer": "17992435860603653643789647473702123822202713043466278657960768834981647194521601"
+          }
+        },
+        "sign": "negative"
+      },
+      "determinant_upper_face": {
+        "enclosure": {
+          "arb": "[-0.00840720565672628062867205804455537556192624731674597768879126246400705998299179336885832342 +/- 3.15e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "-84072056567262806286720580445553755619262473167459776887912624640070599829917933",
+            "radius_integer": "31498844759962187727462380314418054705855096068801617909363989431573387371610113"
+          }
+        },
+        "sign": "negative"
+      },
+      "ell": 0,
+      "multiplicity": 1,
+      "root_count_below_every_K_in_box": 1,
+      "uniform_root_bracket": [
+        "31/5",
+        "63/10"
+      ]
+    },
+    {
+      "determinant_lower_face": {
+        "enclosure": {
+          "arb": "[0.0396267865991168965375550840331969266927008893284478450868006598258075714524127273149355975 +/- 3.95e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "396267865991168965375550840331969266927008893284478450868006598258075714524127273",
+            "radius_integer": "39428844639033009524271016208587749597016027193485118195751133172744375433691137"
+          }
+        },
+        "sign": "positive"
+      },
+      "determinant_on_target_box": {
+        "enclosure": {
+          "arb": "[-0.0755381463329552738434986311142574420866155389979381285653348143682705995161086320877075195 +/- 0.0224]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -81,
+            "midpoint_integer": "-75538146332955273843498631114257442086615538997938128565334814368270599516108632",
+            "radius_integer": "22371908471633767693652176194750075609494962598050904564749028542186324383236097"
+          }
+        },
+        "sign": "negative"
+      },
+      "determinant_upper_face": {
+        "enclosure": {
+          "arb": "[-0.0153692646686358963336876760210645128205419015328935912631064744095791951215297154336486760 +/- 4.07e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "-153692646686358963336876760210645128205419015328935912631064744095791951215297154",
+            "radius_integer": "40640609864421468095003715253141487728021347894245577659715910314006736575397889"
+          }
+        },
+        "sign": "negative"
+      },
+      "ell": 1,
+      "multiplicity": 3,
+      "root_count_below_every_K_in_box": 1,
+      "uniform_root_bracket": [
+        "13/2",
+        "33/5"
+      ]
+    }
+  ],
+  "claim": "For every rho in [999/2000,1001/2000] and every K in [67/10,168/25], the strict Dirichlet shell count is 4 and is strictly smaller than (2/(9*pi))*(1-rho^3)*K^3.",
+  "limitations": [
+    "This artifact certifies one tiny R_C box, not any full residual zone.",
+    "It does not promote COMP-certified-bessel or SHELL-rho-compact.",
+    "It does not address the enormous channel counts in the coarse R_C/R_T bounds.",
+    "The independent checker is required; producer self-checks alone are insufficient."
+  ],
+  "proof_dependencies": [
+    "d=3 shell determinant zero criterion and multiplicity 2*ell+1",
+    "positive radial roots are simple and complete",
+    "strict spectral counting convention",
+    "Dirichlet Poincare-Sturm bound lambda_(n,ell) >= (n*pi/(1-rho))^2 + ell*(ell+1)",
+    "central residual definition R_C and monotonicity of G_1"
+  ],
+  "reproducibility": {
+    "commands": [
+      "python -m pip install -r computations/requirements-round8-certified.txt",
+      "python computations/round8_compact_box_certificate.py --output rounds/polya-main/round_008/certification/pilot-central-box.json",
+      "python computations/round8_verify_compact_box_certificate.py --input rounds/polya-main/round_008/certification/pilot-central-box.json --report rounds/polya-main/round_008/certification/pilot-central-box-check.json"
+    ],
+    "python_version": "3.14.4",
+    "sha256": {
+      "frozen_packet": "8b684f7f671dd96f9916d0d798566a5e1cbe787934c08744531e3f7ba086b8c7",
+      "independent_checker": "2ab1a31d8a22c6f1d5f7def2e33d2e3f0fb710fdb5cae50f8389d82f5b0475d5",
+      "producer": "8902a0fd4ff7db4b1443ca02326151d4d6e4b9b92b697c68220eb85454c4ec7e"
+    }
+  },
+  "residual_membership": {
+    "coarse_K0_lower_8pi_rho_over_1_minus_rho": {
+      "arb": "[25.1327914744615554809570312500000000000000000000000000000000000000000000000000000000000000 +/- 0.0503]",
+      "mid_rad_10exp": {
+        "decimal_exponent": -79,
+        "midpoint_integer": "251327914744615554809570312500000000000000000000000000000000000000000000000000000",
+        "radius_integer": "502655954146539832372023326176480989405158275483454749952743080220819548274688"
+      }
+    },
+    "explanation": "K is above pi/(1-rho).  Also eta<=1/pi<1/2 implies K0>4*a_rho=8*pi*rho/(1-rho), which is above the box.",
+    "zero_count_boundary_pi_over_1_minus_rho": {
+      "arb": "[6.28319158405065536499023437500000000000000000000000000000000000000000000000000000000000000 +/- 6.29e-3]",
+      "mid_rad_10exp": {
+        "decimal_exponent": -80,
+        "midpoint_integer": "628319158405065536499023437500000000000000000000000000000000000000000000000000000",
+        "radius_integer": "628321618729139193886003912579595166592847563028312897943238855525266408603648"
+      }
+    }
+  },
+  "schema": "polya-shell-compact-box-certificate-v0.1",
+  "scope": {
+    "K": [
+      "67/10",
+      "168/25"
+    ],
+    "closed_faces": true,
+    "rho": [
+      "999/2000",
+      "1001/2000"
+    ],
+    "zone": "R_C"
+  },
+  "status": "certified_pilot_when_independent_checker_returns_PASS",
+  "strict_count": {
+    "calculation": "1*(ell=0 root) + 3*(ell=1 root) = 4",
+    "spectral_wall_in_target_box": false,
+    "weighted_count": 4
+  },
+  "sturm_bounds": {
+    "conclusion": "ell>=2 contributes zero roots; ell=0,1 have at most one root.",
+    "first_ell_two_minus_K_squared": {
+      "enclosure": {
+        "arb": "[0.454396481884983781984743700377293862402439117431640625000000000000000000000573939035367045 +/- 0.214]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -81,
+          "midpoint_integer": "454396481884983781984743700377293862402439117431640625000000000000000000000573939",
+          "radius_integer": "213296782846047861201742254280821699342224464102497818942835695706992682943381505"
+        }
+      },
+      "sign": "positive"
+    },
+    "formula": "lambda_(n,ell) >= (n*pi/(1-rho))^2 + ell*(ell+1)",
+    "second_ell_zero_minus_K_squared": {
+      "enclosure": {
+        "arb": "[112.889885927539935127938974801509175449609756469726562500000000000000000000000021224247841 +/- 0.451]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -78,
+          "midpoint_integer": "112889885927539935127938974801509175449609756469726562500000000000000000000000021",
+          "radius_integer": "450287126934280263507509629434511762334511040504205870616256108092111902998529"
+        }
+      },
+      "sign": "positive"
+    }
+  },
+  "weyl": {
+    "right_hand_side": {
+      "arb": "[18.6987780779600143432617187500000000000000000000000000000000000000000000000000000000000000 +/- 0.0918]",
+      "mid_rad_10exp": {
+        "decimal_exponent": -79,
+        "midpoint_integer": "186987780779600143432617187500000000000000000000000000000000000000000000000000000",
+        "radius_integer": "917835386035111671282579254873494568138977800194796299163137544203407953231872"
+      }
+    },
+    "right_hand_side_minus_strict_count": {
+      "enclosure": {
+        "arb": "[14.6987780779600143432617187500000000000000000000000000000000000000000000000000000000000000 +/- 0.0918]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -79,
+          "midpoint_integer": "146987780779600143432617187500000000000000000000000000000000000000000000000000000",
+          "radius_integer": "917835386035111671282579254873494568138977800194796299163137544203407953231872"
+        }
+      },
+      "sign": "positive"
+    }
+  }
+}

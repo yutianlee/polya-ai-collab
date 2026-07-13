@@ -28,7 +28,7 @@
       "SHELL-rho-compact",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Both endpoint neighborhoods are analytically discharged. Primary: close the explicit compact interval [rho_*,1-2^(-18)] by deriving the smallest practical uniform analytic high-energy threshold, using the existing fixed-rho, small-hole, and high-thin estimates piecewise. Reduce the remaining all-K problem to explicit bounded parameter boxes with inclusive endpoint overlap. Secondary: implement interval certification only on those compact boxes, preserving every determinant, phase, angular, floor, and strict spectral wall. A2 is incumbent analyst, A3 receives clean-room packets, A4 adversarially audits and owns certification, and A1 integrates only validated evidence."
+    "round_rule": "Round 8 proved the compact analytic envelope and one certified central pilot, but direct enumeration of the coarse 2^35/2^42 windows is infeasible. Primary: optimize the Round 6 local-plateau proof parametrically, replacing the assumed constant 64 in K>=64 epsilon^(-2) by the smallest rigorously self-consistent explicit constant and computing the resulting enlarged all-K thin endpoint from exact overlap with 1/(8 epsilon^(5/2)). Track every place where the old 64 was used; a formal substitution into the final inequality is not enough. If this route stalls, derive a symbolic aggregate corner-count bound over a nontrivial R_T strip. Secondary: extend the certified pilot only to a small face-connected manifest that exercises analytic masks and monotone-box ownership; do not scale by angular-wall enumeration. A2 leads the optimized analytic proof, A3 reconstructs it clean-room, A4 audits constants and certification, and A1 promotes only independently checked evidence."
   },
   "proof_obligations": [
     {
@@ -119,7 +119,9 @@
           "state/lemma_packets/SHELL-thin-curvature-intermediate.md",
           "rounds/polya-main/round_006/responses/thin-endpoint-incumbent.md",
           "state/lemma_packets/SHELL-rho-zero-endpoint.md",
-          "rounds/polya-main/round_007/responses/small-hole-incumbent.md"
+          "rounds/polya-main/round_007/responses/small-hole-incumbent.md",
+          "rounds/polya-main/round_008/responses/compact-envelope-incumbent.md",
+          "rounds/polya-main/round_008/certification/pilot-report.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -151,9 +153,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "The exact spectrum, fixed-rho high energy, and both rho endpoints are proved. The remaining theorem blocker is compact-rho bounded closure with certified computation, followed by a final theorem audit.",
-      "last_updated_round": 7,
-      "last_updated_at": "2026-07-13T14:22:34"
+      "next_action": "The theorem is analytic above K=2^42 on the remaining compact ratio interval and one residual box is certified. Complete the exact compact cover, then run final theorem-level clean-room and adversarial audits.",
+      "last_updated_round": 8,
+      "last_updated_at": "2026-07-13T15:26:02"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -624,7 +626,9 @@
           "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md",
           "state/lemma_packets/SHELL-rho-zero-endpoint.md",
           "rounds/polya-main/round_007/responses/small-hole-incumbent.md",
-          "rounds/polya-main/round_007/reviews/small-hole-integrated-audit.md"
+          "rounds/polya-main/round_007/reviews/small-hole-integrated-audit.md",
+          "state/lemma_packets/SHELL-rho-compact.md",
+          "rounds/polya-main/round_008/responses/compact-envelope-incumbent.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -635,9 +639,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Both rho endpoints are discharged. Close SHELL-rho-compact on [rho_*,1-2^(-18)], then assemble the all-rho theorem.",
-      "last_updated_round": 7,
-      "last_updated_at": "2026-07-13T14:22:34"
+      "next_action": "Both endpoints and the compact high-energy envelope are proved. The sole remaining blocker is exact certified coverage of the true compact residual D.",
+      "last_updated_round": 8,
+      "last_updated_at": "2026-07-13T15:26:02"
     },
     {
       "id": "SHELL-rho-compact",
@@ -650,7 +654,8 @@
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
-        "COMP-certified-bessel"
+        "COMP-certified-bessel",
+        "SHELL-rho-compact-analytic-envelope"
       ],
       "implies": [
         "SHELL-rho-uniformity"
@@ -659,7 +664,13 @@
         "COMP-certified-bessel"
       ],
       "evidence": {
-        "positive": [],
+        "positive": [
+          "state/lemma_packets/SHELL-rho-compact.md",
+          "rounds/polya-main/round_008/responses/compact-envelope-incumbent.md",
+          "rounds/polya-main/round_008/reviews/compact-envelope-clean-room.md",
+          "rounds/polya-main/round_008/reviews/compact-envelope-adversarial.md",
+          "rounds/polya-main/round_008/certification/pilot-report.md"
+        ],
         "negative": [],
         "inconclusive": []
       },
@@ -669,9 +680,9 @@
         "threshold blow-up inside a compact interval",
         "loss of monotonicity under interval evaluation"
       ],
-      "next_action": "Use the explicit compact interval [rho_*,1-2^(-18)], where rho_*=omega_0/(1+2 C_*). Make the analytic high-energy threshold uniform and certify only the resulting bounded residual window, with inclusive overlap at both endpoints.",
-      "last_updated_round": 7,
-      "last_updated_at": "2026-07-13T14:22:34"
+      "next_action": "The analytic envelope is proved and one central box is certified. Keep this obligation open until an exact manifest covers D; first compress the central and thin high-frequency corner spectra rather than enumerating the present 2^35/2^42 bounds.",
+      "last_updated_round": 8,
+      "last_updated_at": "2026-07-13T15:26:02"
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -826,7 +837,8 @@
         "SRC-bessel-phase",
         "SHELL-sturm-liouville-completeness",
         "SHELL-angular-cutoff",
-        "SHELL-spherical-bessel-algebraic"
+        "SHELL-spherical-bessel-algebraic",
+        "COMP-certified-bessel-pilot-round8"
       ],
       "implies": [
         "TARGET-shell-d3"
@@ -843,7 +855,12 @@
         "positive": [
           "state/lemma_packets/SHELL-sturm-liouville-completeness.md",
           "rounds/polya-main/round_004/reviews/sturm-liouville-clean-room.md",
-          "rounds/polya-main/round_004/reviews/sturm-liouville-adversarial.md"
+          "rounds/polya-main/round_004/reviews/sturm-liouville-adversarial.md",
+          "rounds/polya-main/round_008/certification/certificate-design.md",
+          "rounds/polya-main/round_008/certification/pilot-report.md",
+          "rounds/polya-main/round_008/certification/pilot-central-box.json",
+          "rounds/polya-main/round_008/certification/pilot-central-box-check.json",
+          "rounds/polya-main/round_008/reviews/certified-pilot-independent-audit.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -866,10 +883,13 @@
       },
       "owner": "A4",
       "evidence_class": "floating_point_experiment",
-      "certification_artifacts": [],
-      "next_action": "Neither endpoint needs certification. Restrict interval certification to the bounded residual window on rho in [rho_*,1-2^(-18)], preserving every determinant, phase, angular, floor, and strict spectral wall.",
-      "last_updated_round": 7,
-      "last_updated_at": "2026-07-13T14:22:34"
+      "certification_artifacts": [
+        "rounds/polya-main/round_008/certification/pilot-central-box.json",
+        "rounds/polya-main/round_008/certification/pilot-central-box-check.json"
+      ],
+      "next_action": "The local Arb/Fraction pipeline is validated, but the parent remains diagnostic_only. Build an exact E-minus-A cover manifest only after a symbolic or analytic aggregation reduces the high-frequency central and thin corner counts.",
+      "last_updated_round": 8,
+      "last_updated_at": "2026-07-13T15:26:02"
     },
     {
       "id": "SRC-mathieu-ellipse",
@@ -2004,6 +2024,161 @@
       "next_action": "Use this theorem with the high-angular shifted-tail theorem. Do not replace it by pointwise convergence to ball roots.",
       "last_updated_round": 7,
       "last_updated_at": "2026-07-13T14:22:34"
+    },
+    {
+      "id": "SHELL-rho-compact-analytic-envelope",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Explicit analytic envelope on the remaining compact shell-ratio interval",
+      "status": "proved_internal",
+      "statement_tex": "Let rho_*=omega_0/(1+2 C_*) and I_*=[rho_*,1-2^(-18)]. On [rho_*,1/16], the possible residual lies between 1/(2 rho) and C_*/(omega_0-rho) and has K<64. On [1/16,99/100], it lies between pi/(1-rho) and K_0(rho) and has K<2^35. On [99/100,1-2^(-18)], with epsilon=1-rho, it lies between 1/(8 epsilon^(5/2)) and 64/epsilon^2 and has K<=2^42. Consequently the strict shell Polya inequality holds for every rho in I_* and K>=2^42.",
+      "dependencies": [
+        "SHELL-rho-zero-endpoint",
+        "SHELL-rho-one-endpoint",
+        "SHELL-high-angular-shifted-tails",
+        "SHELL-low-interface-small-hole",
+        "SHELL-thin-width-zero-count",
+        "SHELL-fixed-rho-high-energy",
+        "SHELL-thin-product-low-optical",
+        "SHELL-thin-action-aggregate",
+        "SHELL-thin-local-plateau-high"
+      ],
+      "implies": [
+        "SHELL-rho-compact"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-rho-compact.md",
+          "rounds/polya-main/round_008/responses/compact-envelope-incumbent.md",
+          "rounds/polya-main/round_008/reviews/compact-envelope-clean-room.md",
+          "rounds/polya-main/round_008/reviews/compact-envelope-adversarial.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_008\\judge\\judge-008.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "bottleneck",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-rho-zero-endpoint",
+        "SHELL-rho-one-endpoint",
+        "SHELL-high-angular-shifted-tails",
+        "SHELL-low-interface-small-hole",
+        "SHELL-thin-width-zero-count",
+        "SHELL-fixed-rho-high-energy",
+        "SHELL-thin-product-low-optical",
+        "SHELL-thin-action-aggregate",
+        "SHELL-thin-local-plateau-high"
+      ],
+      "falsification_cases": [
+        "rho=rho_*",
+        "rho=1/16",
+        "rho=1/2",
+        "rho=99/100",
+        "rho=1-2^(-18)",
+        "K equal to every component threshold",
+        "L(2^(-18))=U(2^(-18))",
+        "closed planning envelope confused with the true certification target"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_008/reviews/compact-envelope-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_008/reviews/compact-envelope-adversarial.md"
+      ],
+      "reason_for_promotion": "The three exact zones cover the complete compact ratio interval, all endpoint and threshold equalities were independently reconstructed, K_0 monotonicity was checked, and the corrected E/D cover specification passed post-correction clean-room and adversarial audits.",
+      "next_action": "Use this envelope as the analytic boundary for compact certification. Improve the central and thin thresholds before attempting a full exact cover.",
+      "last_updated_round": 8,
+      "last_updated_at": "2026-07-13T15:26:02"
+    },
+    {
+      "id": "COMP-certified-bessel-pilot-round8",
+      "type": "computation",
+      "track": "certified_computation",
+      "title": "Independently checked shell-determinant certificate on one central residual box",
+      "status": "certified",
+      "statement_tex": "For every rho in [999/2000,1001/2000] and K in [67/10,168/25], the exact strict shell count is N_D(A_{rho,1},K^2)=4 and is strictly smaller than (2/(9 pi))(1-rho^3)K^3; the certified Weyl margin exceeds 14.607315535442456.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-cross-product-formula",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-angular-cutoff",
+        "SHELL-thin-width-zero-count",
+        "SHELL-fixed-rho-high-energy"
+      ],
+      "implies": [
+        "COMP-certified-bessel"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "rounds/polya-main/round_008/certification/pilot-report.md",
+          "rounds/polya-main/round_008/certification/pilot-central-box.json",
+          "rounds/polya-main/round_008/certification/pilot-central-box-check.json",
+          "rounds/polya-main/round_008/reviews/certified-pilot-independent-audit.md",
+          "computations/round8_compact_box_certificate.py",
+          "computations/round8_verify_compact_box_certificate.py",
+          "computations/tests/test_round8_compact_box_certificate.py"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_008\\judge\\judge-008.md"
+        ]
+      },
+      "owner": "A4",
+      "criticality": "standard",
+      "lead_author": "A4",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A2",
+      "review_independence": "independent",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-cross-product-formula",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-angular-cutoff",
+        "SHELL-thin-width-zero-count",
+        "SHELL-fixed-rho-high-energy"
+      ],
+      "falsification_cases": [
+        "rho and K on every closed pilot face",
+        "ell=0 determinant root on a bracket face",
+        "ell=1 determinant root on a bracket face",
+        "ell=2 first radial level below K",
+        "second radial root below K",
+        "angular cutoff at ell+1/2=K",
+        "tampered count, determinant sign, or provenance hash"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_008/reviews/certified-pilot-independent-audit.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_008/reviews/certified-pilot-independent-audit.md"
+      ],
+      "evidence_class": "interval_certified",
+      "software_version": "python-flint 0.8.0 Arb producer; Python standard-library Fraction independent checker",
+      "reproduction_command": "python computations/round8_compact_box_certificate.py --output rounds/polya-main/round_008/certification/pilot-central-box.json && python computations/round8_verify_compact_box_certificate.py --input rounds/polya-main/round_008/certification/pilot-central-box.json --report rounds/polya-main/round_008/certification/pilot-central-box-check.json",
+      "coverage_statement": "Exactly the closed box rho in [999/2000,1001/2000], K in [67/10,168/25]; no other compact residual point is claimed.",
+      "artifact_hashes": {
+          "producer": "8902a0fd4ff7db4b1443ca02326151d4d6e4b9b92b697c68220eb85454c4ec7e",
+          "independent_checker": "2ab1a31d8a22c6f1d5f7def2e33d2e3f0fb710fdb5cae50f8389d82f5b0475d5",
+        "frozen_packet": "8b684f7f671dd96f9916d0d798566a5e1cbe787934c08744531e3f7ba086b8c7",
+          "certificate": "f712c1ffb494461913665c578cc36c50d009b81cd48386afde6e49a68cddae00"
+      },
+      "certification_artifacts": [
+        "rounds/polya-main/round_008/certification/pilot-central-box.json",
+        "rounds/polya-main/round_008/certification/pilot-central-box-check.json",
+        "rounds/polya-main/round_008/certification/pilot-report.md"
+      ],
+      "reason_for_promotion": "Arb outward-rounded determinant signs, exact Sturm truncation, strict multiplicity counting, and the Weyl margin are all independently reconstructed by a checker sharing no producer or Flint code; current provenance hashes and tamper rejection pass.",
+      "next_action": "Use this only as a validated schema and local pilot. Extend through an exact face-connected manifest only after analytic compression makes the remaining corner spectra tractable.",
+      "last_updated_round": 8,
+      "last_updated_at": "2026-07-13T15:26:02"
     }
   ],
   "rejected_claims": [
@@ -2176,6 +2351,15 @@
       "last_updated_round": 7,
       "evidence": [
         "rounds\\polya-main\\round_007\\judge\\judge-007.md"
+      ]
+    },
+    {
+      "id": "literal-wall-enumeration-closes-round8-compact-envelope",
+      "reason": "Reject raw wall-by-wall certification of the present coarse envelope as a scalable route. At epsilon=2^(-17), one thin residual slice alone crosses more than 2^38 angular half-integer walls; a symbolic, monotone, or analytic aggregation is required.",
+      "last_updated_at": "2026-07-13T15:26:02",
+      "last_updated_round": 8,
+      "evidence": [
+        "rounds\\polya-main\\round_008\\judge\\judge-008.md"
       ]
     }
   ]

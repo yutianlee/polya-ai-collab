@@ -1,0 +1,83 @@
+{
+  "certificate_sha256": "f712c1ffb494461913665c578cc36c50d009b81cd48386afde6e49a68cddae00",
+  "checks": {
+    "all_possible_channels_resolved": true,
+    "angular_cutoff_enforced": true,
+    "closed_faces_included": true,
+    "full_box_inside_R_C": true,
+    "no_spectral_wall_in_target_box": true,
+    "provenance_hashes_verified": true,
+    "uniform_root_brackets_ell_0_1": true
+  },
+  "determinant_enclosures": {
+    "ell_0_lower_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "0.03848314863339058333774707794704987836924",
+      "sign": "positive",
+      "upper_display": "0.04467777664334459615126723811762228299119"
+    },
+    "ell_0_target_box": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.2199540302153144662693825168069801203457",
+      "sign": "negative",
+      "upper_display": "-0.2036233052028563203794933807385420476332"
+    },
+    "ell_0_upper_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.01155708912178611213887008896673470134662",
+      "sign": "negative",
+      "upper_display": "-0.005257322191668278890168854162094316842963"
+    },
+    "ell_1_lower_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "0.03587731348922702785505536915675757917248",
+      "sign": "positive",
+      "upper_display": "0.04337523876195023382998501369203632931058"
+    },
+    "ell_1_target_box": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.08488835557514564656254871303229438026808",
+      "sign": "negative",
+      "upper_display": "-0.06621316809304051124853320010189895131512"
+    },
+    "ell_1_upper_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.01916349488834199067488090699986049275242",
+      "sign": "negative",
+      "upper_display": "-0.01157620322800810865965524524809089034529"
+    }
+  },
+  "display_note": "decimal displays are non-decisive; all PASS tests used exact Fractions",
+  "independent_arithmetic": "Python standard-library Fraction; Machin pi and alternating Taylor enclosures",
+  "limitations": [
+    "PASS applies only to the single closed pilot box.",
+    "The result does not cover R_C, R_L, or R_T globally.",
+    "The result does not promote COMP-certified-bessel or SHELL-rho-compact."
+  ],
+  "pi_enclosure_display": [
+    "3.141592653589793238462643383279502884197",
+    "3.141592653589793238462643383279502884197"
+  ],
+  "schema": "polya-shell-compact-box-check-report-v0.1",
+  "scope": {
+    "K": [
+      "67/10",
+      "168/25"
+    ],
+    "closed_faces": true,
+    "rho": [
+      "999/2000",
+      "1001/2000"
+    ],
+    "zone": "R_C"
+  },
+  "status": "PASS",
+  "strict_weighted_count": 4,
+  "verified_sha256": {
+    "frozen_packet": "8b684f7f671dd96f9916d0d798566a5e1cbe787934c08744531e3f7ba086b8c7",
+    "independent_checker": "2ab1a31d8a22c6f1d5f7def2e33d2e3f0fb710fdb5cae50f8389d82f5b0475d5",
+    "producer": "8902a0fd4ff7db4b1443ca02326151d4d6e4b9b92b697c68220eb85454c4ec7e"
+  },
+  "weyl_lower_display": "18.60731553544245607556020046990357666239",
+  "weyl_margin_lower_display": "14.60731553544245607556020046990357666239"
+}

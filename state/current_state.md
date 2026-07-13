@@ -26,9 +26,27 @@ $$
 =0.0310668242700667\ldots.
 $$
 
-The all-$\rho$ shell theorem is not yet proved. Its active blockers are the
-intervening compact-$\rho$ finite window, bounded certified closure, and the
-final theorem-level audit.
+On the intervening compact interval
+
+$$
+I_*=[\rho_*,1-2^{-18}],
+$$
+
+the shell inequality is now also proved uniformly for every
+$K\ge2^{42}$.  The exact strict count is independently interval-certified
+on the closed central residual box
+
+$$
+\frac{999}{2000}\le\rho\le\frac{1001}{2000},
+\qquad
+\frac{67}{10}\le K\le\frac{168}{25}.
+$$
+
+The all-$\rho$ shell theorem is not yet proved. Its active blockers are exact
+coverage of the rest of the compact residual set and the final theorem-level
+audit. The present coarse $2^{35}$ and $2^{42}$ planning bounds require
+further analytic or symbolic compression before global certification is
+practical.
 
 ## Round 1 Update
 
@@ -204,3 +222,44 @@ integrated dependency audits. No ball-limit argument or small-hole Bessel
 certificate is needed. Both endpoint obligations are now discharged; the
 next target is the explicit compact interval
 $[\rho_*,1-2^{-18}]$.
+
+## Round 8 Update
+
+Date: 2026-07-13
+
+See `rounds/polya-main/round_008/judge/judge-008.md`.
+
+Round 8 proves a piecewise analytic envelope on the complete remaining
+compact ratio interval. The left, central, and thin zone thresholds are
+bounded respectively by $64$, $2^{35}$, and $2^{42}$, so
+
+$$
+\boxed{
+\rho\in[\rho_*,1-2^{-18}],
+\quad K\ge2^{42}
+\Longrightarrow
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+The analytic proof passed isolated reconstruction and adversarial review.
+The certificate specification now distinguishes the closed planning
+envelope $\mathcal E$ from the actual unproved set
+$\mathcal D=(I_*\times[0,\infty))\setminus\mathcal A$, assigns analytic
+faces explicitly, and permits safe monotone-corner bounds in place of
+literal wall subdivision.
+
+The first genuine residual certificate covers
+
+$$
+\rho\in[999/2000,1001/2000],
+\qquad K\in[67/10,168/25].
+$$
+
+Arb determinant enclosures and an independent standard-library rational
+checker prove the exact strict count is $4$, with Weyl margin greater than
+$14.6073$. A separate audit reproduced the artifacts bit for bit and rejected
+14 decisive tamper mutations. This local computation is certified, but the
+parent compact computation remains `diagnostic_only` because the rest of
+$\mathcal D$ is not covered.

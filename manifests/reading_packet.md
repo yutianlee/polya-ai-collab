@@ -1,12 +1,12 @@
 # Reading Packet
 
-Generated after round 7 in run `polya-main`.
+Generated after round 8 in run `polya-main`.
 
 ## Current Theorem Target
 
 Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.
 
-Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, and both uniform rho-endpoint neighborhoods are proved; compact-rho bounded certification and the final theorem audit remain open.
+Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods, and the compact-rho analytic range K>=2^42 are proved. One central residual box is certified; exact coverage of the rest of the compact residual and the final theorem audit remain open.
 
 ## Current Route
 
@@ -25,9 +25,9 @@ Current blockers:
 ## Round Target Obligations
 
 - `SHELL-rho-compact` (open, owner `A2`): Uniform shell estimates on compact rho intervals
-  Next action: Use the explicit compact interval [rho_*,1-2^(-18)], where rho_*=omega_0/(1+2 C_*). Make the analytic high-energy threshold uniform and certify only the resulting bounded residual window, with inclusive overlap at both endpoints.
+  Next action: The analytic envelope is proved and one central box is certified. Keep this obligation open until an exact manifest covers D; first compress the central and thin high-frequency corner spectra rather than enumerating the present 2^35/2^42 bounds.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: Neither endpoint needs certification. Restrict interval certification to the bounded residual window on rho in [rho_*,1-2^(-18)], preserving every determinant, phase, angular, floor, and strict spectral wall.
+  Next action: The local Arb/Fraction pipeline is validated, but the parent remains diagnostic_only. Build an exact E-minus-A cover manifest only after a symbolic or analytic aggregation reduces the high-frequency central and thin corner counts.
 
 ## Do-Not-Claim Rules
 
@@ -61,7 +61,7 @@ Current functional split:
 
 ## Last State Patch
 
-Proved the complete small-hole endpoint for 0<rho<=rho_*=omega_0/(1+2 C_*) and all K by an exact split at rho K=1/2; no endpoint certificate remains. Both rho endpoints are discharged, leaving only compact-rho bounded closure and the final theorem audit.
+created: SHELL-rho-compact-analytic-envelope, COMP-certified-bessel-pilot-round8; updated: SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; rejected: literal-wall-enumeration-closes-round8-compact-envelope; no_change: SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; round score: 6
 
 ## Active Obligation Briefs
 
@@ -71,14 +71,14 @@ Proved the complete small-hole endpoint for 0<rho<=rho_*=omega_0/(1+2 C_*) and a
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `COMP-certified-bessel`
-- Next action: Use the explicit compact interval [rho_*,1-2^(-18)], where rho_*=omega_0/(1+2 C_*). Make the analytic high-energy threshold uniform and certify only the resulting bounded residual window, with inclusive overlap at both endpoints.
+- Next action: The analytic envelope is proved and one central box is certified. Keep this obligation open until an exact manifest covers D; first compress the central and thin high-frequency corner spectra rather than enumerating the present 2^35/2^42 bounds.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: Neither endpoint needs certification. Restrict interval certification to the bounded residual window on rho in [rho_*,1-2^(-18)], preserving every determinant, phase, angular, floor, and strict spectral wall.
+- Next action: The local Arb/Fraction pipeline is validated, but the parent remains diagnostic_only. Build an exact E-minus-A cover manifest only after a symbolic or analytic aggregation reduces the high-frequency central and thin corner counts.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -168,7 +168,7 @@ Proved the complete small-hole endpoint for 0<rho<=rho_*=omega_0/(1+2 C_*) and a
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `SHELL-rho-compact`
-- Next action: Both rho endpoints are discharged. Close SHELL-rho-compact on [rho_*,1-2^(-18)], then assemble the all-rho theorem.
+- Next action: Both endpoints and the compact high-energy envelope are proved. The sole remaining blocker is exact certified coverage of the true compact residual D.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 
@@ -208,4 +208,15 @@ Proved the complete small-hole endpoint for 0<rho<=rho_*=omega_0/(1+2 C_*) and a
 - Clean-room reviewer: `A3`
 - Adversarial reviewer: `A2`
 - Blockers: `COMP-certified-bessel`, `SHELL-rho-uniformity`
-- Next action: The exact spectrum, fixed-rho high energy, and both rho endpoints are proved. The remaining theorem blocker is compact-rho bounded closure with certified computation, followed by a final theorem audit.
+- Next action: The theorem is analytic above K=2^42 on the remaining compact ratio interval and one residual box is certified. Complete the exact compact cover, then run final theorem-level clean-room and adversarial audits.
+
+### COMP-certified-bessel-pilot-round8: Independently checked shell-determinant certificate on one central residual box
+
+- Status: `certified`
+- Track: `certified_computation`
+- Owner: `A4`
+- Criticality: `standard`
+- Lead author: `A4`
+- Clean-room reviewer: `A3`
+- Adversarial reviewer: `A2`
+- Next action: Use this only as a validated schema and local pilot. Extend through an exact face-connected manifest only after analytic compression makes the remaining corner spectra tractable.

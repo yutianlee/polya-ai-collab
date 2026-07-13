@@ -2,84 +2,85 @@
 
 Date: 2026-07-13
 
-Round: `polya-main` / round 7
+Round: `polya-main` / round 8
 
 ## State patch
 
-- Source: `rounds/polya-main/round_007/judge/judge-007.md`.
-- The embedded State Patch was validated before application and applied
-  exactly once at round index 7.
-- Created `SHELL-low-interface-small-hole` as `proved_internal`, recording
-  the independently reviewed Round 3 shifted-tail theorem explicitly in the
-  graph.
-- Promoted `SHELL-rho-zero-endpoint` to `proved_internal`.
-- Removed the small-hole endpoint from the blockers of
-  `SHELL-rho-uniformity`; its sole remaining blocker is `SHELL-rho-compact`.
-- Kept `SHELL-rho-compact`, `COMP-certified-bessel`,
+- Source: `rounds/polya-main/round_008/judge/judge-008.md`.
+- The embedded State Patch was dry-validated before application and applied
+  exactly once at round index 8.
+- Created `SHELL-rho-compact-analytic-envelope` as `proved_internal`.
+- Created `COMP-certified-bessel-pilot-round8` as `certified` for one exact
+  closed central box.
+- Kept `SHELL-rho-compact`, the parent `COMP-certified-bessel`,
   `SHELL-rho-uniformity`, and `TARGET-shell-d3` open.
-- Rejected pointwise ball-root convergence, bare ball domain monotonicity,
-  and subtraction of one-sided ball Pólya estimates as substitute proofs.
+- Rejected literal wall-by-wall enumeration of the current coarse compact
+  envelope as a scalable closure strategy.
 
-## Review gates
+## Analytic review gates
 
-- Frozen small-hole endpoint proof: PASS.
-- Isolated clean-room reconstruction from the reduced packet: PASS.
-- Independent adversarial constants, walls, and route audit: PASS.
-- Final dependency and integration audit: PASS.
-- Historical low-interface incumbent, clean-room review, and adversarial
-  review rechecked as permitted inputs: PASS.
+- Frozen compact packet and incumbent proof: PASS.
+- Isolated clean-room reconstruction: PASS.
+- Independent adversarial constants, switches, and endpoint audit: PASS.
+- Post-correction audit of the $\mathcal E/\mathcal D$ distinction,
+  monotone-corner rule, face ownership, and exact cover manifest: PASS.
 
-## Mechanical validation
-
-- Proof-obligation graph after application and Round 8 routing update: PASS.
-- Python regression suite: 22 passed.
-- Python compile check: PASS.
-- Git diff whitespace check: PASS.
-- No computation is used in the Round 7 theorem.
-
-## Authoritative theorem boundary
-
-Let
-
-$$
-\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
-\qquad
-C_*=\frac12+\frac{8\sqrt2}{15},
-\qquad
-\rho_*=\frac{\omega_0}{1+2C_*}
-=0.0310668242700667\ldots .
-$$
-
-Round 7 proves
+The accepted analytic theorem is
 
 $$
 \boxed{
-0<\rho\le\rho_*,
-\qquad K\ge0
-\quad\Longrightarrow\quad
+\rho\in[\rho_*,1-2^{-18}],
+\qquad K\ge2^{42}
+\Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-The low-$\mu$ range $\rho K\le1/2$ and the reviewed high-energy range
-$K\ge C_*/(\omega_0-\rho)$ overlap exactly when $\rho\le\rho_*$. At the
-endpoint they meet at
+The left, central, and thin planning envelopes lie below $64$, $2^{35}$,
+and $2^{42}$ respectively. All switch and threshold equalities are included.
+
+## Certified pilot gates
+
+- Scope:
+
+  $$
+  \rho\in[999/2000,1001/2000],
+  \qquad K\in[67/10,168/25].
+  $$
+
+- Arb 256-bit producer: PASS.
+- Independent standard-library `Fraction` checker: PASS.
+- Exact strict count: $4$.
+- Certified Weyl lower bound: greater than
+  $18.60731553544245607556$.
+- Certified margin: greater than $14.60731553544245607556$.
+- Current producer, checker, packet, and certificate hashes: PASS.
+- Bit-for-bit reproduction of certificate and check report: PASS.
+- Fourteen decisive tamper mutations: all rejected.
+- Independent mathematical/code audit: PASS for this single box only.
+
+## Mechanical validation
+
+- Round 8 State Patch validation before and after application: PASS.
+- Proof-obligation graph: PASS.
+- Full Python regression suite: 28 passed.
+- Python compile check: PASS.
+- Git whitespace check: PASS.
+
+## Authoritative boundary
+
+Both endpoint neighborhoods remain proved for all frequencies. The complete
+compact ratio interval is proved above $K=2^{42}$, and one genuine residual
+box is certified. The global shell theorem remains open because the rest of
 
 $$
-K_*=\frac1{2\rho_*}=16.0943389531371\ldots,
+\mathcal D=(I_*\times[0,\infty))\setminus\mathcal A
 $$
 
-with equality included on both sides. The apparent small-hole certification
-box is empty.
+has no exact checked cover.
 
-Together with Round 6, both endpoint neighborhoods are now proved for all
-$K$:
-
-$$
-\rho\in(0,\rho_*]\cup[1-2^{-18},1).
-$$
-
-The global all-$\rho$ shell theorem remains open only on the explicit compact
-interval $[\rho_*,1-2^{-18}]$, where a uniform analytic threshold, bounded
-certification, and the final theorem-level audit are still required.
+At $\varepsilon=2^{-17}$, one present thin residual slice crosses more than
+$2^{38}$ angular half-integer walls. Round 9 therefore targets analytic or
+symbolic compression, beginning with a self-consistent optimization of the
+Round 6 local-plateau constant, rather than brute-force enumeration.
