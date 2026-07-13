@@ -29,14 +29,15 @@ $$
 On the intervening compact interval
 
 $$
-I_9=[\rho_*,1-1/15625],
+I_{10}=[\rho_*,1-1/15625],
 $$
 
 the shell inequality is now also proved uniformly for every
-$K\ge2^{35}$. Combining this compact result with the two endpoint theorems
+$K\ge125^5/8$. Combining this compact result with the two endpoint theorems
 gives the global analytic high-frequency theorem for every
-$0<\rho<1$ and $K\ge2^{35}$. The exact strict count is independently
-interval-certified
+$0<\rho<1$ and $K\ge125^5/8<2^{32}$. This ceiling is more than a factor
+nine lower than the former $2^{35}$ ceiling. The exact strict count is
+independently interval-certified
 on the closed central residual box
 
 $$
@@ -46,10 +47,11 @@ $$
 $$
 
 The all-frequency shell theorem is not yet proved. Its active blockers are
-exact coverage of the rest of the compact residual set below $2^{35}$ and
-the final theorem-level audit. The central $2^{35}$ planning bound still
-requires further analytic or symbolic compression before global
-certification is practical.
+exact coverage of the rest of the compact residual set below $125^5/8$ and
+the final theorem-level audit. The dominant unresolved analytic family is
+the ultra-thin aggregate-to-plateau gap for
+$1/15625<1-\rho\le1/100$; it should be compressed below $6000^2$ before
+large-scale certification is attempted.
 
 ## Round 1 Update
 
@@ -316,3 +318,61 @@ Therefore the shell inequality holds for every $0<\rho<1$ when
 $K\ge2^{35}$. The certified central pilot remains valid but local; the
 parent compact certification, the remaining compact residual below
 $2^{35}$, and the final all-frequency shell theorem remain open.
+
+## Round 10 Update
+
+Date: 2026-07-13
+
+See `rounds/polya-main/round_010/judge/judge-010.md`.
+
+Round 10 rederives the local-plateau argument on the enlarged domain
+$0<\varepsilon\le1/25$ and proves
+
+$$
+K\ge\frac{20}{\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3.
+$$
+
+The proof passed frozen-dependency, isolated clean-room, and adversarial
+review. It moves the central--thin seam to $\rho=24/25$. At that face the
+fixed-ratio threshold satisfies
+
+$$
+K_0(24/25)<6000^2,
+$$
+
+while on $24/25\le\rho\le99/100$ the new high threshold is at most
+$200000$. On the ultra-thin strip retain the sharper Round 9 threshold
+$125/[8(1-\rho)^2]$. These closed zones yield the new global theorem
+
+$$
+\boxed{
+0<\rho<1,
+\quad K\ge\frac{125^5}{8}<2^{32}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+Since $2^{35}>9(125^5/8)$, this is more than a ninefold reduction of the
+Round 9 all-ratio ceiling. Round 10 does not enlarge the complete thin
+endpoint: combining $C=20$ with the aggregate range overlaps only for
+$\varepsilon\le1/25600$, so the stronger existing all-frequency statement
+remains exactly $\varepsilon\le1/15625$.
+
+The all-frequency theorem remains open on the compact residual below
+$125^5/8$. Round 11 should first target the dominant ultra-thin gap
+
+$$
+\frac1{15625}<\varepsilon\le\frac1{100},
+\qquad
+\frac1{8\varepsilon^{5/2}}
+<K<
+\frac{125}{8\varepsilon^2},
+$$
+
+aiming to lower its ceiling below $6000^2$.

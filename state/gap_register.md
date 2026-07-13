@@ -5,23 +5,38 @@ The authoritative statuses are in state/proof_obligations.yml.
 ## Active shell gaps
 
 - Compress the proved analytic envelope on the explicit compact interval
-  $[\rho_*,1-1/15625]$, where
+  $I_{10}=[\rho_*,1-1/15625]$, where
 
   $$
   \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-  The optimized thin local-plateau theorem reduces the uniform analytic
-  threshold to $K\ge2^{35}$. Exact coverage of the remaining compact
-  residual below this threshold still requires further analytic or symbolic
-  compression; direct global enumeration remains too coarse.
+  The enlarged Round 10 seam theorem and retained optimized ultra-thin
+  theorem reduce the uniform analytic threshold to
+  $K\ge125^5/8<2^{32}$, more than a factor nine below $2^{35}$. Exact
+  coverage of the remaining compact residual below this threshold still
+  requires further analytic or symbolic compression; direct global
+  enumeration remains too coarse.
+
+- First target the dominant ultra-thin aggregate-to-plateau gap
+
+  $$
+  \frac1{15625}<\varepsilon\le\frac1{100},
+  \qquad
+  \frac1{8\varepsilon^{5/2}}
+  <K<\frac{125}{8\varepsilon^2}.
+  $$
+
+  Round 11 should enlarge the aggregate range or add a separate intermediate
+  bridge, aiming to lower this family's ceiling below $6000^2$ before a
+  large certification manifest is attempted.
 
 - Extend the certified central pilot into an exact face-connected cover of
   the true residual set
 
   $$
-  \mathcal D=(I_9\times[0,\infty))\setminus\mathcal A,
+  \mathcal D=(I_{10}\times[0,\infty))\setminus\mathcal A,
   $$
 
   not of the larger closed planning envelope. Every box needs an analytic or
@@ -55,6 +70,10 @@ The authoritative statuses are in state/proof_obligations.yml.
 - The optimized uniform local-plateau high-thin range
   $K\ge125/[8(1-\rho)^2]$ for $1-\rho\le1/100$, proved without importing
   estimates conditional on the old constant $64$.
+- The enlarged local-plateau seam range
+  $K\ge20/(1-\rho)^2$ for $1-\rho\le1/25$, proved by rederiving every
+  domain-dependent estimate. On the common domain $1-\rho\le1/100$, the
+  sharper constant $125/8$ remains authoritative.
 - The complete thin-shell endpoint
   $1-1/15625\le\rho<1$ for every $K\ge0$, obtained from the exact overlap of
   the preceding low and optimized high ranges at $K=125^5/8$.
@@ -65,12 +84,15 @@ The authoritative statuses are in state/proof_obligations.yml.
   $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
   $\rho K=1/2$. The apparent finite small-hole residual is empty.
 - The piecewise compact-ratio analytic envelope and the uniform theorem
-  $K\ge2^{35}$ on $[\rho_*,1-1/15625]$. The left, central, and thin residual
-  ceilings are respectively $64$, $2^{35}$, and
-  $125^5/8<2^{32}$, with exact threshold and switch faces.
+  $K\ge125^5/8$ on $I_{10}=[\rho_*,1-1/15625]$. The residual ceilings are
+  below $64$ on $[\rho_*,1/16]$, below $K_0(24/25)<6000^2$ on
+  $[1/16,24/25]$, at most $200000$ on $[24/25,99/100]$, and at most
+  $125^5/8<2^{32}$ on $[99/100,1-1/15625]$, with exact threshold and switch
+  faces.
 - The global analytic high-frequency shell theorem for
-  $0<\rho<1$ and $K\ge2^{35}$, obtained by combining the compact envelope
-  with the two complete endpoint theorems.
+  $0<\rho<1$ and $K\ge125^5/8<2^{32}$, obtained by combining the compact
+  envelope with the two complete endpoint theorems. The new ceiling is more
+  than nine times smaller than $2^{35}$.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -83,6 +105,10 @@ The authoritative statuses are in state/proof_obligations.yml.
 - The Round 5 product range alone does not overlap the old
   $K_0(1-\varepsilon)$ threshold. Round 6 supersedes that failed two-piece
   route with aggregate-action and local-plateau estimates.
+- Combining the enlarged Round 10 constant $C=20$ with the aggregate-action
+  range overlaps only for $\varepsilon\le1/25600$. It therefore does not
+  enlarge the already-proved all-frequency endpoint
+  $\varepsilon\le1/15625$.
 - A single volume-matched effective radius is not a global pointwise action
   majorant: it vanishes inside the positive whispering-gallery strip.
 - Any fixed finite Neumann-sublayer majorant has the wrong cubic coefficient
@@ -96,8 +122,9 @@ The authoritative statuses are in state/proof_obligations.yml.
 - Literal wall-by-wall certification of the Round 8 coarse compact envelope
   was not a scalable route. At $\varepsilon=2^{-17}$, one former thin
   residual slice crossed more than $2^{38}$ angular half-integer walls.
-  Round 9 now covers that slice analytically, while the remaining compact
-  residual still requires monotone-corner, symbolic, or analytic aggregation.
+  Rounds 9 and 10 lower the all-ratio ceiling to $125^5/8$, while the
+  remaining compact residual still requires monotone-corner, symbolic, or
+  analytic aggregation.
 
 ## Parallel-track gaps
 

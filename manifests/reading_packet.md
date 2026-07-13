@@ -1,12 +1,12 @@
 # Reading Packet
 
-Generated after round 9 in run `polya-main`.
+Generated after round 10 in run `polya-main`.
 
 ## Current Theorem Target
 
 Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.
 
-Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods (now with 1-rho<=1/15625 on the thin side), and the all-rho analytic range K>=2^35 are proved. One central residual box is certified; exact coverage of the rest of the compact residual and the final theorem audit remain open.
+Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods (with 1-rho<=1/15625 on the thin side), and the all-rho analytic range K>=125^5/8<2^32 are proved. The central--thin seam is now rho=24/25 with K_0(24/25)<6000^2. One central residual box is certified; exact coverage of the rest of the compact residual and the final theorem audit remain open.
 
 ## Current Route
 
@@ -24,10 +24,14 @@ Current blockers:
 
 ## Round Target Obligations
 
+- `SHELL-thin-action-aggregate` (proved_internal, owner `A2`): Mean-square-radius aggregate action bound for thin shells
+  Next action: Round 11 should enlarge the aggregate range or prove a separate intermediate bridge across the remaining aggregate-to-plateau gap for 1/15625<epsilon<=1/100, targeting a residual ceiling below 6000^2.
+- `SHELL-thin-curvature-intermediate` (proved_internal, owner `A2`): Radius-sensitive intermediate thin-shell estimate
+  Next action: The all-frequency conclusion remains exactly 0<epsilon<=1/15625. Use its aggregate/high overlap as the lower side of the Round 11 ultra-thin gap problem.
 - `SHELL-rho-compact` (open, owner `A2`): Uniform shell estimates on compact rho intervals
-  Next action: Keep this obligation open until an exact manifest covers the true residual on I_9 below K=2^35. The thin part now lies below 2^32, but no new residual box was certified in Round 9.
+  Next action: Keep this obligation open until exact analytic or certified coverage closes the true residual on I_10 below K=125^5/8. Target the dominant ultra-thin gap before attempting a large manifest.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: The parent remains diagnostic_only. Use the compressed I_9 residual and the 2^35 global ceiling to design an exact E-minus-A manifest; do not treat the Round 9 rational constant checker as a Bessel-root certificate.
+  Next action: The parent remains diagnostic_only. Redefine any future E-minus-A manifest using I_10 and K<125^5/8; the Round 10 rational ledger is not a Bessel-root certificate.
 
 ## Do-Not-Claim Rules
 
@@ -61,7 +65,7 @@ Current functional split:
 
 ## Last State Patch
 
-created: SHELL-thin-local-plateau-optimized; updated: SHELL-thin-curvature-intermediate, SHELL-rho-one-endpoint, SHELL-rho-compact-analytic-envelope, SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; no_change: SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; round score: 6
+created: SHELL-central-thin-seam-compression; updated: SHELL-thin-local-plateau-optimized, SHELL-thin-action-aggregate, SHELL-thin-curvature-intermediate, SHELL-rho-one-endpoint, SHELL-rho-compact-analytic-envelope, SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; no_change: SHELL-thin-local-plateau-optimized, SHELL-thin-action-aggregate, SHELL-thin-curvature-intermediate, SHELL-rho-one-endpoint, SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; round score: 6
 
 ## Active Obligation Briefs
 
@@ -71,14 +75,14 @@ created: SHELL-thin-local-plateau-optimized; updated: SHELL-thin-curvature-inter
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `COMP-certified-bessel`
-- Next action: Keep this obligation open until an exact manifest covers the true residual on I_9 below K=2^35. The thin part now lies below 2^32, but no new residual box was certified in Round 9.
+- Next action: Keep this obligation open until exact analytic or certified coverage closes the true residual on I_10 below K=125^5/8. Target the dominant ultra-thin gap before attempting a large manifest.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: The parent remains diagnostic_only. Use the compressed I_9 residual and the 2^35 global ceiling to design an exact E-minus-A manifest; do not treat the Round 9 rational constant checker as a Bessel-root certificate.
+- Next action: The parent remains diagnostic_only. Redefine any future E-minus-A manifest using I_10 and K<125^5/8; the Round 10 rational ledger is not a Bessel-root certificate.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -168,7 +172,7 @@ created: SHELL-thin-local-plateau-optimized; updated: SHELL-thin-curvature-inter
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `SHELL-rho-compact`
-- Next action: Both endpoint neighborhoods and the all-ratio high-energy range K>=2^35 are proved. Keep this obligation open until exact certified coverage closes the remaining compact residual below 2^35.
+- Next action: Both endpoint neighborhoods and the all-ratio range K>=125^5/8 are proved. Keep this obligation open until the remaining compact residual below that ceiling is exactly closed.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 
@@ -208,7 +212,7 @@ created: SHELL-thin-local-plateau-optimized; updated: SHELL-thin-curvature-inter
 - Clean-room reviewer: `A3`
 - Adversarial reviewer: `A2`
 - Blockers: `COMP-certified-bessel`, `SHELL-rho-uniformity`
-- Next action: The strict shell inequality is now proved for every ratio when K>=2^35. Complete exact coverage of the compact residual below that ceiling, then run final theorem-level clean-room and adversarial audits.
+- Next action: The strict shell inequality is now proved for every ratio when K>=125^5/8<2^32. Complete exact coverage below that ceiling, then run final theorem-level clean-room and adversarial audits.
 
 ### COMP-certified-bessel-pilot-round8: Independently checked shell-determinant certificate on one central residual box
 

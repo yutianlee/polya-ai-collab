@@ -347,6 +347,42 @@ $$
 Threshold equality and all ordinary-floor, interface, gain, and strict
 spectral walls are included.
 
+## Enlarged local-plateau seam theorem
+
+Round 10 rederives the local-plateau argument on the larger parameter domain
+
+$$
+0<\varepsilon\le\frac1{25}.
+$$
+
+With $K\varepsilon^2\ge20$, the incumbent proof obtains
+
+$$
+\widehat q<\frac{21}{80},
+\qquad
+R<\frac{73}{16\sqrt\varepsilon},
+$$
+
+and exact no-drop and gain-payment margins close every low-interface shifted
+tail. An isolated reconstruction reaches the same theorem with distinct
+intermediate constants. Consequently
+
+$$
+\boxed{
+0<\varepsilon\le\frac1{25},
+\quad
+K\ge\frac{20}{\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3.
+}
+$$
+
+The threshold face is included. On the common domain
+$0<\varepsilon\le1/100$, the Round 9 constant $125/8$ is sharper and remains
+the authoritative high threshold.
+
 ## Complete thin-shell endpoint
 
 The low and optimized high thresholds overlap exactly when
@@ -374,6 +410,16 @@ $$
 This endpoint theorem is analytic and requires no Bessel-root certificate.
 The Round 6 artifacts record the earlier $C=64$ theorem; the optimized proof
 and independent review are recorded in `rounds/polya-main/round_009/`.
+The enlarged Round 10 theorem does not improve this all-frequency endpoint:
+
+$$
+\frac{20}{\varepsilon^2}
+\le\frac1{8\varepsilon^{5/2}}
+\quad\Longleftrightarrow\quad
+\varepsilon\le\frac1{25600},
+$$
+
+which is a smaller range than $\varepsilon\le1/15625$.
 
 ## Complete small-hole endpoint
 
@@ -436,10 +482,10 @@ certification are unnecessary.
 On the remaining ratio interval
 
 $$
-I_9=\left[\rho_*,1-\frac1{15625}\right],
+I_{10}=\left[\rho_*,1-\frac1{15625}\right],
 $$
 
-use three exact zones.
+use four exact zones.
 
 For $\rho_*\le\rho\le1/16$, the high-angular theorem proves the target for
 $K\le1/(2\rho)$ and the small-hole low-interface theorem proves it for
@@ -455,7 +501,7 @@ $$
 H_0(1/16)<64.
 $$
 
-For $1/16\le\rho\le99/100$, the strict count is zero below
+For $1/16\le\rho\le24/25$, the strict count is zero below
 $\pi/(1-\rho)$ and the fixed-ratio theorem applies above $K_0(\rho)$. The
 positive-root equation
 
@@ -466,10 +512,17 @@ $$
 
 shows that $K_0$ increases with $a$ and decreases with $\eta$. Since
 $a_\rho$ increases and $\eta_\rho$ does not, $K_0(\rho)$ is increasing.
-Exact endpoint estimates give
+Exact endpoint estimates at the moved seam give
 
 $$
-K_0(99/100)<180000^2<2^{35}.
+K_0(24/25)<6000^2.
+$$
+
+For $24/25\le\rho\le99/100$, write $\varepsilon=1-\rho$. The enlarged
+Round 10 local-plateau theorem applies above
+
+$$
+\frac{20}{\varepsilon^2}\le200000.
 $$
 
 For $99/100\le\rho\le1-1/15625$, write
@@ -482,18 +535,26 @@ K\le\frac1{8\varepsilon^{5/2}}
 K\ge\frac{125}{8\varepsilon^2}.
 $$
 
-Every possible residual in this thin zone satisfies
+Every possible residual in this ultra-thin zone satisfies
 
 $$
 K<\frac{125^5}{8}<2^{32}.
 $$
 
-The unchanged central ceiling $2^{35}$ therefore dominates all three zones,
-and
+The exact comparisons
+
+$$
+6000^2<\frac{125^5}{8},
+\qquad
+200000<\frac{125^5}{8},
+$$
+
+show that the retained Round 9 ultra-thin ceiling dominates all four zones.
+Thus
 
 $$
 \boxed{
-\rho\in I_9,\quad K\ge2^{35}
+\rho\in I_{10},\quad K\ge\frac{125^5}{8}
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
@@ -505,18 +566,26 @@ theorems yields the global analytic high-frequency result
 
 $$
 \boxed{
-0<\rho<1,\quad K\ge2^{35}
+0<\rho<1,\quad K\ge\frac{125^5}{8}<2^{32}
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-The closed union of the three displayed gap envelopes is only a planning set
+Moreover
+
+$$
+2^{35}>9\frac{125^5}{8},
+$$
+
+so the new ceiling is more than nine times smaller than the former one.
+
+The closed union of the four displayed gap envelopes is only a planning set
 $\mathcal E$. The actual certificate target is
 
 $$
-\mathcal D=(I_9\times[0,\infty))\setminus\mathcal A,
+\mathcal D=(I_{10}\times[0,\infty))\setminus\mathcal A,
 $$
 
 where $\mathcal A$ contains every analytically covered point and threshold
@@ -560,8 +629,16 @@ gates are:
 
 - analytic or symbolic compression of the current compact planning envelope,
   followed by an exact face-connected certificate of every point of
-  $\mathcal D$ below $2^{35}$. The Round 9 optimization has removed the old
-  thin ceiling; further analytic aggregation or exact monotone-corner
-  certification is still needed for the remaining compact residual;
+  $\mathcal D$ below $125^5/8$. The first Round 11 target is the dominant
+  ultra-thin aggregate-to-plateau gap
+
+  $$
+  \frac1{15625}<\varepsilon\le\frac1{100},
+  \qquad
+  \frac1{8\varepsilon^{5/2}}
+  <K<\frac{125}{8\varepsilon^2},
+  $$
+
+  aiming to lower its ceiling below $6000^2$ before any large certificate;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review.

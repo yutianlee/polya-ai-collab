@@ -53,6 +53,17 @@ $$
   obtained self-consistently without importing the old $C=64$ hypothesis,
   and the uniform high-thin theorem
   $K\ge125/(8\varepsilon^2)$ for $0<\varepsilon\le1/100$;
+- the enlarged local-plateau seam theorem
+
+$$
+0<\varepsilon\le\frac1{25},
+\qquad
+K\ge\frac{20}{\varepsilon^2},
+$$
+
+  proved by rederiving every domain-dependent estimate, with threshold
+  equality included. The sharper constant $125/8$ remains authoritative on
+  the overlap $0<\varepsilon\le1/100$;
 - the exact overlap
 
 $$
@@ -98,18 +109,20 @@ $$
 - the compact-ratio analytic envelope: on
 
 $$
-I_9=\left[\rho_*,1-\frac1{15625}\right],
+I_{10}=\left[\rho_*,1-\frac1{15625}\right],
 $$
 
-  the possible left, central, and thin residual families lie below $64$,
-  $2^{35}$, and $125^5/8<2^{32}$ respectively, and therefore
+  the possible residual families lie below $64$ on
+  $[\rho_*,1/16]$, below $K_0(24/25)<6000^2$ on
+  $[1/16,24/25]$, below $200000$ on $[24/25,99/100]$, and below
+  $125^5/8<2^{32}$ on $[99/100,1-1/15625]$. Therefore
 
 $$
-K\ge2^{35}
+K\ge\frac{125^5}{8}
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(\rho\in I_9);
+\qquad(\rho\in I_{10});
 $$
 
 - combining the compact envelope with both endpoint theorems gives the
@@ -117,8 +130,11 @@ $$
 
 $$
 0<\rho<1,
-\qquad K\ge2^{35}.
+\qquad K\ge\frac{125^5}{8}<2^{32}.
 $$
+
+  The exact comparison $2^{35}>9(125^5/8)$ makes this more than a ninefold
+  reduction of the previous global ceiling;
 
 - the independently checked certified pilot
 
@@ -132,10 +148,19 @@ $$
   $14.6073155354$. The Arb producer and independent rational checker are
   local evidence only; they do not certify the rest of the compact residual.
 
-`SHELL-rho-compact` remains open. The Round 9 optimization has reduced the
-global analytic ceiling to $2^{35}$ and removed the old thin residual band,
-but it does not certify the remaining compact residual below that ceiling.
-Certification may expand only through an exact face-connected manifest for
-the true residual $\mathcal D$; further analytic aggregation or safe
-monotone-corner certification is still required. The parent compact
-certification and final theorem remain open.
+`SHELL-rho-compact` remains open. Round 10 has reduced the global analytic
+ceiling to $125^5/8$, but it does not certify the remaining compact residual
+below that ceiling. The next analytic target is the ultra-thin gap
+
+$$
+\frac1{15625}<\varepsilon\le\frac1{100},
+\qquad
+\frac1{8\varepsilon^{5/2}}
+<K<\frac{125}{8\varepsilon^2},
+$$
+
+with the goal of lowering its ceiling below $6000^2$. Certification may
+expand only through an exact face-connected manifest for the true residual
+$\mathcal D$; further analytic aggregation or safe monotone-corner
+certification is still required. The parent compact certification and final
+theorem remain open.
