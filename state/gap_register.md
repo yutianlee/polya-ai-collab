@@ -4,17 +4,19 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- With $\varepsilon=1-\rho\le1/100$, prove a radius-sensitive thin-shell
-  estimate between the discharged range
-  $K\le\pi/(4\varepsilon^2)$ and the pointwise high-energy range
-  $K\ge K_0(1-\varepsilon)$. The flat outer-radius product comparison is
-  provably too large in this gap.
-- Prove the small-hole endpoint and combine both endpoints with explicit
-  compact-$\rho$ bounds. The pointwise threshold $K_0(\rho)$ is not a
-  uniform covering.
-- Build interval-certified verification for the remaining bounded parameter
-  set, including every determinant root, phase wall, floor wall, and strict
-  spectral endpoint.
+- Prove a quantitative small-hole endpoint: find an explicit $\rho_0>0$ and
+  cover every $0<\rho\le\rho_0$ and $K\ge0$. Pointwise convergence of shell
+  roots to ball roots is not a uniform proof; low angular orders, the regime
+  $\rho K<1/2$, and strict phase walls require explicit control.
+- Make the analytic high-energy threshold uniform on the intervening compact
+  interval $[\rho_0,1-2^{-18}]$, then formulate the remaining finite parameter
+  set as bounded boxes.
+- Build interval-certified verification for those bounded boxes, including
+  every determinant root, phase wall, floor wall, and strict spectral
+  endpoint. No thin-endpoint certificate is required.
+- After the small-hole and compact pieces close, perform a fresh theorem-level
+  clean-room reconstruction and adversarial audit before promoting the global
+  shell theorem.
 
 ## Closed shell prerequisites
 
@@ -34,14 +36,26 @@ The authoritative statuses are in state/proof_obligations.yml.
 - The uniform thin-shell product range
   $0<1-\rho\le1/100$ and
   $K\le\pi/[4(1-\rho)^2]$.
+- The radius-sensitive mean-square-action range
+  $K\le1/[8(1-\rho)^{5/2}]$ after combination with the product range.
+- The uniform local-plateau high-thin range
+  $K\ge64/(1-\rho)^2$ for $1-\rho\le1/100$.
+- The complete thin-shell endpoint
+  $1-2^{-18}\le\rho<1$ for every $K\ge0$, obtained from the exact overlap of
+  the preceding low and high ranges.
 
 ## Rejected shell routes
 
 - Replacing $r^{-2}$ by its outer-boundary minimum $1$ cannot close the full
   thin-shell endpoint. The resulting product majorant has exact failures at
   optical width of order $(1-\rho)^{-1}$.
-- The proved product range does not overlap the current
-  $K_0(1-\varepsilon)$ high-energy threshold.
+- The Round 5 product range alone does not overlap the old
+  $K_0(1-\varepsilon)$ threshold. Round 6 supersedes that failed two-piece
+  route with aggregate-action and local-plateau estimates.
+- A single volume-matched effective radius is not a global pointwise action
+  majorant: it vanishes inside the positive whispering-gallery strip.
+- Any fixed finite Neumann-sublayer majorant has the wrong cubic coefficient
+  at sufficiently large $K$.
 
 ## Parallel-track gaps
 

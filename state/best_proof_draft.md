@@ -168,28 +168,179 @@ $$
 The proof and exact lattice margin are recorded in
 state/lemma_packets/SHELL-thin-product-low-optical.md.
 
-This comparison cannot be extrapolated. Its majorant exceeds the shell Weyl
-target at exact walls of order $a\asymp\varepsilon^{-1}$, including an exact
-family with $\varepsilon\downarrow0$. The current high-energy theorem begins
-only at
+This product comparison cannot itself be extrapolated. Its majorant exceeds
+the shell Weyl target at exact walls of order
+$a\asymp\varepsilon^{-1}$, including a family with
+$\varepsilon\downarrow0$. Round 6 closes the resulting gap by two different
+radius-sensitive arguments.
+
+## Exact scaled-action aggregate theorem
+
+Put $y=\varepsilon\nu$. The exact shell action is
 
 $$
-\varepsilon K_0(1-\varepsilon)
-\asymp
-\frac{9\pi^3}{4}\varepsilon^{-3}.
+\mathcal A_{\varepsilon,a}(y)
+=\frac1\pi\int_0^1
+\sqrt{a^2-\frac{y^2}{(1-\varepsilon s)^2}}_+\,ds
+=G_K(\nu)-G_{\rho K}(\nu).
 $$
 
-The two ranges therefore leave a genuine radius-sensitive intermediate gap.
+On the strict half-integer mesh
+$y_\ell=\varepsilon(\ell+\tfrac12)$, let
+
+$$
+q_\ell=
+\left[\mathcal A_{\varepsilon,a}(y_\ell)+\frac14\right]_<,
+\qquad
+P_{\mathcal A}=\varepsilon\sum_{y_\ell<a}y_\ell q_\ell.
+$$
+
+The audited phase enclosure and exact spectrum reduce the shell inequality to
+
+$$
+P_{\mathcal A}le I_{\varepsilon,a},
+\qquad
+I_{\varepsilon,a}
+=\int_0^a y\mathcal A_{\varepsilon,a}(y)\,dy.
+$$
+
+Fubini gives the exact coefficient
+
+$$
+I_{\varepsilon,a}
+=\frac{m_\varepsilon a^3}{3\pi},
+\qquad
+m_\varepsilon
+=1-\varepsilon+\frac{\varepsilon^2}{3}
+=\frac1\varepsilon\int_{1-\varepsilon}^1r^2\,dr.
+$$
+
+Define the volume-matched semicircle
+
+$$
+\mathcal B_{\varepsilon,a}(y)
+=\frac1\pi
+\sqrt{a^2-\frac{y^2}{m_\varepsilon}}_+.
+$$
+
+Jensen's inequality proves
+$\mathcal A_{\varepsilon,a}\le\mathcal B_{\varepsilon,a}$ only below the
+inner interface $y\le\rho a$. The effective action is deliberately not used
+as a global pointwise majorant. Strict layer cake at radial levels
+$n-\tfrac14$, the exact half-integer angular count, and the shifted deficit
+
+$$
+\frac D{\pi^2}
+=\frac{N^2}{4}
++N\left(u^2-\frac1{48}\right)
++\frac{2u^3}{3},
+\qquad -\frac14<u\le\frac34,
+$$
+
+give an effective-action lattice margin larger than $a^2/12$. The positive
+outer whispering-gallery strip costs less than $a^2/12$ whenever
+
+$$
+\frac\pi{4\varepsilon}
+\le a\le\frac1{8\varepsilon^{3/2}},
+\qquad 0<\varepsilon\le\frac1{100}.
+$$
+
+Consequently the shell inequality holds throughout
+
+$$
+\frac\pi{4\varepsilon^2}
+\le K\le\frac1{8\varepsilon^{5/2}}.
+$$
+
+Together with the product theorem, this covers
+$0\le K\le1/(8\varepsilon^{5/2})$.
+
+## Uniform local-plateau high-thin theorem
+
+The Round 3 shifted-tail decomposition can be sharpened by retaining the
+location of its first constant-floor plateau. If $p$ is its length and
+$m$ is the remaining number of concave-head cells, the only dangerous loss
+is $p-dm$. In that branch the exact local slope
+
+$$
+-A_{\rho,K}'(z)
+=\frac1\pi
+\left(
+\arccos\frac zK-
+\arccos\frac z{\rho K}
+\right)
+\ge
+\frac{\varepsilon z}{\pi\sqrt{K^2-z^2}}
+$$
+
+forces
+
+$$
+p<\frac{10}{\sqrt\varepsilon}
+\qquad
+\left(K\ge\frac{64}{\varepsilon^2}ight).
+$$
+
+At the same threshold, the convex-tail gain is paid by
+
+$$
+G_1(1-\varepsilon)
+\ge\frac{2\sqrt2}{3\pi}\varepsilon^{3/2}.
+$$
+
+This proves every low-interface shifted tail; the audited convex theorem
+handles starts at or above the interface. Therefore
+
+$$
+K\ge\frac{64}{\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3
+$$
+
+for $0<\varepsilon\le1/100$.
+
+## Complete thin-shell endpoint
+
+The low and high thresholds overlap exactly when
+
+$$
+\frac{64}{\varepsilon^2}
+\le\frac1{8\varepsilon^{5/2}}
+\quad\Longleftrightarrow\quad
+\varepsilon\le2^{-18}.
+$$
+
+At $\varepsilon=2^{-18}$ both thresholds equal $2^{42}$, and both component
+theorems include equality. Hence
+
+$$
+\boxed{
+1-2^{-18}\le\rho<1,
+\quad K\ge0
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+This endpoint theorem is analytic and requires no Bessel-root certificate.
+The frozen proof and all clean-room/adversarial evidence are recorded in
+`state/lemma_packets/SHELL-thin-curvature-intermediate.md` and
+`rounds/polya-main/round_006/`.
 
 ## Remaining gates
 
 This file must not be cited as a proof of the full shell theorem. The open
 gates are:
 
-- a radius-sensitive thin-shell estimate between
-  $K=\pi/[4(1-\rho)^2]$ and $K_0(\rho)$ near $\rho=1$;
-- a quantitative small-hole endpoint and explicit compact-$\rho$ overlap;
-- interval-certified closure of the bounded residual parameter set,
+- a quantitative small-hole endpoint with an explicit $\rho_0$ and explicit
+  overlap with the compact-$\rho$ sector;
+- a uniform high-energy threshold on
+  $[\rho_0,1-2^{-18}]$ and interval-certified closure of the resulting
+  bounded residual parameter set,
   including every determinant, phase, floor, and strict spectral wall;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review.

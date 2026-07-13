@@ -2,9 +2,24 @@
 
 Initialized for the Pólya AI collaboration.
 
-The authoritative graph is `state/proof_obligations.yml`. The initial primary target is exact Dirichlet Pólya for 3D spherical shells. No theorem has been proved by this repository yet.
+The authoritative graph is `state/proof_obligations.yml`. The primary target is exact Dirichlet Pólya for 3D spherical shells.
 
 Next run id: `polya-main`.
+
+## Current theorem boundary
+
+The repository proves the exact separated spectrum, the shell inequality at
+high energy for every fixed $0<\rho<1$, and the complete uniform thin-shell
+endpoint
+
+$$
+1-2^{-18}\le\rho<1,
+\qquad K\ge0.
+$$
+
+The all-$\rho$ shell theorem is not yet proved. Its active blockers are the
+small-hole endpoint, the intervening compact-$\rho$ finite window, bounded
+certified closure, and the final theorem-level audit.
 
 ## Round 1 Update
 
@@ -96,3 +111,41 @@ The remaining thin-shell gap is now explicit: a radius-sensitive estimate
 must bridge the new low-optical theorem to the pointwise high-energy threshold
 $K_0(1-\varepsilon)$. Small-hole analysis and interval certification also
 remain open.
+
+## Round 6 Update
+
+Date: 2026-07-13
+
+See `rounds/polya-main/round_006/judge/judge-006.md`.
+
+Round 6 closes the entire $\rho\uparrow1$ endpoint analytically. The exact
+scaled-action argument proves the shell inequality through
+
+$$
+K\le\frac1{8\varepsilon^{5/2}},
+\qquad \varepsilon=1-\rho,
+$$
+
+while the local first-plateau argument proves it for
+
+$$
+K\ge\frac{64}{\varepsilon^2}.
+$$
+
+The ranges overlap exactly when $\varepsilon\le2^{-18}$; equality is included
+on both sides. Therefore
+
+$$
+\boxed{
+1-2^{-18}\le\rho<1,
+\quad K\ge0
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+Both components passed isolated clean-room reconstruction and adversarial
+constants/wall review. No Bessel-root certificate is needed in this endpoint
+neighborhood. The next primary analytic target is `SHELL-rho-zero-endpoint`;
+the remaining compact interval and its bounded certificate are secondary.

@@ -1,120 +1,128 @@
 # Next Round Prompts
 
-Generated after Round 5 in run polya-main.
+Generated after Round 6 in run `polya-main`.
 
-Source synthesis: rounds/polya-main/round_005/judge/judge-005.md.
+Source synthesis: `rounds/polya-main/round_006/judge/judge-006.md`.
+
+## Accepted boundary
+
+The exact spectrum, fixed-$\rho$ high-energy theorem, and complete thin-shell
+endpoint are proved. In particular,
+
+$$
+1-2^{-18}\le\rho<1,
+\qquad K\ge0
+$$
+
+requires no Bessel-root certification. The next primary obligation is
+`SHELL-rho-zero-endpoint`; `SHELL-rho-compact` and
+`COMP-certified-bessel` are secondary and must be scoped only after the
+small-hole split is explicit.
 
 ## For A1
 
-Prepare the reduced packet for SHELL-thin-curvature-intermediate. Write
+Prepare and freeze the reduced packet for `SHELL-rho-zero-endpoint`. It must
+state one quantitative theorem with an explicit constant $\rho_0>0$:
 
 $$
-\varepsilon=1-\rho,\qquad
-a=\varepsilon K.
+0<\rho\le\rho_0,
+\qquad K\ge0
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
 $$
 
-The accepted ranges are
+Use the scaled inner parameter
 
 $$
-K\le\frac{\pi}{4\varepsilon^2}
+\mu=\rho K
 $$
 
-for $0<\varepsilon\le1/100$, and
+and require an explicit case split at least between $\mu<1/2$ and
+$\mu\ge1/2$. List the exact spectrum, strict phase convention, audited ball
+source, and `state/lemma_packets/SHELL-low-interface-small-hole.md` as the
+available evidence, while distinguishing proved inputs from routes that still
+need proof. The packet must identify a finite residual $(\rho,K)$ region and
+an explicit overlap with the compact-$\rho$ interval.
 
-$$
-K\ge K_0(1-\varepsilon).
-$$
-
-The packet must state one exact intermediate theorem with explicit overlap.
-It must reject the replacement $r^{-2}\mapsto1$, whose product majorant has
-exact counterexamples. Require every new comparison to recover the mean
-cross-section
-
-$$
-\frac1\varepsilon\int_{1-\varepsilon}^1r^2\,dr
-=1-\varepsilon+\frac{\varepsilon^2}{3}
-$$
-
-at the cubic level.
+Do not use pointwise convergence of shell roots to ball roots as a uniform
+theorem. State the required constants, low-order exceptions, phase/floor
+walls, and volume-margin inequality explicitly.
 
 ## For A2
 
-Develop a radius-sensitive incumbent. The preferred aggregate phase
-coordinates are
+Develop the incumbent small-hole proof. Start from the proved shifted-tail
+sector in `state/lemma_packets/SHELL-low-interface-small-hole.md`:
 
 $$
-y=\varepsilon\nu,
+0<\rho<\omega_0,
+\qquad
+K(\omega_0-\rho)\ge C_*,
 $$
 
-and
+where
 
 $$
-\mathcal A_{\varepsilon,a}(y)
-=
-\frac1\pi\int_0^1
-\sqrt{
-a^2-\frac{y^2}{(1-\varepsilon s)^2}
-}_+\,ds.
+\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+\qquad
+C_*=\frac12+\frac{8\sqrt2}{15}.
 $$
 
-This is exactly
+Turn this into an explicit uniform high-$K$ threshold for
+$0<\rho\le\rho_0<\omega_0$. Combine it with the exact zero-count region
+$(1-\rho)K\le\pi$, then attack only the remaining bounded window. For that
+window, seek a quantitative comparison with the Dirichlet ball that controls
+the loss of volume $1-\rho^3$ and is uniform in every retained angular order.
 
-$$
-G_K(\nu)-G_{\rho K}(\nu)
-$$
-
-after scaling. Seek a weighted integer inequality directly for the
-half-integer mesh $y_\ell=\varepsilon(\ell+1/2)$. Aggregate floor savings
-before applying worst-case bounds; the fixed-$\rho$ proof loses uniformity by
-requiring every low-interface shifted tail to close separately.
-
-Acceptable alternative routes include:
-
-- radial sublayer bracketing with angular coefficients that preserve the
-  Riemann sum for $r^2$;
-- a kinetic-plus-centrifugal lower bound that pays explicitly for
-  localization near $r=1$;
-- an improved thin-scaled shifted-tail inequality with constants uniform in
-  $\varepsilon$.
-
-Every route must give a finite explicit threshold and prove overlap.
+Acceptable alternatives include a direct strict phase comparison at fixed
+$\mu=\rho K$, a finite low-order analytic enclosure plus an angular-tail
+theorem, or an analytic reduction to explicit interval boxes. Every route
+must provide a numerical-free proof of boundedness and explicit overlap with
+`SHELL-rho-compact`.
 
 ## For A3
 
-Receive only the reduced packet and independently reconstruct the proposed
-intermediate estimate. Search for failure at:
+Receive only the reduced packet and reconstruct the proposed small-hole
+theorem independently. Try to falsify it at:
 
-- $\varepsilon a/\pi$ near $3/4$;
-- exact radial and angular walls;
-- whispering-gallery modes localized near the outer boundary;
-- the inner turning interface $y=(1-\varepsilon)a$;
-- the claimed overlap point with $K_0(1-\varepsilon)$.
+- $\rho K<1/2$, where the inner Bessel argument is below the first
+  half-integer angular scale;
+- $\ell=0,1,2$ and the first radial roots;
+- exact shell eigenvalues and exact phase or floor walls;
+- $\rho=\rho_0$ and every joining value of $K$;
+- the transition between the zero-count, analytic high-$K$, and finite-window
+  pieces;
+- any step that replaces pointwise ball convergence by an unstated uniform
+  estimate;
+- loss of the factor $1-\rho^3$ in the Weyl target.
 
-In parallel, continue the independent small-hole audit. Do not infer a
-uniform perturbation theorem from pointwise convergence to the ball.
+Report the first unsupported implication if the proof fails. If it passes,
+reconstruct all constants without consulting the incumbent proof.
 
 ## For A4
 
-Adversarially check the frozen radius-sensitive proof and build diagnostics
-for the exact scaled action, not for the rejected flat product majorant.
-Separate:
+Design the bounded certificate only after A1/A2 provide explicit boxes. The
+certificate must isolate every relevant Bessel cross-product root or phase
+wall with interval/ball arithmetic, preserve strict spectral counting, and
+cover parameter-box boundaries without gaps. It must also certify the floor
+state on each box or subdivide at every possible floor wall.
 
-- symbolic or floating exploration;
-- exact algebraic wall certificates;
-- interval-certified residual boxes.
+Keep floating-point scans and symbolic experiments labeled
+`diagnostic_only`. Do not certify an unbounded strip, and do not spend any
+certificate budget on $1-2^{-18}\le\rho<1$, which is analytically discharged.
 
-Do not certify an unbounded intermediate strip. The Bessel certificate remains
-diagnostic_only until the analytic endpoint work gives bounded coverage.
+In parallel, formulate a uniform bound for $K_0(\rho)$ on the eventual compact
+interval $[\rho_0,1-2^{-18}]$ and translate the low-frequency remainder into
+explicit finite boxes.
 
 ## Promotion constraint
 
-Round 5 proves only the low-optical thin-shell window. Do not promote
-SHELL-rho-one-endpoint until:
+Do not promote `SHELL-rho-zero-endpoint` until:
 
-1. a radius-sensitive theorem covers the intermediate window with explicit
-   overlap;
-2. the remaining thin residual set, if any, is bounded and certified;
-3. a clean-room proof and adversarial audit pass.
+1. one explicit $\rho_0$ and all-$K$ covering are proved;
+2. a clean-room reconstruction and adversarial wall/constants audit pass;
+3. every computational subclaim used in the proof is interval-certified;
+4. the result overlaps the compact-$\rho$ sector with inclusive endpoints.
 
-The global shell theorem additionally requires the small-hole and compact-rho
-components and a final theorem-level audit.
+Do not promote `SHELL-rho-uniformity` or `TARGET-shell-d3` until the compact
+finite window is also closed and a fresh theorem-level audit passes.

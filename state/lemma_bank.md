@@ -28,17 +28,43 @@ Validated shell lemmas now include:
   0<\varepsilon=1-\rho\le1/100,\qquad
   K\le\pi/(4\varepsilon^2),
   \]
-  proved by an exact strict product-index comparison.
-
-The next primary packet is SHELL-thin-curvature-intermediate. It must retain
-the radial dependence of $\ell(\ell+1)/r^2$ strongly enough to match the mean
-shell cross-section
+  proved by an exact strict product-index comparison;
+- the exact scaled-action identity and weighted integral
 
 $$
-\frac1\varepsilon\int_{1-\varepsilon}^1r^2\,dr
-=1-\varepsilon+\frac{\varepsilon^2}{3}.
+\mathcal A_{\varepsilon,a}(y)
+=\frac1\pi\int_0^1
+\sqrt{a^2-\frac{y^2}{(1-\varepsilon s)^2}}_+\,ds,
+\qquad
+\int_0^a y\mathcal A_{\varepsilon,a}(y)\,dy
+=\frac{a^3}{3\pi}
+\left(1-\varepsilon+\frac{\varepsilon^2}{3}\right),
 $$
 
-An independent packet should audit SHELL-rho-zero-endpoint. Only after those
-endpoint results produce bounded residual boxes should COMP-certified-bessel
-move beyond design work.
+  together with the mean-square-radius comparison and explicit
+  whispering-gallery payment proving the shell inequality for
+  $K\le1/(8\varepsilon^{5/2})$ after combination with the product range;
+- the local first-plateau estimate $p<10/\sqrt\varepsilon$ and the uniform
+  high-thin theorem $K\ge64/\varepsilon^2$;
+- the exact overlap
+
+$$
+\frac{64}{\varepsilon^2}
+\le\frac1{8\varepsilon^{5/2}}
+\quad\Longleftrightarrow\quad
+\varepsilon\le2^{-18},
+$$
+
+  with equality included; and hence the complete endpoint theorem
+
+$$
+1-2^{-18}\le\rho<1,
+\qquad K\ge0.
+$$
+
+The next primary packet is `SHELL-rho-zero-endpoint`. It must produce an
+explicit small-hole radius $\rho_0$, a quantitative all-$K$ argument, and
+overlap with a compact-$\rho$ interval. Pointwise convergence to the ball is
+not sufficient. `COMP-certified-bessel` should advance beyond design work only
+after the analytic split leaves explicitly bounded residual boxes; the proved
+thin endpoint is excluded from that certificate.

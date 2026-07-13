@@ -25,11 +25,11 @@
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
     "target_obligations": [
-      "SHELL-thin-curvature-intermediate",
       "SHELL-rho-zero-endpoint",
+      "SHELL-rho-compact",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Primary: close the radius-sensitive thin-shell gap between K=pi/(4 epsilon^2) and K_0(1-epsilon), where epsilon=1-rho. The flat comparison r^{-2}>=1 is rejected; retain the radial dependence needed to match the mean cross-section 1-epsilon+epsilon^2/3, and require explicit overlap. Independently audit the small-hole endpoint. Secondary: design interval certification only after these endpoint arguments leave bounded residual boxes, preserving every strict spectral and floor wall. A2 is incumbent analyst, A3 receives clean-room packets, A4 adversarially audits and owns certification, and A1 integrates only validated evidence."
+    "round_rule": "Primary: prove a quantitative small-hole endpoint with an explicit rho_0 and overlap to a compact-rho interval; do not infer uniformity from pointwise convergence to the ball. The rho-to-one endpoint is discharged for 1-2^(-18)<=rho<1 and needs no certificate. Secondary: make K_0 uniform on the intervening compact-rho interval and design interval certification only for the resulting bounded residual boxes, preserving every determinant, phase, floor, and strict spectral wall. A2 is incumbent analyst, A3 receives clean-room packets, A4 adversarially audits and owns certification, and A1 integrates only validated evidence."
   },
   "proof_obligations": [
     {
@@ -101,7 +101,8 @@
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "COMP-certified-bessel",
-        "SHELL-fixed-rho-high-energy"
+        "SHELL-fixed-rho-high-energy",
+        "SHELL-rho-uniformity"
       ],
       "implies": [
         "POLYA-program-target"
@@ -115,7 +116,9 @@
           "sources/seed_reports/Strategy.md",
           "sources/seed_reports/background-strategy-01.md",
           "rounds/polya-main/round_004/judge/judge-004.md",
-          "state/lemma_packets/SHELL-thin-product-low-optical.md"
+          "state/lemma_packets/SHELL-thin-product-low-optical.md",
+          "state/lemma_packets/SHELL-thin-curvature-intermediate.md",
+          "rounds/polya-main/round_006/responses/thin-endpoint-incumbent.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -147,9 +150,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "The fixed-rho high-energy theorem and a uniform low-optical thin-shell range are proved. The radius-sensitive thin intermediate region, small-hole endpoint, compact certification, and final theorem audit remain open.",
-      "last_updated_round": 5,
-      "last_updated_at": "2026-07-13T00:51:03"
+      "next_action": "The exact spectrum, fixed-rho high energy, and complete thin endpoint are proved. The remaining theorem blockers are small-hole/compact-rho uniformity and bounded certified closure, followed by a final theorem audit.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -610,13 +613,15 @@
       ],
       "blockers": [
         "SHELL-rho-compact",
-        "SHELL-rho-zero-endpoint",
-        "SHELL-rho-one-endpoint"
+        "SHELL-rho-zero-endpoint"
       ],
       "evidence": {
         "positive": [
           "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
-          "state/lemma_packets/SHELL-thin-product-low-optical.md"
+          "state/lemma_packets/SHELL-thin-product-low-optical.md",
+          "state/lemma_packets/SHELL-thin-curvature-intermediate.md",
+          "rounds/polya-main/round_006/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -627,9 +632,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "The thin endpoint now has a proved low-optical range but an explicit unbounded intermediate gap. Close SHELL-thin-curvature-intermediate, then combine it with compact-rho and small-hole coverage.",
-      "last_updated_round": 5,
-      "last_updated_at": "2026-07-13T00:51:03"
+      "next_action": "The thin endpoint is discharged. Close SHELL-rho-zero-endpoint and SHELL-rho-compact, then assemble the all-rho theorem.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53"
     },
     {
       "id": "SHELL-rho-compact",
@@ -661,9 +666,9 @@
         "threshold blow-up inside a compact interval",
         "loss of monotonicity under interval evaluation"
       ],
-      "next_action": "Use rho<=0.99 as the compact side of the new thin split. Bound K_0 on the chosen compact interval and formulate its bounded interval certificate; COMP-certified-bessel remains open.",
-      "last_updated_round": 5,
-      "last_updated_at": "2026-07-13T00:51:03"
+      "next_action": "Use rho<=1-2^(-18) as the compact side of the proved thin split. Bound K_0 uniformly on the selected compact interval and certify only the resulting bounded finite window.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53"
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -696,33 +701,29 @@
         "low-order radial roots not converging uniformly",
         "volume-margin loss relative to the ball"
       ],
-      "next_action": "Use the audited ball limit together with certified computation; the FLPS ball source audit is discharged.",
-      "last_updated_round": 3,
-      "last_updated_at": "2026-07-12T22:05:44"
+      "next_action": "This is now the primary analytic endpoint. Prove a quantitative small-hole theorem with explicit overlap to compact rho; do not infer uniformity from pointwise convergence to the ball.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53"
     },
     {
       "id": "SHELL-rho-one-endpoint",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Thin-shell endpoint rho -> 1",
-      "status": "open",
-      "statement_tex": "Prove the shell P\u00f3lya estimate uniformly for rho_1<=rho<1 using thin-shell scaling, with explicit control when the outer and inner turning layers approach one another and with a certified finite window.",
+      "status": "proved_internal",
+      "statement_tex": "For every 1-2^(-18)<=rho<1 and every K>=0, the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. The lower rho endpoint is included and rho=1 is excluded as the degenerate zero-width limit.",
       "dependencies": [
-        "SHELL-phase-enclosures",
-        "SHELL-lattice-count",
-        "SRC-shell-weyl",
-        "COMP-certified-bessel",
-        "SHELL-thin-width-phase-zero",
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
         "SHELL-thin-product-low-optical",
+        "SHELL-thin-action-aggregate",
+        "SHELL-thin-local-plateau-high",
         "SHELL-thin-curvature-intermediate"
       ],
       "implies": [
         "SHELL-rho-uniformity"
       ],
-      "blockers": [
-        "COMP-certified-bessel",
-        "SHELL-thin-curvature-intermediate"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
           "state/lemma_packets/SHELL-thin-width-zero-count.md",
@@ -731,12 +732,20 @@
           "rounds/polya-main/round_005/responses/thin-shell-product-incumbent.md",
           "rounds/polya-main/round_005/reviews/thin-shell-product-clean-room.md",
           "rounds/polya-main/round_005/reviews/thin-shell-product-adversarial.md",
-          "rounds/polya-main/round_005/reviews/thin-shell-product-constants-audit.md"
+          "rounds/polya-main/round_005/reviews/thin-shell-product-constants-audit.md",
+          "state/lemma_packets/SHELL-thin-curvature-intermediate.md",
+          "rounds/polya-main/round_006/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
+          "rounds/polya-main/round_006/reviews/local-plateau-high-clean-room.md",
+          "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
+          "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-diagnostic.md"
         ],
-        "inconclusive": []
+        "inconclusive": [
+          "rounds/polya-main/round_006/exploration/scaled-action-diagnostic.md"
+        ]
       },
       "owner": "A2",
       "falsification_cases": [
@@ -744,9 +753,31 @@
         "threshold growth faster than the thin-shell scaling permits",
         "loss of interval conditioning as 1-rho -> 0"
       ],
-      "next_action": "The actual shell inequality is proved for epsilon<=1/100 and K<=pi/(4 epsilon^2), while fixed-rho high energy starts only at K_0(1-epsilon). Close the radius-sensitive intermediate gap; the flat product majorant is rejected as a global route.",
-      "last_updated_round": 5,
-      "last_updated_at": "2026-07-13T00:51:03"
+      "next_action": "Treat this endpoint as discharged. Continue with the small-hole endpoint and compact-rho finite certification.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53",
+      "criticality": "bottleneck",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-thin-product-low-optical",
+        "SHELL-thin-action-aggregate",
+        "SHELL-thin-local-plateau-high",
+        "SHELL-thin-curvature-intermediate"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
+        "rounds/polya-main/round_006/reviews/local-plateau-high-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
+        "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
+      ],
+      "reason_for_promotion": "The exact overlap theorem proves one fixed rho-neighborhood of 1 for every frequency. The two analytic components passed separate clean-room and adversarial gates, so no finite certification assumption remains in the thin endpoint."
     },
     {
       "id": "COMP-certified-bessel",
@@ -793,15 +824,18 @@
           "computations/tests/test_shell_weighted_lattice_fractional_diagnostic.py",
           "computations/thin_shell_product_diagnostic.py",
           "computations/tests/test_thin_shell_product_diagnostic.py",
-          "rounds/polya-main/round_005/exploration/thin-shell-product-diagnostic.md"
+          "rounds/polya-main/round_005/exploration/thin-shell-product-diagnostic.md",
+          "computations/thin_scaled_action_round6_diagnostic.py",
+          "computations/tests/test_thin_scaled_action_round6_diagnostic.py",
+          "rounds/polya-main/round_006/exploration/scaled-action-diagnostic.md"
         ]
       },
       "owner": "A4",
       "evidence_class": "floating_point_experiment",
       "certification_artifacts": [],
-      "next_action": "Do not attempt to certify the unbounded thin intermediate region. First close SHELL-thin-curvature-intermediate and the small-hole endpoint, then certify the resulting bounded residual boxes with strict root and floor walls.",
-      "last_updated_round": 5,
-      "last_updated_at": "2026-07-13T00:51:03"
+      "next_action": "No thin-endpoint certificate is needed. Restrict certification to bounded residual boxes left by the small-hole and compact-rho arguments, preserving strict determinant, phase, and floor walls.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53"
     },
     {
       "id": "SRC-mathieu-ellipse",
@@ -1671,15 +1705,15 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Radius-sensitive intermediate thin-shell estimate",
-      "status": "open",
-      "statement_tex": "For rho=1-epsilon with epsilon sufficiently small, prove the shell Polya estimate throughout the intermediate optical-width region left between K=pi/(4 epsilon^2) and K=K_0(1-epsilon), or improve the low- and high-energy bounds until they overlap. The proof must retain enough r-dependence in ell(ell+1)/r^2 to recover the mean shell cross-section; replacing r^{-2} by 1 is insufficient.",
+      "status": "proved_internal",
+      "statement_tex": "For rho=1-epsilon with 0<epsilon<=2^(-18)=1/262144, the strict shell Polya estimate holds for every K>=0. Round 5 and the mean-square-radius aggregate theorem cover K<=1/(8 epsilon^(5/2)); the local-plateau theorem covers K>=64/epsilon^2; these ranges overlap exactly because epsilon<=2^(-18).",
       "dependencies": [
         "CONV-strict-counting",
         "SHELL-sturm-liouville-completeness",
         "SHELL-phase-enclosures",
-        "SHELL-weighted-lattice-fractional",
         "SHELL-thin-product-low-optical",
-        "SHELL-fixed-rho-high-energy"
+        "SHELL-thin-action-aggregate",
+        "SHELL-thin-local-plateau-high"
       ],
       "implies": [
         "SHELL-rho-one-endpoint"
@@ -1688,7 +1722,15 @@
       "evidence": {
         "positive": [
           "state/lemma_packets/SHELL-thin-product-low-optical.md",
-          "rounds/polya-main/round_005/reviews/thin-shell-product-clean-room.md"
+          "rounds/polya-main/round_005/reviews/thin-shell-product-clean-room.md",
+          "state/lemma_packets/SHELL-thin-curvature-intermediate.md",
+          "rounds/polya-main/round_006/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_006/exploration/phase-aggregate.md",
+          "rounds/polya-main/round_006/exploration/local-plateau-high-thin.md",
+          "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
+          "rounds/polya-main/round_006/reviews/local-plateau-high-clean-room.md",
+          "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
+          "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/responses/thin-shell-product-incumbent.md",
@@ -1697,7 +1739,9 @@
           "rounds/polya-main/round_005/exploration/thin-shell-product-diagnostic.md"
         ],
         "inconclusive": [
-          "rounds\\polya-main\\round_005\\judge\\judge-005.md"
+          "rounds\\polya-main\\round_005\\judge\\judge-005.md",
+          "rounds/polya-main/round_006/exploration/radial-bracketing.md",
+          "rounds/polya-main/round_006/exploration/scaled-action-diagnostic.md"
         ]
       },
       "owner": "A2",
@@ -1710,9 +1754,9 @@
         "CONV-strict-counting",
         "SHELL-sturm-liouville-completeness",
         "SHELL-phase-enclosures",
-        "SHELL-weighted-lattice-fractional",
         "SHELL-thin-product-low-optical",
-        "SHELL-fixed-rho-high-energy"
+        "SHELL-thin-action-aggregate",
+        "SHELL-thin-local-plateau-high"
       ],
       "falsification_cases": [
         "epsilon a/pi near 3/4",
@@ -1722,11 +1766,150 @@
         "failure to overlap epsilon K_0(1-epsilon)",
         "using a pointwise potential minimum as an averaged radius correction"
       ],
-      "clean_room_artifacts": [],
-      "adversarial_review_artifacts": [],
-      "next_action": "Develop a curvature-corrected comparison or a thin-scaled aggregate phase-lattice estimate. It must match the factor epsilon^{-1} int_{1-epsilon}^1 r^2 dr=1-epsilon+epsilon^2/3 and explicitly overlap either the proved low-optical range or K_0.",
-      "last_updated_round": 5,
-      "last_updated_at": "2026-07-13T00:51:03"
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
+        "rounds/polya-main/round_006/reviews/local-plateau-high-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
+        "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
+      ],
+      "next_action": "Treat this overlap theorem as discharged evidence for SHELL-rho-one-endpoint. No thin-shell Bessel certificate is necessary; continue with the small-hole and compact-rho obligations.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53",
+      "reason_for_promotion": "Two independently reviewed radius-sensitive theorems overlap explicitly at epsilon=2^(-18), with Round 5 covering the lower endpoint. The combined constants audit verifies that all K>=0 are covered and every joining endpoint is included."
+    },
+    {
+      "id": "SHELL-thin-action-aggregate",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Mean-square-radius aggregate action bound for thin shells",
+      "status": "proved_internal",
+      "statement_tex": "Let rho=1-epsilon with 0<epsilon<=1/100 and a=epsilon K. If pi/(4 epsilon)<=a<=1/(8 epsilon^(3/2)), then the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. Equivalently, this radius-sensitive range is pi/(4 epsilon^2)<=K<=1/(8 epsilon^(5/2)).",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures"
+      ],
+      "implies": [
+        "SHELL-thin-curvature-intermediate",
+        "SHELL-rho-one-endpoint"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-thin-curvature-intermediate.md",
+          "rounds/polya-main/round_006/exploration/phase-aggregate.md",
+          "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
+          "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
+          "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds/polya-main/round_006/exploration/scaled-action-diagnostic.md",
+          "computations/thin_scaled_action_round6_diagnostic.py",
+          "computations/tests/test_thin_scaled_action_round6_diagnostic.py",
+          "rounds\\polya-main\\round_006\\judge\\judge-006.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "standard",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures"
+      ],
+      "falsification_cases": [
+        "a=pi/(4 epsilon)",
+        "a=1/(8 epsilon^(3/2))",
+        "action plus one quarter on a positive integer wall",
+        "effective radial level n-1/4 on the endpoint",
+        "angular half-integer wall",
+        "y=rho a inner interface",
+        "positive whispering-gallery strip where the effective action vanishes"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
+        "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
+      ],
+      "reason_for_promotion": "The exact scaled normalization, mean-square-radius Jensen comparison, strict layer cake, shifted radial deficit, angular ceiling, quarter-disk estimate, and explicit outer-strip payment passed an isolated clean-room reconstruction and two adversarial audits. The proof recovers the exact shell mean cross-section and uses no numerical evidence.",
+      "next_action": "Use this theorem with Round 5 below and the local-plateau high-thin theorem above. Do not extend the effective-radius comparison pointwise through the outer strip.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53"
+    },
+    {
+      "id": "SHELL-thin-local-plateau-high",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Uniform local-plateau high-energy bound for thin shells",
+      "status": "proved_internal",
+      "statement_tex": "Let rho=1-epsilon with 0<epsilon<=1/100. Then the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3 for every K>=64/epsilon^2.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SHELL-low-interface-fixed-rho-high-energy"
+      ],
+      "implies": [
+        "SHELL-thin-curvature-intermediate",
+        "SHELL-rho-one-endpoint"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-thin-curvature-intermediate.md",
+          "rounds/polya-main/round_006/exploration/local-plateau-high-thin.md",
+          "rounds/polya-main/round_006/reviews/local-plateau-high-clean-room.md",
+          "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds/polya-main/round_006/exploration/scaled-action-diagnostic.md",
+          "rounds\\polya-main\\round_006\\judge\\judge-006.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "standard",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-weighted-lattice-scaffold",
+        "SHELL-high-angular-shifted-tails",
+        "SHELL-low-interface-fixed-rho-high-energy"
+      ],
+      "falsification_cases": [
+        "K=64/epsilon^2",
+        "no floor drop p=n",
+        "immediate floor drop p=0",
+        "degenerate head n=0",
+        "q=rho K",
+        "K eta on an integer wall",
+        "tail start x0 on either side of K/2"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_006/reviews/local-plateau-high-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
+      ],
+      "reason_for_promotion": "The local-slope proof reduces the dangerous first-floor plateau to O(epsilon^(-1/2)), while the convex-tail gain is uniformly larger at K>=64/epsilon^2. An isolated reconstruction obtained an independent stronger plateau constant, and the combined audit checked every exceptional branch and wall.",
+      "next_action": "Use this theorem as the uniform high-frequency half of the thin endpoint; the older K_0(1-epsilon) threshold is no longer needed near rho=1.",
+      "last_updated_round": 6,
+      "last_updated_at": "2026-07-13T13:31:53"
     }
   ],
   "rejected_claims": [
@@ -1845,6 +2028,33 @@
       "last_updated_round": 5,
       "evidence": [
         "rounds\\polya-main\\round_005\\judge\\judge-005.md"
+      ]
+    },
+    {
+      "id": "raw-midpoint-action-quadrature-proves-thin-range",
+      "reason": "Reject replacing the strict action staircase by its raw midpoint sum. The Round 6 diagnostic gives an exact family for every 0<epsilon<=1/10 at K=1 where the raw midpoint action contribution already exceeds the complete continuous Weyl integral, while the strict floor count is zero.",
+      "last_updated_at": "2026-07-13T13:31:53",
+      "last_updated_round": 6,
+      "evidence": [
+        "rounds\\polya-main\\round_006\\judge\\judge-006.md"
+      ]
+    },
+    {
+      "id": "single-volume-matched-effective-radius-is-global-majorant",
+      "reason": "Reject a global pointwise comparison with one volume-matched effective radius. Its action vanishes at y=a sqrt(1-epsilon+epsilon^2/3)<a, while the exact shell action remains positive throughout the outer whispering-gallery strip up to y=a.",
+      "last_updated_at": "2026-07-13T13:31:53",
+      "last_updated_round": 6,
+      "evidence": [
+        "rounds\\polya-main\\round_006\\judge\\judge-006.md"
+      ]
+    },
+    {
+      "id": "fixed-finite-neumann-sublayers-close-thin-shell",
+      "reason": "Reject any fixed finite Neumann-sublayer majorant as a global proof. Its right-endpoint step radii have a strictly larger cubic coefficient than the exact shell mean, so the majorant exceeds the desired Weyl term for all sufficiently large K.",
+      "last_updated_at": "2026-07-13T13:31:53",
+      "last_updated_round": 6,
+      "evidence": [
+        "rounds\\polya-main\\round_006\\judge\\judge-006.md"
       ]
     }
   ]
