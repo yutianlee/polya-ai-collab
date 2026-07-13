@@ -2,50 +2,59 @@
 
 Date: 2026-07-13
 
-Round: `polya-main` / round 6
+Round: `polya-main` / round 7
 
 ## State patch
 
-- Source: `rounds/polya-main/round_006/judge/judge-006.md`.
+- Source: `rounds/polya-main/round_007/judge/judge-007.md`.
 - The embedded State Patch was validated before application and applied
-  exactly once at round index 6.
-- Created and promoted `SHELL-thin-action-aggregate` and
-  `SHELL-thin-local-plateau-high` as `proved_internal`.
-- Promoted `SHELL-thin-curvature-intermediate` and
-  `SHELL-rho-one-endpoint` as `proved_internal`.
-- Removed the thin endpoint from the blockers of `SHELL-rho-uniformity`.
-- Kept `SHELL-rho-zero-endpoint`, `SHELL-rho-compact`,
-  `COMP-certified-bessel`, and `TARGET-shell-d3` open.
-- Rejected the raw midpoint-action proof route, a global one-radius action
-  majorant, and fixed finite Neumann sublayers as global proofs.
+  exactly once at round index 7.
+- Created `SHELL-low-interface-small-hole` as `proved_internal`, recording
+  the independently reviewed Round 3 shifted-tail theorem explicitly in the
+  graph.
+- Promoted `SHELL-rho-zero-endpoint` to `proved_internal`.
+- Removed the small-hole endpoint from the blockers of
+  `SHELL-rho-uniformity`; its sole remaining blocker is `SHELL-rho-compact`.
+- Kept `SHELL-rho-compact`, `COMP-certified-bessel`,
+  `SHELL-rho-uniformity`, and `TARGET-shell-d3` open.
+- Rejected pointwise ball-root convergence, bare ball domain monotonicity,
+  and subtraction of one-sided ball Pólya estimates as substitute proofs.
 
 ## Review gates
 
-- Aggregate-action isolated clean-room reconstruction: PASS.
-- Local-plateau high-thin isolated clean-room reconstruction: PASS.
-- Aggregate-action adversarial constants/wall audit: PASS.
-- Combined overlap and endpoint audit: PASS.
-- Independent audit of the complete Round 6 packet: PASS for every promoted
-  claim. It corrected one overstatement only in the non-promoted
-  `radial-bracketing.md` exploration; the correction does not enter the
-  endpoint proof.
+- Frozen small-hole endpoint proof: PASS.
+- Isolated clean-room reconstruction from the reduced packet: PASS.
+- Independent adversarial constants, walls, and route audit: PASS.
+- Final dependency and integration audit: PASS.
+- Historical low-interface incumbent, clean-room review, and adversarial
+  review rechecked as permitted inputs: PASS.
 
 ## Mechanical validation
 
-- Proof-obligation graph after application and Round 7 routing update: PASS.
+- Proof-obligation graph after application and Round 8 routing update: PASS.
 - Python regression suite: 22 passed.
 - Python compile check: PASS.
 - Git diff whitespace check: PASS.
-- Round 6 diagnostics remain explicitly non-certifying.
+- No computation is used in the Round 7 theorem.
 
 ## Authoritative theorem boundary
 
-For every fixed $0<\rho<1$, the shell Pólya estimate is proved for
-$K\ge K_0(\rho)$. In addition, Round 6 proves the complete uniform endpoint
+Let
+
+$$
+\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+\qquad
+C_*=\frac12+\frac{8\sqrt2}{15},
+\qquad
+\rho_*=\frac{\omega_0}{1+2C_*}
+=0.0310668242700667\ldots .
+$$
+
+Round 7 proves
 
 $$
 \boxed{
-1-2^{-18}\le\rho<1,
+0<\rho\le\rho_*,
 \qquad K\ge0
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
@@ -53,17 +62,24 @@ N_D(A_{\rho,1},K^2)
 }
 $$
 
-The exact lower and upper thin thresholds are
+The low-$\mu$ range $\rho K\le1/2$ and the reviewed high-energy range
+$K\ge C_*/(\omega_0-\rho)$ overlap exactly when $\rho\le\rho_*$. At the
+endpoint they meet at
 
 $$
-K\le\frac1{8(1-\rho)^{5/2}}
-\qquad\text{and}\qquad
-K\ge\frac{64}{(1-\rho)^2},
+K_*=\frac1{2\rho_*}=16.0943389531371\ldots,
 $$
 
-which meet at $1-\rho=2^{-18}$ and $K=2^{42}$. Both endpoints are included.
-No Bessel-root certificate is needed for this thin neighborhood.
+with equality included on both sides. The apparent small-hole certification
+box is empty.
 
-The all-$\rho$ shell theorem remains open. The next analytic target is the
-small-hole endpoint, followed by compact-$\rho$ bounded certification and a
-fresh final theorem-level audit.
+Together with Round 6, both endpoint neighborhoods are now proved for all
+$K$:
+
+$$
+\rho\in(0,\rho_*]\cup[1-2^{-18},1).
+$$
+
+The global all-$\rho$ shell theorem remains open only on the explicit compact
+interval $[\rho_*,1-2^{-18}]$, where a uniform analytic threshold, bounded
+certification, and the final theorem-level audit are still required.

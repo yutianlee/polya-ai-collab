@@ -62,9 +62,35 @@ $$
 \qquad K\ge0.
 $$
 
-The next primary packet is `SHELL-rho-zero-endpoint`. It must produce an
-explicit small-hole radius $\rho_0$, a quantitative all-$K$ argument, and
-overlap with a compact-$\rho$ interval. Pointwise convergence to the ball is
-not sufficient. `COMP-certified-bessel` should advance beyond design work only
-after the analytic split leaves explicitly bounded residual boxes; the proved
-thin endpoint is excluded from that certificate.
+- the audited small-hole low-interface theorem with
+
+$$
+\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+\qquad
+C_*=\frac12+\frac{8\sqrt2}{15},
+$$
+
+  valid when
+  $0<\rho<\omega_0$ and $K(\omega_0-\rho)\ge C_*$;
+- the exact small-hole overlap
+
+$$
+\frac{C_*}{\omega_0-\rho}
+\le\frac1{2\rho}
+\quad\Longleftrightarrow\quad
+\rho\le\rho_*:=\frac{\omega_0}{1+2C_*},
+$$
+
+  and hence the complete endpoint theorem
+
+$$
+0<\rho\le\rho_*,
+\qquad K\ge0.
+$$
+
+The next primary packet is `SHELL-rho-compact`. It must derive a practical
+uniform analytic threshold on
+$[\rho_*,1-2^{-18}]$ and reduce the remaining all-$K$ problem to explicit
+bounded boxes. `COMP-certified-bessel` may certify only those boxes; both
+endpoint neighborhoods are analytically discharged and excluded from the
+certificate.

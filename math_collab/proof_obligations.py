@@ -574,7 +574,7 @@ def generate_reading_packet(
         "",
         "Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.",
         "",
-        "Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, and complete uniform rho-to-one endpoint are proved; small-hole uniformity, compact-rho certification, and the final theorem audit remain open.",
+        "Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, and both uniform rho-endpoint neighborhoods are proved; compact-rho bounded certification and the final theorem audit remain open.",
         "",
         "## Current Route",
         "",

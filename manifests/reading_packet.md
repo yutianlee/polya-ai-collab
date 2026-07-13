@@ -1,12 +1,12 @@
 # Reading Packet
 
-Generated after round 6 in run `polya-main`.
+Generated after round 7 in run `polya-main`.
 
 ## Current Theorem Target
 
 Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.
 
-Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, and complete uniform rho-to-one endpoint are proved; small-hole uniformity, compact-rho certification, and the final theorem audit remain open.
+Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, and both uniform rho-endpoint neighborhoods are proved; compact-rho bounded certification and the final theorem audit remain open.
 
 ## Current Route
 
@@ -24,12 +24,10 @@ Current blockers:
 
 ## Round Target Obligations
 
-- `SHELL-rho-zero-endpoint` (open, owner `A2`): Small-hole endpoint rho -> 0
-  Next action: This is now the primary analytic endpoint. Prove a quantitative small-hole theorem with explicit overlap to compact rho; do not infer uniformity from pointwise convergence to the ball.
 - `SHELL-rho-compact` (open, owner `A2`): Uniform shell estimates on compact rho intervals
-  Next action: Use rho<=1-2^(-18) as the compact side of the proved thin split. Bound K_0 uniformly on the selected compact interval and certify only the resulting bounded finite window.
+  Next action: Use the explicit compact interval [rho_*,1-2^(-18)], where rho_*=omega_0/(1+2 C_*). Make the analytic high-energy threshold uniform and certify only the resulting bounded residual window, with inclusive overlap at both endpoints.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: No thin-endpoint certificate is needed. Restrict certification to bounded residual boxes left by the small-hole and compact-rho arguments, preserving strict determinant, phase, and floor walls.
+  Next action: Neither endpoint needs certification. Restrict interval certification to the bounded residual window on rho in [rho_*,1-2^(-18)], preserving every determinant, phase, angular, floor, and strict spectral wall.
 
 ## Do-Not-Claim Rules
 
@@ -63,17 +61,9 @@ Current functional split:
 
 ## Last State Patch
 
-Proved the mean-square-radius aggregate-action range and the local-plateau high-thin range; their exact overlap promotes the complete rho-to-one endpoint for 1-2^(-18)<=rho<1 and all K. The small-hole endpoint, compact-rho bounded closure, and final theorem audit remain open.
+Proved the complete small-hole endpoint for 0<rho<=rho_*=omega_0/(1+2 C_*) and all K by an exact split at rho K=1/2; no endpoint certificate remains. Both rho endpoints are discharged, leaving only compact-rho bounded closure and the final theorem audit.
 
 ## Active Obligation Briefs
-
-### SHELL-rho-zero-endpoint: Small-hole endpoint rho -> 0
-
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Blockers: `COMP-certified-bessel`
-- Next action: This is now the primary analytic endpoint. Prove a quantitative small-hole theorem with explicit overlap to compact rho; do not infer uniformity from pointwise convergence to the ball.
 
 ### SHELL-rho-compact: Uniform shell estimates on compact rho intervals
 
@@ -81,14 +71,14 @@ Proved the mean-square-radius aggregate-action range and the local-plateau high-
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `COMP-certified-bessel`
-- Next action: Use rho<=1-2^(-18) as the compact side of the proved thin split. Bound K_0 uniformly on the selected compact interval and certify only the resulting bounded finite window.
+- Next action: Use the explicit compact interval [rho_*,1-2^(-18)], where rho_*=omega_0/(1+2 C_*). Make the analytic high-energy threshold uniform and certify only the resulting bounded residual window, with inclusive overlap at both endpoints.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: No thin-endpoint certificate is needed. Restrict certification to bounded residual boxes left by the small-hole and compact-rho arguments, preserving strict determinant, phase, and floor walls.
+- Next action: Neither endpoint needs certification. Restrict interval certification to the bounded residual window on rho in [rho_*,1-2^(-18)], preserving every determinant, phase, angular, floor, and strict spectral wall.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -177,8 +167,8 @@ Proved the mean-square-radius aggregate-action range and the local-plateau high-
 - Status: `open`
 - Track: `shell_analytic`
 - Owner: `A2`
-- Blockers: `SHELL-rho-compact`, `SHELL-rho-zero-endpoint`
-- Next action: The thin endpoint is discharged. Close SHELL-rho-zero-endpoint and SHELL-rho-compact, then assemble the all-rho theorem.
+- Blockers: `SHELL-rho-compact`
+- Next action: Both rho endpoints are discharged. Close SHELL-rho-compact on [rho_*,1-2^(-18)], then assemble the all-rho theorem.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 
@@ -218,4 +208,4 @@ Proved the mean-square-radius aggregate-action range and the local-plateau high-
 - Clean-room reviewer: `A3`
 - Adversarial reviewer: `A2`
 - Blockers: `COMP-certified-bessel`, `SHELL-rho-uniformity`
-- Next action: The exact spectrum, fixed-rho high energy, and complete thin endpoint are proved. The remaining theorem blockers are small-hole/compact-rho uniformity and bounded certified closure, followed by a final theorem audit.
+- Next action: The exact spectrum, fixed-rho high energy, and both rho endpoints are proved. The remaining theorem blocker is compact-rho bounded closure with certified computation, followed by a final theorem audit.

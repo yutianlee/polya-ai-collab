@@ -1,128 +1,150 @@
 # Next Round Prompts
 
-Generated after Round 6 in run `polya-main`.
+Generated after Round 7 in run `polya-main`.
 
-Source synthesis: `rounds/polya-main/round_006/judge/judge-006.md`.
+Source synthesis: `rounds/polya-main/round_007/judge/judge-007.md`.
 
 ## Accepted boundary
 
-The exact spectrum, fixed-$\rho$ high-energy theorem, and complete thin-shell
-endpoint are proved. In particular,
+Both singular endpoint neighborhoods are analytically discharged. Define
 
 $$
-1-2^{-18}\le\rho<1,
-\qquad K\ge0
+\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+\qquad
+C_*=\frac12+\frac{8\sqrt2}{15},
+\qquad
+\rho_*:=\frac{\omega_0}{1+2C_*}.
 $$
 
-requires no Bessel-root certification. The next primary obligation is
-`SHELL-rho-zero-endpoint`; `SHELL-rho-compact` and
-`COMP-certified-bessel` are secondary and must be scoped only after the
-small-hole split is explicit.
+The shell Pólya inequality is proved for all $K\ge0$ when
+
+$$
+0<\rho\le\rho_*
+\qquad\text{or}\qquad
+1-2^{-18}\le\rho<1.
+$$
+
+Neither endpoint requires Bessel-root certification. The sole remaining
+parameter region is the explicit compact interval
+
+$$
+I_*=[\rho_*,1-2^{-18}].
+$$
+
+The next primary obligation is `SHELL-rho-compact`; the accompanying bounded
+certificate is `COMP-certified-bessel`.
 
 ## For A1
 
-Prepare and freeze the reduced packet for `SHELL-rho-zero-endpoint`. It must
-state one quantitative theorem with an explicit constant $\rho_0>0$:
+Freeze a compact-closure packet with two exact outputs.
 
-$$
-0<\rho\le\rho_0,
-\qquad K\ge0
-\quad\Longrightarrow\quad
-N_D(A_{\rho,1},K^2)
-\le\frac{2}{9\pi}(1-\rho^3)K^3.
-$$
+1. Give one explicit finite $K_{\mathrm{hi}}$ such that the shell inequality
+   is already proved analytically for every
 
-Use the scaled inner parameter
+   $$
+   \rho\in I_* ,
+   \qquad K\ge K_{\mathrm{hi}}.
+   $$
 
-$$
-\mu=\rho K
-$$
+2. Translate the remainder into a closed, bounded certificate domain with
+   inclusive overlaps at $\rho=\rho_*$ and
+   $\rho=1-2^{-18}$.
 
-and require an explicit case split at least between $\mu<1/2$ and
-$\mu\ge1/2$. List the exact spectrum, strict phase convention, audited ball
-source, and `state/lemma_packets/SHELL-low-interface-small-hole.md` as the
-available evidence, while distinguishing proved inputs from routes that still
-need proof. The packet must identify a finite residual $(\rho,K)$ region and
-an explicit overlap with the compact-$\rho$ interval.
+Use the best piecewise combination of the existing estimates rather than one
+needlessly large global formula:
 
-Do not use pointwise convergence of shell roots to ball roots as a uniform
-theorem. State the required constants, low-order exceptions, phase/floor
-walls, and volume-margin inequality explicitly.
+- the small-hole threshold $C_*/(\omega_0-\rho)$ below a chosen
+  $\rho_a<\omega_0$;
+- the fixed-$\rho$ threshold $K_0(\rho)$ on a central compact interval;
+- the Round 6 high-thin threshold $64/(1-\rho)^2$ near $\rho=1$.
+
+Prove every monotonicity or endpoint maximization used to make these bounds
+uniform. Record exact rational/algebraic upper bounds suitable for a checker.
+Do not send either analytically discharged endpoint neighborhood to the
+certificate.
 
 ## For A2
 
-Develop the incumbent small-hole proof. Start from the proved shifted-tail
-sector in `state/lemma_packets/SHELL-low-interface-small-hole.md`:
+Develop the incumbent compact analytic reduction. Begin with
 
 $$
-0<\rho<\omega_0,
-\qquad
-K(\omega_0-\rho)\ge C_*,
+K_0(\rho)=
+\left(
+\frac{\sqrt{a_\rho}+\sqrt{a_\rho+4\eta_\rho C_0}}
+{2\eta_\rho}
+\right)^2,
 $$
 
 where
 
 $$
-\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+a_\rho=\frac{2\pi\rho}{1-\rho},
 \qquad
-C_*=\frac12+\frac{8\sqrt2}{15}.
+\eta_\rho=G_1(\max\{\rho,1/2\}),
+\qquad
+C_0=1+\frac{8\sqrt2}{15}.
 $$
 
-Turn this into an explicit uniform high-$K$ threshold for
-$0<\rho\le\rho_0<\omega_0$. Combine it with the exact zero-count region
-$(1-\rho)K\le\pi$, then attack only the remaining bounded window. For that
-window, seek a quantitative comparison with the Dirichlet ball that controls
-the loss of volume $1-\rho^3$ and is uniform in every retained angular order.
+Derive a rigorous piecewise upper envelope on $I_*$. Use the Round 7
+small-hole threshold near the left endpoint and the Round 6 local-plateau
+threshold near the right endpoint whenever they improve this envelope.
 
-Acceptable alternatives include a direct strict phase comparison at fixed
-$\mu=\rho K$, a finite low-order analytic enclosure plus an angular-tail
-theorem, or an analytic reduction to explicit interval boxes. Every route
-must provide a numerical-free proof of boundedness and explicit overlap with
-`SHELL-rho-compact`.
+The output must identify:
+
+- the finite $K$ interval still requiring certification in each $\rho$
+  subinterval;
+- the strict angular cutoff $\ell+1/2<K$;
+- all possible phase, determinant, and floor walls;
+- a finite subdivision rule with no gap at subinterval boundaries.
+
+Optimization is valuable because the raw endpoint bound can be enormous, but
+correct finiteness and exact coverage come before numerical efficiency.
 
 ## For A3
 
-Receive only the reduced packet and reconstruct the proposed small-hole
-theorem independently. Try to falsify it at:
+Receive only the reduced compact packet and independently reconstruct the
+piecewise uniform threshold. Attempt to falsify it at:
 
-- $\rho K<1/2$, where the inner Bessel argument is below the first
-  half-integer angular scale;
-- $\ell=0,1,2$ and the first radial roots;
-- exact shell eigenvalues and exact phase or floor walls;
-- $\rho=\rho_0$ and every joining value of $K$;
-- the transition between the zero-count, analytic high-$K$, and finite-window
-  pieces;
-- any step that replaces pointwise ball convergence by an unstated uniform
-  estimate;
-- loss of the factor $1-\rho^3$ in the Weyl target.
+- $\rho=\rho_*$ and $\rho=1-2^{-18}$;
+- every switch between small-hole, fixed-$\rho$, and high-thin estimates;
+- $\rho=1/2$, where the definition of $\eta_\rho$ changes branch;
+- equality $K=K_{\mathrm{hi}}(\rho)$;
+- any monotonicity claim for $K_0$, $a_\rho$, or $\eta_\rho$;
+- uncovered slivers between adjacent certificate boxes;
+- strict spectral or floor walls lying on a box boundary.
 
-Report the first unsupported implication if the proof fails. If it passes,
-reconstruct all constants without consulting the incumbent proof.
+Recompute all constants independently. A bounded box is not a proof until
+its analytic covering and boundary conventions are exact.
 
 ## For A4
 
-Design the bounded certificate only after A1/A2 provide explicit boxes. The
-certificate must isolate every relevant Bessel cross-product root or phase
-wall with interval/ball arithmetic, preserve strict spectral counting, and
-cover parameter-box boundaries without gaps. It must also certify the floor
-state on each box or subdivide at every possible floor wall.
+Turn the compact reduction into a certificate specification and a minimal
+validated pilot. The specification must state, for every box:
 
-Keep floating-point scans and symbolic experiments labeled
-`diagnostic_only`. Do not certify an unbounded strip, and do not spend any
-certificate budget on $1-2^{-18}\le\rho<1$, which is analytically discharged.
+- how the Bessel cross-product or normalized phase is interval-evaluated
+  without cancellation;
+- how roots are isolated or excluded and how simplicity is used;
+- how the angular cutoff is certified uniformly;
+- how strict eigenvalue endpoints and ordinary-floor proxy walls are split;
+- how neighboring boxes overlap or share certified boundary faces;
+- the exact output format that allows an independent checker to recompute the
+  count and Weyl margin.
 
-In parallel, formulate a uniform bound for $K_0(\rho)$ on the eventual compact
-interval $[\rho_0,1-2^{-18}]$ and translate the low-frequency remainder into
-explicit finite boxes.
+Floating-point scans remain `diagnostic_only`. Interval or ball arithmetic
+must be outward rounded and reproducible. Start with a deliberately small
+compact pilot box before scaling; do not claim that a pilot certifies the full
+compact interval.
 
 ## Promotion constraint
 
-Do not promote `SHELL-rho-zero-endpoint` until:
+Do not promote `SHELL-rho-compact` until:
 
-1. one explicit $\rho_0$ and all-$K$ covering are proved;
-2. a clean-room reconstruction and adversarial wall/constants audit pass;
-3. every computational subclaim used in the proof is interval-certified;
-4. the result overlaps the compact-$\rho$ sector with inclusive endpoints.
+1. a finite analytic $K_{\mathrm{hi}}$ covers all of $I_*$;
+2. every lower-frequency point belongs to an explicit certified box;
+3. an independent reconstruction verifies the piecewise analytic cover;
+4. an adversarial audit verifies every strict wall and box interface;
+5. the certificate is reproducible and independently checked.
 
-Do not promote `SHELL-rho-uniformity` or `TARGET-shell-d3` until the compact
-finite window is also closed and a fresh theorem-level audit passes.
+Only after that promotion may `SHELL-rho-uniformity` and
+`TARGET-shell-d3` enter their final theorem-level clean-room and adversarial
+audit.

@@ -4,17 +4,19 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Prove a quantitative small-hole endpoint: find an explicit $\rho_0>0$ and
-  cover every $0<\rho\le\rho_0$ and $K\ge0$. Pointwise convergence of shell
-  roots to ball roots is not a uniform proof; low angular orders, the regime
-  $\rho K<1/2$, and strict phase walls require explicit control.
-- Make the analytic high-energy threshold uniform on the intervening compact
-  interval $[\rho_0,1-2^{-18}]$, then formulate the remaining finite parameter
-  set as bounded boxes.
+- Make the analytic high-energy threshold uniform on the explicit compact
+  interval $[\rho_*,1-2^{-18}]$, then formulate the remaining finite parameter
+  set as bounded boxes, where
+
+  $$
+  \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
+  {2+\frac{16\sqrt2}{15}}.
+  $$
+
 - Build interval-certified verification for those bounded boxes, including
   every determinant root, phase wall, floor wall, and strict spectral
-  endpoint. No thin-endpoint certificate is required.
-- After the small-hole and compact pieces close, perform a fresh theorem-level
+  endpoint. Neither endpoint neighborhood requires certification.
+- After the compact piece closes, perform a fresh theorem-level
   clean-room reconstruction and adversarial audit before promoting the global
   shell theorem.
 
@@ -43,6 +45,12 @@ The authoritative statuses are in state/proof_obligations.yml.
 - The complete thin-shell endpoint
   $1-2^{-18}\le\rho<1$ for every $K\ge0$, obtained from the exact overlap of
   the preceding low and high ranges.
+- The small-hole low-interface shifted-tail theorem for
+  $0<\rho<\omega_0$ and
+  $K(\omega_0-\rho)\ge C_*$.
+- The complete small-hole endpoint
+  $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
+  $\rho K=1/2$. The apparent finite small-hole residual is empty.
 
 ## Rejected shell routes
 
@@ -56,6 +64,11 @@ The authoritative statuses are in state/proof_obligations.yml.
   majorant: it vanishes inside the positive whispering-gallery strip.
 - Any fixed finite Neumann-sublayer majorant has the wrong cubic coefficient
   at sufficiently large $K$.
+- Pointwise shell-to-ball root convergence is not uniform in the radial
+  index and cannot prove an all-$K$ small-hole theorem.
+- Bare domain monotonicity to the ball does not pay the missing volume factor
+  $1-\rho^3$. Subtracting two one-sided ball Pólya bounds is also invalid
+  across ball spectral jumps.
 
 ## Parallel-track gaps
 

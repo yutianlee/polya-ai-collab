@@ -331,15 +331,69 @@ The frozen proof and all clean-room/adversarial evidence are recorded in
 `state/lemma_packets/SHELL-thin-curvature-intermediate.md` and
 `rounds/polya-main/round_006/`.
 
+## Complete small-hole endpoint
+
+Set
+
+$$
+\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+\qquad
+C_*=\frac12+\frac{8\sqrt2}{15},
+\qquad
+\rho_*=\frac{\omega_0}{1+2C_*}.
+$$
+
+The previously audited small-hole tail theorem states that every shifted
+tail beginning below the inner interface $\mu=\rho K$ satisfies its target
+integral bound when
+
+$$
+0<\rho<\omega_0,
+\qquad
+K(\omega_0-\rho)\ge C_*.
+\tag{S1}
+$$
+
+Every tail beginning at or above $\mu$ is already controlled by the convex
+high-angular theorem.
+
+If $\mu\le1/2$, then every tail start
+$x_r=r+1/2$ satisfies $x_r\ge\mu$, so all tails are high-angular. If
+$\mu>1/2$ and $0<\rho\le\rho_*$, then
+
+$$
+K(\omega_0-\rho)
+>\frac{\omega_0-\rho}{2\rho}
+\ge
+\frac{\omega_0-\rho_*}{2\rho_*}
+=C_*.
+$$
+
+Thus (S1) controls every remaining low-interface tail. The multiplicity
+scaffold and strict spectral bridge prove
+
+$$
+\boxed{
+0<\rho\le\rho_*,
+\quad K\ge0
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+At $\rho=\rho_*$ the two ranges meet at
+$K_*=1/(2\rho_*)$, and both endpoints are included. This theorem is also
+fully analytic; pointwise root convergence to the ball and small-hole
+certification are unnecessary.
+
 ## Remaining gates
 
 This file must not be cited as a proof of the full shell theorem. The open
 gates are:
 
-- a quantitative small-hole endpoint with an explicit $\rho_0$ and explicit
-  overlap with the compact-$\rho$ sector;
-- a uniform high-energy threshold on
-  $[\rho_0,1-2^{-18}]$ and interval-certified closure of the resulting
+- a practical uniform high-energy threshold on
+  $[\rho_*,1-2^{-18}]$ and interval-certified closure of the resulting
   bounded residual parameter set,
   including every determinant, phase, floor, and strict spectral wall;
 - a fresh final theorem-level clean-room reconstruction and adversarial

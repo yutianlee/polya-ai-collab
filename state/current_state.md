@@ -9,17 +9,26 @@ Next run id: `polya-main`.
 ## Current theorem boundary
 
 The repository proves the exact separated spectrum, the shell inequality at
-high energy for every fixed $0<\rho<1$, and the complete uniform thin-shell
-endpoint
+high energy for every fixed $0<\rho<1$, and both complete uniform endpoint
+neighborhoods
 
 $$
-1-2^{-18}\le\rho<1,
+\rho\in(0,\rho_*]\cup[1-2^{-18},1),
 \qquad K\ge0.
 $$
 
+Here
+
+$$
+\rho_*
+=\frac{\frac{\sqrt3}{2\pi}-\frac16}
+{2+\frac{16\sqrt2}{15}}
+=0.0310668242700667\ldots.
+$$
+
 The all-$\rho$ shell theorem is not yet proved. Its active blockers are the
-small-hole endpoint, the intervening compact-$\rho$ finite window, bounded
-certified closure, and the final theorem-level audit.
+intervening compact-$\rho$ finite window, bounded certified closure, and the
+final theorem-level audit.
 
 ## Round 1 Update
 
@@ -149,3 +158,49 @@ Both components passed isolated clean-room reconstruction and adversarial
 constants/wall review. No Bessel-root certificate is needed in this endpoint
 neighborhood. The next primary analytic target is `SHELL-rho-zero-endpoint`;
 the remaining compact interval and its bounded certificate are secondary.
+
+## Round 7 Update
+
+Date: 2026-07-13
+
+See `rounds/polya-main/round_007/judge/judge-007.md`.
+
+Round 7 closes the entire $\rho\downarrow0$ endpoint analytically. Let
+
+$$
+\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+\qquad
+C_*=\frac12+\frac{8\sqrt2}{15},
+\qquad
+\rho_*=\frac{\omega_0}{1+2C_*}.
+$$
+
+If $\mu=\rho K\le1/2$, every shifted angular tail starts at or above the
+inner interface and the proved convex-tail theorem applies. If $\mu>1/2$ and
+$\rho\le\rho_*$, then
+
+$$
+K(\omega_0-\rho)
+>\frac{\omega_0-\rho}{2\rho}
+\ge C_*,
+$$
+
+so the previously reviewed small-hole low-interface theorem applies to all
+remaining tails. The two regimes meet exactly at
+$K_*=1/(2\rho_*)$ when $\rho=\rho_*$. Therefore
+
+$$
+\boxed{
+0<\rho\le\rho_*,
+\quad K\ge0
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+The theorem passed isolated clean-room, adversarial constants/walls, and
+integrated dependency audits. No ball-limit argument or small-hole Bessel
+certificate is needed. Both endpoint obligations are now discharged; the
+next target is the explicit compact interval
+$[\rho_*,1-2^{-18}]$.
