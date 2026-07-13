@@ -1,12 +1,12 @@
 # Reading Packet
 
-Generated after round 11 in run `polya-main`.
+Generated after round 12 in run `polya-main`.
 
 ## Current Theorem Target
 
 Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.
 
-Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods (with rho>=99/100 on the thin side), and the all-rho analytic range K>=6000^2 are proved. The central--thin seam is rho=24/25 with K_0(24/25)<6000^2. One central residual box is certified; exact coverage of the rest of the compact residual and the final theorem audit remain open.
+Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods (with rho>=99/100 on the thin side), and the all-rho analytic range K>=3300^2 are proved. The central--thin seam is rho=19/20 with K_0(19/20)<3300^2. One central residual box is certified; exact coverage of the rest of the compact residual and the final theorem audit remain open.
 
 ## Current Route
 
@@ -25,11 +25,11 @@ Current blockers:
 ## Round Target Obligations
 
 - `SHELL-central-thin-seam-compression` (proved_internal, owner `A2`): Central--thin seam compression by an enlarged local-plateau bound
-  Next action: Round 12 target: independently rederive every domain-dependent estimate on 0<epsilon<=1/20, aiming for K>=24/epsilon^2, then move the seam to rho=19/20 and prove a separate exact endpoint bound K_0(19/20)<3300^2. These constants are unproved targets; retain the current theorem K>=20/epsilon^2 only on epsilon<=1/25 until all review gates pass.
+  Next action: Retain the sharper K>=20/epsilon^2 theorem on epsilon<=1/25 and the proved K>=24/epsilon^2 theorem only through epsilon=1/20. Round 13 should separately test whether the same constant 24 extends to epsilon<=1/10, with candidate seam rho=9/10 and K_0(9/10)<900^2; no Round 12 estimate may be extrapolated.
 - `SHELL-rho-compact` (open, owner `A2`): Uniform shell estimates on compact rho intervals
-  Next action: Keep this obligation open until exact analytic or certified coverage closes the true residual on I_11 below K=6000^2. Concentrate next on the central fixed-ratio endpoint rather than the discharged ultra-thin strip.
+  Next action: Keep this obligation open until exact analytic or certified coverage closes the true residual on I_12 below K=3300^2. Do not replace the piecewise complement of the accepted cover by a rectangular sweep.
 - `COMP-certified-bessel` (diagnostic_only, owner `A4`): Certified finite-window verification for Bessel cross-products
-  Next action: The parent remains diagnostic_only. Redefine any future E-minus-A manifest on I_11 with K<6000^2; the Round 11 rational ledger is analytic symbolic evidence, not a Bessel-root certificate.
+  Next action: The parent remains diagnostic_only. Redefine any future E-minus-A manifest on I_12 with K<3300^2; the Round 12 exact rational ledgers are symbolic analytic evidence, not Bessel-root certificates.
 
 ## Do-Not-Claim Rules
 
@@ -63,7 +63,7 @@ Current functional split:
 
 ## Last State Patch
 
-created: SHELL-ultrathin-intermediate-bridge; updated: SHELL-thin-action-aggregate, SHELL-thin-local-plateau-optimized, SHELL-thin-curvature-intermediate, SHELL-rho-one-endpoint, SHELL-central-thin-seam-compression, SHELL-rho-compact-analytic-envelope, SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; round score: 7
+updated: SHELL-central-thin-seam-compression, SHELL-rho-compact-analytic-envelope, SHELL-rho-compact, COMP-certified-bessel, SHELL-rho-uniformity, TARGET-shell-d3; round score: 6
 
 ## Active Obligation Briefs
 
@@ -73,14 +73,14 @@ created: SHELL-ultrathin-intermediate-bridge; updated: SHELL-thin-action-aggrega
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `COMP-certified-bessel`
-- Next action: Keep this obligation open until exact analytic or certified coverage closes the true residual on I_11 below K=6000^2. Concentrate next on the central fixed-ratio endpoint rather than the discharged ultra-thin strip.
+- Next action: Keep this obligation open until exact analytic or certified coverage closes the true residual on I_12 below K=3300^2. Do not replace the piecewise complement of the accepted cover by a rectangular sweep.
 
 ### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
 
 - Status: `diagnostic_only`
 - Track: `certified_computation`
 - Owner: `A4`
-- Next action: The parent remains diagnostic_only. Redefine any future E-minus-A manifest on I_11 with K<6000^2; the Round 11 rational ledger is analytic symbolic evidence, not a Bessel-root certificate.
+- Next action: The parent remains diagnostic_only. Redefine any future E-minus-A manifest on I_12 with K<3300^2; the Round 12 exact rational ledgers are symbolic analytic evidence, not Bessel-root certificates.
 
 ### CERT-certificate-family: Fallback target: certified non-tiling comparison family
 
@@ -170,7 +170,7 @@ created: SHELL-ultrathin-intermediate-bridge; updated: SHELL-thin-action-aggrega
 - Track: `shell_analytic`
 - Owner: `A2`
 - Blockers: `SHELL-rho-compact`
-- Next action: Both endpoint neighborhoods and the all-ratio range K>=6000^2 are proved. Keep this obligation open until the compact residual below that ceiling is exactly closed.
+- Next action: Both all-frequency endpoint neighborhoods and the all-ratio range K>=3300^2 are proved. Keep this obligation open until the compact residual below that ceiling is exactly closed.
 
 ### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
 
@@ -210,7 +210,7 @@ created: SHELL-ultrathin-intermediate-bridge; updated: SHELL-thin-action-aggrega
 - Clean-room reviewer: `A3`
 - Adversarial reviewer: `A2`
 - Blockers: `COMP-certified-bessel`, `SHELL-rho-uniformity`
-- Next action: The strict shell inequality is now proved for every ratio when K>=6000^2. Complete exact compact coverage below that ceiling, then run final theorem-level clean-room and adversarial audits.
+- Next action: The strict shell inequality is proved for every ratio when K>=3300^2. Complete exact compact coverage below that ceiling, then run fresh theorem-level clean-room and adversarial audits.
 
 ### COMP-certified-bessel-pilot-round8: Independently checked shell-determinant certificate on one central residual box
 

@@ -5,38 +5,39 @@ The authoritative statuses are in state/proof_obligations.yml.
 ## Active shell gaps
 
 - Compress the proved analytic envelope on the explicit compact interval
-  $I_{11}=[\rho_*,99/100]$, where
+  $I_{12}=[\rho_*,99/100]$, where
 
   $$
   \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-  The Round 11 complementary-action bridge eliminates the ultra-thin strip
-  and reduces the uniform analytic threshold to $K\ge6000^2$. This is more
-  than a factor $105$ below the Round 10 ceiling $125^5/8$ and more than a
-  factor $954$ below $2^{35}$. Exact coverage of the remaining compact
-  residual below this threshold still requires further analytic or symbolic
-  compression; direct global enumeration remains too coarse.
+  The Round 12 enlarged seam reduces the uniform analytic threshold to
+  $K\ge3300^2$, an exact factor $400/121>3$ below the Round 11 ceiling.
+  Exact coverage of the remaining compact residual below this threshold
+  still requires further analytic or symbolic compression; direct global
+  enumeration remains too coarse.
 
-- First target the central--thin seam. Round 12 should independently rederive
-  every domain-dependent estimate needed for a candidate enlargement
+- First target another central--thin seam extension. Round 13 should
+  independently rederive every domain-dependent estimate needed for the
+  candidate
 
   $$
-  0<\varepsilon\le\frac1{20},
+  0<\varepsilon\le\frac1{10},
   \qquad
   K\ge\frac{24}{\varepsilon^2},
   $$
 
-  then move the seam to $\rho=19/20$ and seek the separate exact endpoint
-  estimate $K_0(19/20)<3300^2$. These constants are targets, not promoted
-  theorems; no Round 10 or Round 11 domain may be extrapolated.
+  then move the seam to $\rho=9/10$ and seek the separate exact endpoint
+  estimate $K_0(9/10)<900^2$. Preliminary constants
+  $d>2/3$, $\widehat q<3/7$, and $B=14/3$ are planning evidence only; no
+  Round 12 domain estimate may be extrapolated.
 
 - Extend the certified central pilot into an exact face-connected cover of
   the true residual set
 
   $$
-  \mathcal D=(I_{11}\times[0,\infty))\setminus\mathcal A,
+  \mathcal D=(I_{12}\times[0,\infty))\setminus\mathcal A,
   $$
 
   not of the larger closed planning envelope. Every box needs an analytic or
@@ -79,6 +80,10 @@ The authoritative statuses are in state/proof_obligations.yml.
   $K\ge20/(1-\rho)^2$ for $1-\rho\le1/25$, proved by rederiving every
   domain-dependent estimate. On the common domain $1-\rho\le1/100$, the
   sharper constant $125/8$ remains authoritative.
+- The Round 12 enlarged seam range
+  $K\ge24/(1-\rho)^2$ for $1-\rho\le1/20$, proved by complete independent
+  rederivations. The sharper Round 10 threshold remains authoritative for
+  $1-\rho\le1/25$.
 - The complete thin-shell endpoint
   $99/100\le\rho<1$ for every $K\ge0$, obtained by joining the accepted
   product and aggregate ranges to the complementary-action bridge at the
@@ -90,14 +95,14 @@ The authoritative statuses are in state/proof_obligations.yml.
   $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
   $\rho K=1/2$. The apparent finite small-hole residual is empty.
 - The piecewise compact-ratio analytic envelope and the uniform theorem
-  $K\ge6000^2$ on $I_{11}=[\rho_*,99/100]$. The residual ceilings are
-  below $64$ on $[\rho_*,1/16]$, below $K_0(24/25)<6000^2$ on
-  $[1/16,24/25]$, and at most $200000$ on $[24/25,99/100]$, with exact
-  threshold and switch faces.
+  $K\ge3300^2$ on $I_{12}=[\rho_*,99/100]$. The residual ceilings are
+  below $64$ on $[\rho_*,1/16]$, below $K_0(19/20)<3300^2$ on
+  $[1/16,19/20]$, below $15000$ on $[19/20,24/25]$, and at most $200000$
+  on $[24/25,99/100]$, with exact threshold and switch faces.
 - The global analytic high-frequency shell theorem for
-  $0<\rho<1$ and $K\ge6000^2$, obtained by combining the compact envelope
-  with the two complete endpoint theorems. The exact reduction factors from
-  $125^5/8$ and $2^{35}$ exceed $105$ and $954$, respectively.
+  $0<\rho<1$ and $K\ge3300^2$, obtained by combining the compact envelope
+  with the two complete endpoint theorems. The exact reduction factor from
+  the Round 11 ceiling is $400/121>3$.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -128,7 +133,7 @@ The authoritative statuses are in state/proof_obligations.yml.
 - Literal wall-by-wall certification of the Round 8 coarse compact envelope
   was not a scalable route. At $\varepsilon=2^{-17}$, one former thin
   residual slice crossed more than $2^{38}$ angular half-integer walls.
-  Rounds 9--11 lower the all-ratio ceiling to $6000^2$, while the remaining
+  Rounds 9--12 lower the all-ratio ceiling to $3300^2$, while the remaining
   compact residual still requires monotone-corner, symbolic, or analytic
   aggregation.
 

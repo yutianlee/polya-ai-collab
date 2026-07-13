@@ -198,7 +198,7 @@ $$
 The audited phase enclosure and exact spectrum reduce the shell inequality to
 
 $$
-P_{\mathcal A}le I_{\varepsilon,a},
+P_{\mathcal A}\le I_{\varepsilon,a},
 \qquad
 I_{\varepsilon,a}
 =\int_0^a y\mathcal A_{\varepsilon,a}(y)\,dy.
@@ -383,6 +383,57 @@ The threshold face is included. On the common domain
 $0<\varepsilon\le1/100$, the Round 9 constant $125/8$ is sharper and remains
 the authoritative high threshold.
 
+## Further enlarged local-plateau seam theorem
+
+Round 12 independently rederives the same shifted-tail mechanism on the
+larger domain
+
+$$
+0<\varepsilon\le\frac1{20},
+\qquad K\varepsilon^2\ge24.
+$$
+
+In the incumbent route, every dangerous branch satisfies
+
+$$
+d>\frac{39}{50},
+\qquad
+\widehat q<\frac{27}{100},
+\qquad
+R<\frac{23}{5\sqrt\varepsilon}.
+$$
+
+The complete synthetic comparison path, including its no-drop endpoint,
+retains the exact margin
+
+$$
+\frac{4189934997169}{10140435204025}>0,
+$$
+
+and the final gain payment retains the margin $233/25>0$. An independent
+constant inventory obtains the same loss cap with
+$d>3/4$ and $\widehat q<11/40$, while the strictly isolated reconstruction
+uses a distinct rectangle argument: it first proves $P<10$, then excludes
+$5\le r\le P<10$, and obtains $R<5/\sqrt\varepsilon$. All three finite
+comparison chains are reproduced by the exact executable ledger.
+
+Consequently, including threshold equality,
+
+$$
+\boxed{
+0<\varepsilon\le\frac1{20},
+\quad
+K\ge\frac{24}{\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3.
+}
+$$
+
+The sharper Round 10 threshold $K\ge20/\varepsilon^2$ remains authoritative
+on $0<\varepsilon\le1/25$.
+
 ## Complete thin-shell endpoint
 
 Let
@@ -444,8 +495,9 @@ N_D(A_{\rho,1},K^2)
 $$
 
 This endpoint theorem is analytic and requires no Bessel-root certificate.
-The Round 9 optimized plateau and Round 10 enlarged seam theorems remain
-valid standalone results, but neither is needed for this endpoint closure.
+The Round 9 optimized plateau and the Round 10 and Round 12 enlarged seam
+theorems remain valid standalone results, but none is needed for this
+endpoint closure.
 The direct proof, clean-room reconstruction, adversarial audit, and exact
 ledger are recorded in `rounds/polya-main/round_011/` and
 `computations/round11_verify_ultrathin_bridge.py`.
@@ -511,10 +563,10 @@ certification are unnecessary.
 On the remaining ratio interval
 
 $$
-I_{11}=\left[\rho_*,\frac{99}{100}\right],
+I_{12}=\left[\rho_*,\frac{99}{100}\right],
 $$
 
-use three exact zones.
+use four exact zones.
 
 For $\rho_*\le\rho\le1/16$, the high-angular theorem proves the target for
 $K\le1/(2\rho)$ and the small-hole low-interface theorem proves it for
@@ -530,7 +582,7 @@ $$
 H_0(1/16)<64.
 $$
 
-For $1/16\le\rho\le24/25$, the strict count is zero below
+For $1/16\le\rho\le19/20$, the strict count is zero below
 $\pi/(1-\rho)$ and the fixed-ratio theorem applies above $K_0(\rho)$. The
 positive-root equation
 
@@ -541,26 +593,38 @@ $$
 
 shows that $K_0$ increases with $a$ and decreases with $\eta$. Since
 $a_\rho$ increases and $\eta_\rho$ does not, $K_0(\rho)$ is increasing.
-Exact endpoint estimates at the moved seam give
+Exact endpoint estimates at the Round 12 seam give
 
 $$
-K_0(24/25)<6000^2.
+K_0(19/20)<3300^2.
 $$
 
-For $24/25\le\rho\le99/100$, write $\varepsilon=1-\rho$. The enlarged
-Round 10 local-plateau theorem applies above
+For $19/20\le\rho\le24/25$, write $\varepsilon=1-\rho$. The Round 12
+local-plateau theorem applies above
+
+$$
+\frac{24}{\varepsilon^2}\le15000.
+$$
+
+For $24/25\le\rho\le99/100$, the sharper retained Round 10 theorem applies
+above
 
 $$
 \frac{20}{\varepsilon^2}\le200000.
 $$
 
 The complete thin endpoint owns the shared face $\rho=99/100$ and every
-larger ratio. Since $64<6000^2$ and $200000<6000^2$, the central fixed-ratio
-ceiling dominates all three compact zones. Thus
+larger ratio. Since
+
+$$
+64<15000<200000<3300^2,
+$$
+
+the central fixed-ratio ceiling dominates all four compact zones. Thus
 
 $$
 \boxed{
-\rho\in I_{11},\quad K\ge6000^2
+\rho\in I_{12},\quad K\ge3300^2
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
@@ -572,31 +636,27 @@ theorems yields the global analytic high-frequency result
 
 $$
 \boxed{
-0<\rho<1,\quad K\ge6000^2
+0<\rho<1,\quad K\ge3300^2
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-The exact reduction factors are
+Relative to the Round 11 ceiling, the exact reduction factor is
 
 $$
-\frac{125^5/8}{6000^2}
-=\frac{1953125}{18432}>105,
-\qquad
-\frac{2^{35}}{6000^2}
-=\frac{134217728}{140625}>954.
+\frac{6000^2}{3300^2}=\frac{400}{121}>3.
 $$
 
-Thus Round 11 lowers the Round 10 ceiling by more than a factor $105$ and
-the former $2^{35}$ ceiling by more than a factor $954$.
+Thus Round 12 lowers the complete all-ratio high-frequency ceiling by more
+than a factor $3$.
 
-The closed union of the three displayed gap envelopes is only a planning set
+The closed union of the four displayed gap envelopes is only a planning set
 $\mathcal E$. The actual certificate target is
 
 $$
-\mathcal D=(I_{11}\times[0,\infty))\setminus\mathcal A,
+\mathcal D=(I_{12}\times[0,\infty))\setminus\mathcal A,
 $$
 
 where $\mathcal A$ contains every analytically covered point and threshold
@@ -640,17 +700,18 @@ gates are:
 
 - analytic or symbolic compression of the current compact planning envelope,
   followed, where necessary, by an exact face-connected certificate of every
-  point of $\mathcal D$ below $6000^2$;
-- a fresh derivation of a larger central--thin seam domain. The first Round 12
+  point of $\mathcal D$ below $3300^2$;
+- a fresh derivation of a larger central--thin seam domain. The Round 13
   target is
 
   $$
-  0<\varepsilon\le\frac1{20},
+  0<\varepsilon\le\frac1{10},
   \qquad
   K\ge\frac{24}{\varepsilon^2},
   $$
 
-  together with a moved seam $\rho=19/20$ and a separately proved target
-  $K_0(19/20)<3300^2$. These constants are goals, not current theorems;
+  together with a proposed seam $\rho=9/10$ and a separately proved target
+  $K_0(9/10)<900^2$. These constants are unproved planning targets, not
+  current theorems;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review after the compact residual is closed.

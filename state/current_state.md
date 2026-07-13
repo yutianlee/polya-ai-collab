@@ -29,15 +29,14 @@ $$
 On the intervening compact interval
 
 $$
-I_{11}=[\rho_*,99/100],
+I_{12}=[\rho_*,99/100],
 $$
 
 the shell inequality is now also proved uniformly for every
-$K\ge6000^2$. Combining this compact result with the two endpoint theorems
+$K\ge3300^2$. Combining this compact result with the two endpoint theorems
 gives the global analytic high-frequency theorem for every
-$0<\rho<1$ and $K\ge6000^2$. This ceiling is more than a factor $105$
-below the Round 10 ceiling $125^5/8$ and more than a factor $954$ below the
-former $2^{35}$ ceiling. The exact strict count is
+$0<\rho<1$ and $K\ge3300^2$. Round 12 lowers the Round 11 ceiling by the
+exact factor $6000^2/3300^2=400/121>3$. The exact strict count is
 independently interval-certified
 on the closed central residual box
 
@@ -48,11 +47,12 @@ $$
 $$
 
 The all-frequency shell theorem is not yet proved. Its active blockers are
-exact coverage of the rest of the compact residual set below $6000^2$ and
-the final theorem-level audit. The ultra-thin aggregate-to-plateau gap is
-discharged. The next analytic target is a further central--thin seam
-compression, with any certified computation restricted to bounded,
-face-connected extensions of the existing pilot.
+exact coverage of the rest of the compact residual set below $3300^2$ and
+the final theorem-level audit. The next analytic target is a separately
+proved central--thin seam extension to $\varepsilon\le1/10$ with candidate
+$K\ge24/\varepsilon^2$ and $K_0(9/10)<900^2$. These are Round 13 targets,
+not proved statements. Any certified computation remains restricted to
+bounded, face-connected extensions of the existing pilot.
 
 ## Round 1 Update
 
@@ -431,3 +431,44 @@ The global ceiling is now more than $105$ times below $125^5/8$ and more
 than $954$ times below $2^{35}$. The compact all-frequency residual below
 $6000^2$, the parent Bessel certification, uniformity, and the final shell
 target remain open.
+
+## Round 12 Update
+
+Date: 2026-07-13
+
+See `rounds/polya-main/round_012/judge/judge-012.md`.
+
+Round 12 rederives the local-plateau theorem on the enlarged domain
+
+$$
+0<\varepsilon\le\frac1{20},
+\qquad
+K\ge\frac{24}{\varepsilon^2},
+$$
+
+including threshold equality. The incumbent proves the scaled loss bound
+$R<23/(5\sqrt\varepsilon)$; an isolated clean-room reconstruction instead
+proves $R<5/\sqrt\varepsilon$ by excluding a complete rectangle in the
+synthetic variables. A third independent finite-constant route also closes.
+All exceptional branches, strict walls, and shared faces passed adversarial
+review and exact-ledger reproduction.
+
+At the moved seam $\rho=19/20$, the defining fixed-ratio quadratic has
+
+$$
+K_0(19/20)<3300^2,
+$$
+
+with exact positive margin $32985481/7422975$ at its square-root test point.
+The closed analytic union therefore proves
+
+$$
+\boxed{
+0<\rho<1,
+\qquad K\ge3300^2.
+}
+$$
+
+The complete all-frequency endpoint remains exactly
+$99/100\le\rho<1$. The compact residual below $3300^2$, the parent Bessel
+certification, uniformity, and the final shell target remain open.

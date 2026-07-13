@@ -64,6 +64,19 @@ $$
   proved by rederiving every domain-dependent estimate, with threshold
   equality included. The sharper constant $125/8$ remains authoritative on
   the overlap $0<\varepsilon\le1/100$;
+- the further enlarged local-plateau seam theorem
+
+$$
+0<\varepsilon\le\frac1{20},
+\qquad
+K\ge\frac{24}{\varepsilon^2},
+$$
+
+  with threshold equality. The incumbent obtains
+  $R<23/(5\sqrt\varepsilon)$, while an isolated reconstruction obtains
+  $R<5/\sqrt\varepsilon$ by a distinct rectangle argument. The sharper
+  Round 10 threshold $20/\varepsilon^2$ remains authoritative on
+  $0<\varepsilon\le1/25$;
 - the complementary exact-action bridge: with
   $a=\varepsilon K$, the strict shell estimate holds on
 
@@ -115,20 +128,20 @@ $$
 - the compact-ratio analytic envelope: on
 
 $$
-I_{11}=\left[\rho_*,\frac{99}{100}\right],
+I_{12}=\left[\rho_*,\frac{99}{100}\right],
 $$
 
   the possible residual families lie below $64$ on
-  $[\rho_*,1/16]$, below $K_0(24/25)<6000^2$ on
-  $[1/16,24/25]$, and below $200000$ on $[24/25,99/100]$.
-  Therefore
+  $[\rho_*,1/16]$, below $K_0(19/20)<3300^2$ on
+  $[1/16,19/20]$, below $15000$ on $[19/20,24/25]$, and below
+  $200000$ on $[24/25,99/100]$. Therefore
 
 $$
-K\ge6000^2
+K\ge3300^2
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(\rho\in I_{11});
+\qquad(\rho\in I_{12});
 $$
 
 - combining the compact envelope with both endpoint theorems gives the
@@ -136,13 +149,11 @@ $$
 
 $$
 0<\rho<1,
-\qquad K\ge6000^2.
+\qquad K\ge3300^2.
 $$
 
-  The exact comparisons
-  $(125^5/8)/6000^2=1953125/18432>105$ and
-  $2^{35}/6000^2=134217728/140625>954$ quantify the reduction from the
-  Round 10 and former global ceilings;
+  The exact comparison $6000^2/3300^2=400/121>3$ quantifies the reduction
+  from the Round 11 global ceiling;
 
 - the independently checked certified pilot
 
@@ -156,13 +167,12 @@ $$
   $14.6073155354$. The Arb producer and independent rational checker are
   local evidence only; they do not certify the rest of the compact residual.
 
-`SHELL-rho-compact` remains open. Round 11 has reduced the exact compact
-residual to $I_{11}$ below $K=6000^2$, but it does not certify that residual.
-The next analytic target is the central--thin seam: rederive the seam theorem
-on $0<\varepsilon\le1/20$ with a target such as
-$K\ge24/\varepsilon^2$, move the interface to $\rho=19/20$, and seek the
-separate exact bound $K_0(19/20)<3300^2$. These are Round 12 goals, not
-proved statements. Certification may expand only through an exact
-face-connected manifest for the true residual $\mathcal D$; further analytic
-aggregation or safe monotone-corner certification is still required. The
-parent compact certification and final theorem remain open.
+`SHELL-rho-compact` remains open. Round 12 has reduced the exact compact
+residual to $I_{12}$ below $K=3300^2$, but it does not certify that residual.
+The next analytic target is a separately proved seam extension on
+$0<\varepsilon\le1/10$ with candidate $K\ge24/\varepsilon^2$, moved seam
+$\rho=9/10$, and exact target $K_0(9/10)<900^2$. These are Round 13 planning
+constants, not proved statements. Certification may expand only through an
+exact face-connected manifest for the true residual $\mathcal D$; further
+analytic aggregation or safe monotone-corner certification is still
+required. The parent compact certification and final theorem remain open.
