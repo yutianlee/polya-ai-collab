@@ -5,38 +5,38 @@ The authoritative statuses are in state/proof_obligations.yml.
 ## Active shell gaps
 
 - Compress the proved analytic envelope on the explicit compact interval
-  $I_{10}=[\rho_*,1-1/15625]$, where
+  $I_{11}=[\rho_*,99/100]$, where
 
   $$
   \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-  The enlarged Round 10 seam theorem and retained optimized ultra-thin
-  theorem reduce the uniform analytic threshold to
-  $K\ge125^5/8<2^{32}$, more than a factor nine below $2^{35}$. Exact
-  coverage of the remaining compact residual below this threshold still
-  requires further analytic or symbolic compression; direct global
-  enumeration remains too coarse.
+  The Round 11 complementary-action bridge eliminates the ultra-thin strip
+  and reduces the uniform analytic threshold to $K\ge6000^2$. This is more
+  than a factor $105$ below the Round 10 ceiling $125^5/8$ and more than a
+  factor $954$ below $2^{35}$. Exact coverage of the remaining compact
+  residual below this threshold still requires further analytic or symbolic
+  compression; direct global enumeration remains too coarse.
 
-- First target the dominant ultra-thin aggregate-to-plateau gap
+- First target the central--thin seam. Round 12 should independently rederive
+  every domain-dependent estimate needed for a candidate enlargement
 
   $$
-  \frac1{15625}<\varepsilon\le\frac1{100},
+  0<\varepsilon\le\frac1{20},
   \qquad
-  \frac1{8\varepsilon^{5/2}}
-  <K<\frac{125}{8\varepsilon^2}.
+  K\ge\frac{24}{\varepsilon^2},
   $$
 
-  Round 11 should enlarge the aggregate range or add a separate intermediate
-  bridge, aiming to lower this family's ceiling below $6000^2$ before a
-  large certification manifest is attempted.
+  then move the seam to $\rho=19/20$ and seek the separate exact endpoint
+  estimate $K_0(19/20)<3300^2$. These constants are targets, not promoted
+  theorems; no Round 10 or Round 11 domain may be extrapolated.
 
 - Extend the certified central pilot into an exact face-connected cover of
   the true residual set
 
   $$
-  \mathcal D=(I_{10}\times[0,\infty))\setminus\mathcal A,
+  \mathcal D=(I_{11}\times[0,\infty))\setminus\mathcal A,
   $$
 
   not of the larger closed planning envelope. Every box needs an analytic or
@@ -67,6 +67,11 @@ The authoritative statuses are in state/proof_obligations.yml.
   $K\le\pi/[4(1-\rho)^2]$.
 - The radius-sensitive mean-square-action range
   $K\le1/[8(1-\rho)^{5/2}]$ after combination with the product range.
+- The ultra-thin complementary-action bridge: for
+  $0<\varepsilon\le1/100$, $a=\varepsilon K$, and
+  $a\ge1/(8\varepsilon^{3/2})$, the strict shell estimate holds, including
+  the threshold face. Independent radial arguments leave exact positive
+  reserves $61/1400$ and $4119252993/17500000000$.
 - The optimized uniform local-plateau high-thin range
   $K\ge125/[8(1-\rho)^2]$ for $1-\rho\le1/100$, proved without importing
   estimates conditional on the old constant $64$.
@@ -75,8 +80,9 @@ The authoritative statuses are in state/proof_obligations.yml.
   domain-dependent estimate. On the common domain $1-\rho\le1/100$, the
   sharper constant $125/8$ remains authoritative.
 - The complete thin-shell endpoint
-  $1-1/15625\le\rho<1$ for every $K\ge0$, obtained from the exact overlap of
-  the preceding low and optimized high ranges at $K=125^5/8$.
+  $99/100\le\rho<1$ for every $K\ge0$, obtained by joining the accepted
+  product and aggregate ranges to the complementary-action bridge at the
+  inclusive face $a=1/(8\varepsilon^{3/2})$.
 - The small-hole low-interface shifted-tail theorem for
   $0<\rho<\omega_0$ and
   $K(\omega_0-\rho)\ge C_*$.
@@ -84,15 +90,14 @@ The authoritative statuses are in state/proof_obligations.yml.
   $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
   $\rho K=1/2$. The apparent finite small-hole residual is empty.
 - The piecewise compact-ratio analytic envelope and the uniform theorem
-  $K\ge125^5/8$ on $I_{10}=[\rho_*,1-1/15625]$. The residual ceilings are
+  $K\ge6000^2$ on $I_{11}=[\rho_*,99/100]$. The residual ceilings are
   below $64$ on $[\rho_*,1/16]$, below $K_0(24/25)<6000^2$ on
-  $[1/16,24/25]$, at most $200000$ on $[24/25,99/100]$, and at most
-  $125^5/8<2^{32}$ on $[99/100,1-1/15625]$, with exact threshold and switch
-  faces.
+  $[1/16,24/25]$, and at most $200000$ on $[24/25,99/100]$, with exact
+  threshold and switch faces.
 - The global analytic high-frequency shell theorem for
-  $0<\rho<1$ and $K\ge125^5/8<2^{32}$, obtained by combining the compact
-  envelope with the two complete endpoint theorems. The new ceiling is more
-  than nine times smaller than $2^{35}$.
+  $0<\rho<1$ and $K\ge6000^2$, obtained by combining the compact envelope
+  with the two complete endpoint theorems. The exact reduction factors from
+  $125^5/8$ and $2^{35}$ exceed $105$ and $954$, respectively.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -107,8 +112,9 @@ The authoritative statuses are in state/proof_obligations.yml.
   route with aggregate-action and local-plateau estimates.
 - Combining the enlarged Round 10 constant $C=20$ with the aggregate-action
   range overlaps only for $\varepsilon\le1/25600$. It therefore does not
-  enlarge the already-proved all-frequency endpoint
-  $\varepsilon\le1/15625$.
+  enlarge the then-proved all-frequency endpoint
+  $\varepsilon\le1/15625$; Round 11 supersedes this two-range obstruction
+  with a separate complementary-action bridge.
 - A single volume-matched effective radius is not a global pointwise action
   majorant: it vanishes inside the positive whispering-gallery strip.
 - Any fixed finite Neumann-sublayer majorant has the wrong cubic coefficient
@@ -122,9 +128,9 @@ The authoritative statuses are in state/proof_obligations.yml.
 - Literal wall-by-wall certification of the Round 8 coarse compact envelope
   was not a scalable route. At $\varepsilon=2^{-17}$, one former thin
   residual slice crossed more than $2^{38}$ angular half-integer walls.
-  Rounds 9 and 10 lower the all-ratio ceiling to $125^5/8$, while the
-  remaining compact residual still requires monotone-corner, symbolic, or
-  analytic aggregation.
+  Rounds 9--11 lower the all-ratio ceiling to $6000^2$, while the remaining
+  compact residual still requires monotone-corner, symbolic, or analytic
+  aggregation.
 
 ## Parallel-track gaps
 

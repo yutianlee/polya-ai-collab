@@ -385,21 +385,57 @@ the authoritative high threshold.
 
 ## Complete thin-shell endpoint
 
-The low and optimized high thresholds overlap exactly when
+Let
 
 $$
-\frac{125}{8\varepsilon^2}
-\le\frac1{8\varepsilon^{5/2}}
-\quad\Longleftrightarrow\quad
-\varepsilon\le\frac1{15625}.
+\rho=1-\varepsilon,
+\qquad
+0<\varepsilon\le\frac1{100},
+\qquad
+a=\varepsilon K.
 $$
 
-At $\varepsilon=1/15625$ both thresholds equal $125^5/8$, and both
-component theorems include equality. Hence
+The accepted product and aggregate theorems cover the closed low union
+
+$$
+0\le a\le\frac1{8\varepsilon^{3/2}}.
+$$
+
+Round 11 proves the complementary range directly from the exact action. If
+$F=R^2$ is the square of the decreasing inverse action and $g=-F'$, then
+$g$ decreases to the ungridded inner-interface time and increases after it.
+Shifted-sawtooth Stieltjes integration gives the radial deficit
+
+$$
+D>
+\frac{a^2}{4}
+-\frac{17}{8}\varepsilon^{2/3}a^{4/3}
+-\frac{11}{14}a.
+$$
+
+After the exact half-integer angular ceiling, the normalized reserve is
+$61/1400>0$. An isolated clean-room proof uses the primitive $W$ of the
+uncentered shifted sawtooth instead and obtains
+
+$$
+D\ge\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4},
+$$
+
+with independent normalized margin
+$4119252993/17500000000>0$. Thus, including the common face,
+
+$$
+a\ge\frac1{8\varepsilon^{3/2}}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+<\frac{2}{9\pi}(1-\rho^3)K^3.
+$$
+
+The two closed ranges cover every $a\ge0$. Hence
 
 $$
 \boxed{
-1-\frac1{15625}\le\rho<1,
+\frac{99}{100}\le\rho<1,
 \quad K\ge0
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
@@ -408,18 +444,11 @@ N_D(A_{\rho,1},K^2)
 $$
 
 This endpoint theorem is analytic and requires no Bessel-root certificate.
-The Round 6 artifacts record the earlier $C=64$ theorem; the optimized proof
-and independent review are recorded in `rounds/polya-main/round_009/`.
-The enlarged Round 10 theorem does not improve this all-frequency endpoint:
-
-$$
-\frac{20}{\varepsilon^2}
-\le\frac1{8\varepsilon^{5/2}}
-\quad\Longleftrightarrow\quad
-\varepsilon\le\frac1{25600},
-$$
-
-which is a smaller range than $\varepsilon\le1/15625$.
+The Round 9 optimized plateau and Round 10 enlarged seam theorems remain
+valid standalone results, but neither is needed for this endpoint closure.
+The direct proof, clean-room reconstruction, adversarial audit, and exact
+ledger are recorded in `rounds/polya-main/round_011/` and
+`computations/round11_verify_ultrathin_bridge.py`.
 
 ## Complete small-hole endpoint
 
@@ -482,10 +511,10 @@ certification are unnecessary.
 On the remaining ratio interval
 
 $$
-I_{10}=\left[\rho_*,1-\frac1{15625}\right],
+I_{11}=\left[\rho_*,\frac{99}{100}\right],
 $$
 
-use four exact zones.
+use three exact zones.
 
 For $\rho_*\le\rho\le1/16$, the high-angular theorem proves the target for
 $K\le1/(2\rho)$ and the small-hole low-interface theorem proves it for
@@ -525,67 +554,49 @@ $$
 \frac{20}{\varepsilon^2}\le200000.
 $$
 
-For $99/100\le\rho\le1-1/15625$, write
-$\varepsilon=1-\rho$. The aggregate-action and optimized local-plateau
-theorems cover
-
-$$
-K\le\frac1{8\varepsilon^{5/2}}
-\qquad\hbox{and}\qquad
-K\ge\frac{125}{8\varepsilon^2}.
-$$
-
-Every possible residual in this ultra-thin zone satisfies
-
-$$
-K<\frac{125^5}{8}<2^{32}.
-$$
-
-The exact comparisons
-
-$$
-6000^2<\frac{125^5}{8},
-\qquad
-200000<\frac{125^5}{8},
-$$
-
-show that the retained Round 9 ultra-thin ceiling dominates all four zones.
-Thus
+The complete thin endpoint owns the shared face $\rho=99/100$ and every
+larger ratio. Since $64<6000^2$ and $200000<6000^2$, the central fixed-ratio
+ceiling dominates all three compact zones. Thus
 
 $$
 \boxed{
-\rho\in I_{10},\quad K\ge\frac{125^5}{8}
+\rho\in I_{11},\quad K\ge6000^2
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-Combining this with the complete small-hole and enlarged thin endpoint
+Combining this with the complete small-hole and complete thin endpoint
 theorems yields the global analytic high-frequency result
 
 $$
 \boxed{
-0<\rho<1,\quad K\ge\frac{125^5}{8}<2^{32}
+0<\rho<1,\quad K\ge6000^2
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-Moreover
+The exact reduction factors are
 
 $$
-2^{35}>9\frac{125^5}{8},
+\frac{125^5/8}{6000^2}
+=\frac{1953125}{18432}>105,
+\qquad
+\frac{2^{35}}{6000^2}
+=\frac{134217728}{140625}>954.
 $$
 
-so the new ceiling is more than nine times smaller than the former one.
+Thus Round 11 lowers the Round 10 ceiling by more than a factor $105$ and
+the former $2^{35}$ ceiling by more than a factor $954$.
 
-The closed union of the four displayed gap envelopes is only a planning set
+The closed union of the three displayed gap envelopes is only a planning set
 $\mathcal E$. The actual certificate target is
 
 $$
-\mathcal D=(I_{10}\times[0,\infty))\setminus\mathcal A,
+\mathcal D=(I_{11}\times[0,\infty))\setminus\mathcal A,
 $$
 
 where $\mathcal A$ contains every analytically covered point and threshold
@@ -628,17 +639,18 @@ This file must not be cited as a proof of the full shell theorem. The open
 gates are:
 
 - analytic or symbolic compression of the current compact planning envelope,
-  followed by an exact face-connected certificate of every point of
-  $\mathcal D$ below $125^5/8$. The first Round 11 target is the dominant
-  ultra-thin aggregate-to-plateau gap
+  followed, where necessary, by an exact face-connected certificate of every
+  point of $\mathcal D$ below $6000^2$;
+- a fresh derivation of a larger central--thin seam domain. The first Round 12
+  target is
 
   $$
-  \frac1{15625}<\varepsilon\le\frac1{100},
+  0<\varepsilon\le\frac1{20},
   \qquad
-  \frac1{8\varepsilon^{5/2}}
-  <K<\frac{125}{8\varepsilon^2},
+  K\ge\frac{24}{\varepsilon^2},
   $$
 
-  aiming to lower its ceiling below $6000^2$ before any large certificate;
+  together with a moved seam $\rho=19/20$ and a separately proved target
+  $K_0(19/20)<3300^2$. These constants are goals, not current theorems;
 - a fresh final theorem-level clean-room reconstruction and adversarial
-  review.
+  review after the compact residual is closed.

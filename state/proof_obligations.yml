@@ -25,12 +25,11 @@
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
     "target_obligations": [
-      "SHELL-thin-action-aggregate",
-      "SHELL-thin-curvature-intermediate",
+      "SHELL-central-thin-seam-compression",
       "SHELL-rho-compact",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Round 10 proved the enlarged local-plateau theorem K>=20/epsilon^2 for epsilon<=1/25, moved the central--thin seam to rho=24/25, proved K_0(24/25)<6000^2, and lowered the all-ratio analytic ceiling to 125^5/8<2^32. The unchanged ultra-thin aggregate-to-plateau gap now dominates. Primary: on 1/15625<epsilon<=1/100, enlarge the aggregate-action range or prove a separate exact intermediate bridge between K=1/(8 epsilon^(5/2)) and K=125/(8 epsilon^2), aiming to bound the remaining thin residual below 6000^2. Preserve the C=125/8 theorem and the all-K endpoint epsilon<=1/15625. The output must use exact switch ownership, strict floors, and an isolated reconstruction; no sampled or brute-force sweep toward 125^5/8 is allowed. Secondary: at most one small face-connected certified cell may test the residual manifest format without being presented as global coverage. A2 leads the analytic bridge, A3 reconstructs and audits it independently, A4 handles any bounded certification pilot, and A1 promotes only exact checked evidence."
+    "round_rule": "Round 11 proved the complementary exact-action bridge a>=1/(8 epsilon^(3/2)) for epsilon<=1/100, enlarged the complete all-frequency endpoint to rho>=99/100, and lowered the all-ratio analytic ceiling to 6000^2. The ultra-thin gap is discharged. Primary: rederive the central-thin seam theorem on 0<epsilon<=1/20 with a target such as K>=24/epsilon^2, move the seam to rho=19/20, and prove an exact endpoint bound such as K_0(19/20)<3300^2. Every enlarged-domain estimate must be rechecked; do not extrapolate the Round 10 epsilon<=1/25 proof or the Round 11 all-frequency endpoint. Secondary: at most one face-connected certified cell may extend the Round 8 pilot, and it must remain local evidence. A2 leads the seam compression, A3 reconstructs it independently, A4 audits constants and any bounded certificate, and A1 promotes only exact checked evidence."
   },
   "proof_obligations": [
     {
@@ -132,7 +131,11 @@
           "state/lemma_packets/SHELL-central-thin-seam-compression.md",
           "rounds/polya-main/round_010/responses/central-thin-seam-incumbent.md",
           "rounds/polya-main/round_010/reviews/central-thin-seam-clean-room.md",
-          "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md"
+          "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md",
+          "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
+          "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -164,9 +167,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "The strict shell inequality is now proved for every ratio when K>=125^5/8<2^32. Complete exact coverage below that ceiling, then run final theorem-level clean-room and adversarial audits.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "next_action": "The strict shell inequality is now proved for every ratio when K>=6000^2. Complete exact compact coverage below that ceiling, then run final theorem-level clean-room and adversarial audits.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -647,7 +650,11 @@
           "state/lemma_packets/SHELL-central-thin-seam-compression.md",
           "rounds/polya-main/round_010/responses/central-thin-seam-incumbent.md",
           "rounds/polya-main/round_010/reviews/central-thin-seam-clean-room.md",
-          "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md"
+          "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md",
+          "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
+          "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -658,9 +665,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Both endpoint neighborhoods and the all-ratio range K>=125^5/8 are proved. Keep this obligation open until the remaining compact residual below that ceiling is exactly closed.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "next_action": "Both endpoint neighborhoods and the all-ratio range K>=6000^2 are proved. Keep this obligation open until the compact residual below that ceiling is exactly closed.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     },
     {
       "id": "SHELL-rho-compact",
@@ -697,7 +704,11 @@
           "state/lemma_packets/SHELL-central-thin-seam-compression.md",
           "rounds/polya-main/round_010/responses/central-thin-seam-incumbent.md",
           "rounds/polya-main/round_010/reviews/central-thin-seam-clean-room.md",
-          "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md"
+          "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md",
+          "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
+          "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": []
@@ -708,9 +719,9 @@
         "threshold blow-up inside a compact interval",
         "loss of monotonicity under interval evaluation"
       ],
-      "next_action": "Keep this obligation open until exact analytic or certified coverage closes the true residual on I_10 below K=125^5/8. Target the dominant ultra-thin gap before attempting a large manifest.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "next_action": "Keep this obligation open until exact analytic or certified coverage closes the true residual on I_11 below K=6000^2. Concentrate next on the central fixed-ratio endpoint rather than the discharged ultra-thin strip.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -784,14 +795,14 @@
       "track": "shell_analytic",
       "title": "Thin-shell endpoint rho -> 1",
       "status": "proved_internal",
-      "statement_tex": "For every 1-1/15625<=rho<1 and every K>=0, the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. The lower rho endpoint is included and rho=1 is excluded as the degenerate zero-width limit.",
+      "statement_tex": "For every 99/100<=rho<1 and every K>=0, the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. The lower rho endpoint is included and rho=1 is excluded as the degenerate zero-width limit.",
       "dependencies": [
         "CONV-strict-counting",
         "SHELL-sturm-liouville-completeness",
         "SHELL-thin-product-low-optical",
         "SHELL-thin-action-aggregate",
-        "SHELL-thin-local-plateau-optimized",
-        "SHELL-thin-curvature-intermediate"
+        "SHELL-thin-curvature-intermediate",
+        "SHELL-ultrathin-intermediate-bridge"
       ],
       "implies": [
         "SHELL-rho-uniformity"
@@ -816,7 +827,11 @@
           "rounds/polya-main/round_009/responses/optimized-thin-envelope-corollary.md",
           "rounds/polya-main/round_009/reviews/thin-plateau-optimized-clean-room.md",
           "rounds/polya-main/round_009/reviews/thin-plateau-parametric-dependency-audit.md",
-          "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md"
+          "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md",
+          "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
+          "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-diagnostic.md"
@@ -827,14 +842,15 @@
       },
       "owner": "A2",
       "falsification_cases": [
-        "rho=1-1/15625",
+        "rho=99/100",
         "rho tending to 1",
-        "joining frequency K=125^5/8",
-        "strict spectral and phase-proxy walls"
+        "a=1/(8 epsilon^(3/2))",
+        "product-to-aggregate and aggregate-to-bridge faces",
+        "radial, angular, proxy, and strict spectral walls"
       ],
-      "next_action": "Treat 1-1/15625<=rho<1 as discharged. Round 10 does not enlarge this all-frequency endpoint.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01",
+      "next_action": "Treat 99/100<=rho<1 as completely discharged and preserve its inclusive lower face in every compact residual definition.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -845,19 +861,21 @@
         "SHELL-sturm-liouville-completeness",
         "SHELL-thin-product-low-optical",
         "SHELL-thin-action-aggregate",
-        "SHELL-thin-local-plateau-optimized",
-        "SHELL-thin-curvature-intermediate"
+        "SHELL-thin-curvature-intermediate",
+        "SHELL-ultrathin-intermediate-bridge"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
-        "rounds/polya-main/round_009/reviews/thin-plateau-optimized-clean-room.md"
+        "rounds/polya-main/round_009/reviews/thin-plateau-optimized-clean-room.md",
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md"
       ],
       "adversarial_review_artifacts": [
         "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-parametric-dependency-audit.md",
-        "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md"
+        "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md",
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
       ],
-      "reason_for_promotion": "The already-proved low and aggregate ranges and the optimized high-thin theorem cover every K at every 0<epsilon<=1/15625, including the exact lower ratio face."
+      "reason_for_promotion": "The accepted product and aggregate ranges and audited complementary-action theorem cover every optical frequency for 0<epsilon<=1/100, including the exact lower ratio face rho=99/100."
     },
     {
       "id": "COMP-certified-bessel",
@@ -922,9 +940,9 @@
         "rounds/polya-main/round_008/certification/pilot-central-box.json",
         "rounds/polya-main/round_008/certification/pilot-central-box-check.json"
       ],
-      "next_action": "The parent remains diagnostic_only. Redefine any future E-minus-A manifest using I_10 and K<125^5/8; the Round 10 rational ledger is not a Bessel-root certificate.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "next_action": "The parent remains diagnostic_only. Redefine any future E-minus-A manifest on I_11 with K<6000^2; the Round 11 rational ledger is analytic symbolic evidence, not a Bessel-root certificate.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     },
     {
       "id": "SRC-mathieu-ellipse",
@@ -1795,14 +1813,14 @@
       "track": "shell_analytic",
       "title": "Radius-sensitive intermediate thin-shell estimate",
       "status": "proved_internal",
-      "statement_tex": "For rho=1-epsilon with 0<epsilon<=1/15625, the strict shell Polya estimate holds for every K>=0. The proved low and aggregate ranges cover K<=1/(8 epsilon^(5/2)); SHELL-thin-local-plateau-optimized covers K>=125/(8 epsilon^2); these inclusive ranges overlap exactly because epsilon<=1/15625.",
+      "statement_tex": "For rho=1-epsilon with 0<epsilon<=1/100, the strict shell Polya estimate holds for every K>=0. With a=epsilon K, the proved product and aggregate ranges cover 0<=a<=1/(8 epsilon^(3/2)), while SHELL-ultrathin-intermediate-bridge covers a>=1/(8 epsilon^(3/2)); both include the common face.",
       "dependencies": [
         "CONV-strict-counting",
         "SHELL-sturm-liouville-completeness",
         "SHELL-phase-enclosures",
         "SHELL-thin-product-low-optical",
         "SHELL-thin-action-aggregate",
-        "SHELL-thin-local-plateau-optimized"
+        "SHELL-ultrathin-intermediate-bridge"
       ],
       "implies": [
         "SHELL-rho-one-endpoint"
@@ -1827,7 +1845,13 @@
           "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md",
           "rounds/polya-main/round_009/exploration/exact-constant-check.md",
           "computations/round9_verify_thin_plateau_constants.py",
-          "computations/tests/test_round9_thin_plateau_constants.py"
+          "computations/tests/test_round9_thin_plateau_constants.py",
+          "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
+          "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md",
+          "computations/round11_verify_ultrathin_bridge.py",
+          "computations/tests/test_round11_ultrathin_bridge.py"
         ],
         "negative": [
           "rounds/polya-main/round_005/responses/thin-shell-product-incumbent.md",
@@ -1853,28 +1877,32 @@
         "SHELL-phase-enclosures",
         "SHELL-thin-product-low-optical",
         "SHELL-thin-action-aggregate",
-        "SHELL-thin-local-plateau-optimized"
+        "SHELL-ultrathin-intermediate-bridge"
       ],
       "falsification_cases": [
-        "epsilon=1/15625",
-        "equality of 1/(8 epsilon^(5/2)) and 125/(8 epsilon^2)",
-        "threshold and strict spectral walls",
-        "using the old 64/epsilon^2 theorem to justify the optimized overlap"
+        "epsilon=1/100",
+        "a=pi/(4 epsilon)",
+        "a=1/(8 epsilon^(3/2))",
+        "closed ownership of the aggregate-to-bridge face",
+        "radial, angular, proxy, and strict spectral walls",
+        "using the Round 9 local-plateau theorem as an endpoint dependency"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
-        "rounds/polya-main/round_009/reviews/thin-plateau-optimized-clean-room.md"
+        "rounds/polya-main/round_009/reviews/thin-plateau-optimized-clean-room.md",
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md"
       ],
       "adversarial_review_artifacts": [
         "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
         "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-parametric-dependency-audit.md",
-        "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md"
+        "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md",
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
       ],
-      "next_action": "The all-frequency conclusion remains exactly 0<epsilon<=1/15625. Use its aggregate/high overlap as the lower side of the Round 11 ultra-thin gap problem.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01",
-      "reason_for_promotion": "The new independently audited high-thin theorem overlaps the unchanged aggregate-action range exactly at epsilon=1/15625, and both components include the joining frequency."
+      "next_action": "Treat the all-frequency epsilon<=1/100 theorem as discharged. Any larger epsilon domain requires a separately audited extension of every range needed for the claimed union.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51",
+      "reason_for_promotion": "The accepted low union and independently audited complementary-action bridge meet on the same inclusive optical face and cover every K for every 0<epsilon<=1/100."
     },
     {
       "id": "SHELL-thin-action-aggregate",
@@ -1890,7 +1918,8 @@
       ],
       "implies": [
         "SHELL-thin-curvature-intermediate",
-        "SHELL-rho-one-endpoint"
+        "SHELL-rho-one-endpoint",
+        "SHELL-ultrathin-intermediate-bridge"
       ],
       "blockers": [],
       "evidence": {
@@ -1937,9 +1966,9 @@
         "rounds/polya-main/round_006/reviews/thin-endpoint-combined-constants.md"
       ],
       "reason_for_promotion": "The exact scaled normalization, mean-square-radius Jensen comparison, strict layer cake, shifted radial deficit, angular ceiling, quarter-disk estimate, and explicit outer-strip payment passed an isolated clean-room reconstruction and two adversarial audits. The proof recovers the exact shell mean cross-section and uses no numerical evidence.",
-      "next_action": "Round 11 should enlarge the aggregate range or prove a separate intermediate bridge across the remaining aggregate-to-plateau gap for 1/15625<epsilon<=1/100, targeting a residual ceiling below 6000^2.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "next_action": "Use its exact action calculus and accepted closed range through a=1/(8 epsilon^(3/2)); the complementary range is discharged by SHELL-ultrathin-intermediate-bridge.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     },
     {
       "id": "SHELL-thin-local-plateau-high",
@@ -2074,7 +2103,7 @@
       "track": "shell_analytic",
       "title": "Explicit analytic envelope on the remaining compact shell-ratio interval",
       "status": "proved_internal",
-      "statement_tex": "Let rho_*=omega_0/(1+2 C_*) and I_10=[rho_*,1-1/15625]. On [rho_*,1/16], every possible residual has K<64. On [1/16,24/25], every possible residual has K<K_0(24/25)<6000^2. On [24/25,99/100], every possible residual has K<20/(1-rho)^2<=200000. On [99/100,1-1/15625], with epsilon=1-rho, every possible residual lies below 125/(8 epsilon^2)<=125^5/8. Consequently the strict shell Polya inequality holds for rho in I_10 and K>=125^5/8; with the two endpoint lemmas it holds for every 0<rho<1 and K>=125^5/8<2^32.",
+      "statement_tex": "Let rho_*=omega_0/(1+2 C_*) and I_11=[rho_*,99/100]. On [rho_*,1/16], every possible residual has K<64. On [1/16,24/25], every possible residual has K<K_0(24/25)<6000^2. On [24/25,99/100], every possible residual has K<20/(1-rho)^2<=200000. Consequently the strict shell Polya inequality holds for rho in I_11 and K>=6000^2; with the two endpoint lemmas it holds for every 0<rho<1 and K>=6000^2.",
       "dependencies": [
         "SHELL-rho-zero-endpoint",
         "SHELL-rho-one-endpoint",
@@ -2084,8 +2113,8 @@
         "SHELL-fixed-rho-high-energy",
         "SHELL-thin-product-low-optical",
         "SHELL-thin-action-aggregate",
-        "SHELL-thin-local-plateau-optimized",
-        "SHELL-central-thin-seam-compression"
+        "SHELL-central-thin-seam-compression",
+        "SHELL-ultrathin-intermediate-bridge"
       ],
       "implies": [
         "SHELL-rho-compact"
@@ -2109,7 +2138,13 @@
           "rounds/polya-main/round_010/reviews/central-thin-seam-clean-room.md",
           "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md",
           "computations/round10_verify_seam_constants.py",
-          "computations/tests/test_round10_seam_constants.py"
+          "computations/tests/test_round10_seam_constants.py",
+          "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
+          "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md",
+          "computations/round11_verify_ultrathin_bridge.py",
+          "computations/tests/test_round11_ultrathin_bridge.py"
         ],
         "negative": [],
         "inconclusive": [
@@ -2131,37 +2166,38 @@
         "SHELL-fixed-rho-high-energy",
         "SHELL-thin-product-low-optical",
         "SHELL-thin-action-aggregate",
-        "SHELL-thin-local-plateau-optimized",
-        "SHELL-central-thin-seam-compression"
+        "SHELL-central-thin-seam-compression",
+        "SHELL-ultrathin-intermediate-bridge"
       ],
       "falsification_cases": [
         "rho=rho_*",
         "rho=1/16",
         "rho=24/25",
         "rho=99/100",
-        "rho=1-1/15625",
         "K equal to every component threshold",
         "K=K_0(24/25) and K=6000^2",
-        "K=20/(1-rho)^2 on the enlarged seam",
-        "thin joining frequency and new global ceiling K=125^5/8",
-        "exact comparisons 6000^2<125^5/8<2^32<2^35",
+        "K=20/(1-rho)^2 on the central-thin seam",
+        "the all-frequency endpoint beginning at rho=99/100",
+        "exact comparisons 200000<6000^2<125^5/8<2^32",
         "closed planning envelope confused with the true certification target"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_008/reviews/compact-envelope-clean-room.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-optimized-clean-room.md",
-        "rounds/polya-main/round_010/reviews/central-thin-seam-clean-room.md"
+        "rounds/polya-main/round_010/reviews/central-thin-seam-clean-room.md",
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md"
       ],
       "adversarial_review_artifacts": [
         "rounds/polya-main/round_008/reviews/compact-envelope-adversarial.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-parametric-dependency-audit.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md",
-        "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md"
+        "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md",
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
       ],
-      "reason_for_promotion": "The audited enlarged-domain theorem moves the fixed-ratio switch from rho=99/100 to rho=24/25. The exact endpoint estimate K_0(24/25)<6000^2 and the retained Round 9 ultra-thin theorem make 125^5/8 the dominant complete all-ratio ceiling.",
-      "next_action": "Use I_10 and K<125^5/8 as the exact residual boundary. Round 11 should first compress the dominant ultra-thin aggregate-to-plateau gap.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "reason_for_promotion": "The complete thin endpoint now begins at rho=99/100, eliminating the former ultra-thin residual. The Round 10 seam is below 200000 and the fixed-ratio central endpoint is below 6000^2, so the latter is the new complete all-ratio ceiling.",
+      "next_action": "Use I_11 and K<6000^2 as the exact compact residual boundary. The next analytic target is the central endpoint controlling K_0(24/25).",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     },
     {
       "id": "COMP-certified-bessel-pilot-round8",
@@ -2261,11 +2297,7 @@
         "SHELL-high-angular-shifted-tails",
         "SHELL-low-interface-fixed-rho-high-energy"
       ],
-      "implies": [
-        "SHELL-thin-curvature-intermediate",
-        "SHELL-rho-one-endpoint",
-        "SHELL-rho-compact-analytic-envelope"
-      ],
+      "implies": [],
       "blockers": [],
       "evidence": {
         "positive": [
@@ -2321,9 +2353,9 @@
         "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md"
       ],
       "reason_for_promotion": "The C=125/8 scaled-loss proof was reconstructed without the old C=64 theorem, its synthetic path, exact endpoint extrema, exceptional branches, and wall strictness passed independent dependency and targeted adversarial audits, and every finite rational margin was reproduced exactly. The independently valid C=18 proof is retained only as fallback evidence.",
-      "next_action": "Retain the sharper threshold 125/(8 epsilon^2) on 0<epsilon<=1/100 and use it on the ultra-thin compact strip. Do not replace it by the weaker C=20 threshold on their overlap.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "next_action": "Retain this as a valid standalone high-frequency theorem and historical independent cross-check. It is no longer needed for endpoint closure or the current compact envelope.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     },
     {
       "id": "SHELL-central-thin-seam-compression",
@@ -2393,9 +2425,79 @@
         "rounds/polya-main/round_010/reviews/central-thin-seam-adversarial-referee.md"
       ],
       "reason_for_promotion": "The enlarged-domain local-plateau proof was independently reconstructed with different constants. Its dependency boundary, synthetic path, exceptional branches, exact endpoint extrema, wall ownership, and central endpoint comparison passed adversarial review, and every incumbent rational margin was reproduced by the executable ledger.",
-      "next_action": "Use this theorem on 24/25<=rho<=99/100. Retain the sharper Round 9 threshold 125/(8 epsilon^2) when epsilon<=1/100; do not infer an enlarged all-frequency thin endpoint.",
-      "last_updated_round": 10,
-      "last_updated_at": "2026-07-13T17:36:01"
+      "next_action": "Round 12 target: independently rederive every domain-dependent estimate on 0<epsilon<=1/20, aiming for K>=24/epsilon^2, then move the seam to rho=19/20 and prove a separate exact endpoint bound K_0(19/20)<3300^2. These constants are unproved targets; retain the current theorem K>=20/epsilon^2 only on epsilon<=1/25 until all review gates pass.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
+    },
+    {
+      "id": "SHELL-ultrathin-intermediate-bridge",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Ultra-thin complementary-action bridge above the aggregate face",
+      "status": "proved_internal",
+      "statement_tex": "Let rho=1-epsilon with 0<epsilon<=1/100 and a=epsilon K. If a>=1/(8 epsilon^(3/2)), then N_D(A_{rho,1},K^2)<(2/(9 pi))(1-rho^3)K^3, including threshold equality.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-thin-action-aggregate"
+      ],
+      "implies": [
+        "SHELL-thin-curvature-intermediate",
+        "SHELL-rho-one-endpoint",
+        "SHELL-rho-compact-analytic-envelope"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
+          "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md",
+          "computations/round11_verify_ultrathin_bridge.py",
+          "computations/tests/test_round11_ultrathin_bridge.py"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_011\\judge\\judge-011.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "bottleneck",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-thin-action-aggregate"
+      ],
+      "falsification_cases": [
+        "epsilon=1/100",
+        "a=1/(8 epsilon^(3/2))",
+        "tau not lying on any radial or integer grid",
+        "radial wall x_n=T",
+        "angular wall R(x_n)/epsilon in Z+1/2",
+        "proxy wall A(y_l)+1/4 in Z",
+        "improper trace g(0+)",
+        "terminal trace g(T)=2 pi rho a",
+        "curvature switch at t=tau",
+        "strict spectral walls",
+        "any use of the false global comparison A<=B",
+        "any use of the Round 9 local-plateau conclusion"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
+      ],
+      "reason_for_promotion": "The direct inverse-square proof and a distinct clean-room sawtooth-primitive proof both close the complementary range. The U-shaped derivative magnitude, ungridded curvature interface, improper outer trace, terminal trace, half-integer angular ceilings, strict radial and proxy walls, exact reserves 61/1400 and 4119252993/17500000000, and dependency boundary passed adversarial review and executable-ledger reproduction.",
+      "next_action": "Use this theorem as the complementary closed range above a=1/(8 epsilon^(3/2)). Do not extrapolate it beyond epsilon=1/100 without a new proof of the claimed larger-domain union.",
+      "last_updated_round": 11,
+      "last_updated_at": "2026-07-13T18:45:51"
     }
   ],
   "rejected_claims": [

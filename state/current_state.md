@@ -13,7 +13,7 @@ high energy uniformly for all $0<\rho<1$, and both complete uniform endpoint
 neighborhoods
 
 $$
-\rho\in(0,\rho_*]\cup[1-1/15625,1),
+\rho\in(0,\rho_*]\cup[99/100,1),
 \qquad K\ge0.
 $$
 
@@ -29,14 +29,15 @@ $$
 On the intervening compact interval
 
 $$
-I_{10}=[\rho_*,1-1/15625],
+I_{11}=[\rho_*,99/100],
 $$
 
 the shell inequality is now also proved uniformly for every
-$K\ge125^5/8$. Combining this compact result with the two endpoint theorems
+$K\ge6000^2$. Combining this compact result with the two endpoint theorems
 gives the global analytic high-frequency theorem for every
-$0<\rho<1$ and $K\ge125^5/8<2^{32}$. This ceiling is more than a factor
-nine lower than the former $2^{35}$ ceiling. The exact strict count is
+$0<\rho<1$ and $K\ge6000^2$. This ceiling is more than a factor $105$
+below the Round 10 ceiling $125^5/8$ and more than a factor $954$ below the
+former $2^{35}$ ceiling. The exact strict count is
 independently interval-certified
 on the closed central residual box
 
@@ -47,11 +48,11 @@ $$
 $$
 
 The all-frequency shell theorem is not yet proved. Its active blockers are
-exact coverage of the rest of the compact residual set below $125^5/8$ and
-the final theorem-level audit. The dominant unresolved analytic family is
-the ultra-thin aggregate-to-plateau gap for
-$1/15625<1-\rho\le1/100$; it should be compressed below $6000^2$ before
-large-scale certification is attempted.
+exact coverage of the rest of the compact residual set below $6000^2$ and
+the final theorem-level audit. The ultra-thin aggregate-to-plateau gap is
+discharged. The next analytic target is a further central--thin seam
+compression, with any certified computation restricted to bounded,
+face-connected extensions of the existing pilot.
 
 ## Round 1 Update
 
@@ -376,3 +377,57 @@ $$
 $$
 
 aiming to lower its ceiling below $6000^2$.
+
+## Round 11 Update
+
+Date: 2026-07-13
+
+See `rounds/polya-main/round_011/judge/judge-011.md`.
+
+Round 11 proves the direct complementary-action theorem
+
+$$
+0<\varepsilon\le\frac1{100},
+\qquad
+a=\varepsilon K\ge\frac1{8\varepsilon^{3/2}}.
+$$
+
+Writing $F=R^2$ for the squared inverse exact action, the incumbent controls
+the shifted radial discrepancy by the U-shaped derivative magnitude and a
+periodic sawtooth. After exact half-integer angular ceilings it retains the
+strict normalized reserve $61/1400$. An isolated clean-room proof obtains
+the different reserve
+
+$$
+D\ge\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4}
+$$
+
+and the exact margin
+$4119252993/17500000000>0$. Both proofs preserve radial, angular, proxy,
+interface, and strict spectral walls.
+
+The accepted product and aggregate ranges cover the complementary closed
+range, so
+
+$$
+\boxed{
+\frac{99}{100}\le\rho<1,
+\qquad K\ge0.
+}
+$$
+
+This enlarges the thin endpoint width in $\varepsilon$ by the exact factor
+$625/4$. Combined with the Round 10 seam and
+$K_0(24/25)<6000^2$, it yields
+
+$$
+\boxed{
+0<\rho<1,
+\qquad K\ge6000^2.
+}
+$$
+
+The global ceiling is now more than $105$ times below $125^5/8$ and more
+than $954$ times below $2^{35}$. The compact all-frequency residual below
+$6000^2$, the parent Bessel certification, uniformity, and the final shell
+target remain open.
