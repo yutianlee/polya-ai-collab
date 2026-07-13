@@ -5,23 +5,23 @@ The authoritative statuses are in state/proof_obligations.yml.
 ## Active shell gaps
 
 - Compress the proved analytic envelope on the explicit compact interval
-  $[\rho_*,1-2^{-18}]$, where
+  $[\rho_*,1-1/15625]$, where
 
   $$
   \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-  The uniform threshold $K\ge2^{42}$ is rigorous but too coarse for global
-  enumeration. The next target is a self-consistent optimization of the
-  local-plateau constant in $K\ge C\varepsilon^{-2}$ and the resulting exact
-  overlap with the aggregate-action range.
+  The optimized thin local-plateau theorem reduces the uniform analytic
+  threshold to $K\ge2^{35}$. Exact coverage of the remaining compact
+  residual below this threshold still requires further analytic or symbolic
+  compression; direct global enumeration remains too coarse.
 
 - Extend the certified central pilot into an exact face-connected cover of
   the true residual set
 
   $$
-  \mathcal D=(I_*\times[0,\infty))\setminus\mathcal A,
+  \mathcal D=(I_9\times[0,\infty))\setminus\mathcal A,
   $$
 
   not of the larger closed planning envelope. Every box needs an analytic or
@@ -52,11 +52,12 @@ The authoritative statuses are in state/proof_obligations.yml.
   $K\le\pi/[4(1-\rho)^2]$.
 - The radius-sensitive mean-square-action range
   $K\le1/[8(1-\rho)^{5/2}]$ after combination with the product range.
-- The uniform local-plateau high-thin range
-  $K\ge64/(1-\rho)^2$ for $1-\rho\le1/100$.
+- The optimized uniform local-plateau high-thin range
+  $K\ge125/[8(1-\rho)^2]$ for $1-\rho\le1/100$, proved without importing
+  estimates conditional on the old constant $64$.
 - The complete thin-shell endpoint
-  $1-2^{-18}\le\rho<1$ for every $K\ge0$, obtained from the exact overlap of
-  the preceding low and high ranges.
+  $1-1/15625\le\rho<1$ for every $K\ge0$, obtained from the exact overlap of
+  the preceding low and optimized high ranges at $K=125^5/8$.
 - The small-hole low-interface shifted-tail theorem for
   $0<\rho<\omega_0$ and
   $K(\omega_0-\rho)\ge C_*$.
@@ -64,8 +65,12 @@ The authoritative statuses are in state/proof_obligations.yml.
   $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
   $\rho K=1/2$. The apparent finite small-hole residual is empty.
 - The piecewise compact-ratio analytic envelope and the uniform theorem
-  $K\ge2^{42}$ on $[\rho_*,1-2^{-18}]$, including exact threshold and switch
-  faces.
+  $K\ge2^{35}$ on $[\rho_*,1-1/15625]$. The left, central, and thin residual
+  ceilings are respectively $64$, $2^{35}$, and
+  $125^5/8<2^{32}$, with exact threshold and switch faces.
+- The global analytic high-frequency shell theorem for
+  $0<\rho<1$ and $K\ge2^{35}$, obtained by combining the compact envelope
+  with the two complete endpoint theorems.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -88,10 +93,11 @@ The authoritative statuses are in state/proof_obligations.yml.
   $1-\rho^3$. Subtracting two one-sided ball Pólya bounds is also invalid
   across ball spectral jumps.
 
-- Literal wall-by-wall certification of the current coarse compact envelope
-  is not a scalable route. At $\varepsilon=2^{-17}$, one thin residual slice
-  crosses more than $2^{38}$ angular half-integer walls. Monotone-corner,
-  symbolic, or analytic aggregation is required.
+- Literal wall-by-wall certification of the Round 8 coarse compact envelope
+  was not a scalable route. At $\varepsilon=2^{-17}$, one former thin
+  residual slice crossed more than $2^{38}$ angular half-integer walls.
+  Round 9 now covers that slice analytically, while the remaining compact
+  residual still requires monotone-corner, symbolic, or analytic aggregation.
 
 ## Parallel-track gaps
 

@@ -9,11 +9,11 @@ Next run id: `polya-main`.
 ## Current theorem boundary
 
 The repository proves the exact separated spectrum, the shell inequality at
-high energy for every fixed $0<\rho<1$, and both complete uniform endpoint
+high energy uniformly for all $0<\rho<1$, and both complete uniform endpoint
 neighborhoods
 
 $$
-\rho\in(0,\rho_*]\cup[1-2^{-18},1),
+\rho\in(0,\rho_*]\cup[1-1/15625,1),
 \qquad K\ge0.
 $$
 
@@ -29,11 +29,14 @@ $$
 On the intervening compact interval
 
 $$
-I_*=[\rho_*,1-2^{-18}],
+I_9=[\rho_*,1-1/15625],
 $$
 
 the shell inequality is now also proved uniformly for every
-$K\ge2^{42}$.  The exact strict count is independently interval-certified
+$K\ge2^{35}$. Combining this compact result with the two endpoint theorems
+gives the global analytic high-frequency theorem for every
+$0<\rho<1$ and $K\ge2^{35}$. The exact strict count is independently
+interval-certified
 on the closed central residual box
 
 $$
@@ -42,11 +45,11 @@ $$
 \frac{67}{10}\le K\le\frac{168}{25}.
 $$
 
-The all-$\rho$ shell theorem is not yet proved. Its active blockers are exact
-coverage of the rest of the compact residual set and the final theorem-level
-audit. The present coarse $2^{35}$ and $2^{42}$ planning bounds require
-further analytic or symbolic compression before global certification is
-practical.
+The all-frequency shell theorem is not yet proved. Its active blockers are
+exact coverage of the rest of the compact residual set below $2^{35}$ and
+the final theorem-level audit. The central $2^{35}$ planning bound still
+requires further analytic or symbolic compression before global
+certification is practical.
 
 ## Round 1 Update
 
@@ -263,3 +266,53 @@ $14.6073$. A separate audit reproduced the artifacts bit for bit and rejected
 14 decisive tamper mutations. This local computation is certified, but the
 parent compact computation remains `diagnostic_only` because the rest of
 $\mathcal D$ is not covered.
+
+## Round 9 Update
+
+Date: 2026-07-13
+
+See `rounds/polya-main/round_009/judge/judge-009.md`.
+
+Round 9 replaces the Round 6 high-thin constant $64$ by the independently
+reconstructed, self-consistent constant $125/8$. For
+$0<\varepsilon\le1/100$, the shell inequality now holds whenever
+
+$$
+K\ge\frac{125}{8\varepsilon^2}.
+$$
+
+The proof controls the actual uncompensated plateau loss
+$R=p-dm$ and establishes the strict bound
+$R<361/(80\sqrt\varepsilon)$ without importing any estimate proved under
+the old $C=64$ hypothesis. It passed isolated reconstruction, targeted
+adversarial wall review, and a dependency audit.
+
+The improved high range overlaps the aggregate-action range
+$K\le1/(8\varepsilon^{5/2})$ exactly when
+$\varepsilon\le1/15625$. Equality is included in both components and their
+common threshold is $125^5/8$. Hence the complete thin endpoint enlarges to
+
+$$
+\boxed{
+1-\frac1{15625}\le\rho<1,
+\quad K\ge0.
+}
+$$
+
+On the updated compact interval
+
+$$
+I_9=\left[\rho_*,1-\frac1{15625}\right],
+$$
+
+the left and central residual ceilings remain $64$ and $2^{35}$, while the
+thin residual ceiling is
+
+$$
+\frac{125^5}{8}<2^{32}.
+$$
+
+Therefore the shell inequality holds for every $0<\rho<1$ when
+$K\ge2^{35}$. The certified central pilot remains valid but local; the
+parent compact certification, the remaining compact residual below
+$2^{35}$, and the final all-frequency shell theorem remain open.

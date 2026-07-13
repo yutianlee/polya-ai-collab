@@ -44,21 +44,28 @@ $$
   together with the mean-square-radius comparison and explicit
   whispering-gallery payment proving the shell inequality for
   $K\le1/(8\varepsilon^{5/2})$ after combination with the product range;
-- the local first-plateau estimate $p<10/\sqrt\varepsilon$ and the uniform
-  high-thin theorem $K\ge64/\varepsilon^2$;
+- the optimized local-plateau estimate for the actual uncompensated loss
+
+$$
+R=p-dm<\frac{361}{80\sqrt\varepsilon},
+$$
+
+  obtained self-consistently without importing the old $C=64$ hypothesis,
+  and the uniform high-thin theorem
+  $K\ge125/(8\varepsilon^2)$ for $0<\varepsilon\le1/100$;
 - the exact overlap
 
 $$
-\frac{64}{\varepsilon^2}
+\frac{125}{8\varepsilon^2}
 \le\frac1{8\varepsilon^{5/2}}
 \quad\Longleftrightarrow\quad
-\varepsilon\le2^{-18},
+\varepsilon\le\frac1{15625},
 $$
 
   with equality included; and hence the complete endpoint theorem
 
 $$
-1-2^{-18}\le\rho<1,
+1-\frac1{15625}\le\rho<1,
 \qquad K\ge0.
 $$
 
@@ -91,18 +98,26 @@ $$
 - the compact-ratio analytic envelope: on
 
 $$
-I_*=[\rho_*,1-2^{-18}],
+I_9=\left[\rho_*,1-\frac1{15625}\right],
 $$
 
   the possible left, central, and thin residual families lie below $64$,
-  $2^{35}$, and $2^{42}$ respectively, and therefore
+  $2^{35}$, and $125^5/8<2^{32}$ respectively, and therefore
 
 $$
-K\ge2^{42}
+K\ge2^{35}
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(\rho\in I_*);
+\qquad(\rho\in I_9);
+$$
+
+- combining the compact envelope with both endpoint theorems gives the
+  global analytic high-frequency result
+
+$$
+0<\rho<1,
+\qquad K\ge2^{35}.
 $$
 
 - the independently checked certified pilot
@@ -117,9 +132,10 @@ $$
   $14.6073155354$. The Arb producer and independent rational checker are
   local evidence only; they do not certify the rest of the compact residual.
 
-`SHELL-rho-compact` remains open. The next primary analytic task is to
-optimize the Round 6 local-plateau threshold without assuming the old
-constant $64$ inside the proof, then recompute its exact overlap with the
-aggregate-action range. Certification may expand only through an exact
-face-connected manifest for the true residual $\mathcal D$; raw enumeration
-of the present $2^{35}$ and $2^{42}$ planning ceilings is not viable.
+`SHELL-rho-compact` remains open. The Round 9 optimization has reduced the
+global analytic ceiling to $2^{35}$ and removed the old thin residual band,
+but it does not certify the remaining compact residual below that ceiling.
+Certification may expand only through an exact face-connected manifest for
+the true residual $\mathcal D$; further analytic aggregation or safe
+monotone-corner certification is still required. The parent compact
+certification and final theorem remain open.

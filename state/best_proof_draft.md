@@ -256,7 +256,7 @@ $$
 Together with the product theorem, this covers
 $0\le K\le1/(8\varepsilon^{5/2})$.
 
-## Uniform local-plateau high-thin theorem
+## Round 6 local-plateau high-thin theorem (historical)
 
 The Round 3 shifted-tail decomposition can be sharpened by retaining the
 location of its first constant-floor plateau. If $p$ is its length and
@@ -279,7 +279,7 @@ forces
 $$
 p<\frac{10}{\sqrt\varepsilon}
 \qquad
-\left(K\ge\frac{64}{\varepsilon^2}ight).
+\left(K\ge\frac{64}{\varepsilon^2}\right).
 $$
 
 At the same threshold, the convex-tail gain is paid by
@@ -300,25 +300,70 @@ N_D(A_{1-\varepsilon,1},K^2)
 \bigl(1-(1-\varepsilon)^3\bigr)K^3
 $$
 
-for $0<\varepsilon\le1/100$.
+for $0<\varepsilon\le1/100$. Round 9 supersedes the constant $64$ below.
+
+## Optimized uniform local-plateau high-thin theorem
+
+For the same Round 3 shifted-tail decomposition, retain the actual
+uncompensated loss
+
+$$
+R=p-dm.
+$$
+
+Set $y=\sqrt\varepsilon$ and
+$\kappa=K\varepsilon^2$. A self-consistent scaled analysis of the exact
+local slope, with no estimate imported from the old $C=64$ proof, shows that
+the dangerous branch $R>0$ satisfies
+
+$$
+R<\frac{361}{80\sqrt\varepsilon}
+\qquad
+\left(\kappa\ge\frac{125}{8}\right).
+$$
+
+The action gain obeys
+
+$$
+K G_1(1-\varepsilon)
+\ge\frac{2\sqrt2\,\kappa}{3\pi\sqrt\varepsilon},
+$$
+
+and exact rational endpoint comparisons show that its strict floor lower
+bound pays for $R$, the full possible floor loss, and the interface
+remainder. The branch $R\le0$ closes directly from the same gain. Thus every
+low-interface shifted tail is controlled; the audited convex theorem handles
+starts at or above the interface. Therefore, for
+$0<\varepsilon\le1/100$,
+
+$$
+K\ge\frac{125}{8\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3.
+$$
+
+Threshold equality and all ordinary-floor, interface, gain, and strict
+spectral walls are included.
 
 ## Complete thin-shell endpoint
 
-The low and high thresholds overlap exactly when
+The low and optimized high thresholds overlap exactly when
 
 $$
-\frac{64}{\varepsilon^2}
+\frac{125}{8\varepsilon^2}
 \le\frac1{8\varepsilon^{5/2}}
 \quad\Longleftrightarrow\quad
-\varepsilon\le2^{-18}.
+\varepsilon\le\frac1{15625}.
 $$
 
-At $\varepsilon=2^{-18}$ both thresholds equal $2^{42}$, and both component
-theorems include equality. Hence
+At $\varepsilon=1/15625$ both thresholds equal $125^5/8$, and both
+component theorems include equality. Hence
 
 $$
 \boxed{
-1-2^{-18}\le\rho<1,
+1-\frac1{15625}\le\rho<1,
 \quad K\ge0
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
@@ -327,9 +372,8 @@ N_D(A_{\rho,1},K^2)
 $$
 
 This endpoint theorem is analytic and requires no Bessel-root certificate.
-The frozen proof and all clean-room/adversarial evidence are recorded in
-`state/lemma_packets/SHELL-thin-curvature-intermediate.md` and
-`rounds/polya-main/round_006/`.
+The Round 6 artifacts record the earlier $C=64$ theorem; the optimized proof
+and independent review are recorded in `rounds/polya-main/round_009/`.
 
 ## Complete small-hole endpoint
 
@@ -392,7 +436,7 @@ certification are unnecessary.
 On the remaining ratio interval
 
 $$
-I_*=[\rho_*,1-2^{-18}],
+I_9=\left[\rho_*,1-\frac1{15625}\right],
 $$
 
 use three exact zones.
@@ -428,21 +472,40 @@ $$
 K_0(99/100)<180000^2<2^{35}.
 $$
 
-For $99/100\le\rho\le1-2^{-18}$, write
-$\varepsilon=1-\rho$. The aggregate-action and local-plateau theorems cover
+For $99/100\le\rho\le1-1/15625$, write
+$\varepsilon=1-\rho$. The aggregate-action and optimized local-plateau
+theorems cover
 
 $$
 K\le\frac1{8\varepsilon^{5/2}}
 \qquad\hbox{and}\qquad
-K\ge\frac{64}{\varepsilon^2}.
+K\ge\frac{125}{8\varepsilon^2}.
 $$
 
-At $\varepsilon=2^{-18}$ both thresholds equal $2^{42}$, including
-equality. Therefore
+Every possible residual in this thin zone satisfies
+
+$$
+K<\frac{125^5}{8}<2^{32}.
+$$
+
+The unchanged central ceiling $2^{35}$ therefore dominates all three zones,
+and
 
 $$
 \boxed{
-\rho\in I_*,\quad K\ge2^{42}
+\rho\in I_9,\quad K\ge2^{35}
+\Longrightarrow
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+Combining this with the complete small-hole and enlarged thin endpoint
+theorems yields the global analytic high-frequency result
+
+$$
+\boxed{
+0<\rho<1,\quad K\ge2^{35}
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
@@ -453,7 +516,7 @@ The closed union of the three displayed gap envelopes is only a planning set
 $\mathcal E$. The actual certificate target is
 
 $$
-\mathcal D=(I_*\times[0,\infty))\setminus\mathcal A,
+\mathcal D=(I_9\times[0,\infty))\setminus\mathcal A,
 $$
 
 where $\mathcal A$ contains every analytically covered point and threshold
@@ -497,8 +560,8 @@ gates are:
 
 - analytic or symbolic compression of the current compact planning envelope,
   followed by an exact face-connected certificate of every point of
-  $\mathcal D$. The next analytic target is a self-consistent optimization of
-  the Round 6 local-plateau constant; literal enumeration of the current
-  $2^{35}$ and $2^{42}$ ceilings is infeasible;
+  $\mathcal D$ below $2^{35}$. The Round 9 optimization has removed the old
+  thin ceiling; further analytic aggregation or exact monotone-corner
+  certification is still needed for the remaining compact residual;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review.

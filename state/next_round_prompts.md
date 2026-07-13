@@ -1,188 +1,227 @@
 # Next Round Prompts
 
-Generated after Round 8 in run `polya-main`.
-
-Source synthesis: `rounds/polya-main/round_008/judge/judge-008.md`.
+Generated after Round 9 in run `polya-main`.
 
 ## Accepted boundary
 
 Let
 
 $$
-\rho_*=
-\frac{\frac{\sqrt3}{2\pi}-\frac16}
-{2+\frac{16\sqrt2}{15}},
+\omega_0=\frac{\sqrt{3}}{2\pi}-\frac16,
 \qquad
-I_*=[\rho_*,1-2^{-18}].
+C_*=\frac12+\frac{8\sqrt{2}}{15},
+\qquad
+\rho_*=\frac{\omega_0}{1+2C_*}.
 $$
 
-The shell Pólya inequality is proved for every $K\ge0$ in the two endpoint
+Round 9 proved the radius-sensitive local-plateau estimate with the exact
+constant
+
+$$
+C_{\mathrm{lp}}=\frac{125}{8}.
+$$
+
+Together with the low-frequency thin-shell estimate, it gives complete
+analytic coverage for
+
+$$
+0<\varepsilon=1-\rho\le \frac1{15625}.
+$$
+
+Thus the shell Pólya inequality is proved for every $K\ge0$ in both endpoint
 neighborhoods
 
 $$
 0<\rho\le\rho_*
-\qquad\hbox{and}\qquad
-1-2^{-18}\le\rho<1.
+\qquad\text{and}\qquad
+1-\frac1{15625}\le\rho<1.
 $$
 
-On $I_*$ it is proved uniformly for every $K\ge2^{42}$. The exact strict
-count is also independently certified on
+The remaining thin residual lies below
 
 $$
-B_0=
-\left[\frac{999}{2000},\frac{1001}{2000}\right]
-\times
-\left[\frac{67}{10},\frac{168}{25}\right].
+\frac{125}{8}\,15625^2
+=\frac{30517578125}{8}
+<2^{32}.
 $$
 
-The closed sets $\mathcal R_L$, $\mathcal R_C$, and $\mathcal R_T$ form a
-planning envelope $\mathcal E$. The true certificate target is
+By contrast, the current central threshold $K_0(\rho)$ near
+$\rho=99/100$ still supplies the dominant compact ceiling:
 
 $$
-\mathcal D=(I_*\times[0,\infty))\setminus\mathcal A,
+K_0\!\left(\frac{99}{100}\right)
+<180000^2<2^{35}.
 $$
 
-where $\mathcal A$ is the union of all analytic ranges. `SHELL-rho-compact`
-and the parent `COMP-certified-bessel` remain open.
+The present compact high ceiling is therefore $2^{35}$, not the thin-shell
+ceiling. The parent obligations `SHELL-rho-compact`,
+`COMP-certified-bessel`, `SHELL-rho-uniformity`, and `TARGET-shell-d3`
+remain open.
 
-## Round 9 primary target
+## Round 10 primary target
 
-Do not attempt to enumerate the current $2^{35}$ or $2^{42}$ ceilings. At
-$\varepsilon=2^{-17}$, one thin residual slice already crosses more than
-$2^{38}$ angular walls.
-
-Instead, optimize the proved Round 6 local-plateau theorem. The current
-statement is
+Analytically compress the central-to-thin seam. The preferred route is to
+extend the radius-sensitive local-plateau and scaled-loss argument from
 
 $$
-K\ge\frac{64}{\varepsilon^2},
-\qquad 0<\varepsilon\le\frac1{100}.
+0<\varepsilon\le\frac1{100}
 $$
 
-The Round 6 clean-room proof obtained a stronger plateau estimate than the
-incumbent, but it used $64$ at intermediate steps. Introduce a parameter
-$C$ in
+to an explicit rational or algebraic endpoint
 
 $$
-K\ge\frac{C}{\varepsilon^2}
+0<\varepsilon\le\varepsilon_0,
+\qquad
+\varepsilon_0>\frac1{100}.
 $$
 
-and rederive every intermediate inequality. The target is the smallest
-simple explicit $C_{m opt}<64$ that is genuinely self-consistent, followed
-by the exact enlarged endpoint obtained from overlap with
+The constant $125/8$ may be retained only if every estimate that used
+$\varepsilon\le1/100$ is rederived on the enlarged interval. A piecewise
+explicit threshold is also acceptable if its branches and switch points are
+proved exactly.
+
+If that route does not close, derive a strictly better central high-frequency
+threshold on an explicit interval ending at $\rho=99/100$. In either route,
+the output must give:
+
+1. an exact new seam point $\rho_s=1-\varepsilon_0<99/100$, or an exact
+   replacement central interval;
+2. a gap-free analytic union at every switch, including equality;
+3. an exact formula for the resulting global compact ceiling;
+4. an exact comparison with the old ceiling $2^{35}$ and with the thin bound
+   $30517578125/8$;
+5. a quantified reduction of the unresolved region.
+
+The strongest useful outcome lowers the dominant central ceiling. A merely
+numerical candidate or a reformulation that leaves the same $2^{35}$ bound
+does not satisfy the primary target.
+
+Do not brute-force enumerate modes, angular walls, eigenvalues, or boxes up
+to $2^{35}$. Round 10 is an analytic-compression round.
+
+## For A1: obligation architect and lead synthesis
+
+Freeze a packet `SHELL-central-thin-seam-compression` containing only the
+accepted Round 9 inputs and the exact Round 10 claim.
+
+First write the current analytic cover as closed parameter sets. Identify
+which set owns the face $\varepsilon=1/100$, which set owns the proposed new
+face $\varepsilon=\varepsilon_0$, and how strict eigenvalue counting is
+handled on both faces. Then derive the exact ceiling after moving the seam.
+
+For the preferred route, inventory every use of $\varepsilon\le1/100$ in the
+local-plateau proof, including:
+
+- the dangerous-plateau location;
+- lower bounds for the scaled phase and local slope;
+- the quadratic estimate for the loss parameter $p$;
+- the branch condition for $p-dm$;
+- the estimate for $K G_1(1-\varepsilon)$;
+- the interface-loss payment and all floor endpoints.
+
+Do not extrapolate the Round 9 theorem beyond its proved domain. Reprove each
+domain-dependent inequality with exact rational or algebraic constants.
+
+If the extension fails, record the first exact failed inequality and pivot to
+the alternative central-threshold route. The final synthesis must select one
+claim, one exact switch, and one exact ceiling; it must not average or vote
+between agents' arguments.
+
+## For A2: analytic proof developer
+
+Develop the preferred enlarged-domain proof independently from the audited
+tail decomposition and scaled-loss argument. Keep
 
 $$
-K\le\frac1{8\varepsilon^{5/2}}.
-$$
-
-Correctness and a substantial explicit reduction come before numerical
-optimality.
-
-## For A1
-
-Freeze a packet `SHELL-thin-local-plateau-optimized` with two outputs.
-
-1. An explicit theorem
-
-   $$
-   0<\varepsilon\le\frac1{100},
-   \qquad
-   K\ge K_{\rm lp}(\varepsilon)
-   \Longrightarrow\text{shell Pólya},
-   $$
-
-   where $K_{\rm lp}(\varepsilon)$ is strictly smaller than
-   $64\varepsilon^{-2}$ on a nontrivial interval.
-2. An exact algebraic or rational $\varepsilon_{m new}>2^{-18}$ such that
-
-   $$
-   K_{\rm lp}(\varepsilon)
-   \le\frac1{8\varepsilon^{5/2}}
-   \qquad(0<\varepsilon\le\varepsilon_{m new}).
-   $$
-
-List every place where the old assumption $K\ge64\varepsilon^{-2}$ entered
-the proof: the dangerous-plateau location, the local slope integration, the
-quadratic bound for $p$, the lower bound for $K G_1(1-\varepsilon)$, and the
-final interface-loss payment. Do not import $p<8/\sqrt\varepsilon$ unless its
-proof has first been made valid under the new hypothesis.
-
-If the constant optimization cannot close self-consistently, freeze the
-first failed inequality and switch to a symbolic aggregate count on one
-explicit nontrivial strip of $\mathcal R_T$.
-
-## For A2
-
-Develop the incumbent parametric proof from the audited Round 3 tail
-decomposition and the Round 6 local-slope argument.
-
-Use
-
-$$
-M=\lfloor K\eta\rfloor+d m-p,
+M=\lfloor K\eta\rfloor+dm-p,
 \qquad
 \eta=G_1(1-\varepsilon),
 $$
 
-and retain the exact branch condition under which $p-dm$ can be positive.
-Derive a $C$-dependent plateau bound rather than substituting $64$ at the
-start. Keep the no-drop branch $p=n$, immediate-drop branch $p=0$, and
-$n=0$ branch separate until the final uniform estimate.
+with the no-drop branch $p=n$, immediate-drop branch $p=0$, and $n=0$
+branch separate until the final uniform estimate. Preserve the exact
+condition under which $p-dm$ is positive.
 
-The output must include:
+Your output must include:
 
-- an exact formula or sufficient inequalities for $C_{m opt}$;
-- all elementary bounds on $\pi$, $\sqrt2$, and $G_1$ used to rationalize it;
-- a proof that every strict floor and interface endpoint is safe;
-- the exact overlap equation defining $\varepsilon_{m new}$;
-- a quantified reduction of $\mathcal R_T$.
+- an exact admissible $\varepsilon_0>1/100$;
+- every elementary bound on $\pi$, radicals, and $G_1$ used in the proof;
+- a proof of all monotonicity claims on the enlarged interval;
+- safe ownership of integer walls and strict floor endpoints;
+- the exact central/thin switch and the resulting ceiling;
+- an exact comparison showing whether the central threshold still dominates.
 
-No floating-point optimization may be used as proof.
+If a constant or switch is discovered numerically, replace it by a rational
+or algebraic enclosure and prove the required sign symbolically. Floating
+point may guide exploration but may not certify the claim.
 
-## For A3
+As a fallback, improve $K_0(\rho)$ on a closed interval
+$[\rho_s,99/100]$ by retaining radius dependence that was previously
+discarded. State the improved threshold explicitly and prove its match to the
+unchanged central and thin estimates on both boundary faces.
 
-Receive only the optimized packet and reconstruct the proof independently.
-Attempt to falsify it at:
+## For A3: clean-room reconstruction and adversarial audit
 
-- $\varepsilon=1/100$ and the proposed $\varepsilon_{m new}$;
-- $K=K_{\rm lp}(\varepsilon)$;
-- equality with $1/(8\varepsilon^{5/2})$;
-- the branch $p=n$ with no floor drop;
-- $p=0$ and $n=0$;
-- the first point where the proof claims $x_0\ge K/2$;
-- every use of a bound previously derived under $C=64$;
-- $K\eta$ on an integer wall and the maximal interface loss.
+Receive only the frozen claim, definitions, and allowed prior lemmas. First
+reconstruct the proof without the incumbent derivation. Then perform a
+separate adversarial constants-and-walls audit.
 
-Reject any circular argument of the form “use the $C=64$ plateau lemma to
-prove the same lemma for $C<64$.” Recompute the overlap constant exactly.
+Attempt to falsify the candidate at:
 
-## For A4
+- $\varepsilon=1/100$, $\varepsilon=\varepsilon_0$, and the old endpoint
+  $1/15625$;
+- $K$ equal to every proposed threshold and at every piecewise switch;
+- the exact face $\rho=1-\varepsilon_0$ from both adjacent regimes;
+- $K\eta$ on an integer wall and immediately on either side;
+- the branches $p=n$, $p=0$, and $n=0$;
+- the first point where a proof uses $x_0\ge K/2$ or an analogous localization;
+- the maximal interface loss and equality in its payment;
+- every inequality inherited from a proof whose domain ended at
+  $\varepsilon=1/100$;
+- every monotonicity assertion used to place the global ceiling at a corner;
+- the proposed exact comparison with $2^{32}$ and $2^{35}$.
 
-The certification task is deliberately secondary.
+Reject circular use of the old local-plateau theorem outside its stated
+domain. Reject any cover whose adjacent closed sets omit a face, double-own a
+strict counting convention inconsistently, or rely on sampled parameter
+values. Report clean-room and adversarial verdicts separately.
 
-1. Extend $B_0$ by at least one small rational box sharing a complete face,
-   or explain with a certified wall enclosure why that face must be split.
-2. Emit a two-cell manifest with exact face ownership and verify its union
-   and hashes independently.
-3. Continue using outward-rounded Arb for the producer and a checker that
-   shares no producer or Flint code for decisive low-channel identities.
-4. Test tampering of coordinates, count, determinant signs, truncation, face
-   ownership, and hashes.
+## For A4: secondary face-connected certification pilot
 
-This exercise validates the face-connected manifest format only. Do not
-claim progress on the giant high-frequency families from adding low-energy
-tiles.
+Certification remains secondary and must not be presented as a substitute
+for analytic compression.
+
+1. Add at most one small rational box sharing a complete face with the
+   existing certified manifest, or certify why that face must be split.
+2. State exact face ownership and verify the union of the old and new cells.
+3. Use outward-rounded Arb for determinant/root enclosures and retain an
+   independent checker that shares neither producer code nor Flint code for
+   decisive low-channel identities.
+4. Test tampering of coordinates, counts, determinant signs, truncation,
+   face ownership, manifest coverage, and hashes.
+5. Report the added parameter area and spectral range so that this pilot
+   cannot be mistaken for coverage of the high-frequency residual.
+
+Do not launch a grid, wall enumeration, or eigenvalue sweep toward $2^{35}$.
+The pilot validates only the face-connected certificate format.
 
 ## Promotion constraints
 
-Promote an optimized local-plateau lemma only after:
+Promote a Round 10 seam-compression lemma only after all of the following
+hold:
 
-1. the new hypothesis is used consistently in every intermediate estimate;
-2. an isolated clean-room reconstruction passes;
-3. an adversarial constants and wall audit passes;
-4. the enlarged thin endpoint overlap is exact and includes equality.
+1. the enlarged domain or improved central interval is explicit and nonempty;
+2. every domain-dependent Round 9 estimate is rederived rather than assumed;
+3. all switches, ceilings, and comparisons are exact;
+4. the analytic cover includes every switch face with compatible strict-count
+   conventions;
+5. an isolated clean-room reconstruction passes;
+6. an independent adversarial constants, branches, and walls audit passes;
+7. the resulting dominant compact ceiling is strictly smaller than the
+   currently justified one, or the judge records the exact first obstruction.
 
-Keep `SHELL-rho-compact`, `COMP-certified-bessel`,
-`SHELL-rho-uniformity`, and `TARGET-shell-d3` open until an exact checked
-cover of all of $\mathcal D$ exists. Only then begin the final theorem-level
-clean-room and adversarial audit.
+The small certification pilot may be promoted only as a local certified
+subobligation. It cannot promote `COMP-certified-bessel` or any theorem-level
+parent. Keep all parent obligations open until an exact checked cover of the
+entire residual set exists, followed by fresh theorem-level clean-room and
+adversarial audits.
