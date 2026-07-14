@@ -56,34 +56,90 @@ The lower face $\rho=7/8$ is included, the limiting face $\rho=1$ is open,
 $K=0$ gives equality, and the proof comparison is strict for $K>0$ before
 the final non-strict theorem statement.
 
-The compact four-zone integration leaves possible residuals only below
-$64$ on $[\rho_*,1/16]$, below
-$K_0(\rho)\le K_0(5/6)<87025$ on $[1/16,5/6]$, below
-$54/(1-\rho)^2\le3456$ on $[5/6,7/8]$, and nowhere on
-$[7/8,1)$ because the endpoint theorem is all-frequency.
-
-The exact strict count is
-independently interval-certified
-on the closed central residual box
+The Round 16 four-zone integration remains the high-energy envelope. Round
+17 adds an exact low-frequency analytic band. Define
 
 $$
-\frac{999}{2000}\le\rho\le\frac{1001}{2000},
+\rho_c=\frac1{1+2\pi},
 \qquad
-\frac{67}{10}\le K\le\frac{168}{25}.
+z_\rho=\frac{\pi}{1-\rho},
+\qquad
+k_2(\rho)=\sqrt{z_\rho^2+6}.
 $$
+
+The strict shell inequality is now also proved on the complete closed band
+
+$$
+\rho_c\le\rho\le\frac78,
+\qquad
+z_\rho\le K\le k_2(\rho).
+$$
+
+The lower frequency face and the face $\rho=7/8$ retain their previous
+analytic owners. The genuinely new portion is
+
+$$
+\mathcal C_{17}
+=\left\{(\rho,K):
+\rho_c\le\rho<\frac78,
+\quad z_\rho<K\le k_2(\rho)
+\right\}.
+$$
+
+It lies inside the exact Round 16 analytic residual. Therefore, if
+$\mathcal A_{17}$ denotes the enlarged analytic cover, the exact surviving
+residual is
+
+$$
+\mathcal D_{17}
+=\mathcal D_{16}\setminus\mathcal C_{17}
+$$
+
+or, equivalently,
+
+$$
+\mathcal D_{17}
+=\left\{\rho_*<\rho<\rho_c,
+\ \frac1{2\rho}<K<U(\rho)\right\}
+\cup
+\left\{\rho_c\le\rho<\frac78,
+\ k_2(\rho)<K<U(\rho)\right\},
+$$
+
+where the exact upper floor retained from the frozen residual is
+
+$$
+U(\rho)=
+\begin{cases}
+H_0(\rho),&\rho_*<\rho<\rho_{HK},\\[2pt]
+K_0(\rho),&\rho_{HK}\le\rho<5/6,\\[2pt]
+54/(1-\rho)^2,&5/6\le\rho<7/8.
+\end{cases}
+$$
+
+Both closed central boxes
+
+$$
+B_0=
+\left[\frac{999}{2000},\frac{1001}{2000}\right]
+\times
+\left[\frac{67}{10},\frac{168}{25}\right],
+\qquad
+B_1=
+\left[\frac{999}{2000},\frac{1001}{2000}\right]
+\times
+\left[\frac{168}{25},\frac{673}{100}\right]
+$$
+
+are independently certified with exact strict count $4$. They satisfy
+$B_0\cup B_1\subset\mathcal C_{17}$, so they remain valuable independent
+regression evidence but provide no additional subtraction from
+$\mathcal D_{17}$. The parent certification obligation remains
+`diagnostic_only`.
 
 The all-frequency shell theorem is not yet proved. Its sole shell blocker is
-exact coverage of the true nonrectangular residual
-
-$$
-\mathcal D_{16}
-=\bigl(I_{16}\times[0,\infty)\bigr)\setminus\mathcal A_{16}.
-$$
-
-This set is not the rectangle $I_{16}\times[0,87025)$. The parent
-certification obligation remains `diagnostic_only`; the Round 8 certified
-pilot is unchanged and local, and any expansion must remain bounded and
-face-connected.
+exact closure of the nonempty two-piece set $\mathcal D_{17}$; it must not be
+replaced by $\mathcal D_{16}$, a coarse envelope, or a rectangle.
 
 The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ are unproved.
 The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their
@@ -724,3 +780,58 @@ $\mathcal D_{16}=(I_{16}\times[0,\infty))\setminus\mathcal A_{16}$, not the
 rectangle $I_{16}\times[0,87025)$. `COMP-certified-bessel` remains
 `diagnostic_only`, and the Round 8 certified pilot remains unchanged and
 local.
+
+## Round 17 Update
+
+Date: 2026-07-14
+
+See `rounds/polya-main/round_017/judge/judge-017.md`.
+
+Round 17 freezes the exact Round 16 mask and proves the first-angular-band
+compression
+
+$$
+\boxed{
+\rho_c\le\rho\le\frac78,
+\qquad
+\frac{\pi}{1-\rho}\le K
+\le\sqrt{\left(\frac{\pi}{1-\rho}\right)^2+6},
+\qquad
+\rho_c=\frac1{1+2\pi}.
+}
+$$
+
+The proof uses the radial min--max bound
+
+$$
+\lambda_{\ell,n}
+\ge n^2\left(\frac{\pi}{1-\rho}\right)^2+\ell(\ell+1)
+$$
+
+and the exact $\ell=0$ interval spectrum. Strict counting gives count $0$
+on the lower wall, count $1$ through the first angular wall, and count at
+most $4$ through the inclusive $\ell=2$ comparison wall. Exact Weyl
+payments exceed $1$ and $4$, respectively. The frozen claim passed an
+isolated reconstruction, an independent exact-constant audit, and a fresh
+adversarial referee review.
+
+The genuinely new band $\mathcal C_{17}$ is an exact subset of
+$\mathcal D_{16}$ and contains both independently certified boxes $B_0$
+and $B_1$. Thus the theorem-wise uncovered set is exactly
+
+$$
+\mathcal U_{17}=\mathcal D_{17}
+=\mathcal D_{16}\setminus\mathcal C_{17},
+$$
+
+with the two-piece formula recorded in the current theorem boundary above.
+The full shell theorem, compact-ratio uniformity, and
+`SHELL-rho-compact` remain open.
+
+Immediately above $k_2(\rho)$, the same coarse comparison must allow the
+$\ell=2$ multiplicity, so its cap jumps from $4$ to $9$. At
+$\rho=\rho_c$ the Weyl term at $k_2(\rho_c)$ is strictly below $9$.
+Therefore the next analytic step needs a sharper $\ell=2$ eigenvalue bound,
+a ratio-dependent angular staircase, or a different action/tail argument.
+This is an obstruction to the coarse payment method, not a counterexample
+to the shell inequality.

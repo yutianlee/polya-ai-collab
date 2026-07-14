@@ -948,7 +948,165 @@ This is an exact, nonrectangular complement of the accepted cover. It lies
 below the displayed piecewise envelope, but it is not the rectangle
 $I_{16}\times[0,87025)$ and must never be replaced by that rectangle.
 
-## First certified residual box
+## First angular bands above the zero-count wall (Round 17)
+
+Define
+
+$$
+\rho_c=\frac1{1+2\pi},
+\qquad
+z_\rho=\frac{\pi}{1-\rho},
+\qquad
+k_1(\rho)=\sqrt{z_\rho^2+2},
+\qquad
+k_2(\rho)=\sqrt{z_\rho^2+6}.
+$$
+
+Round 17 proves the strict comparison on the complete closed band
+
+$$
+\boxed{
+\rho_c\le\rho\le\frac78,
+\qquad
+z_\rho\le K\le k_2(\rho).
+}
+$$
+
+After the unitary radial transformation, angular channel $\ell$ is governed
+on $(\rho,1)$ by
+
+$$
+L_\ell=-\frac{d^2}{dr^2}+\frac{\ell(\ell+1)}{r^2}.
+$$
+
+Because $r^{-2}\ge1$, the Dirichlet min--max principle gives
+
+$$
+\lambda_{\ell,n}\ge n^2z_\rho^2+\ell(\ell+1).
+\tag{R17.1}
+$$
+
+For $\ell=0$ this is exact: $\lambda_{0,n}=n^2z_\rho^2$. Throughout the
+band, every $n\ge2$ mode lies above $K^2$, and every $\ell\ge2$ first mode
+lies at or above $z_\rho^2+6\ge K^2$. Strict counting therefore yields
+
+$$
+N_D(A_{\rho,1},K^2)=
+\begin{cases}
+0,&K=z_\rho,\\
+1,&z_\rho<K\le k_1(\rho),
+\end{cases}
+$$
+
+and
+
+$$
+N_D(A_{\rho,1},K^2)\le1+3=4
+\qquad
+\bigl(k_1(\rho)<K\le k_2(\rho)\bigr).
+\tag{R17.2}
+$$
+
+The inclusive $k_1$ and $k_2$ faces are handled by the strict spectral
+convention. Accidental cross-order coincidences cannot increase the cap,
+because the full angular multiplicities have already been included.
+
+For
+
+$$
+W(\rho,K)=\frac{2}{9\pi}(1-\rho^3)K^3,
+$$
+
+the first band is paid at its lower wall:
+
+$$
+W(\rho,z_\rho)
+=\frac{2\pi^2}{9}
+\frac{1+\rho+\rho^2}{(1-\rho)^2}
+>2>1.
+\tag{R17.3}
+$$
+
+For the second band, $F(\rho)=W(\rho,k_1(\rho))$ is strictly increasing,
+since, with $e=1-\rho$ and $S=1+\rho+\rho^2$,
+
+$$
+\frac{F'(\rho)}{F(\rho)}
+=\frac{1+2\rho}{S}
++\frac{2(\pi^2-e^2)}{e(\pi^2+2e^2)}>0.
+$$
+
+An exact rational evaluation at the left face gives
+
+$$
+F(\rho_c)
+>4+\frac{18372917357}{92514296875}>4.
+\tag{R17.4}
+$$
+
+Equations (R17.2)--(R17.4), together with monotonicity in $K$, prove
+
+$$
+N_D(A_{\rho,1},K^2)
+<\frac{2}{9\pi}(1-\rho^3)K^3
+$$
+
+on the complete stated band.
+
+Its genuinely new part is
+
+$$
+\mathcal C_{17}
+=\left\{(\rho,K):
+\rho_c\le\rho<\frac78,
+\quad z_\rho<K\le k_2(\rho)
+\right\}.
+$$
+
+Exact comparison with every frozen lower and upper mask branch proves
+$\mathcal C_{17}\subset\mathcal D_{16}$. Thus
+
+$$
+\mathcal A_{17}=\mathcal A_{16}\cup\overline{\mathcal C}_{17},
+\qquad
+\mathcal D_{17}=\mathcal D_{16}\setminus\mathcal C_{17},
+$$
+
+where the bar denotes the complete closed theorem band. In explicit form,
+
+$$
+\boxed{
+\mathcal D_{17}
+=\left\{\rho_*<\rho<\rho_c,
+\ \frac1{2\rho}<K<U(\rho)\right\}
+\cup
+\left\{\rho_c\le\rho<\frac78,
+\ k_2(\rho)<K<U(\rho)\right\}.
+}
+\tag{R17.5}
+$$
+
+Here $U(\rho)$ is the exact Round 17 frozen upper floor: $H_0(\rho)$ below
+$\rho_{HK}$, $K_0(\rho)$ from $\rho_{HK}$ to $5/6$, and
+$54/(1-\rho)^2$ from $5/6$ to $7/8$. The lower wall $K=z_\rho$ and the
+ratio face $\rho=7/8$ remain owned by the earlier zero-count and endpoint
+theorems. The residual (R17.5) is nonempty, so this compression does not
+prove the full shell theorem.
+
+Immediately above $k_2$, (R17.1) must permit the $\ell=2$ channel and the
+coarse multiplicity cap jumps from $4$ to $1+3+5=9$. At the left ratio
+face,
+
+$$
+W\bigl(\rho_c,k_2(\rho_c)\bigr)<9.
+$$
+
+Hence this same all-at-once cap cannot continue uniformly through the third
+angular band. A sharper $\ell=2$ eigenvalue bound, a ratio-dependent
+staircase, or a different action/tail argument is required. This is a
+method obstruction, not a counterexample to the target inequality.
+
+## Certified central regression boxes
 
 On the closed box
 
@@ -977,19 +1135,48 @@ $$
 $$
 
 so the certified margin exceeds $14.6073155354$. This is the retained Round 8
-pilot box only. It is not a cover of $\mathcal D_{16}$, does not promote
-sampled numerics to proof, and does not make `COMP-certified-bessel` more
-than `diagnostic_only`.
+box $B_0$.
+
+Round 17 independently certifies the face-connected extension
+
+$$
+B_1=
+\left[\frac{999}{2000},\frac{1001}{2000}\right]
+\times
+\left[\frac{168}{25},\frac{673}{100}\right].
+$$
+
+The complete lower face of $B_1$ is the complete upper face of $B_0$.
+Outward Arb determinant signs and an independent exact-rational checker
+again give exactly one root in each of $\ell=0,1$, no other contributing
+mode, and exact strict count $4$. At the true Weyl worst corner the strict
+margin is greater than
+
+$$
+\frac{39657181883797}{2685546875000}>0.
+$$
+
+Exact set arithmetic gives
+
+$$
+B_0\cup B_1\subset\mathcal C_{17}.
+$$
+
+Both certificates therefore remain independent regression evidence but are
+analytically redundant after promotion of the Round 17 band. They do not
+subtract anything further from $\mathcal D_{17}$, do not promote sampled
+numerics to proof, and do not make `COMP-certified-bessel` more than
+`diagnostic_only`.
 
 ## Remaining gates
 
 This file must not be cited as a proof of the full shell theorem. The open
 gates are:
 
-- analytic or symbolic closure of the exact nonrectangular residual
-  $\mathcal D_{16}$, followed only where necessary by rigorous,
+- analytic or symbolic closure of the exact two-piece residual
+  $\mathcal D_{17}$, followed only where necessary by rigorous,
   face-connected certification inside that same residual;
-- preservation of the exact accepted mask $\mathcal A_{16}$ and every owned
+- preservation of the exact accepted mask $\mathcal A_{17}$ and every owned
   face; a coarse envelope or rectangle is not an admissible substitute;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review after the compact residual is closed. Agent consensus is not a

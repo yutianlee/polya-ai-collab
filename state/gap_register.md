@@ -4,7 +4,7 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Close the true nonrectangular compact residual on
+- Close the exact Round 17 compact residual on
   $I_{16}=[\rho_*,7/8]$, where
 
   $$
@@ -12,32 +12,58 @@ The authoritative statuses are in state/proof_obligations.yml.
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-  The four accepted zones prove all frequencies on $[7/8,1)$ and leave
-  possible residuals only below $64$ on $[\rho_*,1/16]$, below
-  $K_0(\rho)\le K_0(5/6)<87025$ on $[1/16,5/6]$, and below
-  $54/(1-\rho)^2\le3456$ on $[5/6,7/8]$. Thus the exact remaining set is
+  Define
 
   $$
-  \mathcal D_{16}
-  =\bigl(I_{16}\times[0,\infty)\bigr)\setminus\mathcal A_{16},
+  \rho_c=\frac1{1+2\pi},
+  \qquad
+  z_\rho=\frac{\pi}{1-\rho},
+  \qquad
+  k_2(\rho)=\sqrt{z_\rho^2+6}.
   $$
 
-  and it is not the rectangle $I_{16}\times[0,87025)$. Closing
-  $\mathcal D_{16}$ is the sole shell blocker. Prefer analytic or symbolic
-  compression; any certified extension must be bounded and face-connected,
-  with rigorous truncation, provenance hashes, and independent cover
-  checking.
+  The promoted closed band
+  $\rho_c\le\rho\le7/8$, $z_\rho\le K\le k_2(\rho)$ removes exactly its
+  genuinely new portion $\mathcal C_{17}$ from the prior residual. Hence
 
-- The Round 8 central certified pilot remains unchanged and local.
-  `COMP-certified-bessel` remains `diagnostic_only`; it does not certify
-  $\mathcal D_{16}$.
+  $$
+  \mathcal D_{17}
+  =\mathcal D_{16}\setminus\mathcal C_{17}
+  =\left\{\rho_*<\rho<\rho_c,
+  \ \frac1{2\rho}<K<U(\rho)\right\}
+  \cup
+  \left\{\rho_c\le\rho<\frac78,
+  \ k_2(\rho)<K<U(\rho)\right\}.
+  $$
+
+  Here $U(\rho)$ is the exact frozen upper floor: $H_0(\rho)$ below
+  $\rho_{HK}$, $K_0(\rho)$ from $\rho_{HK}$ to $5/6$, and
+  $54/(1-\rho)^2$ from $5/6$ to $7/8$. The two pieces are nonempty;
+  closing $\mathcal D_{17}$ is the sole shell blocker. It is not admissible
+  to substitute $\mathcal D_{16}$, the four-zone over-cover, or a rectangle.
+
+- The Round 8 box $B_0$ and its face-connected Round 17 extension
+  $B_1=[999/2000,1001/2000]\times[168/25,673/100]$ are independently
+  certified, with exact strict count $4$ on each. Both boxes lie inside
+  $\mathcal C_{17}$ and are therefore analytically redundant after
+  promotion. `COMP-certified-bessel` remains `diagnostic_only`; any future
+  certificate must be bounded, face-connected, and contained in the exact
+  $\mathcal D_{17}$, with rigorous truncation, provenance hashes, and an
+  independent checker.
+
+- The first direct continuation above $k_2(\rho)$ is unresolved. The same
+  coarse min--max comparison changes its multiplicity cap from $4$ to $9$
+  when the $\ell=2$ channel becomes available, while the Weyl term at
+  $(\rho_c,k_2(\rho_c))$ is strictly below $9$. A next step therefore needs
+  a sharper $\ell=2$ eigenvalue estimate, a ratio-dependent staircase, or a
+  different action/tail argument. This is a method obstruction only.
 
 - The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain
   unproved. The negative screens at $\rho=17/20$ and $\rho=5/6$ are
   obstructions only to the tested extension routes, not counterexamples to
   the shell theorem and not new shell blockers.
 
-- After $\mathcal D_{16}$ closes, perform a fresh theorem-level
+- After $\mathcal D_{17}$ closes, perform a fresh theorem-level
   clean-room reconstruction and adversarial audit before promoting the global
   shell theorem.
 
@@ -126,9 +152,27 @@ The authoritative statuses are in state/proof_obligations.yml.
   combining the compact envelope with the two complete endpoint theorems.
   The exact reduction factor from the Round 15 ceiling is
   $200000/295^2=8000/3481>2$.
+- The Round 17 first-angular-band theorem
+
+  $$
+  \rho_c\le\rho\le\frac78,
+  \qquad
+  \frac{\pi}{1-\rho}\le K
+  \le\sqrt{\left(\frac{\pi}{1-\rho}\right)^2+6},
+  $$
+
+  including every frequency and ratio face. The proof combines the exact
+  $\ell=0$ interval spectrum with the radial min--max bound, strict spectral
+  counting, full multiplicities, and exact Weyl payments. It passed isolated
+  reconstruction, exact finite-constant audit, and fresh adversarial review.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
+- Its independently checked face-connected Round 17 extension,
+  $\rho\in[999/2000,1001/2000]$ and
+  $K\in[168/25,673/100]$, also with exact strict count $4$. Both certified
+  boxes are contained in the promoted analytic band and are retained as
+  independent regression evidence rather than additional residual coverage.
 
 ## Rejected shell routes
 
@@ -158,8 +202,14 @@ The authoritative statuses are in state/proof_obligations.yml.
   residual slice crossed more than $2^{38}$ angular half-integer walls.
   By the close of Round 15 the all-ratio ceiling had fallen to $200000$;
   Round 16 supersedes that historical boundary with $295^2=87025$ and the
-  smaller residual $\mathcal D_{16}$. Its closure still requires
-  monotone-corner, symbolic, or analytic aggregation.
+  smaller residual $\mathcal D_{16}$. Round 17 further replaces it by
+  $\mathcal D_{17}=\mathcal D_{16}\setminus\mathcal C_{17}$, but its
+  closure still requires monotone-corner, symbolic, or analytic aggregation.
+- Paying the entire first $\ell=2$ multiplicity immediately above
+  $k_2(\rho)$ cannot uniformly continue the Round 17 coarse channel cap:
+  the cap becomes $9$, while the Weyl term is below $9$ at the left ratio
+  face. This rejects only that coarse continuation, not the target
+  inequality or a sharper third-angular-band lemma.
 
 ## Parallel-track gaps
 

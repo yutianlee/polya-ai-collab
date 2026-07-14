@@ -2,208 +2,140 @@
 
 Date: 2026-07-14
 
-Round: `polya-main` / round 16
+Round: `polya-main` / round 17
 
 ## Promotion decision
 
-- Judge: `rounds/polya-main/round_016/judge/judge-016.md`.
+- Judge: `rounds/polya-main/round_017/judge/judge-017.md`.
 - Judge SHA-256:
-  `6f54dfdea0b88642e5d0b1cf6a3e7fdadd4bbc870e1978112defb6cbf189aa06`.
+  `769dc256aa97dc8da093bdead8a020033904c115ff256ae60a708a31f90dbadd`.
 - Decision: **PASS**. First unsupported implication: none.
-- The State Patch validated against the untouched Round 15 graph, received an
-  independent read-only in-memory application audit, and was applied exactly
-  once. It must not be replayed against the promoted graph.
-- No obligation was created or rejected. Round score: 8.
+- State Patch validation: **PASS** against the untouched Round 16 graph.
+- The patch was applied exactly once with `round_index=17`; it must not be
+  replayed against the promoted graph.
+- Round score: 6.
 
-The patch strengthens `SHELL-rho-one-endpoint` and
-`SHELL-rho-compact-analytic-envelope`, both already `proved_internal`.
-`SHELL-rho-compact`, `SHELL-rho-uniformity`, and `TARGET-shell-d3` remain
-`open`; `COMP-certified-bessel` remains `diagnostic_only`.
+The one-time patch created `SHELL-first-angular-bands` as
+`proved_internal` and `COMP-certified-bessel-pilot-round17` as `certified`.
+It updated the compact analytic envelope to the exact Round 17 cover while
+retaining `SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`,
+and `POLYA-program-target` as `open`. The parent
+`COMP-certified-bessel` remains `diagnostic_only`.
 
 The durable graph hashes are:
 
-- untouched Round 15 baseline:
-  `b96477f650230d847dc72db851be997752f6a50822cf47e57b13ce9d362d9bd5`;
-- immediately after the one-time State Patch:
-  `bfbf9c1209f598ff691d9eec62584e919723722bf7b0583bbf11c702c51128be`;
-- after the Round 17 target-selection update:
-  `dc2552091ff79f5ab39de896b4d97cf22ccc234f3842ee9734d54d123c5f2379`.
+- untouched Round 16 baseline:
+  `dc2552091ff79f5ab39de896b4d97cf22ccc234f3842ee9734d54d123c5f2379`;
+- immediately after the one-time Round 17 State Patch:
+  `cbd15b3ab3c73f326321052019de9c2a8a2877c6ec84a668d1a5a35ffe13ebd5`;
+- after the initial Round 18 target-selection rule update:
+  `aca527f8b947f9a14f94e531ce4e659660cc93bc05bb902276b6f155e4eb4e18`;
+- final graph after the deterministic-LF provenance repair described below:
+  `3fa7413ae55f4f8c9ee6c55391d0100f19399cf875c1c43f57af46c081a3040c`.
 
-## Frozen artifacts and independent reviews
+## Promoted analytic band
 
-| Artifact | SHA-256 |
-|---|---|
-| `state/lemma_packets/SHELL-rho-one-endpoint-round16.md` | `5886997f0f840ae1a9a8cef53ba2b44b384eb6c94f5d1fe94cee64219268df09` |
-| `rounds/polya-main/round_016/responses/thin-endpoint-incumbent.md` | `bc99a0e82bee9f55056e2122f053418b8b6f2586fad515dd115f6d29fb6878b0` |
-| `rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md` | `5a4945c267c0f9d769bec6cf94ad6f7cb3d17c5af593d1837d27553cefb197d7` |
-| `rounds/polya-main/round_016/exploration/thin-endpoint-constant-inventory.md` | `0aeb81f3186d7e8a3ef2d9623edc6bbfd6ab04744079dbc26bcc2b90e77df933` |
-| `rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md` | `185369546a0d88c5d0fdc72ae3390167e67edeb1b4cdd03074a5f1611fdec5fd` |
-| `computations/round16_verify_endpoint.py` | `7be9208c5abdb233db18c15dbae87068b134121ee5efcd3825ee293f346afff5` |
-| `computations/tests/test_round16_endpoint.py` | `4f372a5860ea33b19a80daadbb5ddd4382fb11be5e2f8f543a4fdd223a7d219c` |
-
-The frozen packet audit checked 40 nontrivial identity groups. The incumbent,
-strictly isolated clean-room proof, independent constant inventory, and fresh
-hostile referee all returned PASS. The hostile referee then authenticated the
-two editorial repairs byte-for-byte and again found no unsupported
-implication. The 18-file lemma-packet manifest stayed unchanged at
-`1eb2b951baf034793c9c6b6ec9efcf0857abf6b7b746ee43be343d69bbf162d3`.
-
-## Promoted thin endpoint
-
-Write
+Set
 
 $$
-\rho=1-\varepsilon,
+\rho_c=\frac1{1+2\pi},
 \qquad
-a=\varepsilon K,
+z_\rho=\frac{\pi}{1-\rho},
 \qquad
-0<\varepsilon\le\frac18.
+k_2(\rho)=\sqrt{z_\rho^2+6}.
 $$
 
-The low product piece owns
+The accepted closed theorem band is
 
 $$
-0\le a\le\frac{\pi}{4\varepsilon}.
-$$
-
-The min--max direction, strict radial count, zero range $0\le a\le\pi$,
-radial and angular walls, and common face were independently reconstructed.
-The exact deficit satisfies $D>(2/5)a^2$, and the final normalized reserve is
-
-$$
-\frac25-\left(\frac16+\frac1{32}+\frac1{576}\right)
-=\frac{577}{2880}>0.
-$$
-
-The high complementary-action piece owns
-
-$$
-a\ge\frac{\pi}{4\varepsilon}.
-$$
-
-Its audit covers the exact action inverse, the actual ungridded curvature
-interface, the improper $t=0$ trace, shifted-sawtooth Stieltjes directions,
-strict half-integer and phase-proxy walls, and the common face. At the closed
-ratio endpoint,
-
-$$
-\frac{D_{\rm rad}}{a^2}\ge\frac{21}{256},
+\rho_c\le\rho\le\frac78,
 \qquad
-\frac{E}{a^2}<\frac{193}{4096},
-\qquad
-D_{\rm rad}-E>\frac{143}{4096}a^2>0.
+z_\rho\le K\le k_2(\rho).
 $$
 
-Both inclusive pieces own $a=\pi/(4\varepsilon)$, including the corner
-$(\varepsilon,a)=(1/8,2\pi)$ and its radial wall. They use none of the
-blacklisted Round 5, 6, or 11 conclusions. Their union proves
+The spectral caps $0$, $1$, and $4$ follow from the complete separated
+spectrum, min--max, strict endpoint counting, and angular multiplicities
+$1$ and $3$. The exact Weyl reserve at the second payment wall exceeds
+$49061/269500$.
+
+The isolated clean-room proof, exact finite ledger, and fresh adversarial
+referee all returned PASS. Provenance is exact: A4's finite audit checks the
+theorem constants, $\mathcal C_{17}\subset\mathcal D_{16}$, and
+$B_0\subset\mathcal C_{17}$; the fresh referee separately proves
+$B_1\subset\mathcal C_{17}$ with squared upper-face reserve
+
+$$
+\frac{668749071}{10020010000}>0.
+$$
+
+## Exact surviving residual
+
+The new analytic part is
+
+$$
+\mathcal C_{17}
+=\{\rho_c\le\rho<7/8,\ z_\rho<K\le k_2(\rho)\}.
+$$
+
+The exact surviving residual is
 
 $$
 \boxed{
-\frac78\le\rho<1,
-\qquad K\ge0,
-\qquad
-N_D(A_{\rho,1},K^2)
-\le\frac{2}{9\pi}(1-\rho^3)K^3.
-}
+\begin{aligned}
+\mathcal D_{17}
+=&\left\{\rho_*<\rho<\rho_c,
+\ \frac1{2\rho}<K<U(\rho)\right\}\\
+&\cup
+\left\{\rho_c\le\rho<\frac78,
+\ k_2(\rho)<K<U(\rho)\right\}.
+\end{aligned}}
 $$
 
-The face $\rho=7/8$ is included and $\rho=1$ is the excluded degenerate
-limit. At $K=0$ both sides vanish; for $K>0$ the product or phase-proxy
-comparison is strict before the final non-strict theorem statement.
+Both certified boxes satisfy
+$B_0,B_1\subset\mathcal C_{17}$. They remain independent regression
+evidence but provide no additional subtraction, so
+$\mathcal U_{17}=\mathcal D_{17}$. The full theorem remains open.
 
-## Four-zone integration
+## Certified pilot extension
 
-Let
-
-$$
-I_{16}=\left[\rho_*,\frac78\right].
-$$
-
-The accepted analytic cover now has four zones:
-
-1. on $[\rho_*,1/16]$, a residual point can occur only for $K<64$;
-2. on $[1/16,5/6]$, only for
-   $K<K_0(\rho)\le K_0(5/6)<295^2=87025$;
-3. on $[5/6,7/8]$, only for
-   $K<54/(1-\rho)^2\le3456$;
-4. on $[7/8,1)$, no residual point occurs because every frequency is covered.
-
-All ratio, threshold, and equality faces are owned. In particular,
-$K=295^2$ is covered in every ratio band. Hence
+The closed face-connected box
 
 $$
-\boxed{
-0<\rho<1,
-\qquad K\ge295^2=87025
-\quad\Longrightarrow\quad
-N_D(A_{\rho,1},K^2)
-\le\frac{2}{9\pi}(1-\rho^3)K^3.
-}
+B_1=
+\left[\frac{999}{2000},\frac{1001}{2000}\right]
+\times
+\left[\frac{168}{25},\frac{673}{100}\right]
 $$
 
-The exact reduction from the Round 15 ceiling is
+has exact strict count $4$ and a positive certified Weyl margin. The Arb
+producer, independent exact-Fraction checker, tamper tests, and persistent
+independent audit all pass. This promotes only the bounded child
+computation; its parent remains `diagnostic_only`.
 
-$$
-\frac{200000}{295^2}=\frac{8000}{3481}>2.
-$$
+## Validation ledger
 
-## Exact remaining boundary
+- State Patch validator before application: `Patch OK`.
+- Independent read-only in-memory application audit: PASS after one
+  provenance correction and a complete re-audit.
+- State Patch validator after application: graph OK.
+- Fixed judge evidence: 20 of 20 hashes match current bytes.
+- Patch evidence paths and hashes: complete; no missing references.
+- Dependency graph: acyclic; no missing obligation references.
+- Full Python suite: `97 passed`.
+- The staging audit found that the new JSON writers inherited Windows CRLF
+  translation while Git stores the artifacts with LF. Both writers now set
+  `newline="\n"`; the certificate and checker report were regenerated, their
+  complete provenance chain was rehashed, and committed bytes now reproduce
+  the authenticated bytes exactly.
+- A fresh read-only post-repair audit confirmed LF-only byte regeneration,
+  all internal and external provenance hashes, 20/20 judge hash rows,
+  index/worktree equality for every authenticated artifact, checker PASS,
+  and 6/6 focused certificate tests.
+- `git diff --check`: PASS.
+- UTF-8, control-character, whitespace, final-newline, Markdown-fence, and
+  math-delimiter hygiene: PASS.
 
-The full all-frequency shell theorem is not proved. If $\mathcal A_{16}$ is
-the complete accepted analytic cover with every owned face included, the
-sole shell blocker is
-
-$$
-\boxed{
-\mathcal D_{16}
-=\bigl(I_{16}\times[0,\infty)\bigr)\setminus\mathcal A_{16}.
-}
-$$
-
-This is a nonrectangular set and is not
-$I_{16}\times[0,87025)$. The Round 8 certified pilot remains unchanged and
-local. Any future certified extension must be an exact bounded,
-face-connected subset of $\mathcal D_{16}$; the Round 16 rational ledger is
-analytic finite-algebra evidence, not a Bessel-root certificate.
-
-The positive endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain
-unproved. The negative screens at $\rho=17/20$ and $\rho=5/6$ are route
-obstructions only, not counterexamples.
-
-## Mechanical validation
-
-- Standalone exact verifier: PASS, 111 finite-algebra checks.
-- Focused Round 16 tests: 11 passed.
-- Complete computation suite: 69 passed.
-- Python compilation over `computations` and `math_collab`: PASS.
-- Embedded incumbent ledger: PASS.
-- Round 8 independent certificate checker: PASS; its protected packet hash
-  remains
-  `8b684f7f671dd96f9916d0d798566a5e1cbe787934c08744531e3f7ba086b8c7`.
-- Pre-application patch audits: PASS in both the validator and an independent
-  in-memory simulation.
-- Final graph: 49 unique obligation IDs, 165 dependency edges, acyclic, with
-  every dependency, permitted dependency, blocker, and implication resolved.
-- Graph artifacts: 626 reference occurrences, 155 normalized paths, all
-  present.
-- The finite verifier explicitly reports `analytic_theorem_verified=false`.
-  A separate 47-point floating diagnostic was not used as proof.
-- Reading-packet regeneration and the live Round 17 handoff: PASS. A focused
-  prompt audit found one missing A4 ownership assignment; after repair, the
-  re-audit passed at prompt SHA-256
-  `239728539661aa0f11f0a309eb677d607fd03bbbeec26bad7c983969a5bd884e`.
-- UTF-8, control-character, trailing-whitespace, final-newline, Markdown
-  delimiter, stale-operative-language, and Git diff checks: PASS.
-- Fresh post-promotion theorem/state audit: PASS; first unsupported
-  implication: none. It independently reproduced the one-time State Patch,
-  graph counts, hashes, theorem boundary, and evidence-class limits.
-
-## Authoritative next step
-
-Round 17 must freeze the exact $\mathcal A_{16}$ membership mask and close
-$\mathcal D_{16}$ by analytic or symbolic compression. At most one closed,
-face-connected extension of the Round 8 pilot may be attempted as subordinate
-local evidence. A fresh clean-room reconstruction and hostile referee are
-mandatory for any promoted residual lemma, and fresh theorem-level reviews
-remain mandatory before closing `TARGET-shell-d3`.
+The next round must work only on the exact $\mathcal D_{17}$. The crude
+post-$k_2$ multiplicity cap $9$ is a method obstruction at $\rho_c$, not a
+counterexample; a sharper next-angular staircase or a new estimate is
+required.

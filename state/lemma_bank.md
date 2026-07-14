@@ -221,6 +221,63 @@ $$
   $200000/295^2=8000/3481>2$ quantifies the reduction from the Round 15
   global ceiling;
 
+- the Round 17 first-angular-band lemma. With
+
+$$
+\rho_c=\frac1{1+2\pi},
+\qquad
+z_\rho=\frac{\pi}{1-\rho},
+\qquad
+k_2(\rho)=\sqrt{z_\rho^2+6},
+$$
+
+  one has
+
+$$
+\rho_c\le\rho\le\frac78,
+\qquad
+z_\rho\le K\le k_2(\rho)
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+<\frac{2}{9\pi}(1-\rho^3)K^3.
+$$
+
+  The radial min--max bound
+  $\lambda_{\ell,n}\ge n^2z_\rho^2+\ell(\ell+1)$ and the exact $\ell=0$
+  interval spectrum reduce the strict count to $0$ at $K=z_\rho$, to $1$
+  through $K=\sqrt{z_\rho^2+2}$, and to at most $4$ through the inclusive
+  face $K=k_2(\rho)$. Exact Weyl payments exceed $1$ and $4$. The lower
+  frequency face and $\rho=7/8$ retain their previous owners. The proof
+  passed isolated reconstruction, independent exact-constant audit, and
+  fresh adversarial review;
+
+- the exact Round 17 analytic subtraction. Its genuinely new band is
+
+$$
+\mathcal C_{17}
+=\left\{(\rho,K):
+\rho_c\le\rho<\frac78,
+\quad z_\rho<K\le k_2(\rho)
+\right\}
+\subset\mathcal D_{16},
+$$
+
+  and the surviving analytic residual is
+
+$$
+\mathcal D_{17}
+=\mathcal D_{16}\setminus\mathcal C_{17}
+=\left\{\rho_*<\rho<\rho_c,
+\ \frac1{2\rho}<K<U(\rho)\right\}
+\cup
+\left\{\rho_c\le\rho<\frac78,
+\ k_2(\rho)<K<U(\rho)\right\}.
+$$
+
+  Here $U(\rho)$ is exactly $H_0(\rho)$ below $\rho_{HK}$,
+  $K_0(\rho)$ from $\rho_{HK}$ to $5/6$, and $54/(1-\rho)^2$ from $5/6$
+  to $7/8$. This is an exact nonempty residual, not a rectangle;
+
 - the independently checked certified pilot
 
 $$
@@ -230,24 +287,34 @@ K\in\left[\frac{67}{10},\frac{168}{25}\right],
 $$
 
   where the exact strict count is $4$ and the certified Weyl margin exceeds
-  $14.6073155354$. The Arb producer and independent rational checker are
-  local evidence only; they do not certify the rest of the compact residual.
+  $14.6073155354$;
 
-`SHELL-rho-compact` remains open. Round 16 reduces its exact residual to the
-true nonrectangular set
+- the independently checked face-connected Round 17 extension
 
 $$
-\mathcal D_{16}
-=\bigl(I_{16}\times[0,\infty)\bigr)\setminus\mathcal A_{16},
+\rho\in\left[\frac{999}{2000},\frac{1001}{2000}\right],
+\qquad
+K\in\left[\frac{168}{25},\frac{673}{100}\right],
 $$
 
-below the four-zone analytic cover on $I_{16}$; this is the sole remaining
-shell blocker. It is not the rectangle $I_{16}\times[0,87025)$.
+  where the exact strict count is again $4$. The complete lower frequency
+  face is the complete upper face of the Round 8 box. Outward Arb signs and
+  an independent exact-rational checker prove the count and strict Weyl
+  margin. Both certified boxes lie inside $\mathcal C_{17}$, so they remain
+  independent regression evidence but are analytically redundant.
 
-The Round 8 certified pilot remains unchanged and local. Certification may
-expand only through an exact bounded, face-connected manifest for
-$\mathcal D_{16}$, with analytic ownership of all faces. Further analytic
-or symbolic compression is the primary next route. The parent
+`SHELL-rho-compact` remains open. Round 17 reduces its exact residual to
+$\mathcal D_{17}$ above, which is the sole remaining shell blocker. The
+theorem-wise uncovered set is also exactly $\mathcal D_{17}$ because both
+certified boxes are contained in the promoted analytic band.
+
+Any further certification must use an exact bounded, face-connected manifest
+inside $\mathcal D_{17}$, with analytic ownership of all faces. Further
+analytic or symbolic compression remains the primary route. Immediately
+above $k_2(\rho)$, the coarse min--max cap jumps from $4$ to $9$, but the
+Weyl term at $(\rho_c,k_2(\rho_c))$ is below $9$. The next analytic step
+therefore needs a sharper $\ell=2$ estimate, a ratio-dependent staircase, or
+a different action/tail argument. This is a method obstruction only. The parent
 `COMP-certified-bessel` obligation remains `diagnostic_only`, and the final
 all-frequency theorem remains open.
 
