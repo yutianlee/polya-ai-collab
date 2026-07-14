@@ -574,7 +574,7 @@ def generate_reading_packet(
         "",
         "Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.",
         "",
-        "Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods (with rho>=99/100 on the thin side), and the all-rho analytic range K>=200000 are proved. The central--thin seam is rho=5/6 with K_0(5/6)<295^2=87025. One central residual box is certified; exact coverage of the true nonrectangular compact residual and the final theorem audit remain open.",
+        "Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods (with rho>=7/8 on the thin side), and the all-rho analytic range K>=295^2=87025 are proved. The true nonrectangular residual is D_16 over I_16=[rho_*,7/8]. One central residual box is certified; exact coverage of D_16 and the final theorem audit remain open.",
         "",
         "## Current Route",
         "",

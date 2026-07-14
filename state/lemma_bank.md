@@ -138,14 +138,29 @@ $$
   exact normalized reserve $61/1400$, while an isolated reconstruction using
   a different sawtooth primitive leaves
   $4119252993/17500000000$;
-- the accepted product and aggregate ranges cover the complementary closed
+- historically, the accepted product and aggregate ranges cover the
+  complementary closed
   range $0\le a\le1/(8\varepsilon^{3/2})$. Together with the new bridge this
-  gives the complete endpoint theorem
+  gave the Round 11 endpoint theorem
 
 $$
 \frac{99}{100}\le\rho<1,
 \qquad K\ge0.
 $$
+
+- the stronger Round 16 complete endpoint theorem
+
+$$
+\frac78\le\rho<1,
+\qquad K\ge0.
+$$
+
+  With $\varepsilon=1-\rho$ and $a=\varepsilon K$, its product low piece
+  and complementary-action high piece both own their shared face
+  $a=\pi/(4\varepsilon)$. The respective exact reserves are $577/2880$ and
+  $143/4096$. The lower face $\rho=7/8$ is included, the limiting face
+  $\rho=1$ is open, $K=0$ gives equality, and the proof comparison is strict
+  for $K>0$ before the final non-strict theorem statement;
 
 - the audited small-hole low-interface theorem with
 
@@ -173,25 +188,25 @@ $$
 \qquad K\ge0.
 $$
 
-- the compact-ratio analytic envelope: on
+- the Round 16 compact-ratio analytic envelope: on
 
 $$
-I_{15}=\left[\rho_*,\frac{99}{100}\right],
+I_{16}=\left[\rho_*,\frac78\right],
 $$
 
   the possible residual families lie below $64$ on
   $[\rho_*,1/16]$, below
   $K_0(\rho)\le K_0(5/6)<295^2=87025$ on $[1/16,5/6]$, below $3456$ on
-  $[5/6,7/8]$, below $3200$ on $[7/8,9/10]$, below $9600$ on
-  $[9/10,19/20]$, below $15000$ on $[19/20,24/25]$, and below $200000$ on
-  $[24/25,99/100]$. Therefore
+  $[5/6,7/8]$ because
+  $54/(1-\rho)^2\le3456$, and nowhere on $[7/8,1)$ because the endpoint
+  theorem holds at every frequency. Therefore, including threshold equality,
 
 $$
-K\ge200000
+K\ge295^2=87025
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(\rho\in I_{15});
+\qquad(\rho\in I_{16});
 $$
 
 - combining the compact envelope with both endpoint theorems gives the
@@ -199,11 +214,12 @@ $$
 
 $$
 0<\rho<1,
-\qquad K\ge200000.
+\qquad K\ge295^2=87025.
 $$
 
-  The exact comparison $550^2/200000=121/80>1$ quantifies the reduction
-  from the Round 14 global ceiling;
+  Threshold equality is included. The exact comparison
+  $200000/295^2=8000/3481>2$ quantifies the reduction from the Round 15
+  global ceiling;
 
 - the independently checked certified pilot
 
@@ -217,29 +233,25 @@ $$
   $14.6073155354$. The Arb producer and independent rational checker are
   local evidence only; they do not certify the rest of the compact residual.
 
-`SHELL-rho-compact` remains open. Round 15 has reduced the exact compact
-residual to the true nonrectangular set $\mathcal D_{15}$ below the
-seven-zone analytic cover on $I_{15}$, but it does not certify that residual.
-The complete all-frequency endpoint remains exactly
-$99/100\le\rho<1$.
-
-The next analytic target is the unproved Round 16 endpoint extension
+`SHELL-rho-compact` remains open. Round 16 reduces its exact residual to the
+true nonrectangular set
 
 $$
-\frac78\le\rho<1,
-\qquad K\ge0,
+\mathcal D_{16}
+=\bigl(I_{16}\times[0,\infty)\bigr)\setminus\mathcal A_{16},
 $$
 
-using a proposed two-piece split at
-$a=\varepsilon K=\pi/(4\varepsilon)$. The candidate product and
-complementary-action reserves are respectively $577/2880$ and $143/4096$;
-they are planning evidence, not promoted lemmas. If the endpoint theorem is
-independently proved and audited, the conditional all-ratio ceiling becomes
-$295^2$, because $K_0(5/6)<295^2$, with exact improvement factor
-$200000/295^2=8000/3481>2$.
+below the four-zone analytic cover on $I_{16}$; this is the sole remaining
+shell blocker. It is not the rectangle $I_{16}\times[0,87025)$.
 
-Certification may expand only through an exact face-connected manifest for
-$\mathcal D_{15}$; replacing it by $I_{15}\times[0,200000)$ would certify a
-different, larger set. Further analytic aggregation or safe monotone-corner
-certification is still required. The parent compact certification remains
-diagnostic only, and the final theorem remains open.
+The Round 8 certified pilot remains unchanged and local. Certification may
+expand only through an exact bounded, face-connected manifest for
+$\mathcal D_{16}$, with analytic ownership of all faces. Further analytic
+or symbolic compression is the primary next route. The parent
+`COMP-certified-bessel` obligation remains `diagnostic_only`, and the final
+all-frequency theorem remains open.
+
+The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain unproved.
+The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their
+tested proof routes; they are not counterexamples and do not weaken the
+proved endpoint $7/8\le\rho<1$.

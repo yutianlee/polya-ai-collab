@@ -25,11 +25,10 @@
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
     "target_obligations": [
-      "SHELL-rho-one-endpoint",
       "SHELL-rho-compact",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Round 15 proved, including threshold equality, the enlarged local-plateau theorem K>=54/epsilon^2 for 0<epsilon<=1/6, moved the seam to rho=5/6, proved K_0(5/6)<295^2=87025, and lowered the authoritative all-ratio high-frequency ceiling to K>=200000. The sharper retained thresholds K>=32/epsilon^2 through epsilon=1/8, K>=24/epsilon^2 through epsilon=1/10, and K>=20/epsilon^2 through epsilon=1/25 remain authoritative. The complete all-frequency thin endpoint remains exactly rho>=99/100. Primary Round 16 target, explicitly UNPROVED: prove the endpoint for 7/8<=rho<1 by a fresh two-piece union at a=pi/(4 epsilon), with a product low piece and a complementary-action high piece that both own the common face. The planning reserves 577/2880 and 143/4096 are screens, not accepted theorems. If independently proved and audited, this target would remove the finite zones beyond rho=7/8 and lower the all-ratio ceiling conditionally to K>=295^2, with reduction factor 200000/295^2=8000/3481>2. The positive stretch screens at rho=6/7 and rho=23/27 and the negative selected-route screens at rho=17/20 and rho=5/6 are planning evidence only; the negative screens are not counterexamples. Secondary: close only the true nonrectangular compact residual D_15, with at most one face-connected certified cell extending the Round 8 pilot as local evidence. A2 leads the endpoint proof, A3 reconstructs it independently, A4 audits constants and any bounded certificate, and A1 promotes only exact checked evidence."
+    "round_rule": "Round 16 independently proved the complete all-frequency endpoint 7/8<=rho<1 by two inclusive pieces meeting at a=pi/(4 epsilon), with exact reserves 577/2880 and 143/4096 and no legacy endpoint conclusion. Together with the accepted small-hole, fixed-rho, and Round 15 seam theorems, the four-zone envelope proves the shell inequality for every 0<rho<1 when K>=295^2=87025, including equality; the exact reduction from 200000 is 8000/3481>2. The only remaining shell blocker is the true nonrectangular residual D_16=(I_16 x [0,infinity)) minus A_16, where I_16=[rho_*,7/8]; never replace it by the rectangle I_16 x [0,87025). Primary Round 17 target: freeze the exact D_16 mask and close it by analytic or symbolic compression. Secondary: extend at most one face-connected part of the protected Round 8 certified pilot, wholly inside D_16, as local evidence. Positive endpoint screens at rho=6/7 and rho=23/27 remain planning evidence only, while the negative selected-route screens at rho=17/20 and rho=5/6 remain route obstructions rather than counterexamples. A1 owns the exact residual graph and promotion gate, A2 develops analytic compression, A3 reconstructs it independently, and A4 audits constants and any bounded certificate."
   },
   "proof_obligations": [
     {
@@ -151,7 +150,11 @@
           "state/lemma_packets/SHELL-central-thin-seam-compression-round15.md",
           "rounds/polya-main/round_015/responses/seam-extension-incumbent.md",
           "rounds/polya-main/round_015/reviews/seam-extension-clean-room.md",
-          "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md"
+          "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md",
+          "state/lemma_packets/SHELL-rho-one-endpoint-round16.md",
+          "rounds/polya-main/round_016/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -183,9 +186,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "The strict shell inequality is proved for every ratio when K>=200000. Complete exact compact coverage below that ceiling, then run fresh theorem-level clean-room and adversarial audits.",
-      "last_updated_round": 15,
-      "last_updated_at": "2026-07-14T16:25:15"
+      "next_action": "The strict shell inequality is proved for every ratio when K>=295^2=87025. Complete exact coverage of D_16, then run fresh theorem-level clean-room and adversarial audits.",
+      "last_updated_round": 16,
+      "last_updated_at": "2026-07-14T18:11:31"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -686,7 +689,11 @@
           "state/lemma_packets/SHELL-central-thin-seam-compression-round15.md",
           "rounds/polya-main/round_015/responses/seam-extension-incumbent.md",
           "rounds/polya-main/round_015/reviews/seam-extension-clean-room.md",
-          "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md"
+          "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md",
+          "state/lemma_packets/SHELL-rho-one-endpoint-round16.md",
+          "rounds/polya-main/round_016/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -697,9 +704,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Both complete all-frequency endpoint neighborhoods and the all-ratio range K>=200000 are proved. Keep this obligation open until the compact residual below that ceiling is exactly closed.",
-      "last_updated_round": 15,
-      "last_updated_at": "2026-07-14T16:25:15"
+      "next_action": "Both complete endpoint neighborhoods and the all-ratio range K>=295^2=87025 are proved. Keep this obligation open until the exact compact residual D_16 is closed.",
+      "last_updated_round": 16,
+      "last_updated_at": "2026-07-14T18:11:31"
     },
     {
       "id": "SHELL-rho-compact",
@@ -756,7 +763,11 @@
           "state/lemma_packets/SHELL-central-thin-seam-compression-round15.md",
           "rounds/polya-main/round_015/responses/seam-extension-incumbent.md",
           "rounds/polya-main/round_015/reviews/seam-extension-clean-room.md",
-          "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md"
+          "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md",
+          "state/lemma_packets/SHELL-rho-one-endpoint-round16.md",
+          "rounds/polya-main/round_016/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": []
@@ -767,9 +778,9 @@
         "threshold blow-up inside a compact interval",
         "loss of monotonicity under interval evaluation"
       ],
-      "next_action": "Keep this obligation open until exact analytic or certified coverage closes the true residual on I_15 below K=200000. Do not replace the piecewise complement of the accepted seven-zone cover by a rectangular sweep.",
-      "last_updated_round": 15,
-      "last_updated_at": "2026-07-14T16:25:15"
+      "next_action": "Keep this obligation open until exact analytic or certified coverage closes D_16=(I_16 x [0,infinity)) minus A_16. Never replace the piecewise complement of the accepted four-zone cover by I_16 x [0,87025).",
+      "last_updated_round": 16,
+      "last_updated_at": "2026-07-14T18:11:31"
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -843,14 +854,12 @@
       "track": "shell_analytic",
       "title": "Thin-shell endpoint rho -> 1",
       "status": "proved_internal",
-      "statement_tex": "For every 99/100<=rho<1 and every K>=0, the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. The lower rho endpoint is included and rho=1 is excluded as the degenerate zero-width limit.",
+      "statement_tex": "For every 7/8<=rho<1 and every K>=0, the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. The lower endpoint rho=7/8 is included, rho=1 is excluded as the degenerate zero-width limit, equality holds at K=0, and the proof comparison is strict for K>0.",
       "dependencies": [
         "CONV-strict-counting",
         "SHELL-sturm-liouville-completeness",
-        "SHELL-thin-product-low-optical",
-        "SHELL-thin-action-aggregate",
-        "SHELL-thin-curvature-intermediate",
-        "SHELL-ultrathin-intermediate-bridge"
+        "SHELL-phase-enclosures",
+        "SHELL-annulus-phase-transfer"
       ],
       "implies": [
         "SHELL-rho-uniformity"
@@ -879,7 +888,14 @@
           "state/lemma_packets/SHELL-ultrathin-intermediate-bridge.md",
           "rounds/polya-main/round_011/responses/ultrathin-bridge-incumbent.md",
           "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
-          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
+          "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md",
+          "state/lemma_packets/SHELL-rho-one-endpoint-round16.md",
+          "rounds/polya-main/round_016/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_016/exploration/thin-endpoint-constant-inventory.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md",
+          "computations/round16_verify_endpoint.py",
+          "computations/tests/test_round16_endpoint.py"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-diagnostic.md"
@@ -890,15 +906,24 @@
       },
       "owner": "A2",
       "falsification_cases": [
-        "rho=99/100",
-        "rho tending to 1",
-        "a=1/(8 epsilon^(3/2))",
-        "product-to-aggregate and aggregate-to-bridge faces",
-        "radial, angular, proxy, and strict spectral walls"
+        "K=a=0 and every K=a>0",
+        "the exact zero-count range 0<=a<=pi, including a=pi",
+        "every radial wall a=m pi with (N,t)=(m-1,1), both one-sided limits, and the first positive branch",
+        "every product angular wall b_n^2/epsilon^2=ell(ell+1) with strict exclusion",
+        "the common face a=pi/(4 epsilon) from both pieces and the corner (epsilon,a)=(1/8,2 pi)",
+        "rho=7/8, epsilon=1/8, the open rho->1 limit, and the test faces epsilon=1/100,1/25,1/10,1/8",
+        "every action radial wall n-1/4=T, half-integer angular wall, and phase-proxy integer wall",
+        "the outer cutoff y=a, inner interface y=rho a, and actual ungridded curvature interface t=tau",
+        "tau below, on, and above a sawtooth grid point and both sides of every sawtooth jump",
+        "the improper t=0 trace, terminal t=T trace, and every dropped nonnegative Stieltjes term",
+        "the exact inverse domain, denominators, radicands, arccosine arguments, squarings, endpoint limits, and monotonic reductions",
+        "the non-strict H10 equality at the common face and final strict reserve",
+        "any hidden use of epsilon<=1/100, rho>=99/100, a>=125, an old bridge scale, or a Round 5, 6, or 11 conclusion",
+        "the positive S1-S2 screens treated only as planning and the negative S3-S4 screens treated only as route obstructions"
       ],
-      "next_action": "Round 16 primary target, explicitly unproved: independently derive and audit a two-piece all-frequency endpoint proof on 7/8<=rho<1, split at a=pi/(4 epsilon), while retaining 99/100<=rho<1 as the only accepted endpoint until promotion. The product and complementary-action pieces must both own the common face; stretch screens below rho=7/8 remain planning evidence only.",
-      "last_updated_round": 11,
-      "last_updated_at": "2026-07-13T18:45:51",
+      "next_action": "Treat 7/8<=rho<1 as discharged. Any extension below rho=7/8 requires a separately frozen proof; S1-S2 remain planning screens and S3-S4 remain route obstructions only.",
+      "last_updated_round": 16,
+      "last_updated_at": "2026-07-14T18:11:31",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -907,23 +932,23 @@
       "permitted_dependencies": [
         "CONV-strict-counting",
         "SHELL-sturm-liouville-completeness",
-        "SHELL-thin-product-low-optical",
-        "SHELL-thin-action-aggregate",
-        "SHELL-thin-curvature-intermediate",
-        "SHELL-ultrathin-intermediate-bridge"
+        "SHELL-phase-enclosures",
+        "SHELL-annulus-phase-transfer"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_006/reviews/phase-aggregate-clean-room.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-optimized-clean-room.md",
-        "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md"
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-clean-room.md",
+        "rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md"
       ],
       "adversarial_review_artifacts": [
         "rounds/polya-main/round_006/reviews/phase-aggregate-adversarial.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-parametric-dependency-audit.md",
         "rounds/polya-main/round_009/reviews/thin-plateau-c125-adversarial-referee.md",
-        "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md"
+        "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md",
+        "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md"
       ],
-      "reason_for_promotion": "The accepted product and aggregate ranges and audited complementary-action theorem cover every optical frequency for 0<epsilon<=1/100, including the exact lower ratio face rho=99/100."
+      "reason_for_promotion": "The frozen Round 16 endpoint was reconstructed through two independent complete proof routes. The low min-max product proof establishes the exact zero range, strict walls, D>(2/5)a^2, and reserve 577/2880. The complementary-action proof establishes the actual ungridded curvature split, improper Stieltjes trace, every strict proxy wall, P_A<I, and reserve 143/4096. Both pieces independently own their common face, use only the exact whitelist, and passed a fresh adversarial and post-repair audit with no unsupported implication."
     },
     {
       "id": "COMP-certified-bessel",
@@ -988,9 +1013,9 @@
         "rounds/polya-main/round_008/certification/pilot-central-box.json",
         "rounds/polya-main/round_008/certification/pilot-central-box-check.json"
       ],
-      "next_action": "The parent remains diagnostic_only. Redefine any future E-minus-A manifest on I_15 with K<200000; the Round 15 exact rational ledgers are symbolic analytic evidence, not Bessel-root certificates.",
-      "last_updated_round": 15,
-      "last_updated_at": "2026-07-14T16:25:15"
+      "next_action": "The parent remains diagnostic_only. Any future E-minus-A manifest must be an exact face-connected subset of D_16; the Round 16 rational ledgers are symbolic analytic evidence, not Bessel-root certificates.",
+      "last_updated_round": 16,
+      "last_updated_at": "2026-07-14T18:11:31"
     },
     {
       "id": "SRC-mathieu-ellipse",
@@ -2151,7 +2176,7 @@
       "track": "shell_analytic",
       "title": "Explicit analytic envelope on the remaining compact shell-ratio interval",
       "status": "proved_internal",
-      "statement_tex": "Let rho_*=omega_0/(1+2 C_*) and I_15=[rho_*,99/100]. On [rho_*,1/16], every possible residual has K<64. On [1/16,5/6], every possible residual has K<K_0(rho)<=K_0(5/6)<295^2=87025. On [5/6,7/8], every possible residual has K<54/(1-rho)^2<=3456. On [7/8,9/10], every possible residual has K<32/(1-rho)^2<=3200. On [9/10,19/20], every possible residual has K<24/(1-rho)^2<=9600. On [19/20,24/25], every possible residual has K<24/(1-rho)^2<=15000. On [24/25,99/100], the sharper retained seam leaves K<20/(1-rho)^2<=200000. Consequently the strict shell Polya inequality holds for rho in I_15 and K>=200000; with the unchanged endpoint lemmas it holds for every 0<rho<1 and K>=200000.",
+      "statement_tex": "Let rho_*=omega_0/(1+2 C_*) and I_16=[rho_*,7/8]. On [rho_*,1/16], every possible residual has K<64. On [1/16,5/6], every possible residual has K<K_0(rho)<=K_0(5/6)<295^2=87025. On [5/6,7/8], every possible residual has K<54/(1-rho)^2<=3456. On [7/8,1), every frequency is covered. Consequently the strict shell Polya inequality holds for every 0<rho<1 and K>=295^2=87025, including equality.",
       "dependencies": [
         "SHELL-rho-zero-endpoint",
         "SHELL-rho-one-endpoint",
@@ -2159,10 +2184,7 @@
         "SHELL-low-interface-small-hole",
         "SHELL-thin-width-phase-zero",
         "SHELL-fixed-rho-high-energy",
-        "SHELL-thin-product-low-optical",
-        "SHELL-thin-action-aggregate",
-        "SHELL-central-thin-seam-compression",
-        "SHELL-ultrathin-intermediate-bridge"
+        "SHELL-central-thin-seam-compression"
       ],
       "implies": [
         "SHELL-rho-compact"
@@ -2220,7 +2242,14 @@
           "rounds/polya-main/round_015/reviews/seam-extension-clean-room.md",
           "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md",
           "computations/round15_verify_seam_extension.py",
-          "computations/tests/test_round15_seam_extension.py"
+          "computations/tests/test_round15_seam_extension.py",
+          "state/lemma_packets/SHELL-rho-one-endpoint-round16.md",
+          "rounds/polya-main/round_016/responses/thin-endpoint-incumbent.md",
+          "rounds/polya-main/round_016/exploration/thin-endpoint-constant-inventory.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md",
+          "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md",
+          "computations/round16_verify_endpoint.py",
+          "computations/tests/test_round16_endpoint.py"
         ],
         "negative": [],
         "inconclusive": [
@@ -2240,27 +2269,20 @@
         "SHELL-low-interface-small-hole",
         "SHELL-thin-width-phase-zero",
         "SHELL-fixed-rho-high-energy",
-        "SHELL-thin-product-low-optical",
-        "SHELL-thin-action-aggregate",
-        "SHELL-central-thin-seam-compression",
-        "SHELL-ultrathin-intermediate-bridge"
+        "SHELL-central-thin-seam-compression"
       ],
       "falsification_cases": [
         "rho=rho_*",
         "rho=1/16",
         "rho=5/6",
         "rho=7/8",
-        "rho=9/10",
-        "rho=19/20",
-        "rho=24/25",
-        "rho=99/100",
-        "K=64, 1944, 2048, 2400, 3200, 3456, 9600, 12500, 15000, 294^2, 295^2, and 200000",
-        "K=K_0(rho), K=K_0(5/6), and the strict comparison K_0(5/6)<295^2",
-        "K=54/(1-rho)^2, K=32/(1-rho)^2, K=24/(1-rho)^2, and K=20/(1-rho)^2 on their exact closed domains",
-        "the exact maximum of the seven finite ceilings being 200000 and 550^2/200000=121/80>1",
-        "the failed Y=294 proxy misreported as K_0(5/6)>=294^2 or as a uniform central threshold",
-        "the all-frequency endpoint beginning, unchanged, at rho=99/100",
-        "the closed seven-zone planning envelope confused with the true residual certification target"
+        "rho=99/100 as a historical endpoint-overlap face",
+        "K=64, K=K_0(rho), K=K_0(5/6), K=1944, K=2048, K=2400, K=3456, K=12500, K=295^2=87025, and K=200000",
+        "threshold equality at 54/epsilon^2, 32/epsilon^2, 24/epsilon^2, and 20/epsilon^2 on their exact domains",
+        "the strict comparison K_0(5/6)<295^2 and coverage of K=295^2 in every ratio band",
+        "the four-zone envelope confused with the true nonrectangular residual D_16",
+        "the Round 8 certified pilot overextended beyond its protected box",
+        "the positive stretch screens below rho=7/8 treated as promoted endpoints"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_008/reviews/compact-envelope-clean-room.md",
@@ -2270,7 +2292,8 @@
         "rounds/polya-main/round_012/reviews/enlarged-seam-clean-room.md",
         "rounds/polya-main/round_013/reviews/seam-extension-clean-room.md",
         "rounds/polya-main/round_014/reviews/seam-extension-clean-room.md",
-        "rounds/polya-main/round_015/reviews/seam-extension-clean-room.md"
+        "rounds/polya-main/round_015/reviews/seam-extension-clean-room.md",
+        "rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md"
       ],
       "adversarial_review_artifacts": [
         "rounds/polya-main/round_008/reviews/compact-envelope-adversarial.md",
@@ -2281,12 +2304,13 @@
         "rounds/polya-main/round_012/reviews/enlarged-seam-adversarial-referee.md",
         "rounds/polya-main/round_013/reviews/seam-extension-adversarial-referee.md",
         "rounds/polya-main/round_014/reviews/seam-extension-adversarial-referee.md",
-        "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md"
+        "rounds/polya-main/round_015/reviews/seam-extension-adversarial-referee.md",
+        "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md"
       ],
-      "reason_for_promotion": "The audited Round 15 seam moves the central switch to rho=5/6. The exact endpoint estimate K_0(5/6)<295^2 supplies the central ceiling, while the retained far-thin Round 10 zone supplies the largest finite ceiling 200000. Every shared face is owned by the sharpest applicable theorem, and the complete all-frequency endpoint remains exactly rho>=99/100. Hence the complete all-ratio high-frequency ceiling is 200000.",
-      "next_action": "Use I_15 and K<200000 as the compact planning boundary, but prove or certify only the true residual complement of the accepted seven-zone analytic cover. Do not replace that piecewise complement by a rectangular sweep.",
-      "last_updated_round": 15,
-      "last_updated_at": "2026-07-14T16:25:15"
+      "reason_for_promotion": "The independently audited endpoint covers every frequency on [7/8,1). Combined only after promotion with the accepted small-hole, fixed-rho, and Round 15 seam theorems, the remaining four-zone envelope has largest strict residual ceiling K_0(5/6)<295^2=87025. Every shared face, including K=295^2, is owned, and the exact reduction from 200000 is 8000/3481>2.",
+      "next_action": "Use I_16=[rho_*,7/8] and the exact nonrectangular D_16 below the complete four-zone analytic cover. Close only D_16 by analytic or certified means; do not replace it by I_16 x [0,87025).",
+      "last_updated_round": 16,
+      "last_updated_at": "2026-07-14T18:11:31"
     },
     {
       "id": "COMP-certified-bessel-pilot-round8",
@@ -2535,7 +2559,7 @@
         "K=K_0(5/6), K=294^2, K=295^2, K=200000, and every shared global-union face",
         "the kappa=53 displacement failure treated only as a selected-route obstruction, not as a counterexample",
         "the Y=294 central-proxy failure treated only as a selected-route obstruction, not as a lower bound for K_0(5/6)",
-        "any inference that the all-frequency endpoint extends below rho=99/100"
+        "any inference that an all-frequency endpoint extension follows from the Round 15 seam theorem alone"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_010/reviews/central-thin-seam-clean-room.md",
@@ -2553,8 +2577,8 @@
       ],
       "reason_for_promotion": "The Round 15 local-plateau theorem was independently reconstructed on the full epsilon<=1/6, kappa>=54 domain. The incumbent and independent constant inventory close the complete fixed-r=B=14/3 comparison, while the strictly isolated clean-room proof independently derives the actual self-consistency inequality through a direct cosine-gap estimate and controls the complete synthetic path. The independent exact estimate K_0(5/6)<295^2, every exceptional branch, strict wall, overlap face, and the seven-zone global union passed fresh adversarial review and executable exact-ledger reproduction.",
       "next_action": "Use the sharpest accepted thresholds piecewise: K>=20/epsilon^2 through epsilon=1/25, K>=24/epsilon^2 through epsilon=1/10, K>=32/epsilon^2 through epsilon=1/8, and K>=54/epsilon^2 through epsilon=1/6. Any further extension or constant improvement requires a separately frozen full-domain proof. The kappa=53 localization failure and Y=294 central-proxy failure are route obstructions only, not counterexamples.",
-      "last_updated_round": 15,
-      "last_updated_at": "2026-07-14T16:25:15"
+      "last_updated_round": 16,
+      "last_updated_at": "2026-07-14T18:11:31"
     },
     {
       "id": "SHELL-ultrathin-intermediate-bridge",

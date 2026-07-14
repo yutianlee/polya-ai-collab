@@ -13,7 +13,7 @@ high energy uniformly for all $0<\rho<1$, and both complete uniform endpoint
 neighborhoods
 
 $$
-\rho\in(0,\rho_*]\cup[99/100,1),
+\rho\in(0,\rho_*]\cup[7/8,1),
 \qquad K\ge0.
 $$
 
@@ -29,18 +29,38 @@ $$
 On the intervening compact interval
 
 $$
-I_{15}=[\rho_*,99/100],
+I_{16}=[\rho_*,7/8],
 $$
 
-the shell inequality is now also proved uniformly for every
-$K\ge200000$. Combining this compact result with the two endpoint theorems
-gives the global analytic high-frequency theorem for every
-$0<\rho<1$ and $K\ge200000$. Round 15 lowers the Round 14 ceiling by the
-exact factor
+the shell inequality is proved uniformly for every
+$K\ge295^2=87025$, including equality. Combining this compact result with
+the two endpoint theorems gives the global analytic high-frequency theorem
+for every $0<\rho<1$ and $K\ge295^2$. Relative to the Round 15 ceiling, the
+exact reduction factor is
 
 $$
-\frac{550^2}{200000}=\frac{121}{80}>1.
+\frac{200000}{295^2}=\frac{8000}{3481}>2.
 $$
+
+The new thin endpoint uses $\varepsilon=1-\rho$ and
+$a=\varepsilon K$. Its product low piece and complementary-action high
+piece meet inclusively at
+
+$$
+a=\frac{\pi}{4\varepsilon}.
+$$
+
+Both pieces own this shared face and retain the exact reserves $577/2880$
+and $143/4096$, respectively.
+The lower face $\rho=7/8$ is included, the limiting face $\rho=1$ is open,
+$K=0$ gives equality, and the proof comparison is strict for $K>0$ before
+the final non-strict theorem statement.
+
+The compact four-zone integration leaves possible residuals only below
+$64$ on $[\rho_*,1/16]$, below
+$K_0(\rho)\le K_0(5/6)<87025$ on $[1/16,5/6]$, below
+$54/(1-\rho)^2\le3456$ on $[5/6,7/8]$, and nowhere on
+$[7/8,1)$ because the endpoint theorem is all-frequency.
 
 The exact strict count is
 independently interval-certified
@@ -52,31 +72,22 @@ $$
 \frac{67}{10}\le K\le\frac{168}{25}.
 $$
 
-The all-frequency shell theorem is not yet proved. Its active blocker is
-exact coverage of the true nonrectangular compact residual $\mathcal D_{15}$
-below the seven-zone analytic cover, followed by a theorem-level audit. The
-complete all-frequency endpoint remains exactly
-$99/100\le\rho<1$; Round 15 does not enlarge it. The parent certification
-obligation remains `diagnostic_only`, and any expansion is restricted to
-bounded, face-connected extensions of the existing certified pilot.
-
-The primary unproved Round 16 planning target is an all-frequency endpoint
-theorem on $7/8\le\rho<1$. The proposed proof splits at
+The all-frequency shell theorem is not yet proved. Its sole shell blocker is
+exact coverage of the true nonrectangular residual
 
 $$
-a=\varepsilon K=\frac{\pi}{4\varepsilon}
+\mathcal D_{16}
+=\bigl(I_{16}\times[0,\infty)\bigr)\setminus\mathcal A_{16}.
 $$
 
-between a product low piece and a complementary-action high piece, with
-candidate exact reserves $577/2880$ and $143/4096$. These reserves and the
-endpoint extension are planning evidence only. If independently proved and
-audited, this endpoint would leave the central threshold
-$K_0(5/6)<295^2=87025$ dominant, conditionally lowering the all-ratio ceiling
-to $295^2$ by the exact factor
+This set is not the rectangle $I_{16}\times[0,87025)$. The parent
+certification obligation remains `diagnostic_only`; the Round 8 certified
+pilot is unchanged and local, and any expansion must remain bounded and
+face-connected.
 
-$$
-\frac{200000}{295^2}=\frac{8000}{3481}>2.
-$$
+The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ are unproved.
+The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their
+tested proof routes, not the shell inequality or any accepted theorem.
 
 Round 15 also records two proof-route obstructions: the selected
 $\kappa=53$ localization proxy misses by $14293/15900000$, and the selected
@@ -659,9 +670,57 @@ certification, uniformity, and the final shell target remain open; replacing
 $\mathcal D_{15}$ by the rectangle $I_{15}\times[0,200000)$ would be an
 invalid enlargement of the certification target.
 
-Round 16 will test, but has not proved, the endpoint extension
+At the close of Round 15, the next round was to test the then-unproved
+endpoint extension
 $7/8\le\rho<1$ using a two-piece split at
 $a=\pi/(4\varepsilon)$. The candidate reserves are $577/2880$ and
 $143/4096$. If the endpoint theorem passes independent reconstruction and
 audit, the conditional global ceiling is $295^2$, an exact improvement
 factor $8000/3481$ over $200000$.
+
+## Round 16 Update
+
+Date: 2026-07-14
+
+See `rounds/polya-main/round_016/judge/judge-016.md`.
+
+Round 16 proves the complete thin endpoint
+
+$$
+\boxed{
+\frac78\le\rho<1,
+\qquad K\ge0.
+}
+$$
+
+With $\varepsilon=1-\rho$ and $a=\varepsilon K$, the proof joins a product
+low piece to a complementary-action high piece at
+$a=\pi/(4\varepsilon)$, with both pieces owning the shared face. The exact
+reserves are $577/2880$ and $143/4096$.
+The lower face $\rho=7/8$ is included, $\rho=1$ remains open, $K=0$ is an
+equality case, and the proof comparison is strict for $K>0$ before the final
+non-strict theorem statement.
+
+On $I_{16}=[\rho_*,7/8]$, the four-zone analytic union has residual ceilings
+below $64$ on $[\rho_*,1/16]$, below
+$K_0(\rho)\le K_0(5/6)<295^2$ on $[1/16,5/6]$, below
+$54/(1-\rho)^2\le3456$ on $[5/6,7/8]$, and no residual on
+$[7/8,1)$. Consequently
+
+$$
+\boxed{
+0<\rho<1,
+\qquad K\ge295^2=87025
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+Threshold equality is included, and the exact reduction from the Round 15
+ceiling is $200000/295^2=8000/3481>2$. The sole remaining shell blocker is
+the true nonrectangular set
+$\mathcal D_{16}=(I_{16}\times[0,\infty))\setminus\mathcal A_{16}$, not the
+rectangle $I_{16}\times[0,87025)$. `COMP-certified-bessel` remains
+`diagnostic_only`, and the Round 8 certified pilot remains unchanged and
+local.

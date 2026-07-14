@@ -4,48 +4,40 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Compress the proved analytic envelope on the explicit compact interval
-  $I_{15}=[\rho_*,99/100]$, where
+- Close the true nonrectangular compact residual on
+  $I_{16}=[\rho_*,7/8]$, where
 
   $$
   \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-  The Round 15 enlarged seam reduces the uniform analytic threshold to
-  $K\ge200000$, an exact factor $121/80>1$ below the Round 14 ceiling.
-  Exact coverage of the remaining compact residual below this threshold
-  still requires further analytic or symbolic compression; direct global
-  enumeration remains too coarse.
-
-- First target an independently proved all-frequency endpoint extension on
+  The four accepted zones prove all frequencies on $[7/8,1)$ and leave
+  possible residuals only below $64$ on $[\rho_*,1/16]$, below
+  $K_0(\rho)\le K_0(5/6)<87025$ on $[1/16,5/6]$, and below
+  $54/(1-\rho)^2\le3456$ on $[5/6,7/8]$. Thus the exact remaining set is
 
   $$
-  \frac78\le\rho<1,
-  \qquad K\ge0.
+  \mathcal D_{16}
+  =\bigl(I_{16}\times[0,\infty)\bigr)\setminus\mathcal A_{16},
   $$
 
-  The unproved Round 16 route splits at
-  $a=\varepsilon K=\pi/(4\varepsilon)$ into a product low piece and a
-  complementary-action high piece. Its candidate reserves are $577/2880$
-  and $143/4096$. If both pieces and their common face pass isolated
-  reconstruction and adversarial audit, the conditional all-ratio ceiling
-  becomes $295^2=87025$, with exact improvement factor
-  $200000/295^2=8000/3481>2$. None of these Round 16 claims is promoted.
+  and it is not the rectangle $I_{16}\times[0,87025)$. Closing
+  $\mathcal D_{16}$ is the sole shell blocker. Prefer analytic or symbolic
+  compression; any certified extension must be bounded and face-connected,
+  with rigorous truncation, provenance hashes, and independent cover
+  checking.
 
-- Extend the certified central pilot into an exact face-connected cover of
-  the true residual set
+- The Round 8 central certified pilot remains unchanged and local.
+  `COMP-certified-bessel` remains `diagnostic_only`; it does not certify
+  $\mathcal D_{16}$.
 
-  $$
-  \mathcal D_{15}=(I_{15}\times[0,\infty))\setminus\mathcal A_{15},
-  $$
+- The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain
+  unproved. The negative screens at $\rho=17/20$ and $\rho=5/6$ are
+  obstructions only to the tested extension routes, not counterexamples to
+  the shell theorem and not new shell blockers.
 
-  below the seven-zone analytic cover, not of the larger rectangle
-  $I_{15}\times[0,200000)$. Every box needs an analytic or certified face
-  owner, rigorous angular/radial truncation, provenance hashes, and
-  independent cover checking. Neither endpoint neighborhood requires
-  certification.
-- After the compact piece closes, perform a fresh theorem-level
+- After $\mathcal D_{16}$ closes, perform a fresh theorem-level
   clean-room reconstruction and adversarial audit before promoting the global
   shell theorem.
 
@@ -106,27 +98,34 @@ The authoritative statuses are in state/proof_obligations.yml.
   $K_0(5/6)<295^2=87025$. The selected $\kappa=53$ localization proxy
   misses by $14293/15900000$, while the selected $Y=294$ central proxy is
   $-307/175$; these are route obstructions only.
-- The complete thin-shell endpoint
+- The historical Round 11 thin-shell endpoint
   $99/100\le\rho<1$ for every $K\ge0$, obtained by joining the accepted
   product and aggregate ranges to the complementary-action bridge at the
   inclusive face $a=1/(8\varepsilon^{3/2})$.
+- The stronger Round 16 complete thin-shell endpoint
+  $7/8\le\rho<1$ for every $K\ge0$. With $a=\varepsilon K$, the product
+  low piece and complementary-action high piece both own their shared face
+  $a=\pi/(4\varepsilon)$ and retain exact reserves $577/2880$ and
+  $143/4096$. The face $\rho=7/8$ is included, $\rho=1$ is open, $K=0$
+  gives equality, and the proof comparison is strict for $K>0$ before the
+  final non-strict theorem statement.
 - The small-hole low-interface shifted-tail theorem for
   $0<\rho<\omega_0$ and
   $K(\omega_0-\rho)\ge C_*$.
 - The complete small-hole endpoint
   $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
   $\rho K=1/2$. The apparent finite small-hole residual is empty.
-- The piecewise compact-ratio analytic envelope and the uniform theorem
-  $K\ge200000$ on $I_{15}=[\rho_*,99/100]$. The seven residual ceilings are
-  below $64$ on $[\rho_*,1/16]$, below
-  $K_0(\rho)\le K_0(5/6)<295^2=87025$ on $[1/16,5/6]$, below $3456$ on
-  $[5/6,7/8]$, below $3200$ on $[7/8,9/10]$, below $9600$ on
-  $[9/10,19/20]$, below $15000$ on $[19/20,24/25]$, and below $200000$ on
-  $[24/25,99/100]$, with exact threshold and switch faces.
+- The Round 16 four-zone compact-ratio analytic envelope and uniform theorem
+  $K\ge295^2=87025$ on $I_{16}=[\rho_*,7/8]$, including equality. The
+  residual ceilings are below $64$ on $[\rho_*,1/16]$, below
+  $K_0(\rho)\le K_0(5/6)<87025$ on $[1/16,5/6]$, below
+  $54/(1-\rho)^2\le3456$ on $[5/6,7/8]$, and empty on $[7/8,1)$ because
+  the endpoint theorem holds at every frequency.
 - The global analytic high-frequency shell theorem for
-  $0<\rho<1$ and $K\ge200000$, obtained by combining the compact envelope
-  with the two complete endpoint theorems. The exact reduction factor from
-  the Round 14 ceiling is $121/80>1$.
+  $0<\rho<1$ and $K\ge295^2=87025$, including equality, obtained by
+  combining the compact envelope with the two complete endpoint theorems.
+  The exact reduction factor from the Round 15 ceiling is
+  $200000/295^2=8000/3481>2$.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -157,9 +156,10 @@ The authoritative statuses are in state/proof_obligations.yml.
 - Literal wall-by-wall certification of the Round 8 coarse compact envelope
   was not a scalable route. At $\varepsilon=2^{-17}$, one former thin
   residual slice crossed more than $2^{38}$ angular half-integer walls.
-  Rounds 9--15 lower the all-ratio ceiling to $200000$, while the remaining
-  compact residual still requires monotone-corner, symbolic, or analytic
-  aggregation.
+  By the close of Round 15 the all-ratio ceiling had fallen to $200000$;
+  Round 16 supersedes that historical boundary with $295^2=87025$ and the
+  smaller residual $\mathcal D_{16}$. Its closure still requires
+  monotone-corner, symbolic, or analytic aggregation.
 
 ## Parallel-track gaps
 

@@ -644,59 +644,117 @@ $0<\varepsilon\le1/25$. The failed $\kappa=53$ localization proxy and the
 failed $Y=294$ central proxy are obstructions to those particular comparison
 routes, not counterexamples to any stronger theorem.
 
-## Complete thin-shell endpoint
+## Complete thin-shell endpoint (Round 16)
 
-Let
+Write
 
 $$
 \rho=1-\varepsilon,
 \qquad
-0<\varepsilon\le\frac1{100},
+0<\varepsilon\le\frac18,
 \qquad
 a=\varepsilon K.
 $$
 
-The accepted product and aggregate theorems cover the closed low union
+Round 16 proves this endpoint by two independent inclusive pieces. On the
+low piece
 
 $$
-0\le a\le\frac1{8\varepsilon^{3/2}}.
+0\le a\le\frac{\pi}{4\varepsilon},
 $$
 
-Round 11 proves the complementary range directly from the exact action. If
-$F=R^2$ is the square of the decreasing inverse action and $g=-F'$, then
-$g$ decreases to the ungridded inner-interface time and increases after it.
-Shifted-sawtooth Stieltjes integration gives the radial deficit
+the radial form comparison has the correct upper-count direction. Strict
+radial counting gives
 
 $$
-D>
-\frac{a^2}{4}
--\frac{17}{8}\varepsilon^{2/3}a^{4/3}
--\frac{11}{14}a.
+N=\max\left\{0,\left\lceil\frac a\pi\right\rceil-1\right\}.
 $$
 
-After the exact half-integer angular ceiling, the normalized reserve is
-$61/1400>0$. An isolated clean-room proof uses the primitive $W$ of the
-uncentered shifted sawtooth instead and obtains
+The comparison count is zero for $0\le a\le\pi$, including the wall
+$a=\pi$. For $a>\pi$, write $a/\pi=N+t$ with $N\ge1$ and $0<t\le1$,
+using $(N,t)=(m-1,1)$ at the strict radial wall $a=m\pi$. The exact product
+deficit is
 
 $$
-D\ge\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4},
+\frac{D(a)}{\pi^2}
+=\frac{N^2}{2}+N\left(t^2+\frac16\right)+\frac{2t^3}{3},
 $$
 
-with independent normalized margin
-$4119252993/17500000000>0$. Thus, including the common face,
+and the complete-square argument proves
 
 $$
-a\ge\frac1{8\varepsilon^{3/2}}
-\quad\Longrightarrow\quad
-N_D(A_{\rho,1},K^2)
-<\frac{2}{9\pi}(1-\rho^3)K^3.
+D(a)>\frac25a^2.
 $$
 
-The two closed ranges cover every $a\ge0$. Hence
+The cubic remainder has exact minimum $-8/375$, and the $N=1$ lower screen
+is $32/375>0$. The complete angular-ceiling and quarter-disk cost is at
+most
+
+$$
+\left(\frac16+\frac\varepsilon4+\frac{\varepsilon^2}{9}\right)a^2.
+$$
+
+At the closed ratio face, the exact remaining reserve is
+
+$$
+\frac25-\left(\frac16+\frac1{32}+\frac1{576}\right)
+=\frac{577}{2880}>0.
+$$
+
+Thus the low comparison is strict for $a>0$ and includes the optical face
+$a=\pi/(4\varepsilon)$.
+
+On the high piece
+
+$$
+a\ge\frac{\pi}{4\varepsilon},
+$$
+
+let $R:[0,T]\to[0,a]$ be the decreasing inverse of the exact piecewise
+shell action, and set $F=R^2$ and $g=-F'$. The curvature audit proves that
+$g$ decreases before and increases after the actual ungridded interface
+$\tau$. The improper trace at $t=0$, the terminal trace, and the interface
+values are included. Exact shifted-sawtooth Stieltjes integration gives
+
+$$
+D_{\rm rad}
+\ge\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4},
+$$
+
+while strict half-integer angular counting gives the complete error
+
+$$
+E=\left(\frac a\pi+\frac14\right)
+\left(\varepsilon a+\frac{\varepsilon^2}{4}\right).
+$$
+
+The lower screen decreases and the upper screen increases throughout
+$0<\varepsilon\le1/8$. At the closed endpoint,
+
+$$
+\frac{D_{\rm rad}}{a^2}\ge\frac{21}{256},
+\qquad
+\frac{E}{a^2}<\frac{193}{4096},
+$$
+
+so the exact high-piece reserve is
+
+$$
+D_{\rm rad}-E>\frac{143}{4096}a^2>0.
+$$
+
+This closes the full strict comparison $P_{\mathcal A}<I$ and the permitted
+phase transfer. It is not merely an endpoint calculation. The high piece
+also includes $a=\pi/(4\varepsilon)$, so both pieces own their common face.
+At the corner $(\varepsilon,a)=(1/8,2\pi)$ this is simultaneously the
+strict radial wall with $(N,t)=(1,1)$.
+
+The two closed pieces cover every $a\ge0$. At $K=0$ both sides vanish; for
+$K>0$ the product or phase-proxy comparison is strict. Therefore
 
 $$
 \boxed{
-\frac{99}{100}\le\rho<1,
+\frac78\le\rho<1,
 \quad K\ge0
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
@@ -704,13 +762,39 @@ N_D(A_{\rho,1},K^2)
 }
 $$
 
-This endpoint theorem is analytic and requires no Bessel-root certificate.
-The Round 9 optimized plateau and the Round 10, Round 12, Round 13, and
-Round 14 seam theorems remain valid standalone results, but none is needed
-for this endpoint closure.
-The direct proof, clean-room reconstruction, adversarial audit, and exact
-ledger are recorded in `rounds/polya-main/round_011/` and
-`computations/round11_verify_ultrathin_bridge.py`.
+Every radial, product-angular, action-radial, half-integer, phase-proxy, and
+sawtooth wall is owned with the strict convention. The proof uses no
+domain-sensitive conclusion from the Round 5 product theorem, Round 6
+aggregate theorem, or Round 11 endpoint. The frozen proof, isolated
+reconstruction, adversarial audit, and exact ledger are recorded in
+`rounds/polya-main/round_016/` and
+`computations/round16_verify_endpoint.py`.
+
+### Retained Round 11 endpoint (historical)
+
+The earlier accepted endpoint $99/100\le\rho<1$ remains a valid standalone
+theorem. Its low union covered
+$0\le a\le1/(8\varepsilon^{3/2})$ by the product and aggregate arguments.
+On the complementary range, its direct action proof obtained
+
+$$
+D>
+\frac{a^2}{4}
+-\frac{17}{8}\varepsilon^{2/3}a^{4/3}
+-\frac{11}{14}a
+$$
+
+with normalized reserve $61/1400>0$, while its isolated reconstruction
+proved
+
+$$
+D\ge\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4}
+$$
+
+with margin $4119252993/17500000000>0$. Those accepted arguments and their
+ledger remain in `rounds/polya-main/round_011/` and
+`computations/round11_verify_ultrathin_bridge.py`; the stronger Round 16
+endpoint is now operative.
 
 ## Complete small-hole endpoint
 
@@ -773,10 +857,10 @@ certification are unnecessary.
 On the remaining ratio interval
 
 $$
-I_{15}=\left[\rho_*,\frac{99}{100}\right],
+I_{16}=\left[\rho_*,\frac78\right],
 $$
 
-use seven exact finite zones.
+use four exact zones.
 
 For $\rho_*\le\rho\le1/16$, the high-angular theorem proves the target for
 $K\le1/(2\rho)$ and the small-hole low-interface theorem proves it for
@@ -814,25 +898,25 @@ $$
 K_0(5/6)<295^2=87025.
 $$
 
-Write $\varepsilon=1-\rho$. The accepted seam theorems and retained sharper
-thresholds give the seven residual bounds
+Write $\varepsilon=1-\rho$. The accepted theorems give the four-zone
+envelope
 
-1. on $[\rho_*,1/16]$, $K<64$;
-2. on $[1/16,5/6]$, $K<K_0(\rho)\le K_0(5/6)<87025$;
-3. on $[5/6,7/8]$, $K<54/\varepsilon^2\le3456$;
-4. on $[7/8,9/10]$, $K<32/\varepsilon^2\le3200$;
-5. on $[9/10,19/20]$, $K<24/\varepsilon^2\le9600$;
-6. on $[19/20,24/25]$, $K<24/\varepsilon^2\le15000$;
-7. on $[24/25,99/100]$, $K<20/\varepsilon^2\le200000$.
+1. on $[\rho_*,1/16]$, a residual point can occur only for $K<64$;
+2. on $[1/16,5/6]$, a residual point can occur only for
+   $K<K_0(\rho)\le K_0(5/6)<295^2=87025$;
+3. on $[5/6,7/8]$, a residual point can occur only for
+   $K<54/\varepsilon^2\le3456$;
+4. on $[7/8,1)$, the complete Round 16 endpoint covers every $K\ge0$.
 
-The complete thin endpoint owns $[99/100,1)$ for every $K$, including the
-shared face $\rho=99/100$. Every other shared ratio and threshold face is
-owned by one of the adjacent accepted theorems. Since every finite-zone
-ceiling is at most $200000$, the compact conclusion is
+The complete thin endpoint owns the shared face $\rho=7/8$. Every other
+shared ratio and threshold face is owned by one of the adjacent accepted
+theorems. In particular, the residual inequalities are strict, so the faces
+$K=64$, $K=K_0(5/6)$, $K=3456$, and $K=295^2$ are covered. The compact
+conclusion is
 
 $$
 \boxed{
-\rho\in I_{15},\quad K\ge200000
+\rho\in I_{16},\quad K\ge295^2=87025
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
@@ -844,30 +928,25 @@ theorems yields the global analytic high-frequency result
 
 $$
 \boxed{
-0<\rho<1,\quad K\ge200000
+0<\rho<1,\quad K\ge295^2=87025
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-Relative to the Round 14 ceiling, the exact reduction factor is
+Let $\mathcal A_{16}$ denote the complete accepted analytic cover, including
+every theorem domain and owned threshold face in the four-zone union. The
+actual unresolved set is
 
 $$
-\frac{550^2}{200000}=\frac{121}{80}>1.
+\mathcal D_{16}
+=(I_{16}\times[0,\infty))\setminus\mathcal A_{16}.
 $$
 
-The closed union of the seven displayed gap envelopes is only a planning
-set $\mathcal E$. The actual certificate target is
-
-$$
-\mathcal D_{15}=(I_{15}\times[0,\infty))\setminus\mathcal A,
-$$
-
-where $\mathcal A$ contains every analytically covered point and threshold
-face. In particular, $\mathcal D_{15}$ lies below the seven-zone analytic
-cover but must not be replaced by the full rectangle
-$I_{15}\times[0,200000)$.
+This is an exact, nonrectangular complement of the accepted cover. It lies
+below the displayed piecewise envelope, but it is not the rectangle
+$I_{16}\times[0,87025)$ and must never be replaced by that rectangle.
 
 ## First certified residual box
 
@@ -897,29 +976,21 @@ $$
 >18.6073155354,
 $$
 
-so the certified margin exceeds $14.6073155354$. This is one local box, not
-a cover of $\mathcal D_{15}$.
+so the certified margin exceeds $14.6073155354$. This is the retained Round 8
+pilot box only. It is not a cover of $\mathcal D_{16}$, does not promote
+sampled numerics to proof, and does not make `COMP-certified-bessel` more
+than `diagnostic_only`.
 
 ## Remaining gates
 
 This file must not be cited as a proof of the full shell theorem. The open
 gates are:
 
-- analytic or symbolic compression of the current compact planning envelope,
-  followed, where necessary, by an exact face-connected certificate of every
-  point of the nonrectangular residual $\mathcal D_{15}$ below the accepted
-  analytic cover;
-- an independent derivation of the proposed larger all-frequency thin
-  endpoint
-
-  $$
-  \frac78\le\rho<1,
-  \qquad K\ge0.
-  $$
-
-  This is only the unproved Round 16 target. The proposed two-piece split at
-  $a=\pi/(4\varepsilon)$, its planning reserves $577/2880$ and $143/4096$,
-  and the prospective ceiling $K\ge295^2$ are not current theorems and must
-  not be inserted into the accepted analytic cover;
+- analytic or symbolic closure of the exact nonrectangular residual
+  $\mathcal D_{16}$, followed only where necessary by rigorous,
+  face-connected certification inside that same residual;
+- preservation of the exact accepted mask $\mathcal A_{16}$ and every owned
+  face; a coarse envelope or rectangle is not an admissible substitute;
 - a fresh final theorem-level clean-room reconstruction and adversarial
-  review after the compact residual is closed.
+  review after the compact residual is closed. Agent consensus is not a
+  proof, and finite ledgers certify only the arithmetic they execute.
