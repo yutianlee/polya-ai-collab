@@ -28,8 +28,16 @@ The following nearby primary results must not be conflated with that claim.
    all-frequency Pólya inequality targeted here.
    Primary records: <https://arxiv.org/abs/2412.14059> and
    <https://doi.org/10.1016/j.aim.2025.110715>.
+4. Freitas--Salavessa construct other non-tiling Pólya classes in arbitrary
+   dimensions, including sufficiently thin sectors/cylinders and sectors of
+   shells under their partition argument.  This rules out any claim that a
+   three-dimensional shell would be the first non-tiling example in its
+   dimension, but it does not state the exact theorem for the complete
+   rotationally invariant shell \(A_{r,R}^{(3)}\).
+   Primary records: <https://arxiv.org/abs/2204.08902> and
+   <https://doi.org/10.1063/5.0161050>.
 
-Accordingly, these three sources do not themselves subsume a proved Round 21
+Accordingly, these four sources do not themselves subsume a proved Round 21
 three-dimensional shell theorem.  This limited search found no primary paper
 whose stated result is the exact Dirichlet Pólya inequality for every
 three-dimensional spherical shell and every spectral parameter.
