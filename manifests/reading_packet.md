@@ -1,310 +1,168 @@
 # Reading Packet
 
-Generated after Round 18 for the canonical Round 19 workflow in run
-polya-main.
+Run: `polya-main`
 
-## Current theorem target
+Current round: 20
 
-The active theorem target is the strict-counting Dirichlet Pólya inequality
-for three-dimensional spherical shells
+## Authoritative state
 
-$$
-A_{\rho,1}=\{x\in\mathbb R^3:\rho<|x|<1\},
-\qquad 0<\rho<1,
-$$
+Read `state/proof_obligations.yml` first. Its SHA-256 is
+`ece14c8af98556a15069e01a2d1cf2c12c155ea4e547457e3572a10643ace187`.
+Round 19 is applied. The live analytic cover is $\mathcal A_{19}$ and the
+live residual is $\mathcal D_{19}$. Every $\mathcal D_{18}$ reference in
+older artifacts is historical.
 
-namely
+The all-frequency shell theorem remains open. The statuses
+`SHELL-rho-compact`, `SHELL-rho-uniformity`,
+`TARGET-shell-d3`, and `POLYA-program-target` are `open`;
+`COMP-certified-bessel` is `diagnostic_only`.
 
-$$
-N_D(A_{\rho,1},K^2)
-\leq\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(K\geq0).
-$$
+## Accepted Round 19 result
 
-The full theorem has **not** been proved.
-
-## Accepted coverage through Round 18
-
-The following regions remain analytically proved:
-
-- the complete small-hole endpoint \(0<\rho\leq\rho_*\), all \(K\geq0\);
-- the complete thin-shell endpoint \(7/8\leq\rho<1\), all \(K\geq0\);
-- all ratios \(0<\rho<1\) for \(K\geq295^2=87025\);
-- the closed Round 18 angular staircase
+Define
 
 $$
-\rho_c\leq\rho\leq\frac78,
-\qquad
-z_\rho\leq K\leq k_5(\rho),
+\rho_c=\frac1{1+2\pi},\qquad
+\rho_0=\frac1{\sqrt{337}},\qquad
+z_\rho=\frac{\pi}{1-\rho},\qquad
+L(\rho)=\frac1{2\rho},
 $$
 
-where
-
 $$
-\rho_c=\frac1{1+2\pi},
-\qquad
-z_\rho=\frac{\pi}{1-\rho},
-\qquad
-k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)},\qquad
+d=\frac{\sqrt{337}}2.
 $$
 
-The genuinely new Round 18 region is
+The accepted two-sided staircase proves
 
 $$
-\mathcal C_{18}
-=\left\{(\rho,K):
-\rho_c\leq\rho<\frac78,
-\quad k_2(\rho)<K\leq k_5(\rho)
-\right\}.
+\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_6(\rho),
 $$
 
-Round 18 passed an isolated clean-room reconstruction, independent exact
-constant audit, cross-comparison, qualified source audit, and fresh
-adversarial referee.
-
-## Exact uncovered set
-
-Retain the accepted compact-ratio upper floor
+and
 
 $$
-U(\rho)=
-\min\left(
-\{K_0(\rho)\}
-\cup\{H_0(\rho):\rho<\omega_0\}
-\cup\left\{\frac{54}{(1-\rho)^2}:\rho\geq\frac56\right\}
-\right),
+\rho_0<\rho<\rho_c,\qquad L(\rho)<K\le d.
 $$
 
-where
+The only new external payload is the audited strict specialization
+$j_{11/2,1}>17/2$ and the positive spherical/ordinary identification. The
+bounds $j_{3/2,2}>77/10$ and $j_{5/2,2}>9$, fixed-channel shell-to-ball
+min--max, ball angular shifts, inventories, multiplicities, and Weyl
+payments are internal.
+
+The genuinely new set is
 
 $$
-H_0(\rho)=\frac{C_*}{\omega_0-\rho},
-\qquad
-\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
-\qquad
-C_*=\frac12+\frac{8\sqrt2}{15},
-\qquad
-\rho_*=\frac{\omega_0}{1+2C_*}.
+\mathcal C_{19}
+=\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}
+\cup
+\{\rho_c\le\rho<7/8,\ k_5(\rho)<K\le k_6(\rho)\}.
 $$
 
-The theorem-wise uncovered set is exactly
+## Exact current residual
 
 $$
-\boxed{
-\begin{aligned}
-\mathcal D_{18}
-={}&\left\{(\rho,K):
-\rho_*<\rho<\rho_c,
-\quad \frac1{2\rho}<K<U(\rho)
-\right\}\\
-&\cup
-\left\{(\rho,K):
-\rho_c\leq\rho<\frac78,
-\quad k_5(\rho)<K<U(\rho)
-\right\}.
-\end{aligned}
-}
+\boxed{\begin{aligned}
+\mathcal D_{19}={}&
+\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}\\
+&\cup\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K<U(\rho)\}.
+\end{aligned}}
 $$
 
-Every displayed frequency inequality is strict. At \(\rho=\rho_c\), use
-the second component. The \(K=k_5\) face has the Round 18 analytic owner;
-the \(K=U\) and endpoint faces retain their older owners.
+At $\rho=\rho_0$, $L=d$ and the candidate fiber is empty. The faces $K=d$
+and $K=k_6$ are covered; $K=U$, $\rho=\rho_*$, and $\rho=7/8$ retain
+their inherited owners, and $\rho=\rho_c$ belongs to the high component.
+The boxes $B_0,B_1$ remain regression evidence and are not subtracted
+again.
 
-The exact witness \((1/2,30)\in\mathcal D_{18}\) proves that the residual is
-nonempty. The certified boxes \(B_0\) and \(B_1\) remain independent
-regression evidence inside \(\mathcal C_{17}\); neither is subtracted again.
-
-## Round 19 primary route
-
-Round 19 must freeze and hash the exact \(\mathcal D_{18}\) mask before
-proof work.
-
-On the high-ratio component, the lead route is a **combined
-radial-entry/angular staircase** above \(k_5\). It must explicitly account
-for:
-
-- the first \(\ell=5\) channel allowed above \(k_5\);
-- the exact \(\ell=0,n=2\) radial wall \(K=2z_\rho\);
-- the next angular wall \(K=k_6(\rho)\);
-- the relative order, equality, and one-sided traces of \(2z_\rho\) and
-  \(k_6(\rho)\);
-- all later entries and multiplicities needed by the claimed domain.
-
-The accepted Round 18 audit gives only
+The residual is nonempty:
 
 $$
-k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c).
+k_6(1/2)<10<30<64<K_0(1/2)=U(1/2).
 $$
 
-It grants no global crossing threshold. Round 19 must derive any ratio
-split before using it. A crude one-radial-mode count may not be continued
-above \(2z_\rho\).
+## Mandatory Round 19 artifacts
 
-The lower-ratio component
+Read these before beginning Round 20:
 
-$$
-\rho_*<\rho<\rho_c,
-\qquad
-\frac1{2\rho}<K<U(\rho)
-$$
+### State and decision
 
-is a separate proof problem. It cannot inherit the Round 18 staircase by
-continuity or notation.
+- `state/current_state.md`
+- `state/best_proof_draft.md`
+- `state/lemma_bank.md`
+- `state/gap_register.md`
+- `state/next_round_prompts.md`
+- `state/last_validation_report.md`
+- `rounds/polya-main/round_019/judge/judge-019.md`
+- `rounds/polya-main/round_019/reviews/state-patch-final-audit.md`
 
-If complete closure is not reached, only an exact proved subset of
-\(\mathcal D_{18}\) may be promoted, followed by exact subtraction with
-all faces assigned. No unproved Round 19 threshold is part of the accepted
-state.
+### Exact residual and proof-free freezes
 
-## Round 19 secondary route
+- `state/lemma_packets/SHELL-rho-compact-round19.md`
+- `rounds/polya-main/round_019/exploration/residual-mask-freeze.md`
+- `computations/round19_residual_mask.py`
+- `computations/tests/test_round19_residual_mask.py`
+- `rounds/polya-main/round_019/reviews/residual-mask-independent-audit.md`
+- `state/lemma_packets/SHELL-two-sided-staircase-round19-claim.md`
+- `rounds/polya-main/round_019/exploration/candidate-claim-freeze.md`
 
-After the residual freeze, A4 may attempt at most one predeclared,
-face-connected certified subset proved genuinely inside
-\(\mathcal D_{18}\). No adaptive second region or disconnected tiling is
-allowed.
+### Source, proofs, and reviews
 
-One certificate is local evidence only. It does not prove a curved band,
-close a residual component, or promote COMP-certified-bessel beyond
-diagnostic_only.
+- `sources/round19_bessel_zero_bounds.md`
+- `rounds/polya-main/round_019/exploration/new-zero-dependency-audit.md`
+- `rounds/polya-main/round_019/responses/high-ratio-k6-incumbent.md`
+- `rounds/polya-main/round_019/exploration/lower-ratio-route.md`
+- `rounds/polya-main/round_019/reviews/two-sided-staircase-clean-room.md`
+- `computations/round19_verify_two_sided_staircase.py`
+- `computations/tests/test_round19_verify_two_sided_staircase.py`
+- `rounds/polya-main/round_019/reviews/two-sided-staircase-constants.md`
+- `rounds/polya-main/round_019/reviews/two-sided-staircase-cross-comparison.md`
+- `rounds/polya-main/round_019/reviews/two-sided-staircase-adversarial-referee.md`
 
-## Mandatory independence gates
+## Reproduced validation
 
-Use state/next_round_prompts.md as the canonical role specification.
-The required order is:
+The accepted final bytes passed:
 
-1. A1 freezes the exact \(\mathcal D_{18}\) classifier and hash manifest.
-2. A2 develops the incumbent analytic candidate.
-3. A1 freezes a proof-free candidate claim with exact dependencies,
-   constants, faces, and falsification cases.
-4. A3 reconstructs that claim in strict isolation without the incumbent.
-5. A4 independently reproduces finite constants and exact set arithmetic,
-   and separately handles the optional bounded certificate if one was
-   predeclared.
-6. Only then may A1 cross-compare the independent outputs.
-7. A fresh referee, involved in neither proof, performs an adversarial
-   reconstruction.
-8. The judge validates and applies one State Patch exactly once.
+- 13 exact residual checks;
+- 245 exact staircase checks;
+- 37 residual-focused tests;
+- 24 staircase-focused tests;
+- 193 pre-application repository tests plus 10 subtests;
+- 195 current post-application tests plus 10 subtests, with one strict
+  expected xfail for the superseded live-path hash assertion and three
+  passing Git-baseline lifecycle checks;
+- compilation of 52 Python files;
+- graph validation and `git diff --check`.
 
-If exact residual closure is claimed, a separate fresh theorem-level
-clean-room proof and theorem-level adversarial audit are still required
-before TARGET-shell-d3 can close.
+## Canonical Round 20 order
 
-## Source boundary
+1. Freeze the exact three-piece $\mathcal D_{19}$ before any candidate.
+2. Independently audit the residual classifier and every strict face.
+3. Route the low, middle, and high components separately.
+4. Audit every new external zero input as a narrow source obligation.
+5. Synthesize and freeze one proof-free candidate with an exact proposed
+   subtraction.
+6. Run strictly isolated A3 reconstruction.
+7. Run independent A4 exact verification and focused tests.
+8. Cross-compare the incumbent, A3, A4, and source audit.
+9. Run a fresh adversarial referee who participated in neither development
+   nor A3.
+10. Only then draft, audit, validate, and apply a State Patch once.
 
-Round 18 added the qualified source obligation SRC-LORCH. The audited
-external content is limited to the first-positive-zero convention,
-\(\nu>-1\), and
-
-$$
-j_{5/2,1}>\frac{51}{10},
-\qquad
-j_{7/2,1}>\frac{13}{2},
-\qquad
-j_{9/2,1}>\frac{15}{2}.
-$$
-
-The full paper proof was access-controlled. Do not extrapolate this source
-card to new Bessel orders, shell cross-products, shell-to-ball comparison,
-radial exclusions, multiplicities, or Weyl payments. New external inputs
-require completed source cards.
-
-## Current graph targets
-
-Primary track: shell_analytic.
-
-Secondary track: certified_computation.
-
-Target obligations:
-
-- SHELL-rho-compact — open. Close exactly the two-piece
-  \(\mathcal D_{18}\), with a combined high-ratio staircase and a separate
-  lower-ratio proof.
-- COMP-certified-bessel — diagnostic_only. Retain \(B_0,B_1\) as
-  regression evidence; at most one new subset may be predeclared inside
-  \(\mathcal D_{18}\).
-
-Related statuses:
-
-- SHELL-next-angular-staircase — proved_internal;
-- SHELL-rho-compact-analytic-envelope — proved_internal;
-- SHELL-rho-uniformity — open;
-- TARGET-shell-d3 — open;
-- POLYA-program-target — open;
-- SRC-LORCH — proved_external_dependency;
-- COMP-certified-bessel-pilot-round8 — certified;
-- COMP-certified-bessel-pilot-round17 — certified.
-
-The graph has 53 unique obligations and validates acyclically. Its SHA-256
-after the canonical Round 19 selection update is
-24c2970516f503c765d0db280a360b37724c540e536016f9bf35fbaafb94132e.
-
-## Round 18 artifacts to read
-
-### State and accepted claims
-
-- state/proof_obligations.yml
-- state/current_state.md
-- state/last_validation_report.md
-- state/next_round_prompts.md
-- state/lemma_packets/SHELL-rho-compact-round18.md
-- state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md
-- state/lemma_packets/SHELL-first-angular-bands-round17-claim.md
-- state/lemma_packets/SHELL-sturm-liouville-completeness.md
-
-### Exact mask and proof-free freezes
-
-- rounds/polya-main/round_018/exploration/residual-mask-freeze.md
-- rounds/polya-main/round_018/exploration/candidate-claim-freeze.md
-- computations/round18_residual_mask.py
-- computations/tests/test_round18_residual_mask.py
-
-### Incumbent, independent reviews, and exact audit
-
-- rounds/polya-main/round_018/responses/angular-staircase-incumbent.md
-- rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md
-- rounds/polya-main/round_018/reviews/angular-staircase-constants.md
-- rounds/polya-main/round_018/reviews/angular-staircase-cross-comparison.md
-- rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md
-- computations/round18_verify_angular_staircase.py
-- computations/tests/test_round18_verify_angular_staircase.py
-
-### Source and promotion audit
-
-- sources/lorch_bessel_zeros.md
-- sources/flps_balls.md
-- rounds/polya-main/round_018/reviews/lorch-source-audit.md
-- rounds/polya-main/round_018/judge/judge-018.md
-- rounds/polya-main/round_018/reviews/state-patch-final-audit.md
-
-## Round 19 target outputs
-
-Round 19 should create, in order:
-
-- a frozen exact \(\mathcal D_{18}\) residual packet and classifier;
-- a proof-free candidate claim;
-- an incumbent combined radial/angular proof;
-- a strictly isolated A3 reconstruction;
-- an independent A4 constants and exact-subtraction audit;
-- an optional single-subset certification manifest only if predeclared;
-- a cross-comparison;
-- a fresh adversarial referee report;
-- a judge with a one-time validated State Patch.
-
-These are required output types, not assertions that any Round 19 threshold
-or theorem has already been proved.
+Current Round 20 small-hole shifted-tail, lower-staircase, and high-$k_8$
+notes are exploratory only. They may suggest routes after the residual
+freeze, but they are not accepted claims, proof-free freezes, independent
+reconstructions, or promotion evidence.
 
 ## Do-not-claim rules
 
-- Do not call the shell theorem proved while
-  \(\mathcal D_{18}\neq\varnothing\).
-- Do not replace \(\mathcal D_{18}\) with \(\mathcal D_{17}\), a rectangle,
-  a coarse envelope, or a grid.
-- Do not subtract \(B_0\) or \(B_1\) again.
-- Do not continue a one-radial-mode cap above \(2z_\rho\).
-- Do not assume a global ordering of \(2z_\rho\) and \(k_6(\rho)\).
-- Do not import the high-ratio staircase into
-  \(\rho_*<\rho<\rho_c\) without a new proof.
-- Do not treat a finite ledger, numerical root sample, interval calculation
-  on one subset, or agent consensus as an analytic proof.
-- Do not promote a candidate without the proof-free freeze, isolated A3
-  reconstruction, independent A4 audit, and fresh-referee gate.
+- Do not substitute historical $\mathcal D_{18}$, a rectangle, or a coarse
+  over-cover for the live $\mathcal D_{19}$.
+- Do not blur strict/inclusive ownership at $L,d,k_6,U$ or the ratio faces.
+- Do not attribute internal tangent, min--max, angular-shift, shell-zero,
+  multiplicity, or Weyl arguments to Lorch, DLMF, or FLPS.
+- Do not call sampled floating-point roots or plots certified.
+- Do not promote theorem-level targets while $\mathcal D_{19}$ is nonempty.
+- Do not treat agreement among agents as mathematical verification.

@@ -327,7 +327,7 @@ $$
   $k_5<26<64<K_0$ on the active $K_0$ branch and
   $k_5<26<1944\le54/(1-\rho)^2$ on the seam branch. Thus $k_5<U$;
 
-- the exact Round 18 subtraction. The genuinely new band is
+- the exact historical Round 18 subtraction. The genuinely new band was
 
 $$
 \mathcal C_{18}
@@ -354,6 +354,74 @@ $$
   $k_5(1/2)<26<30<64<K_0(1/2)=U(1/2)$, so
   $(1/2,30)\in\mathcal D_{18}$;
 
+- the qualified Round 19 source obligation
+  `SRC-ROUND19-BESSEL-ZEROS`. Its only new external numerical payload is
+
+$$
+j_{11/2,1}>\frac{17}{2},
+$$
+
+  with DLMF used only for the positive spherical/ordinary Bessel
+  identification. The exact specialization has reserve
+  $507^2\cdot77-4264^2=1611077>0$. The bounds
+  $j_{3/2,2}>77/10$ and $j_{5/2,2}>9$, fixed-channel zero extension,
+  shell-to-ball min--max, the ball angular-shift comparison, every shell
+  exclusion, multiplicity, and Weyl payment are internal. No shell
+  cross-product zero is imported;
+
+- the Round 19 two-sided staircase lemma. With
+
+$$
+\rho_0=\frac1{\sqrt{337}},\qquad
+d=\frac{\sqrt{337}}2,\qquad
+L(\rho)=\frac1{2\rho},
+$$
+
+  one has both
+
+$$
+\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_6(\rho),
+$$
+
+  and
+
+$$
+\rho_0<\rho<\rho_c,\qquad L(\rho)<K\le d,
+$$
+
+  as strict Pólya bands. The high inventory has caps
+  $4,9,16,25,26,29,36$; the lower inventory has caps
+  $1,4,9,10,16,17,26,29,40,45$. All fixed and moving walls, the exact
+  $(0,2)$ entry at $2z_\rho$, upper-floor containment, and full
+  multiplicities were reconstructed independently. The exact verifier
+  reproduced 245 checks;
+
+- the exact live Round 19 subtraction. The genuinely new set is
+
+$$
+\mathcal C_{19}
+=\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}
+\cup
+\{\rho_c\le\rho<7/8,\ k_5(\rho)<K\le k_6(\rho)\},
+$$
+
+  and
+
+$$
+\boxed{\begin{aligned}
+\mathcal D_{19}={}&
+\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}\\
+&\cup\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K<U(\rho)\}.
+\end{aligned}}
+$$
+
+  At $\rho=\rho_0$, $L=d$, so the inherited slice remains in the first
+  component. The faces $K=d$ and $K=k_6$ are included. The residual is
+  nonempty because
+  $k_6(1/2)<10<30<64<K_0(1/2)=U(1/2)$. Independent clean-room proof,
+  exact audit, cross-comparison, and fresh adversarial review all passed;
+
 - the independently checked certified pilot
 
 $$
@@ -379,27 +447,19 @@ $$
   margin. Both certified boxes lie inside $\mathcal C_{17}$, so they remain
   independent regression evidence but are analytically redundant.
 
-`SHELL-rho-compact` remains open. Round 18 reduces its exact residual to
-$\mathcal D_{18}$ above, which is the sole remaining shell blocker. The
-theorem-wise uncovered set is also exactly $\mathcal D_{18}$ because both
+`SHELL-rho-compact` remains open. Round 19 reduces its exact residual to
+$\mathcal D_{19}$ above, which is the sole remaining shell blocker. The
+theorem-wise uncovered set is also exactly $\mathcal D_{19}$ because both
 certified boxes were already contained in $\mathcal C_{17}$ and are not
 subtracted again. `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
 `POLYA-program-target` remain open as well.
 
 Any further certification must use an exact bounded, face-connected manifest
-inside $\mathcal D_{18}$, with analytic ownership of all faces. Further
-analytic or symbolic compression remains the primary route. Current work
-begins strictly above $k_5(\rho)$, not above $k_2(\rho)$. At the left ratio
-face,
-
-$$
-k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c),
-$$
-
-and the exact $\ell=0,n=2$ mode enters immediately above $2z_{\rho_c}$.
-The one-radial-mode cap therefore cannot simply continue to $k_6$; the next
-step needs a combined radial-entry/angular staircase and a separate attack on
-$\rho_*<\rho<\rho_c$. This is a method boundary, not a counterexample. The
+inside $\mathcal D_{19}$, with analytic ownership of all faces. Further
+analytic or symbolic compression remains the primary route. Round 20 must
+freeze the exact three-piece residual before any candidate is frozen. The
+existing small-hole shifted-tail, lower-staircase, and high-$k_8$ notes are
+prospective only and require independent reconstruction. The
 parent `COMP-certified-bessel` obligation remains `diagnostic_only`, and the
 final all-frequency theorem remains open.
 

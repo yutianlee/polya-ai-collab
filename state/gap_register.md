@@ -4,75 +4,68 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Close the exact Round 18 compact residual on
-  $I_{16}=[\rho_*,7/8]$, where
+- Close the exact live Round 19 compact residual. With
 
   $$
-  \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
-  {2+\frac{16\sqrt2}{15}}.
+  \rho_c=\frac1{1+2\pi},\qquad
+  \rho_0=\frac1{\sqrt{337}},\qquad
+  L(\rho)=\frac1{2\rho},\qquad
+  d=\frac{\sqrt{337}}2,
   $$
 
-  Define
-
   $$
-  \rho_c=\frac1{1+2\pi},
-  \qquad
-  z_\rho=\frac{\pi}{1-\rho},
-  \qquad
-  k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
+  z_\rho=\frac{\pi}{1-\rho},\qquad
+  k_m(\rho)=\sqrt{z_\rho^2+m(m+1)},
   $$
 
-  The promoted closed band
-  $\rho_c\le\rho\le7/8$, $z_\rho\le K\le k_5(\rho)$ removes exactly its
-  genuinely new Round 18 portion
-  $\mathcal C_{18}=\{\rho_c\le\rho<7/8,
-  k_2(\rho)<K\le k_5(\rho)\}$ from the prior residual. Hence
+  the exact uncovered set is
 
   $$
-  \mathcal D_{18}
-  =\mathcal D_{17}\setminus\mathcal C_{18}
-  =\left\{\rho_*<\rho<\rho_c,
-  \ \frac1{2\rho}<K<U(\rho)\right\}
-  \cup
-  \left\{\rho_c\le\rho<\frac78,
-  \ k_5(\rho)<K<U(\rho)\right\}.
+  \boxed{\begin{aligned}
+  \mathcal D_{19}={}&
+  \{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}\\
+  &\cup\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}\\
+  &\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K<U(\rho)\}.
+  \end{aligned}}
   $$
 
-  Here $U(\rho)$ is the exact frozen upper floor: $H_0(\rho)$ below
-  $\rho_{HK}$, $K_0(\rho)$ from $\rho_{HK}$ to $5/6$, and
-  $54/(1-\rho)^2$ from $5/6$ to $7/8$. The exact audit gives $k_5<U$.
-  The residual is nonempty because
-  $k_5(1/2)<26<30<64<K_0(1/2)=U(1/2)$, so
-  $(1/2,30)\in\mathcal D_{18}$. Closing $\mathcal D_{18}$ is the sole
-  shell blocker. It is not admissible to substitute $\mathcal D_{17}$, the
-  four-zone over-cover, or a rectangle. `SHELL-rho-compact`,
-  `SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target`
-  remain open.
+  At $\rho=\rho_0$, $L=d$, so the full inherited slice belongs to the
+  first component. The faces $K=d$ and $K=k_6$ are already covered;
+  $K=U$, $\rho=\rho_*$, and $\rho=7/8$ keep their inherited owners, and
+  $\rho=\rho_c$ belongs to the third component. It is not admissible to
+  substitute the historical $\mathcal D_{18}$, a coarse envelope, or a
+  rectangle.
 
-- The Round 8 box $B_0$ and its face-connected Round 17 extension
-  $B_1=[999/2000,1001/2000]\times[168/25,673/100]$ are independently
-  certified, with exact strict count $4$ on each. Both boxes lie inside
-  $\mathcal C_{17}$ and are therefore analytically redundant after
-  promotion. `COMP-certified-bessel` remains `diagnostic_only`; any future
-  certificate must be bounded, face-connected, and contained in the exact
-  $\mathcal D_{18}$, with rigorous truncation, provenance hashes, and an
-  independent checker.
+- The live residual is nonempty:
 
-- The current continuation starts strictly above $k_5(\rho)$, not above
-  $k_2(\rho)$. At the left ratio face,
-  $k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c)$, and the exact $\ell=0,n=2$ mode
-  enters immediately above $2z_{\rho_c}$. Thus the one-radial-mode cap used
-  through $k_5$ cannot simply be carried to $k_6$. The next construction
-  must combine radial-entry and angular walls, while the unchanged
-  $\rho_*<\rho<\rho_c$ component is treated separately. This is a method
-  boundary, not a counterexample.
+  $$
+  k_6(1/2)<10<30<64<K_0(1/2)=U(1/2),
+  $$
+
+  so $(1/2,30)\in\mathcal D_{19}$. Closing $\mathcal D_{19}$ is the sole
+  shell blocker. `SHELL-rho-compact`, `SHELL-rho-uniformity`,
+  `TARGET-shell-d3`, and `POLYA-program-target` remain `open`.
+
+- Round 20 must first freeze the exact three-piece $\mathcal D_{19}$ and
+  independently audit all strict frequency and ratio faces. Only then may
+  it freeze a proof-free candidate. The current small-hole shifted-tail,
+  lower-staircase, and high-$k_8$ exploration notes are prospective only:
+  none is promoted, and none may be used as an incumbent by the isolated
+  A3 reconstruction.
+
+- The Round 8 box $B_0$ and face-connected Round 17 box $B_1$ remain
+  independent regression evidence inside $\mathcal C_{17}$. They do not
+  subtract again from $\mathcal D_{19}$. `COMP-certified-bessel` remains
+  `diagnostic_only`; any future certificate must be bounded,
+  face-connected, contained in the exact live residual, and independently
+  checked with rigorous truncation and provenance hashes.
 
 - The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain
   unproved. The negative screens at $\rho=17/20$ and $\rho=5/6$ are
   obstructions only to the tested extension routes, not counterexamples to
   the shell theorem and not new shell blockers.
 
-- After $\mathcal D_{18}$ closes, perform a fresh theorem-level
+- After $\mathcal D_{19}$ closes, perform a fresh theorem-level
   clean-room reconstruction and adversarial audit before promoting the global
   shell theorem.
 
@@ -198,6 +191,25 @@ The authoritative statuses are in state/proof_obligations.yml.
   active fixed-ratio branch and $k_5<26<1944\le54/(1-\rho)^2$ on the seam
   branch. Isolated reconstruction, an exact constants audit, source audit,
   cross-comparison, and fresh adversarial review all passed.
+- The Round 19 two-sided staircase theorem
+
+  $$
+  \rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_6(\rho),
+  $$
+
+  together with
+
+  $$
+  \frac1{\sqrt{337}}<\rho<\rho_c,\qquad
+  \frac1{2\rho}<K\le\frac{\sqrt{337}}2.
+  $$
+
+  The only new external payload is the audited
+  $j_{11/2,1}>17/2$ specialization. The bounds
+  $j_{3/2,2}>77/10$ and $j_{5/2,2}>9$, both variational comparisons,
+  angular shifts, exhaustive caps, multiplicities, and Weyl payments are
+  internal. The 245-check exact verifier, 24 focused tests, isolated
+  reconstruction, cross-comparison, and fresh adversarial referee passed.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -238,15 +250,19 @@ The authoritative statuses are in state/proof_obligations.yml.
   smaller residual $\mathcal D_{16}$. Round 17 further replaces it by
   $\mathcal D_{17}=\mathcal D_{16}\setminus\mathcal C_{17}$, and Round 18
   replaces that by
-  $\mathcal D_{18}=\mathcal D_{17}\setminus\mathcal C_{18}$. Its closure
+  the historical
+  $\mathcal D_{18}=\mathcal D_{17}\setminus\mathcal C_{18}$. Round 19 then
+  replaces it by the live
+  $\mathcal D_{19}=\mathcal D_{18}\setminus\mathcal C_{19}$, whose closure
   still requires monotone-corner, symbolic, analytic, or rigorously bounded
   certification aggregation.
 - Paying the entire first $\ell=2$ multiplicity immediately above
   $k_2(\rho)$ cannot uniformly continue the Round 17 coarse channel cap:
   the cap becomes $9$, while the Weyl term is below $9$ at the left ratio
   face. This rejects only that coarse continuation, not the target
-  inequality. Round 18 overcomes this historical obstruction through $k_5$
-  using delayed fixed-channel entries; it is not the present boundary.
+  inequality. Round 18 overcame this historical obstruction through $k_5$;
+  Round 19 then crossed the radial-entry wall through $k_6$. Neither is the
+  present boundary.
 
 ## Parallel-track gaps
 

@@ -6,7 +6,134 @@ The authoritative graph is `state/proof_obligations.yml`. The primary target is 
 
 Next run id: `polya-main`.
 
-## Current theorem boundary
+## Current theorem boundary (Round 19)
+
+The authoritative graph is the already-applied Round 19 graph, SHA-256
+`ece14c8af98556a15069e01a2d1cf2c12c155ea4e547457e3572a10643ace187`.
+The exact separated spectrum, both endpoint theorems, and the global
+high-frequency theorem from earlier rounds remain in force. Round 19 adds a
+two-sided low-frequency staircase. Put
+
+$$
+\rho_c=\frac1{1+2\pi},\qquad
+\rho_0=\frac1{\sqrt{337}},\qquad
+z_\rho=\frac{\pi}{1-\rho},\qquad
+L(\rho)=\frac1{2\rho},
+$$
+
+$$
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)},\qquad
+d=\frac{\sqrt{337}}2,
+\qquad
+W(\rho,K)=\frac{2}{9\pi}(1-\rho^3)K^3.
+$$
+
+The repository now proves both closed-frequency conclusions
+
+$$
+\boxed{\rho_c\le\rho\le\frac78,\quad z_\rho\le K\le k_6(\rho)}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)<W(\rho,K),
+$$
+
+and
+
+$$
+\boxed{\rho_0<\rho<\rho_c,\quad L(\rho)<K\le d}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)<W(\rho,K).
+$$
+
+Relative to the historical Round 18 cover, the genuinely new set is
+
+$$
+\mathcal C_{19}=
+\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}
+\cup
+\{\rho_c\le\rho<7/8,\ k_5(\rho)<K\le k_6(\rho)\}.
+$$
+
+Thus the live analytic cover and the exact live residual are
+
+$$
+\boxed{\begin{aligned}
+\mathcal A_{19}=\mathcal A_{18}
+&\cup\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}\\
+&\cup\{\rho_c\le\rho\le7/8,\ z_\rho\le K\le k_6(\rho)\},
+\end{aligned}}
+$$
+
+and
+
+$$
+\boxed{\begin{aligned}
+\mathcal D_{19}={}&
+\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}\\
+&\cup\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K<U(\rho)\}.
+\end{aligned}}
+$$
+
+The split at $\rho=\rho_0$ is exact: $L(\rho_0)=d$, so the candidate
+fiber is empty and that ratio slice stays in the first component. The faces
+$K=d$ and $K=k_6$ are covered; $K=U$, $\rho=\rho_*$, and $\rho=7/8$
+retain their inherited owners, while $\rho=\rho_c$ belongs to the high
+band. The already absorbed boxes $B_0,B_1$ remain regression evidence and
+are not subtracted again.
+
+The external source increment is deliberately narrow. The qualified
+obligation `SRC-ROUND19-BESSEL-ZEROS` supplies only Lorch's strict
+specialization
+
+$$
+j_{11/2,1}>\frac{17}{2}
+$$
+
+and the positive spherical/ordinary Bessel identification. The exact
+reduction has reserve
+$507^2\cdot77-4264^2=1611077>0$. The bounds
+$j_{3/2,2}>77/10$ and $j_{5/2,2}>9$ are reconstructed internally. So are
+fixed-channel zero extension and shell-to-ball min--max,
+
+$$
+q_{\ell,n}^{\rm shell}(\rho)\ge j_{\ell+1/2,n},
+$$
+
+the ball angular shift
+
+$$
+j_{p+1/2,n}^2\ge j_{\ell+1/2,n}^2+p(p+1)-\ell(\ell+1),
+\qquad p>\ell,
+$$
+
+and all shell exclusions, multiplicities, and Weyl payments. No shell
+cross-product zero is imported. The high-band caps are
+$4,9,16,25,26,29,36$; the lower-band caps are
+$1,4,9,10,16,17,26,29,40,45$.
+
+The residual is demonstrably nonempty. At $\rho=1/2$,
+
+$$
+k_6(1/2)<10<30<64<K_0(1/2)=U(1/2),
+$$
+
+so $(1/2,30)\in\mathcal D_{19}$. Consequently
+`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`POLYA-program-target` remain `open`; `COMP-certified-bessel` remains
+`diagnostic_only`.
+
+All Round 19 promotion gates passed: 13 exact residual checks, 245 exact
+staircase checks, 37 residual-focused and 24 staircase-focused tests, the
+pre-application suite at 193 tests plus 10 subtests, 50-file source
+compilation, graph validation, and `git diff --check`.  After promotion, the
+current suite passes 195 tests and 10 subtests with one strict expected
+failure: the immutable freeze test deliberately compares the now-advanced
+live state paths with their pre-promotion hashes.  Three lifecycle tests
+authenticate those hashes from the baseline Git objects instead. Round 20
+must freeze this exact $\mathcal D_{19}$ before freezing or reviewing any
+candidate.
+
+## Historical boundary through Round 18
 
 The repository proves the exact separated spectrum, the shell inequality at
 high energy uniformly for all $0<\rho<1$, and both complete uniform endpoint
@@ -57,7 +184,7 @@ $K=0$ gives equality, and the proof comparison is strict for $K>0$ before
 the final non-strict theorem statement.
 
 The Round 16 four-zone integration remains the high-energy envelope. Rounds
-17--18 add an exact low-frequency angular staircase. Define
+17--18 added the historical low-frequency angular staircase. Define
 
 $$
 \rho_c=\frac1{1+2\pi},
@@ -69,7 +196,7 @@ k_2(\rho)=\sqrt{z_\rho^2+6},
 k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}\quad(m\in\mathbb N_0).
 $$
 
-The strict shell inequality is now also proved on the complete closed band
+By the end of Round 18, the strict shell inequality was proved on the band
 
 $$
 \rho_c\le\rho\le\frac78,
@@ -90,8 +217,8 @@ $$
 $$
 
 It lies inside the exact Round 17 analytic residual. If $\mathcal A_{17}$
-is the accepted Round 17 cover, the promoted cover and exact surviving
-residual are
+is that historical cover, the Round 18 cover and historical post-Round-18
+residual were
 
 $$
 \mathcal A_{18}
@@ -180,17 +307,17 @@ regression evidence but provide no additional subtraction from
 $\mathcal D_{18}$. The parent certification obligation remains
 `diagnostic_only`.
 
-The all-frequency shell theorem is not yet proved. Its sole shell blocker is
-exact closure of the nonempty two-piece set $\mathcal D_{18}$; it must not be
-replaced by $\mathcal D_{17}$, a coarse envelope, or a rectangle. Explicitly,
+At the end of Round 18, the all-frequency shell theorem was not proved and
+its shell blocker was the nonempty two-piece set $\mathcal D_{18}$.
+This is historical bookkeeping, superseded by the live $\mathcal D_{19}$.
+The then-used witness was
 
 $$
 k_5(1/2)<26<30<64<K_0(1/2)=U(1/2),
 $$
 
-so $(1/2,30)\in\mathcal D_{18}$. Consequently `SHELL-rho-compact`,
-`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` all
-remain open.
+so $(1/2,30)\in\mathcal D_{18}$. The same targets remain open now for the
+strictly smaller live residual $\mathcal D_{19}$.
 
 At the left ratio face,
 
@@ -199,10 +326,9 @@ k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c).
 $$
 
 The exact $\ell=0,n=2$ frequency enters immediately above $2z_{\rho_c}$.
-Thus the one-radial-mode cap cannot simply be continued to $k_6$; this is
-the next method boundary, not a counterexample. Current work starts strictly
-above $k_5$ with a combined radial-entry/angular staircase, while the
-unchanged component $\rho_*<\rho<\rho_c$ must be attacked separately.
+Thus the one-radial-mode cap could not simply be continued to $k_6$; this
+was the Round 18 method boundary, not a counterexample. Round 19 has now
+resolved that wall and also reduced the lower-ratio component.
 
 The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ are unproved.
 The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their
@@ -927,11 +1053,54 @@ exact payments recorded in the current theorem boundary prove the strict
 comparison through the inclusive $K=k_5$ face. The audit also proves
 $k_5<U$ on every active upper-floor branch.
 
-Exact subtraction gives the current theorem-wise uncovered set
+Exact subtraction gave the historical post-Round-18 uncovered set
 $\mathcal U_{18}=\mathcal D_{18}$ displayed above. The boxes $B_0,B_1$
 remain valid regression certificates inside $\mathcal C_{17}$ and are not
-subtracted again. The witness $(1/2,30)$ proves that $\mathcal D_{18}$ is
-nonempty, so the compact, uniformity, shell-target, and program-target
-obligations remain open. At $\rho_c$ the ordering
-$k_5<2z<k_6$ marks the next radial-entry method boundary; it is not a
-spectral counterexample.
+subtracted again. The witness $(1/2,30)$ proved that this historical
+$\mathcal D_{18}$ was nonempty. Round 19 supersedes this routing by the
+live $\mathcal D_{19}$. At $\rho_c$ the ordering
+$k_5<2z<k_6$ marked the historical Round 18 radial-entry method boundary;
+it was not a spectral counterexample, and Round 19 resolves it through
+$k_6$.
+
+## Round 19 Update
+
+Date: 2026-07-14
+
+See `rounds/polya-main/round_019/judge/judge-019.md` and
+`rounds/polya-main/round_019/reviews/state-patch-final-audit.md`.
+
+Round 19 promotes `SRC-ROUND19-BESSEL-ZEROS` at
+`proved_external_dependency` and `SHELL-two-sided-staircase` at
+`proved_internal`. The source obligation contributes only
+$j_{11/2,1}>17/2$ and the positive spherical/ordinary identification.
+The second-zero bounds $j_{3/2,2}>77/10$ and $j_{5/2,2}>9$, both
+variational comparisons, the angular shifts, inventories, multiplicities,
+and strict Weyl payments are internal.
+
+The promoted theorem bands are
+
+$$
+\rho_c\le\rho\le7/8,\qquad z_\rho\le K\le k_6(\rho),
+$$
+
+and
+
+$$
+1/\sqrt{337}<\rho<\rho_c,\qquad
+1/(2\rho)<K\le\sqrt{337}/2.
+$$
+
+Their exact new part is $\mathcal C_{19}$, and exact subtraction gives the
+three-piece $\mathcal D_{19}$ in the live boundary above. The strict witness
+
+$$
+k_6(1/2)<10<30<64<K_0(1/2)=U(1/2)
+$$
+
+keeps every theorem-level target open and keeps the parent computation
+obligation diagnostic. Independent reconstruction, exact arithmetic, source
+audit, cross-comparison, and a fresh adversarial referee all passed. The
+post-application graph is authoritative; Round 20 begins by freezing
+$\mathcal D_{19}$ and may not promote any current exploratory note without
+a proof-free claim freeze and the complete A3/A4/fresh-referee gate.

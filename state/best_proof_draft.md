@@ -1106,7 +1106,7 @@ angular band. This is the historical Round 17 method obstruction, not a
 counterexample to the target inequality. Round 18 resolves it through
 $k_5$ with delayed fixed-channel entries.
 
-## Delayed angular-entry staircase through $k_5$ (Round 18)
+## Delayed angular-entry staircase through $k_5$ (Round 18, historical boundary)
 
 For $m\in\mathbb N_0$, set
 
@@ -1281,7 +1281,7 @@ k_5(\rho)<U(\rho),
 \tag{R18.10}
 $$
 
-Exact subtraction now gives the accepted current residual
+Exact subtraction gave the historical post-Round-18 residual
 
 $$
 \boxed{
@@ -1314,8 +1314,182 @@ $$
 
 and the exact $\ell=0,n=2$ mode enters immediately above $2z_{\rho_c}$.
 The one-radial-mode cap therefore cannot simply continue to $k_6$. This is
-not a counterexample; the next band requires a combined radial-entry and
-angular staircase.
+not a counterexample. The Round 19 section below supplies the required
+combined radial-entry and angular staircase.
+
+## Two-sided radial-entry and angular staircase (Round 19)
+
+Put
+
+$$
+\rho_0=\frac1{\sqrt{337}},\qquad
+L(\rho)=\frac1{2\rho},\qquad
+d=\frac{\sqrt{337}}2.
+$$
+
+Round 19 proves the two statements
+
+$$
+\boxed{
+\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_6(\rho)
+}
+\Longrightarrow
+N_D(A_{\rho,1},K^2)<W(\rho,K),
+\tag{R19.1}
+$$
+
+and
+
+$$
+\boxed{
+\rho_0<\rho<\rho_c,\qquad L(\rho)<K\le d
+}
+\Longrightarrow
+N_D(A_{\rho,1},K^2)<W(\rho,K).
+\tag{R19.2}
+$$
+
+The common spectral starting point is
+
+$$
+q_{\ell,n}^2\ge n^2z_\rho^2+\ell(\ell+1),
+\qquad q_{0,n}=nz_\rho.
+\tag{R19.3}
+$$
+
+Zero extension of $H_0^1(\rho,1)$ to $H_0^1(0,1)$ preserves the fixed
+angular channel, norm, and form. Hardy finiteness and one-dimensional
+Dirichlet min--max therefore give the internal shell-to-ball comparison
+
+$$
+q_{\ell,n}^{\rm shell}(\rho)\ge j_{\ell+1/2,n}.
+\tag{R19.4}
+$$
+
+Comparison of the common ball form domains also gives, internally,
+
+$$
+j_{p+1/2,n}^2
+\ge j_{\ell+1/2,n}^2+p(p+1)-\ell(\ell+1),
+\qquad p>\ell.
+\tag{R19.5}
+$$
+
+The only new external numerical payload is the qualified Lorch
+specialization
+
+$$
+j_{11/2,1}>\frac{17}{2}.
+\tag{R19.6}
+$$
+
+Its exact reduction has positive sides and
+$507^2\cdot77-4264^2=1611077>0$; DLMF is used only for the positive
+spherical/ordinary Bessel identity. The second-zero bounds
+
+$$
+j_{3/2,2}>\frac{77}{10},
+\qquad
+j_{5/2,2}>9
+\tag{R19.7}
+$$
+
+are reconstructed internally from their tangent equations. No source is
+used for a shell cross-product zero, shell variational comparison, higher
+radial exclusion, multiplicity, or Weyl payment.
+
+For the high-ratio band, the complete inventory through $k_6$ has first
+modes $0\le\ell\le4$ plus possible $(0,2),(1,2)$ when
+$\rho_c\le\rho\le1/4$, and only first modes $0\le\ell\le5$ when
+$1/4\le\rho\le7/8$. The strict cumulative caps are
+
+$$
+4,\ 9,\ 16,\ 25,\ 26,\ 29,\ 36.
+\tag{R19.8}
+$$
+
+The fixed/moving bridges at $3/10,1/2,1/2,1/5,13/25$ pay every cap
+strictly. At $K=2z_\rho$ the exact $(0,2)$ mode is excluded by strict
+counting. In particular, the proof does not use the false shortcut
+$W(\rho,k_5)>25$ uniformly near $\rho_c$.
+
+For the lower-ratio band, (R19.3)--(R19.7) exclude every $n\ge3$ mode,
+every first mode $\ell\ge6$, and every second mode $\ell\ge3$ through
+$K=d$. The exact threshold ordering is
+
+$$
+4<\frac{51}{10}<\frac{13}{2}<\frac{15}{2}
+<\frac{77}{10}<\frac{17}{2}<9<d,
+\tag{R19.9}
+$$
+
+and the exhaustive strict caps are
+
+$$
+1,\ 4,\ 9,\ 10,\ 16,\ 17,\ 26,\ 29,\ 40,\ 45.
+\tag{R19.10}
+$$
+
+Every fixed threshold is open, and the moving $2z_\rho$ face is owned by
+the lower-count side. Exact payments at the true lower wall $L$, at every
+fixed threshold, and on both sides of $2z_\rho$ are strict. Directed
+elementary bounds also prove
+
+$$
+d<U(\rho)\quad(\rho_*<\rho<\rho_c),\qquad
+k_6(\rho)<U(\rho)\quad(\rho_c\le\rho<7/8).
+\tag{R19.11}
+$$
+
+The genuinely new set is
+
+$$
+\mathcal C_{19}
+=\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}
+\cup
+\{\rho_c\le\rho<7/8,\ k_5(\rho)<K\le k_6(\rho)\}.
+\tag{R19.12}
+$$
+
+It is contained in the historical $\mathcal D_{18}$. The live cover is
+
+$$
+\boxed{\begin{aligned}
+\mathcal A_{19}=\mathcal A_{18}
+&\cup\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}\\
+&\cup\{\rho_c\le\rho\le7/8,\ z_\rho\le K\le k_6(\rho)\},
+\end{aligned}}
+\tag{R19.13}
+$$
+
+and exact subtraction gives the live residual
+
+$$
+\boxed{\begin{aligned}
+\mathcal D_{19}={}&
+\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}\\
+&\cup\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K<U(\rho)\}.
+\end{aligned}}
+\tag{R19.14}
+$$
+
+At $\rho=\rho_0$, $L=d$, so the candidate fiber is empty and the inherited
+slice remains in the first component. The new faces $K=d$ and $K=k_6$ are
+covered; $K=U$, $\rho=\rho_*$, and $\rho=7/8$ keep their inherited owners,
+and $\rho=\rho_c$ belongs to the high component. The boxes $B_0,B_1$ were
+already absorbed and are not subtracted again.
+
+Finally,
+
+$$
+k_6(1/2)^2<\frac{3994}{49}<100,\qquad
+k_6(1/2)<10<30<64<K_0(1/2)=U(1/2),
+\tag{R19.15}
+$$
+
+so $(1/2,30)\in\mathcal D_{19}$. The full shell theorem is therefore not
+proved.
 
 ## Certified central regression boxes
 
@@ -1375,7 +1549,7 @@ $$
 
 Both certificates therefore remain independent regression evidence but are
 analytically redundant after promotion of the Round 17 band. They do not
-subtract anything further from $\mathcal D_{18}$, do not promote sampled
+subtract anything further from $\mathcal D_{19}$, do not promote sampled
 numerics to proof, and do not make `COMP-certified-bessel` more than
 `diagnostic_only`.
 
@@ -1385,14 +1559,15 @@ This file must not be cited as a proof of the full shell theorem. The open
 obligations `SHELL-rho-compact`, `SHELL-rho-uniformity`,
 `TARGET-shell-d3`, and `POLYA-program-target` remain open. The gates are:
 
-- analytic or symbolic closure of the exact two-piece residual
-  $\mathcal D_{18}$, followed only where necessary by rigorous,
+- analytic or symbolic closure of the exact three-piece residual
+  $\mathcal D_{19}$, followed only where necessary by rigorous,
   face-connected certification inside that same residual;
-- preservation of the exact accepted mask $\mathcal A_{18}$ and every owned
+- preservation of the exact accepted mask $\mathcal A_{19}$ and every owned
   face; a coarse envelope or rectangle is not an admissible substitute;
-- construction above $k_5$ must resolve the relative $2z_\rho$ and
-  $k_6(\rho)$ radial/angular walls, while the unchanged
-  $\rho_*<\rho<\rho_c$ component is handled separately;
+- construction must close the three exact components of (R19.14), with
+  strict ownership of $K=L,d,k_6,U$ and every ratio face. Current
+  exploratory small-hole shifted-tail, lower-staircase, and high-$k_8$
+  notes are not promoted and must first pass a proof-free freeze;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review after the compact residual is closed. Agent consensus is not a
   proof, and finite ledgers certify only the arithmetic they execute.
