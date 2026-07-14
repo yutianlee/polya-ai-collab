@@ -72,7 +72,7 @@ $$
 on the closed staircase
 
 $$
-\rho_c\le\rho\le\frac78,qquad z_\rho\le K\le k_{11}(\rho),
+\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_{11}(\rho),
 $$
 
 and at every frequency for

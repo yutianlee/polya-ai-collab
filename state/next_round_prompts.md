@@ -21,13 +21,13 @@ Round 20 has promoted all three of the following:
 2. the closed high staircase
 
    $$
-   \rho_c\le\rho\le\frac78,qquad z_\rho\le K\le k_{11}(\rho);
+   \rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_{11}(\rho);
    $$
 
 3. the all-frequency optical theorem
 
    $$
-   \frac{39}{50}\le\rho<1,qquad K\ge0,
+   \frac{39}{50}\le\rho<1,\qquad K\ge0,
    $$
 
    with equality only at $K=0$.

@@ -452,13 +452,13 @@ $$
   on the closed high staircase
 
 $$
-\rho_c\le\rho\le\frac78,qquad z_\rho\le K\le k_{11}(\rho),
+\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_{11}(\rho),
 $$
 
   and, non-strictly only at $K=0$, on the all-frequency optical region
 
 $$
-\frac{39}{50}\le\rho<1,qquad K\ge0.
+\frac{39}{50}\le\rho<1,\qquad K\ge0.
 $$
 
   The lower proof combines a finite exact ledger with one aggregate

@@ -8,9 +8,9 @@ Current round: 21
 
 Read `state/proof_obligations.yml` first. Its SHA-256 is
 `313eed3a0f789e83fbd809c787590de80cb40946f307f50fd3eba53735d355bd`.
-Round 20 is applied. The live analytic cover is $\mathcal A_{20}$ and the
-live residual is $\mathcal D_{20}$. Every $\mathcal D_{19}$ reference in
-older artifacts is historical.
+Round 20 is applied. Every $\mathcal D_{19}$ reference in older artifacts is
+historical. The live analytic cover is $\mathcal A_{20}$ and the live
+residual is $\mathcal D_{20}$.
 
 The all-frequency shell theorem remains open. `SHELL-rho-compact`,
 `SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` are
@@ -30,13 +30,13 @@ The accepted combined closure proves strict Pólya on both lower components
 of $\mathcal D_{19}$ and on
 
 $$
-\rho_c\le\rho\le\frac78,qquad z_\rho\le K\le k_{11}(\rho).
+\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_{11}(\rho).
 $$
 
 It also proves
 
 $$
-\frac{39}{50}\le\rho<1,qquad K\ge0,
+\frac{39}{50}\le\rho<1,\qquad K\ge0,
 $$
 
 with equality only at $K=0$ and strict comparison for $K>0$. Its exact new

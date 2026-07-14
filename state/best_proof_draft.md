@@ -1187,8 +1187,8 @@ to Lorch.
 Let
 
 $$
-F_m(\rho)=W(\rho,k_m(\rho)),qquad
-e=1-\rho,qquad S=1+\rho+\rho^2,qquad c=m(m+1).
+F_m(\rho)=W(\rho,k_m(\rho)),\qquad
+e=1-\rho,\qquad S=1+\rho+\rho^2,\qquad c=m(m+1).
 $$
 
 Then
@@ -1451,7 +1451,8 @@ $$
 \tag{R19.12}
 $$
 
-It is contained in the historical $\mathcal D_{18}$. The live cover is
+It is contained in the historical $\mathcal D_{18}$. The historical
+post-Round-19 cover was
 
 $$
 \boxed{\begin{aligned}
@@ -1462,7 +1463,7 @@ $$
 \tag{R19.13}
 $$
 
-and exact subtraction gives the live residual
+and exact subtraction gave the historical post-Round-19 residual
 
 $$
 \boxed{\begin{aligned}

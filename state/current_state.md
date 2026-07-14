@@ -310,15 +310,19 @@ $\mathcal D_{18}$. The parent certification obligation remains
 
 At the end of Round 18, the all-frequency shell theorem was not proved and
 its shell blocker was the nonempty two-piece set $\mathcal D_{18}$.
-This is historical bookkeeping, superseded by the live $\mathcal D_{19}$.
+This is historical bookkeeping. Round 19 superseded it by
+$\mathcal D_{19}$, which is also historical now.
+The authoritative live residual is $\mathcal D_{20}$ stated above.
 The then-used witness was
 
 $$
 k_5(1/2)<26<30<64<K_0(1/2)=U(1/2),
 $$
 
-so $(1/2,30)\in\mathcal D_{18}$. The same targets remain open now for the
-strictly smaller live residual $\mathcal D_{19}$.
+so $(1/2,30)\in\mathcal D_{18}$. At the end of Round 19 the same targets
+remained open for the strictly smaller residual $\mathcal D_{19}$, which is
+historical now. After Round 20 they remain open for the live
+$\mathcal D_{20}$.
 
 At the left ratio face,
 
@@ -1058,8 +1062,9 @@ Exact subtraction gave the historical post-Round-18 uncovered set
 $\mathcal U_{18}=\mathcal D_{18}$ displayed above. The boxes $B_0,B_1$
 remain valid regression certificates inside $\mathcal C_{17}$ and are not
 subtracted again. The witness $(1/2,30)$ proved that this historical
-$\mathcal D_{18}$ was nonempty. Round 19 supersedes this routing by the
-live $\mathcal D_{19}$. At $\rho_c$ the ordering
+$\mathcal D_{18}$ was nonempty. Round 19 superseded this routing by
+$\mathcal D_{19}$, which is now historical.
+The authoritative live residual is $\mathcal D_{20}$. At $\rho_c$ the ordering
 $k_5<2z<k_6$ marked the historical Round 18 radial-entry method boundary;
 it was not a spectral counterexample, and Round 19 resolves it through
 $k_6$.
@@ -1092,8 +1097,9 @@ $$
 1/(2\rho)<K\le\sqrt{337}/2.
 $$
 
-Their exact new part is $\mathcal C_{19}$, and exact subtraction gives the
-three-piece $\mathcal D_{19}$ in the live boundary above. The strict witness
+Their exact new part is $\mathcal C_{19}$, and exact subtraction gave the
+three-piece historical Round 19 boundary $\mathcal D_{19}$. The strict
+witness
 
 $$
 k_6(1/2)<10<30<64<K_0(1/2)=U(1/2)
