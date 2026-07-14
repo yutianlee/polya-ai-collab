@@ -39,7 +39,8 @@ The universal step is the A3 analytic proof of the exact derivative chain
 and two integrations. The exact guards
 
 \[
-7/51<\rho_c,\qquad k_{11}(\rho)>12
+7/51<\rho_c,\qquad
+k_{11}(\rho)>12\quad(\rho_c\le\rho<1)
 \]
 
 put every point of D20 in one of the two theorem domains. With `K=200`
@@ -293,7 +294,7 @@ blockers on that diagnostic parent are removed without broadening it.
         "track": "shell_analytic",
         "title": "Round 21 exact closure of the final compact-shell residual",
         "status": "proved_internal",
-        "statement_tex": "Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), k_11(rho)=sqrt(z_rho^2+132), and W(rho,K)=(2/(9 pi))(1-rho^3)K^3. The strict shell inequality N_D(A_(rho,1),K^2)<W(rho,K) holds on the closed compact rectangle 7/51<=rho<=39/50, 12<=K<=200, and on rho_c<=rho<=39/50, K>=200. The exact guards 7/51<rho_c and k_11(rho)>12 for rho>=rho_c imply that D20={rho_c<=rho<39/50, k_11(rho)<K<U(rho)=K_0(rho)} is the disjoint union of its K<=200 and K>200 parts, with K=200 assigned to the compact owner. Hence the exact successor residual D21 is empty. The faces rho=39/50, K=k_11, and K=U remain outside D20 and are not subtracted again.",
+        "statement_tex": "Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), k_11(rho)=sqrt(z_rho^2+132), and W(rho,K)=(2/(9 pi))(1-rho^3)K^3. The strict shell inequality N_D(A_(rho,1),K^2)<W(rho,K) holds on the closed compact rectangle 7/51<=rho<=39/50, 12<=K<=200, and on rho_c<=rho<=39/50, K>=200. The exact guards 7/51<rho_c and k_11(rho)>12 for rho_c<=rho<1 imply that D20={rho_c<=rho<39/50, k_11(rho)<K<U(rho)=K_0(rho)} is the disjoint union of its K<=200 and K>200 parts, with K=200 assigned to the compact owner. Hence the exact successor residual D21 is empty. The faces rho=39/50, K=k_11, and K=U remain outside D20 and are not subtracted again.",
         "dependencies": [
           "CONV-strict-counting",
           "SHELL-sturm-liouville-completeness",
