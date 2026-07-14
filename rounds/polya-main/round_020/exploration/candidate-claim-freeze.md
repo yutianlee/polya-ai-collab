@@ -13,7 +13,7 @@ transition. This freeze gives no theorem or review verdict.
 
 | artifact | SHA-256 |
 |---|---|
-| `state/lemma_packets/SHELL-combined-closure-round20-claim.md` | `80b7ec55d71b54cd93a821cb27703b399f13d5a0dedf7bcbaaf854235a779002` |
+| `state/lemma_packets/SHELL-combined-closure-round20-claim.md` | `e8d1ad7ab01e8140e1abb4663eb8b5ca9d708f79de31696e29486a4212443a61` |
 | `state/lemma_packets/SHELL-rho-compact-round20.md` | `a62222506ed6f9197ed8338624a75382b2a1bc1245d75abcad0f85930f7328a8` |
 | `computations/round20_residual_mask.py` | `5d33e0f20035a4f5e3c6d4d03d65f6949780ac4d97611ea957568c2051d545e2` |
 | `computations/tests/test_round20_residual_mask.py` | `d261c89d61bced6c2630596f8bbfa66ae188257b656890c98c4654de765e0164` |
@@ -98,7 +98,7 @@ An exact-constant reviewer may begin only from the released candidate hash.
 That review must distinguish analytic assumptions from finite arithmetic and
 cannot replace the isolated analytic reconstruction.
 
-## Independent gate and release rule
+## Independent gates and replacement release rule
 
 The independent pre-freeze scope audit is
 `rounds/polya-main/round_020/reviews/candidate-freeze-independent-audit.md`,
@@ -106,8 +106,26 @@ SHA-256
 `819701c2c2accf5d86f4188a920f901ef6a0658f7d515a104c67d18f505bd467`.
 It returned **PASS; first issue: none** on the draft claim, all hashes,
 source scope, exact subtraction, face ownership, isolation boundary, and
-absence of proof leakage. A separate final-byte audit must authenticate the
-status-only transition before an isolated verdict is credited.
+absence of proof leakage.
+
+The first status-only release was preserved at commit
+`87d30559dcaa90086ce5274f9a264412a912a2d2`. It authenticated candidate hash
+`80b7ec55d71b54cd93a821cb27703b399f13d5a0dedf7bcbaaf854235a779002`
+and freeze hash
+`71359b3dd0f6d49f496c7c2f5c6630a40f5b879e433a51b47095479cc2897950`.
+The final-byte audit
+`rounds/polya-main/round_020/reviews/candidate-final-byte-audit.md`, SHA-256
+`ae7cd1b145e1cd22a2a023c68a35b619d9017c550e7b55d528cadb2e1b8f24a0`,
+returned **FAIL** solely because surviving draft prose made the frozen status
+circular. Those failed release bytes are not a valid isolated-review target.
+
+The replacement candidate changes only that final release paragraph: it now
+states directly that the exact bytes are frozen for independent review, are
+neither proved nor promoted, and require a replacement cycle for any further
+correction. No theorem statement, constant, domain, inventory, cap, source
+boundary, or falsification face changed. A new final-byte audit must
+authenticate this replacement candidate and this updated freeze before an
+isolated verdict is credited.
 
 The candidate bytes named above are immutable for Round 20. Any correction
 requires a replacement candidate, freeze record, and final-byte audit with

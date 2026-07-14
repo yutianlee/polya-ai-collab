@@ -730,6 +730,7 @@ reconstruction, independent exact-constant audit, cross-comparison,
 adversarial referee review, judge decision, and State Patch audit all remain
 required.
 
-Until the first two release conditions are satisfied and an external freeze
-records this file's exact SHA-256, the bytes are a draft and may be corrected
-without constituting a replacement frozen candidate.
+These exact claim bytes are frozen only as an independent-review target;
+they are neither proved nor promoted. Any correction requires replacement
+bytes, an updated external freeze with new hashes, and a repeated final-byte
+audit.
