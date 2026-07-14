@@ -3,7 +3,7 @@
 Status: **FROZEN PROOF-FREE CONTRACT / NO REVIEW VERDICT**.
 
 Baseline commit:
-`0d4ee5d77e37e9e75490ac6e0e02ab338398fa00`.
+`a537991fd8d0418b8338388783f1a7462e0707f4`.
 
 This contract fixes a theorem domain, mathematical postcondition, aggregate
 reserve interface, outward-certificate predicates, authentication targets,
@@ -198,8 +198,9 @@ N_D(A_{\rho,1},K^2)<W(\rho,K).
 \tag{A16}
 $$
 
-For fixed $\rho$, A3 and A4 must independently derive or check the following
-frequency identities. With
+For fixed $\rho$ and variable $K$, A3 must derive the following frequency
+identities analytically. A4 must independently check the displayed algebra
+but must not treat a replay at one frequency as an all-frequency proof. With
 
 $$
 I(K)=\overline{\mathcal I},
@@ -260,8 +261,10 @@ F(\rho)=2\rho\eta_\rho+d_\rho\rho^2
 \tag{A22}
 $$
 
-The certificate must prove on the rational superset
-$7/51\leq\rho\leq39/50$ that
+### 3.1 Finite base-face certificate
+
+The finite outward boxes must prove on the rational superset
+$7/51\leq\rho\leq39/50$, at the single base frequency $K=200$, that
 
 $$
 \mathcal B(\rho,200)>0,
@@ -272,21 +275,100 @@ F(\rho)>0,
 \tag{A23}
 $$
 
-together with
+together with the base guards and base consistency checks
 
 $$
-\mu>\frac32,
+\mu_{200}:=200\rho>\frac32,
 \quad 200\eta_\rho>1,
-\quad S>\overline R>200\rho,
-\quad I_{KK}<\frac{3b}{800},
-\quad E_{KK}>0,
-\quad \mathcal B_{KK}>F.
-\tag{A24}
+\quad S(\rho,200)>\overline R(\rho,200)>200\rho,
+\tag{A24a}
 $$
 
-The required unbounded-frequency implication is that (A23)--(A24) make
-$\mathcal B_K$ positive and $\mathcal B$ positive for every $K\geq200$.
-No finite frequency truncation is permitted.
+$$
+I_{KK}(\rho,200)<\frac{3b}{800},
+\quad E_{KK}(\rho,200)>0,
+\quad \mathcal B_{KK}(\rho,200)>F(\rho).
+\tag{A24b}
+$$
+
+The boxes also check $1-\rho>0$ and outward containment of every exact
+rational endpoint. Equations (A24a)--(A24b) are consistency checks at
+$K=200$ only. In particular, replaying
+$I_{KK}(\rho,200)<3b/800$ or
+$\mathcal B_{KK}(\rho,200)>F(\rho)$ cannot establish the unbounded-frequency
+propagation below.
+
+### 3.2 Universally quantified analytic obligation
+
+Separately from the finite certificate, A3 must prove for every
+
+$$
+\frac7{51}\leq\rho\leq\frac{39}{50},
+\qquad K\geq200,
+\tag{A25}
+$$
+
+that all definitions in (A13)--(A22) are valid and that the propagated
+guards
+
+$$
+1-\rho>0,
+\quad \mu=\rho K>\frac32,
+\quad K\eta_\rho>1,
+\quad S>\overline R>\rho K
+\tag{A26}
+$$
+
+hold. On the same universally quantified domain, A3 must derive
+
+$$
+I_{KK}
+<\frac{3\rho b}{4S}
+<\frac{3b}{4K}
+\leq\frac{3b}{800},
+\qquad
+E_{KK}>0,
+\tag{A27}
+$$
+
+and hence
+
+$$
+\mathcal B_{KK}
+>2\rho\eta_\rho+d_\rho\rho^2
+-\frac{3(1+d_\rho)b}{4K}
+\geq F(\rho).
+\tag{A28}
+$$
+
+The sign $F(\rho)>0$ is the finite predicate in (A23), not an additional
+analytic conclusion and not a box check at variable $K$. Once A4 separately
+validates (A23), equation (A28) supplies
+$\mathcal B_{KK}(\rho,K)>F(\rho)>0$ for every $K\geq200$.
+
+Finally A3 must derive the conditional propagation that combines the
+separately validated base predicates (A23) with (A25)--(A28) by the two exact
+integrations
+
+$$
+\mathcal B_K(\rho,K)
+=\mathcal B_K(\rho,200)
++\int_{200}^{K}\mathcal B_{KK}(\rho,s)\,ds>0,
+\tag{A29}
+$$
+
+$$
+\mathcal B(\rho,K)
+=\mathcal B(\rho,200)
++\int_{200}^{K}\mathcal B_K(\rho,s)\,ds>0
+\tag{A30}
+$$
+
+for $K>200$, with (A23) owning $K=200$. A3 is responsible for the universal
+inequalities and integration implications; A4 is responsible for the finite
+premises in (A23). Equations (A26)--(A30), not the base consistency checks
+(A24a)--(A24b), are the required unbounded-frequency step. No finite
+frequency truncation is permitted.
 
 ## 4. Frozen outward-certificate schema
 
@@ -301,7 +383,10 @@ No finite frequency truncation is permitted.
 | boxes on `[7/51,1/2]` | `726` |
 | boxes on `[1/2,39/50]` | `560` |
 | total exact rational boxes | `1286` |
-| proof signs per box | (A23)--(A24) |
+| principal proof signs per box | $\mathcal B(\rho,200)>0$, $\mathcal B_K(\rho,200)>0$, $F(\rho)>0$ from (A23) |
+| base guards per box | $1-\rho>0$, (A24a) |
+| base consistency signs per box | (A24b), evaluated only at $K=200$ |
+| all-$K\geq200$ propagation | analytic A3 obligations (A25)--(A30), not finite box predicates |
 | standalone certificate digest | none emitted; identity is the exact schema plus authenticated artifact bytes |
 
 Every rational box must be enclosed outward and must contain both exact
@@ -310,9 +395,10 @@ $\eta_\rho=G_1(\rho)$ owns the upper segment; both formulas must agree at
 $\rho=1/2$. Exact consecutive endpoints must tile the entire rational
 superset without a gap or overlap.
 
-Every comparison in (A23)--(A24) must be a certain Arb comparison. Binary
-floats and decimal displays are excluded from hash gates, partitions,
-branches, derivative decisions, signs, and theorem propagation.
+Every finite comparison in (A23)--(A24b) must be a certain Arb comparison.
+The outward boxes make no proof decision at $K>200$. Binary floats and
+decimal displays are excluded from hash gates, partitions, branches,
+derivative decisions, signs, and theorem propagation.
 
 ## 5. Dependency identities
 
@@ -361,19 +447,23 @@ A4 must reject or detect each of the following independent mutations:
    wrong $\eta_\rho$ branch;
 5. disagreement of the two $\eta_\rho$ formulas at $\rho=1/2$;
 6. any sign or factor change in (A15), (A17)--(A22);
-7. omission of any predicate in (A23)--(A24), or replacement of a strict
-   certain sign by a midpoint, sample, or display decimal;
+7. omission of any finite predicate in (A23)--(A24b), or replacement of a
+   strict certain sign by a midpoint, sample, or display decimal;
 8. omission of $\tau=0$, a half-integer $\mu$ wall, or an integer
    $K\eta_\rho$ wall from the reconstruction of (A12) and (A16);
 9. loss of strictness in (A10), (A12), or (A16);
-10. propagation only to a finite $K$ ceiling instead of every $K\geq200$;
+10. omission or weakening of the universal quantifier in (A25), any guard
+    in (A26), any inequality in (A27)--(A28), either integration in
+    (A29)--(A30), or propagation only to a finite $K$ ceiling;
 11. use of a binary float or decimal display in any authentication,
     partition, branch, derivative, sign, or proof decision.
 
 ## 8. Scope and nonclaims
 
 This contract does not assert that its certificate bytes are valid and does
-not prove (A1). A3 reconstructs the analytic implication; A4 independently
-authenticates and replays the outward certificate and exact faces. Neither
-role may infer a Round 21 subtraction, a successor residual, or a project
-target from this contract alone.
+not prove (A1). A3 reconstructs the analytic implication, including the
+universally quantified step (A25)--(A30). A4 independently authenticates and
+replays the outward $K=200$ certificate, checks the derivative identities,
+and confirms that its finite results are not promoted to an all-frequency
+predicate. Neither role may infer a Round 21 subtraction, a successor
+residual, or a project target from this contract alone.

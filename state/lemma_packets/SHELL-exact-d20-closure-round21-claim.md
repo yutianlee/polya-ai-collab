@@ -5,7 +5,7 @@ Status: **FROZEN CLAIM ONLY / NOT PROVED / NOT PROMOTED**.
 Round: 21.
 
 Candidate baseline commit:
-`0d4ee5d77e37e9e75490ac6e0e02ab338398fa00`.
+`a537991fd8d0418b8338388783f1a7462e0707f4`.
 
 This packet freezes only two proposed theorem statements, two exact
 containment inequalities, a disjoint subtraction, face ownership, and the
@@ -218,8 +218,24 @@ A3 may additionally use elementary real calculus, elementary
 one-dimensional summation, exact integer and rational arithmetic, and
 independently proved rational enclosures for $\pi$. It must reconstruct the
 compact spectral bridge and monotone-corner implication, the aggregate
-summation and strict reserve implication, every derivative and unbounded-$K$
-propagation step, (6)--(7), all faces, and (10)--(11).
+summation and strict reserve implication, and every derivative identity. For
+every $7/51\leq\rho\leq39/50$ and every $K\geq200$, A3 must separately
+derive
+
+$$
+I_{KK}<\frac{3\rho b}{4S}<\frac{3b}{4K}
+\leq\frac{3b}{800},
+\qquad E_{KK}>0,
+\qquad \mathcal B_{KK}>F,
+$$
+
+propagate the guards $\mu>3/2$, $K\eta_\rho>1$, and
+$S>\overline R>\rho K$, and integrate from the certified $K=200$ values to
+prove conditionally that the separately certified base signs, including
+$F>0$, imply $\mathcal B_K>0$ and $\mathcal B>0$. The finite sign $F>0$ is
+an A4 certificate predicate; it is not relabelled as an A3 analytic result.
+A3 may not use a replayed $K=200$ curvature sign as the all-frequency step.
+It must also reconstruct (6)--(7), all faces, and (10)--(11).
 
 The following are expressly excluded from A3 even if their path or hash is
 visible in a contract:
@@ -250,8 +266,13 @@ independent exact classifier for (2) and (9) on every outer and shared face.
 The compact audit must cover every leaf, strict integer wall, active-channel
 cutoff, zero-extension interface, monotone corner, exact coverage invariant,
 and half-open owner. The aggregate audit must cover every ratio box, both
-$\eta_\rho$ branches, the $\rho=1/2$ interface, all base signs, derivative
-identities, the precision gate, and propagation to all $K\geq200$.
+$\eta_\rho$ branches, the $\rho=1/2$ interface, all $K=200$ base signs and
+guards, the base-frequency derivative consistency checks, and the precision
+gate. A4 must independently check the derivative identities and verify that
+the sealed executable makes no finite-box claim at $K>200$. Its replayed
+$K=200$ checks of $I_{KK}$, $E_{KK}$, and $\mathcal B_{KK}$ are base
+consistency only; they cannot replace A3's universally quantified analytic
+derivation or the two integrations to all $K\geq200$.
 
 No binary float or displayed decimal may reach a proof decision in either
 certificate.
@@ -296,7 +317,10 @@ The initial reviewers must explicitly test:
 7. (6)--(7), (8), the disjointness in (10), and the no-double-subtraction
    rule at $K=200$;
 8. exclusion of $\rho=39/50$, $K=k_{11}$, and $K=K_0=U$ from the live
-   residual.
+   residual;
+9. the strict separation between finite $K=200$ certificate predicates and
+   the universally quantified analytic curvature and integration steps for
+   every $K\geq200$.
 
 No assertion in this packet is proved merely by being frozen. The compact
 and aggregate certificate domains are not themselves $\mathcal D_{20}$.

@@ -1,28 +1,72 @@
 # Round 21 Exact-D20-Closure Candidate Freeze
 
-Status: **FROZEN / RELEASED FOR ISOLATED REVIEW / NO PROOF VERDICT**.
+Status: **REPLACEMENT FROZEN / NOT RELEASED TO A3 OR A4 / NO PROOF VERDICT**.
 
 Candidate baseline commit:
-`0d4ee5d77e37e9e75490ac6e0e02ab338398fa00`.
+`a537991fd8d0418b8338388783f1a7462e0707f4`.
 
-This is a raw-byte release record. It freezes one proof-free candidate and
-two proof-free certificate contracts. It supplies no theorem proof,
-certificate validation, review conclusion, successor residual, judge
-decision, or State Patch.
+This is a replacement raw-byte freeze. It authenticates one proof-free
+candidate and two proof-free certificate contracts after a preserved failed
+isolation gate. It supplies no theorem proof, certificate validation, review
+conclusion, successor residual, judge decision, or State Patch. A new
+final-byte isolation audit is required before A3 or A4 may begin.
 
 ## 1. Frozen candidate bytes
 
 | artifact | bytes | SHA-256 |
 |---|---:|---|
-| `state/lemma_packets/SHELL-exact-d20-closure-round21-claim.md` | `11809` | `e95145eb7ceeabbb467cf04eee3585c0f327cc4dea567a7016d686014e799630` |
+| `state/lemma_packets/SHELL-exact-d20-closure-round21-claim.md` | `12958` | `415546156ea8d407541ddd6477ac38caa7c2c3b956724b25a06a755453e3b8a3` |
 | `state/certificate_contracts/ROUND21-compact-proxy-contract.md` | `7498` | `1d16d860f158fd8223734245d4d6a71b8af2bc3ed99f9eafddf645e6a74b61fe` |
-| `state/certificate_contracts/ROUND21-aggregate-tail-contract.md` | `9573` | `15cb8e9f5e0b513e6f1fa9f9832bebee2d8a90ae1247ed8746837adb7a501472` |
+| `state/certificate_contracts/ROUND21-aggregate-tail-contract.md` | `12270` | `06b11887e7024d07023d9b8a4be97269536c833aecd126f469b2f54336238d6d` |
 
-These three byte sequences are the only Round 21 candidate release target.
+These three byte sequences are the only replacement Round 21 candidate
+target. The compact contract is byte-identical to the first freeze.
 Any edit, including a status-only or whitespace edit, requires replacement
 hashes, a replacement freeze, and a new final-byte audit.
 
-## 2. Accepted starting-set boundary
+## 2. Preserved failure and replacement chronology
+
+The first candidate freeze was committed at
+`56e94b3f47d4ce1c83cf3b1fd47c1376a36526aa` against baseline
+`0d4ee5d77e37e9e75490ac6e0e02ab338398fa00`. Its raw identities were:
+
+| artifact | bytes | SHA-256 |
+|---|---:|---|
+| first candidate | `11809` | `e95145eb7ceeabbb467cf04eee3585c0f327cc4dea567a7016d686014e799630` |
+| unchanged compact contract | `7498` | `1d16d860f158fd8223734245d4d6a71b8af2bc3ed99f9eafddf645e6a74b61fe` |
+| first aggregate contract | `9573` | `15cb8e9f5e0b513e6f1fa9f9832bebee2d8a90ae1247ed8746837adb7a501472` |
+| first external freeze | `5522` | `37abe5036cad7c9fde34994b3aa0b797f85ed8f3a694a580a6ae3e1d6c8a2922` |
+
+The preserved isolation report
+`rounds/polya-main/round_021/reviews/candidate-final-byte-isolation-audit.md`,
+SHA-256
+`601aa805838a683b5e440de11766eccc09a73b97112fd93d389427c84daaaf73`,
+was committed at `a537991fd8d0418b8338388783f1a7462e0707f4` and rejected those
+bytes. Its first issue was a missing frequency quantifier: finite outward
+checks evaluated at $K=200$ were grouped with predicates needed for every
+$K\geq200$.
+
+The replacement aggregate contract now separates:
+
+1. the 1,286 finite outward ratio boxes at the single base frequency
+   $K=200$, including the three principal base signs, base guards, and
+   derivative consistency signs; and
+2. A3's analytic obligation, universally quantified for every allowed
+   ratio and every $K\geq200$, including the curvature chain, guard
+   propagation, and two integrations from the separately certified base
+   signs.
+
+The replacement candidate assigns the same separation to A3 and A4. A
+replayed $K=200$ check of $I_{KK}$, $E_{KK}$, or $\mathcal B_{KK}$ is now
+explicitly base consistency only and cannot establish unbounded-frequency
+propagation. No theorem statement, residual set, subtraction owner, face,
+dependency, sealed executable identity, or compact-contract byte changed.
+
+The failed audit remains chronological evidence and is not a permitted A3
+input. These replacement bytes remain unreleased pending a new isolation
+audit.
+
+## 3. Accepted starting-set boundary
 
 The candidate imports the exact accepted residual only through:
 
@@ -42,9 +86,9 @@ $$
 
 This freeze does not change it.
 
-## 3. Frozen claims only
+## 4. Frozen claims only
 
-The released bytes propose, without proving:
+The replacement bytes propose, without proving:
 
 1. the compact theorem on the closed rectangle
    $[7/51,39/50]\times[12,200]$;
@@ -68,10 +112,12 @@ The released bytes propose, without proving:
 The larger theorem domains are not redefinitions of $\mathcal D_{20}$.
 The live residual is not declared empty by this release.
 
-## 4. Isolated A3 release set
+## 5. Conditional isolated A3 input set
 
-A3 may read only the three frozen candidate files in Section 1, the three
-accepted residual files in Section 2, and these foundations:
+Only if a new final-byte isolation audit releases this replacement may A3
+begin. Its readable inputs are limited to the three frozen candidate files
+in Section 1, the three accepted residual files in Section 3, and these
+foundations:
 
 | artifact | SHA-256 |
 |---|---|
@@ -90,9 +136,9 @@ The verifier, test, report, and aggregate-route hashes visible in the
 contracts are sealed A4 authentication targets. Hash visibility does not
 authorize A3 to read those files.
 
-## 5. Explicit exclusions from A3
+## 6. Explicit exclusions from A3
 
-Before its initial isolated response, A3 must not inspect:
+If released, before its initial isolated response A3 must not inspect:
 
 - `rounds/polya-main/round_021/exploration/exact-d20-closure.md`;
 - the aggregate route named only as a sealed dependency in its contract;
@@ -103,15 +149,17 @@ Before its initial isolated response, A3 must not inspect:
 - any Round 21 cross-comparison, referee report, judge draft, or State Patch.
 
 A3 is the analytic reconstruction role. A4 is the independent certificate
-and exact-set validation role. Neither may substitute for the other.
+and exact-set validation role. Neither may substitute for the other. Neither
+role is released by this freeze alone.
 
-## 6. Required later gates
+## 7. Required later gates
 
-After separate A3 and A4 work, the release requires a cross-comparison and a
-fresh candidate referee. Only a later Round 21 lemma judge may propose
-scoped obligations `CERT-round21-compact-proxy` and
-`CERT-round21-aggregate-tail`; an independently audited and applied State
-Patch is required before the accepted residual can change.
+After a new isolation audit releases the bytes and separate A3 and A4 work
+is complete, the workflow requires a cross-comparison and a fresh candidate
+referee. Only a later Round 21 lemma judge may propose scoped obligations
+`CERT-round21-compact-proxy` and `CERT-round21-aggregate-tail`; an
+independently audited and applied State Patch is required before the
+accepted residual can change.
 
 `COMP-certified-bessel` remains `diagnostic_only` and is not promoted by
 this release. Even after exact D20 closure is accepted, separate
