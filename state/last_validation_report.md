@@ -2,38 +2,28 @@
 
 Date: 2026-07-14
 
-Round: `polya-main` / round 17
+Round: polya-main / round 18
 
 ## Promotion decision
 
-- Judge: `rounds/polya-main/round_017/judge/judge-017.md`.
+- Judge: rounds/polya-main/round_018/judge/judge-018.md
 - Judge SHA-256:
-  `769dc256aa97dc8da093bdead8a020033904c115ff256ae60a708a31f90dbadd`.
-- Decision: **PASS**. First unsupported implication: none.
-- State Patch validation: **PASS** against the untouched Round 16 graph.
-- The patch was applied exactly once with `round_index=17`; it must not be
-  replayed against the promoted graph.
-- Round score: 6.
+  73132dfb49fd958e7f41adb43f01175f9eb4e008501d923e847c06e858782d61
+- Decision: **PASS**.
+- First unsupported implication: **none**.
+- Mathematical progress score: 7.
+- The Round 18 State Patch validated against its frozen baseline and the
+  authoritative graph reflects its one-time application.
 
-The one-time patch created `SHELL-first-angular-bands` as
-`proved_internal` and `COMP-certified-bessel-pilot-round17` as `certified`.
-It updated the compact analytic envelope to the exact Round 17 cover while
-retaining `SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`,
-and `POLYA-program-target` as `open`. The parent
-`COMP-certified-bessel` remains `diagnostic_only`.
+Round 18 created and promoted only:
 
-The durable graph hashes are:
+- SRC-LORCH as a qualified proved_external_dependency;
+- SHELL-next-angular-staircase as proved_internal.
 
-- untouched Round 16 baseline:
-  `dc2552091ff79f5ab39de896b4d97cf22ccc234f3842ee9734d54d123c5f2379`;
-- immediately after the one-time Round 17 State Patch:
-  `cbd15b3ab3c73f326321052019de9c2a8a2877c6ec84a668d1a5a35ffe13ebd5`;
-- after the initial Round 18 target-selection rule update:
-  `aca527f8b947f9a14f94e531ce4e659660cc93bc05bb902276b6f155e4eb4e18`;
-- final graph after the deterministic-LF provenance repair described below:
-  `3fa7413ae55f4f8c9ee6c55391d0100f19399cf875c1c43f57af46c081a3040c`.
+No theorem-level target was closed and no Round 18 certified-computation
+child was created.
 
-## Promoted analytic band
+## Promoted analytic staircase
 
 Set
 
@@ -42,100 +32,139 @@ $$
 \qquad
 z_\rho=\frac{\pi}{1-\rho},
 \qquad
-k_2(\rho)=\sqrt{z_\rho^2+6}.
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
 $$
 
 The accepted closed theorem band is
 
 $$
-\rho_c\le\rho\le\frac78,
+\boxed{
+\rho_c\leq\rho\leq\frac78,
 \qquad
-z_\rho\le K\le k_2(\rho).
+z_\rho\leq K\leq k_5(\rho).
+}
 $$
 
-The spectral caps $0$, $1$, and $4$ follow from the complete separated
-spectrum, min--max, strict endpoint counting, and angular multiplicities
-$1$ and $3$. The exact Weyl reserve at the second payment wall exceeds
-$49061/269500$.
-
-The isolated clean-room proof, exact finite ledger, and fresh adversarial
-referee all returned PASS. Provenance is exact: A4's finite audit checks the
-theorem constants, $\mathcal C_{17}\subset\mathcal D_{16}$, and
-$B_0\subset\mathcal C_{17}$; the fresh referee separately proves
-$B_1\subset\mathcal C_{17}$ with squared upper-face reserve
+The genuinely new Round 18 part is
 
 $$
-\frac{668749071}{10020010000}>0.
+\mathcal C_{18}
+=\left\{(\rho,K):
+\rho_c\leq\rho<\frac78,
+\quad k_2(\rho)<K\leq k_5(\rho)
+\right\}.
 $$
+
+The isolated clean-room proof, independent exact-constant audit,
+cross-comparison, and fresh adversarial referee all returned PASS. Strict
+counting assigns every spectral equality to the lower count. Exact
+subtraction assigns the old \(K=k_2\) face to its Round 17 owner and the
+inclusive \(K=k_5\) face to the new Round 18 lemma.
 
 ## Exact surviving residual
 
-The new analytic part is
-
-$$
-\mathcal C_{17}
-=\{\rho_c\le\rho<7/8,\ z_\rho<K\le k_2(\rho)\}.
-$$
-
-The exact surviving residual is
+Let \(U(\rho)\) retain its accepted piecewise definition from the frozen
+compact-ratio mask. Exact subtraction gives
 
 $$
 \boxed{
 \begin{aligned}
-\mathcal D_{17}
-=&\left\{\rho_*<\rho<\rho_c,
-\ \frac1{2\rho}<K<U(\rho)\right\}\\
+\mathcal D_{18}
+={}&\left\{(\rho,K):
+\rho_*<\rho<\rho_c,
+\quad \frac1{2\rho}<K<U(\rho)
+\right\}\\
 &\cup
-\left\{\rho_c\le\rho<\frac78,
-\ k_2(\rho)<K<U(\rho)\right\}.
-\end{aligned}}
+\left\{(\rho,K):
+\rho_c\leq\rho<\frac78,
+\quad k_5(\rho)<K<U(\rho)
+\right\}.
+\end{aligned}
+}
 $$
 
-Both certified boxes satisfy
-$B_0,B_1\subset\mathcal C_{17}$. They remain independent regression
-evidence but provide no additional subtraction, so
-$\mathcal U_{17}=\mathcal D_{17}$. The full theorem remains open.
+All four displayed frequency inequalities are strict. The lower-ratio
+component is unchanged; it does not inherit the
+\(\rho\geq\rho_c\) staircase. The high-ratio component begins strictly
+above \(k_5\). The exact witness \((\rho,K)=(1/2,30)\) lies in the second
+component, so \(\mathcal D_{18}\) is nonempty.
 
-## Certified pilot extension
+The certified boxes \(B_0\) and \(B_1\) remain valid independent regression
+artifacts, but both were already absorbed by \(\mathcal C_{17}\). They
+produce no additional subtraction.
 
-The closed face-connected box
+## Qualified Lorch source boundary
+
+The source card sources/lorch_bessel_zeros.md has SHA-256
+85f9a009811c5626e837446e2635ccbbca652ee192ccd524defc69a5952f4ce4.
+
+The primary SIAM publisher abstract states the two strict lower
+inequalities, the first-positive-zero convention, and the scope
+\(\nu>-1\). DLMF supplies the spherical-Bessel identity. Exact
+specialization supports only
 
 $$
-B_1=
-\left[\frac{999}{2000},\frac{1001}{2000}\right]
-\times
-\left[\frac{168}{25},\frac{673}{100}\right]
+j_{5/2,1}>\frac{51}{10},
+\qquad
+j_{7/2,1}>\frac{13}{2},
+\qquad
+j_{9/2,1}>\frac{15}{2}.
 $$
 
-has exact strict count $4$ and a positive certified Weyl margin. The Arb
-producer, independent exact-Fraction checker, tamper tests, and persistent
-independent audit all pass. This promotes only the bounded child
-computation; its parent remains `diagnostic_only`.
+The full Lorch article proof was access-controlled in the audited
+environment. Accordingly, SRC-LORCH is a qualified statement-level
+external dependency, not an internal reconstruction. It does not supply
+shell-to-ball comparison, shell cross-product zero bounds, higher-radial
+exclusions, angular multiplicities, or Weyl payments. Those Round 18 steps
+were proved internally.
+
+## Graph status after promotion
+
+The authoritative graph has 53 unique obligation IDs and validates with no
+missing references, duplicate IDs, or dependency cycles. After the
+canonical Round 19 round-selection update its SHA-256 is
+
+$$
+\texttt{24c2970516f503c765d0db280a360b37724c540e536016f9bf35fbaafb94132e}.
+$$
+
+Relevant statuses are:
+
+| Obligation | Status after Round 18 |
+|---|---|
+| SRC-LORCH | proved_external_dependency |
+| SHELL-next-angular-staircase | proved_internal |
+| SHELL-rho-compact-analytic-envelope | proved_internal |
+| SHELL-rho-compact | open |
+| SHELL-rho-uniformity | open |
+| TARGET-shell-d3 | open |
+| POLYA-program-target | open |
+| COMP-certified-bessel | diagnostic_only |
+| COMP-certified-bessel-pilot-round8 | certified |
+| COMP-certified-bessel-pilot-round17 | certified |
+
+The theorem remains open because the exact nonempty
+\(\mathcal D_{18}\) is not covered.
 
 ## Validation ledger
 
-- State Patch validator before application: `Patch OK`.
-- Independent read-only in-memory application audit: PASS after one
-  provenance correction and a complete re-audit.
-- State Patch validator after application: graph OK.
-- Fixed judge evidence: 20 of 20 hashes match current bytes.
-- Patch evidence paths and hashes: complete; no missing references.
-- Dependency graph: acyclic; no missing obligation references.
-- Full Python suite: `97 passed`.
-- The staging audit found that the new JSON writers inherited Windows CRLF
-  translation while Git stores the artifacts with LF. Both writers now set
-  `newline="\n"`; the certificate and checker report were regenerated, their
-  complete provenance chain was rehashed, and committed bytes now reproduce
-  the authenticated bytes exactly.
-- A fresh read-only post-repair audit confirmed LF-only byte regeneration,
-  all internal and external provenance hashes, 20/20 judge hash rows,
-  index/worktree equality for every authenticated artifact, checker PASS,
-  and 6/6 focused certificate tests.
-- `git diff --check`: PASS.
-- UTF-8, control-character, whitespace, final-newline, Markdown-fence, and
-  math-delimiter hygiene: PASS.
+- Round 18 judge fixed evidence: 18 of 18 hashes matched.
+- State Patch final audit: PASS; first issue none.
+- Residual-mask self-check: PASS, 12 checks.
+- Angular-staircase exact ledger: PASS, 40 checks; first issue null.
+- Complete repository suite:
+  **132 passed, 10 subtests passed**.
+- Round 18 bytecode compilation: PASS.
+- Graph validation after the Round 19 selection update: PASS.
+- Evidence paths and artifact hashes: complete.
+- Dependency and implication graph: acyclic.
+- git diff --check in the final audit: PASS.
 
-The next round must work only on the exact $\mathcal D_{17}$. The crude
-post-$k_2$ multiplicity cap $9$ is a method obstruction at $\rho_c$, not a
-counterexample; a sharper next-angular staircase or a new estimate is
-required.
+## Next method boundary
+
+Round 19 must first freeze the exact \(\mathcal D_{18}\) mask. Its
+high-ratio lead route is a combined radial-entry/angular staircase above
+\(k_5\), explicitly resolving the relative walls \(2z_\rho\) and
+\(k_6(\rho)\). A crude one-radial-mode continuation is not authorized.
+The lower-ratio component \(\rho_*<\rho<\rho_c\) remains a separate proof
+problem. No unproved Round 19 threshold is recorded in this report.

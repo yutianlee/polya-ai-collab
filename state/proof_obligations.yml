@@ -28,7 +28,7 @@
       "SHELL-rho-compact",
       "COMP-certified-bessel"
     ],
-    "round_rule": "Round 17 froze the exact D_16 mask and independently proved the closed first-angular band rho_c<=rho<=7/8, pi/(1-rho)<=K<=sqrt((pi/(1-rho))^2+6). The exact surviving residual is D_17={rho_*<rho<rho_c, 1/(2rho)<K<U(rho)} union {rho_c<=rho<7/8, sqrt((pi/(1-rho))^2+6)<K<U(rho)}. The certified boxes B0 and B1 remain independently valid but lie inside the promoted analytic band, so U_17=D_17 and neither box may be subtracted again. The full theorem remains open. Primary Round 18 target: develop a sharper next-angular staircase, especially an ell=2 entry estimate, on the exact D_17; the crude cap jump from 4 to 9 fails at rho_c and is a method obstruction, not a counterexample. Treat the lower-ratio piece rho_*<rho<rho_c explicitly rather than hiding it in a rectangle. Secondary: certify at most one predeclared face-connected subset proved wholly inside D_17. A1 owns the exact residual and freeze gate, A2 develops the incumbent analytic route, A3 reconstructs it in strict isolation, A4 audits constants and any bounded certificate, and a fresh referee performs the final adversarial review."
+    "round_rule": "Round 18 froze the exact D_17 mask and independently proved the closed angular staircase rho_c<=rho<=7/8, z_rho<=K<=k_5(rho), where z_rho=pi/(1-rho) and k_m(rho)=sqrt(z_rho^2+m(m+1)). Its genuinely new part C_18={rho_c<=rho<7/8, k_2(rho)<K<=k_5(rho)} is analytically proved. The exact surviving residual is D_18={rho_*<rho<rho_c, 1/(2rho)<K<U(rho)} union {rho_c<=rho<7/8, k_5(rho)<K<U(rho)}. The certified boxes B0 and B1 remain valid regression evidence inside C17 and are not subtracted again. The full theorem remains open. Primary Round 19 target: freeze and hash the exact D_18 mask before proof work, then develop a combined radial-entry/angular staircase above k_5 on the high-ratio component. The proof must explicitly resolve the relative walls 2z_rho and k_6(rho); it may not continue a crude one-radial-mode cap across the radial-entry wall. Treat the unchanged lower-ratio component rho_*<rho<rho_c separately and do not hide either component in a rectangle. Do not assert an unproved Round 19 threshold. Secondary: after the mask is frozen, certify at most one predeclared face-connected subset proved wholly inside D_18. A1 owns the exact residual and proof-free freeze gates, A2 develops the incumbent analytic route, A3 reconstructs the frozen claim in strict isolation, A4 independently audits constants and exact set arithmetic plus any bounded certificate, and a fresh referee performs the final adversarial review."
   },
   "proof_obligations": [
     {
@@ -49,15 +49,21 @@
       "evidence": {
         "positive": [
           "sources/seed_reports/Strategy.md",
-          "sources/seed_reports/background-strategy-01.md"
+          "sources/seed_reports/background-strategy-01.md",
+          "state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": []
       },
       "owner": "A1",
-      "next_action": "Keep the program target open until TARGET-shell-d3 passes rho-uniformity, finite certification, and final theorem-level clean-room review.",
-      "last_updated_round": 4,
-      "last_updated_at": "2026-07-13T00:25:31"
+      "next_action": "Keep the program target open. First close D18, certify any genuinely uncovered finite remainder if required, and pass theorem-level clean-room and adversarial review for TARGET-shell-d3.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24",
+      "falsification_cases": [
+        "TARGET-shell-d3 remains open on the exact nonempty residual D18",
+        "a compact-band lemma cannot promote the program theorem"
+      ]
     },
     {
       "id": "CONV-strict-counting",
@@ -69,7 +75,8 @@
       "dependencies": [],
       "implies": [
         "TARGET-shell-d3",
-        "POLYA-program-target"
+        "POLYA-program-target",
+        "SHELL-next-angular-staircase"
       ],
       "blockers": [],
       "evidence": {
@@ -84,8 +91,8 @@
       "owner": "A1",
       "next_action": "Use this endpoint rule in all imported source statements, phase-count identities, eigenvalue formulations, and certified finite-window checks.",
       "reason_for_promotion": "Round 1 fixed this as a project convention and no mathematical theorem is being promoted by adopting the endpoint normalization.",
-      "last_updated_round": 1,
-      "last_updated_at": "2026-07-12T19:52:28"
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
     },
     {
       "id": "TARGET-shell-d3",
@@ -161,7 +168,12 @@
           "rounds/polya-main/round_017/exploration/analytic-constant-audit.md",
           "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md",
           "rounds/polya-main/round_017/certification/pilot-extension-feasibility.md",
-          "rounds/polya-main/round_017/certification/pilot-extension-upward-check.json"
+          "rounds/polya-main/round_017/certification/pilot-extension-upward-check.json",
+          "state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md",
+          "rounds/polya-main/round_018/responses/angular-staircase-incumbent.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-constants.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -190,15 +202,18 @@
         "rho -> 0 small-hole limit",
         "rho -> 1 thin-shell limit",
         "angular multiplicity and accidental cross-channel equality",
-        "D17 remains nonempty and prevents theorem promotion",
+        "historical Round 17 checkpoint: D17 was nonempty and prevented theorem promotion before C18",
         "B0 and B1 provide no extra coverage outside promoted C17",
-        "the final theorem still requires complete D17 closure and fresh theorem-level review"
+        "historical Round 17 checkpoint: the theorem then required D17 closure and fresh theorem-level review",
+        "D18 remains nonempty and prevents theorem promotion",
+        "B0 and B1 provide no coverage outside the already promoted analytic region",
+        "the final theorem still requires complete D18 closure and fresh theorem-level review"
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "The strict shell inequality retains both endpoint theorems, the all-ratio K>=295^2 range, and the promoted C17 band. Complete exact coverage of D17, then run fresh theorem-level clean-room and adversarial audits before changing this status.",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15"
+      "next_action": "The strict shell inequality now includes both endpoints, the all-ratio high-frequency range, C17, and C18. Complete exact D18 coverage, then run fresh theorem-level clean-room and adversarial audits before changing this status.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -210,7 +225,8 @@
       "dependencies": [],
       "implies": [
         "FLPS-disk-ball-reproduction",
-        "SHELL-phase-enclosures"
+        "SHELL-phase-enclosures",
+        "SHELL-next-angular-staircase"
       ],
       "blockers": [],
       "source_card": "sources/flps_balls.md",
@@ -227,8 +243,8 @@
       },
       "owner": "A1",
       "next_action": "Use only the audited convex-tail and multiplicity components; do not transfer the ball theorem across the shell inner interface.",
-      "last_updated_round": 3,
-      "last_updated_at": "2026-07-12T22:05:44",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24",
       "reason_for_promotion": "The published theorem, counting convention, uniform zero comparison, convex shifted floor theorem, dimension reduction, exact integral, computation boundary, and shell transfer limitations have been audited from the primary source."
     },
     {
@@ -708,7 +724,11 @@
           "rounds/polya-main/round_017/responses/analytic-compression-incumbent.md",
           "rounds/polya-main/round_017/reviews/analytic-compression-clean-room.md",
           "rounds/polya-main/round_017/exploration/analytic-constant-audit.md",
-          "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md"
+          "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md",
+          "state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-constants.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -719,12 +739,14 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Both endpoint neighborhoods and all ratios at K>=295^2 remain proved, and C17 is analytically discharged. Keep this obligation open until the exact surviving compact residual D17 is closed.",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15",
+      "next_action": "Both endpoint neighborhoods, all ratios at K>=295^2, C17, and C18 are proved. Keep this obligation open until the exact residual D18 is closed.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24",
       "falsification_cases": [
         "C17 is a strict compact-band compression, not compact all-frequency closure",
-        "D17 remains the exact blocker after both endpoint theorems"
+        "historical Round 17 checkpoint: D17 was the exact blocker after both endpoint theorems and before C18",
+        "C18 is a compact-band compression, not compact all-frequency closure",
+        "D18 remains the exact blocker after both endpoint theorems"
       ]
     },
     {
@@ -796,7 +818,12 @@
           "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md",
           "rounds/polya-main/round_017/certification/pilot-extension-feasibility.md",
           "rounds/polya-main/round_017/certification/pilot-extension-upward-check.json",
-          "rounds/polya-main/round_017/reviews/pilot-extension-independent-audit.md"
+          "rounds/polya-main/round_017/reviews/pilot-extension-independent-audit.md",
+          "state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md",
+          "rounds/polya-main/round_018/responses/angular-staircase-incumbent.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-constants.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": []
@@ -806,14 +833,17 @@
         "certificate gaps between rho subdivisions",
         "threshold blow-up inside a compact interval",
         "loss of monotonicity under interval evaluation",
-        "the exact two-piece D17 rather than D16 or a rectangular proxy",
+        "historical Round 17 set-arithmetic checkpoint: the exact two-piece D17 rather than D16 or a rectangular proxy",
         "the shared rho=rho_c face and inclusive K=k_2(rho) analytic owner",
         "B0 and B1 analytically subsumed but independently certified",
-        "nonemptiness of the surviving residual not confused with theorem closure"
+        "nonemptiness of the surviving residual not confused with theorem closure",
+        "D18 remains nonempty, including the exact witness rho=1/2 and K=30",
+        "the lower-ratio D18 component is unchanged and cannot inherit the rho>=rho_c staircase",
+        "the second-radial entry at 2z_rho prevents an unaudited continuation to k_6"
       ],
-      "next_action": "Keep this obligation open. Close exactly D17=D16 setminus C17: the unchanged strip rho_*<rho<rho_c above 1/(2 rho), and the strip rho_c<=rho<7/8 above k_2(rho), both below the frozen upper floor U(rho).",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15"
+      "next_action": "Keep this obligation open. Close the exact two-piece D18, preserving all strict faces; start a radial-entry staircase above k_5 and a separate proof on rho_*<rho<rho_c.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -1045,7 +1075,10 @@
           "rounds/polya-main/round_005/exploration/thin-shell-product-diagnostic.md",
           "computations/thin_scaled_action_round6_diagnostic.py",
           "computations/tests/test_thin_scaled_action_round6_diagnostic.py",
-          "rounds/polya-main/round_006/exploration/scaled-action-diagnostic.md"
+          "rounds/polya-main/round_006/exploration/scaled-action-diagnostic.md",
+          "computations/round18_verify_angular_staircase.py",
+          "computations/tests/test_round18_verify_angular_staircase.py",
+          "rounds/polya-main/round_018/reviews/angular-staircase-constants.md"
         ]
       },
       "owner": "A4",
@@ -1058,14 +1091,17 @@
         "rounds/polya-main/round_017/certification/pilot-extension-feasibility.md",
         "rounds/polya-main/round_017/reviews/pilot-extension-independent-audit.md"
       ],
-      "next_action": "Keep the parent diagnostic_only. B0 and B1 are valid local certificates but are analytically redundant after C17 promotion. Any new finite certificate must be an exact face-connected subset of D17 and must pass an independent checker before graph use.",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15",
+      "next_action": "Keep the parent diagnostic_only. B0 and B1 remain regression certificates inside C17. Any later finite certificate must be a predeclared face-connected subset of the exact D18 and pass an independent checker.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24",
       "falsification_cases": [
         "B1 is one exact face-connected box, not a sweep or residual component",
         "B1 subset C17 makes it analytically redundant after promotion",
         "a certified child does not promote the diagnostic_only parent",
-        "any future certificate must lie in the exact surviving D17 rather than D16 or a coarse rectangle"
+        "any future certificate must lie in the exact surviving D18 rather than D17, D16, or a coarse rectangle",
+        "the Round 18 exact constant ledger is analytic support, not an interval-certified spectral computation",
+        "B0 and B1 remain valid but analytically redundant inside C17",
+        "no Round 18 certified subset is promoted"
       ]
     },
     {
@@ -1187,7 +1223,8 @@
       "implies": [
         "SHELL-cross-product-formula",
         "SHELL-count-floor-identity",
-        "COMP-certified-bessel"
+        "COMP-certified-bessel",
+        "SHELL-next-angular-staircase"
       ],
       "blockers": [],
       "evidence": {
@@ -1207,8 +1244,8 @@
       },
       "owner": "A4",
       "next_action": "Use this result as the discharged structural spectrum theorem. Do not infer rho-uniformity, a finite-window inequality, or numerical certification from it.",
-      "last_updated_round": 4,
-      "last_updated_at": "2026-07-13T00:25:31",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -2227,7 +2264,7 @@
       "track": "shell_analytic",
       "title": "Explicit analytic envelope on the remaining compact shell-ratio interval",
       "status": "proved_internal",
-      "statement_tex": "Retain the complete Round 16 analytic cover A_16, its exact residual D_16, the all-ratio theorem for K>=295^2=87025, and both endpoint theorems. Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), k_2(rho)=sqrt(z_rho^2+6), and C_17={rho_c<=rho<7/8, z_rho<K<=k_2(rho)}. The promoted closed first-angular-band lemma enlarges the analytic cover to A_17=A_16 union {rho_c<=rho<=7/8, z_rho<=K<=k_2(rho)}. The exact surviving analytic residual is D_17=D_16 setminus C_17, equivalently {rho_*<rho<rho_c, 1/(2 rho)<K<U(rho)} union {rho_c<=rho<7/8, k_2(rho)<K<U(rho)}, where U is the exact frozen Round 17 upper floor. Both B0 and B1 are contained in C_17, so the theorem-wise uncovered set is U_17=D_17. No claim that D_17 is empty is made.",
+      "statement_tex": "Retain the complete Round 17 analytic cover A_17, both endpoint theorems, and the all-ratio theorem for K>=295^2. Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), k_5(rho)=sqrt(z_rho^2+30), and C_18={rho_c<=rho<7/8, k_2(rho)<K<=k_5(rho)}. The promoted closed staircase enlarges the cover to A_18=A_17 union {rho_c<=rho<=7/8, z_rho<=K<=k_5(rho)}. The exact residual is D_18={rho_*<rho<rho_c, 1/(2 rho)<K<U(rho)} union {rho_c<=rho<7/8, k_5(rho)<K<U(rho)}. B0 and B1 remain inside C17 and are not subtracted again. No claim that D18 is empty is made.",
       "dependencies": [
         "SHELL-rho-zero-endpoint",
         "SHELL-rho-one-endpoint",
@@ -2236,7 +2273,8 @@
         "SHELL-thin-width-phase-zero",
         "SHELL-fixed-rho-high-energy",
         "SHELL-central-thin-seam-compression",
-        "SHELL-first-angular-bands"
+        "SHELL-first-angular-bands",
+        "SHELL-next-angular-staircase"
       ],
       "implies": [
         "SHELL-rho-compact"
@@ -2313,7 +2351,18 @@
           "rounds/polya-main/round_017/exploration/analytic-constant-audit.md",
           "computations/round17_verify_candidate_c17_constants.py",
           "computations/tests/test_round17_candidate_c17_constants.py",
-          "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md"
+          "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md",
+          "state/lemma_packets/SHELL-rho-compact-round18.md",
+          "rounds/polya-main/round_018/exploration/residual-mask-freeze.md",
+          "computations/round18_residual_mask.py",
+          "computations/tests/test_round18_residual_mask.py",
+          "state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md",
+          "rounds/polya-main/round_018/exploration/candidate-claim-freeze.md",
+          "rounds/polya-main/round_018/responses/angular-staircase-incumbent.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-constants.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-cross-comparison.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -2334,7 +2383,8 @@
         "SHELL-thin-width-phase-zero",
         "SHELL-fixed-rho-high-energy",
         "SHELL-central-thin-seam-compression",
-        "SHELL-first-angular-bands"
+        "SHELL-first-angular-bands",
+        "SHELL-next-angular-staircase"
       ],
       "falsification_cases": [
         "rho=rho_*",
@@ -2357,7 +2407,13 @@
         "B0 subset C17 and B1 subset C17 on every closed box face",
         "B0 and B1 retained as certified evidence but not subtracted again from D17",
         "D17 or U17 incorrectly declared empty",
-        "the ell=2 coarse-payment obstruction misreported as a target counterexample"
+        "the ell=2 coarse-payment obstruction misreported as a target counterexample",
+        "the exact two-piece D18 rather than D17 or a rectangular proxy",
+        "the shared rho=rho_c slice, old K=k_2 owner, and newly covered K=k_5 face",
+        "k_5<U against every active upper-floor branch and the old global face",
+        "B0 and B1 retained as analytically redundant certificates and not subtracted again",
+        "nonemptiness of D18 not confused with theorem closure",
+        "the 2z_rho and k_6 ordering recorded only as a method boundary outside C18"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_008/reviews/compact-envelope-clean-room.md",
@@ -2385,9 +2441,9 @@
         "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md"
       ],
       "reason_for_promotion": "Round 16's endpoint and high-frequency conclusions are unchanged. All Round 17 PASS gates are satisfied, so the independently proved C17 band is added with exact old-face ownership, exact containment in D16, and exact residual subtraction; no certified box or sampled point is used to prove the analytic band.",
-      "next_action": "Treat C17 as discharged and work only on D_17=D_16 setminus C17. Preserve the two exact D17 pieces and their strict walls; do not claim compact closure or replace D17 by a rectangle.",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15",
+      "next_action": "Treat C18 as discharged. Close exactly D18: the unchanged rho_*<rho<rho_c component above 1/(2 rho), and the rho_c<=rho<7/8 component strictly above k_5 and below U.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24",
       "artifact_hashes": {
         "residual_packet": "eca93c29423a619ab13a3118653256df2ad085219c6718d195723a0a6542026e",
         "residual_freeze": "23bfee8cddd64d0d9d956b8d1a288c6263095a2a04cc42052c4ace08ca36152a",
@@ -2401,7 +2457,8 @@
         "constant_verifier": "b07f79b6f026dfe0a9e05a7198b5ac129ff4ff033eae644940eabe493a2d1469",
         "constant_tests": "533620b5fadd9b7b13ff1d21ca9282bfd3d1ed778e7ecda970a3fb027ce3955c",
         "adversarial_referee": "a13a05294af7957e817d3ca77440084c466c35334adaf5c1aa6cf610009c687b"
-      }
+      },
+      "reason_for_update": "The independently proved C18 band is added by exact set union and exact subtraction. All old endpoint, seam, high-frequency, and certificate owners remain unchanged."
     },
     {
       "id": "COMP-certified-bessel-pilot-round8",
@@ -2490,9 +2547,9 @@
         "rounds/polya-main/round_008/certification/pilot-report.md"
       ],
       "reason_for_promotion": "Arb outward-rounded determinant signs, exact Sturm truncation, strict multiplicity counting, and the Weyl margin are all independently reconstructed by a checker sharing no producer or Flint code; current provenance hashes and tamper rejection pass.",
-      "next_action": "Retain B0 unchanged as an independent certified regression artifact. It is analytically redundant after C17 promotion and must not be counted as an additional reduction of D17.",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15"
+      "next_action": "Retain B0 unchanged as an independent certified regression artifact. It is analytically redundant after C17 promotion and must not be counted as an additional reduction of D18.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
     },
     {
       "id": "SHELL-thin-local-plateau-optimized",
@@ -2761,7 +2818,8 @@
         "SHELL-sturm-liouville-completeness"
       ],
       "implies": [
-        "SHELL-rho-compact-analytic-envelope"
+        "SHELL-rho-compact-analytic-envelope",
+        "SHELL-next-angular-staircase"
       ],
       "blockers": [],
       "evidence": {
@@ -2821,9 +2879,9 @@
         "spectral_packet": "6fde758cab1c8e9bda1ed2f268640dca9a5b0536b3c635de83bbdee330d0bcb8"
       },
       "reason_for_promotion": "All three PASS gates are satisfied: the isolated A3 proof reconstructs the complete band without incumbent or certificate access; A4 verifies the finite theorem constants, C17 subset D16, and B0 subset C17; and a fresh adversarial referee finds no unsupported implication and proves B1 subset C17. The proof uses only the strict convention, the separated Sturm-Liouville spectrum, min-max, and exact elementary inequalities.",
-      "next_action": "Use the lemma only through its exact closed band. Attack D_17 above k_2(rho) or the unchanged rho<rho_c part; do not extend through the ell=2 wall using the failed coarse multiplicity payment.",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15"
+      "next_action": "Retain the exact closed Round 17 band as the lower-band dependency of SHELL-next-angular-staircase. Its statement and proof are unchanged; further work begins strictly above k_5, not above k_2.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
     },
     {
       "id": "COMP-certified-bessel-pilot-round17",
@@ -2912,9 +2970,143 @@
         "rounds/polya-main/round_017/reviews/pilot-extension-independent-audit.md"
       ],
       "reason_for_promotion": "The single face-connected B1 certificate has outward Arb determinant signs, independently reconstructed exact-Fraction determinant bounds, exact Sturm exclusions, strict multiplicity counting, exact residual membership, a strict Weyl margin at the true worst corner, authenticated provenance, and an independent checker PASS. It remains a one-box result and is analytically redundant after C17 promotion.",
-      "next_action": "Retain B1 as an independent regression certificate. Do not use it to enlarge the analytic mask or promote the parent computation; any later certificate must target an exact face-connected subset of D_17.",
-      "last_updated_round": 17,
-      "last_updated_at": "2026-07-14T19:30:15"
+      "next_action": "Retain B1 as an independent regression certificate. Do not use it to enlarge the analytic mask or promote the parent computation; any later certificate must target an exact face-connected subset of D_18.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
+    },
+    {
+      "id": "SRC-LORCH",
+      "type": "source_audit",
+      "track": "source_audit",
+      "title": "Source audit: Lorch lower bounds for first positive Bessel zeros",
+      "status": "proved_external_dependency",
+      "statement_tex": "For nu>-1, Lorch's published abstract gives the two strict lower bounds for j_(nu,1)^2 recorded in sources/lorch_bessel_zeros.md. At nu=5/2, 7/2, and 9/2 they imply j_(5/2,1)>51/10, j_(7/2,1)>13/2, and j_(9/2,1)>15/2. DLMF 10.47.3 identifies these positive ordinary-Bessel zeros with the corresponding spherical-Bessel zeros. No shell-to-ball comparison or shell cross-product assertion is imported.",
+      "dependencies": [],
+      "implies": [
+        "SHELL-next-angular-staircase"
+      ],
+      "blockers": [],
+      "source_card": "sources/lorch_bessel_zeros.md",
+      "evidence": {
+        "positive": [
+          "sources/lorch_bessel_zeros.md",
+          "rounds/polya-main/round_018/reviews/lorch-source-audit.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_018\\judge\\judge-018.md"
+        ]
+      },
+      "owner": "A1",
+      "criticality": "standard",
+      "artifact_hashes": {
+        "source_card": "85f9a009811c5626e837446e2635ccbbca652ee192ccd524defc69a5952f4ce4",
+        "source_audit": "0b49af55a253d7ed7646d2c7b70b2225899c2159d5baa10bb719b3cd3ee785e4"
+      },
+      "reason_for_promotion": "The primary SIAM abstract states the exact strict inequalities, positive-zero convention, and scope used, while DLMF supplies the spherical-Bessel identity. Exact algebra verifies all three rational consequences. The access limitation is recorded, and the source boundary explicitly excludes every shell-specific variational, counting, and Weyl step.",
+      "next_action": "Use this obligation only for the three stated first-positive-zero lower bounds and the spherical-Bessel identification. Prove every fixed-channel shell comparison internally and do not attribute shell cross-product zeros, radial exclusions, multiplicities, or Weyl payments to Lorch.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
+    },
+    {
+      "id": "SHELL-next-angular-staircase",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Next angular staircase through the first radial barrier",
+      "status": "proved_internal",
+      "statement_tex": "Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), and k_m(rho)=sqrt(z_rho^2+m(m+1)). For every rho_c<=rho<=7/8 and z_rho<=K<=k_5(rho), the strict shell count satisfies N_D(A_(rho,1),K^2)<(2/(9 pi))(1-rho^3)K^3. Its genuinely new part C_18={rho_c<=rho<7/8, k_2(rho)<K<=k_5(rho)} is contained in D_17 and removes exactly that interval from the second residual component. The face K=k_5 is included; no statement is made for K>k_5.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-first-angular-bands",
+        "SRC-LORCH",
+        "SRC-FLPS-balls"
+      ],
+      "implies": [
+        "SHELL-rho-compact-analytic-envelope"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-rho-compact-round18.md",
+          "rounds/polya-main/round_018/exploration/residual-mask-freeze.md",
+          "computations/round18_residual_mask.py",
+          "computations/tests/test_round18_residual_mask.py",
+          "state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md",
+          "rounds/polya-main/round_018/exploration/candidate-claim-freeze.md",
+          "sources/lorch_bessel_zeros.md",
+          "rounds/polya-main/round_018/reviews/lorch-source-audit.md",
+          "rounds/polya-main/round_018/responses/angular-staircase-incumbent.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md",
+          "computations/round18_verify_angular_staircase.py",
+          "computations/tests/test_round18_verify_angular_staircase.py",
+          "rounds/polya-main/round_018/reviews/angular-staircase-constants.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-cross-comparison.md",
+          "rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "rounds\\polya-main\\round_018\\judge\\judge-018.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "bottleneck",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "fresh-referee",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-first-angular-bands",
+        "SRC-LORCH",
+        "SRC-FLPS-balls"
+      ],
+      "falsification_cases": [
+        "rho=rho_c, 3/10, 1/2, 5/6, and 7/8, including both one-sided traces at every interior split",
+        "K=z_rho, k_2(rho), k_3(rho), k_4(rho), and k_5(rho), with strict spectral endpoint exclusion",
+        "K=51/10, 13/2, and 15/2, including reversed, coincident, empty, and degenerate subbands",
+        "radial indices n=1,2 and all n>=2; angular orders ell=0 through 5 and all ell>=5; full multiplicities and accidental cross-order coincidences",
+        "the fixed-channel zero-extension form domain, Hardy finiteness, angular preservation, and min-max direction",
+        "the Lorch scope nu>-1, first-positive-zero convention, strict square-root direction, and spherical-Bessel identification",
+        "all moving-wall derivatives, pi bounds, split payments, denominators, radicals, squarings, and strict inequality directions",
+        "k_5<U against the K_0 branch, inclusive seam branch, old global face, and rho=7/8 endpoint face",
+        "C18 subset D17 and exact D18 subtraction, with K=k_2 old-owned and K=k_5 newly owned",
+        "B0 and B1 retained as certified regression evidence but not subtracted again",
+        "K=2z_rho and K=k_6(rho) treated as a radial-entry method boundary outside the claim, not a counterexample",
+        "no executable ledger, sampled root, plot, source overreach, or agent agreement used as a replacement for the analytic proof"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md"
+      ],
+      "artifact_hashes": {
+        "baseline_graph": "3fa7413ae55f4f8c9ee6c55391d0100f19399cf875c1c43f57af46c081a3040c",
+        "residual_packet": "7c70440b5c66d1a7af1a31892676998a8fd05e959c860763ca522b9bdf1f11d9",
+        "residual_freeze": "7f507b0b7fd0c625c67e1511f3433237f094809750baf888bb408667cd1cc2ff",
+        "residual_classifier": "75ede07aab5ce24b8339ea9cdf53664d4b14c3ab5ffc0a8130841945c3da52da",
+        "residual_tests": "ed5f39389354538e71fd843ff64267fc3514ac1219f0e9f04bc2b9410bf9c103",
+        "frozen_claim": "354e3beae50ed837ef7da0f986da93d36d4385770c600a73dddd6d2eb16870e9",
+        "candidate_freeze": "b4e4d71b569a48dd37c954bb97f90903d246e3d885fd19f51422cf2792093f6c",
+        "lorch_source_card": "85f9a009811c5626e837446e2635ccbbca652ee192ccd524defc69a5952f4ce4",
+        "lorch_source_audit": "0b49af55a253d7ed7646d2c7b70b2225899c2159d5baa10bb719b3cd3ee785e4",
+        "incumbent": "bbb1be54d3b0861442ca56b87022ef6c616fae45359914141128d871f1c42032",
+        "clean_room": "d94ca00eb41e4d1b33635cb8ef6a569bcfa0a70ed81549e8b4e9907483016660",
+        "constant_verifier": "c3d480cb85f65c9038a61aebfe411e18622b4224d7770e1c074f110330e5ea8f",
+        "constant_tests": "2a267c01568bbf069dc93efcc2119a75d454e33dc28b59315faf63ac58a41b50",
+        "constant_review": "0d6c38c0790fb492d177ea50546d5bcb5fe7aa0017b5544c9a55c89ab54110e5",
+        "cross_comparison": "f324da8eef7b9754e4478bdd2bc3f8813b0547688d9ab3dff15600b1a7410bd5",
+        "adversarial_referee": "dfec69ccaf048443afdfa5c4a02d55036ae54f92c0a43d5dd57f34e0608a2b48",
+        "spectral_packet": "6fde758cab1c8e9bda1ed2f268640dca9a5b0536b3c635de83bbdee330d0bcb8",
+        "round17_claim": "c23d8bd0e115214e394970746acb11fbe6355b44dbaa4efd75ab32b0009eae77",
+        "flps_source_card": "27ec69e8a4b49c0d44ac1077c80eea3c1264150c6d06caeb1f3763b95be62a38"
+      },
+      "reason_for_promotion": "Every mandatory gate passed. A3 reconstructed the fixed-channel variational comparison, delayed Bessel entries, radial cutoff, multiplicity caps, Weyl payments, upper-floor containment, and exact subtraction without incumbent access. A4 independently verified 40 exact finite checks. The fresh referee reconstructed the complete implication and found no unsupported step. The external source boundary is explicit and the shell-specific comparison remains internal.",
+      "next_action": "Use the lemma only through the closed K=k_5 face. Freeze D18 and develop a combined angular and radial-entry staircase above k_5, explicitly resolving the relative walls 2z_rho and k_6(rho), while separately attacking the unchanged rho_*<rho<rho_c component.",
+      "last_updated_round": 18,
+      "last_updated_at": "2026-07-14T21:14:24"
     }
   ],
   "rejected_claims": [

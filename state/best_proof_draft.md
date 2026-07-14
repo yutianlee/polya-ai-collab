@@ -1102,9 +1102,220 @@ W\bigl(\rho_c,k_2(\rho_c)\bigr)<9.
 $$
 
 Hence this same all-at-once cap cannot continue uniformly through the third
-angular band. A sharper $\ell=2$ eigenvalue bound, a ratio-dependent
-staircase, or a different action/tail argument is required. This is a
-method obstruction, not a counterexample to the target inequality.
+angular band. This is the historical Round 17 method obstruction, not a
+counterexample to the target inequality. Round 18 resolves it through
+$k_5$ with delayed fixed-channel entries.
+
+## Delayed angular-entry staircase through $k_5$ (Round 18)
+
+For $m\in\mathbb N_0$, set
+
+$$
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
+$$
+
+Round 18 proves
+
+$$
+\boxed{
+\rho_c\le\rho\le\frac78,
+\qquad
+z_\rho\le K\le k_5(\rho)
+}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+<W(\rho,K).
+\tag{R18.1}
+$$
+
+The Round 17 theorem already owns $z_\rho\le K\le k_2(\rho)$. To treat
+$k_2<K\le k_5$, first note that $z_\rho\ge\pi+1/2>7/2$. Hence
+
+$$
+4z_\rho^2-k_5(\rho)^2
+=3z_\rho^2-30>\frac{27}{4}>0.
+\tag{R18.2}
+$$
+
+The lower bound (R17.1) therefore excludes every $n\ge2$ mode through the
+closed $K=k_5$ face. It also excludes every first mode with $\ell\ge5$,
+because $z_\rho^2+\ell(\ell+1)\ge z_\rho^2+30=k_5^2$. Only the first
+radial modes in channels $\ell=0,1,2,3,4$ can contribute.
+
+The delayed first entries use a fixed-channel comparison that is proved
+inside the project. For
+
+$$
+\mathfrak a_\ell^\rho[u]
+=\int_\rho^1\left(|u'|^2+
+\frac{\ell(\ell+1)}{r^2}|u|^2\right)dr,
+\qquad D(\mathfrak a_\ell^\rho)=H_0^1(\rho,1),
+$$
+
+extend $u$ by zero across $(0,\rho]$. Its zero trace gives a member of the
+unit-ball fixed-$\ell$ form domain; the extension preserves the norm, the
+form, and the angular subspace. Min--max in that same channel gives the
+first inequality below; the audited unit-ball separation formula gives the
+equality:
+
+$$
+\boxed{
+\lambda_{\ell,1}^{\rm shell}(\rho)
+\ge\lambda_{\ell,1}^{\rm ball}
+=j_{\ell+1/2,1}^2.}
+\tag{R18.3}
+$$
+
+This is an internal variational argument, not an assertion imported from
+Lorch. The audited external dependency supplies only
+
+$$
+j_{5/2,1}>c_2=\frac{51}{10},\qquad
+j_{7/2,1}>c_3=\frac{13}{2},\qquad
+j_{9/2,1}>c_4=\frac{15}{2}.
+\tag{R18.4}
+$$
+
+The SIAM publisher abstract states the strict inequalities used, the
+first-positive-zero convention, and the scope $\nu>-1$; DLMF supplies the
+spherical-Bessel identity. The full Lorch paper was access-controlled, so
+this is a qualified statement-level dependency rather than a reconstruction
+of its proof. No shell cross-product bound, shell-to-ball comparison,
+higher-radial exclusion, multiplicity count, or Weyl payment is attributed
+to Lorch.
+
+Let
+
+$$
+F_m(\rho)=W(\rho,k_m(\rho)),qquad
+e=1-\rho,qquad S=1+\rho+\rho^2,qquad c=m(m+1).
+$$
+
+Then
+
+$$
+F_m(\rho)=\frac{2}{9\pi}\frac{S}{e^2}
+(\pi^2+ce^2)^{3/2}.
+$$
+
+After multiplying its logarithmic derivative by the positive denominator,
+its sign is the sign of
+
+$$
+3\left[\pi^2(1+\rho)-c\rho^2(1-\rho)^2\right]>0
+\qquad(m\le5),
+\tag{R18.5}
+$$
+
+because $c\le30$, $\rho^2(1-\rho)^2\le1/16$, and $\pi>3$. Thus all
+moving-wall payments used below are strictly increasing.
+
+The three delayed-entry bridges use
+
+$$
+(r_2,r_3,r_4)=\left(\frac3{10},\frac12,\frac12\right)
+$$
+
+and the exact split payments
+
+$$
+\begin{aligned}
+W\left(\frac3{10},\frac{51}{10}\right)
+&>\frac{100387329}{11000000}>9,\\
+W\left(\frac12,\frac{13}{2}\right)
+&>\frac{107653}{6336}>16,\\
+W\left(\frac12,\frac{15}{2}\right)
+&>\frac{18375}{704}>25.
+\end{aligned}
+\tag{R18.6}
+$$
+
+At the corresponding splits the moving walls lie above the fixed
+thresholds, with exact positive squared reserves
+
+$$
+\frac{1802859}{13764100},\qquad
+\frac{103667}{11236},\qquad
+\frac{36251}{11236}.
+\tag{R18.7}
+$$
+
+If the first mode in channel $m\in\{2,3,4\}$ contributes, (R17.1),
+(R18.3), and (R18.4) force both $K>k_m(\rho)$ and $K>c_m$. For
+$\rho\le r_m$, monotonicity of $(1-\rho^3)$ pays at the fixed threshold
+$c_m$; for $\rho\ge r_m$, (R18.5) pays at the moving wall $k_m$. Equations
+(R18.6)--(R18.7) cover both one-sided traces, coincident thresholds, and
+empty subbands. The available cumulative strict-count upper caps are exactly
+
+$$
+4,\qquad9,\qquad16,\qquad25,
+\tag{R18.8}
+$$
+
+the sums of the full multiplicities $2\ell+1$. If none of the
+$\ell=2,3,4$ channels contributes, the cap is $4$ and
+$K>k_2>k_1$ together with (R17.4) gives $W(\rho,K)>4$. Otherwise choose
+the largest contributing $m\in\{2,3,4\}$; all higher channels are absent,
+the cap is $(m+1)^2$, and the corresponding bridge pays it strictly.
+Strict counting excludes a new channel on each equality wall $K=k_m$ and
+$K=c_m$; accidental cross-order coincidences cannot exceed the cumulative
+cap. This proves (R18.1), including $K=k_5$ and both ratio faces.
+
+The genuinely new part is
+
+$$
+\mathcal C_{18}
+=\left\{\rho_c\le\rho<\frac78,
+\quad k_2(\rho)<K\le k_5(\rho)\right\}.
+\tag{R18.9}
+$$
+
+The upper-floor audit first gives $k_5<26$ on the closed ratio band. The
+$H_0$ branch ends below $\rho_c$; on the active fixed-ratio branch one has
+$26<64<K_0$, while on the seam branch
+$26<1944\le54/(1-\rho)^2$. Hence
+
+$$
+k_5(\rho)<U(\rho),
+\qquad \mathcal C_{18}\subset\mathcal D_{17}.
+\tag{R18.10}
+$$
+
+Exact subtraction now gives the accepted current residual
+
+$$
+\boxed{
+\mathcal D_{18}
+=\left\{\rho_*<\rho<\rho_c,
+\ \frac1{2\rho}<K<U(\rho)\right\}
+\cup
+\left\{\rho_c\le\rho<\frac78,
+\ k_5(\rho)<K<U(\rho)\right\}.}
+\tag{R18.11}
+$$
+
+Every displayed frequency inequality in (R18.11) is strict. The old
+$K=k_2$ owner is unchanged, $K=k_5$ is newly covered, and $\rho=7/8$
+retains its endpoint owner. The residual is nonempty: the exact audited
+chain
+
+$$
+k_5(1/2)<26<30<64<K_0(1/2)=U(1/2)
+$$
+
+puts $(1/2,30)$ in its second component.
+
+The proof stops at a genuine method boundary. At the left ratio face,
+
+$$
+k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c),
+\tag{R18.12}
+$$
+
+and the exact $\ell=0,n=2$ mode enters immediately above $2z_{\rho_c}$.
+The one-radial-mode cap therefore cannot simply continue to $k_6$. This is
+not a counterexample; the next band requires a combined radial-entry and
+angular staircase.
 
 ## Certified central regression boxes
 
@@ -1164,20 +1375,24 @@ $$
 
 Both certificates therefore remain independent regression evidence but are
 analytically redundant after promotion of the Round 17 band. They do not
-subtract anything further from $\mathcal D_{17}$, do not promote sampled
+subtract anything further from $\mathcal D_{18}$, do not promote sampled
 numerics to proof, and do not make `COMP-certified-bessel` more than
 `diagnostic_only`.
 
 ## Remaining gates
 
 This file must not be cited as a proof of the full shell theorem. The open
-gates are:
+obligations `SHELL-rho-compact`, `SHELL-rho-uniformity`,
+`TARGET-shell-d3`, and `POLYA-program-target` remain open. The gates are:
 
 - analytic or symbolic closure of the exact two-piece residual
-  $\mathcal D_{17}$, followed only where necessary by rigorous,
+  $\mathcal D_{18}$, followed only where necessary by rigorous,
   face-connected certification inside that same residual;
-- preservation of the exact accepted mask $\mathcal A_{17}$ and every owned
+- preservation of the exact accepted mask $\mathcal A_{18}$ and every owned
   face; a coarse envelope or rectangle is not an admissible substitute;
+- construction above $k_5$ must resolve the relative $2z_\rho$ and
+  $k_6(\rho)$ radial/angular walls, while the unchanged
+  $\rho_*<\rho<\rho_c$ component is handled separately;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review after the compact residual is closed. Agent consensus is not a
   proof, and finite ledgers certify only the arithmetic they execute.

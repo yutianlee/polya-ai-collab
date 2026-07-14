@@ -276,7 +276,83 @@ $$
 
   Here $U(\rho)$ is exactly $H_0(\rho)$ below $\rho_{HK}$,
   $K_0(\rho)$ from $\rho_{HK}$ to $5/6$, and $54/(1-\rho)^2$ from $5/6$
-  to $7/8$. This is an exact nonempty residual, not a rectangle;
+  to $7/8$. This is the exact historical post-Round-17 residual, not a
+  rectangle;
+
+- the Round 18 next-angular-staircase lemma. For
+
+$$
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)},
+$$
+
+  one has
+
+$$
+\rho_c\le\rho\le\frac78,
+\qquad
+z_\rho\le K\le k_5(\rho)
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+<\frac{2}{9\pi}(1-\rho^3)K^3.
+$$
+
+  The shell-specific comparison is internal: zero extension preserves the
+  norm, form, and fixed angular subspace, so min--max gives
+  $\lambda_{\ell,1}^{\rm shell}(\rho)\ge
+  \lambda_{\ell,1}^{\rm ball}$. The audited ball separation identifies the
+  latter as $j_{\ell+1/2,1}^2$. Lorch supplies only the audited
+  statement-level bounds
+
+$$
+j_{5/2,1}>\frac{51}{10},\qquad
+j_{7/2,1}>\frac{13}{2},\qquad
+j_{9/2,1}>\frac{15}{2}.
+$$
+
+  The publisher abstract exposes the inequalities and scope $\nu>-1$; the
+  access-controlled proof was not reconstructed, and no shell cross-product,
+  channel comparison, radial exclusion, multiplicity, or Weyl estimate is
+  imported. The delayed entries, together with
+  $\lambda_{\ell,n}^{\rm shell}\ge n^2z_\rho^2+\ell(\ell+1)$, give exact
+  caps $4,9,16,25$. At ratio splits $3/10,1/2,1/2$, the exact payments are
+
+$$
+\frac{100387329}{11000000}>9,\qquad
+\frac{107653}{6336}>16,\qquad
+\frac{18375}{704}>25.
+$$
+
+  All moving-wall payments are strictly increasing, every spectral equality
+  uses strict-count exclusion, and the upper-floor audit gives
+  $k_5<26<64<K_0$ on the active $K_0$ branch and
+  $k_5<26<1944\le54/(1-\rho)^2$ on the seam branch. Thus $k_5<U$;
+
+- the exact Round 18 subtraction. The genuinely new band is
+
+$$
+\mathcal C_{18}
+=\left\{\rho_c\le\rho<\frac78,
+\ k_2(\rho)<K\le k_5(\rho)\right\}
+\subset\mathcal D_{17},
+$$
+
+  and
+
+$$
+\boxed{
+\mathcal D_{18}
+=\mathcal D_{17}\setminus\mathcal C_{18}
+=\left\{\rho_*<\rho<\rho_c,
+\ \frac1{2\rho}<K<U(\rho)\right\}
+\cup
+\left\{\rho_c\le\rho<\frac78,
+\ k_5(\rho)<K<U(\rho)\right\}.}
+$$
+
+  The face $K=k_2$ retains its Round 17 owner, $K=k_5$ is newly covered,
+  and $\rho=7/8$ retains its endpoint owner. The residual is nonempty:
+  $k_5(1/2)<26<30<64<K_0(1/2)=U(1/2)$, so
+  $(1/2,30)\in\mathcal D_{18}$;
 
 - the independently checked certified pilot
 
@@ -303,20 +379,29 @@ $$
   margin. Both certified boxes lie inside $\mathcal C_{17}$, so they remain
   independent regression evidence but are analytically redundant.
 
-`SHELL-rho-compact` remains open. Round 17 reduces its exact residual to
-$\mathcal D_{17}$ above, which is the sole remaining shell blocker. The
-theorem-wise uncovered set is also exactly $\mathcal D_{17}$ because both
-certified boxes are contained in the promoted analytic band.
+`SHELL-rho-compact` remains open. Round 18 reduces its exact residual to
+$\mathcal D_{18}$ above, which is the sole remaining shell blocker. The
+theorem-wise uncovered set is also exactly $\mathcal D_{18}$ because both
+certified boxes were already contained in $\mathcal C_{17}$ and are not
+subtracted again. `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`POLYA-program-target` remain open as well.
 
 Any further certification must use an exact bounded, face-connected manifest
-inside $\mathcal D_{17}$, with analytic ownership of all faces. Further
-analytic or symbolic compression remains the primary route. Immediately
-above $k_2(\rho)$, the coarse min--max cap jumps from $4$ to $9$, but the
-Weyl term at $(\rho_c,k_2(\rho_c))$ is below $9$. The next analytic step
-therefore needs a sharper $\ell=2$ estimate, a ratio-dependent staircase, or
-a different action/tail argument. This is a method obstruction only. The parent
-`COMP-certified-bessel` obligation remains `diagnostic_only`, and the final
-all-frequency theorem remains open.
+inside $\mathcal D_{18}$, with analytic ownership of all faces. Further
+analytic or symbolic compression remains the primary route. Current work
+begins strictly above $k_5(\rho)$, not above $k_2(\rho)$. At the left ratio
+face,
+
+$$
+k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c),
+$$
+
+and the exact $\ell=0,n=2$ mode enters immediately above $2z_{\rho_c}$.
+The one-radial-mode cap therefore cannot simply continue to $k_6$; the next
+step needs a combined radial-entry/angular staircase and a separate attack on
+$\rho_*<\rho<\rho_c$. This is a method boundary, not a counterexample. The
+parent `COMP-certified-bessel` obligation remains `diagnostic_only`, and the
+final all-frequency theorem remains open.
 
 The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain unproved.
 The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their

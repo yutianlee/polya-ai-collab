@@ -4,7 +4,7 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Close the exact Round 17 compact residual on
+- Close the exact Round 18 compact residual on
   $I_{16}=[\rho_*,7/8]$, where
 
   $$
@@ -19,28 +19,35 @@ The authoritative statuses are in state/proof_obligations.yml.
   \qquad
   z_\rho=\frac{\pi}{1-\rho},
   \qquad
-  k_2(\rho)=\sqrt{z_\rho^2+6}.
+  k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
   $$
 
   The promoted closed band
-  $\rho_c\le\rho\le7/8$, $z_\rho\le K\le k_2(\rho)$ removes exactly its
-  genuinely new portion $\mathcal C_{17}$ from the prior residual. Hence
+  $\rho_c\le\rho\le7/8$, $z_\rho\le K\le k_5(\rho)$ removes exactly its
+  genuinely new Round 18 portion
+  $\mathcal C_{18}=\{\rho_c\le\rho<7/8,
+  k_2(\rho)<K\le k_5(\rho)\}$ from the prior residual. Hence
 
   $$
-  \mathcal D_{17}
-  =\mathcal D_{16}\setminus\mathcal C_{17}
+  \mathcal D_{18}
+  =\mathcal D_{17}\setminus\mathcal C_{18}
   =\left\{\rho_*<\rho<\rho_c,
   \ \frac1{2\rho}<K<U(\rho)\right\}
   \cup
   \left\{\rho_c\le\rho<\frac78,
-  \ k_2(\rho)<K<U(\rho)\right\}.
+  \ k_5(\rho)<K<U(\rho)\right\}.
   $$
 
   Here $U(\rho)$ is the exact frozen upper floor: $H_0(\rho)$ below
   $\rho_{HK}$, $K_0(\rho)$ from $\rho_{HK}$ to $5/6$, and
-  $54/(1-\rho)^2$ from $5/6$ to $7/8$. The two pieces are nonempty;
-  closing $\mathcal D_{17}$ is the sole shell blocker. It is not admissible
-  to substitute $\mathcal D_{16}$, the four-zone over-cover, or a rectangle.
+  $54/(1-\rho)^2$ from $5/6$ to $7/8$. The exact audit gives $k_5<U$.
+  The residual is nonempty because
+  $k_5(1/2)<26<30<64<K_0(1/2)=U(1/2)$, so
+  $(1/2,30)\in\mathcal D_{18}$. Closing $\mathcal D_{18}$ is the sole
+  shell blocker. It is not admissible to substitute $\mathcal D_{17}$, the
+  four-zone over-cover, or a rectangle. `SHELL-rho-compact`,
+  `SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target`
+  remain open.
 
 - The Round 8 box $B_0$ and its face-connected Round 17 extension
   $B_1=[999/2000,1001/2000]\times[168/25,673/100]$ are independently
@@ -48,22 +55,24 @@ The authoritative statuses are in state/proof_obligations.yml.
   $\mathcal C_{17}$ and are therefore analytically redundant after
   promotion. `COMP-certified-bessel` remains `diagnostic_only`; any future
   certificate must be bounded, face-connected, and contained in the exact
-  $\mathcal D_{17}$, with rigorous truncation, provenance hashes, and an
+  $\mathcal D_{18}$, with rigorous truncation, provenance hashes, and an
   independent checker.
 
-- The first direct continuation above $k_2(\rho)$ is unresolved. The same
-  coarse min--max comparison changes its multiplicity cap from $4$ to $9$
-  when the $\ell=2$ channel becomes available, while the Weyl term at
-  $(\rho_c,k_2(\rho_c))$ is strictly below $9$. A next step therefore needs
-  a sharper $\ell=2$ eigenvalue estimate, a ratio-dependent staircase, or a
-  different action/tail argument. This is a method obstruction only.
+- The current continuation starts strictly above $k_5(\rho)$, not above
+  $k_2(\rho)$. At the left ratio face,
+  $k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c)$, and the exact $\ell=0,n=2$ mode
+  enters immediately above $2z_{\rho_c}$. Thus the one-radial-mode cap used
+  through $k_5$ cannot simply be carried to $k_6$. The next construction
+  must combine radial-entry and angular walls, while the unchanged
+  $\rho_*<\rho<\rho_c$ component is treated separately. This is a method
+  boundary, not a counterexample.
 
 - The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain
   unproved. The negative screens at $\rho=17/20$ and $\rho=5/6$ are
   obstructions only to the tested extension routes, not counterexamples to
   the shell theorem and not new shell blockers.
 
-- After $\mathcal D_{17}$ closes, perform a fresh theorem-level
+- After $\mathcal D_{18}$ closes, perform a fresh theorem-level
   clean-room reconstruction and adversarial audit before promoting the global
   shell theorem.
 
@@ -165,6 +174,30 @@ The authoritative statuses are in state/proof_obligations.yml.
   $\ell=0$ interval spectrum with the radial min--max bound, strict spectral
   counting, full multiplicities, and exact Weyl payments. It passed isolated
   reconstruction, exact finite-constant audit, and fresh adversarial review.
+- The Round 18 next-angular-staircase theorem
+
+  $$
+  \rho_c\le\rho\le\frac78,
+  \qquad
+  z_\rho\le K\le k_5(\rho),
+  $$
+
+  including the complete $K=k_5$ face. Fixed-channel zero extension and
+  min--max internally prove
+  $\lambda_{\ell,1}^{\rm shell}\ge\lambda_{\ell,1}^{\rm ball}$, and the
+  audited ball separation identifies the latter as $j_{\ell+1/2,1}^2$;
+  this comparison is not attributed to Lorch. The audited statement-level
+  Lorch dependency is
+  restricted to
+  $j_{5/2,1}>51/10$, $j_{7/2,1}>13/2$, and
+  $j_{9/2,1}>15/2$. Its publisher abstract is accessible, but its proof was
+  access-controlled. The delayed entries give cumulative caps
+  $4,9,16,25$ at ratio splits $3/10,1/2,1/2$, with exact payments
+  $100387329/11000000>9$, $107653/6336>16$, and
+  $18375/704>25$. The upper-floor audit gives $k_5<26<64<K_0$ on the
+  active fixed-ratio branch and $k_5<26<1944\le54/(1-\rho)^2$ on the seam
+  branch. Isolated reconstruction, an exact constants audit, source audit,
+  cross-comparison, and fresh adversarial review all passed.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -203,13 +236,17 @@ The authoritative statuses are in state/proof_obligations.yml.
   By the close of Round 15 the all-ratio ceiling had fallen to $200000$;
   Round 16 supersedes that historical boundary with $295^2=87025$ and the
   smaller residual $\mathcal D_{16}$. Round 17 further replaces it by
-  $\mathcal D_{17}=\mathcal D_{16}\setminus\mathcal C_{17}$, but its
-  closure still requires monotone-corner, symbolic, or analytic aggregation.
+  $\mathcal D_{17}=\mathcal D_{16}\setminus\mathcal C_{17}$, and Round 18
+  replaces that by
+  $\mathcal D_{18}=\mathcal D_{17}\setminus\mathcal C_{18}$. Its closure
+  still requires monotone-corner, symbolic, analytic, or rigorously bounded
+  certification aggregation.
 - Paying the entire first $\ell=2$ multiplicity immediately above
   $k_2(\rho)$ cannot uniformly continue the Round 17 coarse channel cap:
   the cap becomes $9$, while the Weyl term is below $9$ at the left ratio
   face. This rejects only that coarse continuation, not the target
-  inequality or a sharper third-angular-band lemma.
+  inequality. Round 18 overcomes this historical obstruction through $k_5$
+  using delayed fixed-channel entries; it is not the present boundary.
 
 ## Parallel-track gaps
 

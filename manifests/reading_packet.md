@@ -1,27 +1,41 @@
 # Reading Packet
 
-Generated after round 17 in run `polya-main`.
+Generated after Round 18 for the canonical Round 19 workflow in run
+polya-main.
 
-## Current Theorem Target
+## Current theorem target
 
-Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain
-class.
-
-Current status: no complete all-ratio shell theorem has been proved. The
-exact three-dimensional spectrum, fixed-ratio high-energy theorem, both
-uniform ratio-endpoint neighborhoods, the all-ratio range
-$K\ge295^2=87025$, and the Round 17 first-angular band are proved. The exact
-surviving nonrectangular residual is
+The active theorem target is the strict-counting Dirichlet Pólya inequality
+for three-dimensional spherical shells
 
 $$
-\begin{aligned}
-\mathcal D_{17}
-={}&\left\{\rho_*<\rho<\rho_c,
-\quad \frac1{2\rho}<K<U(\rho)\right\}\\
-&\cup
-\left\{\rho_c\le\rho<\frac78,
-\quad k_2(\rho)<K<U(\rho)\right\},
-\end{aligned}
+A_{\rho,1}=\{x\in\mathbb R^3:\rho<|x|<1\},
+\qquad 0<\rho<1,
+$$
+
+namely
+
+$$
+N_D(A_{\rho,1},K^2)
+\leq\frac{2}{9\pi}(1-\rho^3)K^3
+\qquad(K\geq0).
+$$
+
+The full theorem has **not** been proved.
+
+## Accepted coverage through Round 18
+
+The following regions remain analytically proved:
+
+- the complete small-hole endpoint \(0<\rho\leq\rho_*\), all \(K\geq0\);
+- the complete thin-shell endpoint \(7/8\leq\rho<1\), all \(K\geq0\);
+- all ratios \(0<\rho<1\) for \(K\geq295^2=87025\);
+- the closed Round 18 angular staircase
+
+$$
+\rho_c\leq\rho\leq\frac78,
+\qquad
+z_\rho\leq K\leq k_5(\rho),
 $$
 
 where
@@ -29,346 +43,268 @@ where
 $$
 \rho_c=\frac1{1+2\pi},
 \qquad
-k_2(\rho)=\sqrt{\left(\frac{\pi}{1-\rho}\right)^2+6}.
+z_\rho=\frac{\pi}{1-\rho},
+\qquad
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
 $$
 
-The certified boxes $B_0$ and $B_1$ remain independently valid, but both
-are contained in the promoted analytic band $\mathcal C_{17}$. They are
-regression evidence, not additional residual coverage. Consequently the
-theorem-wise uncovered set is exactly
-$\mathcal U_{17}=\mathcal D_{17}$. Exact coverage of this set and the final
-theorem-level audits remain open.
-
-## Current Route
-
-Prove
-$N_D(\Omega,\Lambda)\le L_d|\Omega|\Lambda^{d/2}$ for all
-$\Lambda\ge0$ for at least one new natural non-tiling Euclidean domain
-class, with Dirichlet boundary conditions and a fixed strict-counting
-convention.
-
-For the shell target, attack the exact $\mathcal D_{17}$ by a sharper
-next-angular spectral staircase. A continuation above $k_2$ cannot use only
-the crude multiplicity cap $9$: at
-$(\rho_c,k_2(\rho_c))$ the Weyl payment is strictly smaller than $9$.
-Round 18 must sharpen the $\ell=2$ entry threshold or the count/payment
-staircase itself.
-
-## Active Bottleneck
-
-`TARGET-shell-d3`: `open`.
-
-For
-$A_{\rho,1}=\{x\in\mathbb R^3:\rho<|x|<1\}$,
-$0<\rho<1$, prove
+The genuinely new Round 18 region is
 
 $$
-N_D(A_{\rho,1},\Lambda)
-\le\frac{2}{9\pi}(1-\rho^3)\Lambda^{3/2}
-\qquad(\Lambda\ge0)
+\mathcal C_{18}
+=\left\{(\rho,K):
+\rho_c\leq\rho<\frac78,
+\quad k_2(\rho)<K\leq k_5(\rho)
+\right\}.
 $$
 
-using strict counting. Equivalently, with $K=\sqrt\Lambda$, prove the same
-bound with right side
-$\frac{2}{9\pi}(1-\rho^3)K^3$ for every $K\ge0$.
+Round 18 passed an isolated clean-room reconstruction, independent exact
+constant audit, cross-comparison, qualified source audit, and fresh
+adversarial referee.
 
-Current blockers:
+## Exact uncovered set
 
-- `COMP-certified-bessel` (`diagnostic_only`): certified finite-window
-  verification for Bessel cross-products.
-- `SHELL-rho-uniformity` (`open`): uniformity in the shell ratio $\rho$.
+Retain the accepted compact-ratio upper floor
 
-## Round Target Obligations
+$$
+U(\rho)=
+\min\left(
+\{K_0(\rho)\}
+\cup\{H_0(\rho):\rho<\omega_0\}
+\cup\left\{\frac{54}{(1-\rho)^2}:\rho\geq\frac56\right\}
+\right),
+$$
 
-- `SHELL-rho-compact` (`open`, owner `A2`): Uniform shell estimates on
-  compact ratio intervals.
-  Next action: close exactly $\mathcal D_{17}$, preserving its two ratio
-  pieces, strict frequency faces, and piecewise upper floor $U(\rho)$. Use a
-  sharper next-angular staircase rather than the failed crude cap $9$.
-- `COMP-certified-bessel` (`diagnostic_only`, owner `A4`): Certified
-  finite-window verification for Bessel cross-products.
-  Next action: retain $B_0$ and $B_1$ as analytically redundant regression
-  certificates. Any Round 18 pilot must be one predeclared face-connected
-  subset proved wholly inside $\mathcal D_{17}$; the parent remains
-  `diagnostic_only`.
+where
 
-## Do-Not-Claim Rules
+$$
+H_0(\rho)=\frac{C_*}{\omega_0-\rho},
+\qquad
+\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+\qquad
+C_*=\frac12+\frac{8\sqrt2}{15},
+\qquad
+\rho_*=\frac{\omega_0}{1+2C_*}.
+$$
 
-- Do not claim the shell theorem, ellipse theorem, or certificate-family
-  theorem has been proved.
-- Do not replace $\mathcal D_{17}$ by $\mathcal D_{16}$, a rectangle, a
-  coarse envelope, or a sampled grid.
-- Do not subtract $B_0$ or $B_1$ again; both are already analytically
-  subsumed by $\mathcal C_{17}$.
-- Floating-point and symbolic computation are diagnostic only. Interval or
-  formal certification discharges only its explicit finite computation
-  obligation and proves no analytic spectral statement.
-- Do not use external theorems as proof dependencies without completed
-  source cards.
-- Do not promote a bottleneck without exact proof evidence, an isolated
-  clean-room reconstruction, an independent exact audit, and a fresh
-  adversarial-review artifact.
-- Do not interpret the failed crude cap $9$ as a counterexample to Pólya.
+The theorem-wise uncovered set is exactly
 
-## Obligation Roles
+$$
+\boxed{
+\begin{aligned}
+\mathcal D_{18}
+={}&\left\{(\rho,K):
+\rho_*<\rho<\rho_c,
+\quad \frac1{2\rho}<K<U(\rho)
+\right\}\\
+&\cup
+\left\{(\rho,K):
+\rho_c\leq\rho<\frac78,
+\quad k_5(\rho)<K<U(\rho)
+\right\}.
+\end{aligned}
+}
+$$
 
-Use `state/next_round_prompts.md` for the canonical Round 18 role-specific
-tasks selected from the graph.
+Every displayed frequency inequality is strict. At \(\rho=\rho_c\), use
+the second component. The \(K=k_5\) face has the Round 18 analytic owner;
+the \(K=U\) and endpoint faces retain their older owners.
 
-Current functional split:
+The exact witness \((1/2,30)\in\mathcal D_{18}\) proves that the residual is
+nonempty. The certified boxes \(B_0\) and \(B_1\) remain independent
+regression evidence inside \(\mathcal C_{17}\); neither is subtracted again.
 
-- `A1`: exact residual architecture, packet freezing, lead synthesis, and
-  State Patch authoring.
-- `A2`: incumbent analytic developer for the sharper next-angular
-  staircase.
-- `A3`: strictly isolated clean-room reconstruction from a reduced packet
-  with no incumbent proof.
-- `A4`: independent exact-constant and set auditor, plus at most one bounded
-  certification pilot.
-- A fresh referee that participated in neither proof performs the final
-  adversarial candidate audit.
-- Only assigned reviewers receive peer outputs; universal all-agent
-  cross-review is not required.
+## Round 19 primary route
 
-## Relevant Files
+Round 19 must freeze and hash the exact \(\mathcal D_{18}\) mask before
+proof work.
 
-- `state/proof_obligations.yml`
-- `state/next_round_prompts.md`
-- `state/best_proof_draft.md`
-- `state/lemma_packets/SHELL-rho-compact-round17.md`
-- `state/lemma_packets/SHELL-first-angular-bands-round17-claim.md`
-- `state/lemma_packets/SHELL-sturm-liouville-completeness.md`
-- `rounds/polya-main/round_017/judge/judge-017.md`
-- `rounds/polya-main/round_017/reviews/analytic-compression-clean-room.md`
-- `rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md`
-- `rounds/polya-main/round_017/exploration/analytic-constant-audit.md`
-- `rounds/polya-main/round_017/reviews/pilot-extension-independent-audit.md`
-- `problems/polya_conjecture.md`
-- `sources/flps_balls.md`
-- `sources/annuli_polya.md`
-- `sources/bessel_phase_enclosures.md`
-- `sources/shell_weyl_bessel.md`
-- `manifests/reading_packet.md`
+On the high-ratio component, the lead route is a **combined
+radial-entry/angular staircase** above \(k_5\). It must explicitly account
+for:
 
-## Last State Patch
+- the first \(\ell=5\) channel allowed above \(k_5\);
+- the exact \(\ell=0,n=2\) radial wall \(K=2z_\rho\);
+- the next angular wall \(K=k_6(\rho)\);
+- the relative order, equality, and one-sided traces of \(2z_\rho\) and
+  \(k_6(\rho)\);
+- all later entries and multiplicities needed by the claimed domain.
 
-Round 17 State Patch applied exactly once. It created
-`SHELL-first-angular-bands` as `proved_internal` and
-`COMP-certified-bessel-pilot-round17` as `certified`; enlarged the compact
-analytic envelope by the exact closed band
-$\overline{\mathcal C}_{17}$; and replaced $\mathcal D_{16}$ by the exact
-strict subset $\mathcal D_{17}$. It retained `SHELL-rho-compact`,
-`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` as
-`open`, and retained `COMP-certified-bessel` as `diagnostic_only`. The
-certified boxes $B_0$ and $B_1$ are analytically redundant after promotion.
-Round score: 6.
+The accepted Round 18 audit gives only
 
-## Active Obligation Briefs
+$$
+k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c).
+$$
 
-### SHELL-rho-compact: Uniform shell estimates on compact rho intervals
+It grants no global crossing threshold. Round 19 must derive any ratio
+split before using it. A crude one-radial-mode count may not be continued
+above \(2z_\rho\).
 
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Blockers: `COMP-certified-bessel`
-- Next action: Keep this obligation open. Close exactly
-  $\mathcal D_{17}$: the strip $\rho_*<\rho<\rho_c$ above $1/(2\rho)$ and
-  the strip $\rho_c\le\rho<7/8$ above $k_2(\rho)$, both strictly below
-  $U(\rho)$.
+The lower-ratio component
 
-### COMP-certified-bessel: Certified finite-window verification for Bessel cross-products
+$$
+\rho_*<\rho<\rho_c,
+\qquad
+\frac1{2\rho}<K<U(\rho)
+$$
 
-- Status: `diagnostic_only`
-- Track: `certified_computation`
-- Owner: `A4`
-- Next action: Keep the parent `diagnostic_only`. $B_0$ and $B_1$ are valid
-  local certificates but are analytically redundant. Any new certificate
-  must be a single predeclared face-connected subset proved wholly inside
-  $\mathcal D_{17}$ and independently checked before graph use.
+is a separate proof problem. It cannot inherit the Round 18 staircase by
+continuity or notation.
 
-### CERT-certificate-family: Fallback target: certified non-tiling comparison family
+If complete closure is not reached, only an exact proved subset of
+\(\mathcal D_{18}\) may be promoted, followed by exact subtraction with
+all faces assigned. No unproved Round 19 threshold is part of the accepted
+state.
 
-- Status: `open`
-- Track: `certificate_family`
-- Owner: `A3`
-- Blockers: `SRC-jiang-lin`
-- Next action: Keep as a fallback route. Do not mark blocked. First complete
-  `SRC-jiang-lin` before proposing a concrete family or exact certificate
-  theorem.
+## Round 19 secondary route
 
-### ELLIPSE-near-circular: Parallel flagship target: Dirichlet Pólya for near-circular ellipses
+After the residual freeze, A4 may attempt at most one predeclared,
+face-connected certified subset proved genuinely inside
+\(\mathcal D_{18}\). No adaptive second region or disconnected tiling is
+allowed.
 
-- Status: `open`
-- Track: `ellipse_parallel`
-- Owner: `A3`
-- Blockers: `SRC-mathieu-ellipse`
-- Next action: Keep as a parallel flagship track. Do not mark blocked. Next
-  useful action is source-auditing Mathieu characteristic values,
-  small-eccentricity perturbation, and certified eigenvalue enclosures after
-  the shell Round 2 core tasks are assigned.
+One certificate is local evidence only. It does not prove a curved band,
+close a residual component, or promote COMP-certified-bessel beyond
+diagnostic_only.
 
-### FLPS-disk-ball-reproduction: Reproduce the FLPS disk/ball proof architecture
+## Mandatory independence gates
 
-- Status: `open`
-- Track: `flps_reproduction`
-- Owner: `A2`
-- Next action: Reproduce only the remaining proof infrastructure needed by
-  active obligations; the FLPS ball source card is now audited.
+Use state/next_round_prompts.md as the canonical role specification.
+The required order is:
 
-### POLYA-program-target: Program target: exact Dirichlet Pólya for a new non-tiling Euclidean class
+1. A1 freezes the exact \(\mathcal D_{18}\) classifier and hash manifest.
+2. A2 develops the incumbent analytic candidate.
+3. A1 freezes a proof-free candidate claim with exact dependencies,
+   constants, faces, and falsification cases.
+4. A3 reconstructs that claim in strict isolation without the incumbent.
+5. A4 independently reproduces finite constants and exact set arithmetic,
+   and separately handles the optional bounded certificate if one was
+   predeclared.
+6. Only then may A1 cross-compare the independent outputs.
+7. A fresh referee, involved in neither proof, performs an adversarial
+   reconstruction.
+8. The judge validates and applies one State Patch exactly once.
 
-- Status: `open`
-- Track: `target_conventions`
-- Owner: `A1`
-- Blockers: `COMP-certified-bessel`
-- Next action: Keep the program target open until `TARGET-shell-d3` passes
-  ratio uniformity, finite certification, and final theorem-level clean-room
-  review.
+If exact residual closure is claimed, a separate fresh theorem-level
+clean-room proof and theorem-level adversarial audit are still required
+before TARGET-shell-d3 can close.
 
-### SHELL-inner-turning: Inner-boundary turning regime for shell phase differences
+## Source boundary
 
-- Status: `proposed`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Next action: Defer a new Airy enclosure. First test whether FLPS annuli
-  Lemma 5.2, including the global bound on $\rho K<\nu\le K$ and the
-  correlated $1/4$ bound on $\nu\le\rho K$, closes the weighted lattice
-  estimate.
+Round 18 added the qualified source obligation SRC-LORCH. The audited
+external content is limited to the first-positive-zero convention,
+\(\nu>-1\), and
 
-### SHELL-low-interface-shifted-tails: Shifted shell tails crossing the inner interface
+$$
+j_{5/2,1}>\frac{51}{10},
+\qquad
+j_{7/2,1}>\frac{13}{2},
+\qquad
+j_{9/2,1}>\frac{15}{2}.
+$$
 
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Criticality: `bottleneck`
-- Lead author: `A2`
-- Clean-room reviewer: `A3`
-- Adversarial reviewer: `A4`
-- Next action: The fixed-ratio high-energy part is discharged and no longer
-  blocks the weighted proxy. The unrestricted all-$K$ strengthening remains
-  open; finite theorem closure belongs to certified computation and endpoint
-  analysis.
+The full paper proof was access-controlled. Do not extrapolate this source
+card to new Bessel orders, shell cross-products, shell-to-ball comparison,
+radial exclusions, multiplicities, or Weyl payments. New external inputs
+require completed source cards.
 
-### SHELL-phase-evanescent: Mixed and fully evanescent shell phase control
+## Current graph targets
 
-- Status: `proposed`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Next action: Use the global one-sided annulus bound first; seek a sharper
-  evanescent estimate only if the weighted-lattice margin fails.
+Primary track: shell_analytic.
 
-### SHELL-phase-oscillatory: Shell phase enclosure in the ordinary oscillatory regime
+Secondary track: certified_computation.
 
-- Status: `proposed`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Next action: Treat as a fallback sharpening obligation only if the
-  transferred annulus phase bound lacks sufficient weighted-lattice margin.
+Target obligations:
 
-### SHELL-phase-outer-turning: Shell phase enclosure at the outer turning point
+- SHELL-rho-compact — open. Close exactly the two-piece
+  \(\mathcal D_{18}\), with a combined high-ratio staircase and a separate
+  lower-ratio proof.
+- COMP-certified-bessel — diagnostic_only. Retain \(B_0,B_1\) as
+  regression evidence; at most one new subset may be predeclared inside
+  \(\mathcal D_{18}\).
 
-- Status: `proposed`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Next action: Treat as a fallback sharpening obligation only if the
-  transferred annulus phase bound lacks sufficient weighted-lattice margin.
+Related statuses:
 
-### SHELL-phase-overlap: Compatibility and complete coverage of shell phase regimes
+- SHELL-next-angular-staircase — proved_internal;
+- SHELL-rho-compact-analytic-envelope — proved_internal;
+- SHELL-rho-uniformity — open;
+- TARGET-shell-d3 — open;
+- POLYA-program-target — open;
+- SRC-LORCH — proved_external_dependency;
+- COMP-certified-bessel-pilot-round8 — certified;
+- COMP-certified-bessel-pilot-round17 — certified.
 
-- Status: `proposed`
-- Track: `shell_analytic`
-- Owner: `A1`
-- Criticality: `bottleneck`
-- Lead author: `A1`
-- Clean-room reviewer: `A3`
-- Adversarial reviewer: `A4`
-- Blockers: `SHELL-phase-oscillatory`, `SHELL-phase-outer-turning`,
-  `SHELL-inner-turning`, `SHELL-phase-evanescent`
-- Next action: The transferred global bound removes regime-coverage gaps at
-  the present precision. Reactivate only if fallback regime sharpenings are
-  introduced.
+The graph has 53 unique obligations and validates acyclically. Its SHA-256
+after the canonical Round 19 selection update is
+24c2970516f503c765d0db280a360b37724c540e536016f9bf35fbaafb94132e.
 
-### SHELL-rho-uniformity: Uniformity in shell ratio rho
+## Round 18 artifacts to read
 
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A2`
-- Blockers: `SHELL-rho-compact`
-- Next action: Both endpoint neighborhoods, the all-ratio
-  $K\ge295^2$ range, and $\overline{\mathcal C}_{17}$ are proved. Keep this
-  obligation open until the exact surviving compact residual
-  $\mathcal D_{17}$ is closed.
+### State and accepted claims
 
-### SHELL-spherical-bessel-algebraic: Elementary spherical-Bessel form of half-integer shell cross-products
+- state/proof_obligations.yml
+- state/current_state.md
+- state/last_validation_report.md
+- state/next_round_prompts.md
+- state/lemma_packets/SHELL-rho-compact-round18.md
+- state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md
+- state/lemma_packets/SHELL-first-angular-bands-round17-claim.md
+- state/lemma_packets/SHELL-sturm-liouville-completeness.md
 
-- Status: `open`
-- Track: `certified_computation`
-- Owner: `A4`
-- Next action: Promote only after the all-$\ell$ recurrence identity and its
-  numerical-conditioning domain are proved; current low-order tests remain
-  diagnostic.
+### Exact mask and proof-free freezes
 
-### SRC-jiang-lin: Source audit: Jiang-Lin epsilon-loss and certificate strategy
+- rounds/polya-main/round_018/exploration/residual-mask-freeze.md
+- rounds/polya-main/round_018/exploration/candidate-claim-freeze.md
+- computations/round18_residual_mask.py
+- computations/tests/test_round18_residual_mask.py
 
-- Status: `source_audit_required`
-- Track: `source_audit`
-- Owner: `A1`
-- Next action: Create a source card before using Jiang-Lin as a proof
-  dependency.
+### Incumbent, independent reviews, and exact audit
 
-### SRC-mathieu-ellipse: Source audit: Mathieu-function tools for Dirichlet ellipses
+- rounds/polya-main/round_018/responses/angular-staircase-incumbent.md
+- rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md
+- rounds/polya-main/round_018/reviews/angular-staircase-constants.md
+- rounds/polya-main/round_018/reviews/angular-staircase-cross-comparison.md
+- rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md
+- computations/round18_verify_angular_staircase.py
+- computations/tests/test_round18_verify_angular_staircase.py
 
-- Status: `source_audit_required`
-- Track: `ellipse_parallel`
-- Owner: `A1`
-- Next action: Keep this as a parallel source-audit track until the shell
-  Round 1 target theorem memo is stable.
+### Source and promotion audit
 
-### SRC-shell-weyl: Source audit: Bessel functions and Weyl law for balls and spherical shells
+- sources/lorch_bessel_zeros.md
+- sources/flps_balls.md
+- rounds/polya-main/round_018/reviews/lorch-source-audit.md
+- rounds/polya-main/round_018/judge/judge-018.md
+- rounds/polya-main/round_018/reviews/state-patch-final-audit.md
 
-- Status: `source_audit_required`
-- Track: `source_audit`
-- Owner: `A1`
-- Next action: The structural spectrum component is audited. Audit only the
-  unresolved quantitative Weyl remainder, endpoint-uniform constants,
-  one-sided Pólya-strength estimates, and finite-window certification scope.
+## Round 19 target outputs
 
-### TARGET-shell-d3: First theorem target: Dirichlet Pólya for 3D spherical shells
+Round 19 should create, in order:
 
-- Status: `open`
-- Track: `shell_analytic`
-- Owner: `A1`
-- Criticality: `theorem`
-- Lead author: `A1`
-- Clean-room reviewer: `A3`
-- Adversarial reviewer: `A2`
-- Blockers: `COMP-certified-bessel`, `SHELL-rho-uniformity`
-- Next action: Retain both endpoint theorems, the all-ratio high-frequency
-  theorem, and $\overline{\mathcal C}_{17}$. Complete exact coverage of
-  $\mathcal D_{17}$, then run fresh theorem-level clean-room and adversarial
-  audits before changing this status.
+- a frozen exact \(\mathcal D_{18}\) residual packet and classifier;
+- a proof-free candidate claim;
+- an incumbent combined radial/angular proof;
+- a strictly isolated A3 reconstruction;
+- an independent A4 constants and exact-subtraction audit;
+- an optional single-subset certification manifest only if predeclared;
+- a cross-comparison;
+- a fresh adversarial referee report;
+- a judge with a one-time validated State Patch.
 
-### COMP-certified-bessel-pilot-round17: Independently checked face-connected Round 17 shell certificate
+These are required output types, not assertions that any Round 19 threshold
+or theorem has already been proved.
 
-- Status: `certified`
-- Track: `certified_computation`
-- Owner: `A4`
-- Criticality: `standard`
-- Lead author: `A4`
-- Adversarial reviewer: `B1-independent-auditor`
-- Next action: Retain $B_1$ as an independent regression certificate. Do
-  not use it to enlarge the analytic mask or promote the parent computation;
-  any later certificate must target an exact subset of $\mathcal D_{17}$.
+## Do-not-claim rules
 
-### COMP-certified-bessel-pilot-round8: Independently checked shell-determinant certificate on one central residual box
-
-- Status: `certified`
-- Track: `certified_computation`
-- Owner: `A4`
-- Criticality: `standard`
-- Lead author: `A4`
-- Clean-room reviewer: `A3`
-- Adversarial reviewer: `A2`
-- Next action: Retain $B_0$ byte-unchanged as independently certified
-  regression evidence. It is analytically redundant after Round 17 and must
-  not be counted as an additional reduction of $\mathcal D_{17}$.
+- Do not call the shell theorem proved while
+  \(\mathcal D_{18}\neq\varnothing\).
+- Do not replace \(\mathcal D_{18}\) with \(\mathcal D_{17}\), a rectangle,
+  a coarse envelope, or a grid.
+- Do not subtract \(B_0\) or \(B_1\) again.
+- Do not continue a one-radial-mode cap above \(2z_\rho\).
+- Do not assume a global ordering of \(2z_\rho\) and \(k_6(\rho)\).
+- Do not import the high-ratio staircase into
+  \(\rho_*<\rho<\rho_c\) without a new proof.
+- Do not treat a finite ledger, numerical root sample, interval calculation
+  on one subset, or agent consensus as an analytic proof.
+- Do not promote a candidate without the proof-free freeze, isolated A3
+  reconstruction, independent A4 audit, and fresh-referee gate.

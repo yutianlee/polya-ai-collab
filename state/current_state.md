@@ -56,15 +56,17 @@ The lower face $\rho=7/8$ is included, the limiting face $\rho=1$ is open,
 $K=0$ gives equality, and the proof comparison is strict for $K>0$ before
 the final non-strict theorem statement.
 
-The Round 16 four-zone integration remains the high-energy envelope. Round
-17 adds an exact low-frequency analytic band. Define
+The Round 16 four-zone integration remains the high-energy envelope. Rounds
+17--18 add an exact low-frequency angular staircase. Define
 
 $$
 \rho_c=\frac1{1+2\pi},
 \qquad
 z_\rho=\frac{\pi}{1-\rho},
 \qquad
-k_2(\rho)=\sqrt{z_\rho^2+6}.
+k_2(\rho)=\sqrt{z_\rho^2+6},
+\qquad
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}\quad(m\in\mathbb N_0).
 $$
 
 The strict shell inequality is now also proved on the complete closed band
@@ -72,38 +74,43 @@ The strict shell inequality is now also proved on the complete closed band
 $$
 \rho_c\le\rho\le\frac78,
 \qquad
-z_\rho\le K\le k_2(\rho).
+z_\rho\le K\le k_5(\rho).
 $$
 
 The lower frequency face and the face $\rho=7/8$ retain their previous
-analytic owners. The genuinely new portion is
+analytic owners; $K=k_2(\rho)$ retains its Round 17 owner, and the new
+$K=k_5(\rho)$ face is included. The genuinely new Round 18 portion is
 
 $$
-\mathcal C_{17}
+\mathcal C_{18}
 =\left\{(\rho,K):
 \rho_c\le\rho<\frac78,
-\quad z_\rho<K\le k_2(\rho)
+\quad k_2(\rho)<K\le k_5(\rho)
 \right\}.
 $$
 
-It lies inside the exact Round 16 analytic residual. Therefore, if
-$\mathcal A_{17}$ denotes the enlarged analytic cover, the exact surviving
-residual is
+It lies inside the exact Round 17 analytic residual. If $\mathcal A_{17}$
+is the accepted Round 17 cover, the promoted cover and exact surviving
+residual are
 
 $$
-\mathcal D_{17}
-=\mathcal D_{16}\setminus\mathcal C_{17}
+\mathcal A_{18}
+=\mathcal A_{17}\cup
+\left\{\rho_c\le\rho\le\frac78,
+\ z_\rho\le K\le k_5(\rho)\right\},
+\qquad
+\mathcal D_{18}=\mathcal D_{17}\setminus\mathcal C_{18},
 $$
 
 or, equivalently,
 
 $$
-\mathcal D_{17}
+\boxed{\mathcal D_{18}
 =\left\{\rho_*<\rho<\rho_c,
 \ \frac1{2\rho}<K<U(\rho)\right\}
 \cup
 \left\{\rho_c\le\rho<\frac78,
-\ k_2(\rho)<K<U(\rho)\right\},
+\ k_5(\rho)<K<U(\rho)\right\}.}
 $$
 
 where the exact upper floor retained from the frozen residual is
@@ -116,6 +123,42 @@ K_0(\rho),&\rho_{HK}\le\rho<5/6,\\[2pt]
 54/(1-\rho)^2,&5/6\le\rho<7/8.
 \end{cases}
 $$
+
+The Round 18 proof keeps the shell-specific steps internal. In particular,
+zero extension in a fixed angular subspace and min--max give the first
+inequality, while the audited unit-ball separation identifies the endpoint:
+
+$$
+\lambda_{\ell,1}^{\rm shell}(\rho)
+\ge\lambda_{\ell,1}^{\rm ball}=j_{\ell+1/2,1}^2,
+$$
+
+while Lorch supplies only the audited external bounds
+
+$$
+j_{5/2,1}>\frac{51}{10},\qquad
+j_{7/2,1}>\frac{13}{2},\qquad
+j_{9/2,1}>\frac{15}{2}.
+$$
+
+The publisher abstract exposes those strict statements and their scope
+$\nu>-1$, but the full paper was access-controlled; no shell cross-product,
+channel comparison, radial exclusion, multiplicity, or Weyl estimate is
+attributed to Lorch. Together with
+$\lambda_{\ell,n}^{\rm shell}\ge n^2z_\rho^2+\ell(\ell+1)$, these delayed
+entries give the cumulative strict-count caps $4,9,16,25$. The ratio splits are
+$3/10,1/2,1/2$, with exact lower Weyl reserves
+
+$$
+\frac{100387329}{11000000}>9,\qquad
+\frac{107653}{6336}>16,\qquad
+\frac{18375}{704}>25.
+$$
+
+The moving-wall payments are strictly increasing. The upper-floor audit
+gives $k_5<26<64<K_0$ on the active $K_0$ branch and
+$k_5<26<1944\le54/(1-\rho)^2$ on the seam branch, so $k_5<U$ everywhere
+on the new ratio interval.
 
 Both closed central boxes
 
@@ -134,12 +177,32 @@ $$
 are independently certified with exact strict count $4$. They satisfy
 $B_0\cup B_1\subset\mathcal C_{17}$, so they remain valuable independent
 regression evidence but provide no additional subtraction from
-$\mathcal D_{17}$. The parent certification obligation remains
+$\mathcal D_{18}$. The parent certification obligation remains
 `diagnostic_only`.
 
 The all-frequency shell theorem is not yet proved. Its sole shell blocker is
-exact closure of the nonempty two-piece set $\mathcal D_{17}$; it must not be
-replaced by $\mathcal D_{16}$, a coarse envelope, or a rectangle.
+exact closure of the nonempty two-piece set $\mathcal D_{18}$; it must not be
+replaced by $\mathcal D_{17}$, a coarse envelope, or a rectangle. Explicitly,
+
+$$
+k_5(1/2)<26<30<64<K_0(1/2)=U(1/2),
+$$
+
+so $(1/2,30)\in\mathcal D_{18}$. Consequently `SHELL-rho-compact`,
+`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` all
+remain open.
+
+At the left ratio face,
+
+$$
+k_5(\rho_c)<2z_{\rho_c}<k_6(\rho_c).
+$$
+
+The exact $\ell=0,n=2$ frequency enters immediately above $2z_{\rho_c}$.
+Thus the one-radial-mode cap cannot simply be continued to $k_6$; this is
+the next method boundary, not a counterexample. Current work starts strictly
+above $k_5$ with a combined radial-entry/angular staircase, while the
+unchanged component $\rho_*<\rho<\rho_c$ must be attacked separately.
 
 The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ are unproved.
 The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their
@@ -824,14 +887,51 @@ $$
 =\mathcal D_{16}\setminus\mathcal C_{17},
 $$
 
-with the two-piece formula recorded in the current theorem boundary above.
+with its historical two-piece formula retained in the Round 17 state and
+judge artifacts.
 The full shell theorem, compact-ratio uniformity, and
 `SHELL-rho-compact` remain open.
 
 Immediately above $k_2(\rho)$, the same coarse comparison must allow the
 $\ell=2$ multiplicity, so its cap jumps from $4$ to $9$. At
 $\rho=\rho_c$ the Weyl term at $k_2(\rho_c)$ is strictly below $9$.
-Therefore the next analytic step needs a sharper $\ell=2$ eigenvalue bound,
-a ratio-dependent angular staircase, or a different action/tail argument.
-This is an obstruction to the coarse payment method, not a counterexample
-to the shell inequality.
+This was the historical Round 17 obstruction to the coarse payment method,
+not a counterexample to the shell inequality. Round 18 resolves it through
+$k_5$ by delaying the first $\ell=2,3,4$ entries; it is not a current gap.
+
+## Round 18 Update
+
+Date: 2026-07-14
+
+See `rounds/polya-main/round_018/judge/judge-018.md`.
+
+Round 18 promotes the independently reconstructed closed staircase
+
+$$
+\boxed{
+\rho_c\le\rho\le\frac78,
+\qquad z_\rho\le K\le k_5(\rho),
+\qquad k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
+}
+$$
+
+Its new portion is exactly
+$\mathcal C_{18}=\{\rho_c\le\rho<7/8,
+k_2(\rho)<K\le k_5(\rho)\}\subset\mathcal D_{17}$. Fixed-channel zero
+extension gives the internal shell-to-ball comparison. The only new
+external input is the statement-level Lorch dependency at orders
+$5/2,7/2,9/2$; the access-controlled proof is not claimed and no
+shell-specific conclusion is imported. Delayed entry thresholds
+$51/10,13/2,15/2$, ratio splits $3/10,1/2,1/2$, caps $4,9,16,25$, and the
+exact payments recorded in the current theorem boundary prove the strict
+comparison through the inclusive $K=k_5$ face. The audit also proves
+$k_5<U$ on every active upper-floor branch.
+
+Exact subtraction gives the current theorem-wise uncovered set
+$\mathcal U_{18}=\mathcal D_{18}$ displayed above. The boxes $B_0,B_1$
+remain valid regression certificates inside $\mathcal C_{17}$ and are not
+subtracted again. The witness $(1/2,30)$ proves that $\mathcal D_{18}$ is
+nonempty, so the compact, uniformity, shell-target, and program-target
+obligations remain open. At $\rho_c$ the ordering
+$k_5<2z<k_6$ marks the next radial-entry method boundary; it is not a
+spectral counterexample.
