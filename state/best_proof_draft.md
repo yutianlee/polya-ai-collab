@@ -434,6 +434,65 @@ $$
 The sharper Round 10 threshold $K\ge20/\varepsilon^2$ remains authoritative
 on $0<\varepsilon\le1/25$.
 
+## Central--thin seam at $\rho=9/10$
+
+Round 13 rederives the local-plateau argument on
+
+$$
+0<\varepsilon\le\frac1{10},
+\qquad K\varepsilon^2\ge24.
+$$
+
+The incumbent and independent constant inventory prove
+
+$$
+d>\frac23,
+\qquad
+\widehat q<\frac37,
+\qquad
+R<\frac{14}{3\sqrt\varepsilon}.
+$$
+
+The complete fixed-$r=B$ path has exact endpoint reserve
+
+$$
+\frac{2376966388822}{5818105805625}>0
+$$
+
+and action-payment reserve
+
+$$
+\frac{170244091}{27217575}>0.
+$$
+
+The strictly isolated reconstruction uses a different direct localization
+and the affine comparison
+
+$$
+L(X)=\frac52X-7,
+\qquad
+F(X)=X^2(1-h_X)^2-2\pi^2Q_X,
+$$
+
+with $F(B)>12760228/48234375$ and
+$F'(X)>229/2646$ on the complete path. Both proofs own every exceptional
+branch and strict wall. Consequently, including threshold equality,
+
+$$
+\boxed{
+0<\varepsilon\le\frac1{10},
+\quad
+K\ge\frac{24}{\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3.
+}
+$$
+
+The sharper Round 10 threshold $K\ge20/\varepsilon^2$ remains authoritative
+on $0<\varepsilon\le1/25$.
+
 ## Complete thin-shell endpoint
 
 Let
@@ -495,7 +554,7 @@ N_D(A_{\rho,1},K^2)
 $$
 
 This endpoint theorem is analytic and requires no Bessel-root certificate.
-The Round 9 optimized plateau and the Round 10 and Round 12 enlarged seam
+The Round 9 optimized plateau and the Round 10, Round 12, and Round 13 seam
 theorems remain valid standalone results, but none is needed for this
 endpoint closure.
 The direct proof, clean-room reconstruction, adversarial audit, and exact
@@ -563,10 +622,10 @@ certification are unnecessary.
 On the remaining ratio interval
 
 $$
-I_{12}=\left[\rho_*,\frac{99}{100}\right],
+I_{13}=\left[\rho_*,\frac{99}{100}\right],
 $$
 
-use four exact zones.
+use five exact zones.
 
 For $\rho_*\le\rho\le1/16$, the high-angular theorem proves the target for
 $K\le1/(2\rho)$ and the small-hole low-interface theorem proves it for
@@ -582,7 +641,7 @@ $$
 H_0(1/16)<64.
 $$
 
-For $1/16\le\rho\le19/20$, the strict count is zero below
+For $1/16\le\rho\le9/10$, the strict count is zero below
 $\pi/(1-\rho)$ and the fixed-ratio theorem applies above $K_0(\rho)$. The
 positive-root equation
 
@@ -593,14 +652,20 @@ $$
 
 shows that $K_0$ increases with $a$ and decreases with $\eta$. Since
 $a_\rho$ increases and $\eta_\rho$ does not, $K_0(\rho)$ is increasing.
-Exact endpoint estimates at the Round 12 seam give
+Exact endpoint estimates at the Round 13 seam give
 
 $$
-K_0(19/20)<3300^2.
+K_0(9/10)<900^2.
 $$
 
-For $19/20\le\rho\le24/25$, write $\varepsilon=1-\rho$. The Round 12
+For $9/10\le\rho\le19/20$, write $\varepsilon=1-\rho$. The Round 13
 local-plateau theorem applies above
+
+$$
+\frac{24}{\varepsilon^2}\le9600.
+$$
+
+For $19/20\le\rho\le24/25$, the retained Round 12 theorem applies above
 
 $$
 \frac{24}{\varepsilon^2}\le15000.
@@ -617,14 +682,14 @@ The complete thin endpoint owns the shared face $\rho=99/100$ and every
 larger ratio. Since
 
 $$
-64<15000<200000<3300^2,
+64<9600<15000<200000<900^2,
 $$
 
-the central fixed-ratio ceiling dominates all four compact zones. Thus
+the central fixed-ratio ceiling dominates all five compact zones. Thus
 
 $$
 \boxed{
-\rho\in I_{12},\quad K\ge3300^2
+\rho\in I_{13},\quad K\ge900^2
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
@@ -636,27 +701,27 @@ theorems yields the global analytic high-frequency result
 
 $$
 \boxed{
-0<\rho<1,\quad K\ge3300^2
+0<\rho<1,\quad K\ge900^2
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-Relative to the Round 11 ceiling, the exact reduction factor is
+Relative to the Round 12 ceiling, the exact reduction factor is
 
 $$
-\frac{6000^2}{3300^2}=\frac{400}{121}>3.
+\frac{3300^2}{900^2}=\frac{121}{9}>13.
 $$
 
-Thus Round 12 lowers the complete all-ratio high-frequency ceiling by more
-than a factor $3$.
+Thus Round 13 lowers the complete all-ratio high-frequency ceiling by more
+than a factor $13$.
 
-The closed union of the four displayed gap envelopes is only a planning set
+The closed union of the five displayed gap envelopes is only a planning set
 $\mathcal E$. The actual certificate target is
 
 $$
-\mathcal D=(I_{12}\times[0,\infty))\setminus\mathcal A,
+\mathcal D=(I_{13}\times[0,\infty))\setminus\mathcal A,
 $$
 
 where $\mathcal A$ contains every analytically covered point and threshold
@@ -700,18 +765,18 @@ gates are:
 
 - analytic or symbolic compression of the current compact planning envelope,
   followed, where necessary, by an exact face-connected certificate of every
-  point of $\mathcal D$ below $3300^2$;
-- a fresh derivation of a larger central--thin seam domain. The Round 13
+  point of $\mathcal D$ below $900^2$;
+- a fresh derivation of a larger central--thin seam domain. The Round 14
   target is
 
   $$
-  0<\varepsilon\le\frac1{10},
+  0<\varepsilon\le\frac18,
   \qquad
-  K\ge\frac{24}{\varepsilon^2},
+  K\ge\frac{32}{\varepsilon^2},
   $$
 
-  together with a proposed seam $\rho=9/10$ and a separately proved target
-  $K_0(9/10)<900^2$. These constants are unproved planning targets, not
+  together with a proposed seam $\rho=7/8$ and a separately proved target
+  $K_0(7/8)<550^2$. These constants are unproved planning targets, not
   current theorems;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review after the compact residual is closed.

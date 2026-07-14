@@ -29,14 +29,14 @@ $$
 On the intervening compact interval
 
 $$
-I_{12}=[\rho_*,99/100],
+I_{13}=[\rho_*,99/100],
 $$
 
 the shell inequality is now also proved uniformly for every
-$K\ge3300^2$. Combining this compact result with the two endpoint theorems
+$K\ge900^2$. Combining this compact result with the two endpoint theorems
 gives the global analytic high-frequency theorem for every
-$0<\rho<1$ and $K\ge3300^2$. Round 12 lowers the Round 11 ceiling by the
-exact factor $6000^2/3300^2=400/121>3$. The exact strict count is
+$0<\rho<1$ and $K\ge900^2$. Round 13 lowers the Round 12 ceiling by the
+exact factor $3300^2/900^2=121/9>13$. The exact strict count is
 independently interval-certified
 on the closed central residual box
 
@@ -47,10 +47,10 @@ $$
 $$
 
 The all-frequency shell theorem is not yet proved. Its active blockers are
-exact coverage of the rest of the compact residual set below $3300^2$ and
+exact coverage of the rest of the compact residual set below $900^2$ and
 the final theorem-level audit. The next analytic target is a separately
-proved central--thin seam extension to $\varepsilon\le1/10$ with candidate
-$K\ge24/\varepsilon^2$ and $K_0(9/10)<900^2$. These are Round 13 targets,
+proved central--thin seam extension to $\varepsilon\le1/8$ with candidate
+$K\ge32/\varepsilon^2$ and $K_0(7/8)<550^2$. These are Round 14 targets,
 not proved statements. Any certified computation remains restricted to
 bounded, face-connected extensions of the existing pilot.
 
@@ -471,4 +471,56 @@ $$
 
 The complete all-frequency endpoint remains exactly
 $99/100\le\rho<1$. The compact residual below $3300^2$, the parent Bessel
+certification, uniformity, and the final shell target remain open.
+
+## Round 13 Update
+
+Date: 2026-07-14
+
+See `rounds/polya-main/round_013/judge/judge-013.md`.
+
+Round 13 rederives the local-plateau theorem on the enlarged domain
+
+$$
+0<\varepsilon\le\frac1{10},
+\qquad
+K\ge\frac{24}{\varepsilon^2},
+$$
+
+including threshold equality. The incumbent and independent constant
+inventory prove
+
+$$
+d>\frac23,
+\qquad
+\widehat q<\frac37,
+\qquad
+R<\frac{14}{3\sqrt\varepsilon},
+$$
+
+with exact synthetic endpoint reserve
+$2376966388822/5818105805625$ and payment reserve
+$170244091/27217575$. The strictly isolated reconstruction uses a different
+direct localization and affine synthetic path, with exact derivative reserve
+$229/2646$. All exceptional branches, strict walls, and shared faces passed
+fresh adversarial review and exact-ledger reproduction.
+
+At the moved seam $\rho=9/10$, the defining fixed-ratio quadratic has
+
+$$
+K_0(9/10)<900^2,
+$$
+
+with exact positive margin $6897151/18725$ at its square-root test point.
+The closed five-zone analytic union therefore proves
+
+$$
+\boxed{
+0<\rho<1,
+\qquad K\ge900^2.
+}
+$$
+
+The complete all-frequency endpoint remains exactly
+$99/100\le\rho<1$. The compact residual below $900^2$, the parent Bessel
 certification, uniformity, and the final shell target remain open.

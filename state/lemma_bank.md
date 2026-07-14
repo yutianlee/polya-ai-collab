@@ -77,6 +77,20 @@ $$
   $R<5/\sqrt\varepsilon$ by a distinct rectangle argument. The sharper
   Round 10 threshold $20/\varepsilon^2$ remains authoritative on
   $0<\varepsilon\le1/25$;
+- the Round 13 central--thin seam theorem
+
+$$
+0<\varepsilon\le\frac1{10},
+\qquad
+K\ge\frac{24}{\varepsilon^2},
+$$
+
+  including threshold equality. The incumbent and independent inventory
+  obtain $R<14/(3\sqrt\varepsilon)$ by a complete fixed-$r$ path. The
+  strictly isolated reconstruction obtains the same loss cap with a
+  distinct affine synthetic path. The sharper Round 10 threshold
+  $20/\varepsilon^2$ remains authoritative on
+  $0<\varepsilon\le1/25$;
 - the complementary exact-action bridge: with
   $a=\varepsilon K$, the strict shell estimate holds on
 
@@ -128,20 +142,20 @@ $$
 - the compact-ratio analytic envelope: on
 
 $$
-I_{12}=\left[\rho_*,\frac{99}{100}\right],
+I_{13}=\left[\rho_*,\frac{99}{100}\right],
 $$
 
   the possible residual families lie below $64$ on
-  $[\rho_*,1/16]$, below $K_0(19/20)<3300^2$ on
-  $[1/16,19/20]$, below $15000$ on $[19/20,24/25]$, and below
-  $200000$ on $[24/25,99/100]$. Therefore
+  $[\rho_*,1/16]$, below $K_0(9/10)<900^2$ on
+  $[1/16,9/10]$, below $9600$ on $[9/10,19/20]$, below $15000$ on
+  $[19/20,24/25]$, and below $200000$ on $[24/25,99/100]$. Therefore
 
 $$
-K\ge3300^2
+K\ge900^2
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(\rho\in I_{12});
+\qquad(\rho\in I_{13});
 $$
 
 - combining the compact envelope with both endpoint theorems gives the
@@ -149,11 +163,11 @@ $$
 
 $$
 0<\rho<1,
-\qquad K\ge3300^2.
+\qquad K\ge900^2.
 $$
 
-  The exact comparison $6000^2/3300^2=400/121>3$ quantifies the reduction
-  from the Round 11 global ceiling;
+  The exact comparison $3300^2/900^2=121/9>13$ quantifies the reduction
+  from the Round 12 global ceiling;
 
 - the independently checked certified pilot
 
@@ -167,11 +181,11 @@ $$
   $14.6073155354$. The Arb producer and independent rational checker are
   local evidence only; they do not certify the rest of the compact residual.
 
-`SHELL-rho-compact` remains open. Round 12 has reduced the exact compact
-residual to $I_{12}$ below $K=3300^2$, but it does not certify that residual.
+`SHELL-rho-compact` remains open. Round 13 has reduced the exact compact
+residual to $I_{13}$ below $K=900^2$, but it does not certify that residual.
 The next analytic target is a separately proved seam extension on
-$0<\varepsilon\le1/10$ with candidate $K\ge24/\varepsilon^2$, moved seam
-$\rho=9/10$, and exact target $K_0(9/10)<900^2$. These are Round 13 planning
+$0<\varepsilon\le1/8$ with candidate $K\ge32/\varepsilon^2$, moved seam
+$\rho=7/8$, and exact target $K_0(7/8)<550^2$. These are Round 14 planning
 constants, not proved statements. Certification may expand only through an
 exact face-connected manifest for the true residual $\mathcal D$; further
 analytic aggregation or safe monotone-corner certification is still
