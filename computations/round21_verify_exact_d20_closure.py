@@ -17,7 +17,6 @@ from __future__ import annotations
 import argparse
 import ast
 import hashlib
-import importlib.util
 import inspect
 import sys
 from dataclasses import dataclass, replace
@@ -217,14 +216,45 @@ def authenticate_inputs(
 
 
 def _load_hash_gated_module(name: str, path: Path, expected_digest: str) -> ModuleType:
-    if sha256_file(path) != expected_digest:
+    # Read once, hash those exact bytes, and compile that in-memory payload.
+    # Import loaders are deliberately forbidden here: SourceFileLoader may
+    # execute a timestamp-valid adjacent .pyc even after the .py path was
+    # authenticated, while -B disables cache writes but not cache reads.
+    try:
+        source_bytes = path.read_bytes()
+    except OSError as exc:
+        raise AuthenticationError(f"cannot read sealed module: {path}") from exc
+    observed_digest = hashlib.sha256(source_bytes).hexdigest()
+    if observed_digest != expected_digest:
         raise AuthenticationError(f"sealed module changed before import: {path.relative_to(REPO_ROOT)}")
-    spec = importlib.util.spec_from_file_location(name, path)
-    if spec is None or spec.loader is None:
-        raise AuthenticationError(f"cannot load sealed module: {path}")
-    module = importlib.util.module_from_spec(spec)
+    try:
+        source_text = source_bytes.decode("utf-8", errors="strict")
+        code = compile(
+            source_text,
+            str(path),
+            "exec",
+            dont_inherit=True,
+            optimize=0,
+        )
+    except (UnicodeDecodeError, SyntaxError, ValueError) as exc:
+        raise AuthenticationError(f"cannot compile authenticated module: {path}") from exc
+
+    module = ModuleType(name)
+    module.__file__ = str(path)
+    module.__package__ = ""
+    module.__loader__ = None
+    module.__spec__ = None
+    module.__cached__ = None
+    previous = sys.modules.get(name)
     sys.modules[name] = module
-    spec.loader.exec_module(module)
+    try:
+        exec(code, module.__dict__)
+    except BaseException:
+        if previous is None:
+            sys.modules.pop(name, None)
+        else:
+            sys.modules[name] = previous
+        raise
     return module
 
 

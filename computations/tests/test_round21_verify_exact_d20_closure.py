@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
+import hashlib
+import os
+import py_compile
 import shutil
+import sys
 from dataclasses import replace
 from fractions import Fraction
 from pathlib import Path
@@ -53,6 +57,38 @@ def test_exact_manifest_and_every_authenticated_byte_mutation(tmp_path: Path) ->
     extra["unexpected.md"] = "0" * 64
     with pytest.raises(verifier.AuthenticationError, match="wrong authenticated path set"):
         verifier.validate_manifest_schema(extra)
+
+
+def test_hash_gated_loader_ignores_timestamp_valid_malicious_pyc(
+    tmp_path: Path,
+) -> None:
+    source_path = tmp_path / "sealed_probe.py"
+    cached_source = b"VALUE = 'cached'\n"
+    authenticated_source = b"VALUE = 'source'\n"
+    assert len(cached_source) == len(authenticated_source)
+
+    source_path.write_bytes(cached_source)
+    original_stat = source_path.stat()
+    pyc_path = Path(py_compile.compile(str(source_path), doraise=True))
+    assert pyc_path.is_file()
+
+    # Preserve the timestamp-mode cache header's mtime and size while making
+    # the authenticated source semantics disagree with the cached code.
+    source_path.write_bytes(authenticated_source)
+    os.utime(
+        source_path,
+        ns=(original_stat.st_atime_ns, original_stat.st_mtime_ns),
+    )
+    digest = hashlib.sha256(authenticated_source).hexdigest()
+    module_name = "round21_a4_malicious_pyc_probe"
+    try:
+        module = verifier._load_hash_gated_module(module_name, source_path, digest)
+        assert module.VALUE == "source"
+        assert module.__loader__ is None
+        assert module.__cached__ is None
+        assert pyc_path.is_file()
+    finally:
+        sys.modules.pop(module_name, None)
 
 
 def test_exact_constants_faces_split_and_u_orderings() -> None:
