@@ -29,14 +29,14 @@ $$
 On the intervening compact interval
 
 $$
-I_{13}=[\rho_*,99/100],
+I_{14}=[\rho_*,99/100],
 $$
 
 the shell inequality is now also proved uniformly for every
-$K\ge900^2$. Combining this compact result with the two endpoint theorems
+$K\ge550^2$. Combining this compact result with the two endpoint theorems
 gives the global analytic high-frequency theorem for every
-$0<\rho<1$ and $K\ge900^2$. Round 13 lowers the Round 12 ceiling by the
-exact factor $3300^2/900^2=121/9>13$. The exact strict count is
+$0<\rho<1$ and $K\ge550^2$. Round 14 lowers the Round 13 ceiling by the
+exact factor $900^2/550^2=324/121>2$. The exact strict count is
 independently interval-certified
 on the closed central residual box
 
@@ -47,12 +47,18 @@ $$
 $$
 
 The all-frequency shell theorem is not yet proved. Its active blockers are
-exact coverage of the rest of the compact residual set below $900^2$ and
+exact coverage of the rest of the compact residual set below $550^2$ and
 the final theorem-level audit. The next analytic target is a separately
-proved central--thin seam extension to $\varepsilon\le1/8$ with candidate
-$K\ge32/\varepsilon^2$ and $K_0(7/8)<550^2$. These are Round 14 targets,
-not proved statements. Any certified computation remains restricted to
-bounded, face-connected extensions of the existing pilot.
+proved central--thin seam extension to $\varepsilon\le1/6$ with candidate
+$K\ge54/\varepsilon^2$, moved seam $\rho=5/6$, and separate target
+$K_0(5/6)<295^2$. These are unproved Round 15 planning targets. The
+prospective all-ratio ceiling is $K\ge200000$, because the retained
+far-thin Round 10 zone would then dominate. Preliminary values
+$d_0=5/8$, $\overline q=159/400$, and $B=14/3$ are planning evidence only.
+The current $\kappa=53$ and $Y=294$ route obstructions are not disproofs of
+either stronger statement. The parent certification obligation remains
+`diagnostic_only`; any expansion is restricted to bounded, face-connected
+extensions of the existing certified pilot.
 
 ## Round 1 Update
 
@@ -524,3 +530,59 @@ $$
 The complete all-frequency endpoint remains exactly
 $99/100\le\rho<1$. The compact residual below $900^2$, the parent Bessel
 certification, uniformity, and the final shell target remain open.
+
+## Round 14 Update
+
+Date: 2026-07-14
+
+See `rounds/polya-main/round_014/judge/judge-014.md`.
+
+Round 14 proves the enlarged local-plateau theorem
+
+$$
+0<\varepsilon\le\frac18,
+\qquad
+K\ge\frac{32}{\varepsilon^2},
+$$
+
+including threshold equality. The sharper Round 13 threshold
+$24/\varepsilon^2$ remains authoritative for
+$0<\varepsilon\le1/10$, and the still sharper Round 10 threshold
+$20/\varepsilon^2$ remains authoritative for
+$0<\varepsilon\le1/25$. At the moved seam $\rho=7/8$, the defining
+fixed-ratio threshold satisfies
+
+$$
+K_0(7/8)<550^2.
+$$
+
+The tested attempt to retain $\kappa=24$ proves only
+$x_0/K>173/384$, while $173/384<1/2$; hence this lower bound does not
+localize beyond $1/2$. This is a route obstruction, not a rejection or
+counterexample to a stronger seam theorem.
+
+On
+
+$$
+I_{14}=[\rho_*,99/100],
+$$
+
+the closed six-zone analytic union has respective residual ceilings below
+$64$, below $K_0(\rho)\le K_0(7/8)<550^2$, below $3200$, below $9600$,
+below $15000$, and below $200000$. Consequently
+
+$$
+\boxed{
+0<\rho<1,
+\qquad K\ge550^2
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+This lowers the Round 13 global ceiling by the exact factor
+$900^2/550^2=324/121>2$. The complete all-frequency endpoint remains
+exactly $99/100\le\rho<1$. The compact residual below $550^2$, the parent
+Bessel certification, uniformity, and the final shell target remain open;
+the existing certificate remains diagnostic only.

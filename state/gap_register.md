@@ -5,41 +5,42 @@ The authoritative statuses are in state/proof_obligations.yml.
 ## Active shell gaps
 
 - Compress the proved analytic envelope on the explicit compact interval
-  $I_{13}=[\rho_*,99/100]$, where
+  $I_{14}=[\rho_*,99/100]$, where
 
   $$
   \rho_*=\frac{\frac{\sqrt3}{2\pi}-\frac16}
   {2+\frac{16\sqrt2}{15}}.
   $$
 
-  The Round 13 enlarged seam reduces the uniform analytic threshold to
-  $K\ge900^2$, an exact factor $121/9>13$ below the Round 12 ceiling.
+  The Round 14 enlarged seam reduces the uniform analytic threshold to
+  $K\ge550^2$, an exact factor $324/121>2$ below the Round 13 ceiling.
   Exact coverage of the remaining compact residual below this threshold
   still requires further analytic or symbolic compression; direct global
   enumeration remains too coarse.
 
-- First target another central--thin seam extension. Round 14 should
+- First target another central--thin seam extension. Round 15 should
   independently rederive every domain-dependent estimate needed for the
   candidate
 
   $$
-  0<\varepsilon\le\frac18,
+  0<\varepsilon\le\frac16,
   \qquad
-  K\ge\frac{32}{\varepsilon^2},
+  K\ge\frac{54}{\varepsilon^2},
   $$
 
-  then move the seam to $\rho=7/8$ and seek the separate exact endpoint
-  estimate $K_0(7/8)<550^2$. Preliminary constants
-  $d>2/3$, $\widehat q<17/40$, and $B=14/3$ are planning evidence only; no
-  Round 13 domain estimate may be extrapolated. The current $\kappa=24$
-  shelf localization falls below $x_0/K=1/2$ at this endpoint, so retaining
-  that constant would require a genuinely sharper argument.
+  then move the seam to $\rho=5/6$ and seek the separate exact endpoint
+  estimate $K_0(5/6)<295^2$. The prospective all-ratio ceiling is
+  $K\ge200000$, because the retained far-thin Round 10 zone would dominate.
+  Preliminary constants $d_0=5/8$, $\overline q=159/400$, and $B=14/3$
+  are planning evidence only; no Round 14 domain estimate may be
+  extrapolated. The current $\kappa=53$ and $Y=294$ variants encounter
+  route obstructions, not disproofs of the proposed statements.
 
 - Extend the certified central pilot into an exact face-connected cover of
   the true residual set
 
   $$
-  \mathcal D=(I_{13}\times[0,\infty))\setminus\mathcal A,
+  \mathcal D=(I_{14}\times[0,\infty))\setminus\mathcal A,
   $$
 
   not of the larger closed planning envelope. Every box needs an analytic or
@@ -90,6 +91,14 @@ The authoritative statuses are in state/proof_obligations.yml.
   $K\ge24/(1-\rho)^2$ for $1-\rho\le1/10$, proved by complete independent
   rederivations. The incumbent and independent inventory close a fixed-$r$
   path with $B=14/3$; the isolated proof uses a distinct affine path.
+- The Round 14 enlarged seam range
+  $K\ge32/(1-\rho)^2$ for $1-\rho\le1/8$, including threshold equality.
+  The sharper Round 13 threshold $24/(1-\rho)^2$ remains authoritative for
+  $1-\rho\le1/10$, and the sharper Round 10 threshold
+  $20/(1-\rho)^2$ remains authoritative for $1-\rho\le1/25$. The attempted
+  $\kappa=24$ continuation proves only $x_0/K>173/384$, while
+  $173/384<1/2$; hence the lower bound does not localize beyond $1/2$ in the
+  current route. This is not a rejection of a stronger theorem.
 - The complete thin-shell endpoint
   $99/100\le\rho<1$ for every $K\ge0$, obtained by joining the accepted
   product and aggregate ranges to the complementary-action bridge at the
@@ -101,15 +110,16 @@ The authoritative statuses are in state/proof_obligations.yml.
   $0<\rho\le\rho_*$ for every $K\ge0$, obtained by splitting exactly at
   $\rho K=1/2$. The apparent finite small-hole residual is empty.
 - The piecewise compact-ratio analytic envelope and the uniform theorem
-  $K\ge900^2$ on $I_{13}=[\rho_*,99/100]$. The residual ceilings are
-  below $64$ on $[\rho_*,1/16]$, below $K_0(9/10)<900^2$ on
-  $[1/16,9/10]$, below $9600$ on $[9/10,19/20]$, below $15000$ on
-  $[19/20,24/25]$, and at most $200000$ on $[24/25,99/100]$, with exact
+  $K\ge550^2$ on $I_{14}=[\rho_*,99/100]$. The six residual ceilings are
+  below $64$ on $[\rho_*,1/16]$, below
+  $K_0(\rho)\le K_0(7/8)<550^2$ on $[1/16,7/8]$, below $3200$ on
+  $[7/8,9/10]$, below $9600$ on $[9/10,19/20]$, below $15000$ on
+  $[19/20,24/25]$, and below $200000$ on $[24/25,99/100]$, with exact
   threshold and switch faces.
 - The global analytic high-frequency shell theorem for
-  $0<\rho<1$ and $K\ge900^2$, obtained by combining the compact envelope
+  $0<\rho<1$ and $K\ge550^2$, obtained by combining the compact envelope
   with the two complete endpoint theorems. The exact reduction factor from
-  the Round 12 ceiling is $121/9>13$.
+  the Round 13 ceiling is $324/121>2$.
 - One independently checked interval-certified central residual box,
   $\rho\in[999/2000,1001/2000]$ and
   $K\in[67/10,168/25]$, with exact strict count $4$.
@@ -140,7 +150,7 @@ The authoritative statuses are in state/proof_obligations.yml.
 - Literal wall-by-wall certification of the Round 8 coarse compact envelope
   was not a scalable route. At $\varepsilon=2^{-17}$, one former thin
   residual slice crossed more than $2^{38}$ angular half-integer walls.
-  Rounds 9--13 lower the all-ratio ceiling to $900^2$, while the remaining
+  Rounds 9--14 lower the all-ratio ceiling to $550^2$, while the remaining
   compact residual still requires monotone-corner, symbolic, or analytic
   aggregation.
 
