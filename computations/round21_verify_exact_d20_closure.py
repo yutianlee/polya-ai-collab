@@ -33,8 +33,8 @@ from flint import arb, ctx, fmpq
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 EXPECTED_INPUT_HASHES: Mapping[str, str] = {
-    "state/lemma_packets/SHELL-exact-d20-closure-round21-claim.md":
-        "415546156ea8d407541ddd6477ac38caa7c2c3b956724b25a06a755453e3b8a3",
+    "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md":
+        "d8cf64273ead5bd2573b9175aa2a2f03916ec6c1a2cb87e279cc9ed30106852d",
     "state/certificate_contracts/ROUND21-compact-proxy-contract.md":
         "1d16d860f158fd8223734245d4d6a71b8af2bc3ed99f9eafddf645e6a74b61fe",
     "state/certificate_contracts/ROUND21-aggregate-tail-contract.md":

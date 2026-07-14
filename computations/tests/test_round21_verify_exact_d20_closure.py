@@ -25,6 +25,11 @@ def full_audit() -> verifier.AuditResult:
 
 
 def test_exact_manifest_and_every_authenticated_byte_mutation(tmp_path: Path) -> None:
+    scoped_packet = "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md"
+    rejected_packet = "state/lemma_packets/SHELL-exact-d20-closure-round21-claim.md"
+    assert scoped_packet in verifier.EXPECTED_INPUT_HASHES
+    assert rejected_packet not in verifier.EXPECTED_INPUT_HASHES
+
     for relative in verifier.EXPECTED_INPUT_HASHES:
         source = verifier.REPO_ROOT / relative
         target = tmp_path / relative
