@@ -22,6 +22,7 @@ independent checker pass.
 |---|---|---|
 | `state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md` | `0b8346462da0bb68efca08162a6d4a62d114950650800c5cd46e4366730a1b2f` | accepted one-tail decomposition, curvature, convex-tail gain, and interface loss |
 | `state/lemma_packets/SHELL-weighted-lattice-fractional.md` | `a4f56f864b8ee6fed6dbbb51d7d23d5871193cd4b66e2d1af79990805863a47c` | exact dimension-reduction identity and Weyl normalization |
+| `state/lemma_packets/SHELL-sturm-liouville-completeness.md` | `6fde758cab1c8e9bda1ed2f268640dca9a5b0536b3c635de83bbdee330d0bcb8` | accepted separated completeness, multiplicity, and strict phase-count identity |
 | `sources/annuli_polya.md` | `951638839f37e574acc5167e3458a0fa5e2fd38a982bdd64f299db9c9280bc57` | qualified trapezoidal-floor inequalities and the inner-interface integral bound |
 
 No Bessel root, incumbent Round 20 proof, or floating-point spectral count
@@ -38,6 +39,12 @@ Retain the accepted notation
  \qquad
  d_\rho=\frac{2\arcsin\rho}{\pi},
  \tag{1}
+\]
+
+and define
+
+\[
+ \rho_c=\frac1{1+2\pi}.
 \]
 
 and put
@@ -200,7 +207,16 @@ Summing (11) and using (5) yields the term that the tailwise proof drops:
  \tag{12}
 \]
 
-Combining (6), (8), and (12) proves the following sufficient condition:
+Combining (6), (8), and (12) first proves a strict bound for the coarse
+weighted phase proxy.  The weighted-lattice packet identifies that proxy,
+and the completeness packet supplies the previously conditional separated
+strict-count identity.  Hence the accepted phase upper bound gives
+
+\[
+ N_D(A_{\rho,1},K^2)\leq\mathcal P_{\rm coarse}.
+\]
+
+The resulting sufficient condition is
 
 \[
 \boxed{
@@ -228,8 +244,10 @@ Indeed, (13) implies
 After summing (10), all low-tail aggregate errors are therefore strictly
 negative.  Every tail with `x_r>=mu` is controlled by the already accepted
 convex shifted-tail theorem.  The exact dimension-reduction identity and
-integration by parts then give the Weyl comparison.  Strictness follows
-from (7)--(8), including the cell `tau=0` where the interface loss vanishes.
+integration by parts give the strict coarse-proxy comparison, and the
+accepted completeness/count bridge transfers it to `N_D`.  Strictness
+follows from (7)--(8), including the cell `tau=0` where the interface loss
+vanishes.
 
 Equation (13) is an aggregate theorem: no individual low tail is required
 to satisfy `M_r>4 delta_tau`.
@@ -295,14 +313,14 @@ gave the following approximate first persistent positive frequencies:
 
 | `rho` | diagnostic threshold for `B>0` |
 |---:|---:|
-| `rho_c` | 55 |
-| `1/5` | 63 |
-| `3/10` | 74 |
-| `2/5` | 79 |
-| `1/2` | 83 |
-| `3/5` | 115 |
-| `13/20` | 127 |
-| `39/50` | 184 |
+| `rho_c` | 63 |
+| `1/5` | 70 |
+| `3/10` | 78 |
+| `2/5` | 84 |
+| `1/2` | 90 |
+| `3/5` | 117 |
+| `13/20` | 132 |
+| `39/50` | 187 |
 
 On a dense diagnostic grid over the finite rectangle
 
@@ -311,7 +329,8 @@ On a dense diagnostic grid over the finite rectangle
  \qquad 200\leq K\leq2000,
 \]
 
-the smallest displayed reserve was approximately `381.4` at
+using 1,001 equally spaced ratio samples and every integer frequency from
+200 through 2,000, the smallest displayed reserve was approximately `381.4` at
 `(rho,K)=(rho_c,200)`.  This is **not** certification: no grid can establish
 the signs or monotonicity between sample points, and the frequency domain is
 unbounded.
