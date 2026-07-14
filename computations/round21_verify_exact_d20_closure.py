@@ -160,6 +160,10 @@ class ReplayError(AuditError):
     """A certain finite proof predicate or exact set invariant failed."""
 
 
+class MachinBranchCertificateError(ReplayError):
+    """The immutable exact principal-branch certificate was incomplete."""
+
+
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
@@ -949,15 +953,134 @@ def alternating_arctan_bounds(q: int, terms: int) -> tuple[Fraction, Fraction]:
     return partial - next_term, partial
 
 
+MACHIN_BRANCH_SCHEMA = "round21-exact-machin-principal-branch-v1"
+MACHIN_THETA_DEFINITION = "theta=4*atan(1/5)-atan(1/239)"
+MACHIN_PRINCIPAL_CONCLUSION = "theta=atan(1)=pi/4"
+MACHIN_THETA_LOWER = (
+    4 * (Fraction(1, 5) - Fraction(1, 3 * 5**3)) - Fraction(1, 239)
+)
+MACHIN_THETA_UPPER = Fraction(4, 5)
+MACHIN_SHARED_INJECTIVITY_INTERVAL = (Fraction(0), Fraction(1))
+
+
+@dataclass(frozen=True)
+class MachinBranchCertificate:
+    """Closed exact schema selecting the principal tangent branch."""
+
+    schema: str
+    theta_definition: str
+    theta_lower_bound: Fraction | None
+    theta_upper_bound: Fraction | None
+    theta_bounds_are_strict: bool
+    injective_function: str
+    shared_injectivity_interval: tuple[Fraction, Fraction]
+    shared_interval_is_open: bool
+    principal_atan_one_interval: tuple[Fraction, Fraction]
+    principal_atan_one_bounds_are_strict: bool
+    theta_tangent: Fraction
+    principal_atan_one_tangent: Fraction
+    conclusion: str | None
+
+
+MACHIN_BRANCH_CERTIFICATE = MachinBranchCertificate(
+    schema=MACHIN_BRANCH_SCHEMA,
+    theta_definition=MACHIN_THETA_DEFINITION,
+    theta_lower_bound=MACHIN_THETA_LOWER,
+    theta_upper_bound=MACHIN_THETA_UPPER,
+    theta_bounds_are_strict=True,
+    injective_function="tan",
+    shared_injectivity_interval=MACHIN_SHARED_INJECTIVITY_INTERVAL,
+    shared_interval_is_open=True,
+    principal_atan_one_interval=MACHIN_SHARED_INJECTIVITY_INTERVAL,
+    principal_atan_one_bounds_are_strict=True,
+    theta_tangent=Fraction(1),
+    principal_atan_one_tangent=Fraction(1),
+    conclusion=MACHIN_PRINCIPAL_CONCLUSION,
+)
+
+
+def validate_machin_branch_certificate(
+    certificate: MachinBranchCertificate,
+    *,
+    observed_theta_tangent: Fraction,
+) -> MachinBranchCertificate:
+    """Reject any loss of the exact range, injectivity, or conclusion gates."""
+
+    if certificate.schema != MACHIN_BRANCH_SCHEMA:
+        raise MachinBranchCertificateError("Machin branch schema missing or changed")
+    if certificate.theta_definition != MACHIN_THETA_DEFINITION:
+        raise MachinBranchCertificateError("Machin theta definition missing or changed")
+    if certificate.theta_lower_bound != MACHIN_THETA_LOWER:
+        raise MachinBranchCertificateError("Machin lower range bound missing or changed")
+    if certificate.theta_upper_bound != MACHIN_THETA_UPPER:
+        raise MachinBranchCertificateError("Machin upper range bound missing or changed")
+    if not certificate.theta_bounds_are_strict:
+        raise MachinBranchCertificateError("Machin strict range-bound relation was lost")
+    if certificate.injective_function != "tan":
+        raise MachinBranchCertificateError("Machin injective function is not tangent")
+    if (
+        certificate.shared_injectivity_interval
+        != MACHIN_SHARED_INJECTIVITY_INTERVAL
+        or not certificate.shared_interval_is_open
+    ):
+        raise MachinBranchCertificateError(
+            "Machin shared open injectivity interval missing or changed"
+        )
+    shared_lo, shared_hi = certificate.shared_injectivity_interval
+    if not (
+        shared_lo
+        < certificate.theta_lower_bound
+        < certificate.theta_upper_bound
+        < shared_hi
+    ):
+        raise MachinBranchCertificateError(
+            "Machin theta bounds do not lie in the shared injectivity interval"
+        )
+    if (
+        certificate.principal_atan_one_interval
+        != certificate.shared_injectivity_interval
+        or not certificate.principal_atan_one_bounds_are_strict
+    ):
+        raise MachinBranchCertificateError(
+            "principal atan(1) is not certified in the shared open injectivity interval"
+        )
+    if (
+        observed_theta_tangent != Fraction(1)
+        or certificate.theta_tangent != observed_theta_tangent
+        or certificate.principal_atan_one_tangent != Fraction(1)
+    ):
+        raise MachinBranchCertificateError("Machin tangent equality missing or changed")
+    if certificate.conclusion != MACHIN_PRINCIPAL_CONCLUSION:
+        raise MachinBranchCertificateError(
+            "Machin principal-branch conclusion missing or changed"
+        )
+    return certificate
+
+
 @dataclass(frozen=True)
 class ExactConstants:
     pi_lower: Fraction
     pi_upper: Fraction
-    machin_angle_lower: Fraction
-    machin_angle_upper: Fraction
+    branch_certificate: MachinBranchCertificate
+
+    @property
+    def machin_angle_lower(self) -> Fraction:
+        value = self.branch_certificate.theta_lower_bound
+        if value is None:  # pragma: no cover - validator makes this unreachable
+            raise MachinBranchCertificateError("validated lower range bound disappeared")
+        return value
+
+    @property
+    def machin_angle_upper(self) -> Fraction:
+        value = self.branch_certificate.theta_upper_bound
+        if value is None:  # pragma: no cover - validator makes this unreachable
+            raise MachinBranchCertificateError("validated upper range bound disappeared")
+        return value
 
 
-def verify_exact_constants() -> ExactConstants:
+def verify_exact_constants(
+    branch_certificate: MachinBranchCertificate = MACHIN_BRANCH_CERTIFICATE,
+) -> ExactConstants:
     # Exact tangent arithmetic behind Machin's identity:
     # tan(4 arctan(1/5))=120/119 and
     # tan(4 arctan(1/5)-arctan(1/239))=1.
@@ -968,29 +1091,14 @@ def verify_exact_constants() -> ExactConstants:
     machin_tangent = (tan_quadruple - Fraction(1, 239)) / (
         1 + tan_quadruple * Fraction(1, 239)
     )
-    if machin_tangent != 1:
-        raise ReplayError("exact Machin identity tangent is not one")
-
-    # Make the tangent branch explicit.  For principal arctangents
-    # a=atan(1/5), b=atan(1/239), alternating-series bounds give
-    #
-    #   a > 1/5 - 1/(3*5^3),    0 < b < 1/239.
-    #
-    # Hence theta=4a-b is strictly between the two exact rationals below.
-    # In particular theta lies in (0,1).  Principal atan(1)=pi/4 also lies
-    # in (0,1), and tan is injective there (cos is positive and tan'=sec^2).
-    # Thus tan(theta)=1 selects theta=pi/4, not pi/4+n*pi.
-    machin_angle_lower = (
-        4 * (Fraction(1, 5) - Fraction(1, 3 * 5**3)) - Fraction(1, 239)
+    # This validator is deliberately before the pi enclosure.  A numerical
+    # range assertion is not enough: the immutable schema must also retain
+    # the common injectivity interval, both tangent values, and the exact
+    # principal-branch conclusion.
+    validated_branch = validate_machin_branch_certificate(
+        branch_certificate,
+        observed_theta_tangent=machin_tangent,
     )
-    machin_angle_upper = Fraction(4, 5)
-    if not (
-        Fraction(3, 4)
-        < machin_angle_lower
-        < machin_angle_upper
-        < Fraction(1)
-    ):
-        raise ReplayError("exact Machin branch bounds did not isolate theta in (0,1)")
 
     lower5, upper5 = alternating_arctan_bounds(5, 4)
     lower239, upper239 = alternating_arctan_bounds(239, 4)
@@ -1012,8 +1120,7 @@ def verify_exact_constants() -> ExactConstants:
     return ExactConstants(
         pi_lower,
         pi_upper,
-        machin_angle_lower,
-        machin_angle_upper,
+        validated_branch,
     )
 
 

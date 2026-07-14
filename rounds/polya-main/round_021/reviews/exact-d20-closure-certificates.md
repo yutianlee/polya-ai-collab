@@ -12,19 +12,21 @@ claim the universally quantified analytic propagation to every \(K\geq200\).
 
 ## 1. Scope and independence
 
-I authenticated every allowed input before reading it. I then read only the
-candidate, its two proof-free contracts, the three accepted residual
-artifacts, the contracts' foundational inputs, and the sealed compact and
-aggregate targets. I did not read a Round 21 A3 reconstruction, certificate
-audit, synthesis, cross-comparison, referee, judge, State Patch, or Git
-history.
+For the original A4 isolation cycle, I authenticated every allowed input
+before reading it and read only the candidate, its two proof-free contracts,
+the three accepted residual artifacts, the contracts' foundational inputs,
+and the sealed compact and aggregate targets. For this lifecycle repair I
+additionally read only the binding cross-comparison and the two preserved
+failure notes named below. I did not read or edit a Round 21 A3
+reconstruction, certificate audit, synthesis, operative referee, judge,
+State Patch, or Git history.
 
 The new independent wrapper and its adversarial tests are:
 
 | artifact | SHA-256 |
 |---|---|
-| `computations/round21_verify_exact_d20_closure.py` | `85b661401544dac0398251480cadc5736fa7ac3941f47684e61d891da30756a0` |
-| `computations/tests/test_round21_verify_exact_d20_closure.py` | `10940d66a5ec0f0e9d42f9d57205de840bb3ea78c92f13cdd08a66f8e9da5713` |
+| `computations/round21_verify_exact_d20_closure.py` | `4868dcc3251fe30aff4d8ef362cdd8924fe69d95cafa8d597fa9c88560780ff8` |
+| `computations/tests/test_round21_verify_exact_d20_closure.py` | `6716ff1beaaf4053092f8e7baa4d77b95acf38f3fc3d467f15ec76e545271da7` |
 
 No binary float, display decimal, or midpoint sign is used by the wrapper for
 an authentication, partition, branch, count, set, or sign decision.
@@ -54,10 +56,35 @@ and test hash
 its report bytes were not frozen. Those are non-verdict bytes and are also
 not evidence.
 
-The present replacement adds and tests exact branch bounds
-\(3/4<4\arctan(1/5)-\arctan(1/239)<4/5<1\), as detailed in Section 5.
-Every execution result in Section 7 was rerun from the replacement bytes
-whose hashes appear above.
+The next completed cycle repaired the mathematics and printed PASS with:
+
+| rejected second-cycle artifact | SHA-256 |
+|---|---|
+| wrapper | `85b661401544dac0398251480cadc5736fa7ac3941f47684e61d891da30756a0` |
+| tests | `10940d66a5ec0f0e9d42f9d57205de840bb3ea78c92f13cdd08a66f8e9da5713` |
+| report | `e49458c1ec592c46f66f3ebf0a6c69682582e2392566230f686eca8fdbd7a0ed` |
+
+That second PASS is also **rejected and is not evidence for this verdict**.
+The strict cross-comparison,
+`rounds/polya-main/round_021/reviews/exact-d20-closure-cross-comparison.md`,
+SHA-256
+`11672110bdc1169c40b46247832c19b9187df3112ab67f28324f6784a2f552a6`,
+confirmed the repaired branch mathematics but found that the wrapper exposed
+no executable branch-conclusion schema and the tests only made positive
+assertions. They did not independently mutate away the lower bound, upper
+bound, or principal-branch conclusion required by the first failure record.
+
+The concurrent initial assume-false referee missed that lifecycle gate. Its
+miss is preserved at
+`rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-initial-lifecycle-miss.md`,
+SHA-256
+`af1761a2426ad22f2cf93ea765e3b98af1314f4587730b654ed4eb36e37106ba`.
+Neither the rejected second PASS nor the initial referee PASS is positive
+evidence.
+
+The present replacement adds the immutable executable branch schema,
+validator, and three active mutation tests detailed in Section 5. Only fresh
+replacement executions recorded in Section 7 may support the final verdict.
 
 ## 2. Authentication
 
@@ -264,6 +291,28 @@ interval \(\cos x>0\) (for example, the alternating cosine bound gives
 \(\tan(4a-b)=1\) forces \(4a-b=\arctan(1)=\pi/4\), excluding every
 \(\pi/4+n\pi\) branch.
 
+Before accepting any \(\pi\) enclosure, `verify_exact_constants()` now calls
+`validate_machin_branch_certificate()` on the frozen
+`round21-exact-machin-principal-branch-v1` schema. The immutable certificate
+encodes and the validator checks:
+
+- the exact definition
+  `theta=4*atan(1/5)-atan(1/239)`;
+- the strict exact lower bound \(70369/89625\) and upper bound \(4/5\);
+- the common open tangent-injectivity interval \((0,1)\);
+- principal \(\arctan(1)\) in that same open interval;
+- both exact tangent values equal to \(1\);
+- the literal conclusion `theta=atan(1)=pi/4`.
+
+Three independent `dataclasses.replace(...)` mutations are passed through
+the real `verify_exact_constants()` entry point. Removing the lower bound is
+rejected specifically as `lower range bound missing or changed`; removing
+the upper bound is rejected specifically as
+`upper range bound missing or changed`; and removing or changing the
+conclusion is rejected specifically as
+`principal-branch conclusion missing or changed`. These are active failing
+mutations, not positive assertions about the unmodified result.
+
 Four alternating terms give exact rational endpoints proving
 
 \[
@@ -348,43 +397,58 @@ This empty proposed set is exact bookkeeping. It does not by itself make the
 successor residual live or authorize a State Patch; valid theorem subtraction
 still requires the separate A3 analytic verdict and later promotion gates.
 
-## 7. Executed verification
+## 7. Replacement verification
+
+No earlier-cycle output is carried forward as evidence. The following
+commands and outputs are from the current hardened wrapper and test bytes
+only. Python bytecode writes and pytest's cache provider were disabled.
 
 ~~~text
 $env:PYTHONDONTWRITEBYTECODE='1'
-python -m py_compile computations/round21_verify_exact_d20_closure.py computations/tests/test_round21_verify_exact_d20_closure.py
+
+python -B -m py_compile computations/round21_verify_exact_d20_closure.py computations/tests/test_round21_verify_exact_d20_closure.py
 PASS
 
-python -m computations.round21_verify_exact_d20_closure --high-precision 384
+python -B -m pytest -p no:cacheprovider -q computations/tests/test_round21_verify_exact_d20_closure.py
+...........                                                              [100%]
+11 passed in 117.88s (0:01:57)
+
+python -B -m computations.round21_verify_exact_d20_closure --high-precision 384
 ROUND21_EXACT_D20_CLOSURE_A4 PASS
 authenticated_inputs=18
-exact_constants=PASS
-exact_set=PASS (243 sign rows; proposed D21 empty)
-compact[256]=PASS leaves=10580 floor_comparisons=2153076
-compact[384]=PASS leaves=10580 floor_comparisons=2153076
-aggregate_base_K200[192]=PASS boxes=1286 sign_checks=14146 endpoint_checks=2572
+exact_constants=PASS (7/51<rho_c and k11(rho)>12 for rho>=rho_c)
+exact_set=PASS (243 sign rows; D20=C21 disjoint-union T21; proposed D21 empty)
+compact[256]=PASS leaves=10580 floor_comparisons=2153076 digest=96e527b4eefaf032aeac89ddb960fc2fd4928e3b8204ccbbddbc8fddaa3be631
+compact[384]=PASS leaves=10580 floor_comparisons=2153076 digest=c6deaf2c1a7e9df78760d61414c59ee48a16b0ed621266b2de40a29aea1946f6
+aggregate_base_K200[192]=PASS boxes=1286 sign_checks=14146 endpoint_checks=2572 derivative_points=0
 aggregate_base_K200[384]=PASS boxes=1286 sign_checks=14146 endpoint_checks=2572 derivative_points=1286
 aggregate_scope=finite outward predicates at K=200 only
 analytic_K_ge_200_chain=A3_REQUIRED_NOT_CLAIMED
 
-python -m pytest -q computations/tests/test_round21_verify_exact_d20_closure.py
-8 passed in 114.81s
-
-python -m pytest -q
-328 passed, 1 xfailed, 10 subtests passed in 151.79s
+python -B -m pytest -p no:cacheprovider -q
+........................................................................ [ 21%]
+...........................................x.................. [ 40%]
+........................................................................ [ 62%]
+........................................................................ [ 83%]
+......................................................                   [100%]
+331 passed, 1 xfailed, 10 subtests passed in 150.24s (0:02:30)
 ~~~
 
 The reported xfail is pytest-designated and is not a failure of this audit.
 
 ## Final decision
 
-**PASS. First issue: none.** The compact 256/384-bit finite certificate,
-aggregate 192/384-bit \(K=200\) base certificate, exact schemas, outward
-faces, strict walls, branches, derivative consistency checks, containment
-constants, and exact D20 owner split all pass unconditionally within A4's
-scope.
+**PASS. First issue: none.** The immutable exact Machin branch certificate,
+its pre-enclosure validator, and the three independent lower-bound,
+upper-bound, and conclusion mutations now close the binding lifecycle gate.
+The compact 256/384-bit finite certificate, aggregate 192/384-bit \(K=200\)
+base certificate, exact schemas, outward faces, strict walls, branches,
+derivative consistency checks, containment constants, and exact D20 owner
+split all pass unconditionally within A4's scope.
 
 The analytic implication from the compact proxy to the spectral theorem and,
 especially, the aggregate reconstruction plus the universal chain
 (A25)--(A30) for every \(K\geq200\) remain A3 obligations. This A4 PASS does
-not claim or substitute for those results.
+not claim or substitute for those results. A later independent
+cross-comparison and fresh assume-false referee remain required before this
+replacement can advance in the review lifecycle.

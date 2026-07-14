@@ -62,6 +62,13 @@ def test_exact_constants_faces_split_and_u_orderings() -> None:
         == Fraction(4, 5)
         < 1
     )
+    certificate = constants.branch_certificate
+    assert certificate.schema == verifier.MACHIN_BRANCH_SCHEMA
+    assert certificate.theta_definition == verifier.MACHIN_THETA_DEFINITION
+    assert certificate.shared_injectivity_interval == (Fraction(0), Fraction(1))
+    assert certificate.principal_atan_one_interval == certificate.shared_injectivity_interval
+    assert certificate.theta_tangent == certificate.principal_atan_one_tangent == 1
+    assert certificate.conclusion == verifier.MACHIN_PRINCIPAL_CONCLUSION
 
     replay = verifier.verify_exact_set_logic()
     assert replay.exhaustive_sign_rows == 3**5
@@ -94,6 +101,37 @@ def test_exact_constants_faces_split_and_u_orderings() -> None:
         replace(k200, k_vs_k11=verifier.Relation.EQUAL)
     ).in_d20
     assert not verifier.classify_faces(replace(k200, k_vs_u=verifier.Relation.EQUAL)).in_d20
+
+
+def test_machin_branch_mutation_losing_lower_bound_is_rejected() -> None:
+    mutated = replace(verifier.MACHIN_BRANCH_CERTIFICATE, theta_lower_bound=None)
+    with pytest.raises(
+        verifier.MachinBranchCertificateError,
+        match="lower range bound missing or changed",
+    ):
+        verifier.verify_exact_constants(mutated)
+
+
+def test_machin_branch_mutation_losing_upper_bound_is_rejected() -> None:
+    mutated = replace(verifier.MACHIN_BRANCH_CERTIFICATE, theta_upper_bound=None)
+    with pytest.raises(
+        verifier.MachinBranchCertificateError,
+        match="upper range bound missing or changed",
+    ):
+        verifier.verify_exact_constants(mutated)
+
+
+def test_machin_branch_mutation_losing_or_changing_conclusion_is_rejected() -> None:
+    for wrong_conclusion in (None, "theta=atan(1)+pi"):
+        mutated = replace(
+            verifier.MACHIN_BRANCH_CERTIFICATE,
+            conclusion=wrong_conclusion,
+        )
+        with pytest.raises(
+            verifier.MachinBranchCertificateError,
+            match="principal-branch conclusion missing or changed",
+        ):
+            verifier.verify_exact_constants(mutated)
 
 
 def test_compact_schema_interfaces_precision_and_static_decisions(sealed_modules) -> None:
