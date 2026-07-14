@@ -396,7 +396,7 @@ $$
   multiplicities were reconstructed independently. The exact verifier
   reproduced 245 checks;
 
-- the exact live Round 19 subtraction. The genuinely new set is
+- the historical exact Round 19 subtraction. The genuinely new set is
 
 $$
 \mathcal C_{19}
@@ -421,6 +421,79 @@ $$
   nonempty because
   $k_6(1/2)<10<30<64<K_0(1/2)=U(1/2)$. Independent clean-room proof,
   exact audit, cross-comparison, and fresh adversarial review all passed;
+
+- the qualified Round 20 source obligation
+  `SRC-ROUND20-BESSEL-ZEROS`. Its only indispensable new external numerical
+  payload is
+
+$$
+j_{21/2,1}>\frac{69}{5},
+$$
+
+  obtained by exact positive-side algebra from Lorch's published strict
+  first-positive-zero inequality. DLMF contributes only the
+  spherical/ordinary identity, explicit half-integer formulas, and
+  recurrences. Every $n\ge2$ zero, the bounds
+  $j_{13/2,1}>10$ and $j_{15/2,1}>23/2$, fixed-channel shell-to-ball
+  comparison, angular propagation, inventory, multiplicity, and Weyl
+  payment is internal. The order-$17/2$ and $19/2$ first-zero bounds also
+  admit internal derivations from $j_{15/2,1}>23/2$;
+
+- the Round 20 combined-closure lemma. It proves strict Pólya on the complete
+  lower residual
+
+$$
+\mathcal D_{19}^{\rm low}=
+\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}
+\cup
+\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\},
+$$
+
+  on the closed high staircase
+
+$$
+\rho_c\le\rho\le\frac78,qquad z_\rho\le K\le k_{11}(\rho),
+$$
+
+  and, non-strictly only at $K=0$, on the all-frequency optical region
+
+$$
+\frac{39}{50}\le\rho<1,qquad K\ge0.
+$$
+
+  The lower proof combines a finite exact ledger with one aggregate
+  exceptional cell; the high proof reconstructs every inventory through
+  $k_7,\ldots,k_{11}$; and the optical proof uses its exact low/high screen
+  split. The candidate release first failed a lifecycle-coherence audit and
+  was corrected. The isolated A3 proof passed, with one false
+  comparative-reserve sentence preserved and repaired by an addendum. Two
+  A4 bundles failed before the final repaired 587-check verifier and 17
+  focused tests passed independent re-audit. The zero audit,
+  cross-comparison, fresh referee, judge, and State-Patch audit also passed;
+
+- the exact live Round 20 subtraction. The genuinely new set is
+
+$$
+\boxed{\begin{aligned}
+\mathcal C_{20}={}&\mathcal D_{19}^{\rm low}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K\le k_{11}(\rho)\}\\
+&\cup\{39/50\le\rho<7/8,\ k_{11}(\rho)<K<U(\rho)\},
+\end{aligned}}
+$$
+
+  and
+
+$$
+\boxed{
+\mathcal D_{20}=
+\left\{\rho_c\le\rho<\frac{39}{50},\quad
+k_{11}(\rho)<K<K_0(\rho)=U(\rho)\right\}.}
+$$
+
+  The $\rho_c$ face is included, the $39/50$ face is optical-owned,
+  $K=k_{11}$ is staircase-owned, and $K=K_0=U$ is excluded. The residual
+  is nonempty because
+  $k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2)$;
 
 - the independently checked certified pilot
 
@@ -447,21 +520,30 @@ $$
   margin. Both certified boxes lie inside $\mathcal C_{17}$, so they remain
   independent regression evidence but are analytically redundant.
 
-`SHELL-rho-compact` remains open. Round 19 reduces its exact residual to
-$\mathcal D_{19}$ above, which is the sole remaining shell blocker. The
-theorem-wise uncovered set is also exactly $\mathcal D_{19}$ because both
-certified boxes were already contained in $\mathcal C_{17}$ and are not
-subtracted again. `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`SHELL-rho-compact` remains open. Round 20 reduces its exact residual to
+$\mathcal D_{20}$ above, which is the sole remaining shell blocker. The
+theorem-wise uncovered set is also exactly $\mathcal D_{20}$ because both
+older certified boxes were already contained in $\mathcal C_{17}$ and are
+not subtracted again. `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
 `POLYA-program-target` remain open as well.
 
-Any further certification must use an exact bounded, face-connected manifest
-inside $\mathcal D_{19}$, with analytic ownership of all faces. Further
-analytic or symbolic compression remains the primary route. Round 20 must
-freeze the exact three-piece residual before any candidate is frozen. The
-existing small-hole shifted-tail, lower-staircase, and high-$k_8$ notes are
-prospective only and require independent reconstruction. The
-parent `COMP-certified-bessel` obligation remains `diagnostic_only`, and the
-final all-frequency theorem remains open.
+Round 21 has two independently audited but unpromoted certificate theorems.
+The compact coarse-proxy route covers the closed rectangle
+$[7/51,39/50]\times[12,200]$ by 10,580 exact rational leaves; the aggregate
+low-interface route covers
+$[\rho_c,39/50]\times[200,\infty)$ after 1,286 outward Arb ratio boxes and
+an exact frequency-convexity reduction. The containments
+$7/51<\rho_c$ and $k_{11}(\rho)>12$ suggest an exact two-piece cover of
+$\mathcal D_{20}$, with one subtraction owner at $K=200$. These route
+artifacts have not entered the obligation graph and do not yet establish an
+accepted empty residual. Round 21 must freeze a proof-free candidate and
+pass isolated, exact, cross-comparison, fresh-referee, judge, and
+theorem-level gates. The parent `COMP-certified-bessel` obligation remains
+`diagnostic_only`; any promotion should create scoped Round 21 compact and
+aggregate certificate obligations. A future empty-residual State Patch must
+also remove any obsolete diagnostic-parent blocker from the theorem path
+without changing that parent's status. The final all-frequency theorem
+remains open.
 
 The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain unproved.
 The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their

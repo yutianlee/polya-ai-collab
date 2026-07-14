@@ -6,13 +6,13 @@ The authoritative graph is `state/proof_obligations.yml`. The primary target is 
 
 Next run id: `polya-main`.
 
-## Current theorem boundary (Round 19)
+## Current theorem boundary (Round 20)
 
-The authoritative graph is the already-applied Round 19 graph, SHA-256
-`ece14c8af98556a15069e01a2d1cf2c12c155ea4e547457e3572a10643ace187`.
-The exact separated spectrum, both endpoint theorems, and the global
-high-frequency theorem from earlier rounds remain in force. Round 19 adds a
-two-sided low-frequency staircase. Put
+The authoritative graph is the already-applied Round 20 graph, SHA-256
+`313eed3a0f789e83fbd809c787590de80cb40946f307f50fd3eba53735d355bd`.
+It contains 57 obligations. The exact separated spectrum, both endpoint
+theorems, the all-ratio high-frequency theorem, and every accepted staircase
+through Round 19 remain in force. Put
 
 $$
 \rho_c=\frac1{1+2\pi},\qquad
@@ -23,115 +23,116 @@ $$
 
 $$
 k_m(\rho)=\sqrt{z_\rho^2+m(m+1)},\qquad
-d=\frac{\sqrt{337}}2,
-\qquad
+d=\frac{\sqrt{337}}2,\qquad
 W(\rho,K)=\frac{2}{9\pi}(1-\rho^3)K^3.
 $$
 
-The repository now proves both closed-frequency conclusions
+Round 20 proves three new conclusions. It closes the complete lower part of
+the accepted Round 19 residual,
 
 $$
-\boxed{\rho_c\le\rho\le\frac78,\quad z_\rho\le K\le k_6(\rho)}
+\mathcal D_{19}^{\rm low}=
+\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}
+\cup
+\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\},
+$$
+
+extends the closed high staircase to
+
+$$
+\boxed{\rho_c\le\rho\le\frac78,\quad z_\rho\le K\le k_{11}(\rho)}
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)<W(\rho,K),
 $$
 
-and
+and proves the all-frequency optical theorem
 
 $$
-\boxed{\rho_0<\rho<\rho_c,\quad L(\rho)<K\le d}
+\boxed{\frac{39}{50}\le\rho<1,\quad K\ge0}
 \quad\Longrightarrow\quad
-N_D(A_{\rho,1},K^2)<W(\rho,K).
+N_D(A_{\rho,1},K^2)\le W(\rho,K),
 $$
 
-Relative to the historical Round 18 cover, the genuinely new set is
-
-$$
-\mathcal C_{19}=
-\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}
-\cup
-\{\rho_c\le\rho<7/8,\ k_5(\rho)<K\le k_6(\rho)\}.
-$$
-
-Thus the live analytic cover and the exact live residual are
+with equality only at $K=0$ and strict comparison for $K>0$. Relative to
+the accepted Round 19 cover, the genuinely new set is
 
 $$
 \boxed{\begin{aligned}
-\mathcal A_{19}=\mathcal A_{18}
-&\cup\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}\\
-&\cup\{\rho_c\le\rho\le7/8,\ z_\rho\le K\le k_6(\rho)\},
+\mathcal C_{20}={}&\mathcal D_{19}^{\rm low}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K\le k_{11}(\rho)\}\\
+&\cup\{39/50\le\rho<7/8,\ k_{11}(\rho)<K<U(\rho)\}.
 \end{aligned}}
 $$
 
-and
+Exact subtraction gives the single live residual
 
 $$
-\boxed{\begin{aligned}
-\mathcal D_{19}={}&
-\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}\\
-&\cup\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}\\
-&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K<U(\rho)\}.
-\end{aligned}}
+\boxed{
+\mathcal D_{20}=
+\left\{\rho_c\le\rho<\frac{39}{50},\quad
+k_{11}(\rho)<K<K_0(\rho)=U(\rho)\right\}.}
 $$
 
-The split at $\rho=\rho_0$ is exact: $L(\rho_0)=d$, so the candidate
-fiber is empty and that ratio slice stays in the first component. The faces
-$K=d$ and $K=k_6$ are covered; $K=U$, $\rho=\rho_*$, and $\rho=7/8$
-retain their inherited owners, while $\rho=\rho_c$ belongs to the high
-band. The already absorbed boxes $B_0,B_1$ remain regression evidence and
+The face $\rho=\rho_c$ remains in the residual only strictly above
+$k_{11}$; $K=k_{11}$ is staircase-owned; $\rho=39/50$ is optical-owned;
+and $K=K_0=U$ is excluded. On the live ratio interval the $H_0$ and seam
+branches are ineligible, so $U=K_0$ exactly. The inherited certified boxes
+$B_0,B_1$ remain regression evidence inside earlier analytic coverage and
 are not subtracted again.
 
-The external source increment is deliberately narrow. The qualified
-obligation `SRC-ROUND19-BESSEL-ZEROS` supplies only Lorch's strict
-specialization
+The new source obligation `SRC-ROUND20-BESSEL-ZEROS` is deliberately narrow.
+Its only indispensable new external numerical payload is Lorch's qualified
+first-positive-zero specialization
 
 $$
-j_{11/2,1}>\frac{17}{2}
+j_{21/2,1}>\frac{69}{5}.
 $$
 
-and the positive spherical/ordinary Bessel identification. The exact
-reduction has reserve
-$507^2\cdot77-4264^2=1611077>0$. The bounds
-$j_{3/2,2}>77/10$ and $j_{5/2,2}>9$ are reconstructed internally. So are
-fixed-channel zero extension and shell-to-ball min--max,
+DLMF supplies only the spherical/ordinary identity, explicit half-integer
+formulas, and recurrences. Every $n\ge2$ zero, the strengthened first-zero
+bounds $j_{13/2,1}>10$ and $j_{15/2,1}>23/2$, tangent-cell enumeration,
+ODE simplicity, shell-to-ball comparison, angular propagation, inventory,
+multiplicity cap, and Weyl payment is internal. The order-$17/2$ and
+$19/2$ bounds also have independent internal derivations, even though the
+same Lorch formula implies them.
+
+The residual is nonempty. Since $\rho_c<1/2<39/50$,
 
 $$
-q_{\ell,n}^{\rm shell}(\rho)\ge j_{\ell+1/2,n},
+k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2),
 $$
 
-the ball angular shift
+so $(1/2,30)\in\mathcal D_{20}$. Therefore `SHELL-rho-compact`,
+`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target`
+remain `open`; `COMP-certified-bessel` remains `diagnostic_only`.
 
-$$
-j_{p+1/2,n}^2\ge j_{\ell+1/2,n}^2+p(p+1)-\ell(\ell+1),
-\qquad p>\ell,
-$$
+Every Round 20 promotion gate passed, with its failure chronology preserved.
+The residual freeze and independent audit passed. The first released
+candidate failed final-byte review because its freeze lifecycle was circular;
+the corrected candidate and freeze then passed an independent final-byte
+audit. A3 returned PASS, and its false comparative-reserve sentence was
+isolated and corrected by an immutable addendum without changing the theorem
+verdict. Two A4 bundles failed in sequence: the first omitted the live
+cap-74 payment and contained disconnected checks; the first replacement had
+a control byte and mutation-insensitive checks. Only the second repaired A4
+bundle is positive evidence: 587 exact checks, comprising 488 substantive,
+65 bookkeeping, and 34 authentication checks, plus 17 focused tests. The
+zero-provenance audit, cross-comparison, fresh adversarial referee, judge,
+and independent State-Patch audit all passed.
 
-and all shell exclusions, multiplicities, and Weyl payments. No shell
-cross-product zero is imported. The high-band caps are
-$4,9,16,25,26,29,36$; the lower-band caps are
-$1,4,9,10,16,17,26,29,40,45$.
-
-The residual is demonstrably nonempty. At $\rho=1/2$,
-
-$$
-k_6(1/2)<10<30<64<K_0(1/2)=U(1/2),
-$$
-
-so $(1/2,30)\in\mathcal D_{19}$. Consequently
-`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
-`POLYA-program-target` remain `open`; `COMP-certified-bessel` remains
-`diagnostic_only`.
-
-All Round 19 promotion gates passed: 13 exact residual checks, 245 exact
-staircase checks, 37 residual-focused and 24 staircase-focused tests, the
-pre-application suite at 193 tests plus 10 subtests, 50-file source
-compilation, graph validation, and `git diff --check`.  After promotion, the
-current suite passes 195 tests and 10 subtests with one strict expected
-failure: the immutable freeze test deliberately compares the now-advanced
-live state paths with their pre-promotion hashes.  Three lifecycle tests
-authenticate those hashes from the baseline Git objects instead. Round 20
-must freeze this exact $\mathcal D_{19}$ before freezing or reviewing any
-candidate.
+Round 21 already contains two independently audited certificate routes: a
+closed compact rectangle $7/51\le\rho\le39/50$, $12\le K\le200$, and an
+aggregate tail theorem on $\rho_c\le\rho\le39/50$, $K\ge200$. They are
+promising inputs to a new proof-free Round 21 candidate, but neither route,
+their exploratory synthesis, nor an empty successor residual is promoted in
+the graph. Exact $\mathcal D_{20}$ closure and theorem-level review remain
+mandatory before any global target can change status. Any later promotion
+should use narrowly scoped compact-proxy and aggregate-tail certificate
+obligations rather than broadening `COMP-certified-bessel`; the legacy parent
+stays `diagnostic_only`. If exact closure makes that parent unnecessary on
+the theorem path, the future State Patch must remove its obsolete target
+blocker/dependency while preserving its status, then pass separate
+theorem-level and program-scope audits.
 
 ## Historical boundary through Round 18
 
@@ -963,8 +964,8 @@ N_D(A_{\rho,1},K^2)
 $$
 
 Threshold equality is included, and the exact reduction from the Round 15
-ceiling is $200000/295^2=8000/3481>2$. The sole remaining shell blocker is
-the true nonrectangular set
+ceiling is $200000/295^2=8000/3481>2$. At the end of Round 16 the sole
+remaining shell blocker was the true nonrectangular set
 $\mathcal D_{16}=(I_{16}\times[0,\infty))\setminus\mathcal A_{16}$, not the
 rectangle $I_{16}\times[0,87025)$. `COMP-certified-bessel` remains
 `diagnostic_only`, and the Round 8 certified pilot remains unchanged and
@@ -1101,6 +1102,34 @@ $$
 keeps every theorem-level target open and keeps the parent computation
 obligation diagnostic. Independent reconstruction, exact arithmetic, source
 audit, cross-comparison, and a fresh adversarial referee all passed. The
-post-application graph is authoritative; Round 20 begins by freezing
-$\mathcal D_{19}$ and may not promote any current exploratory note without
-a proof-free claim freeze and the complete A3/A4/fresh-referee gate.
+post-application graph was authoritative for Round 20, which has now
+superseded $\mathcal D_{19}$ by the exact residual below.
+
+## Round 20 Update
+
+Date: 2026-07-15
+
+See `rounds/polya-main/round_020/judge/judge-020.md` and
+`rounds/polya-main/round_020/reviews/state-patch-final-audit.md`.
+
+Round 20 promotes `SRC-ROUND20-BESSEL-ZEROS` at
+`proved_external_dependency` and `SHELL-combined-closure` at
+`proved_internal`. The latter closes all of $\mathcal D_{19}^{\rm low}$,
+extends the high staircase through the included $K=k_{11}$ face, and proves
+the optical theorem for $39/50\le\rho<1$ at every frequency. Its exact new
+part is $\mathcal C_{20}$ displayed in the current boundary, and subtraction
+gives
+
+$$
+\mathcal D_{20}=
+\{\rho_c\le\rho<39/50,\ k_{11}(\rho)<K<K_0(\rho)=U(\rho)\}.
+$$
+
+The strict witness $(1/2,30)$ keeps every theorem-level target open. The
+source boundary, candidate release failure and repair, A3 addendum, both
+failed A4 cycles, final A4 repair, cross-comparison, fresh referee, judge,
+and State-Patch audit are all retained in their exact chronological roles.
+Round 21 must now freeze this accepted one-piece residual, issue a new
+proof-free claim, and review the compact and aggregate certificate routes as
+one exact set subtraction. Their existing audited reports are evidence to be
+considered, not graph promotion and not yet an empty-residual judgment.

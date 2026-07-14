@@ -2,92 +2,85 @@
 
 Run: `polya-main`
 
-Current round: 20
+Current round: 21
 
 ## Authoritative state
 
 Read `state/proof_obligations.yml` first. Its SHA-256 is
-`ece14c8af98556a15069e01a2d1cf2c12c155ea4e547457e3572a10643ace187`.
-Round 19 is applied. The live analytic cover is $\mathcal A_{19}$ and the
-live residual is $\mathcal D_{19}$. Every $\mathcal D_{18}$ reference in
+`313eed3a0f789e83fbd809c787590de80cb40946f307f50fd3eba53735d355bd`.
+Round 20 is applied. The live analytic cover is $\mathcal A_{20}$ and the
+live residual is $\mathcal D_{20}$. Every $\mathcal D_{19}$ reference in
 older artifacts is historical.
 
-The all-frequency shell theorem remains open. The statuses
-`SHELL-rho-compact`, `SHELL-rho-uniformity`,
-`TARGET-shell-d3`, and `POLYA-program-target` are `open`;
-`COMP-certified-bessel` is `diagnostic_only`.
+The all-frequency shell theorem remains open. `SHELL-rho-compact`,
+`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` are
+`open`; `COMP-certified-bessel` remains `diagnostic_only`.
 
-## Accepted Round 19 result
+## Accepted Round 20 result
 
 Define
 
 $$
 \rho_c=\frac1{1+2\pi},\qquad
-\rho_0=\frac1{\sqrt{337}},\qquad
 z_\rho=\frac{\pi}{1-\rho},\qquad
-L(\rho)=\frac1{2\rho},
+k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
 $$
 
-$$
-k_m(\rho)=\sqrt{z_\rho^2+m(m+1)},\qquad
-d=\frac{\sqrt{337}}2.
-$$
-
-The accepted two-sided staircase proves
+The accepted combined closure proves strict Pólya on both lower components
+of $\mathcal D_{19}$ and on
 
 $$
-\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_6(\rho),
+\rho_c\le\rho\le\frac78,qquad z_\rho\le K\le k_{11}(\rho).
 $$
 
-and
+It also proves
 
 $$
-\rho_0<\rho<\rho_c,\qquad L(\rho)<K\le d.
+\frac{39}{50}\le\rho<1,qquad K\ge0,
 $$
 
-The only new external payload is the audited strict specialization
-$j_{11/2,1}>17/2$ and the positive spherical/ordinary identification. The
-bounds $j_{3/2,2}>77/10$ and $j_{5/2,2}>9$, fixed-channel shell-to-ball
-min--max, ball angular shifts, inventories, multiplicities, and Weyl
-payments are internal.
-
-The genuinely new set is
+with equality only at $K=0$ and strict comparison for $K>0$. Its exact new
+set is
 
 $$
-\mathcal C_{19}
-=\{\rho_0<\rho<\rho_c,\ L(\rho)<K\le d\}
-\cup
-\{\rho_c\le\rho<7/8,\ k_5(\rho)<K\le k_6(\rho)\}.
+\boxed{\begin{aligned}
+\mathcal C_{20}={}&\mathcal D_{19}^{\rm low}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K\le k_{11}(\rho)\}\\
+&\cup\{39/50\le\rho<7/8,\ k_{11}(\rho)<K<U(\rho)\}.
+\end{aligned}}
 $$
+
+The only indispensable new external zero payload is the qualified
+$j_{21/2,1}>69/5$ specialization. DLMF supplies only the labelled
+spherical/ordinary and recurrence identities. Every higher-radial zero,
+strengthened lower-order first zero, shell comparison, angular propagation,
+inventory, multiplicity, and payment is internal.
 
 ## Exact current residual
 
 $$
-\boxed{\begin{aligned}
-\mathcal D_{19}={}&
-\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}\\
-&\cup\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}\\
-&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K<U(\rho)\}.
-\end{aligned}}
+\boxed{
+\mathcal D_{20}=
+\left\{\rho_c\le\rho<\frac{39}{50},\quad
+k_{11}(\rho)<K<K_0(\rho)=U(\rho)\right\}.}
 $$
 
-At $\rho=\rho_0$, $L=d$ and the candidate fiber is empty. The faces $K=d$
-and $K=k_6$ are covered; $K=U$, $\rho=\rho_*$, and $\rho=7/8$ retain
-their inherited owners, and $\rho=\rho_c$ belongs to the high component.
-The boxes $B_0,B_1$ remain regression evidence and are not subtracted
+The face $\rho=\rho_c$ is included; $\rho=39/50$ is optical-owned and
+excluded. The face $K=k_{11}$ is staircase-owned and excluded; $K=K_0=U$
+is also excluded. The residual is nonempty because
+
+$$
+k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2).
+$$
+
+The inherited boxes $B_0,B_1$ remain regression evidence and do not subtract
 again.
 
-The residual is nonempty:
+## Mandatory accepted artifacts
 
-$$
-k_6(1/2)<10<30<64<K_0(1/2)=U(1/2).
-$$
+Read these before beginning the Round 21 candidate lifecycle.
 
-## Mandatory Round 19 artifacts
-
-Read these before beginning Round 20:
-
-### State and decision
+### State, judge, and patch audit
 
 - `state/current_state.md`
 - `state/best_proof_draft.md`
@@ -95,74 +88,141 @@ Read these before beginning Round 20:
 - `state/gap_register.md`
 - `state/next_round_prompts.md`
 - `state/last_validation_report.md`
-- `rounds/polya-main/round_019/judge/judge-019.md`
-- `rounds/polya-main/round_019/reviews/state-patch-final-audit.md`
+- `rounds/polya-main/round_020/judge/judge-020.md`
+- `rounds/polya-main/round_020/reviews/state-patch-final-audit.md`
 
-### Exact residual and proof-free freezes
+### Residual and candidate freezes
 
-- `state/lemma_packets/SHELL-rho-compact-round19.md`
-- `rounds/polya-main/round_019/exploration/residual-mask-freeze.md`
-- `computations/round19_residual_mask.py`
-- `computations/tests/test_round19_residual_mask.py`
-- `rounds/polya-main/round_019/reviews/residual-mask-independent-audit.md`
-- `state/lemma_packets/SHELL-two-sided-staircase-round19-claim.md`
-- `rounds/polya-main/round_019/exploration/candidate-claim-freeze.md`
+- `state/lemma_packets/SHELL-rho-compact-round20.md`
+- `computations/round20_residual_mask.py`
+- `computations/tests/test_round20_residual_mask.py`
+- `computations/tests/test_round20_post_promotion_lifecycle.py`
+- `rounds/polya-main/round_020/exploration/residual-mask-freeze.md`
+- `rounds/polya-main/round_020/reviews/residual-mask-independent-audit.md`
+- `state/lemma_packets/SHELL-combined-closure-round20-claim.md`
+- `rounds/polya-main/round_020/exploration/candidate-claim-freeze.md`
+- `rounds/polya-main/round_020/reviews/candidate-freeze-independent-audit.md`
+- `rounds/polya-main/round_020/reviews/candidate-replacement-final-byte-audit.md`
 
-### Source, proofs, and reviews
+### Accepted proof and source evidence
 
-- `sources/round19_bessel_zero_bounds.md`
-- `rounds/polya-main/round_019/exploration/new-zero-dependency-audit.md`
-- `rounds/polya-main/round_019/responses/high-ratio-k6-incumbent.md`
-- `rounds/polya-main/round_019/exploration/lower-ratio-route.md`
-- `rounds/polya-main/round_019/reviews/two-sided-staircase-clean-room.md`
-- `computations/round19_verify_two_sided_staircase.py`
-- `computations/tests/test_round19_verify_two_sided_staircase.py`
-- `rounds/polya-main/round_019/reviews/two-sided-staircase-constants.md`
-- `rounds/polya-main/round_019/reviews/two-sided-staircase-cross-comparison.md`
-- `rounds/polya-main/round_019/reviews/two-sided-staircase-adversarial-referee.md`
+- `sources/lorch_bessel_zeros.md`
+- `sources/round20_bessel_zero_bounds.md`
+- `sources/round20_higher_radial_zero_bounds.md`
+- `sources/round20_k10_zero_bounds.md`
+- `sources/round20_k11_zero_bounds.md`
+- `rounds/polya-main/round_020/reviews/combined-closure-zero-provenance.md`
+- `rounds/polya-main/round_020/reviews/combined-closure-clean-room.md`
+- `rounds/polya-main/round_020/reviews/combined-closure-clean-room-addendum.md`
+- `computations/round20_verify_combined_closure.py`
+- `computations/tests/test_round20_verify_combined_closure.py`
+- `rounds/polya-main/round_020/reviews/combined-closure-constants-replacement.md`
+- `rounds/polya-main/round_020/reviews/combined-closure-constants-final-audit.md`
+- `rounds/polya-main/round_020/reviews/combined-closure-cross-comparison.md`
+- `rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md`
 
-## Reproduced validation
+### Preserved failure chronology
+
+- `rounds/polya-main/round_020/reviews/candidate-final-byte-audit.md`:
+  failed circular candidate-freeze lifecycle;
+- `rounds/polya-main/round_020/reviews/combined-closure-constants-adversarial-audit.md`:
+  failed missing cap-74 payment and disconnected checks;
+- `rounds/polya-main/round_020/reviews/combined-closure-constants-replacement-audit.md`:
+  failed control-byte and mutation-sensitivity gates;
+- `rounds/polya-main/round_020/reviews/combined-closure-clean-room-addendum.md`:
+  preserves and repairs the false comparative-reserve sentence without
+  changing A3's theorem verdict.
+
+These are chronology, not positive promotion evidence except for the
+explicitly passing addendum.
+
+## Round 21 route evidence, not graph state
+
+The following artifacts have independent adversarial audits but are not
+promoted obligations:
+
+- `rounds/polya-main/round_021/certification/compact-proxy-rectangle.md`
+- `computations/round21_certify_compact_proxy.py`
+- `computations/tests/test_round21_certify_compact_proxy.py`
+- `rounds/polya-main/round_021/certification/compact-proxy-rectangle-adversarial-audit.md`
+- `rounds/polya-main/round_021/exploration/aggregate-low-interface-route.md`
+- `rounds/polya-main/round_021/certification/aggregate-tail-global.md`
+- `computations/round21_verify_aggregate_tail.py`
+- `computations/tests/test_round21_verify_aggregate_tail.py`
+- `rounds/polya-main/round_021/certification/aggregate-tail-global-adversarial-audit.md`
+- `rounds/polya-main/round_021/exploration/exact-d20-closure.md`
+
+The compact theorem covers the closed rectangle
+
+$$
+\frac7{51}\le\rho\le\frac{39}{50},\qquad12\le K\le200,
+$$
+
+using 10,580 exact rational leaves. The aggregate theorem covers
+
+$$
+\rho_c\le\rho\le\frac{39}{50},\qquad K\ge200,
+$$
+
+using 1,286 outward ratio boxes plus an exact derivative argument. The
+containments $7/51<\rho_c$ and $k_{11}(\rho)>12$ show the intended route,
+but no accepted proof-free Round 21 claim or empty residual exists yet.
+
+## Reproduced Round 20 validation
 
 The accepted final bytes passed:
 
-- 13 exact residual checks;
-- 245 exact staircase checks;
-- 37 residual-focused tests;
-- 24 staircase-focused tests;
-- 193 pre-application repository tests plus 10 subtests;
-- 195 current post-application tests plus 10 subtests, with one strict
-  expected xfail for the superseded live-path hash assertion and three
-  passing Git-baseline lifecycle checks;
-- compilation of 52 Python files;
-- graph validation and `git diff --check`.
+- Round 20 residual self-check: 10 checks;
+- residual-focused tests: 46 passed;
+- final exact combined-closure verifier: 587 checks
+  (488 substantive, 65 bookkeeping, 34 authentication);
+- final exact-verifier tests: 17 passed;
+- source and graph validation, compilation, UTF-8/control-byte checks, and
+  `git diff --check`;
+- the complete pre-application suite recorded by the independent patch audit:
+  271 passed, 1 strict expected xfail, and 10 subtests.
 
-## Canonical Round 20 order
+The current post-promotion suite is recorded in
+`state/last_validation_report.md`. The sole expected xfail remains the
+obsolete Round 19 live-path assertion. The Round 20 manifest's baseline-aware
+authentication remains a running PASS; its post-promotion lifecycle tests
+preserve the original test bytes and prove the live state advanced.
 
-1. Freeze the exact three-piece $\mathcal D_{19}$ before any candidate.
-2. Independently audit the residual classifier and every strict face.
-3. Route the low, middle, and high components separately.
-4. Audit every new external zero input as a narrow source obligation.
-5. Synthesize and freeze one proof-free candidate with an exact proposed
-   subtraction.
-6. Run strictly isolated A3 reconstruction.
-7. Run independent A4 exact verification and focused tests.
-8. Cross-compare the incumbent, A3, A4, and source audit.
-9. Run a fresh adversarial referee who participated in neither development
-   nor A3.
-10. Only then draft, audit, validate, and apply a State Patch once.
+## Canonical Round 21 order
 
-Current Round 20 small-hole shifted-tail, lower-staircase, and high-$k_8$
-notes are exploratory only. They may suggest routes after the residual
-freeze, but they are not accepted claims, proof-free freezes, independent
-reconstructions, or promotion evidence.
+1. Freeze the accepted one-piece $\mathcal D_{20}$ with a new classifier.
+2. Independently audit that freeze before reading any candidate proof.
+3. Write proof-free compact and aggregate certificate contracts; do not give
+   A3 incumbent reports, verifier code, tests, or prior audits.
+4. Freeze one proof-free closure candidate with exact $K=200$ ownership.
+5. Run isolated A3 reconstruction from only the contracts, residual freeze,
+   and foundational whitelist.
+6. Run a candidate-specific A4 audit of both certificates and the exact set
+   subtraction, despite their existing adversarial audits.
+7. Cross-compare and run a fresh lemma referee.
+8. Judge and independently audit a Round 21 State Patch. If warranted, create
+   scoped `CERT-round21-compact-proxy` and
+   `CERT-round21-aggregate-tail` obligations; keep
+   `COMP-certified-bessel` `diagnostic_only`.
+9. If the exact residual is then promoted as empty, separately run fresh
+   theorem-level clean-room and adversarial audits.
+10. Run a program-scope audit before any program-target promotion. Remove any
+    obsolete diagnostic-parent blocker from the theorem path explicitly,
+    without changing the diagnostic parent's status.
 
 ## Do-not-claim rules
 
-- Do not substitute historical $\mathcal D_{18}$, a rectangle, or a coarse
-  over-cover for the live $\mathcal D_{19}$.
-- Do not blur strict/inclusive ownership at $L,d,k_6,U$ or the ratio faces.
-- Do not attribute internal tangent, min--max, angular-shift, shell-zero,
-  multiplicity, or Weyl arguments to Lorch, DLMF, or FLPS.
-- Do not call sampled floating-point roots or plots certified.
-- Do not promote theorem-level targets while $\mathcal D_{19}$ is nonempty.
-- Do not treat agreement among agents as mathematical verification.
+- Do not substitute historical $\mathcal D_{19}$ or a larger certificate
+  rectangle for live $\mathcal D_{20}$.
+- Do not claim an empty live residual before the full Round 21 lifecycle and
+  applied State Patch.
+- Do not double-subtract $K=200$.
+- Do not blur ownership at $\rho_c$, $39/50$, $k_{11}$, or $K_0=U$.
+- Do not expose incumbent proof/code artifacts to isolated A3; use proof-free
+  contracts.
+- Do not broaden `COMP-certified-bessel`; use scoped certificate obligations
+  if later promotion is justified.
+- Do not call decimal displays, sampled floats, tests, or agent agreement
+  proof.
+- Do not begin final theorem review until exact $\mathcal D_{20}$ closure is
+  already promoted.

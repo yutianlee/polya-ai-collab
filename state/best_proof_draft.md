@@ -1491,6 +1491,209 @@ $$
 so $(1/2,30)\in\mathcal D_{19}$. The full shell theorem is therefore not
 proved.
 
+## Combined lower, staircase, and optical closure (Round 20)
+
+Round 20 retains (R19.3)--(R19.5) and strengthens the exact zero registry.
+The only indispensable new external numerical input is the qualified Lorch
+specialization
+
+$$
+j_{21/2,1}>\frac{69}{5}.
+\tag{R20.1}
+$$
+
+The same formula also yields the stated order-$17/2$ and order-$19/2$
+bounds, but they are independently recoverable from the internal inequality
+$j_{15/2,1}>23/2$ and (R19.5). The first-zero bound
+$j_{13/2,1}>10$, the bound $j_{15/2,1}>23/2$, and all higher-radial
+bounds used below are proved internally from exact half-integer recurrences,
+tangent-cell enumeration, interlacing, and ODE simplicity. In particular,
+
+$$
+\begin{gathered}
+j_{3/2,2}>77/10,\quad j_{5/2,2}>9,\quad
+j_{7/2,2}>103/10,\quad j_{11/2,2}>129/10,\\
+j_{3/2,3}>21/2,\quad j_{5/2,3}>61/5,\quad
+j_{13/2,1}>10,\quad j_{15/2,1}>23/2.
+\end{gathered}
+\tag{R20.2}
+$$
+
+No external source is used for a shell cross-product zero, a fixed-channel
+variational comparison, angular propagation, multiplicity, or Weyl payment.
+
+### Complete lower residual
+
+Write
+
+$$
+\mathcal D_{19}^{\rm low}=
+\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}
+\cup
+\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\}.
+\tag{R20.3}
+$$
+
+On the shifted-tail wedge the floor bookkeeping gains one full unit while
+the interface remainder stays below $1/4$. The finite ledger through
+$K=\sqrt{114}$ has exhaustive strict caps
+
+$$
+45,\ 46,\ 59,\ 66,\ 69,\ 78.
+\tag{R20.4}
+$$
+
+Above that wall the aggregate floor inequality covers every cell except
+
+$$
+\mathcal B=
+\{\sigma<\rho<\rho_c,\ K>\sqrt{114},\
+\rho K\ge5/2,\ K<2/\omega_0\}.
+\tag{R20.5}
+$$
+
+In this exceptional cell the strict phase-proxy vector has weighted sum
+$395$, and the exact Weyl lower bound pays it strictly. The ownership is
+explicit: $\rho=\sigma$ belongs to the wedge, $K=\sqrt{114}$ to the finite
+ledger, $\rho K=5/2$ to the exceptional cell, and $K=2/\omega_0$ to the
+aggregate branch. Thus
+
+$$
+(\rho,K)\in\mathcal D_{19}^{\rm low}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)<W(\rho,K).
+\tag{R20.6}
+$$
+
+The complete $\rho=\rho_0$ fiber is included in this removal, and
+$L(\rho_0)=d$ preserves the inherited face assignment.
+
+### High staircase through $k_{11}$
+
+The fixed-channel and angular-shift comparisons, (R20.1)--(R20.2), and full
+radial-index preservation give exhaustive inventories in every band through
+$k_7,\ldots,k_{11}$. Each rational localization face and each algebraic
+split at
+
+$$
+z_\rho^2=16,\qquad z_\rho^2=\frac{68}{3},\qquad z_\rho^2=34
+\tag{R20.7}
+$$
+
+is checked on the required side; equality excludes the defining mode under
+the strict counting convention. All fixed/moving bridges and coincidence
+faces pay the full angular multiplicities. The conservative
+$k_9,H=6,h=4$ cap-$74$ cell deserves separate mention. Full zero
+propagation makes it empty; independently, its coarse constraints imply
+
+$$
+W\left(\frac7{20},\frac{207}{20}\right)
+>74+\frac{727261673}{704000000}.
+\tag{R20.8}
+$$
+
+Hence it is paid even without using emptiness. The resulting closed theorem
+is
+
+$$
+\boxed{
+\rho_c\le\rho\le\frac78,\qquad
+z_\rho\le K\le k_{11}(\rho)
+}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)<W(\rho,K).
+\tag{R20.9}
+$$
+
+Every $K=k_m$, $7\le m\le11$, is included. Directed elementary bounds give
+$k_{11}<U$ throughout $\rho_c\le\rho<7/8$, so the new staircase is a valid
+subtraction from the historical high component.
+
+### All-frequency optical extension
+
+Put $\varepsilon=1-\rho$ and use the complementary-action variable from the
+Round 16 endpoint proof. Round 20 sharpens the product deficit to
+
+$$
+D(a)>\frac{1382}{3125}a^2\qquad(a>\pi).
+\tag{R20.10}
+$$
+
+With
+
+$$
+c=\frac{1126}{625},\qquad q=\frac{106}{333},
+\tag{R20.11}
+$$
+
+the inclusive low and high screens meet at the actual interface
+$a=c/\varepsilon$ and have exact positive endpoint reserves
+
+$$
+R_L=\frac{39569}{2772225000},\qquad
+R_H=\frac{14817541}{472867032960000}.
+\tag{R20.12}
+$$
+
+The argument splits at the ungridded inner interface, preserves all radial
+and angular integer walls, and proves every sign for
+$0<\varepsilon\le11/50$. Consequently
+
+$$
+\boxed{
+\frac{39}{50}\le\rho<1,\qquad K\ge0
+}
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)\le W(\rho,K),
+\tag{R20.13}
+$$
+
+with equality only at $K=0$ and strict comparison for $K>0$.
+
+### Exact successor residual
+
+Relative to the accepted Round 19 cover, (R20.6), (R20.9), and (R20.13)
+add exactly
+
+$$
+\boxed{\begin{aligned}
+\mathcal C_{20}={}&\mathcal D_{19}^{\rm low}\\
+&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K\le k_{11}(\rho)\}\\
+&\cup\{39/50\le\rho<7/8,\ k_{11}(\rho)<K<U(\rho)\}.
+\end{aligned}}
+\tag{R20.14}
+$$
+
+On $\rho_c\le\rho<39/50$, neither the $H_0$ nor seam branch is eligible,
+so $U=K_0$ exactly. Exact subtraction yields the live residual
+
+$$
+\boxed{
+\mathcal D_{20}=
+\left\{\rho_c\le\rho<\frac{39}{50},\quad
+k_{11}(\rho)<K<K_0(\rho)=U(\rho)\right\}.}
+\tag{R20.15}
+$$
+
+The ratio face $\rho=39/50$ is optical-owned, the frequency face
+$K=k_{11}$ is staircase-owned, and $K=K_0=U$ is excluded. Finally,
+
+$$
+k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2),
+\tag{R20.16}
+$$
+
+so $(1/2,30)\in\mathcal D_{20}$. Round 20 does not prove the full shell
+theorem.
+
+The promotion chronology is part of the proof record. The first candidate
+release failed a final-byte lifecycle audit and was replaced. A3's theorem
+proof passed, while a false comparative-reserve sentence was corrected in an
+immutable addendum. The original A4 verifier and its first replacement each
+failed an independent audit; only the final repaired 587-check bundle is
+positive A4 evidence. The zero-provenance audit, cross-comparison, fresh
+adversarial referee, judge, and State-Patch audit all passed.
+
 ## Certified central regression boxes
 
 On the closed box
@@ -1549,7 +1752,7 @@ $$
 
 Both certificates therefore remain independent regression evidence but are
 analytically redundant after promotion of the Round 17 band. They do not
-subtract anything further from $\mathcal D_{19}$, do not promote sampled
+subtract anything further from $\mathcal D_{20}$, do not promote sampled
 numerics to proof, and do not make `COMP-certified-bessel` more than
 `diagnostic_only`.
 
@@ -1559,15 +1762,25 @@ This file must not be cited as a proof of the full shell theorem. The open
 obligations `SHELL-rho-compact`, `SHELL-rho-uniformity`,
 `TARGET-shell-d3`, and `POLYA-program-target` remain open. The gates are:
 
-- analytic or symbolic closure of the exact three-piece residual
-  $\mathcal D_{19}$, followed only where necessary by rigorous,
-  face-connected certification inside that same residual;
-- preservation of the exact accepted mask $\mathcal A_{19}$ and every owned
-  face; a coarse envelope or rectangle is not an admissible substitute;
-- construction must close the three exact components of (R19.14), with
-  strict ownership of $K=L,d,k_6,U$ and every ratio face. Current
-  exploratory small-hole shifted-tail, lower-staircase, and high-$k_8$
-  notes are not promoted and must first pass a proof-free freeze;
-- a fresh final theorem-level clean-room reconstruction and adversarial
-  review after the compact residual is closed. Agent consensus is not a
-  proof, and finite ledgers certify only the arithmetic they execute.
+- exact closure of the one-piece residual $\mathcal D_{20}$ in (R20.15),
+  without replacing it by either larger certificate domain;
+- preservation of the exact accepted mask $\mathcal A_{20}$ and ownership of
+  $\rho=\rho_c$, $\rho=39/50$, $K=k_{11}$, and $K=K_0=U$;
+- a proof-free Round 21 candidate that may route $K\le200$ to the already
+  audited compact coarse-proxy certificate and $K>200$ to the already
+  audited aggregate tail certificate, with exact containment and one
+  subtraction owner at $K=200$. Neither route is promoted merely because
+  its certificate and adversarial audit already pass;
+- narrowly scoped compact-proxy and aggregate-tail certificate obligations
+  if promotion is justified; the legacy `COMP-certified-bessel` stays
+  `diagnostic_only`, and any obsolete dependency or blocker from that parent
+  to the theorem target must be removed explicitly rather than silently
+  treated as discharged;
+- isolated reconstruction, exact/certificate re-audit, cross-comparison, and
+  a fresh lemma-level referee for the combined $\mathcal D_{20}$ closure;
+- only after exact residual closure, a separate fresh theorem-level
+  clean-room reconstruction and adversarial review of the global shell
+  implication. Agent consensus is not proof, and executable certificates
+  establish only the analytic implications and signs they authenticate. A
+  final program-scope audit must separately check that no other project track
+  is claimed by the spherical-shell theorem.
