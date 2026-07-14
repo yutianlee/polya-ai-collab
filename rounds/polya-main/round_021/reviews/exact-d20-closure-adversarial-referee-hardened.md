@@ -6,12 +6,14 @@ Date: 2026-07-15
 
 **PASS. First unsupported implication: none.**
 
-The review was performed from a context-free child task at canonical agent
-path
-`/root/round21_a3_clean_room/round21_fresh_referee_hardened`. The reviewer
-assumed the frozen exact-D20 claim false, authenticated the current third
-A4 cycle, reconstructed the compact and aggregate implications, and used a
-separate child for the spectral/compact sub-review.
+The review was performed by a fresh child at canonical agent path
+`/root/round21_a3_clean_room/round21_fresh_referee_hardened`. It was started
+without forked conversation turns, but it did receive an explicit review
+assignment and an explicit artifact corpus; it is therefore not described as
+context-free. The reviewer assumed the frozen exact-D20 claim false,
+authenticated the current third A4 cycle, reconstructed the compact and
+aggregate implications, and used a separate child for the spectral/compact
+sub-review.
 
 After completing the review and repeatedly reporting PASS, the fresh child's
 artifact-write turn stalled before creating its file. This report seals that
@@ -42,13 +44,21 @@ the following identities:
 | hardened A4 wrapper | `4868dcc3251fe30aff4d8ef362cdd8924fe69d95cafa8d597fa9c88560780ff8` |
 | hardened A4 tests | `6716ff1beaaf4053092f8e7baa4d77b95acf38f3fc3d467f15ec76e545271da7` |
 | hardened A4 report | `d9def12c61006d4851202fe3100397e8d1505998dca84010e2d893a72ffacd56` |
+| A3 clean-room review | `0ac01840b4f97ae759c47047372d6f20dda0d0c5fa4dfe3ac559d21bb16e9acc` |
+| A3 typography addendum | `d003d105038e78a0b95137b9fecb0ca5758a804dac17cbea1e6eea155f50b257` |
 | replacement cross-comparison | `e923c034e7b64d5a865e85ee6912572c4e3bd10f890414c4c2a351e9c5790a0e` |
 
 The compact verifier, tests, report, and adversarial audit remained at
-`2a436116...7e856`, `29b7425c...56b36`, `c381c0fa...b1293`, and
-`aac8cc73...c0ca`. The aggregate route, verifier, tests, report, and audit
-remained at `61f91d4c...8da0`, `fc48425c...c952`,
-`50f10033...be91`, `0ddd0c54...aeb6`, and `aa12d25d...a894`.
+`2a43611635ffb122f2e2655fe5c0f59e0f9b0f5a0e45242c5802593acbd7e856`,
+`29b7425c47576826e11e2843317bbf3cf96738ac05188956c1fd5b0fcfc56b36`,
+`c381c0fa5094b6702f6ee2df7721772f39b6d47aa6bee4c7860b29cd8b4b1293`,
+and `aac8cc7349b7531ced93ed5fa244efe2d8210999161868e90fd531943b2fc0ca`.
+The aggregate route, verifier, tests, report, and audit remained at
+`61f91d4c604afb2bb3a66d6eaddb9a8a83e01373d389c3126b84ca3cf8368da0`,
+`fc48425ccdfc05253c42645777fb36acbdf5fcba1cfd91483a836a1b10e9c952`,
+`50f10033e380b83e7cec8212c0213709676b4cca603570fb10b3974f0d89be91`,
+`0ddd0c54942f7bd3bff3ec06271cb6bedea5a3a0b0185054f1a2ea33844eaeb6`,
+and `aa12d25d71091cfd01a116bc2777afa8669248a13441be391cf3da0b48c9a894`.
 
 ## Independent compact and spectral reconstruction
 
@@ -112,6 +122,72 @@ The continuous reserve satisfies
 
 including `tau=0`, half-integer `mu` walls, integer `K eta_rho` walls, and
 the shared `rho=1/2` branch.
+
+For transcription fidelity, the exact reconstructed reserves are recorded
+here. With
+
+\[
+\mathcal I(C,R)=\frac12\left[
+R\sqrt{R^2+C}+C\operatorname{arsinh}\!\left(\frac R{\sqrt C}\right)-R^2
+\right],
+\]
+
+\[
+\begin{aligned}
+\mathcal Q(\rho,K)={}&
+R\lfloor K\eta_\rho\rfloor
++d_\rho\frac{J(J+1)}2
+-(1+d_\rho)\mathcal I(C,R)\\
+&-\frac{8R\tau^{5/2}}{15\sqrt\mu},
+\end{aligned}
+\]
+
+and, for
+`b=2 pi rho/(1-rho)`,
+`Rbar=rho K+1/2`,
+`S=sqrt(Rbar^2+bK)`,
+
+\[
+\begin{aligned}
+\mathcal B(\rho,K)={}&
+\left(\mu-\frac12\right)(K\eta_\rho-1)
++\frac{d_\rho}{2}
+\left(\mu-\frac32\right)\left(\mu-\frac12\right)\\
+&-(1+d_\rho)\overline{\mathcal I}
+-\frac{8(\mu+1/2)}{15\sqrt\mu}.
+\end{aligned}
+\]
+
+At fixed `rho`, with `P=S-Rbar` and
+`I(K)=overline(I)`, the exact derivatives checked by the fresh reviewer are
+
+\[
+I_K=\rho P+\frac b2
+\operatorname{arsinh}\!\left(\frac{\overline R}{\sqrt{bK}}\right),
+\]
+
+\[
+I_{KK}=\rho^2\left(\frac{\overline R}{S}-1\right)
++\frac{\rho b}{2S}+\frac{b(2\rho K-1)}{8KS},
+\]
+
+\[
+\begin{aligned}
+\mathcal B_K={}&
+\rho(K\eta_\rho-1)+(\mu-1/2)\eta_\rho
++d_\rho\rho(\mu-1)\\
+&-(1+d_\rho)I_K
+-\frac{2\rho(2\mu-1)}{15\mu^{3/2}},
+\end{aligned}
+\]
+
+and
+
+\[
+\mathcal B_{KK}=2\rho\eta_\rho+d_\rho\rho^2
+-(1+d_\rho)I_{KK}
++\frac{\rho^2(2\mu-3)}{15\mu^{5/2}}.
+\]
 
 For fixed `rho`, with `S=sqrt((rho K+1/2)^2+bK)`, the reviewer independently
 checked the displayed derivatives and the universal chain
@@ -186,12 +262,41 @@ proposed successor residual is empty.
 
 ## Failed chronology and final boundary
 
-The initial implicit-branch A4 cycle, the second lifecycle-incomplete A4
-cycle, the strict FAIL cross-comparison, and the first fresh referee PASS are
-all preserved as negative or superseded evidence. In particular, the report
-with SHA-256 `0466a240...e74` is invalidated by the lifecycle-miss record
-`af1761a2...6ba` and is not used here. Only the hardened third-cycle bytes and
-replacement cross-comparison support this verdict.
+The complete repaired chronology used by the fresh reviewer is:
+
+| cycle | disposition | SHA-256 |
+|---|---|---|
+| initial candidate-isolation audit | FAIL: finite/universal aggregate quantifier was ambiguous | `601aa805838a683b5e440de11766eccc09a73b97112fd93d389427c84daaaf73` |
+| replacement candidate-isolation audit | PASS | `d4aaf2676c9056721b919f5b24341e39e77178b27a49bfaa5b54a8e77eb6c57e` |
+| initial aggregate-route audit | FAIL | `089f597cb3dca872073a0fd0b49852b16c1964c80aaadb2615ccc392259ab9fa` |
+| replacement aggregate-route audit | PASS | `2db756ac182429f82263766b83038f39a88c0c1e9463fc095ffd9b56df82218d` |
+| initial A4 implicit-branch record | FAIL | `3d234405e5776b31dea29fbff8ee2803d0f54052cab851240b81546e9ac1b7f2` |
+| strict second-cycle cross-comparison | FAIL: mutation lifecycle incomplete | `11672110bdc1169c40b46247832c19b9187df3112ab67f28324f6784a2f552a6` |
+| first fresh referee report | superseded PASS | `0466a240861de32b60819f9a5cd3b48106b230839c3fae07f4f67cbd59588e74` |
+| first-referee lifecycle-miss record | FAIL / invalidation | `af1761a2426ad22f2cf93ea765e3b98af1314f4587730b654ed4eb36e37106ba` |
+| hardened third-cycle cross-comparison | PASS | `e923c034e7b64d5a865e85ee6912572c4e3bd10f890414c4c2a351e9c5790a0e` |
+| first lead transcription of hardened handoff | FAIL: inaccurate provenance phrase | `61366c3dd126790b9a80fa21744a939e9e7f4ab098986faf7ffd14d6c28d2747` |
+| audit of first lead transcription | FAIL / replacement required | `5b7c0938f39860dc060594090c50c168e71993ed284b0c8f45470df1aa00d0d4` |
+
+The failed bytes remain in Git history and the failure artifacts remain live.
+No result from a failed or superseded cycle is used as positive evidence.
+Only the frozen replacement candidate, unchanged A3 proof, sealed compact and
+aggregate certificates, hardened third A4 cycle, replacement
+cross-comparison, and the corrected fresh-review handoff support this
+verdict.
+
+## Replacement-transcription confirmation
+
+This replacement corrects the provenance wording, records the omitted
+failure/repair chronology and full hashes, adds the A3 identities, and
+displays the complete reserve and derivative formulas returned by the fresh
+reviewer. The original child directly compared replacement SHA-256
+`20ccb278b934282d521cc6333abaddbec96d9fd0fa68b5e0db4cca118d0663ab`
+against its completed review and spectral/compact handoff. After identifying
+and correcting one missing displayed plus sign in the first draft of the
+`Q` formula, it returned exactly: **faithful PASS; first issue none**. A new
+independent provenance audit of the final bytes remains required before they
+may be cited as the final adversarial-review artifact.
 
 **Final verdict: PASS. First unsupported implication: none.** The current
 mathematics proves the two contracted strict inequalities and exact closure
