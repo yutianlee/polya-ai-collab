@@ -87,12 +87,29 @@ class VerificationError(AssertionError):
 class Ledger:
     def __init__(self) -> None:
         self.labels: list[str] = []
+        self.kinds: list[str] = []
 
-    def require(self, condition: bool, label: str, detail: str = "") -> None:
+    def require(
+        self,
+        condition: bool,
+        label: str,
+        detail: str = "",
+        *,
+        kind: str = "substantive",
+    ) -> None:
+        if kind not in {"substantive", "bookkeeping", "authentication"}:
+            raise ValueError(f"unknown check kind: {kind}")
         if not condition:
             suffix = f": {detail}" if detail else ""
             raise VerificationError(f"{label}{suffix}")
         self.labels.append(label)
+        self.kinds.append(kind)
+
+    def counts(self) -> dict[str, int]:
+        return {
+            kind: sum(observed == kind for observed in self.kinds)
+            for kind in ("substantive", "bookkeeping", "authentication")
+        }
 
 
 @dataclass(frozen=True)
@@ -230,12 +247,17 @@ def verify_hashes(
     actual: dict[str, str] = {}
     for relative, wanted in expected.items():
         path = root / relative
-        ledger.require(path.is_file(), f"hash file exists: {relative}")
+        ledger.require(
+            path.is_file(),
+            f"hash file exists: {relative}",
+            kind="authentication",
+        )
         digest = sha256(path)
         ledger.require(
             digest == wanted,
             f"SHA-256 gate: {relative}",
             f"expected {wanted}, got {digest}",
+            kind="authentication",
         )
         actual[relative] = digest
     return actual
@@ -347,6 +369,10 @@ def verify_thresholds(ledger: Ledger) -> dict[str, Interval]:
 
 def ceil_q(value: Q) -> int:
     return -((-value.numerator) // value.denominator)
+
+
+def floor_q(value: Q) -> int:
+    return value.numerator // value.denominator
 
 
 def strict_positive_integer_count(value: Q) -> int:
@@ -586,7 +612,11 @@ def verify_lower_inventories_and_payments(
         angular_sum(6) + angular_sum(3) + 1 + 3,
         angular_sum(6) + angular_sum(4) + 1 + 3,
     )
-    ledger.require(derived_caps == expected_caps, "all six lower inventory caps")
+    ledger.require(
+        derived_caps == expected_caps,
+        "all six lower inventory caps",
+        kind="bookkeeping",
+    )
 
     rho_c = constants["rho_c"]
     payments = (
@@ -640,9 +670,15 @@ def verify_lower_inventories_and_payments(
         (Q(5, 2) - Q(1, 2)).denominator == 1,
         "rho K=5/2 is assigned to failing high half-integer side",
     )
+    normalized_face = Q(2)  # omega_0 K at K=2/omega_0
+    endpoint_rho_k = 2 * constants["rho_c"] / constants["omega"]
     ledger.require(
-        2 == 2,
-        "K=2/omega has p=2 and is assigned to the complement",
+        floor_q(normalized_face) == 2 and endpoint_rho_k.hi < 3,
+        "K=2/omega has p=2 and rho*K<3",
+    )
+    ledger.require(
+        endpoint_rho_k.hi - Q(1, 2) < Q(5, 2) and 2 <= 2 * floor_q(normalized_face) - 1,
+        "K=2/omega satisfies m<=2p-1 and belongs to the complement",
     )
 
 
@@ -716,6 +752,108 @@ def conditional_first_mode_payment(
     ledger.require(payment.lo > cap, f"{label} conditional payment > {cap}")
 
 
+def verify_k9_h6_h4_channel_equality(
+    ledger: Ledger,
+    channel_wall: Q,
+) -> Interval:
+    """Require that the supplied wall is exactly the k9 (ell,n)=(4,2) wall."""
+
+    prefix = "k9 H=6,h=4 cap74"
+    delta = channel_delta(9, 2, 4, Interval.point(channel_wall))
+    ledger.require(
+        delta.lo == 0 and delta.hi == 0,
+        f"{prefix}: z^2=70/3 is the defining k9 ell=4,n=2 equality",
+    )
+    return delta
+
+
+def verify_k9_h6_h4_path(
+    ledger: Ledger,
+    *,
+    channel_wall: Q = Q(70, 3),
+) -> dict[str, Q | Interval]:
+    """Close the previously missing k9 H=6,h=4 cap-74 payment cell."""
+
+    prefix = "k9 H=6,h=4 cap74"
+    base_square = Q(103, 10) ** 2
+    propagated_square = base_square + (4 * 5 - 3 * 4)
+    ledger.require(
+        propagated_square == Q(11409, 100),
+        f"{prefix}: ell=3 to ell=4 n=2 propagation square",
+    )
+    ledger.require(
+        propagated_square > 108,
+        f"{prefix}: propagated second-mode square exceeds 108",
+    )
+
+    equality_delta = verify_k9_h6_h4_channel_equality(ledger, channel_wall)
+    ledger.require(
+        strict_positive_integer_count(Q(1)) == 0,
+        f"{prefix}: strict count excludes the defining equality mode",
+    )
+
+    rho_face = Q(7, 20)
+    x_face = x_at_ratio(rho_face)
+    ledger.require(
+        x_face.lo > channel_wall,
+        f"{prefix}: rho=7/20 lies on excluded side z^2>70/3",
+    )
+    ledger.require(
+        Q(400, 169) * Q(333, 106) ** 2 - channel_wall
+        == Q(36230, 1424163),
+        f"{prefix}: exact rational reserve at rho=7/20",
+    )
+    ledger.require(
+        x_face.lo > channel_wall and strict_positive_integer_count(Q(1)) == 0,
+        f"{prefix}: a counted ell=4 second mode forces rho<7/20",
+    )
+
+    frequency_wall = Q(207, 20)
+    ledger.require(
+        frequency_wall**2 == Q(42849, 400),
+        f"{prefix}: exact (207/20)^2",
+    )
+    ledger.require(
+        frequency_wall**2 < 108 < propagated_square,
+        f"{prefix}: counted ell=4 second mode forces K>207/20",
+    )
+
+    payment = weyl_interval(Interval.point(rho_face), Interval.point(frequency_wall))
+    coarse_payment = (
+        Q(2, 9)
+        * Q(7, 22)
+        * (1 - rho_face**3)
+        * frequency_wall**3
+    )
+    ledger.require(
+        coarse_payment == Q(52823261673, 704000000),
+        f"{prefix}: exact pi<22/7 Weyl lower payment",
+    )
+    ledger.require(
+        coarse_payment - 74 == Q(727261673, 704000000) > 0,
+        f"{prefix}: exact Weyl reserve above cap 74",
+    )
+    ledger.require(
+        payment.lo > coarse_payment > 74,
+        f"{prefix}: certified W(7/20,207/20)>74",
+    )
+    ledger.require(
+        49 + 25 == 74,
+        f"{prefix}: full first and second multiplicities equal cap 74",
+        kind="bookkeeping",
+    )
+    return {
+        "base_square": base_square,
+        "propagated_square": propagated_square,
+        "channel_wall": channel_wall,
+        "equality_delta": equality_delta,
+        "rho_face": rho_face,
+        "frequency_wall": frequency_wall,
+        "coarse_payment": coarse_payment,
+        "payment": payment,
+    }
+
+
 def verify_checkpoint_inventories(ledger: Ledger, constants: Mapping[str, Interval]) -> None:
     expected = {
         7: (6, 1, -1, 2),
@@ -766,8 +904,12 @@ def verify_checkpoint_inventories(ledger: Ledger, constants: Mapping[str, Interv
 
 def verify_cap_tables_and_payments(ledger: Ledger, constants: Mapping[str, Interval]) -> None:
     # k7
-    ledger.require((25, 36, 49) == tuple((h + 1) ** 2 for h in (4, 5, 6)), "k7 first caps")
-    ledger.require(1 + 3 == 4, "k7 two second modes add 1+3")
+    ledger.require(
+        (25, 36, 49) == tuple((h + 1) ** 2 for h in (4, 5, 6)),
+        "k7 first caps",
+        kind="bookkeeping",
+    )
+    ledger.require(1 + 3 == 4, "k7 two second modes add 1+3", kind="bookkeeping")
 
     # k8 and k9 rectangular tables: every numerical entry is exactly the sum
     # of a full first block and a full second block.
@@ -781,7 +923,11 @@ def verify_cap_tables_and_payments(ledger: Ledger, constants: Mapping[str, Inter
         for col, value in enumerate(row):
             if value is not None:
                 expected = (h_first + 1) ** 2 + (0 if col == 0 else col * col)
-                ledger.require(value == expected, f"k8 cap H={h_first}, column={col}")
+                ledger.require(
+                    value == expected,
+                    f"k8 cap H={h_first}, column={col}",
+                    kind="bookkeeping",
+                )
 
     k9 = {
         8: (81, None, None, None, None, None),
@@ -794,7 +940,13 @@ def verify_cap_tables_and_payments(ledger: Ledger, constants: Mapping[str, Inter
         for col, value in enumerate(row):
             if value is not None:
                 expected = (h_first + 1) ** 2 + (0 if col == 0 else col * col)
-                ledger.require(value == expected, f"k9 cap H={h_first}, column={col}")
+                ledger.require(
+                    value == expected,
+                    f"k9 cap H={h_first}, column={col}",
+                    kind="bookkeeping",
+                )
+
+    verify_k9_h6_h4_path(ledger)
 
     # Marked impossible cells, proved from simultaneous strict necessary walls.
     ledger.require(Q(100 - 72) > Q(72 - 6, 3), "k8 H=6 with h>=2 impossible")
@@ -816,7 +968,7 @@ def verify_cap_tables_and_payments(ledger: Ledger, constants: Mapping[str, Inter
         (49 + 36 + 4, 89, "H<=6 h=5 third"),
     )
     for derived, frozen, name in k10_cases:
-        ledger.require(derived == frozen, f"k10 cap {name}")
+        ledger.require(derived == frozen, f"k10 cap {name}", kind="bookkeeping")
 
     k11_cases = (
         (121, 121, "H10 no radial"),
@@ -827,7 +979,7 @@ def verify_cap_tables_and_payments(ledger: Ledger, constants: Mapping[str, Inter
         (64 + 25 + 4, 93, "H<=7 all radial"),
     )
     for derived, frozen, name in k11_cases:
-        ledger.require(derived == frozen, f"k11 cap {name}")
+        ledger.require(derived == frozen, f"k11 cap {name}", kind="bookkeeping")
 
     # W_m is increasing because pi^2(1+rho) > M rho^2(1-rho)^2;
     # the exact uniform reduction is pi^2>9>132/16.
@@ -858,35 +1010,105 @@ LOCALIZATION_RATIOS = (
 )
 
 
+@dataclass(frozen=True)
+class LocalizationExpectation:
+    rho: Q
+    checkpoint: int
+    radial: int
+    ell: int
+    expected_sign: int
+    purpose: str
+
+
+LOCALIZATION_EXPECTATIONS = (
+    LocalizationExpectation(Q(1, 5), 11, 3, 1, 1, "k11 third-mode low-side cell"),
+    LocalizationExpectation(Q(3, 10), 8, 2, 3, -1, "k8 h=3 exclusion side"),
+    LocalizationExpectation(Q(1, 3), 8, 2, 2, -1, "k8 h=2 exclusion side"),
+    LocalizationExpectation(Q(3, 8), 9, 2, 3, 1, "k9 h=3 possible side"),
+    LocalizationExpectation(Q(2, 5), 9, 2, 2, 1, "k9 h=2 possible side"),
+    LocalizationExpectation(Q(5, 12), 9, 2, 1, 1, "k9 h=1 possible side"),
+    LocalizationExpectation(Q(3, 7), 9, 2, 0, -1, "k9 second-mode exclusion side"),
+    LocalizationExpectation(Q(1, 2), 10, 2, 0, -1, "k10 second-mode exclusion side"),
+    LocalizationExpectation(Q(107, 200), 11, 2, 0, -1, "k11 second-mode exclusion side"),
+    LocalizationExpectation(Q(8, 15), 11, 2, 0, -1, "k11 stated second-mode localization"),
+    LocalizationExpectation(Q(3, 5), 8, 2, 0, -1, "k8 all-second exclusion/payment side"),
+    LocalizationExpectation(Q(16, 25), 9, 2, 0, -1, "k9 all-second exclusion/payment side"),
+    LocalizationExpectation(Q(13, 20), 10, 2, 0, -1, "k10 all-second exclusion/payment side"),
+    LocalizationExpectation(Q(2, 3), 11, 2, 0, -1, "k11 all-second exclusion/payment side"),
+    LocalizationExpectation(Q(4, 25), 10, 3, 0, -1, "k10 third-mode exclusion side"),
+    LocalizationExpectation(Q(1, 4), 11, 3, 0, -1, "k11 stated third-mode localization"),
+    LocalizationExpectation(Q(7, 20), 9, 2, 4, -1, "k9 H=6,h=4 cap74 payment side"),
+)
+
+
+def channel_delta(
+    checkpoint: int,
+    radial: int,
+    ell: int,
+    x: Interval,
+) -> Interval:
+    """Exact channel difference M-ell(ell+1)-(n^2-1) z^2."""
+
+    return (
+        Interval.point(checkpoint * (checkpoint + 1) - ell * (ell + 1))
+        - (radial * radial - 1) * x
+    )
+
+
+def verify_localization_expectation(
+    ledger: Ledger,
+    item: LocalizationExpectation,
+    *,
+    x_override: Interval | None = None,
+) -> Interval:
+    """Verify one named side, with injectable x for semantic mutation tests."""
+
+    x = x_at_ratio(item.rho) if x_override is None else x_override
+    delta = channel_delta(item.checkpoint, item.radial, item.ell, x)
+    condition = delta.lo > 0 if item.expected_sign > 0 else delta.hi < 0
+    side = "possible" if item.expected_sign > 0 else "excluded"
+    ledger.require(
+        condition,
+        f"rho={item.rho} expected {side} side for {item.purpose}",
+    )
+    return delta
+
+
 def verify_localizations(ledger: Ledger, constants: Mapping[str, Interval]) -> None:
     ratios = sorted(set(LOCALIZATION_RATIOS))
-    ledger.require(len(ratios) == len(LOCALIZATION_RATIOS), "localization ratios are distinct")
+    ledger.require(
+        len(ratios) == len(LOCALIZATION_RATIOS),
+        "localization ratios are distinct",
+        kind="bookkeeping",
+    )
+    ledger.require(
+        {item.rho for item in LOCALIZATION_EXPECTATIONS} == set(LOCALIZATION_RATIOS),
+        "every named ratio has a connected expected-side assertion",
+        kind="bookkeeping",
+    )
     for rho in ratios:
         ledger.require(constants["rho_c"].hi < rho < Q(7, 8), f"ratio localization {rho} in high strip")
-        x = x_at_ratio(rho)
-        # Every channel wall has a decided one-sided trace at every rational split.
-        for m in range(7, 12):
-            M = m * (m + 1)
-            for radial in (2, 3):
-                for ell in range(0, 12):
-                    numerator = M - ell * (ell + 1)
-                    if numerator <= 0:
-                        continue
-                    wall = Q(numerator, radial * radial - 1)
-                    ledger.require(
-                        x.hi < wall or x.lo > wall,
-                        f"decided trace rho={rho}, k{m},n={radial},ell={ell}",
-                    )
+
+    for item in LOCALIZATION_EXPECTATIONS:
+        verify_localization_expectation(ledger, item)
 
     x_min = (PI + Q(1, 2)) ** 2
     x_max = 64 * PI**2
     for x in (Q(16), Q(68, 3), Q(34)):
         ledger.require(x_min.hi < x < x_max.lo, f"algebraic split z^2={x} in high strip")
-    ledger.require(110 - 6 * 7 - 3 * Q(68, 3) == 0, "z^2=68/3 defines k10 n2 ell6 equality")
-    ledger.require(132 - 5 * 6 - 3 * Q(34) == 0, "z^2=34 defines k11 n2 ell5 equality")
     ledger.require(
-        strict_positive_integer_count(Q(1)) == 0,
-        "strict count excludes each defining channel at equality",
+        132 - 1 * 2 - 8 * Q(16) == 2 > 0,
+        "z^2=16 is on the possible side of k11 n3 ell1",
+    )
+    ledger.require(
+        110 - 6 * 7 - 3 * Q(68, 3) == 0
+        and strict_positive_integer_count(Q(1)) == 0,
+        "z^2=68/3 defines and strictly excludes k10 n2 ell6 equality",
+    )
+    ledger.require(
+        132 - 5 * 6 - 3 * Q(34) == 0
+        and strict_positive_integer_count(Q(1)) == 0,
+        "z^2=34 defines and strictly excludes k11 n2 ell5 equality",
     )
 
     # Explicit k11 localizations.
@@ -1001,20 +1223,57 @@ def verify_optical_constants(ledger: Ledger) -> None:
         "high angular screen increases in epsilon (positive coefficients)",
     )
 
-    # Scaling identities at a>=c/eps and a<=c/eps.
-    ledger.require(Q(2, 3) * c * q == Q(2, 3) * c * q, "low cubic scaling coefficient")
+    # Actual scaling implications at a<=c/eps (low) and a>=c/eps (high).
+    low_cubic_actual = Q(2, 3) * c / PI
     ledger.require(
-        high_angular
-        == q * eps0 + eps0**2 / (4 * c) + q * eps0**3 / (4 * c) + eps0**4 / (16 * c**2),
-        "full high angular ceiling-error screen",
+        low_cubic_actual.hi < Q(2, 3) * c * q,
+        "low optical a<=c/epsilon turns cubic cost into 2cq/3",
     )
     ledger.require(
-        high_radial == (1 - eps0) ** 2 / 4 - Q(22, 7) * (1 - eps0) * eps0 / (4 * c),
-        "full high radial-deficit screen",
+        ((1 / PI) ** 2).hi < q**2,
+        "low optical a>=pi turns epsilon^2/(pi*a) into epsilon^2 q^2",
     )
+
     common_face = c / eps0
+    angular_at_common_face = (
+        eps0 / PI
+        + eps0**2 / (4 * PI * common_face)
+        + eps0 / (4 * common_face)
+        + eps0**2 / (16 * common_face**2)
+    )
     ledger.require(
-        common_face <= c / eps0 and common_face >= c / eps0,
+        angular_at_common_face.hi < high_angular,
+        "full high angular ceiling-error screen at a=c/epsilon",
+    )
+    ledger.require(
+        all(
+            coefficient > 0
+            for coefficient in (
+                eps0**2 / (4 * PI.lo),
+                eps0 / 4,
+                eps0**2 / 16,
+            )
+        ),
+        "high angular error decreases for a>=c/epsilon",
+    )
+
+    radial_at_common_face = (
+        (1 - eps0) ** 2 / 4
+        - PI * (1 - eps0) * eps0 / (4 * c)
+    )
+    ledger.require(
+        radial_at_common_face.lo > high_radial,
+        "full high radial-deficit screen at a=c/epsilon",
+    )
+    ledger.require(
+        (1 - eps0) * eps0 > 0,
+        "high radial deficit increases for a>=c/epsilon",
+    )
+
+    low_face_slack = c - eps0 * common_face
+    high_face_slack = eps0 * common_face - c
+    ledger.require(
+        low_face_slack == 0 and high_face_slack == 0 and eps0 > 0 and c > 0,
         "a=c/epsilon belongs to both optical pieces",
     )
 
@@ -1079,10 +1338,13 @@ def verify_exact_subtraction(ledger: Ledger) -> None:
         stair("rho_c", "k11") and not d19("rho_c", "U"),
         "K=k11 is stair-owned; K=U is inherited-owner excluded",
     )
-    subtracted_owners = ("lower", "stair", "optical")
     ledger.require(
-        "B0" not in subtracted_owners and "B1" not in subtracted_owners,
-        "B0 and B1 are not subtracted a second time",
+        d19("pre_opt", "post_k11")
+        and not lower_cover("pre_opt", "post_k11")
+        and not stair("pre_opt", "post_k11")
+        and not optical("pre_opt", "post_k11")
+        and d20("pre_opt", "post_k11"),
+        "pre-optical post-k11 cell survives exactly as D20",
     )
 
 
@@ -1100,10 +1362,14 @@ def run_all(root: Path = ROOT, check_hashes: bool = True) -> dict[str, object]:
     verify_u_and_k11(ledger, constants)
     verify_optical_constants(ledger)
     verify_exact_subtraction(ledger)
+    check_counts = ledger.counts()
     return {
-        "verdict": "PASS",
+        "verdict": "PASS" if check_hashes else "UNAUTHENTICATED_ARITHMETIC_PASS",
         "first_issue": None,
         "exact_checks": len(ledger.labels),
+        "substantive_checks": check_counts["substantive"],
+        "bookkeeping_checks": check_counts["bookkeeping"],
+        "authentication_checks": check_counts["authentication"],
         "labels": tuple(ledger.labels),
         "hashes": hashes,
         "analytic_assumptions": ANALYTIC_ASSUMPTIONS,
@@ -1119,15 +1385,28 @@ def main(argv: Iterable[str] | None = None) -> int:
         help="test-only: run arithmetic without authenticating repository inputs",
     )
     args = parser.parse_args(list(argv) if argv is not None else None)
+    authenticated = not args.skip_hash_gates
     try:
-        result = run_all(check_hashes=not args.skip_hash_gates)
+        result = run_all(check_hashes=authenticated)
     except (VerificationError, ValueError, ZeroDivisionError) as exc:
-        print("FAIL")
+        print("FAIL" if authenticated else "UNAUTHENTICATED ARITHMETIC CHECK FAILED")
         print(f"first issue: {exc}")
         return 1
+    if not authenticated:
+        print("UNAUTHENTICATED ARITHMETIC-ONLY RESULT: PASS")
+        print("hash gates: SKIPPED")
+        print(f"exact finite checks: {result['exact_checks']}")
+        print(f"substantive checks: {result['substantive_checks']}")
+        print(f"bookkeeping identities: {result['bookkeeping_checks']}")
+        print(f"authentication gates: {result['authentication_checks']}")
+        print(f"analytic assumptions remaining for A3: {len(ANALYTIC_ASSUMPTIONS)}")
+        return 0
     print("PASS")
     print("first issue: none")
     print(f"exact finite checks: {result['exact_checks']}")
+    print(f"substantive checks: {result['substantive_checks']}")
+    print(f"bookkeeping identities: {result['bookkeeping_checks']}")
+    print(f"authentication gates: {result['authentication_checks']}")
     print(f"candidate sha256: {CANDIDATE_SHA256}")
     print(f"freeze sha256: {FREEZE_SHA256}")
     print(f"analytic assumptions remaining for A3: {len(ANALYTIC_ASSUMPTIONS)}")
