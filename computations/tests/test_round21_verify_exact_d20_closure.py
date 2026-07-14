@@ -52,8 +52,12 @@ def test_exact_manifest_and_every_authenticated_byte_mutation(tmp_path: Path) ->
 
 def test_exact_constants_faces_split_and_u_orderings() -> None:
     constants = verifier.verify_exact_constants()
+    assert constants.k11_guard_domain == verifier.K11_GUARD_DOMAIN == "rho_c<=rho<1"
     assert Fraction(3) < constants.pi_lower < constants.pi_upper < Fraction(22, 7)
     assert 14 * constants.pi_upper < 44
+    # The omitted upper wall would make the assertion false.  At rho=2,
+    # z=-pi and the exact upper enclosure proves k11(2)^2<144.
+    assert constants.pi_upper**2 + 132 < 144
     assert constants.machin_angle_lower == Fraction(70369, 89625)
     assert (
         Fraction(3, 4)
@@ -101,6 +105,18 @@ def test_exact_constants_faces_split_and_u_orderings() -> None:
         replace(k200, k_vs_k11=verifier.Relation.EQUAL)
     ).in_d20
     assert not verifier.classify_faces(replace(k200, k_vs_u=verifier.Relation.EQUAL)).in_d20
+
+
+def test_cli_reports_the_exact_k11_guard_domain(
+    full_audit: verifier.AuditResult,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    monkeypatch.setattr(verifier, "run_audit", lambda _precision: full_audit)
+    assert verifier.main(["--high-precision", "384"]) == 0
+    output = capsys.readouterr().out
+    assert "k11(rho)>12 for rho_c<=rho<1" in output
+    assert "k11(rho)>12 for rho>=rho_c" not in output
 
 
 def test_machin_branch_mutation_losing_lower_bound_is_rejected() -> None:

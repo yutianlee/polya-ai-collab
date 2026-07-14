@@ -143,6 +143,10 @@ AGGREGATE_ANALYTIC_BOUNDARY = (
     "integration of B_K from 200 to K",
 )
 
+# Exact domain carried by the k_11>12 guard.  The upper wall is essential:
+# rho=1 is singular, and the unqualified assertion is false beyond it.
+K11_GUARD_DOMAIN = "rho_c<=rho<1"
+
 
 class AuditError(RuntimeError):
     """The first failed A4 authentication, schema, replay, or set check."""
@@ -1062,6 +1066,7 @@ class ExactConstants:
     pi_lower: Fraction
     pi_upper: Fraction
     branch_certificate: MachinBranchCertificate
+    k11_guard_domain: str
 
     @property
     def machin_angle_lower(self) -> Fraction:
@@ -1111,7 +1116,8 @@ def verify_exact_constants(
     if not 14 * pi_upper < 44:
         raise ReplayError("exact upper pi bound did not prove 7/51<rho_c")
 
-    # For rho>=rho_c, z=pi/(1-rho)>=pi+1/2>7/2.  Therefore
+    # On rho_c<=rho<1, 0<1-rho<=1-rho_c and therefore
+    # z=pi/(1-rho)>=pi/(1-rho_c)=pi+1/2>7/2.  Thus
     # k11^2=z^2+132>49/4+132=577/4>144, so k11>12.
     if not pi_lower + Fraction(1, 2) > Fraction(7, 2):
         raise ReplayError("exact lower pi bound did not prove z>7/2")
@@ -1121,6 +1127,7 @@ def verify_exact_constants(
         pi_lower,
         pi_upper,
         validated_branch,
+        K11_GUARD_DOMAIN,
     )
 
 
@@ -1332,7 +1339,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 1
     print("ROUND21_EXACT_D20_CLOSURE_A4 PASS")
     print(f"authenticated_inputs={len(result.authenticated_inputs)}")
-    print("exact_constants=PASS (7/51<rho_c and k11(rho)>12 for rho>=rho_c)")
+    print(
+        "exact_constants=PASS "
+        f"(7/51<rho_c and k11(rho)>12 for {result.constants.k11_guard_domain})"
+    )
     print(
         "exact_set=PASS "
         f"({result.set_replay.exhaustive_sign_rows} sign rows; "
