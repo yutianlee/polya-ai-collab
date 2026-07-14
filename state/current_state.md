@@ -29,14 +29,20 @@ $$
 On the intervening compact interval
 
 $$
-I_{14}=[\rho_*,99/100],
+I_{15}=[\rho_*,99/100],
 $$
 
 the shell inequality is now also proved uniformly for every
-$K\ge550^2$. Combining this compact result with the two endpoint theorems
+$K\ge200000$. Combining this compact result with the two endpoint theorems
 gives the global analytic high-frequency theorem for every
-$0<\rho<1$ and $K\ge550^2$. Round 14 lowers the Round 13 ceiling by the
-exact factor $900^2/550^2=324/121>2$. The exact strict count is
+$0<\rho<1$ and $K\ge200000$. Round 15 lowers the Round 14 ceiling by the
+exact factor
+
+$$
+\frac{550^2}{200000}=\frac{121}{80}>1.
+$$
+
+The exact strict count is
 independently interval-certified
 on the closed central residual box
 
@@ -46,19 +52,36 @@ $$
 \frac{67}{10}\le K\le\frac{168}{25}.
 $$
 
-The all-frequency shell theorem is not yet proved. Its active blockers are
-exact coverage of the rest of the compact residual set below $550^2$ and
-the final theorem-level audit. The next analytic target is a separately
-proved central--thin seam extension to $\varepsilon\le1/6$ with candidate
-$K\ge54/\varepsilon^2$, moved seam $\rho=5/6$, and separate target
-$K_0(5/6)<295^2$. These are unproved Round 15 planning targets. The
-prospective all-ratio ceiling is $K\ge200000$, because the retained
-far-thin Round 10 zone would then dominate. Preliminary values
-$d_0=5/8$, $\overline q=159/400$, and $B=14/3$ are planning evidence only.
-The current $\kappa=53$ and $Y=294$ route obstructions are not disproofs of
-either stronger statement. The parent certification obligation remains
-`diagnostic_only`; any expansion is restricted to bounded, face-connected
-extensions of the existing certified pilot.
+The all-frequency shell theorem is not yet proved. Its active blocker is
+exact coverage of the true nonrectangular compact residual $\mathcal D_{15}$
+below the seven-zone analytic cover, followed by a theorem-level audit. The
+complete all-frequency endpoint remains exactly
+$99/100\le\rho<1$; Round 15 does not enlarge it. The parent certification
+obligation remains `diagnostic_only`, and any expansion is restricted to
+bounded, face-connected extensions of the existing certified pilot.
+
+The primary unproved Round 16 planning target is an all-frequency endpoint
+theorem on $7/8\le\rho<1$. The proposed proof splits at
+
+$$
+a=\varepsilon K=\frac{\pi}{4\varepsilon}
+$$
+
+between a product low piece and a complementary-action high piece, with
+candidate exact reserves $577/2880$ and $143/4096$. These reserves and the
+endpoint extension are planning evidence only. If independently proved and
+audited, this endpoint would leave the central threshold
+$K_0(5/6)<295^2=87025$ dominant, conditionally lowering the all-ratio ceiling
+to $295^2$ by the exact factor
+
+$$
+\frac{200000}{295^2}=\frac{8000}{3481}>2.
+$$
+
+Round 15 also records two proof-route obstructions: the selected
+$\kappa=53$ localization proxy misses by $14293/15900000$, and the selected
+$Y=294$ central proxy equals $-307/175$. Neither is a counterexample to the
+accepted seam theorem or to a stronger endpoint statement.
 
 ## Round 1 Update
 
@@ -586,3 +609,59 @@ $900^2/550^2=324/121>2$. The complete all-frequency endpoint remains
 exactly $99/100\le\rho<1$. The compact residual below $550^2$, the parent
 Bessel certification, uniformity, and the final shell target remain open;
 the existing certificate remains diagnostic only.
+
+## Round 15 Update
+
+Date: 2026-07-14
+
+See `rounds/polya-main/round_015/judge/judge-015.md`.
+
+Round 15 proves the enlarged central--thin seam theorem
+
+$$
+0<\varepsilon\le\frac16,
+\qquad
+K\ge\frac{54}{\varepsilon^2},
+$$
+
+including threshold equality. The sharper retained thresholds are
+$32/\varepsilon^2$ for $0<\varepsilon\le1/8$,
+$24/\varepsilon^2$ for $0<\varepsilon\le1/10$, and
+$20/\varepsilon^2$ for $0<\varepsilon\le1/25$. At the moved seam
+$\rho=5/6$, the fixed-ratio threshold satisfies
+
+$$
+K_0(5/6)<295^2=87025.
+$$
+
+On $I_{15}=[\rho_*,99/100]$, the closed seven-zone analytic union has
+residual ceilings below $64$ on $[\rho_*,1/16]$, below
+$K_0(\rho)\le K_0(5/6)<87025$ on $[1/16,5/6]$, below $3456$ on
+$[5/6,7/8]$, below $3200$ on $[7/8,9/10]$, below $9600$ on
+$[9/10,19/20]$, below $15000$ on $[19/20,24/25]$, and below $200000$ on
+$[24/25,99/100]$. Consequently
+
+$$
+\boxed{
+0<\rho<1,
+\qquad K\ge200000
+\quad\Longrightarrow\quad
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+}
+$$
+
+This lowers the Round 14 global ceiling by the exact factor
+$550^2/200000=121/80>1$. The complete all-frequency endpoint remains
+exactly $99/100\le\rho<1$. The true nonrectangular residual
+$\mathcal D_{15}$ below the analytic cover, the parent Bessel
+certification, uniformity, and the final shell target remain open; replacing
+$\mathcal D_{15}$ by the rectangle $I_{15}\times[0,200000)$ would be an
+invalid enlargement of the certification target.
+
+Round 16 will test, but has not proved, the endpoint extension
+$7/8\le\rho<1$ using a two-piece split at
+$a=\pi/(4\varepsilon)$. The candidate reserves are $577/2880$ and
+$143/4096$. If the endpoint theorem passes independent reconstruction and
+audit, the conditional global ceiling is $295^2$, an exact improvement
+factor $8000/3481$ over $200000$.

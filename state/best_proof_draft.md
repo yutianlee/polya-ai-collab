@@ -571,6 +571,79 @@ $x_0/K>173/384$, while $173/384<1/2$; hence its lower bound does not localize
 beyond $1/2$. This obstructs that particular constant-$24$ proof route but
 does not disprove a stronger theorem.
 
+## Central--thin seam at $\rho=5/6$
+
+Round 15 independently rederives the local-plateau argument on the enlarged
+closed domain
+
+$$
+0<\varepsilon\le\frac16,
+\qquad K\varepsilon^2\ge54.
+$$
+
+The incumbent finite comparison proves
+
+$$
+d>\frac58,
+\qquad
+\widehat q<\frac{159}{400},
+\qquad
+\frac{x_0}{K}>\frac{241}{480}
+=\frac12+\frac1{480}.
+$$
+
+With $B=14/3$ and the synthetic comparison
+
+$$
+S_*(P,r)=\frac{13P-8r}{5},
+$$
+
+the complete fixed-$r$ path has derivative cap and reserve
+
+$$
+\frac{2260740364246}{708624500625}<\frac{16}{5},
+\qquad
+\frac{6858037754}{708624500625}>0,
+$$
+
+while the comparison slope is $92/15$. The endpoint, dangerous-payment,
+and safe-payment reserves are, respectively,
+
+$$
+\frac{2505132463469}{2616573970125}>0,
+\qquad
+\frac{80132733}{3024175}>0,
+\qquad
+\frac{114694733}{3024175}>0.
+$$
+
+The action gain satisfies the exact lower comparison $280000/17281$, and an
+independent clean-room reconstruction closes the same enlarged domain by a
+distinct cosine-gap self-consistency route. Both proofs own every exceptional
+branch, strict wall, threshold face, and possible unit floor loss. Therefore,
+including threshold equality,
+
+$$
+\boxed{
+0<\varepsilon\le\frac16,
+\quad
+K\ge\frac{54}{\varepsilon^2}
+\quad\Longrightarrow\quad
+N_D(A_{1-\varepsilon,1},K^2)
+\le
+\frac{2}{9\pi}
+\bigl(1-(1-\varepsilon)^3\bigr)K^3.
+}
+$$
+
+The retained Round 14 threshold $K\ge32/\varepsilon^2$ remains sharper on
+$0<\varepsilon\le1/8$, the retained Round 13 threshold
+$K\ge24/\varepsilon^2$ remains sharper on $0<\varepsilon\le1/10$, and the
+retained Round 10 threshold $K\ge20/\varepsilon^2$ remains sharper on
+$0<\varepsilon\le1/25$. The failed $\kappa=53$ localization proxy and the
+failed $Y=294$ central proxy are obstructions to those particular comparison
+routes, not counterexamples to any stronger theorem.
+
 ## Complete thin-shell endpoint
 
 Let
@@ -700,10 +773,10 @@ certification are unnecessary.
 On the remaining ratio interval
 
 $$
-I_{14}=\left[\rho_*,\frac{99}{100}\right],
+I_{15}=\left[\rho_*,\frac{99}{100}\right],
 $$
 
-use six exact finite zones.
+use seven exact finite zones.
 
 For $\rho_*\le\rho\le1/16$, the high-angular theorem proves the target for
 $K\le1/(2\rho)$ and the small-hole low-interface theorem proves it for
@@ -719,7 +792,7 @@ $$
 H_0(1/16)<64.
 $$
 
-For $1/16\le\rho\le7/8$, the strict count is zero below
+For $1/16\le\rho\le5/6$, the strict count is zero below
 $\pi/(1-\rho)$ and the fixed-ratio theorem applies above $K_0(\rho)$. The
 positive-root equation
 
@@ -728,71 +801,38 @@ $$
 \qquad y=\sqrt{K_0},
 $$
 
-shows that $K_0$ increases with $a$ and decreases with $\eta$. Since
-$a_\rho$ increases and $\eta_\rho$ does not, $K_0(\rho)$ is increasing.
-At $\rho=7/8$, the exact bounds
+shows that $K_0(\rho)$ is increasing. At $\rho=5/6$, the independent
+fixed-ratio calculation at $Y=295$ has exact positive quadratic margin
 
 $$
-\eta_{7/8}>\frac1{76},
-\qquad
-\sqrt{a_{7/8}}<7,
-\qquad
-C_0<\frac{307}{175}
+\frac{5226}{1225}>0.
 $$
 
-give the positive quadratic margin
+Its unique positive root therefore lies below $295$, so
 
 $$
-\frac1{76}550^2-7\cdot550-\frac{307}{175}
-=\frac{427292}{3325}>0.
+K_0(5/6)<295^2=87025.
 $$
 
-Therefore
+Write $\varepsilon=1-\rho$. The accepted seam theorems and retained sharper
+thresholds give the seven residual bounds
 
-$$
-K_0(7/8)<550^2.
-$$
+1. on $[\rho_*,1/16]$, $K<64$;
+2. on $[1/16,5/6]$, $K<K_0(\rho)\le K_0(5/6)<87025$;
+3. on $[5/6,7/8]$, $K<54/\varepsilon^2\le3456$;
+4. on $[7/8,9/10]$, $K<32/\varepsilon^2\le3200$;
+5. on $[9/10,19/20]$, $K<24/\varepsilon^2\le9600$;
+6. on $[19/20,24/25]$, $K<24/\varepsilon^2\le15000$;
+7. on $[24/25,99/100]$, $K<20/\varepsilon^2\le200000$.
 
-For $7/8\le\rho\le9/10$, write $\varepsilon=1-\rho$. The Round 14
-theorem leaves possible residual only below
-
-$$
-\frac{32}{\varepsilon^2}\le3200.
-$$
-
-For $9/10\le\rho\le19/20$, the retained Round 13 theorem leaves possible
-residual only below
-
-$$
-\frac{24}{\varepsilon^2}\le9600.
-$$
-
-For $19/20\le\rho\le24/25$, the retained constant-$24$ theorem leaves
-possible residual only below
-
-$$
-\frac{24}{\varepsilon^2}\le15000.
-$$
-
-For $24/25\le\rho\le99/100$, the sharper retained Round 10 theorem leaves
-possible residual only below
-
-$$
-\frac{20}{\varepsilon^2}\le200000.
-$$
-
-The complete thin endpoint owns the shared face $\rho=99/100$ and every
-larger ratio. Since
-
-$$
-64<3200<9600<15000<200000<550^2,
-$$
-
-the central fixed-ratio ceiling dominates all six finite zones. Thus
+The complete thin endpoint owns $[99/100,1)$ for every $K$, including the
+shared face $\rho=99/100$. Every other shared ratio and threshold face is
+owned by one of the adjacent accepted theorems. Since every finite-zone
+ceiling is at most $200000$, the compact conclusion is
 
 $$
 \boxed{
-\rho\in I_{14},\quad K\ge550^2
+\rho\in I_{15},\quad K\ge200000
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
@@ -804,29 +844,30 @@ theorems yields the global analytic high-frequency result
 
 $$
 \boxed{
-0<\rho<1,\quad K\ge550^2
+0<\rho<1,\quad K\ge200000
 \Longrightarrow
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3.
 }
 $$
 
-Relative to the Round 13 ceiling, the exact reduction factor is
+Relative to the Round 14 ceiling, the exact reduction factor is
 
 $$
-\frac{900^2}{550^2}=\frac{324}{121}>2.
+\frac{550^2}{200000}=\frac{121}{80}>1.
 $$
 
-The closed union of the six displayed gap envelopes is only a planning set
-$\mathcal E$. The actual certificate target is
+The closed union of the seven displayed gap envelopes is only a planning
+set $\mathcal E$. The actual certificate target is
 
 $$
-\mathcal D_{14}=(I_{14}\times[0,\infty))\setminus\mathcal A,
+\mathcal D_{15}=(I_{15}\times[0,\infty))\setminus\mathcal A,
 $$
 
 where $\mathcal A$ contains every analytically covered point and threshold
-face. In particular, $\mathcal D_{14}$ lies below $550^2$ but must not be
-replaced by the full rectangle $I_{14}\times[0,550^2)$.
+face. In particular, $\mathcal D_{15}$ lies below the seven-zone analytic
+cover but must not be replaced by the full rectangle
+$I_{15}\times[0,200000)$.
 
 ## First certified residual box
 
@@ -857,7 +898,7 @@ $$
 $$
 
 so the certified margin exceeds $14.6073155354$. This is one local box, not
-a cover of $\mathcal D_{14}$.
+a cover of $\mathcal D_{15}$.
 
 ## Remaining gates
 
@@ -866,20 +907,19 @@ gates are:
 
 - analytic or symbolic compression of the current compact planning envelope,
   followed, where necessary, by an exact face-connected certificate of every
-  point of $\mathcal D_{14}$ below $550^2$;
-- a fresh derivation of a larger central--thin seam domain. The Round 14
-  result must not be extrapolated. The Round 15 planning target is
+  point of the nonrectangular residual $\mathcal D_{15}$ below the accepted
+  analytic cover;
+- an independent derivation of the proposed larger all-frequency thin
+  endpoint
 
   $$
-  0<\varepsilon\le\frac16,
-  \qquad
-  K\ge\frac{54}{\varepsilon^2},
+  \frac78\le\rho<1,
+  \qquad K\ge0.
   $$
 
-  together with a proposed seam $\rho=5/6$ and a separately proved target
-  $K_0(5/6)<295^2$. Even if both targets hold, the retained
-  $[24/25,99/100]$ zone would make $K\ge200000$ the prospective global
-  ceiling. Every one of these Round 15 constants is an unproved planning
-  target, not a current theorem;
+  This is only the unproved Round 16 target. The proposed two-piece split at
+  $a=\pi/(4\varepsilon)$, its planning reserves $577/2880$ and $143/4096$,
+  and the prospective ceiling $K\ge295^2$ are not current theorems and must
+  not be inserted into the accepted analytic cover;
 - a fresh final theorem-level clean-room reconstruction and adversarial
   review after the compact residual is closed.

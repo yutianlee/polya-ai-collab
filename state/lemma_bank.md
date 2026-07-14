@@ -108,6 +108,23 @@ $$
   $x_0/K>173/384$, while $173/384<1/2$; hence the lower bound does not
   localize beyond $1/2$. This records only an obstruction in that proof
   route, not a rejection of a stronger theorem;
+- the Round 15 central--thin seam theorem
+
+$$
+0<\varepsilon\le\frac16,
+\qquad
+K\ge\frac{54}{\varepsilon^2},
+$$
+
+  including threshold equality. The sharper retained thresholds are
+  $32/\varepsilon^2$ for $0<\varepsilon\le1/8$,
+  $24/\varepsilon^2$ for $0<\varepsilon\le1/10$, and
+  $20/\varepsilon^2$ for $0<\varepsilon\le1/25$. The seam is moved to
+  $\rho=5/6$, where the fixed-ratio threshold satisfies the separate exact
+  estimate $K_0(5/6)<295^2=87025$. The selected $\kappa=53$ localization
+  proxy misses by $14293/15900000$, and the selected $Y=294$ central proxy
+  equals $-307/175$; these are obstructions to those routes only, not
+  counterexamples or rejections;
 - the complementary exact-action bridge: with
   $a=\varepsilon K$, the strict shell estimate holds on
 
@@ -159,21 +176,22 @@ $$
 - the compact-ratio analytic envelope: on
 
 $$
-I_{14}=\left[\rho_*,\frac{99}{100}\right],
+I_{15}=\left[\rho_*,\frac{99}{100}\right],
 $$
 
   the possible residual families lie below $64$ on
   $[\rho_*,1/16]$, below
-  $K_0(\rho)\le K_0(7/8)<550^2$ on $[1/16,7/8]$, below $3200$ on
-  $[7/8,9/10]$, below $9600$ on $[9/10,19/20]$, below $15000$ on
-  $[19/20,24/25]$, and below $200000$ on $[24/25,99/100]$. Therefore
+  $K_0(\rho)\le K_0(5/6)<295^2=87025$ on $[1/16,5/6]$, below $3456$ on
+  $[5/6,7/8]$, below $3200$ on $[7/8,9/10]$, below $9600$ on
+  $[9/10,19/20]$, below $15000$ on $[19/20,24/25]$, and below $200000$ on
+  $[24/25,99/100]$. Therefore
 
 $$
-K\ge550^2
+K\ge200000
 \quad\Longrightarrow\quad
 N_D(A_{\rho,1},K^2)
 \le\frac{2}{9\pi}(1-\rho^3)K^3
-\qquad(\rho\in I_{14});
+\qquad(\rho\in I_{15});
 $$
 
 - combining the compact envelope with both endpoint theorems gives the
@@ -181,11 +199,11 @@ $$
 
 $$
 0<\rho<1,
-\qquad K\ge550^2.
+\qquad K\ge200000.
 $$
 
-  The exact comparison $900^2/550^2=324/121>2$ quantifies the reduction
-  from the Round 13 global ceiling;
+  The exact comparison $550^2/200000=121/80>1$ quantifies the reduction
+  from the Round 14 global ceiling;
 
 - the independently checked certified pilot
 
@@ -199,17 +217,29 @@ $$
   $14.6073155354$. The Arb producer and independent rational checker are
   local evidence only; they do not certify the rest of the compact residual.
 
-`SHELL-rho-compact` remains open. Round 14 has reduced the exact compact
-residual to $I_{14}$ below $K=550^2$, but it does not certify that residual.
-The next analytic target is a separately proved seam extension on
-$0<\varepsilon\le1/6$ with candidate $K\ge54/\varepsilon^2$, moved seam
-$\rho=5/6$, and exact target $K_0(5/6)<295^2$. These are unproved Round 15
-planning constants. The prospective all-ratio ceiling is $K\ge200000$
-because the retained far-thin Round 10 zone would dominate. Preliminary
-values $d_0=5/8$, $\overline q=159/400$, and $B=14/3$ are not proved
-Round 15 statements. The current $\kappa=53$ and $Y=294$ obstructions are
-route obstructions, not disproofs. Certification may expand only through an
-exact face-connected manifest for the true residual $\mathcal D$; further
-analytic aggregation or safe monotone-corner certification is still
-required. The parent compact certification remains diagnostic only, and the
-final theorem remains open.
+`SHELL-rho-compact` remains open. Round 15 has reduced the exact compact
+residual to the true nonrectangular set $\mathcal D_{15}$ below the
+seven-zone analytic cover on $I_{15}$, but it does not certify that residual.
+The complete all-frequency endpoint remains exactly
+$99/100\le\rho<1$.
+
+The next analytic target is the unproved Round 16 endpoint extension
+
+$$
+\frac78\le\rho<1,
+\qquad K\ge0,
+$$
+
+using a proposed two-piece split at
+$a=\varepsilon K=\pi/(4\varepsilon)$. The candidate product and
+complementary-action reserves are respectively $577/2880$ and $143/4096$;
+they are planning evidence, not promoted lemmas. If the endpoint theorem is
+independently proved and audited, the conditional all-ratio ceiling becomes
+$295^2$, because $K_0(5/6)<295^2$, with exact improvement factor
+$200000/295^2=8000/3481>2$.
+
+Certification may expand only through an exact face-connected manifest for
+$\mathcal D_{15}$; replacing it by $I_{15}\times[0,200000)$ would certify a
+different, larger set. Further analytic aggregation or safe monotone-corner
+certification is still required. The parent compact certification remains
+diagnostic only, and the final theorem remains open.
