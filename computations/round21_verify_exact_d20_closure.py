@@ -245,12 +245,13 @@ def _load_hash_gated_module(name: str, path: Path, expected_digest: str) -> Modu
     module.__loader__ = None
     module.__spec__ = None
     module.__cached__ = None
-    previous = sys.modules.get(name)
+    missing = object()
+    previous = sys.modules.get(name, missing)
     sys.modules[name] = module
     try:
         exec(code, module.__dict__)
     except BaseException:
-        if previous is None:
+        if previous is missing:
             sys.modules.pop(name, None)
         else:
             sys.modules[name] = previous

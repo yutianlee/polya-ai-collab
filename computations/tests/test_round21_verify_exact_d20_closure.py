@@ -10,6 +10,7 @@ import sys
 from dataclasses import replace
 from fractions import Fraction
 from pathlib import Path
+from types import ModuleType
 
 import pytest
 from flint import arb, ctx
@@ -69,8 +70,15 @@ def test_hash_gated_loader_ignores_timestamp_valid_malicious_pyc(
 
     source_path.write_bytes(cached_source)
     original_stat = source_path.stat()
-    pyc_path = Path(py_compile.compile(str(source_path), doraise=True))
+    pyc_path = Path(
+        py_compile.compile(
+            str(source_path),
+            doraise=True,
+            invalidation_mode=py_compile.PycInvalidationMode.TIMESTAMP,
+        )
+    )
     assert pyc_path.is_file()
+    assert pyc_path.read_bytes()[4:8] == b"\x00\x00\x00\x00"
 
     # Preserve the timestamp-mode cache header's mtime and size while making
     # the authenticated source semantics disagree with the cached code.
@@ -89,6 +97,40 @@ def test_hash_gated_loader_ignores_timestamp_valid_malicious_pyc(
         assert pyc_path.is_file()
     finally:
         sys.modules.pop(module_name, None)
+
+
+def test_hash_gated_loader_restores_every_prior_module_state_on_failure(
+    tmp_path: Path,
+) -> None:
+    source_path = tmp_path / "failing_probe.py"
+    source = b"raise RuntimeError('intentional loader probe')\n"
+    source_path.write_bytes(source)
+    digest = hashlib.sha256(source).hexdigest()
+
+    absent_name = "round21_a4_absent_module_probe"
+    sys.modules.pop(absent_name, None)
+    with pytest.raises(RuntimeError, match="intentional loader probe"):
+        verifier._load_hash_gated_module(absent_name, source_path, digest)
+    assert absent_name not in sys.modules
+
+    prior_name = "round21_a4_prior_module_probe"
+    prior_module = ModuleType(prior_name)
+    sys.modules[prior_name] = prior_module
+    try:
+        with pytest.raises(RuntimeError, match="intentional loader probe"):
+            verifier._load_hash_gated_module(prior_name, source_path, digest)
+        assert sys.modules[prior_name] is prior_module
+    finally:
+        sys.modules.pop(prior_name, None)
+
+    none_name = "round21_a4_none_module_probe"
+    sys.modules[none_name] = None
+    try:
+        with pytest.raises(RuntimeError, match="intentional loader probe"):
+            verifier._load_hash_gated_module(none_name, source_path, digest)
+        assert none_name in sys.modules and sys.modules[none_name] is None
+    finally:
+        sys.modules.pop(none_name, None)
 
 
 def test_exact_constants_faces_split_and_u_orderings() -> None:
