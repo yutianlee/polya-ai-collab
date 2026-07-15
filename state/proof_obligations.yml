@@ -43,9 +43,7 @@
         "TARGET-shell-d3"
       ],
       "implies": [],
-      "blockers": [
-        "COMP-certified-bessel"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
           "sources/seed_reports/Strategy.md",
@@ -55,22 +53,29 @@
           "state/lemma_packets/SHELL-two-sided-staircase-round19-claim.md",
           "rounds/polya-main/round_019/reviews/two-sided-staircase-adversarial-referee.md",
           "state/lemma_packets/SHELL-combined-closure-round20-claim.md",
-          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md"
+          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md",
+          "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
         ],
         "negative": [],
         "inconclusive": []
       },
       "owner": "A1",
-      "next_action": "Keep the program target open. First close D20 and pass theorem-level clean-room and adversarial review for TARGET-shell-d3.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "next_action": "Keep the program target open. Complete the shell theorem assembly and audits, prove the full shell family is non-tiling, and run a separate program-scope audit without making a publication-priority claim.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "falsification_cases": [
         "TARGET-shell-d3 remains open on the exact nonempty residual D18",
         "a compact-band lemma cannot promote the program theorem",
         "TARGET-shell-d3 remains open on the exact nonempty residual D19",
         "a two-sided finite-band lemma cannot promote the program theorem",
         "TARGET-shell-d3 remains open on exact nonempty D20",
-        "a combined finite-band and optical extension cannot promote the program theorem while D20 survives"
+        "a combined finite-band and optical extension cannot promote the program theorem while D20 survives",
+        "shell theorem pieces complete but theorem-level review not passed",
+        "non-tiling geometry or scaling omitted",
+        "publication novelty inferred from a limited literature search"
       ]
     },
     {
@@ -86,7 +91,10 @@
         "POLYA-program-target",
         "SHELL-next-angular-staircase",
         "SHELL-two-sided-staircase",
-        "SHELL-combined-closure"
+        "SHELL-combined-closure",
+        "CERT-round21-compact-proxy",
+        "CERT-round21-aggregate-tail",
+        "SHELL-exact-d20-closure"
       ],
       "blockers": [],
       "evidence": {
@@ -101,8 +109,8 @@
       "owner": "A1",
       "next_action": "Use this endpoint rule in all imported source statements, phase-count identities, eigenvalue formulations, and certified finite-window checks.",
       "reason_for_promotion": "Round 1 fixed this as a project convention and no mathematical theorem is being promoted by adopting the endpoint normalization.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14"
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43"
     },
     {
       "id": "TARGET-shell-d3",
@@ -116,7 +124,6 @@
         "SHELL-cross-product-formula",
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
-        "COMP-certified-bessel",
         "SHELL-fixed-rho-high-energy",
         "SHELL-rho-uniformity"
       ],
@@ -124,7 +131,6 @@
         "POLYA-program-target"
       ],
       "blockers": [
-        "COMP-certified-bessel",
         "SHELL-rho-uniformity"
       ],
       "evidence": {
@@ -192,7 +198,12 @@
           "rounds/polya-main/round_019/reviews/two-sided-staircase-adversarial-referee.md",
           "state/lemma_packets/SHELL-combined-closure-round20-claim.md",
           "rounds/polya-main/round_020/reviews/combined-closure-clean-room.md",
-          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md"
+          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md",
+          "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -211,7 +222,6 @@
         "SHELL-cross-product-formula",
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
-        "COMP-certified-bessel",
         "SHELL-fixed-rho-high-energy",
         "SHELL-rho-uniformity"
       ],
@@ -231,13 +241,16 @@
         "the full theorem still requires complete D19 closure and fresh theorem-level review",
         "D20 remains nonempty and prevents theorem promotion",
         "the exact verifier is analytic support rather than a spectral interval certificate",
-        "the full theorem still requires complete D20 closure and fresh theorem-level review"
+        "the full theorem still requires complete D20 closure and fresh theorem-level review",
+        "D21 empty but K=0, volume normalization, strict counting, or scaling omitted",
+        "unit outer radius proved but arbitrary shell radii not scaled",
+        "the theorem promoted without a fresh theorem clean-room and final referee"
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "The strict shell inequality now includes both endpoints, the all-ratio high-frequency range, C17 through C20, and the complete lower and rho>=39/50 regions. Close exact D20, then run fresh theorem-level clean-room and adversarial audits before changing this status.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14"
+      "next_action": "The last residual is mathematically closed and the obsolete diagnostic computation dependency is removed. Keep the theorem open while assembling K=0, all ratio seams, Weyl normalization, and scaling, then run fresh theorem-level reviews.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43"
     },
     {
       "id": "SRC-FLPS-balls",
@@ -315,7 +328,10 @@
         "SHELL-lattice-count",
         "COMP-certified-bessel",
         "SHELL-annulus-phase-transfer",
-        "SHELL-combined-closure"
+        "SHELL-combined-closure",
+        "CERT-round21-compact-proxy",
+        "CERT-round21-aggregate-tail",
+        "SHELL-exact-d20-closure"
       ],
       "blockers": [],
       "source_card": "sources/annuli_polya.md",
@@ -331,8 +347,8 @@
       },
       "owner": "A1",
       "next_action": "Use only the real-order phase results directly; rebuild the multiplicity-weighted lattice and finite-certificate components for 3D shells.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "reason_for_promotion": "The published annulus theorem, real-order phase bounds, lattice lemmas, computation method, counting convention, and exact transfer boundary have been audited."
     },
     {
@@ -447,7 +463,9 @@
         "TARGET-shell-d3",
         "SHELL-lattice-count",
         "COMP-certified-bessel",
-        "SHELL-combined-closure"
+        "SHELL-combined-closure",
+        "CERT-round21-compact-proxy",
+        "SHELL-exact-d20-closure"
       ],
       "blockers": [],
       "evidence": {
@@ -491,8 +509,8 @@
         "rounds/polya-main/round_002/reviews/phase-enclosure-adversarial.md"
       ],
       "next_action": "Use the proved global bound in the 2ell+1 weighted lattice obligation; retain the explicit warning that the absolute 1/4 slack may fail as rho approaches 1.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "reason_for_promotion": "The published real-order enclosure was specialized to half-integer shell orders, the determinant sign and strict endpoint count were reconstructed, and distinct incumbent, isolated clean-room, and adversarial checks passed. The promotion makes no weighted-sum or rho-uniform claim."
     },
     {
@@ -763,7 +781,11 @@
           "rounds/polya-main/round_019/reviews/two-sided-staircase-adversarial-referee.md",
           "state/lemma_packets/SHELL-combined-closure-round20-claim.md",
           "rounds/polya-main/round_020/reviews/combined-closure-clean-room.md",
-          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md"
+          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md",
+          "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -774,9 +796,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Both endpoint neighborhoods, all ratios at K>=295^2, C17 through C20, and the full lower residual are proved. Keep this obligation open until exact D20 is closed.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "next_action": "The endpoint theorems and empty compact residual now provide all mathematical pieces. Keep this obligation open until the full all-rho assembly passes theorem-level clean-room and adversarial audits.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "falsification_cases": [
         "C17 is a strict compact-band compression, not compact all-frequency closure",
         "historical Round 17 checkpoint: D17 was the exact blocker after both endpoint theorems and before C18",
@@ -785,7 +807,10 @@
         "C19 is a two-sided compact-band compression, not compact all-frequency closure",
         "the exact nonempty D19 remains the blocker after both endpoint theorems",
         "the complete lower and optical closures do not cover the exact nonempty D20",
-        "a k_11 staircase is not compact all-frequency closure below rho=39/50"
+        "a k_11 staircase is not compact all-frequency closure below rho=39/50",
+        "D21 empty but endpoint and compact owners not assembled coherently",
+        "rho=rho_* or rho=7/8 lost at an endpoint seam",
+        "the full theorem promoted before fresh theorem review"
       ]
     },
     {
@@ -799,15 +824,12 @@
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
-        "COMP-certified-bessel",
         "SHELL-rho-compact-analytic-envelope"
       ],
       "implies": [
         "SHELL-rho-uniformity"
       ],
-      "blockers": [
-        "COMP-certified-bessel"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
           "state/lemma_packets/SHELL-rho-compact.md",
@@ -873,7 +895,13 @@
           "rounds/polya-main/round_020/reviews/combined-closure-clean-room.md",
           "rounds/polya-main/round_020/reviews/combined-closure-clean-room-addendum.md",
           "rounds/polya-main/round_020/reviews/combined-closure-cross-comparison.md",
-          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md"
+          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md",
+          "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
         ],
         "negative": [],
         "inconclusive": []
@@ -895,11 +923,15 @@
         "the middle component above d and high component above k_6 require new arguments",
         "D20 remains nonempty at rho=1/2 and K=30",
         "the rho=rho_c slice remains open strictly above k_11",
-        "the optical rho=39/50 face is covered but ratios immediately below it still contain the open strip"
+        "the optical rho=39/50 face is covered but ratios immediately below it still contain the open strip",
+        "an empty residual is promoted without a theorem-level assembly",
+        "legacy Bessel pilot certificates are treated as the D20 closure",
+        "compact interval uniformity is inferred without checking endpoint overlap and all K faces"
       ],
-      "next_action": "Keep this obligation open. Freeze and close the exact one-piece D20 while preserving rho=rho_c, excluding rho=39/50, and retaining the strict k_11 and K_0 frequency faces.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14"
+      "next_action": "The exact analytic residual is empty and the obsolete diagnostic Bessel dependency is removed. Keep this obligation open for the separate theorem-level assembly and independent final reviews.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
+      "permitted_dependencies": []
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -1087,9 +1119,7 @@
         "COMP-certified-bessel-pilot-round8",
         "COMP-certified-bessel-pilot-round17"
       ],
-      "implies": [
-        "TARGET-shell-d3"
-      ],
+      "implies": [],
       "blockers": [],
       "required_output": [
         "script",
@@ -1142,7 +1172,8 @@
           "computations/round20_verify_combined_closure.py",
           "computations/tests/test_round20_verify_combined_closure.py",
           "rounds/polya-main/round_020/reviews/combined-closure-constants-replacement.md",
-          "rounds/polya-main/round_020/reviews/combined-closure-constants-final-audit.md"
+          "rounds/polya-main/round_020/reviews/combined-closure-constants-final-audit.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates.md"
         ]
       },
       "owner": "A4",
@@ -1155,9 +1186,9 @@
         "rounds/polya-main/round_017/certification/pilot-extension-feasibility.md",
         "rounds/polya-main/round_017/reviews/pilot-extension-independent-audit.md"
       ],
-      "next_action": "Keep the parent diagnostic_only. B0 and B1 remain regression certificates inside the analytic cover. Any later certificate must be a predeclared face-connected subset of exact D20 and pass an independent checker.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "next_action": "Retain this parent as diagnostic_only with B0 and B1 unchanged. The new Round 21 certificates have their own exact obligations and do not broaden or promote this legacy framework.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "falsification_cases": [
         "B1 is one exact face-connected box, not a sweep or residual component",
         "B1 subset C17 makes it analytically redundant after promotion",
@@ -1170,7 +1201,10 @@
         "B0 and B1 remain valid but analytically redundant inside the promoted cover",
         "no Round 19 certified subset is promoted",
         "the Round 20 exact constant ledger checks analytic arithmetic and bytes, not interval-certified shell eigenvalues",
-        "no Round 20 certified spectral subset or computation obligation is promoted"
+        "no Round 20 certified spectral subset or computation obligation is promoted",
+        "the scoped proxy and aggregate certificates are relabelled as cross-product root isolation",
+        "B0 or B1 is subtracted again after analytic subsumption",
+        "diagnostic_only status is promoted by transitive association"
       ]
     },
     {
@@ -1295,7 +1329,10 @@
         "COMP-certified-bessel",
         "SHELL-next-angular-staircase",
         "SHELL-two-sided-staircase",
-        "SHELL-combined-closure"
+        "SHELL-combined-closure",
+        "CERT-round21-compact-proxy",
+        "CERT-round21-aggregate-tail",
+        "SHELL-exact-d20-closure"
       ],
       "blockers": [],
       "evidence": {
@@ -1315,8 +1352,8 @@
       },
       "owner": "A4",
       "next_action": "Use this result as the discharged structural spectrum theorem. Do not infer rho-uniformity, a finite-window inequality, or numerical certification from it.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -1582,7 +1619,10 @@
       "implies": [
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
-        "SHELL-combined-closure"
+        "SHELL-combined-closure",
+        "CERT-round21-compact-proxy",
+        "CERT-round21-aggregate-tail",
+        "SHELL-exact-d20-closure"
       ],
       "blockers": [],
       "evidence": {
@@ -1607,8 +1647,8 @@
       },
       "owner": "A2",
       "next_action": "Combine this unconditional lattice-proxy inequality with the now-proved strict spectral identity. Do not extrapolate it to the finite window or a rho-uniform theorem.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "criticality": "bottleneck",
       "lead_author": "A2",
       "clean_room_reviewer": "A3",
@@ -1920,7 +1960,9 @@
       ],
       "implies": [
         "SHELL-weighted-lattice-fractional",
-        "SHELL-fixed-rho-high-energy"
+        "SHELL-fixed-rho-high-energy",
+        "CERT-round21-aggregate-tail",
+        "SHELL-exact-d20-closure"
       ],
       "blockers": [],
       "evidence": {
@@ -1969,8 +2011,8 @@
       ],
       "reason_for_promotion": "The frozen proof passed a clean-room reconstruction, a separate targeted falsification pass, and an adversarial review. The reviews verified the first-floor-drop theorem, no-drop and n=0 branches, quantitative curvature bound, convex-tail theorem, interface estimate, compensation algebra, integer walls, and explicit positive-root threshold.",
       "next_action": "Use this lemma only for the fixed-rho high-energy proxy. The finite region, rho-endpoint uniformity, and separated spectral completeness remain separate obligations.",
-      "last_updated_round": 3,
-      "last_updated_at": "2026-07-12T23:54:19"
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43"
     },
     {
       "id": "SHELL-thin-product-low-optical",
@@ -2337,7 +2379,7 @@
       "track": "shell_analytic",
       "title": "Explicit analytic envelope on the remaining compact shell-ratio interval",
       "status": "proved_internal",
-      "statement_tex": "Retain the complete Round 19 cover A19, both endpoint theorems, and the all-ratio theorem for K>=295^2. Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), and k_m(rho)=sqrt(z_rho^2+m(m+1)). Round 20 adds the complete D19 lower residual, the high band {rho_c<=rho<7/8, k_6(rho)<K<=k_11(rho)}, and the optical remainder {39/50<=rho<7/8, k_11(rho)<K<U(rho)}. Equivalently, the stronger optical theorem holds for 39/50<=rho<1 and every K>=0. The exact residual is D20={rho_c<=rho<39/50, k_11(rho)<K<K_0(rho)=U(rho)}. The rho=rho_c face remains in D20 only above k_11, rho=39/50 is optical-owned, K=k_11 is staircase-owned, and K=U is excluded. B0 and B1 remain inside the previously promoted cover and are not subtracted again. No claim that D20 is empty is made.",
+      "statement_tex": "Retain the complete accepted cover through Round 20, both endpoint theorems, and the all-ratio high-frequency theorem. Round 21 adds the strict compact theorem on 7/51<=rho<=39/50 and 12<=K<=200 and the strict aggregate theorem on rho_c<=rho<=39/50 and K>=200. Exact guards put every point of D20={rho_c<=rho<39/50, k_11(rho)<K<U(rho)=K_0(rho)} in their disjoint K<=200 or K>200 subtraction owners, with K=200 compact-owned. Thus the exact residual D21 is empty. All inherited faces remain with their prior owners; the Round 21 theorem domains may overcover the residual without double subtraction. B0 and B1 remain analytically redundant regression certificates.",
       "dependencies": [
         "SHELL-rho-zero-endpoint",
         "SHELL-rho-one-endpoint",
@@ -2349,7 +2391,8 @@
         "SHELL-first-angular-bands",
         "SHELL-next-angular-staircase",
         "SHELL-two-sided-staircase",
-        "SHELL-combined-closure"
+        "SHELL-combined-closure",
+        "SHELL-exact-d20-closure"
       ],
       "implies": [
         "SHELL-rho-compact"
@@ -2461,7 +2504,15 @@
           "rounds/polya-main/round_020/reviews/combined-closure-constants-replacement.md",
           "rounds/polya-main/round_020/reviews/combined-closure-constants-final-audit.md",
           "rounds/polya-main/round_020/reviews/combined-closure-cross-comparison.md",
-          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md"
+          "rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md",
+          "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -2485,7 +2536,8 @@
         "SHELL-first-angular-bands",
         "SHELL-next-angular-staircase",
         "SHELL-two-sided-staircase",
-        "SHELL-combined-closure"
+        "SHELL-combined-closure",
+        "SHELL-exact-d20-closure"
       ],
       "falsification_cases": [
         "rho=rho_*",
@@ -2524,7 +2576,13 @@
         "rho=rho_c retained only above the included k_11 face and rho=39/50 removed inclusively by the optical theorem",
         "U=K_0 on the exact remaining ratio interval because H_0 and the seam branch are ineligible",
         "the strict open frequency strip k_11<K<K_0 with both boundary faces covered by their inherited owners",
-        "nonemptiness of D20 at rho=1/2 and K=30 not confused with theorem closure"
+        "nonemptiness of D20 at rho=1/2 and K=30 not confused with theorem closure",
+        "D21 declared empty without both the compact and aggregate theorem domains",
+        "K=200 omitted or subtracted twice",
+        "finite K=200 boxes confused with universal aggregate propagation",
+        "any assumed ordering of U with 200",
+        "rho=39/50, K=k_11, or K=U subtracted again",
+        "empty residual confused with theorem-level promotion"
       ],
       "clean_room_artifacts": [
         "rounds/polya-main/round_008/reviews/compact-envelope-clean-room.md",
@@ -2552,9 +2610,9 @@
         "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md"
       ],
       "reason_for_promotion": "Round 16's endpoint and high-frequency conclusions are unchanged. All Round 17 PASS gates are satisfied, so the independently proved C17 band is added with exact old-face ownership, exact containment in D16, and exact residual subtraction; no certified box or sampled point is used to prove the analytic band.",
-      "next_action": "Treat C20 as discharged. Freeze and close exactly D20={rho_c<=rho<39/50, k_11(rho)<K<K_0(rho)=U(rho)} while preserving every strict and inclusive face.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "next_action": "Treat D21 as empty. Keep higher obligations open until a coherent all-rho theorem assembly passes separate clean-room and fresh adversarial review.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43",
       "artifact_hashes": {
         "residual_packet": "eca93c29423a619ab13a3118653256df2ad085219c6718d195723a0a6542026e",
         "residual_freeze": "23bfee8cddd64d0d9d956b8d1a288c6263095a2a04cc42052c4ace08ca36152a",
@@ -2569,7 +2627,7 @@
         "constant_tests": "533620b5fadd9b7b13ff1d21ca9282bfd3d1ed778e7ecda970a3fb027ce3955c",
         "adversarial_referee": "a13a05294af7957e817d3ca77440084c466c35334adaf5c1aa6cf610009c687b"
       },
-      "reason_for_update": "The independently proved lower closure, k_11 staircase, and optical theorem are added by exact set union and subtraction. All inherited endpoint, seam, high-frequency, and certificate owners remain unchanged."
+      "reason_for_update": "The independently proved compact and aggregate theorems cover the exact D20 by an exhaustive disjoint K split. Every finite premise and analytic implication passed hardened review, so the successor residual is exactly empty."
     },
     {
       "id": "COMP-certified-bessel-pilot-round8",
@@ -3431,7 +3489,8 @@
         "SRC-ROUND20-BESSEL-ZEROS"
       ],
       "implies": [
-        "SHELL-rho-compact-analytic-envelope"
+        "SHELL-rho-compact-analytic-envelope",
+        "SHELL-exact-d20-closure"
       ],
       "blockers": [],
       "evidence": {
@@ -3531,9 +3590,376 @@
         "adversarial_referee": "acea3818e562a8bc27496f1c727835f7a08e70ce60aaa28946fb8999ddf6c9cc"
       },
       "reason_for_promotion": "Every mandatory gate passed. Independent analytic reconstructions close both lower residual components, extend the strict staircase through k_11, and prove the all-frequency optical theorem from rho=39/50. The zero/source boundary is exact, the final repaired A4 bundle verifies every finite constant and face, the cross-comparison finds no discrepancy, and the fresh referee reconstructs the complete implication adversarially. Exact subtraction leaves the explicitly nonempty D20, so no theorem-level target is promoted.",
-      "next_action": "Use this lemma only on its stated closed lower, staircase, and optical domains. Freeze D20 and close exactly rho_c<=rho<39/50 with k_11(rho)<K<K_0(rho)=U(rho); do not infer anything on that open frequency strip.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14"
+      "next_action": "Treat D20 as the authenticated input to SHELL-exact-d20-closure. Do not reuse the Round 20 lemma outside its stated lower, staircase, and optical domains.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43"
+    },
+    {
+      "id": "CERT-round21-compact-proxy",
+      "type": "computation",
+      "track": "certified_computation",
+      "title": "Round 21 compact coarse-proxy interval certificate",
+      "status": "certified",
+      "statement_tex": "On the exact closed rectangle 7/51<=rho<=39/50 and 12<=K<=200, a deterministic outward-Arb certificate partitions the domain into 10580 exact rational leaves and proves on every leaf that the strict multiplicity-weighted coarse proxy is strictly below W(rho,K)=(2/(9 pi))(1-rho^3)K^3. The computation certifies the finite leaf, strict-wall, interface, corner, and coverage predicates; the separately proved analytic bridge transfers them to the spectral inequality.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-weighted-lattice-fractional",
+        "SRC-annuli"
+      ],
+      "implies": [
+        "SHELL-exact-d20-closure"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/certificate_contracts/ROUND21-compact-proxy-contract.md",
+          "computations/round21_certify_compact_proxy.py",
+          "computations/tests/test_round21_certify_compact_proxy.py",
+          "rounds/polya-main/round_021/certification/compact-proxy-rectangle.md",
+          "rounds/polya-main/round_021/certification/compact-proxy-rectangle-adversarial-audit.md",
+          "computations/round21_verify_exact_d20_closure.py",
+          "computations/tests/test_round21_verify_exact_d20_closure.py",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+        ],
+        "negative": [
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-initial-lifecycle-miss.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened-provenance-audit.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-domain-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-cross-comparison-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened-provenance-audit-replacement.md"
+        ],
+        "inconclusive": [
+          "rounds/polya-main/round_021/judge/judge-021-lemma.md"
+        ]
+      },
+      "owner": "A4",
+      "criticality": "standard",
+      "lead_author": "A4",
+      "adversarial_reviewer": "independent-cross-checker",
+      "review_independence": "independent",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-weighted-lattice-fractional",
+        "SRC-annuli"
+      ],
+      "falsification_cases": [
+        "all four closed root faces and all four vertices",
+        "strict half-integer active-channel cutoffs",
+        "nu=rho K and nu=K zero-extension interfaces",
+        "exact integer proxy walls where strict count is M-1",
+        "reversal of either monotone corner",
+        "any gap, overlap, area mismatch, or double-owned shared face",
+        "precision below 192 bits or a changed canonical digest",
+        "tampered packet, leaf endpoint, proxy bound, count, or code byte",
+        "a timestamp-valid adjacent pyc is executed instead of the authenticated producer source"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_021/certification/compact-proxy-rectangle-adversarial-audit.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+      ],
+      "evidence_class": "interval_certified",
+      "software_version": "Python 3.14.4; python-flint 0.8.0 Arb; frozen 256-bit and higher-precision 384-bit replays",
+      "reproduction_command": "Run the authenticated stdin wrapper bootstrap and isolated pytest gates recorded in rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md; the direct finite producer remains python -B computations/round21_certify_compact_proxy.py.",
+      "coverage_statement": "Exactly the closed rectangle [7/51,39/50] x [12,200], tiled by 10580 exact rational leaves with closed analytic estimates and exact half-open shared-face ownership. No point outside this rectangle is certified by this obligation.",
+      "artifact_hashes": {
+        "contract": "1d16d860f158fd8223734245d4d6a71b8af2bc3ed99f9eafddf645e6a74b61fe",
+        "producer": "2a43611635ffb122f2e2655fe5c0f59e0f9b0f5a0e45242c5802593acbd7e856",
+        "tests": "29b7425c47576826e11e2843317bbf3cf96738ac05188956c1fd5b0fcfc56b36",
+        "report": "c381c0fa5094b6702f6ee2df7721772f39b6d47aa6bee4c7860b29cd8b4b1293",
+        "adversarial_audit": "aac8cc7349b7531ced93ed5fa244efe2d8210999161868e90fd531943b2fc0ca",
+        "canonical_certificate": "96e527b4eefaf032aeac89ddb960fc2fd4928e3b8204ccbbddbc8fddaa3be631",
+        "hardened_wrapper": "31130de2370fac5ef702c9bd34fce84fb0336cbc9ce02175d3419ba6344debb9",
+        "hardened_tests": "4de930011f3a8a05e4e411a278c845a9da4f820666a52756b2b60883534b9b99",
+        "hardened_report": "47cd9467a19f4f08e39b700d82b8c9d52d7272619167220431cbcaea873d43a5",
+        "replacement_cross_comparison": "7c6dab2980f76926536def120df3bda6396e0193c2eae4d760dc3ea4b26c0d4a",
+        "hardened_referee": "d005e8c3c150c52ab2dfbc84b6f6ea678ef00f9402d9f8a67500f82d9d858e28",
+        "referee_provenance_audit": "f4670818af3a57a965f0032edd72ea875d4ad618f9cc4a5b1b78cabdc7e481da",
+        "preserved_unscoped_report": "d9def12c61006d4851202fe3100397e8d1505998dca84010e2d893a72ffacd56",
+        "preserved_cached_bytecode_report": "55f4f574ad5f44f766726c3d8b8346b2a51e2dfda0562fd8df977e678a9429e4",
+        "preserved_cached_bytecode_failure": "d9a8fd94b1e730a324cfc3b0f518fc00cb65113ec1a0f80fc4bc1cb547c6c4d3"
+      },
+      "certification_artifacts": [
+        "state/certificate_contracts/ROUND21-compact-proxy-contract.md",
+        "rounds/polya-main/round_021/certification/compact-proxy-rectangle.md",
+        "rounds/polya-main/round_021/certification/compact-proxy-rectangle-adversarial-audit.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md"
+      ],
+      "reason_for_promotion": "Every exact leaf, strict wall, interface, monotone corner, coverage invariant, input hash, source-execution gate, and precision gate passes at the frozen precision and at 384 bits. The analytic bridge was independently reconstructed and the final fresh referee found no unsupported implication.",
+      "next_action": "Retain this certificate with its exact closed rectangle and immutable digest. Use it only through SHELL-exact-d20-closure; do not broaden it into a Bessel-root or all-frequency certificate.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43"
+    },
+    {
+      "id": "CERT-round21-aggregate-tail",
+      "type": "computation",
+      "track": "certified_computation",
+      "title": "Round 21 aggregate-tail base-face interval certificate",
+      "status": "certified",
+      "statement_tex": "On the exact rational ratio superset 7/51<=rho<=39/50 at the single base frequency K=200, 1286 outward Arb boxes prove B(rho,200)>0, B_K(rho,200)>0, F(rho)>0, all base guards, and the stated base derivative-consistency predicates. This computation makes no proof decision at K>200; the separately proved analytic curvature and integration chain supplies the universal tail theorem.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-weighted-lattice-fractional",
+        "SHELL-low-interface-fixed-rho-high-energy",
+        "SRC-annuli"
+      ],
+      "implies": [
+        "SHELL-exact-d20-closure"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/certificate_contracts/ROUND21-aggregate-tail-contract.md",
+          "rounds/polya-main/round_021/exploration/aggregate-low-interface-route.md",
+          "computations/round21_verify_aggregate_tail.py",
+          "computations/tests/test_round21_verify_aggregate_tail.py",
+          "rounds/polya-main/round_021/certification/aggregate-tail-global.md",
+          "rounds/polya-main/round_021/certification/aggregate-tail-global-adversarial-audit.md",
+          "computations/round21_verify_exact_d20_closure.py",
+          "computations/tests/test_round21_verify_exact_d20_closure.py",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+        ],
+        "negative": [
+          "rounds/polya-main/round_021/exploration/aggregate-low-interface-adversarial-audit.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-initial-lifecycle-miss.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-domain-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-cross-comparison-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened-provenance-audit-replacement.md"
+        ],
+        "inconclusive": [
+          "rounds/polya-main/round_021/judge/judge-021-lemma.md"
+        ]
+      },
+      "owner": "A4",
+      "criticality": "standard",
+      "lead_author": "A4",
+      "adversarial_reviewer": "independent-cross-checker",
+      "review_independence": "independent",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-weighted-lattice-fractional",
+        "SHELL-low-interface-fixed-rho-high-energy",
+        "SRC-annuli"
+      ],
+      "falsification_cases": [
+        "both ratio endpoints and every consecutive exact box face",
+        "the two eta branches and their common rho=1/2 value",
+        "all 11 finite sign families on every box",
+        "outward containment of both rational endpoints",
+        "base guards mu>3/2, 200 eta_rho>1, and S>Rbar>200 rho",
+        "any changed factor or sign in B, B_K, I_KK, E_KK, B_KK, or F",
+        "precision below 192 bits or any partition gap or overlap",
+        "any attempted finite-box claim at K>200",
+        "a timestamp-valid adjacent pyc is executed instead of the authenticated producer source"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_021/certification/aggregate-tail-global-adversarial-audit.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+      ],
+      "evidence_class": "interval_certified",
+      "software_version": "Python 3.14.4; python-flint 0.8.0 Arb; frozen 192-bit and higher-precision 384-bit replays",
+      "reproduction_command": "Run the authenticated stdin wrapper bootstrap and isolated pytest gates recorded in rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md; the direct base producer remains python -B computations/round21_verify_aggregate_tail.py --precision 192.",
+      "coverage_statement": "Exactly rho in [7/51,39/50] at K=200, split into 1286 exact rational boxes at rho=1/2. The certified predicates are base signs, guards, and consistency checks only; no K>200 point is certified by finite boxes.",
+      "artifact_hashes": {
+        "contract": "06b11887e7024d07023d9b8a4be97269536c833aecd126f469b2f54336238d6d",
+        "analytic_route": "61f91d4c604afb2bb3a66d6eaddb9a8a83e01373d389c3126b84ca3cf8368da0",
+        "verifier": "fc48425ccdfc05253c42645777fb36acbdf5fcba1cfd91483a836a1b10e9c952",
+        "tests": "50f10033e380b83e7cec8212c0213709676b4cca603570fb10b3974f0d89be91",
+        "report": "0ddd0c54942f7bd3bff3ec06271cb6bedea5a3a0b0185054f1a2ea33844eaeb6",
+        "adversarial_audit": "aa12d25d71091cfd01a116bc2777afa8669248a13441be391cf3da0b48c9a894",
+        "hardened_wrapper": "31130de2370fac5ef702c9bd34fce84fb0336cbc9ce02175d3419ba6344debb9",
+        "hardened_tests": "4de930011f3a8a05e4e411a278c845a9da4f820666a52756b2b60883534b9b99",
+        "hardened_report": "47cd9467a19f4f08e39b700d82b8c9d52d7272619167220431cbcaea873d43a5",
+        "replacement_cross_comparison": "7c6dab2980f76926536def120df3bda6396e0193c2eae4d760dc3ea4b26c0d4a",
+        "hardened_referee": "d005e8c3c150c52ab2dfbc84b6f6ea678ef00f9402d9f8a67500f82d9d858e28",
+        "referee_provenance_audit": "f4670818af3a57a965f0032edd72ea875d4ad618f9cc4a5b1b78cabdc7e481da",
+        "preserved_unscoped_report": "d9def12c61006d4851202fe3100397e8d1505998dca84010e2d893a72ffacd56",
+        "preserved_cached_bytecode_report": "55f4f574ad5f44f766726c3d8b8346b2a51e2dfda0562fd8df977e678a9429e4",
+        "preserved_cached_bytecode_failure": "d9a8fd94b1e730a324cfc3b0f518fc00cb65113ec1a0f80fc4bc1cb547c6c4d3"
+      },
+      "certification_artifacts": [
+        "state/certificate_contracts/ROUND21-aggregate-tail-contract.md",
+        "rounds/polya-main/round_021/certification/aggregate-tail-global.md",
+        "rounds/polya-main/round_021/certification/aggregate-tail-global-adversarial-audit.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md"
+      ],
+      "reason_for_promotion": "Every base sign, guard, consistency predicate, branch, endpoint containment, partition invariant, input hash, authenticated source-execution gate, and precision gate passes at 192 and 384 bits. The wrapper and independent reviews explicitly preserve the finite K=200 scope.",
+      "next_action": "Retain this certificate as the K=200 base face only. Use its signs through the analytic propagation in SHELL-exact-d20-closure; never cite it as a finite-box proof at K>200.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43"
+    },
+    {
+      "id": "SHELL-exact-d20-closure",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Round 21 exact closure of the final compact-shell residual",
+      "status": "proved_internal",
+      "statement_tex": "Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), k_11(rho)=sqrt(z_rho^2+132), and W(rho,K)=(2/(9 pi))(1-rho^3)K^3. The strict shell inequality N_D(A_(rho,1),K^2)<W(rho,K) holds on the closed compact rectangle 7/51<=rho<=39/50, 12<=K<=200, and on rho_c<=rho<=39/50, K>=200. The exact guards 7/51<rho_c and k_11(rho)>12 for rho_c<=rho<1 imply that D20={rho_c<=rho<39/50, k_11(rho)<K<U(rho)=K_0(rho)} is the disjoint union of its K<=200 and K>200 parts, with K=200 assigned to the compact owner. Hence the exact successor residual D21 is empty. The faces rho=39/50, K=k_11, and K=U remain outside D20 and are not subtracted again.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-weighted-lattice-fractional",
+        "SHELL-low-interface-fixed-rho-high-energy",
+        "SRC-annuli",
+        "SHELL-combined-closure",
+        "CERT-round21-compact-proxy",
+        "CERT-round21-aggregate-tail"
+      ],
+      "implies": [
+        "SHELL-rho-compact-analytic-envelope"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-rho-compact-round21.md",
+          "computations/round21_residual_mask.py",
+          "computations/tests/test_round21_residual_mask.py",
+          "rounds/polya-main/round_021/exploration/residual-mask-freeze.md",
+          "rounds/polya-main/round_021/reviews/residual-mask-independent-audit.md",
+          "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
+          "state/certificate_contracts/ROUND21-compact-proxy-contract.md",
+          "state/certificate_contracts/ROUND21-aggregate-tail-contract.md",
+          "rounds/polya-main/round_021/exploration/exact-d20-closure.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
+          "computations/round21_verify_exact_d20_closure.py",
+          "computations/tests/test_round21_verify_exact_d20_closure.py",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+        ],
+        "negative": [
+          "rounds/polya-main/round_021/reviews/candidate-final-byte-isolation-audit.md",
+          "rounds/polya-main/round_021/exploration/aggregate-low-interface-adversarial-audit.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-initial-branch-gap.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-cross-comparison.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-initial-lifecycle-miss.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened-provenance-audit.md",
+          "state/lemma_packets/SHELL-exact-d20-closure-round21-claim.md",
+          "rounds/polya-main/round_021/exploration/candidate-claim-freeze.md",
+          "rounds/polya-main/round_021/reviews/candidate-replacement-final-byte-isolation-audit.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-domain-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-domain-addendum.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-cross-comparison-replacement.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened.md",
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-hardened-provenance-audit-replacement.md"
+        ],
+        "inconclusive": [
+          "rounds/polya-main/round_021/judge/judge-021-lemma.md"
+        ]
+      },
+      "owner": "A2",
+      "criticality": "bottleneck",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "fresh-hardened-referee",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-sturm-liouville-completeness",
+        "SHELL-phase-enclosures",
+        "SHELL-weighted-lattice-fractional",
+        "SHELL-low-interface-fixed-rho-high-energy",
+        "SRC-annuli",
+        "SHELL-combined-closure",
+        "CERT-round21-compact-proxy",
+        "CERT-round21-aggregate-tail"
+      ],
+      "falsification_cases": [
+        "rho=7/51, rho=rho_c, rho=1/2, and rho=39/50 from both sides",
+        "K=12, K=k_11(rho), K=200, and K=U(rho) from both sides",
+        "strict integer phase walls and half-integer active-channel walls",
+        "both zero-extension interfaces and all compact vertices",
+        "tau=0, half-integer mu walls, integer K eta_rho walls, and the rho=1/2 eta branch",
+        "all exact Q and B identities, derivative signs, universal guards, and both integrations",
+        "loss of the lower Machin range bound, upper range bound, or principal-branch conclusion",
+        "loss of the rho<1 wall in the k_11>12 guard, including rho=1 and the exact rho=2 counterexample",
+        "timestamp-valid cached bytecode executed after only the source path was hashed",
+        "finite K=200 signs incorrectly promoted to an all-K box claim",
+        "all three orderings U<200, U=200, and U>200",
+        "double subtraction or omission of the K=200 face",
+        "inclusion of rho=39/50, K=k_11, or K=U in D20",
+        "promotion of any compact, uniform, theorem, program, or legacy Bessel computation status"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-addendum.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
+        "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+      ],
+      "artifact_hashes": {
+        "residual_packet": "fa37e7f619eeca7a53969a1a0af742ac746e2579268963fde1405465ee5e3df5",
+        "residual_classifier": "1f6254b699519212ae8bd835b789b1002db78318d30bf347d8a0f60a14cbaa38",
+        "residual_tests": "6703899a0ba89021089c6f3407a836e3cfcfb54960f81c4e0261c5b5fdf57477",
+        "residual_freeze": "92a35005b1381a81ecf3b2bc953a97b1f67084cc6992fe3317e6f75f03d80fd5",
+        "residual_audit": "0e161d306e7d60646d71f5d42f5ed93f723c9fa07603564ece98d3255f08bf08",
+        "candidate": "d8cf64273ead5bd2573b9175aa2a2f03916ec6c1a2cb87e279cc9ed30106852d",
+        "candidate_isolation": "f4670818af3a57a965f0032edd72ea875d4ad618f9cc4a5b1b78cabdc7e481da",
+        "preserved_candidate_freeze": "75afe7f0ea6ca2da4106510f6e90fb64a13a83fd83f023361d3433493d64558c",
+        "preserved_candidate_isolation": "d4aaf2676c9056721b919f5b24341e39e77178b27a49bfaa5b54a8e77eb6c57e",
+        "compact_contract": "1d16d860f158fd8223734245d4d6a71b8af2bc3ed99f9eafddf645e6a74b61fe",
+        "aggregate_contract": "06b11887e7024d07023d9b8a4be97269536c833aecd126f469b2f54336238d6d",
+        "incumbent": "e04b8199783188f0d90b6c033abe031d7c9ecd54ee1a5cdfd198f3517e98d039",
+        "clean_room": "0ac01840b4f97ae759c47047372d6f20dda0d0c5fa4dfe3ac559d21bb16e9acc",
+        "clean_room_addendum": "d003d105038e78a0b95137b9fecb0ca5758a804dac17cbea1e6eea155f50b257",
+        "clean_room_domain_addendum": "395238c6db9267734f818a2493ed5370bd414c5c2994ea8e4f9bc406ff6d7241",
+        "hardened_wrapper": "31130de2370fac5ef702c9bd34fce84fb0336cbc9ce02175d3419ba6344debb9",
+        "hardened_tests": "4de930011f3a8a05e4e411a278c845a9da4f820666a52756b2b60883534b9b99",
+        "hardened_report": "47cd9467a19f4f08e39b700d82b8c9d52d7272619167220431cbcaea873d43a5",
+        "replacement_cross_comparison": "7c6dab2980f76926536def120df3bda6396e0193c2eae4d760dc3ea4b26c0d4a",
+        "hardened_referee": "d005e8c3c150c52ab2dfbc84b6f6ea678ef00f9402d9f8a67500f82d9d858e28",
+        "referee_provenance_audit": "f4670818af3a57a965f0032edd72ea875d4ad618f9cc4a5b1b78cabdc7e481da",
+        "preserved_branch_failure": "3d234405e5776b31dea29fbff8ee2803d0f54052cab851240b81546e9ac1b7f2",
+        "preserved_lifecycle_failure": "11672110bdc1169c40b46247832c19b9187df3112ab67f28324f6784a2f552a6",
+        "preserved_initial_referee": "0466a240861de32b60819f9a5cd3b48106b230839c3fae07f4f67cbd59588e74",
+        "preserved_referee_miss": "af1761a2426ad22f2cf93ea765e3b98af1314f4587730b654ed4eb36e37106ba",
+        "preserved_provenance_failure": "5b7c0938f39860dc060594090c50c168e71993ed284b0c8f45470df1aa00d0d4",
+        "preserved_unscoped_candidate": "415546156ea8d407541ddd6477ac38caa7c2c3b956724b25a06a755453e3b8a3",
+        "preserved_unscoped_report": "d9def12c61006d4851202fe3100397e8d1505998dca84010e2d893a72ffacd56",
+        "preserved_cached_bytecode_report": "55f4f574ad5f44f766726c3d8b8346b2a51e2dfda0562fd8df977e678a9429e4",
+        "preserved_cached_bytecode_failure": "d9a8fd94b1e730a324cfc3b0f518fc00cb65113ec1a0f80fc4bc1cb547c6c4d3",
+        "preserved_prior_cross": "e923c034e7b64d5a865e85ee6912572c4e3bd10f890414c4c2a351e9c5790a0e",
+        "preserved_prior_referee": "c0a5239cae460ba961d911b384a9f2d2afac605865c72b4d2c604c0f4aa54a9c",
+        "preserved_prior_referee_provenance": "48b259a94a0fd91a37ac2b606a22e1e4ca593f45bc2ef4392b7dd61dd359a5ab"
+      },
+      "reason_for_promotion": "The A3 proof and domain addendum reconstruct both spectral bridges, the universal aggregate propagation, and the exact scoped guard; the interval certificates discharge every finite premise; the authenticated-source lifecycle closes both the exact-constant and cached-bytecode gates; exact set arithmetic gives a disjoint exhaustive subtraction; and the final fresh referee plus provenance audit find no unsupported implication. D21 is empty, but theorem-level obligations remain deliberately open.",
+      "next_action": "Use this lemma only through the complete Round 21 cover with its exact face ownership. Assemble the full shell theorem, verify K=0, strict counting, endpoint overlap, volume normalization, and scaling, then run separate theorem-level clean-room and adversarial audits before promoting any higher obligation.",
+      "last_updated_round": 21,
+      "last_updated_at": "2026-07-15T08:48:43"
     }
   ],
   "rejected_claims": [
