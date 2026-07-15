@@ -471,7 +471,7 @@ $$
   focused tests passed independent re-audit. The zero audit,
   cross-comparison, fresh referee, judge, and State-Patch audit also passed;
 
-- the exact live Round 20 subtraction. The genuinely new set is
+- the exact Round 20 subtraction, now historical. The genuinely new set was
 
 $$
 \boxed{\begin{aligned}
@@ -492,8 +492,44 @@ $$
 
   The $\rho_c$ face is included, the $39/50$ face is optical-owned,
   $K=k_{11}$ is staircase-owned, and $K=K_0=U$ is excluded. The residual
-  is nonempty because
+  was nonempty because
   $k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2)$;
+
+- `CERT-round21-compact-proxy`. On the exact closed rectangle
+
+$$
+\frac7{51}\le\rho\le\frac{39}{50},\qquad 12\le K\le200,
+$$
+
+  10,580 exact rational leaves certify every finite proxy, strict-wall,
+  interface, corner, and coverage predicate. The separate analytic bridge
+  transfers those predicates to the strict spectral comparison;
+
+- `CERT-round21-aggregate-tail`. On the exact rational ratio superset at the
+  single base frequency $K=200$, 1,286 outward Arb boxes certify the base
+  signs and derivative-consistency predicates. The computation makes no
+  proof decision for $K>200$; the independent analytic curvature and
+  two-integration chain gives the universal tail theorem;
+
+- `SHELL-exact-d20-closure`. The exact guards
+
+$$
+\frac7{51}<\rho_c,\qquad
+k_{11}(\rho)>12\quad(\rho_c\le\rho<1)
+$$
+
+  put every point of $\mathcal D_{20}$ in exactly one of its $K\le200$ and
+  $K>200$ parts, with $K=200$ compact-owned. The outside faces
+  $\rho=39/50$, $K=k_{11}$, and $K=U$ are not subtracted again. Therefore
+
+$$
+\boxed{\mathcal D_{21}=\varnothing.}
+$$
+
+  The accepted source-execution wrapper hashes and compiles the same source
+  bytes and was tested against a conflicting timestamp-valid `.pyc`.
+  Earlier unscoped, stale-hash, and cache-vulnerable cycles remain negative
+  chronology;
 
 - the independently checked certified pilot
 
@@ -520,32 +556,23 @@ $$
   margin. Both certified boxes lie inside $\mathcal C_{17}$, so they remain
   independent regression evidence but are analytically redundant.
 
-`SHELL-rho-compact` remains open. Round 20 reduces its exact residual to
-$\mathcal D_{20}$ above, which is the sole remaining shell blocker. The
-theorem-wise uncovered set is also exactly $\mathcal D_{20}$ because both
-older certified boxes were already contained in $\mathcal C_{17}$ and are
-not subtracted again. `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
-`POLYA-program-target` remain open as well.
-
-Round 21 has two independently audited but unpromoted certificate theorems.
-The compact coarse-proxy route covers the closed rectangle
-$[7/51,39/50]\times[12,200]$ by 10,580 exact rational leaves; the aggregate
-low-interface route covers
-$[\rho_c,39/50]\times[200,\infty)$ after 1,286 outward Arb ratio boxes and
-an exact frequency-convexity reduction. The containments
-$7/51<\rho_c$ and $k_{11}(\rho)>12$ suggest an exact two-piece cover of
-$\mathcal D_{20}$, with one subtraction owner at $K=200$. These route
-artifacts have not entered the obligation graph and do not yet establish an
-accepted empty residual. Round 21 must freeze a proof-free candidate and
-pass isolated, exact, cross-comparison, fresh-referee, judge, and
-theorem-level gates. The parent `COMP-certified-bessel` obligation remains
-`diagnostic_only`; any promotion should create scoped Round 21 compact and
-aggregate certificate obligations. A future empty-residual State Patch must
-also remove any obsolete diagnostic-parent blocker from the theorem path
-without changing that parent's status. The final all-frequency theorem
-remains open.
+The exact analytic residual is now empty. Nevertheless,
+`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`POLYA-program-target` remain open pending a separate coherent theorem
+assembly, clean-room reconstruction, adversarial theorem referee, and
+program-scope/non-tiling audit. The parent `COMP-certified-bessel` remains
+`diagnostic_only`; its obsolete theorem-path edges are removed and the two
+older pilot boxes remain regression evidence only. Empty residual arithmetic
+is not, by itself, the final theorem promotion.
 
 The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain unproved.
 The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their
 tested proof routes; they are not counterexamples and do not weaken the
 proved endpoint $7/8\le\rho<1$.
+
+The Round 21 spherical-shell non-tiling route and its clean-room addendum are
+reviewed prospective program evidence, not yet graph promotion. They address
+all bounded shells $0<r<R$ under the stated congruent, disjoint-interior,
+almost-everywhere-cover convention. A fresh adversarial geometry review and
+program-scope audit remain mandatory, and the limited literature search is
+not a novelty or publication-priority certificate.

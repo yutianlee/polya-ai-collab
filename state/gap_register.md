@@ -4,77 +4,70 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Active shell gaps
 
-- Close the exact live Round 20 compact residual. With
+- The exact compact residual is closed. Round 21 proves
 
   $$
-  \rho_c=\frac1{1+2\pi},\qquad
-  z_\rho=\frac{\pi}{1-\rho},\qquad
-  k_{11}(\rho)=\sqrt{z_\rho^2+132},
-  $$
-
-  the exact uncovered set is
-
-  $$
-  \boxed{
   \mathcal D_{20}=
-  \left\{\rho_c\le\rho<\frac{39}{50},\quad
-  k_{11}(\rho)<K<K_0(\rho)=U(\rho)\right\}.}
+  \{\rho_c\le\rho<39/50,\ k_{11}(\rho)<K<U(\rho)=K_0(\rho)\}
   $$
 
-  The face $\rho=\rho_c$ is included, $\rho=39/50$ is excluded and owned
-  by the optical theorem, $K=k_{11}$ is included in the Round 20 staircase,
-  and $K=K_0=U$ is excluded. It is not admissible to substitute historical
-  $\mathcal D_{19}$, the larger rational certificate rectangle, or either
-  certificate theorem domain for this exact residual.
-
-- The live residual is nonempty:
+  is the disjoint union of its compact-owned $K\le200$ part and its
+  aggregate-owned $K>200$ part. The exact guards are
+  $7/51<\rho_c$ and $k_{11}(\rho)>12$ only for
+  $\rho_c\le\rho<1$. Consequently the accepted successor residual is
 
   $$
-  k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2),
+  \boxed{\mathcal D_{21}=\varnothing.}
   $$
 
-  so $(1/2,30)\in\mathcal D_{20}$. Closing $\mathcal D_{20}$ is the sole
-  shell blocker. `SHELL-rho-compact`, `SHELL-rho-uniformity`,
-  `TARGET-shell-d3`, and `POLYA-program-target` remain `open`.
+  `CERT-round21-compact-proxy` and `CERT-round21-aggregate-tail` are
+  `certified`; `SHELL-exact-d20-closure` is `proved_internal`.
 
-- Two Round 21 certificate routes have already passed independent
-  adversarial audits but have not been promoted:
+- The active mathematical gap is theorem assembly, not another residual
+  estimate. `SHELL-rho-compact`, `SHELL-rho-uniformity`,
+  `TARGET-shell-d3`, and `POLYA-program-target` remain `open`. A coherent
+  proof must reconstruct the complete unit-shell cover from the promoted
+  graph and explicitly check the seams at $\rho_*$, $\rho_c$, $39/50$, and
+  $7/8$, all frequency faces, the equality case $K=0$, and strict positive
+  counts at eigenvalue walls.
+
+- The theorem assembly must rederive the normalization
 
   $$
-  \frac7{51}\le\rho\le\frac{39}{50},\quad 12\le K\le200
+  L_3=\frac1{6\pi^2},\qquad
+  |A_{\rho,1}|=\frac{4\pi}{3}(1-\rho^3),\qquad
+  L_3|A_{\rho,1}|=\frac{2}{9\pi}(1-\rho^3),
   $$
 
-  is covered by the strict coarse-phase proxy certificate on 10,580 exact
-  rational leaves, and
+  and then scale from $A_{\rho,1}$ to
+  $A_{r,R}=R A_{r/R,1}$ using volume scaling by $R^3$ and eigenvalue
+  scaling by $R^{-2}$.
 
-  $$
-  \rho_c\le\rho\le\frac{39}{50},\quad K\ge200
-  $$
+- A fresh clean-room theorem reviewer must reconstruct the global implication
+  without the incumbent proof draft. A separate adversarial referee must
+  assume `TARGET-shell-d3` false and identify the first unsupported seam,
+  convention, normalization, or scaling step. Only after both pass may a
+  theorem judge propose promoting the compact, uniformity, and shell-target
+  obligations.
 
-  is covered by the aggregate low-interface theorem after an outward Arb
-  positivity certificate on 1,286 ratio boxes. The exact containments
-  $7/51<\rho_c$ and $k_{11}(\rho)>12$ on $\rho\ge\rho_c$ show how these
-  domains could cover the two frequency pieces of $\mathcal D_{20}$, with
-  $K=200$ assigned to exactly one subtraction owner. This is routing
-  evidence only. A proof-free Round 21 candidate, isolated reconstruction,
-  exact/certificate audit, cross-comparison, fresh referee, and judge have
-  not yet promoted their union or an empty successor residual.
+- Before `POLYA-program-target` can be promoted, a separate program-scope
+  audit must verify that the full family of three-dimensional spherical
+  shells is a natural non-tiling Euclidean class and that no ellipse or
+  certificate-family side track is silently claimed as solved. The result
+  must make no publication-priority or novelty claim. The final graph should
+  represent the non-tiling premise with a scoped proved obligation and an
+  explicit dependency, rather than leaving it only in narrative prose.
 
 - The Round 8 box $B_0$ and face-connected Round 17 box $B_1$ remain
-  independent regression evidence inside $\mathcal C_{17}$. They do not
-  subtract again from $\mathcal D_{20}$. `COMP-certified-bessel` remains
-  `diagnostic_only`; the two Round 21 executable certificates are rigorous
-  evidence for their stated analytic routes but do not by themselves change
-  the parent computation status.
+  independent regression evidence inside $\mathcal C_{17}$. They subtract
+  nothing from empty $\mathcal D_{21}$. `COMP-certified-bessel` remains
+  `diagnostic_only` and is now detached from the theorem path. The scoped
+  Round 21 certificates carry the accepted executable evidence.
 
 - The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain
   unproved. The negative screens at $\rho=17/20$ and $\rho=5/6$ are
   obstructions only to the tested extension routes, not counterexamples to
   the shell theorem and not new shell blockers.
-
-- After exact $\mathcal D_{20}$ closure passes its lemma-level gates, perform
-  a separate fresh theorem-level clean-room reconstruction and adversarial
-  audit before promoting the global shell theorem.
 
 ## Closed shell prerequisites
 
@@ -272,11 +265,12 @@ The authoritative statuses are in state/proof_obligations.yml.
   the historical
   $\mathcal D_{18}=\mathcal D_{17}\setminus\mathcal C_{18}$. Round 19 then
   replaces it by historical
-  $\mathcal D_{19}=\mathcal D_{18}\setminus\mathcal C_{19}$. Round 20 now
-  replaces that set by the live one-piece
-  $\mathcal D_{20}=\mathcal D_{19}\setminus\mathcal C_{20}$. Its closure
-  still requires the Round 21 proof-free and independent-review gates even
-  though two rigorously bounded certificate routes are already available.
+  $\mathcal D_{19}=\mathcal D_{18}\setminus\mathcal C_{19}$. Round 20
+  replaced that set by the one-piece
+  $\mathcal D_{20}=\mathcal D_{19}\setminus\mathcal C_{20}$. Round 21 has
+  now closed it, after the full proof-free, isolated, executable-provenance,
+  adversarial, judge, and State-Patch lifecycle, so the accepted residual is
+  $\mathcal D_{21}=\varnothing$.
 - Paying the entire first $\ell=2$ multiplicity immediately above
   $k_2(\rho)$ cannot uniformly continue the Round 17 coarse channel cap:
   the cap becomes $9$, while the Weyl term is below $9$ at the left ratio

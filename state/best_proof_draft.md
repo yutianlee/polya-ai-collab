@@ -1666,7 +1666,7 @@ $$
 $$
 
 On $\rho_c\le\rho<39/50$, neither the $H_0$ nor seam branch is eligible,
-so $U=K_0$ exactly. Exact subtraction yields the live residual
+so $U=K_0$ exactly. Exact subtraction yielded the Round 20 residual
 
 $$
 \boxed{
@@ -1684,16 +1684,87 @@ k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2),
 \tag{R20.16}
 $$
 
-so $(1/2,30)\in\mathcal D_{20}$. Round 20 does not prove the full shell
+so $(1/2,30)\in\mathcal D_{20}$. Round 20 did not prove the full shell
 theorem.
 
-The promotion chronology is part of the proof record. The first candidate
+The Round 20 promotion chronology is part of the proof record. The first candidate
 release failed a final-byte lifecycle audit and was replaced. A3's theorem
 proof passed, while a false comparative-reserve sentence was corrected in an
 immutable addendum. The original A4 verifier and its first replacement each
 failed an independent audit; only the final repaired 587-check bundle is
 positive A4 evidence. The zero-provenance audit, cross-comparison, fresh
 adversarial referee, judge, and State-Patch audit all passed.
+
+## Exact closure of the Round 20 residual (Round 21)
+
+The compact certificate theorem is strict on the closed rectangle
+
+$$
+\frac7{51}\le\rho\le\frac{39}{50},\qquad
+12\le K\le200.
+\tag{R21.1}
+$$
+
+Its deterministic outward-Arb computation partitions the rectangle into
+10,580 exact rational leaves and verifies every finite proxy, strict-wall,
+interface, corner, and coverage predicate. The spectral conclusion uses the
+separately proved analytic bridge; the leaves do not certify Bessel roots.
+
+The aggregate finite computation is confined to the base face $K=200$. On
+$7/51\le\rho\le39/50$, 1,286 outward Arb boxes prove the required base signs
+and derivative-consistency predicates. Independent analytic reconstruction
+proves the derivative, curvature, and two-integration propagation, yielding
+
+$$
+\rho_c\le\rho\le\frac{39}{50},\qquad K\ge200.
+\tag{R21.2}
+$$
+
+No finite box is cited as a proof decision for $K>200$.
+
+The exact comparison guards are
+
+$$
+\frac7{51}<\rho_c,\qquad
+k_{11}(\rho)>12\quad(\rho_c\le\rho<1).
+\tag{R21.3}
+$$
+
+The upper wall in the second guard is essential. It is undefined at
+$\rho=1$ in the shell parametrization and is false if extended to arbitrary
+$\rho>1$. Every point of $\mathcal D_{20}$ satisfies $\rho<39/50<1$, so
+(R21.3) applies exactly where needed.
+
+Define the two subtraction owners
+
+$$
+\mathcal C_{21}=\mathcal D_{20}\cap\{K\le200\},\qquad
+\mathcal T_{21}=\mathcal D_{20}\cap\{K>200\}.
+\tag{R21.4}
+$$
+
+They are disjoint, exhaustive, and assign $K=200$ to the compact theorem.
+Indeed, if $U(\rho)<200$, every residual point is compact-owned; if
+$U(\rho)=200$, the strict upper face still leaves only the compact owner; and
+if $U(\rho)>200$, the two frequency pieces meet without a gap at the
+compact-owned $K=200$ face.
+The faces $\rho=39/50$, $K=k_{11}(\rho)$, and $K=U(\rho)$ are outside
+$\mathcal D_{20}$ and are not subtracted again. Thus
+
+$$
+\boxed{\mathcal D_{21}=\varnothing.}
+\tag{R21.5}
+$$
+
+The accepted lifecycle preserves two defects. The first judge stated the
+second guard without $\rho<1$. The first scoped replacement then used a
+loader that could hash source but execute a timestamp-valid adjacent `.pyc`.
+The final wrapper reads and hashes the producer source once, strict-decodes
+and compiles those same bytes, and executes them without a loader or cache.
+An isolated regression test installs a conflicting timestamp-valid `.pyc`
+and proves that source semantics win. Final exact re-audit, cross-comparison,
+fresh adversarial referee, provenance/isolation audit, judge, and both State
+Patch audits pass. Superseded cycles are negative chronology, not support.
 
 ## Certified central regression boxes
 
@@ -1753,35 +1824,39 @@ $$
 
 Both certificates therefore remain independent regression evidence but are
 analytically redundant after promotion of the Round 17 band. They do not
-subtract anything further from $\mathcal D_{20}$, do not promote sampled
+subtract anything from the accepted cover or empty $\mathcal D_{21}$, do not promote sampled
 numerics to proof, and do not make `COMP-certified-bessel` more than
 `diagnostic_only`.
 
 ## Remaining gates
 
-This file must not be cited as a proof of the full shell theorem. The open
-obligations `SHELL-rho-compact`, `SHELL-rho-uniformity`,
-`TARGET-shell-d3`, and `POLYA-program-target` remain open. The gates are:
+This file now contains every promoted analytic component through empty
+$\mathcal D_{21}$, but the graph deliberately has not yet promoted the full
+theorem. `SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`POLYA-program-target` remain open. The remaining gates are:
 
-- exact closure of the one-piece residual $\mathcal D_{20}$ in (R20.15),
-  without replacing it by either larger certificate domain;
-- preservation of the exact accepted mask $\mathcal A_{20}$ and ownership of
-  $\rho=\rho_c$, $\rho=39/50$, $K=k_{11}$, and $K=K_0=U$;
-- a proof-free Round 21 candidate that may route $K\le200$ to the already
-  audited compact coarse-proxy certificate and $K>200$ to the already
-  audited aggregate tail certificate, with exact containment and one
-  subtraction owner at $K=200$. Neither route is promoted merely because
-  its certificate and adversarial audit already pass;
-- narrowly scoped compact-proxy and aggregate-tail certificate obligations
-  if promotion is justified; the legacy `COMP-certified-bessel` stays
-  `diagnostic_only`, and any obsolete dependency or blocker from that parent
-  to the theorem target must be removed explicitly rather than silently
-  treated as discharged;
-- isolated reconstruction, exact/certificate re-audit, cross-comparison, and
-  a fresh lemma-level referee for the combined $\mathcal D_{20}$ closure;
-- only after exact residual closure, a separate fresh theorem-level
-  clean-room reconstruction and adversarial review of the global shell
-  implication. Agent consensus is not proof, and executable certificates
-  establish only the analytic implications and signs they authenticate. A
-  final program-scope audit must separately check that no other project track
-  is claimed by the spherical-shell theorem.
+- assemble one explicit unit-shell cover for every $0<\rho<1$ and $K\ge0$,
+  with no gap or overlap error at $\rho_*$, $\rho_c$, $39/50$, $7/8$, the
+  high-frequency wall, or any moving staircase face;
+- state the strict counting convention at eigenvalue walls and isolate the
+  equality $N_D(A_{\rho,1},0)=0=W(\rho,0)$; every $K>0$ branch must retain
+  the strict comparison supplied by its owner;
+- rederive
+  $L_3=1/(6\pi^2)$,
+  $|A_{\rho,1}|=(4\pi/3)(1-\rho^3)$, and hence
+  $L_3|A_{\rho,1}|=(2/(9\pi))(1-\rho^3)$;
+- scale from unit shells to arbitrary
+  $A_{r,R}=R A_{r/R,1}$, using Dirichlet eigenvalue scaling by $R^{-2}$ and
+  volume scaling by $R^3$;
+- run a fresh clean-room theorem reconstruction that receives the promoted
+  obligations but not this incumbent draft, followed by a distinct referee
+  instructed to assume the shell theorem false and locate the first
+  unsupported implication;
+- prove and audit the non-tiling scope of the full spherical-shell family,
+  make no publication-priority claim, and ensure the ellipse and
+  certificate-family parallel tracks are not treated as solved; represent
+  that geometric premise by a scoped graph obligation and explicit program
+  dependency; and
+- only then issue a theorem judge and independently audited final State
+  Patch. Agent consensus is not proof, and executable certificates establish
+  only the exact analytic predicates they authenticate.

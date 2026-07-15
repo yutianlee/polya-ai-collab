@@ -6,13 +6,17 @@ The authoritative graph is `state/proof_obligations.yml`. The primary target is 
 
 Next run id: `polya-main`.
 
-## Current theorem boundary (Round 20)
+## Current theorem boundary (Round 21 lemma patch applied)
 
-The authoritative graph is the already-applied Round 20 graph, SHA-256
-`313eed3a0f789e83fbd809c787590de80cb40946f307f50fd3eba53735d355bd`.
-It contains 57 obligations. The exact separated spectrum, both endpoint
+The authoritative graph is the audited post-Round-21 graph, SHA-256
+`a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224`.
+It contains 60 obligations. Commit `13e9534` applies the final lemma State
+Patch exactly once. The graph validator and the independent post-application
+audit both pass.
+
+The exact separated spectrum, strict counting convention, both endpoint
 theorems, the all-ratio high-frequency theorem, and every accepted staircase
-through Round 19 remain in force. Put
+through Round 20 remain in force. Put
 
 $$
 \rho_c=\frac1{1+2\pi},\qquad
@@ -27,8 +31,7 @@ d=\frac{\sqrt{337}}2,\qquad
 W(\rho,K)=\frac{2}{9\pi}(1-\rho^3)K^3.
 $$
 
-Round 20 proves three new conclusions. It closes the complete lower part of
-the accepted Round 19 residual,
+Round 20 closed the complete lower part of the accepted Round 19 residual,
 
 $$
 \mathcal D_{19}^{\rm low}=
@@ -37,7 +40,7 @@ $$
 \{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\},
 $$
 
-extends the closed high staircase to
+extended the closed high staircase to
 
 $$
 \boxed{\rho_c\le\rho\le\frac78,\quad z_\rho\le K\le k_{11}(\rho)}
@@ -45,7 +48,7 @@ $$
 N_D(A_{\rho,1},K^2)<W(\rho,K),
 $$
 
-and proves the all-frequency optical theorem
+and proved the all-frequency optical theorem
 
 $$
 \boxed{\frac{39}{50}\le\rho<1,\quad K\ge0}
@@ -64,7 +67,7 @@ $$
 \end{aligned}}
 $$
 
-Exact subtraction gives the single live residual
+Exact subtraction at the end of Round 20 gave the historical residual
 
 $$
 \boxed{
@@ -75,7 +78,7 @@ $$
 
 The face $\rho=\rho_c$ remains in the residual only strictly above
 $k_{11}$; $K=k_{11}$ is staircase-owned; $\rho=39/50$ is optical-owned;
-and $K=K_0=U$ is excluded. On the live ratio interval the $H_0$ and seam
+and $K=K_0=U$ is excluded. On that ratio interval the $H_0$ and seam
 branches are ineligible, so $U=K_0$ exactly. The inherited certified boxes
 $B_0,B_1$ remain regression evidence inside earlier analytic coverage and
 are not subtracted again.
@@ -96,43 +99,79 @@ multiplicity cap, and Weyl payment is internal. The order-$17/2$ and
 $19/2$ bounds also have independent internal derivations, even though the
 same Lorch formula implies them.
 
-The residual is nonempty. Since $\rho_c<1/2<39/50$,
+This Round 20 residual was nonempty. Since $\rho_c<1/2<39/50$,
 
 $$
 k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2),
 $$
 
-so $(1/2,30)\in\mathcal D_{20}$. Therefore `SHELL-rho-compact`,
-`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target`
-remain `open`; `COMP-certified-bessel` remains `diagnostic_only`.
+so $(1/2,30)\in\mathcal D_{20}$. Round 21 now closes this residual.
 
-Every Round 20 promotion gate passed, with its failure chronology preserved.
-The residual freeze and independent audit passed. The first released
-candidate failed final-byte review because its freeze lifecycle was circular;
-the corrected candidate and freeze then passed an independent final-byte
-audit. A3 returned PASS, and its false comparative-reserve sentence was
-isolated and corrected by an immutable addendum without changing the theorem
-verdict. Two A4 bundles failed in sequence: the first omitted the live
-cap-74 payment and contained disconnected checks; the first replacement had
-a control byte and mutation-insensitive checks. Only the second repaired A4
-bundle is positive evidence: 587 exact checks, comprising 488 substantive,
-65 bookkeeping, and 34 authentication checks, plus 17 focused tests. The
-zero-provenance audit, cross-comparison, fresh adversarial referee, judge,
-and independent State-Patch audit all passed.
+The accepted compact certificate proves the strict coarse-proxy comparison
+on the closed rectangle
 
-Round 21 already contains two independently audited certificate routes: a
-closed compact rectangle $7/51\le\rho\le39/50$, $12\le K\le200$, and an
-aggregate tail theorem on $\rho_c\le\rho\le39/50$, $K\ge200$. They are
-promising inputs to a new proof-free Round 21 candidate, but neither route,
-their exploratory synthesis, nor an empty successor residual is promoted in
-the graph. Exact $\mathcal D_{20}$ closure and theorem-level review remain
-mandatory before any global target can change status. Any later promotion
-should use narrowly scoped compact-proxy and aggregate-tail certificate
-obligations rather than broadening `COMP-certified-bessel`; the legacy parent
-stays `diagnostic_only`. If exact closure makes that parent unnecessary on
-the theorem path, the future State Patch must remove its obsolete target
-blocker/dependency while preserving its status, then pass separate
-theorem-level and program-scope audits.
+$$
+\frac7{51}\le\rho\le\frac{39}{50},\qquad 12\le K\le200,
+$$
+
+using 10,580 exact rational leaves. The accepted aggregate certificate proves
+only its finite base signs on the exact ratio superset at $K=200$, using 1,286
+outward Arb boxes. A separately reconstructed analytic derivative, curvature,
+and two-integration chain propagates those base signs to
+
+$$
+\rho_c\le\rho\le\frac{39}{50},\qquad K\ge200.
+$$
+
+The exact guards
+
+$$
+\frac7{51}<\rho_c,\qquad
+k_{11}(\rho)>12\quad(\rho_c\le\rho<1)
+$$
+
+put every point of $\mathcal D_{20}$ in exactly one of
+
+$$
+\mathcal C_{21}=\mathcal D_{20}\cap\{K\le200\},\qquad
+\mathcal T_{21}=\mathcal D_{20}\cap\{K>200\}.
+$$
+
+The face $K=200$ is compact-owned. The faces $\rho=39/50$,
+$K=k_{11}(\rho)$, and $K=U(\rho)$ were already outside
+$\mathcal D_{20}$ and are not subtracted again. Hence
+
+$$
+\boxed{\mathcal D_{21}=\varnothing.}
+$$
+
+The graph now records `CERT-round21-compact-proxy` and
+`CERT-round21-aggregate-tail` as `certified`, and
+`SHELL-exact-d20-closure` as `proved_internal`.
+
+Round 21's failure chronology is part of the result. The first lemma judge
+overstated the guard as $k_{11}(\rho)>12$ for every $\rho\ge\rho_c$; this is
+undefined at $\rho=1$ and false beyond the shell domain. The scoped repair
+then failed because its loader could hash source while executing an adjacent
+timestamp-valid `.pyc`. The accepted wrapper reads and hashes the exact
+producer bytes once, strict-decodes and compiles those bytes directly, and
+executes them in a registered cache-free module. Isolated tests forced a
+conflicting timestamp `.pyc` and proved that source semantics, not cached
+bytecode, were used. The final A4 replacement, cross-comparison, fresh
+adversarial referee, provenance/isolation audit, lemma judge, pre-application
+State-Patch audit, and post-application audit all passed. Superseded unscoped,
+stale-hash, and cache-vulnerable cycles remain negative chronology.
+
+No higher theorem status changed. `SHELL-rho-compact`,
+`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` remain
+`open`. `COMP-certified-bessel` remains `diagnostic_only`; its obsolete
+theorem-path dependency, blocker, and implication were removed, while the
+two legacy pilot boxes remain regression evidence. The next admissible step
+is a coherent theorem assembly checking $K=0$, every ratio seam, strict
+counting, Weyl-volume normalization, and scaling, followed by a fresh
+clean-room theorem reconstruction, a separate adversarial theorem referee,
+and a program-scope/non-tiling audit. Empty $\mathcal D_{21}$ alone is not
+the final theorem promotion.
 
 ## Historical boundary through Round 18
 
@@ -312,7 +351,8 @@ At the end of Round 18, the all-frequency shell theorem was not proved and
 its shell blocker was the nonempty two-piece set $\mathcal D_{18}$.
 This is historical bookkeeping. Round 19 superseded it by
 $\mathcal D_{19}$, which is also historical now.
-The authoritative live residual is $\mathcal D_{20}$ stated above.
+Round 20 later superseded those sets by $\mathcal D_{20}$, and Round 21
+closed that residual as recorded in the current boundary above.
 The then-used witness was
 
 $$
@@ -321,8 +361,8 @@ $$
 
 so $(1/2,30)\in\mathcal D_{18}$. At the end of Round 19 the same targets
 remained open for the strictly smaller residual $\mathcal D_{19}$, which is
-historical now. After Round 20 they remain open for the live
-$\mathcal D_{20}$.
+historical now. After Round 20 they remained open for $\mathcal D_{20}$;
+after Round 21 they remain open only for theorem assembly and review.
 
 At the left ratio face,
 
@@ -1064,7 +1104,7 @@ remain valid regression certificates inside $\mathcal C_{17}$ and are not
 subtracted again. The witness $(1/2,30)$ proved that this historical
 $\mathcal D_{18}$ was nonempty. Round 19 superseded this routing by
 $\mathcal D_{19}$, which is now historical.
-The authoritative live residual is $\mathcal D_{20}$. At $\rho_c$ the ordering
+The then-authoritative Round 20 residual was $\mathcal D_{20}$. At $\rho_c$ the ordering
 $k_5<2z<k_6$ marked the historical Round 18 radial-entry method boundary;
 it was not a spectral counterexample, and Round 19 resolves it through
 $k_6$.
@@ -1135,7 +1175,28 @@ The strict witness $(1/2,30)$ keeps every theorem-level target open. The
 source boundary, candidate release failure and repair, A3 addendum, both
 failed A4 cycles, final A4 repair, cross-comparison, fresh referee, judge,
 and State-Patch audit are all retained in their exact chronological roles.
-Round 21 must now freeze this accepted one-piece residual, issue a new
-proof-free claim, and review the compact and aggregate certificate routes as
-one exact set subtraction. Their existing audited reports are evidence to be
-considered, not graph promotion and not yet an empty-residual judgment.
+Round 21 later froze this accepted one-piece residual, repaired the domain and
+source-execution defects described in the current theorem boundary, and
+promoted its exact closure.
+
+## Round 21 Lemma Update
+
+Date: 2026-07-15
+
+See `rounds/polya-main/round_021/judge/judge-021-lemma.md`,
+`rounds/polya-main/round_021/reviews/state-patch-lemma-audit-source-exec-final.md`,
+and
+`rounds/polya-main/round_021/reviews/state-patch-lemma-application-audit.md`.
+
+Round 21 creates the certified compact and aggregate obligations and the
+proved-internal exact-$\mathcal D_{20}$ closure. The compact owner includes
+$K=200$ and the aggregate subtraction owner uses $K>200$; the aggregate
+finite computation itself remains confined to its $K=200$ base signs. The
+exact guard $k_{11}(\rho)>12$ is asserted only for
+$\rho_c\le\rho<1$. Exact face bookkeeping gives
+$\mathcal D_{21}=\varnothing$.
+
+This is a lemma-level promotion only. The compact assembly, all-ratio
+uniformity, unit-shell target, and program target remain open until the
+full theorem is assembled and separately audited. The legacy Bessel parent
+remains diagnostic and is detached from the theorem path.

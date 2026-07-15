@@ -1,262 +1,179 @@
 # Next Round Prompts
 
-Round: 21
+Date: 2026-07-15
 
-Canonical graph: `state/proof_obligations.yml`, SHA-256
-`313eed3a0f789e83fbd809c787590de80cb40946f307f50fd3eba53735d355bd`.
+Next phase: Round 22 theorem assembly and independent final review.
 
-## Accepted boundary after Round 20
+## Accepted boundary
 
-Put
+The authoritative graph is the 60-obligation post-Round-21 graph. Its
+SHA-256 is
+`a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224`.
+Round 21 promotes:
 
-$$
-\rho_c=\frac1{1+2\pi},\qquad
-z_\rho=\frac{\pi}{1-\rho},\qquad
-k_m(\rho)=\sqrt{z_\rho^2+m(m+1)}.
-$$
+- `CERT-round21-compact-proxy` as `certified`;
+- `CERT-round21-aggregate-tail` as `certified`; and
+- `SHELL-exact-d20-closure` as `proved_internal`.
 
-Round 20 has promoted all three of the following:
-
-1. strict Pólya on the complete lower part of $\mathcal D_{19}$;
-2. the closed high staircase
-
-   $$
-   \rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_{11}(\rho);
-   $$
-
-3. the all-frequency optical theorem
-
-   $$
-   \frac{39}{50}\le\rho<1,\qquad K\ge0,
-   $$
-
-   with equality only at $K=0$.
-
-`SRC-ROUND20-BESSEL-ZEROS` is a qualified external dependency only for the
-first-positive-zero payload $j_{21/2,1}>69/5$ and the labelled DLMF
-identities. All higher-radial zeros, strengthened lower-order first zeros,
-shell comparisons, angular propagation, inventories, multiplicities, and
-payments are internal.
-
-The historical $\mathcal D_{19}$ is superseded and must not be used as the
-current target.
-
-## Exact live residual to freeze
-
-Before adapting either Round 21 route into a candidate, freeze the exact
-accepted set
+The historical residual
 
 $$
-\boxed{
 \mathcal D_{20}=
-\left\{\rho_c\le\rho<\frac{39}{50},\quad
-k_{11}(\rho)<K<K_0(\rho)=U(\rho)\right\}.}
+\{\rho_c\le\rho<39/50,\ k_{11}(\rho)<K<U(\rho)=K_0(\rho)\}
 $$
 
-The freeze and its independent audit must authenticate:
-
-- the applied Round 20 graph and every accepted dependency byte;
-- exact equality $U=K_0$ throughout the live ratio interval;
-- inclusion of $\rho=\rho_c$ and exclusion of $\rho=39/50$;
-- exclusion of $K=k_{11}$ and $K=K_0=U$ from the residual;
-- staircase ownership of $K=k_{11}$ and optical ownership of
-  $\rho=39/50$;
-- the strict nonempty witness
-  $k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2)$;
-- retention of $B_0,B_1$ as regression evidence without another
-  subtraction;
-- that no Round 21 certificate, route note, or proposed empty residual is
-  encoded in the pre-candidate classifier.
-
-The residual freeze must precede the proof-free candidate freeze.
-
-## Audited Round 21 routes, still unpromoted
-
-Two route families are available as incumbent evidence.
-
-The compact coarse-proxy certificate proves the stronger closed rectangle
+is exactly split into compact-owned $K\le200$ and aggregate-owned $K>200$.
+The exact guards are $7/51<\rho_c$ and
+$k_{11}(\rho)>12$ for $\rho_c\le\rho<1$. Therefore
 
 $$
-\boxed{
-\frac7{51}\le\rho\le\frac{39}{50},\qquad 12\le K\le200
-}
-\quad\Longrightarrow\quad
-N_D(A_{\rho,1},K^2)<W(\rho,K).
+\boxed{\mathcal D_{21}=\varnothing.}
 $$
 
-Its 256-bit verifier uses 10,580 exact rational leaves, exact coverage and
-half-open face ownership, strict phase counts at integer walls, and certain
-Arb comparisons. Its independent adversarial audit passed.
+This is already graph state, not exploratory routing. Do not rerun or
+reapply the Round 21 lemma patch.
 
-The aggregate low-interface route and outward certificate prove
+`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`POLYA-program-target` remain `open`. `COMP-certified-bessel` remains
+`diagnostic_only` and is detached from the theorem path.
 
-$$
-\boxed{
-\rho_c\le\rho\le\frac{39}{50},\qquad K\ge200
-}
-\quad\Longrightarrow\quad
-N_D(A_{\rho,1},K^2)<W(\rho,K).
-$$
+## A1: freeze one theorem-assembly claim
 
-The certificate proves the three base signs at $K=200$ on 1,286 outward Arb
-ratio boxes; the exact derivative reduction propagates them to all
-$K\ge200$. Its independent adversarial audit passed.
+Create a proof-free theorem packet from the promoted graph. It must state,
+without importing incumbent proof prose:
 
-Neither theorem is in the obligation graph. The exploratory synthesis
-`rounds/polya-main/round_021/exploration/exact-d20-closure.md` predates the
-Round 20 promotion and remains a prospective incumbent note, not a freeze,
-review verdict, or State Patch.
+1. the exact strict counting convention;
+2. the separated shell spectrum and multiplicities;
+3. the complete accepted cover for every $0<\rho<1$ and every $K>0$;
+4. ownership of every ratio and frequency seam, including
+   $\rho_*$, $\rho_c$, $39/50$, $7/8$, $K=200$, the high-frequency wall,
+   and all moving staircase faces;
+5. $N_D(A_{\rho,1},0)=0$ and equality at $K=0$;
+6. the Weyl normalization
+   $$
+   L_3=\frac1{6\pi^2},\qquad
+   |A_{\rho,1}|=\frac{4\pi}{3}(1-\rho^3),\qquad
+   L_3|A_{\rho,1}|=\frac{2}{9\pi}(1-\rho^3);
+   $$
+7. scaling from $A_{\rho,1}$ to every
+   $A_{r,R}=\{x\in\mathbb R^3:r<|x|<R\}$ using
+   $\rho=r/R$, eigenvalue scaling by $R^{-2}$, and volume scaling by $R^3$;
+8. the exact conclusion for all $\Lambda\ge0$; and
+9. a strict scope statement: three-dimensional spherical shells only, with
+   no novelty or publication-priority claim.
 
-## Proof-free Round 21 candidate
+Freeze and hash the final packet before any reviewer receives it. A separate
+scope audit must compare its dependency list, seams, constants, and conclusion
+against the applied graph.
 
-After the residual freeze, create proof-free certificate contracts and one
-new proof-free closure claim. The contracts must state only the compact and
-aggregate theorem domains, accepted foundational dependencies, exact
-certificate conditions, face conventions, and falsification cases. They must
-not expose or cite the incumbent reports, route proofs, verifier code, test
-implementations, adversarial audits, or exploratory synthesis to isolated
-A3. The closure claim may propose
+## A3: fresh clean-room theorem reconstruction
 
-$$
-\mathcal C_{21}=\mathcal D_{20}\cap\{K\le200\},\qquad
-\mathcal T_{21}=\mathcal D_{20}\cap\{K>200\},
-$$
+Give a new reviewer only the frozen theorem packet, the authoritative graph,
+the promoted obligation artifacts it names, and foundational source records.
+Do not provide `state/best_proof_draft.md`, prior synthesis prose, a proposed
+judge, or any theorem-level review written by another agent.
 
-with $K=200$ assigned to the compact subtraction owner even though both
-theorems cover that face. The candidate must contain only:
+Require the reviewer to reconstruct:
 
-- the exact theorem statements and proposed genuinely new set;
-- definitions, accepted dependencies, and a strict dependency whitelist;
-- the exact inequalities $7/51<\rho_c$ and
-  $k_{11}(\rho)>12$ on $\rho\ge\rho_c$;
-- all included and excluded ratio and frequency faces;
-- the exact disjoint-union and subtraction truth table;
-- a proposed successor residual, explicitly labelled a proposal until the
-  review and judge gates pass;
-- exhaustive falsification cases, including every face at
-  $7/51,\rho_c,39/50,12,k_{11},200,K_0=U$;
-- source and computation scope, with decimal displays excluded from proof.
+- the union of endpoint, high-frequency, staircase, Round 20, and Round 21
+  owners as an exhaustive cover of $(0,1)\times(0,\infty)$;
+- every included/excluded seam and strict eigenvalue wall;
+- the transition from strict $K>0$ estimates to the non-strict $K=0$ theorem;
+- the Weyl coefficient and shell volume product from first principles; and
+- the scaling identity for arbitrary inner and outer radii.
 
-Do not cite or reveal incumbent proofs inside the candidate. Freeze the
-candidate and release record as raw bytes before isolated review begins.
-The candidate may propose an empty successor residual, but the repository
-must not state that the live residual is empty at this stage.
+The report must end with **PASS** or **FAIL** and name the first unsupported
+implication. Agreement with an incumbent is not evidence.
 
-## A3 isolated reconstruction
+## A4: theorem-assembly and provenance audit
 
-A3 receives only the proof-free candidate and certificate contracts, the
-independently audited $\mathcal D_{20}$ freeze, and the whitelisted
-foundational packets. A3 must
-not read the Round 21 route proofs, certificate reports, adversarial audits,
-or exploratory synthesis. It must independently reconstruct:
+Independently authenticate every promoted dependency used by the packet.
+Check that:
 
-- the strict phase-count reduction to the coarse proxy;
-- monotonicity in both rectangle variables across the zero-extension and
-  active-channel interfaces;
-- the exact strict-integer-wall rule and opposite-corner implication;
-- the aggregate low-tail summation and strict reserve implication;
-- every derivative formula, sign reversal, base-frequency propagation, and
-  the $\rho=1/2$ branch;
-- $7/51<\rho_c$ and $k_{11}>12$ without decimal approximations;
-- exact $K<200$, $K=200$, $K>200$ exhaustiveness and unique subtraction
-  ownership;
-- containment in the accepted $\mathcal D_{20}$ and the proposed successor
-  subtraction;
-- status calibration and the prohibition on theorem-level promotion before
-  the later global audit.
+- the Round 21 graph, judge, and both State-Patch audits have the current
+  bytes and are not reapplied;
+- the compact computation owns 10,580 finite leaves only;
+- the aggregate computation owns 1,286 finite base boxes at $K=200$ only,
+  while the universal $K\ge200$ result is analytic;
+- the accepted source-execution wrapper, not a stale or cache-vulnerable
+  predecessor, is the positive Round 21 executable route;
+- no historical $\mathcal D_j$ is substituted for its successor;
+- no seam is omitted or double-owned; and
+- no diagnostic-only or parallel-track artifact is promoted by prose.
 
-Return **PASS** or **FAIL** with the first unsupported implication.
+Preserve the Round 21 defect chronology: the unrestricted
+$k_{11}(\rho)>12$ claim failed, and the first scoped loader could execute a
+timestamp-valid adjacent `.pyc` after hashing source. These failed cycles
+remain negative evidence.
 
-## A4 certificate and exact-set audit
+## Fresh adversarial theorem referee
 
-A4 independently audits both executable certificates, their fixed inputs,
-and the proposed subtraction. It must:
+After A3 and A4 finish, give a different fresh reviewer the frozen theorem
+packet and authenticated final evidence. Instruct the reviewer:
 
-- authenticate every dependency and executable byte;
-- replay the compact certificate at its frozen precision and a higher
-  precision, including every exact leaf and coverage invariant;
-- perturb packet hashes, stored proxy counts, integer walls, cutoffs,
-  interfaces, leaves, and shared-face ownership;
-- replay all aggregate boxes, both $\eta_\rho$ regimes, the precision gate,
-  and the derivative identities;
-- perturb each aggregate input hash and required sign;
-- verify that no binary float or display decimal reaches a proof decision;
-- implement an independent exact truth table for $\mathcal D_{20}$ split at
-  $K=200$ and every outer face.
+> Assume `TARGET-shell-d3` is false. Reconstruct the cover, counting
+> convention, $K=0$ case, constants, and scaling. Identify the first
+> unsupported implication or certify that none exists.
 
-Executable evidence certifies only the analytic signs and exact partitions
-it checks; it does not replace A3's theorem reconstruction.
+The referee must test at least the four ratio seams, $K=0$, $K=200$, every
+strict staircase boundary, the transition at the global high-frequency wall,
+and arbitrary-radius scaling.
 
-## Cross-comparison and fresh lemma referee
+## Non-tiling and program-scope audit
 
-After A3 and A4:
+Separately prove that no bounded three-dimensional spherical shell tiles
+Euclidean space by translations or by rigid motions under the stated tiling
+notion. Authenticate the existing non-tiling route and its clean-room and
+typography addenda, repair any gap, and state exactly which shell class the
+argument covers.
 
-1. compare the compact and aggregate incumbents, isolated proof, both
-   adversarial certificate audits, and exact-set truth table line by line;
-2. preserve every discrepancy and repair cycle chronologically;
-3. give a fresh referee the frozen claim and authenticated final evidence;
-4. require the referee to assume the claim false and reconstruct every
-   spectral bridge, derivative, strict wall, containment, and set face;
-5. require **PASS** or **FAIL** with the first unsupported implication.
+Then audit `POLYA-program-target`:
 
-Only after these gates may a Round 21 lemma judge draft a State Patch for
-the exact $\mathcal D_{20}$ closure. If the evidence supports promotion, the
-patch should create narrowly scoped obligations such as
-`CERT-round21-compact-proxy` and `CERT-round21-aggregate-tail`, each with its
-own theorem domain, authenticated executable evidence, source boundary, and
-review artifacts. It must not promote or broaden the legacy parent
-`COMP-certified-bessel`, which remains `diagnostic_only`. The patch must
-receive an independent State-Patch audit and pass the full repository
-validation before application.
+- the proved class must be the full natural family of 3D spherical shells;
+- the class must meet the stated non-tiling requirement;
+- the ellipse and certificate-family tracks remain outside the claim; and
+- no literature search is described as a novelty certificate or priority
+  claim.
 
-If exact closure makes the diagnostic parent unnecessary as a target
-premise, the same final State Patch must remove the obsolete
-`COMP-certified-bessel` blocker/dependency from `TARGET-shell-d3` and any
-other theorem path that no longer logically requires it, while retaining the
-parent obligation and its `diagnostic_only` status. The audit must verify both
-directions of that graph change and ensure the new scoped certificate
-obligations, rather than the diagnostic parent, carry the actual Round 21
-evidence.
+If the geometry passes, the final patch should create a narrowly scoped
+proved-internal non-tiling obligation (for example,
+`SHELL-spherical-shell-nontiling`) and make the program target depend on it,
+unless the judge gives an equally explicit graph representation of that
+premise. The obligation must state the exact tiling convention and the full
+$0<r<R$ domain. Calibrate the word "new" in the program target as new to this
+program's proved class, not as a publication-priority assertion.
 
-## Separate theorem-level review after exact closure
+## Final judge and State Patch
 
-Do not combine the lemma review with final theorem promotion. Only after an
-accepted Round 21 State Patch makes the successor residual exactly empty may
-a new clean-room reviewer reconstruct the full shell theorem from the
-promoted graph, including:
+Only after the theorem clean-room report, A4 assembly audit, fresh adversarial
+referee, non-tiling proof audit, and program-scope audit all pass may a judge
+propose status changes for:
 
-- the separated spectrum and strict endpoint convention;
-- both complete endpoint theorems;
-- the global high-frequency theorem;
-- the exact chain of compact residual subtractions through Round 21;
-- every ratio and frequency face and the equality case $K=0$.
+- `SHELL-rho-compact`;
+- `SHELL-rho-uniformity`;
+- `TARGET-shell-d3`; and
+- `POLYA-program-target`.
 
-A separate fresh adversarial theorem referee must then assume
-`TARGET-shell-d3` false and identify the first unsupported implication. Only
-a later theorem judge may propose promoting `SHELL-rho-compact`,
-`SHELL-rho-uniformity`, `TARGET-shell-d3`, or `POLYA-program-target`. Before
-the program target changes status, a separate program-scope audit must check
-that the promoted result is exactly the 3D spherical-shell theorem claimed by
-the project, that no ellipse or fallback-certificate track is silently
-treated as solved, and that every target/blocker edge matches the proved
-scope.
+It may also create the scoped non-tiling obligation and corresponding
+dependency described above. The patch must reconcile the remaining logical
+blocker chain from compact assembly to uniformity to the shell target rather
+than merely changing status labels.
+
+The judge must not broaden the two scoped Round 21 certificates or the legacy
+diagnostic Bessel parent. Independently audit the proposed State Patch against
+the current 60-node graph, apply it exactly once only if the audit passes,
+then regenerate derived state and run the complete repository validation.
 
 ## Mandatory do-not-claim rules
 
-- Do not call $\mathcal D_{20}$ empty before the proof-free claim, isolated
-  reconstruction, certificate audit, fresh referee, judge, and applied State
-  Patch all pass.
-- Do not treat either larger certificate domain as the residual itself.
-- Do not use the pre-promotion conditional wording of the exploratory
-  synthesis as current state authority.
-- Do not double-subtract the shared face $K=200$.
-- Do not include $\rho=39/50$, $K=k_{11}$, or $K=K_0=U$ in
-  $\mathcal D_{20}$.
-- Do not replace strict positive-integer counts by ordinary floors at integer
-  walls.
-- Do not attribute internal shell comparisons or higher-radial zeros to
-  Lorch, DLMF, FLPS, or the annulus source.
-- Do not call sampled floats, displayed decimal margins, or agent agreement
-  proof.
-- Do not begin theorem-level promotion review until exact $\mathcal D_{20}$
-  closure is already promoted.
+- Empty $\mathcal D_{21}$ is an accepted lemma, but it is not yet a promoted
+  full theorem.
+- Do not broaden $k_{11}(\rho)>12$ beyond $\rho_c\le\rho<1$.
+- Do not call the aggregate finite computation an all-$K$ certificate.
+- Do not replace strict positive-eigenvalue counts by ordinary floors at
+  integer walls.
+- Do not omit the equality case $K=0$.
+- Do not claim arbitrary shells before the scaling calculation is explicit.
+- Do not infer proof from tests, displayed decimals, or agent consensus.
+- Do not promote the program target before the non-tiling and scope audits.
+- Do not claim novelty or publication priority.

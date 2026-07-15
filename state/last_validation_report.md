@@ -2,186 +2,160 @@
 
 Date: 2026-07-15
 
-Round: 20 post-promotion synchronization
+Round: 21 lemma post-application synchronization
 
-## Promotion decision
+## Decision
 
-**PASS. First unsupported implication: none.**
+**PASS. First unsupported implication: none at the Round 21 lemma boundary.**
 
-The Round 20 State Patch was applied exactly once at commit `aaa9e4a`. The
+This is not a full-theorem promotion report. It authenticates the exact
+closure of the Round 20 residual and the synchronized state from which the
+separate theorem-level lifecycle begins.
+
+The audited State Patch was applied exactly once in commit `13e9534`. The
 authoritative graph is `state/proof_obligations.yml`, SHA-256
-`313eed3a0f789e83fbd809c787590de80cb40946f307f50fd3eba53735d355bd`.
-It contains 57 unique obligation IDs and validates with no dangling or
-duplicate relationship, impermissible dependency, or graph cycle.
+`a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224`.
+It contains 60 unique obligations and validates with no dangling reference,
+impermissible dependency, duplicate relationship, or graph cycle.
 
-Created obligations:
+The realized patch operation is exact:
 
-- `SRC-ROUND20-BESSEL-ZEROS`: `proved_external_dependency`;
-- `SHELL-combined-closure`: `proved_internal`.
+- 57 obligations before and 60 after;
+- 3 creates;
+- 13 updates;
+- 0 rejected operations; and
+- no pre-existing status change.
 
-No existing mathematical status changed. In particular,
-`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
-`POLYA-program-target` remain `open`; `COMP-certified-bessel` remains
-`diagnostic_only`.
+The independent post-application audit is
+`rounds/polya-main/round_021/reviews/state-patch-lemma-application-audit.md`,
+SHA-256
+`c81fdc03124c3bd6c2b818b93810bd64b184b06735fd8a5cd72d59f0e0e158ef`.
+It reconstructs the patch in memory from the committed 57-node baseline and
+finds exact equality with the applied graph after normalizing only the single
+generated application timestamp.
 
-## Promoted source boundary
+## Promoted lemma boundary
 
-The new source obligation contributes only Lorch's qualified strict
-first-positive-zero specialization
+The three created obligations are:
 
-$$
-j_{21/2,1}>\frac{69}{5},
-$$
-
-together with the labelled DLMF spherical/ordinary identity, explicit
-half-integer formulas, and recurrences. Exact positive-side algebra verifies
-the Lorch consequence. The same source formula implies the displayed
-order-$17/2$ and order-$19/2$ bounds, but both have independent internal
-derivations from $j_{15/2,1}>23/2$ and same-index angular min--max.
-
-Every $n\ge2$ zero, the strengthened first-zero bounds at orders $13/2$ and
-$15/2$, root enumeration, ODE simplicity, shell-to-ball comparison, angular
-propagation, inventory, multiplicity cap, Weyl payment, and residual
-subtraction is internal. No source supplies a shell cross-product zero.
-
-## Promoted analytic closure
+- `CERT-round21-compact-proxy`: `certified`;
+- `CERT-round21-aggregate-tail`: `certified`; and
+- `SHELL-exact-d20-closure`: `proved_internal`.
 
 Let
 
 $$
 \rho_c=\frac1{1+2\pi},\qquad
-\rho_0=\frac1{\sqrt{337}},\qquad
 z_\rho=\frac{\pi}{1-\rho},\qquad
-L(\rho)=\frac1{2\rho},
+k_{11}(\rho)=\sqrt{z_\rho^2+132}.
 $$
 
-$$
-k_m(\rho)=\sqrt{z_\rho^2+m(m+1)},\qquad
-d=\frac{\sqrt{337}}2.
-$$
-
-Round 20 proves strict Pólya on the complete lower part
+The historical Round 20 residual is
 
 $$
-\mathcal D_{19}^{\rm low}=
-\{\rho_*<\rho\le\rho_0,\ L(\rho)<K<U(\rho)\}
-\cup
-\{\rho_0<\rho<\rho_c,\ d<K<U(\rho)\},
-$$
-
-on the closed staircase
-
-$$
-\rho_c\le\rho\le\frac78,\qquad z_\rho\le K\le k_{11}(\rho),
-$$
-
-and at every frequency for
-
-$$
-\frac{39}{50}\le\rho<1,
-$$
-
-with equality only at $K=0$ and strict comparison for $K>0$. The genuinely
-new set is
-
-$$
-\boxed{\begin{aligned}
-\mathcal C_{20}={}&\mathcal D_{19}^{\rm low}\\
-&\cup\{\rho_c\le\rho<7/8,\ k_6(\rho)<K\le k_{11}(\rho)\}\\
-&\cup\{39/50\le\rho<7/8,\ k_{11}(\rho)<K<U(\rho)\}.
-\end{aligned}}
-$$
-
-## Exact surviving residual
-
-The historical $\mathcal D_{19}$ is superseded. Exact subtraction gives
-
-$$
-\boxed{
 \mathcal D_{20}=
 \left\{\rho_c\le\rho<\frac{39}{50},\quad
-k_{11}(\rho)<K<K_0(\rho)=U(\rho)\right\}.}
+k_{11}(\rho)<K<U(\rho)=K_0(\rho)\right\}.
 $$
 
-The face $\rho=\rho_c$ is included; $\rho=39/50$ is optical-owned. The
-face $K=k_{11}$ is staircase-owned; $K=K_0=U$ is excluded. On this ratio
-interval the $H_0$ and seam branches are ineligible, so $U=K_0$ exactly.
-The inherited boxes $B_0,B_1$ remain regression evidence and are not
-subtracted again.
+The compact theorem is strict on
+$[7/51,39/50]\times[12,200]$. Its deterministic certificate has 10,580
+exact rational leaves and was replayed at 256- and 384-bit precision. The
+aggregate finite certificate has 1,286 ratio boxes at 192 and 384 bits and
+owns only its $K=200$ base signs. A3's independent analytic derivative,
+curvature, and two-integration chain owns the universal $K\ge200$
+propagation.
 
-The strict witness
+The exact guards are
 
 $$
-k_{11}(1/2)<14<30<64<K_0(1/2)=U(1/2)
+\frac7{51}<\rho_c,\qquad
+k_{11}(\rho)>12\quad(\rho_c\le\rho<1).
 $$
 
-puts $(1/2,30)$ in $\mathcal D_{20}$. Therefore the residual is nonempty and
-no theorem-level target closes in Round 20.
+They give the disjoint residual split into $K\le200$ and $K>200$, with
+$K=200$ compact-owned. The faces $\rho=39/50$, $K=k_{11}$, and $K=U$ are
+outside $\mathcal D_{20}$ and are not subtracted again. Consequently
 
-## Complete gate chronology
+$$
+\boxed{\mathcal D_{21}=\varnothing.}
+$$
 
-The exact residual freeze and independent mask audit passed. The proof-free
-candidate scope audit also passed, but the first released bytes then failed
-final-byte review because their lifecycle text was circular. The corrected
-claim and freeze passed a replacement final-byte audit.
+## Executable provenance and reproduced gates
 
-The isolated A3 reconstruction passed. Its sole false statement said every
-other high cap cell had a larger reserve; the immutable addendum proves the
-cap-$74$ cell empty under full propagation and also pays it directly. The
-theorem verdict was unchanged.
+The accepted wrapper authenticates 18 input files. It reads the sealed
+producer source once, hashes those exact bytes, strict-decodes UTF-8,
+compiles with inherited flags disabled and optimization zero, and directly
+executes a registered cache-free module. It reproduces 243 exact sign rows,
+all 10,580 compact leaves, all 1,286 aggregate base boxes, and the same
+canonical digests.
 
-The first A4 verifier failed because it did not pay that live cap-$74$ cell
-and contained disconnected or tautological checks. Its first replacement
-failed because of an actual control byte, mutation-insensitive localization,
-an insufficient wrong-wall test, and authenticated-looking skip output. Only
-the second repaired bundle is positive A4 evidence: 587 exact checks
-(488 substantive, 65 bookkeeping, 34 authentication) and 17 focused tests.
+The accepted validation ledger is:
 
-The independent zero-provenance audit, final A4 re-audit,
-cross-comparison, fresh adversarial referee, judge, and independent
-State-Patch audit all returned PASS. Both failed A4 cycles and the failed
-candidate release remain negative chronology, not promotion support.
+- exact residual classifier: 47 tests passed;
+- final focused source-execution gate: 14 tests passed;
+- isolated full repository gate before application: 334 passed,
+  1 strict expected xfail, and 10 subtests passed;
+- fresh cache files before and after both isolated gates: 0; and
+- graph and State-Patch validators: PASS.
 
-## Post-promotion validation ledger
+The post-application derived-state suite is recorded below after regeneration:
 
-Final derived-state reproduction passed:
+- complete post-application suite: 339 passed, 1 strict expected xfail,
+  and 10 subtests passed in 195.92 seconds;
+- in-memory source compilation: PASS, 66 tracked Python files;
+- strict UTF-8 and C0/DEL scan of changed derived artifacts:
+  PASS, 8 synchronized/lifecycle files;
+- malformed-LaTeX-command scan: PASS, zero findings; and
+- `git diff --check`: PASS.
 
-- authoritative graph SHA-256: unchanged at
-  `313eed3a0f789e83fbd809c787590de80cb40946f307f50fd3eba53735d355bd`;
-- graph validator: **PASS**;
-- focused Round 19 lifecycle, Round 20 residual, and Round 20 lifecycle
-  tests: **51 passed**;
-- complete repository suite: **273 passed, 1 strict expected xfail,
-  10 subtests passed**;
-- the expected xfail is only the immutable Round 19 freeze's obsolete
-  live-path comparison;
-- the Round 20 manifest's baseline-aware authentication remains a running
-  PASS against commit `658674117632d60990ac9b9046aa0fcff9e91a62`;
-- the new Round 20 lifecycle checks authenticate the immutable original test
-  bytes and prove both mutable state inputs advanced;
-- in-memory Python source compilation: **PASS, 62 files**;
-- strict UTF-8 and C0/DEL scan of every changed derived artifact: **PASS**;
-- `git diff --check`: **PASS**.
+## Preserved failure chronology
 
-## Next method boundary
+The following are negative or superseded evidence, not promotion support:
 
-Round 21 begins by freezing the accepted one-piece $\mathcal D_{20}$ and
-auditing that classifier before any candidate release. Two independently
-audited but unpromoted routes are available: a compact coarse-proxy
-certificate on
-$[7/51,39/50]\times[12,200]$ and an aggregate tail theorem on
-$[\rho_c,39/50]\times[200,\infty)$.
+1. the initial candidate had isolation ambiguity and inconsistent aggregate
+   quantification;
+2. the initial aggregate route omitted its spectral bridge;
+3. the first exact audit left the Machin principal branch implicit;
+4. its replacement lacked mandatory mutation and lifecycle tests;
+5. the first fresh referee missed that lifecycle defect;
+6. a hardened-referee transcription incorrectly described its context as
+   proof-free;
+7. the candidate and first judge claimed the false or undefined guard
+   $k_{11}(\rho)>12$ for every $\rho\ge\rho_c$; at $\rho=1$ the shell formula
+   is singular and $\rho=2$ is an exact counterexample;
+8. the corrected guard made the earlier judge and State-Patch audit stale;
+   and
+9. the first scoped loader could hash `.py` while executing a
+   timestamp-valid adjacent `.pyc`.
 
-Their next admissible use is through proof-free certificate contracts and a
-new proof-free closure claim. Isolated A3 must not receive the incumbent
-reports, code, tests, prior audits, or exploratory synthesis. A candidate-
-specific A4 audit, cross-comparison, fresh lemma referee, judge, and State
-Patch audit remain mandatory. No empty residual is accepted yet.
+The final source-execution route closes the last defect. Its malicious-cache
+test forces timestamp mode even when `SOURCE_DATE_EPOCH` is present, matches
+source size and mtime, installs conflicting semantics, requires source
+behavior, and removes the sentry. Superseded unscoped, stale-hash, and
+cache-vulnerable artifacts remain in their negative or inconclusive evidence
+buckets.
 
-If later promotion is justified, use scoped
-`CERT-round21-compact-proxy` and `CERT-round21-aggregate-tail` obligations;
-do not broaden `COMP-certified-bessel`. Any obsolete diagnostic-parent
-blocker on the theorem path must be removed explicitly while the parent
-stays `diagnostic_only`. Only after exact $\mathcal D_{20}$ closure is
-promoted may separate theorem-level clean-room, theorem adversarial, and
-program-scope audits begin.
+## Status and next boundary
+
+No higher target is promoted:
+
+- `SHELL-rho-compact`: `open`;
+- `SHELL-rho-uniformity`: `open`;
+- `TARGET-shell-d3`: `open`;
+- `POLYA-program-target`: `open`; and
+- `COMP-certified-bessel`: `diagnostic_only`.
+
+The obsolete diagnostic-parent dependencies, blockers, and implication on
+the theorem path are removed, while the parent and its two legacy pilot boxes
+remain regression evidence.
+
+The top-level graph `round_selection` prose remains historical orchestration
+metadata by design; it is not copied into the next workflow. Current
+obligation statuses and `next_action` fields govern the Round 22 boundary.
+
+The next admissible work is a coherent theorem assembly covering $K=0$,
+strict counting, every ratio seam, the Weyl-volume normalization, and scaling
+to arbitrary shells. It must then pass a fresh clean-room theorem proof, a
+separate adversarial theorem referee, an adversarial non-tiling review, and a
+program-scope audit before any higher State Patch is proposed.
