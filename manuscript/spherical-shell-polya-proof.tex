@@ -1,0 +1,1103 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=28mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\definecolor{linkblue}{RGB}{24,78,119}
+\definecolor{citegreen}{RGB}{36,104,71}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=citegreen,
+  urlcolor=linkblue,
+  pdftitle={A Dirichlet Polya Inequality for Three-Dimensional Spherical Shells},
+  pdfsubject={Review draft},
+  pdfkeywords={Polya conjecture, Dirichlet Laplacian, spherical shell, eigenvalue counting}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Dirichlet P\'olya inequality for spherical shells}
+\fancyhead[R]{\small Review draft}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\small Dirichlet P\'olya inequality for spherical shells}%
+  \fancyhead[R]{\small Review draft}%
+  \fancyfoot[C]{\thepage}%
+}
+\fancypagestyle{titlepage}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+\setlist{itemsep=0.25em,topsep=0.45em}
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Nzero}{\mathbb N_0}
+\newcommand{\repo}[1]{\nolinkurl{#1}}
+\newenvironment{proofrecord}
+  {\begin{quote}\small\noindent\textbf{Internal proof record.}\ }
+  {\end{quote}}
+
+\title{A Dirichlet P\'olya Inequality for\\Three-Dimensional Spherical Shells\\[0.4em]
+\large Dependency-compressed review draft}
+\author{}
+\date{15 July 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{titlepage}
+
+\begin{quote}
+\small
+\textbf{Scope and status.}
+This document reorganizes an internally validated proof into a conventional
+review manuscript.  It proves a theorem for the class of genuine
+three-dimensional spherical shells.  It does not claim the general P\'olya
+conjecture, literature novelty, priority, or publication readiness.  The
+final theorem assembly and the non-tiling argument are written out.  The long
+compact-middle argument is presented as a sequence of precise lemmas with
+exact domains, seams, constants, and pointers to the audited detailed proofs.
+A journal submission should move those detailed arguments and the
+computer-assisted contracts into conventional appendices rather than cite
+repository workflow records.
+\end{quote}
+
+\begin{abstract}
+For \(0<r<R\), let
+\[
+  A_{r,R}=\{x\in\R^3:r<|x|<R\}.
+\]
+We prove, with the strict Dirichlet counting convention, that
+\[
+  N_D(A_{r,R},\Lambda)
+  \le L_3|A_{r,R}|\Lambda^{3/2},
+  \qquad
+  L_3=\frac1{6\pi^2},
+  \qquad \Lambda\ge0.
+\]
+The proof separates variables, converts the radial spectrum into a strict
+multiplicity-weighted phase count, and combines analytic endpoint estimates,
+finite angular and radial mode inventories, and a rigorously certified final
+compact window.  We also give an elementary proof that no genuine spherical
+shell tiles \(\R^3\) by congruent rigid-motion copies with disjoint interiors,
+under either exact or almost-everywhere coverage.
+\end{abstract}
+
+\section{Main results and conventions}
+
+The eigenvalues of the Dirichlet Laplacian on a bounded domain \(\Omega\) are
+listed with multiplicity as
+\[
+  0<\lambda_1^D(\Omega)\le\lambda_2^D(\Omega)\le\cdots.
+\]
+Throughout we use the strict counting function
+\begin{equation}
+  N_D(\Omega,\Lambda)
+  :=\#\{j:\lambda_j^D(\Omega)<\Lambda\}.
+  \label{eq:strict-count}
+\end{equation}
+This convention matters at every spectral wall.  We write
+\(\N=\{1,2,3,\ldots\}\) and \(\Nzero=\{0,1,2,\ldots\}\).
+
+\begin{theorem}[Spectral inequality]
+\label{thm:spectral}
+For every \(0<r<R\) and every \(\Lambda\ge0\),
+\begin{equation}
+  \boxed{
+  N_D(A_{r,R},\Lambda)
+  \le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
+  =L_3|A_{r,R}|\Lambda^{3/2},
+  \qquad L_3=\frac1{6\pi^2}.}
+  \label{eq:main-theorem}
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Non-tiling]
+\label{thm:nontiling}
+For every \(0<r<R\), no family of congruent rigid-motion copies of
+\(A_{r,R}\) has pairwise-disjoint interiors and covers \(\R^3\) exactly or
+up to a three-dimensional Lebesgue-null set.  The same conclusion holds when
+coverage is formulated using closed shells.
+\end{theorem}
+
+The two theorems concern literally the same complete shell family.
+Theorem~\ref{thm:nontiling} is logically independent of the spectral proof.
+
+\section{Separation of variables and strict phase counting}
+
+We first normalize the outer radius to one and write
+\[
+  A_{\rho,1}=\{x\in\R^3:\rho<|x|<1\},
+  \qquad 0<\rho<1.
+\]
+
+\begin{proposition}[Exact separated spectrum]
+\label{prop:separated-spectrum}
+Under spherical-harmonic decomposition and the unitary radial substitution
+\(u(r)=rR(r)\), the Dirichlet Laplacian is the orthogonal sum
+\begin{equation}
+  -\Delta_{A_{\rho,1}}^D
+  \simeq
+  \bigoplus_{\ell=0}^{\infty}
+  \bigoplus_{m=-\ell}^{\ell}L_\ell,
+  \qquad
+  L_\ell=-\frac{d^2}{dr^2}+\frac{\ell(\ell+1)}{r^2},
+  \label{eq:operator-sum}
+\end{equation}
+where \(L_\ell\) acts on \(H^2(\rho,1)\cap H_0^1(\rho,1)\).  Each radial
+block has a positive, simple, complete spectrum.  The full resolvent is
+compact because
+\begin{equation}
+  \|(L_\ell+1)^{-1}\|
+  \le \frac1{1+\ell(\ell+1)}\longrightarrow0.
+  \label{eq:resolvent-tail}
+\end{equation}
+
+Put \(\nu=\ell+\tfrac12\).  The positive eigenfrequencies of the
+\(\ell\)-th block are exactly the positive zeros of
+\begin{equation}
+  F_{\nu,\rho}(k)
+  =J_\nu(\rho k)Y_\nu(k)-Y_\nu(\rho k)J_\nu(k).
+  \label{eq:bessel-determinant}
+\end{equation}
+For \(K>0\), choose the continuous Bessel phase by
+\[
+  J_\nu(x)+iY_\nu(x)=M_\nu(x)e^{i\theta_\nu(x)},
+  \qquad \theta_\nu(0+)=-\frac\pi2,
+\]
+and define
+\begin{equation}
+  \Psi_{\nu,\rho}(K)=\theta_\nu(K)-\theta_\nu(\rho K),
+  \qquad
+  \gamma_{\rho,K}(\nu)=\frac{\Psi_{\nu,\rho}(K)}\pi.
+  \label{eq:phase-count}
+\end{equation}
+The function \(K\mapsto\Psi_{\nu,\rho}(K)\) is strictly increasing from
+zero to infinity, and
+\begin{equation}
+  F_{\nu,\rho}(K)=0
+  \quad\Longleftrightarrow\quad
+  \Psi_{\nu,\rho}(K)\in\pi\N.
+  \label{eq:phase-levels}
+\end{equation}
+Consequently,
+\begin{equation}
+  N_D(A_{\rho,1},K^2)
+  =\sum_{\nu_\ell<K}2\nu_\ell
+  [\gamma_{\rho,K}(\nu_\ell)]_<,
+  \qquad \nu_\ell=\ell+\frac12,
+  \label{eq:strict-phase-sum}
+\end{equation}
+where
+\begin{equation}
+  [x]_<:=\#\{n\in\N:n<x\}
+  =\max\{0,\lceil x\rceil-1\}.
+  \label{eq:strict-bracket}
+\end{equation}
+In particular, \([m]_< =m-1\) when \(m\in\N\).  If several angular
+channels share an eigenfrequency, all equal-threshold modes are excluded at
+that wall and enter above it with the sum of their multiplicities.
+\end{proposition}
+
+The phase convention and special-function identities used here are
+standard; see \cite{DLMF,FLPSphase}.  The exact reconstruction statement is
+\repo{state/lemma_packets/SHELL-sturm-liouville-completeness.md}.  The
+accepted proof evidence consists of
+\repo{rounds/polya-main/round_004/responses/sturm-liouville-incumbent.md},
+\repo{rounds/polya-main/round_004/reviews/sturm-liouville-clean-room.md}, and
+\repo{rounds/polya-main/round_004/reviews/sturm-liouville-adversarial.md}.
+
+\begin{proposition}[Phase-to-lattice reduction]
+\label{prop:phase-to-lattice}
+Let \(K>0\).  For \(a>0\), set
+\begin{equation}
+  G_a(z)=\frac1\pi
+  \left(\sqrt{a^2-z^2}-z\arccos\frac za\right),
+  \quad 0\le z\le a,
+  \label{eq:model-action}
+\end{equation}
+and \(G_a(z)=0\) for \(z>a\).  Put \(\mu=\rho K\) and
+\begin{equation}
+  A_{\rho,K}(z)=G_K(z)-G_\mu(z).
+  \label{eq:shell-action}
+\end{equation}
+For \(0\le z<\mu\), define
+\[
+  H_\mu(z)=
+  \frac{3\mu^2+2z^2}{24\pi(\mu^2-z^2)^{3/2}},
+\]
+and define the auxiliary function---denoted \(F_\mu\) in the annulus
+source, but written \(\mathcal F_\mu\) here to distinguish it from the
+Bessel determinant---by
+\[
+  \mathcal F_\mu(z)=
+  \begin{cases}
+    \max\{G_\mu(z)-H_\mu(z),-1/4\},&0\le z<\mu,\\
+    -1/4,&z\ge\mu.
+  \end{cases}
+\]
+Finally, \(\Phi_{K,\mu}(z)=G_K(z)-G_\mu(z)=A_{\rho,K}(z)\) on
+\(0\le z\le\mu\).
+
+The global phase enclosure \cite[Theorem~5.1 and Lemma~5.2]{FLPSannuli}
+gives, for \(0\le\nu\le K\),
+\begin{equation}
+  0<\gamma_{\rho,K}(\nu)
+  <G_K(\nu)-\mathcal F_\mu(\nu)
+  \le G_K(\nu)+\frac14,
+  \label{eq:global-phase-bound}
+\end{equation}
+and, when \(\nu\le\mu\), the sharper two-sided action enclosure
+\begin{equation}
+  \Phi_{K,\mu}(\nu)
+  <\gamma_{\rho,K}(\nu)
+  <\Phi_{K,\mu}(\nu)+\frac14.
+  \label{eq:action-phase-bound}
+\end{equation}
+Set
+\[
+  s_\mu(\nu)=
+  \begin{cases}
+    \min\{H_\mu(\nu),1/4\},&0\le\nu<\mu,\\
+    1/4,&\mu\le\nu\le K,
+  \end{cases}
+  \qquad
+  P_{\rho,K}(\nu)=A_{\rho,K}(\nu)+s_\mu(\nu).
+\]
+Combining the two phase bounds gives
+\[
+  \gamma_{\rho,K}(\nu)<P_{\rho,K}(\nu)
+  \le A_{\rho,K}(\nu)+\frac14.
+\]
+Thus the strict spectral count is bounded by the optimized proxy, and in
+particular by the coarse proxy through the explicit chain
+\[
+  N_D(A_{\rho,1},K^2)
+  \le
+  \sum_{\substack{\ell\ge0\\ \nu_\ell<K}}
+  2\nu_\ell[P_{\rho,K}(\nu_\ell)]_<
+  \le S_{\rho,K}.
+\]
+Here
+\begin{equation}
+  S_{\rho,K}
+  =\sum_{\substack{\ell\ge0\\ \nu_\ell<K}}2\nu_\ell
+  \left[A_{\rho,K}(\nu_\ell)+\frac14\right]_<.
+  \label{eq:coarse-proxy}
+\end{equation}
+The continuous target is exact \cite{FLPSballs}:
+\begin{equation}
+  \int_0^\infty2zA_{\rho,K}(z)\,dz
+  =\frac{2}{9\pi}(1-\rho^3)K^3.
+  \label{eq:action-integral}
+\end{equation}
+\end{proposition}
+
+The remaining task is to show that strict floor losses, phase slack, and the
+half-integer multiplicity mesh do not exceed the target in
+\eqref{eq:action-integral}.  The exact reconstruction contracts are
+\repo{state/lemma_packets/SHELL-phase-enclosures.md} and
+\repo{state/lemma_packets/SHELL-weighted-lattice-fractional.md}.  Accepted
+proof evidence is supplied by the Round~2 phase incumbent, clean-room proof,
+and adversarial review, and by the corresponding Round~3 low-interface
+records:
+\begin{proofrecord}
+\repo{rounds/polya-main/round_002/responses/phase-enclosure-incumbent.md};
+\repo{rounds/polya-main/round_002/reviews/phase-enclosure-clean-room.md};
+\repo{rounds/polya-main/round_002/reviews/phase-enclosure-adversarial.md};
+\repo{rounds/polya-main/round_003/responses/low-interface-fixed-rho-incumbent.md};
+\repo{rounds/polya-main/round_003/reviews/low-interface-fixed-rho-clean-room.md};
+\repo{rounds/polya-main/round_003/reviews/low-interface-fixed-rho-adversarial.md}.
+\end{proofrecord}
+
+For later use, write
+\begin{equation}
+  W(\rho,K)=\frac{2}{9\pi}(1-\rho^3)K^3.
+  \label{eq:weyl-target}
+\end{equation}
+
+\section{The two ratio endpoints}
+
+Define
+\begin{equation}
+  \omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+  \qquad
+  C_*=\frac12+\frac{8\sqrt2}{15},
+  \qquad
+  \rho_*=\frac{\omega_0}{1+2C_*}.
+  \label{eq:endpoint-constants}
+\end{equation}
+
+\begin{lemma}[Small-hole endpoint]
+\label{lem:small-hole}
+For \(0<\rho\le\rho_*\) and \(K\ge0\),
+\begin{equation}
+  N_D(A_{\rho,1},K^2)\le W(\rho,K).
+  \label{eq:small-hole-theorem}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The multiplicity identity rewrites \eqref{eq:coarse-proxy} as a sum of
+shifted tails, one for each \(r\in\Nzero\) and beginning at
+\(x_r=r+\tfrac12\).  The ordinary-floor tail majorant is legitimate because
+\([x]_<\le\lfloor x\rfloor\) for every \(x\ge0\).  Every tail beginning at
+or above the inner interface \(\mu=\rho K\) is controlled by the convex
+high-angular theorem of \cite{FLPSballs}.
+
+The separately proved low-interface estimate, using the concave and convex
+floor-sum estimates from \cite{FLPSannuli}, controls a tail beginning below
+\(\mu\) whenever
+\begin{equation}
+  0<\rho<\omega_0,
+  \qquad K(\omega_0-\rho)\ge C_*.
+  \label{eq:small-hole-condition}
+\end{equation}
+If \(\mu\le\tfrac12\), then every \(x_r\ge\tfrac12\ge\mu\), so only the
+high-angular case occurs.  If \(\mu>\tfrac12\) and
+\(0<\rho\le\rho_*\), then
+\begin{equation}
+  K(\omega_0-\rho)
+  >\frac{\omega_0-\rho}{2\rho}
+  \ge\frac{\omega_0-\rho_*}{2\rho_*}=C_*.
+  \label{eq:small-hole-closure}
+\end{equation}
+Hence every tail is controlled.  Summing the tail integrals gives the target
+bound corresponding to \eqref{eq:action-integral}, which proves
+\eqref{eq:small-hole-theorem}.  The face \(\rho=\rho_*\) is included.  At
+\(K=0\), both sides vanish.
+\end{proof}
+
+The exact statement and shifted-tail inequalities are in
+\repo{state/lemma_packets/SHELL-rho-zero-endpoint.md}.  The proof and its
+independent checks are
+\repo{rounds/polya-main/round_007/responses/small-hole-incumbent.md},
+\repo{rounds/polya-main/round_007/reviews/small-hole-clean-room.md}, and
+\repo{rounds/polya-main/round_007/reviews/small-hole-adversarial.md}.
+
+\begin{lemma}[Thin-shell endpoint]
+\label{lem:thin-shell}
+For \(7/8\le\rho<1\) and \(K\ge0\),
+\begin{equation}
+  N_D(A_{\rho,1},K^2)\le W(\rho,K).
+  \label{eq:thin-shell-theorem}
+\end{equation}
+\end{lemma}
+
+\begin{proof}[Proof outline with exact closing margins]
+Put \(\varepsilon=1-\rho\in(0,1/8]\) and \(a=\varepsilon K\).  The proof
+has two inclusive pieces.
+
+On \(0\le a\le\pi/(4\varepsilon)\), the radial form comparison has the
+correct upper-count direction.  Strict radial counting gives the number of
+active one-dimensional radial levels as
+\[
+  M=\max\left\{0,\left\lceil\frac a\pi\right\rceil-1\right\}.
+\]
+Define
+\[
+  I(a)=\frac{2a^3}{3\pi},
+  \qquad
+  S_0(a)=\sum_{n=1}^{M}(a^2-n^2\pi^2),
+  \qquad
+  D(a)=I(a)-S_0(a).
+\]
+For \(a>\pi\), write \(a/\pi=M+t\), where \(M\ge1\) and
+\(0<t\le1\), using \((M,t)=(m-1,1)\) at \(a=m\pi\).  The exact product
+deficit satisfies
+\begin{equation}
+  \frac{D(a)}{\pi^2}
+  =\frac{M^2}{2}+M\left(t^2+\frac16\right)+\frac{2t^3}{3},
+  \qquad D(a)>\frac25a^2.
+  \label{eq:product-deficit}
+\end{equation}
+The angular-ceiling and quarter-disk cost is at most
+\[
+  \left(\frac16+\frac\varepsilon4+\frac{\varepsilon^2}{9}\right)a^2.
+\]
+At \(\varepsilon=1/8\), the remaining reserve is
+\begin{equation}
+  \frac25-\left(\frac16+\frac1{32}+\frac1{576}\right)
+  =\frac{577}{2880}>0.
+  \label{eq:product-reserve}
+\end{equation}
+
+On \(a\ge\pi/(4\varepsilon)\), let
+\(\mathcal A:[0,a]\to[0,T]\), \(T=a/\pi\), be the exact decreasing shell
+action from the phase reduction, let
+\(R_{\mathcal A}:[0,T]\to[0,a]\) be its decreasing inverse, and put
+\(F_{\mathcal A}=R_{\mathcal A}^2\) and
+\(g=-F_{\mathcal A}'\).  Splitting at the actual ungridded curvature
+interface, shifted-sawtooth Stieltjes integration gives the radial deficit
+\[
+  D_{\mathrm{rad}}:=
+  \int_0^T F_{\mathcal A}(t)\,dt
+  -\sum_{\substack{n\ge1\\ n-1/4<T}}F_{\mathcal A}(n-1/4)
+\]
+and the bound
+\begin{equation}
+  D_{\mathrm{rad}}
+  \ge\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4},
+  \label{eq:radial-deficit}
+\end{equation}
+whereas strict half-integer angular counting costs at most
+\begin{equation}
+  E=\left(\frac a\pi+\frac14\right)
+  \left(\varepsilon a+\frac{\varepsilon^2}{4}\right).
+  \label{eq:angular-cost}
+\end{equation}
+The relevant lower screen decreases and the upper screen increases on
+\(0<\varepsilon\le1/8\).  At the closed endpoint,
+\[
+  \frac{D_{\mathrm{rad}}}{a^2}\ge\frac{21}{256},
+  \qquad
+  \frac{E}{a^2}<\frac{193}{4096},
+\]
+so
+\begin{equation}
+  D_{\mathrm{rad}}-E>\frac{143}{4096}a^2>0.
+  \label{eq:thin-reserve}
+\end{equation}
+Both arguments include the common face
+\(a=\pi/(4\varepsilon)\), all radial and angular integer walls, and the face
+\(\rho=7/8\).  Together they cover every \(a\ge0\) and prove
+\eqref{eq:thin-shell-theorem}.
+\end{proof}
+
+The frozen exact statement is
+\repo{state/lemma_packets/SHELL-rho-one-endpoint-round16.md}; that packet is
+a contract, not the proof.  The complete argument is in
+\repo{rounds/polya-main/round_016/responses/thin-endpoint-incumbent.md}, with
+the independent reconstruction
+\repo{rounds/polya-main/round_016/reviews/thin-endpoint-clean-room.md} and
+adversarial audit
+\repo{rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md}.
+
+\section{The compact-middle theorem}
+
+This section compresses the longest part of the proof into exact regional
+lemmas.  Each lemma has an analytic proof or a rigorously certified finite
+part in the listed repository record.
+
+Set
+\begin{equation}
+\begin{aligned}
+  \rho_0&=\frac1{\sqrt{337}},
+  &\rho_c&=\frac1{1+2\pi},
+  &z_\rho&=\frac\pi{1-\rho},\\
+  k_m(\rho)&=\sqrt{z_\rho^2+m(m+1)}\quad(m\in\Nzero),
+  &d&=\frac{\sqrt{337}}2.
+\end{aligned}
+  \label{eq:compact-constants}
+\end{equation}
+To make the upper-frequency wall explicit, set
+\[
+  C_0=1+\frac{8\sqrt2}{15},
+  \qquad
+  a_\rho=\frac{2\pi\rho}{1-\rho},
+  \qquad
+  \eta_\rho=G_1\!\left(\max\left\{\rho,\frac12\right\}\right),
+\]
+\[
+  K_0(\rho)=
+  \left(
+  \frac{\sqrt{a_\rho}+\sqrt{a_\rho+4\eta_\rho C_0}}
+       {2\eta_\rho}
+  \right)^2,
+  \qquad
+  H_0(\rho)=\frac{C_*}{\omega_0-\rho}
+  \quad(\rho<\omega_0),
+\]
+and, equivalently to taking the minimum of all active upper owners,
+\[
+  U(\rho)=
+  \begin{cases}
+    \min\{K_0(\rho),H_0(\rho)\},&0<\rho<\omega_0,\\
+    K_0(\rho),&\omega_0\le\rho<5/6,\\
+    \min\{K_0(\rho),54/(1-\rho)^2\},&5/6\le\rho<1.
+  \end{cases}
+\]
+Thus \(U\) is precisely the upper-frequency owner obtained from the
+fixed-ratio, small-hole, and seam high-energy thresholds.  On the final live
+interval \(\rho_c\le\rho<39/50\), it is exactly \(K_0(\rho)\).
+
+\begin{lemma}[Primitive compact envelope]
+\label{lem:primitive-envelope}
+The zero-count, small-hole, fixed-ratio high-energy, and thin-shell estimates
+cover every compact-middle point except the exact nonrectangular set
+\begin{equation}
+  \mathcal D_{16}
+  =\left\{\rho_*<\rho<\frac78:\
+  L(\rho)<K<U(\rho)\right\},
+  \label{eq:d16}
+\end{equation}
+where
+\[
+  L(\rho)=\max\left\{\frac1{2\rho},\frac\pi{1-\rho}\right\}.
+\]
+In particular, the accepted analytic envelope already gives the global
+high-frequency theorem
+\begin{equation}
+  0<\rho<1,\qquad K\ge295^2
+  \quad\Longrightarrow\quad
+  N_D(A_{\rho,1},K^2)\le W(\rho,K).
+  \label{eq:global-high-frequency}
+\end{equation}
+\end{lemma}
+
+The precursor estimates are collected in
+\repo{state/lemma_packets/SHELL-rho-compact.md}.  The exact formula
+\eqref{eq:d16}, including its open faces and the definition of \(U\), is
+proved in \repo{state/lemma_packets/SHELL-rho-compact-round17.md}.
+
+\begin{lemma}[Finite angular and radial staircase]
+\label{lem:finite-staircase}
+The strict inequality \(N_D(A_{\rho,1},K^2)<W(\rho,K)\) holds on each of
+the following regions:
+\begin{enumerate}
+  \item \(\rho_c\le\rho\le7/8\) and
+        \(z_\rho\le K\le k_2(\rho)\);
+  \item \(\rho_c\le\rho\le7/8\) and
+        \(k_2(\rho)<K\le k_5(\rho)\);
+  \item \(\rho_0<\rho<\rho_c\) and
+        \(1/(2\rho)<K\le d\);
+  \item \(\rho_c\le\rho\le7/8\) and
+        \(k_5(\rho)<K\le k_6(\rho)\).
+\end{enumerate}
+They follow from the one-dimensional lower bound
+\begin{equation}
+  q_{\ell,n}^2\ge n^2z_\rho^2+\ell(\ell+1),
+  \label{eq:radial-lower-bound}
+\end{equation}
+where \(q_{\ell,n}\) is the \(n\)-th positive radial eigenfrequency in
+angular channel \(\ell\), together with fixed-channel shell-to-ball min--max
+comparison, exact Bessel-zero inequalities, exhaustive multiplicity
+inventories, and strict Weyl payments at every fixed or moving entry wall.
+The external first-positive-zero inputs are from \cite{Lorch1993}; their
+conversion to shell exclusions, all higher-zero bounds, and all mode
+inventories are internal.  The corresponding residual is
+\begin{equation}
+\begin{aligned}
+  \mathcal D_{19}={}&
+  \left\{\rho_*<\rho\le\rho_0,
+  \frac1{2\rho}<K<U(\rho)\right\}\\
+  &\cup\left\{\rho_0<\rho<\rho_c,
+  d<K<U(\rho)\right\}\\
+  &\cup\left\{\rho_c\le\rho<\frac78,
+  k_6(\rho)<K<U(\rho)\right\}.
+\end{aligned}
+  \label{eq:d19}
+\end{equation}
+At \(\rho=\rho_0\), the candidate lower fiber is empty because
+\(1/(2\rho_0)=d\).  All frequency inequalities in \eqref{eq:d19} are
+strict.
+\end{lemma}
+
+The proof-free packets
+\repo{state/lemma_packets/SHELL-first-angular-bands-round17-claim.md},
+\repo{state/lemma_packets/SHELL-next-angular-staircase-round18-claim.md}, and
+\repo{state/lemma_packets/SHELL-two-sided-staircase-round19-claim.md} fix the
+exact statements; they are not proofs.  The principal accepted proof records
+are:
+\begin{proofrecord}
+\textbf{Round 17:}
+\repo{rounds/polya-main/round_017/responses/analytic-compression-incumbent.md};
+\repo{rounds/polya-main/round_017/reviews/analytic-compression-clean-room.md};
+\repo{rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md}.
+
+\textbf{Round 18:}
+\repo{rounds/polya-main/round_018/responses/angular-staircase-incumbent.md};
+\repo{rounds/polya-main/round_018/reviews/angular-staircase-clean-room.md};
+\repo{rounds/polya-main/round_018/reviews/angular-staircase-constants.md};
+\repo{rounds/polya-main/round_018/reviews/angular-staircase-cross-comparison.md};
+\repo{rounds/polya-main/round_018/reviews/angular-staircase-adversarial-referee.md}.
+
+\textbf{Round 19:}
+\repo{rounds/polya-main/round_019/responses/high-ratio-k6-incumbent.md};
+\repo{rounds/polya-main/round_019/exploration/lower-ratio-route.md};
+\repo{rounds/polya-main/round_019/reviews/two-sided-staircase-clean-room.md};
+\repo{rounds/polya-main/round_019/reviews/two-sided-staircase-constants.md};
+\repo{rounds/polya-main/round_019/reviews/two-sided-staircase-adversarial-referee.md}.
+\end{proofrecord}
+
+\begin{lemma}[Combined lower, high-staircase, and optical closure]
+\label{lem:combined-closure}
+The inequality is strict on both lower components of \eqref{eq:d19} and on
+\begin{equation}
+  \rho_c\le\rho\le\frac78,
+  \qquad z_\rho\le K\le k_{11}(\rho).
+  \label{eq:k11-region}
+\end{equation}
+It also holds for every frequency on
+\begin{equation}
+  \frac{39}{50}\le\rho<1,
+  \qquad K\ge0,
+  \label{eq:optical-region}
+\end{equation}
+and is strict there when \(K>0\).  Exact subtraction leaves
+\begin{equation}
+  \boxed{
+  \mathcal D_{20}
+  =\left\{\rho_c\le\rho<\frac{39}{50},\quad
+  k_{11}(\rho)<K<U(\rho)=K_0(\rho)\right\}.}
+  \label{eq:d20}
+\end{equation}
+The face \(\rho=39/50\) belongs to \eqref{eq:optical-region},
+\(K=k_{11}(\rho)\) belongs to \eqref{eq:k11-region}, and \(K=U(\rho)\)
+belongs to the inherited high-frequency theorem.
+\end{lemma}
+
+The exact statement is fixed by the proof-free
+\repo{state/lemma_packets/SHELL-combined-closure-round20-claim.md}.  The
+Round~20 high- and lower-route notes are exploratory precursors, not promoted
+evidence.  The complete accepted evidence, including the conservative
+cap-\(74\) cell, is
+\begin{proofrecord}
+\repo{rounds/polya-main/round_020/reviews/combined-closure-clean-room.md};
+\repo{rounds/polya-main/round_020/reviews/combined-closure-clean-room-addendum.md};
+\repo{rounds/polya-main/round_020/reviews/combined-closure-cross-comparison.md};
+\repo{rounds/polya-main/round_020/reviews/combined-closure-adversarial-referee.md}.
+\end{proofrecord}
+
+\begin{lemma}[Exact closure of the final residual]
+\label{lem:exact-closure}
+Two final estimates hold:
+\begin{equation}
+  \frac7{51}\le\rho\le\frac{39}{50},
+  \quad 12\le K\le200
+  \quad\Longrightarrow\quad
+  N_D(A_{\rho,1},K^2)<W(\rho,K),
+  \label{eq:compact-certificate-theorem}
+\end{equation}
+and
+\begin{equation}
+  \rho_c\le\rho\le\frac{39}{50},
+  \quad K\ge200
+  \quad\Longrightarrow\quad
+  N_D(A_{\rho,1},K^2)<W(\rho,K).
+  \label{eq:aggregate-tail-theorem}
+\end{equation}
+The exact guards are
+\begin{equation}
+  \frac7{51}<\rho_c,
+  \qquad
+  k_{11}(\rho)>12
+  \quad(\rho_c\le\rho<1).
+  \label{eq:closure-guards}
+\end{equation}
+The restriction \(\rho<1\) in the second guard is essential.  Define
+\begin{equation}
+  \mathcal C_{21}=\mathcal D_{20}\cap\{K\le200\},
+  \qquad
+  \mathcal T_{21}=\mathcal D_{20}\cap\{K>200\}.
+  \label{eq:d20-split}
+\end{equation}
+Every point of \(\mathcal C_{21}\) lies in the rectangle
+\eqref{eq:compact-certificate-theorem}, and every point of
+\(\mathcal T_{21}\) lies in \eqref{eq:aggregate-tail-theorem}.  The sets are
+disjoint and exhaust \(\mathcal D_{20}\), with \(K=200\) assigned only to
+the compact subtraction owner.  Defining
+\[
+  \mathcal D_{21}
+  :=\mathcal D_{20}\setminus
+  (\mathcal C_{21}\cup\mathcal T_{21}),
+\]
+we therefore have
+\begin{equation}
+  \boxed{\mathcal D_{21}=\varnothing.}
+  \label{eq:d21-empty}
+\end{equation}
+\end{lemma}
+
+The exact scoped statement is
+\repo{state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md}, which
+is not by itself a proof.  Accepted evidence consists of
+\begin{proofrecord}
+\repo{rounds/polya-main/round_021/exploration/exact-d20-closure.md};
+\repo{rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room.md};
+\repo{rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md};
+\repo{rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md};
+\repo{rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md}.
+\end{proofrecord}
+
+\subsection*{Certificate boundary for Lemma~\ref{lem:exact-closure}}
+
+The finite part of \eqref{eq:compact-certificate-theorem} is an
+outward-rounded Arb ball-arithmetic partition into \(10{,}580\) exact
+rational leaves.  It certifies strict proxy inequalities, interfaces,
+integer walls, corners, and exact coverage only on
+\[
+  [7/51,39/50]\times[12,200].
+\]
+It does not certify Bessel roots; the spectral transfer is
+Proposition~\ref{prop:phase-to-lattice}.
+
+For \eqref{eq:aggregate-tail-theorem}, \(1{,}286\) outward-rounded Arb boxes
+certify only the base predicates at \(K=200\).  Let \(\mathcal B\) be the
+aggregate reserve, write
+\(\mathcal B_K=\partial_K\mathcal B\) and
+\(\mathcal B_{KK}=\partial_K^2\mathcal B\), and let \(F\) be its
+one-variable curvature lower screen, with
+the exact definitions (A13)--(A22) in the listed aggregate-tail contract.  On
+\(7/51\le\rho\le39/50\), the boxes prove precisely
+\[
+  \mathcal B(\rho,200)>0,
+  \qquad
+  \mathcal B_K(\rho,200)>0,
+  \qquad
+  F(\rho)>0,
+\]
+together with the stated domain guards.  The universal conclusion for
+\(K>200\) is analytic: on the same ratio interval and for every \(K\ge200\),
+\[
+  \mathcal B_{KK}(\rho,K)>F(\rho)>0,
+\]
+and hence
+\begin{equation}
+\begin{aligned}
+  \mathcal B_K(\rho,K)
+  &=\mathcal B_K(\rho,200)
+    +\int_{200}^{K}\mathcal B_{KK}(\rho,s)\,ds>0,\\
+  \mathcal B(\rho,K)
+  &=\mathcal B(\rho,200)
+    +\int_{200}^{K}\mathcal B_K(\rho,s)\,ds>0.
+\end{aligned}
+  \label{eq:aggregate-propagation}
+\end{equation}
+The two integration premises
+\(\mathcal B(\rho,200)>0\) and \(\mathcal B_K(\rho,200)>0\) make these
+integrations strict, while \(F(\rho)>0\) supplies the curvature lower bound;
+positivity of \(\mathcal B_{KK}\) alone would not suffice.  Thus no
+finite-box decision is extrapolated beyond its certified domain.  The exact contracts are
+\repo{state/certificate_contracts/ROUND21-compact-proxy-contract.md} and
+\repo{state/certificate_contracts/ROUND21-aggregate-tail-contract.md}.
+
+\begin{proposition}[Compact-middle theorem]
+\label{prop:compact-middle}
+For every \(\rho_*<\rho<7/8\) and \(K\ge0\),
+\begin{equation}
+  N_D(A_{\rho,1},K^2)\le W(\rho,K).
+  \label{eq:compact-middle-theorem}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The primitive cover of Lemma~\ref{lem:primitive-envelope}, the successive
+closed staircase regions of Lemma~\ref{lem:finite-staircase}, and the three
+regions of Lemma~\ref{lem:combined-closure} leave exactly
+\(\mathcal D_{20}\).  Lemma~\ref{lem:exact-closure} partitions and closes
+that entire final residual.  Equation~\eqref{eq:d21-empty} says that no
+uncovered point remains.  All shared faces have a unique declared
+subtraction owner, while overlapping theorem domains merely give redundant
+proofs.  This proves \eqref{eq:compact-middle-theorem}.
+\end{proof}
+
+\section{Proof of the spectral theorem}
+
+We now assemble the regional results without importing any new estimate.
+First, elementary bounds give
+\[
+  3\sqrt3>5>\pi,
+\]
+and hence \(\omega_0>0\).  Also \(\sqrt3<2\) and \(\pi>3\) give
+\(\omega_0<1/6\).  Since \(C_*>0\),
+\begin{equation}
+  0<\rho_*<\omega_0<\frac16<\frac78.
+  \label{eq:ratio-ordering}
+\end{equation}
+Therefore
+\begin{equation}
+  (0,1)
+  =(0,\rho_*]\mathbin{\dot\cup}
+  (\rho_*,7/8)\mathbin{\dot\cup}
+  [7/8,1).
+  \label{eq:ratio-partition}
+\end{equation}
+
+Fix \(0<\rho<1\).  At \(K=0\), positivity in
+Proposition~\ref{prop:separated-spectrum} gives
+\begin{equation}
+  N_D(A_{\rho,1},0)=0=W(\rho,0).
+  \label{eq:k-zero}
+\end{equation}
+Let \(K>0\).  If \(0<\rho\le\rho_*\), apply
+Lemma~\ref{lem:small-hole}.  If \(\rho_*<\rho<7/8\), apply
+Proposition~\ref{prop:compact-middle}.  If \(7/8\le\rho<1\), apply
+Lemma~\ref{lem:thin-shell}.  The three cases in
+\eqref{eq:ratio-partition} are disjoint and exhaustive, so
+\begin{equation}
+  N_D(A_{\rho,1},K^2)
+  \le\frac{2}{9\pi}(1-\rho^3)K^3
+  \qquad(K\ge0).
+  \label{eq:unit-shell-theorem}
+\end{equation}
+
+Now
+\[
+  \omega_3=\frac{4\pi}{3},
+  \qquad
+  L_3=\frac{\omega_3}{(2\pi)^3}=\frac1{6\pi^2},
+  \qquad
+  |A_{\rho,1}|=\frac{4\pi}{3}(1-\rho^3),
+\]
+so
+\begin{equation}
+  L_3|A_{\rho,1}|=\frac{2}{9\pi}(1-\rho^3).
+  \label{eq:weyl-normalization}
+\end{equation}
+Taking \(K=\sqrt\Lambda\) in \eqref{eq:unit-shell-theorem} proves the
+unit-shell form of Theorem~\ref{thm:spectral} for every \(\Lambda\ge0\).
+
+For arbitrary \(0<r<R\), put \(\rho=r/R\).  The unitary dilation
+\[
+  (D_Ru)(x)=R^{-3/2}u(x/R)
+\]
+maps \(L^2(A_{\rho,1})\) onto \(L^2(A_{r,R})\), and its Dirichlet form
+scales by \(R^{-2}\).  Hence
+\[
+  \lambda_j^D(A_{r,R})=R^{-2}\lambda_j^D(A_{\rho,1}),
+\]
+and the strict threshold transforms as
+\begin{equation}
+  N_D(A_{r,R},\Lambda)
+  =N_D(A_{\rho,1},R^2\Lambda).
+  \label{eq:dilation-count}
+\end{equation}
+Applying the unit-shell result at \(R^2\Lambda\),
+\[
+\begin{aligned}
+  N_D(A_{r,R},\Lambda)
+  &\le\frac{2}{9\pi}(1-\rho^3)(R^2\Lambda)^{3/2}\\
+  &=\frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}\\
+  &=L_3|A_{r,R}|\Lambda^{3/2}.
+\end{aligned}
+\]
+This proves Theorem~\ref{thm:spectral} for every \(R>0\), including
+\(R<1\).
+
+\section{Proof that spherical shells do not tile}
+
+We prove Theorem~\ref{thm:nontiling} independently of the spectral argument.
+Set \(\alpha=r/R\in(0,1)\) and scale by \(1/R\).  It suffices to consider
+\[
+  T=A_{\alpha,1}=\{x:\alpha<|x|<1\}.
+\]
+Every rigid motion has the form \(x\mapsto Qx+a\), with \(Q\) orthogonal.
+Because \(T\) is radial, \(Q(T)=T\), so every congruent copy is a translate
+\[
+  T_a=a+T=\{x:\alpha<|x-a|<1\}.
+\]
+
+Assume for contradiction that \(\{T_a:a\in\mathfrak C\}\) has
+pairwise-disjoint interiors and covers almost everywhere.  Duplicate centers
+are impossible because they give the same nonempty open tile.
+
+Fix a unit vector \(e\) and put
+\[
+  c=\frac{1+\alpha}{2}e,
+  \qquad
+  \delta=\frac{1-\alpha}{2}.
+\]
+Write \(B(x,s)=\{y\in\R^3:|y-x|<s\}\) for the open Euclidean ball.
+Then \(B(c,\delta)\subset T\).  Therefore \(T_a\) contains
+\(B(a+c,\delta)\), and disjointness implies
+\begin{equation}
+  |a-b|\ge1-\alpha
+  \qquad(a\ne b).
+  \label{eq:center-separation}
+\end{equation}
+Thus the centers are locally finite: a bounded set cannot contain infinitely
+many points with fixed positive separation.  They are also countable, since
+\[
+  \mathfrak C
+  =\bigcup_{m\ge1}(\mathfrak C\cap\overline B(0,m))
+\]
+is a countable union of finite sets.
+
+Each tile boundary is a union of two spheres and is three-dimensional null.
+The countable union
+\[
+  Z=\bigcup_{a\in\mathfrak C}\partial T_a
+\]
+is therefore null.  Exact open-shell coverage is already a special case of
+almost-everywhere coverage.  If closed shells cover exactly or almost
+everywhere, removing \(Z\) shows that their open interiors still cover almost
+everywhere.  Hence it is enough to assume
+\begin{equation}
+  \left|\R^3\setminus\bigcup_{a\in\mathfrak C}T_a\right|=0.
+  \label{eq:ae-coverage}
+\end{equation}
+
+Choose one tile \(T_{a_0}\) and its outer sphere
+\[
+  \Sigma=\{x:|x-a_0|=1\}.
+\]
+Fix \(p\in\Sigma\) and put \(u=p-a_0\).  For \(n\ge1\), let
+\[
+  U_n=B\left(p+\frac2n u,\frac1n\right).
+\]
+Every \(U_n\) lies outside \(T_{a_0}\), is open, and has positive volume.
+By \eqref{eq:ae-coverage}, choose \(x_n\in U_n\cap T_{a_n}\) with
+\(a_n\ne a_0\).  Since \(x_n\to p\) and \(|x_n-a_n|<1\), the centers
+\(a_n\) eventually lie in a fixed bounded set.  Local finiteness lets us
+pass to a subsequence with one fixed center \(a\ne a_0\).  Thus
+\(p\in\overline{T_a}\).
+
+The point \(p\) is not in \(T_a\).  Otherwise some
+\(B(p,\varepsilon)\) lies in \(T_a\).  Choose
+\[
+  0<t<\min\{\varepsilon,1-\alpha\}.
+\]
+Then \(p-tu\in T_{a_0}\cap T_a\), contradicting disjoint interiors.
+Therefore every \(p\in\Sigma\) belongs to the boundary of a neighboring
+tile.
+
+If \(p\in\Sigma\cap\partial T_a\), then
+\(|p-a|\in\{\alpha,1\}\), hence \(|a-a_0|\le2\).  Only finitely many
+centers satisfy this bound.  Consequently \(\Sigma\) is covered by finitely
+many neighboring inner or outer boundary spheres.
+
+Translate so that \(a_0=0\).  The intersection of \(\Sigma\) with a
+neighboring sphere \(\{x:|x-a|=s\}\), \(s\in\{\alpha,1\}\), satisfies
+\[
+  |x|^2=1,
+  \qquad |x-a|^2=s^2,
+\]
+and hence
+\begin{equation}
+  2a\cdot x=|a|^2+1-s^2.
+  \label{eq:sphere-plane}
+\end{equation}
+Because \(a\ne0\), \eqref{eq:sphere-plane} is a genuine plane.  Its
+intersection with \(\Sigma\) is empty, a tangent point, or a circle, and
+therefore has zero surface measure on \(\Sigma\).  A finite union of such
+sets cannot cover \(\Sigma\), whose area is \(4\pi\).
+
+There is no coincident-sphere exception.  A neighboring outer sphere equals
+\(\Sigma\) only when it has the same center, which is the original tile or a
+forbidden duplicate.  A neighboring inner sphere cannot equal \(\Sigma\)
+because \(\alpha<1\).  We have reached a contradiction.  Scaling back proves
+Theorem~\ref{thm:nontiling}.
+
+\appendix
+
+\section{Logical dependency and evidence boundary}
+
+The proof has four logically distinct layers:
+\begin{enumerate}
+  \item \textbf{Exact analysis:} operator decomposition, phase
+        representation, strict counting, weighted-lattice identities,
+        endpoint estimates, and analytic propagation.
+  \item \textbf{Finite mode analysis:} explicit radial and angular
+        inventories and exact Weyl payments through \(k_{11}\).
+  \item \textbf{Certified finite computation:} only the rectangle and
+        \(K=200\) base predicates stated after
+        Lemma~\ref{lem:exact-closure}.
+  \item \textbf{Elementary geometry:} the non-tiling proof, which uses none
+        of the spectral work.
+\end{enumerate}
+
+The legacy numerical Bessel experiments are not proof inputs.  External
+Lorch inequalities \cite{Lorch1993} are used only for explicitly stated
+first-positive-zero bounds; the shell variational comparison, radial-index
+preservation, multiplicity counts, and Weyl payments are internal arguments.
+The audited environment reconstructed the exact specializations from the
+published statement but did not have access to the article's full proof, so
+an external submission must either cite that theorem conventionally or
+replace those bounds by self-contained proofs.  The relevant source cards
+are \repo{sources/lorch_bessel_zeros.md},
+\repo{sources/round19_bessel_zero_bounds.md}, and
+\repo{sources/round20_bessel_zero_bounds.md}.
+
+All repository paths in this draft are relative to the repository root.  They
+are printed as paths, rather than as external hyperlinks, because the audited
+snapshot at local commit \texttt{d89b609} has not yet been published.  A
+review copy must therefore be distributed together with a repository checkout
+containing that commit; without the checkout, the internal records should be
+treated as unavailable.  The final graph and validation records are
+\repo{state/proof_obligations.yml},
+\repo{state/last_validation_report.md}, and
+\repo{rounds/polya-main/round_022/reviews/derived-state-final-audit.md}.
+
+\section{Work required before external submission}
+
+This draft is mathematically complete only relative to the listed detailed
+lemmas and certified supplements.  Before external submission it should be
+expanded as follows:
+\begin{enumerate}
+  \item move the full proofs of Propositions~\ref{prop:separated-spectrum}
+        and \ref{prop:phase-to-lattice} into analytic appendices;
+  \item replace internal packet language in
+        Lemmas~\ref{lem:small-hole}--\ref{lem:exact-closure} with conventional
+        numbered propositions and complete proofs;
+  \item print the Round~17--20 mode inventories, zero exclusions,
+        fixed and moving payments, and the corrected cap-\(74\) argument;
+  \item provide a computer-assisted-proof supplement containing the exact
+        algorithms, rational partitions, environment, hashes, digest, and
+        replay instructions;
+  \item give conventional bibliographic citations for all external inputs,
+        respecting their exact statement-level scopes;
+  \item run an independent human line-by-line reconstruction; and
+  \item perform a current literature comparison before using any novelty or
+        priority language.
+\end{enumerate}
+These tasks concern exposition, external verification, and scholarly scope.
+They do not broaden Theorem~\ref{thm:spectral} to general domains.
+
+\begin{thebibliography}{9}
+
+\bibitem{FLPSballs}
+N.~Filonov, M.~Levitin, I.~Polterovich, and D.~A.~Sher,
+\newblock P\'olya's conjecture for Euclidean balls,
+\newblock \emph{Invent. Math.} \textbf{234} (2023), 129--169.
+\newblock \href{https://doi.org/10.1007/s00222-023-01198-1}{doi:10.1007/s00222-023-01198-1}.
+
+\bibitem{FLPSphase}
+N.~Filonov, M.~Levitin, I.~Polterovich, and D.~A.~Sher,
+\newblock Uniform enclosures for the phase and zeros of Bessel functions and
+their derivatives,
+\newblock \emph{SIAM J. Math. Anal.} \textbf{56} (2024), no.~6, 7644--7682.
+\newblock \href{https://doi.org/10.1137/24M1642032}{doi:10.1137/24M1642032}.
+
+\bibitem{FLPSannuli}
+N.~Filonov, M.~Levitin, I.~Polterovich, and D.~A.~Sher,
+\newblock P\'olya's conjecture for Dirichlet eigenvalues of annuli,
+\newblock \emph{J. Lond. Math. Soc.} \textbf{113} (2026), no.~2, e70425.
+\newblock \href{https://doi.org/10.1112/jlms.70425}{doi:10.1112/jlms.70425}.
+
+\bibitem{Lorch1993}
+L.~Lorch,
+\newblock Some inequalities for the first positive zeros of Bessel
+functions,
+\newblock \emph{SIAM J. Math. Anal.} \textbf{24} (1993), no.~3, 814--823.
+\newblock \href{https://doi.org/10.1137/0524050}{doi:10.1137/0524050}.
+
+\bibitem{DLMF}
+NIST Digital Library of Mathematical Functions,
+\newblock Chapter 10: Bessel functions,
+\newblock \url{https://dlmf.nist.gov/}, accessed 15 July 2026.
+
+\end{thebibliography}
+
+\end{document}
