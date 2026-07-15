@@ -97,6 +97,7 @@ def test_hash_gated_loader_ignores_timestamp_valid_malicious_pyc(
         assert pyc_path.is_file()
     finally:
         sys.modules.pop(module_name, None)
+        pyc_path.unlink(missing_ok=True)
 
 
 def test_hash_gated_loader_restores_every_prior_module_state_on_failure(
