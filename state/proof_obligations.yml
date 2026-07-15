@@ -35,12 +35,13 @@
       "id": "POLYA-program-target",
       "type": "theorem",
       "track": "target_conventions",
-      "title": "Program target: exact Dirichlet P\u00f3lya for a new non-tiling Euclidean class",
-      "status": "open",
-      "statement_tex": "Prove N_D(Omega,Lambda) <= L_d |Omega| Lambda^{d/2} for all Lambda >= 0 for at least one new natural non-tiling Euclidean domain class, with Dirichlet boundary conditions and a fixed counting convention.",
+      "title": "Program target: exact Dirichlet P\u00f3lya for non-tiling three-dimensional spherical shells",
+      "status": "proved_internal",
+      "statement_tex": "For every genuine three-dimensional spherical shell A_{r,R}={x in R^3:r<|x|<R}, 0<r<R, and every Lambda>=0, the strict Dirichlet count satisfies N_D(A_{r,R},Lambda)<=L_3|A_{r,R}|Lambda^(3/2). No member of this same class tiles R^3 by congruent rigid-motion copies with pairwise-disjoint interiors and exact or almost-everywhere coverage. This is a program-internal witness and makes no literature novelty or priority claim.",
       "dependencies": [
         "CONV-strict-counting",
-        "TARGET-shell-d3"
+        "TARGET-shell-d3",
+        "SHELL-spherical-shell-nontiling"
       ],
       "implies": [],
       "blockers": [],
@@ -57,15 +58,34 @@
           "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
-          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md",
+          "state/lemma_packets/TARGET-shell-d3-round22-theorem.md",
+          "rounds/polya-main/round_022/responses/shell-theorem-incumbent.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-cross-comparison.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md",
+          "state/lemma_packets/SHELL-spherical-shell-nontiling-round22.md",
+          "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room.md",
+          "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room-addendum.md",
+          "rounds/polya-main/round_022/reviews/spherical-shell-nontiling-adversarial-referee.md",
+          "rounds/polya-main/round_022/reviews/program-target-scope-audit-replacement.md"
         ],
-        "negative": [],
-        "inconclusive": []
+        "negative": [
+          "rounds/polya-main/round_022/reviews/program-target-scope-audit.md",
+          "rounds/polya-main/round_022/judge/judge-022.md",
+          "rounds/polya-main/round_022/reviews/state-patch-final-audit.md",
+          "rounds/polya-main/round_022/judge/judge-022-replacement.md",
+          "rounds/polya-main/round_022/reviews/state-patch-final-audit-replacement.md"
+        ],
+        "inconclusive": [
+          "rounds/polya-main/round_021/exploration/literature-scope-note.md"
+        ]
       },
       "owner": "A1",
-      "next_action": "Keep the program target open. Complete the shell theorem assembly and audits, prove the full shell family is non-tiling, and run a separate program-scope audit without making a publication-priority claim.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43",
+      "next_action": "Treat the internal shell program target as complete. Preserve the no-novelty boundary; before external publication, require human reconstruction of every bottleneck lemma, manuscript-level checking, and an independent current literature search.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "falsification_cases": [
         "TARGET-shell-d3 remains open on the exact nonempty residual D18",
         "a compact-band lemma cannot promote the program theorem",
@@ -75,8 +95,49 @@
         "a combined finite-band and optical extension cannot promote the program theorem while D20 survives",
         "shell theorem pieces complete but theorem-level review not passed",
         "non-tiling geometry or scaling omitted",
-        "publication novelty inferred from a limited literature search"
-      ]
+        "publication novelty inferred from a limited literature search",
+        "the spectral and geometric results concern different domain classes",
+        "a shell endpoint r=0 or r=R is silently included",
+        "strict counting, Lambda=0, volume normalization, or scaling is omitted",
+        "non-tiling is proved only for translations but not all rigid motions",
+        "an exact, almost-everywhere, or closed-copy tiling convention survives",
+        "the word new is promoted into a literature novelty or priority assertion"
+      ],
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "TARGET-shell-d3",
+        "SHELL-spherical-shell-nontiling"
+      ],
+      "criticality": "theorem",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md",
+        "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room.md",
+        "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room-addendum.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md",
+        "rounds/polya-main/round_022/reviews/spherical-shell-nontiling-adversarial-referee.md",
+        "rounds/polya-main/round_022/reviews/program-target-scope-audit-replacement.md"
+      ],
+      "artifact_hashes": {
+        "theorem_packet": "8d77925828ccabd2dbe1ce066c5e07a513e991754ed8d5a0ff6aec1a41739228",
+        "theorem_clean_room": "9aac21bb288e3e9e9bbf5f8aff339753c75fa18013b430ce6cf9fbd3e38b5f12",
+        "theorem_adversarial_referee": "a69dc8a45f5a3b132bf7acc7e721e207ec4c61730e2bf4f85ff810a4a5f039d9",
+        "geometry_packet": "d8d0a9f59d132127033b338db95549d8e52b0252a832946670addab92baf4c8f",
+        "geometry_clean_room": "6305b4a6d0441178fa8e81d111573bb81f4ff9b03a004b7c2175d504e69217f6",
+        "geometry_adversarial_referee": "bfbed9e06f407e555c365524eef16a0d186e6745e2099dcbc4abb8af29499d53",
+        "program_scope_audit": "0ff8940a09adae1b510fcaa43bcd9d1eefeba903a3d20dd0d3997dd0a44960b2",
+        "superseded_program_scope_audit": "d36b646136f6cfc9729c5f88e6a0051cadd591e9ba94f8fccefa86b503bf49e5",
+        "failed_first_judge": "a7cc398e0014f6e42a6ebd2195b744ec2112331370545a1ff02105ad20eff576",
+        "failed_first_state_patch_audit": "b0a8e35d2a1adf291886b5f44215a2086687ab642d9358cdf994480acbf10573",
+        "failed_utf8_replacement_judge": "c6a440e9b064bf36925b66e6aea188cce1a624a706da76d9bd74daf417f2d415",
+        "failed_utf8_replacement_audit": "ce36df00ec78daca0771bb3e29d5281531beec5d41f22ce07dce15747364eb8d"
+      },
+      "reason_for_promotion": "The separately reviewed spectral theorem and separately reviewed non-tiling theorem hold for literally the same complete 0<r<R shell family. The independent program-scope audit verified the conjunction, normalization, scaling, tiling conventions, track separation, and no-novelty boundary."
     },
     {
       "id": "CONV-strict-counting",
@@ -117,22 +178,21 @@
       "type": "theorem",
       "track": "shell_analytic",
       "title": "First theorem target: Dirichlet P\u00f3lya for 3D spherical shells",
-      "status": "open",
-      "statement_tex": "For A_{rho,1}={x in R^3: rho<|x|<1}, 0<rho<1, prove N_D(A_{rho,1},Lambda) <= (2/(9 pi))(1-rho^3)Lambda^{3/2} for all Lambda>=0 using strict counting; equivalently, with K=sqrt(Lambda), prove N_D(A_{rho,1},K^2) <= (2/(9 pi))(1-rho^3)K^3 for all K>=0.",
+      "status": "proved_internal",
+      "statement_tex": "With strict counting N_D(Omega,Lambda)=#{j:lambda_j^D(Omega)<Lambda}, for every unit shell A_{rho,1}, 0<rho<1, and Lambda>=0, N_D(A_{rho,1},Lambda)<=(2/(9 pi))(1-rho^3)Lambda^(3/2). Equivalently, for every 0<r<R, N_D(A_{r,R},Lambda)<=(2/(9 pi))(R^3-r^3)Lambda^(3/2)=L_3|A_{r,R}|Lambda^(3/2), where L_3=1/(6 pi^2).",
       "dependencies": [
         "CONV-strict-counting",
         "SHELL-cross-product-formula",
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
-        "SHELL-rho-uniformity"
+        "SHELL-rho-uniformity",
+        "SHELL-sturm-liouville-completeness"
       ],
       "implies": [
         "POLYA-program-target"
       ],
-      "blockers": [
-        "SHELL-rho-uniformity"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
           "sources/seed_reports/Strategy.md",
@@ -203,7 +263,15 @@
           "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
-          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md",
+          "state/lemma_packets/TARGET-shell-d3-round22-theorem.md",
+          "rounds/polya-main/round_022/exploration/theorem-claim-freeze.md",
+          "rounds/polya-main/round_022/reviews/theorem-claim-scope-audit.md",
+          "rounds/polya-main/round_022/responses/shell-theorem-incumbent.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-cross-comparison.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": [
@@ -223,7 +291,8 @@
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
-        "SHELL-rho-uniformity"
+        "SHELL-rho-uniformity",
+        "SHELL-sturm-liouville-completeness"
       ],
       "falsification_cases": [
         "strict-count endpoints at shell eigenvalues",
@@ -244,13 +313,35 @@
         "the full theorem still requires complete D20 closure and fresh theorem-level review",
         "D21 empty but K=0, volume normalization, strict counting, or scaling omitted",
         "unit outer radius proved but arbitrary shell radii not scaled",
-        "the theorem promoted without a fresh theorem clean-room and final referee"
+        "the theorem promoted without a fresh theorem clean-room and final referee",
+        "K=0 inferred by continuity rather than positivity and strict counting",
+        "L_3 or shell volume normalized incorrectly",
+        "R^2 Lambda replaced by R^(-2) Lambda in the count scaling",
+        "the unit-shell theorem asserted without the arbitrary-radius corollary",
+        "publication novelty inferred from the theorem proof"
       ],
-      "clean_room_artifacts": [],
-      "adversarial_review_artifacts": [],
-      "next_action": "The last residual is mathematically closed and the obsolete diagnostic computation dependency is removed. Keep the theorem open while assembling K=0, all ratio seams, Weyl normalization, and scaling, then run fresh theorem-level reviews.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43"
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md",
+        "rounds/polya-main/round_022/reviews/shell-theorem-cross-comparison.md",
+        "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
+      ],
+      "next_action": "Use this as the proved strict Dirichlet P\u00f3lya theorem for all genuine three-dimensional spherical shells. External dissemination still requires a human line-by-line proof audit and a separate current literature search.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
+      "artifact_hashes": {
+        "packet": "8d77925828ccabd2dbe1ce066c5e07a513e991754ed8d5a0ff6aec1a41739228",
+        "freeze": "6c332d8b2ab388e81a7b190e2674912227271a3425ea3e0ecac99fdaf950f99d",
+        "scope_audit": "b8c8f23adc44c4a91497f740700e171e1211bc38eac32f12926c11af5e02a0c6",
+        "incumbent": "4083d6ce3b428601b7430a72819f131b4a4fd2fcfb92b356686b5b3e84376d7b",
+        "clean_room": "9aac21bb288e3e9e9bbf5f8aff339753c75fa18013b430ce6cf9fbd3e38b5f12",
+        "assembly_audit": "2b0004b1a90f9b92e67432cffe1d6fed29189d0e5aab3b50f3b1743c8c695d56",
+        "cross_comparison": "6d9b9973fa635cfbaed520457a706822d2999bbc01f79cf0888b30ef9749b458",
+        "adversarial_referee": "a69dc8a45f5a3b132bf7acc7e721e207ec4c61730e2bf4f85ff810a4a5f039d9"
+      },
+      "reason_for_promotion": "The exact all-ratio assembly is complete, K=0 follows from the directly recorded positive-spectrum theorem, Weyl normalization and dilation were rederived, and isolated clean-room, provenance, cross-comparison, and fresh adversarial reviews all passed with no unsupported implication."
     },
     {
       "id": "SRC-FLPS-balls",
@@ -465,7 +556,8 @@
         "COMP-certified-bessel",
         "SHELL-combined-closure",
         "CERT-round21-compact-proxy",
-        "SHELL-exact-d20-closure"
+        "SHELL-exact-d20-closure",
+        "SHELL-rho-compact"
       ],
       "blockers": [],
       "evidence": {
@@ -509,8 +601,8 @@
         "rounds/polya-main/round_002/reviews/phase-enclosure-adversarial.md"
       ],
       "next_action": "Use the proved global bound in the 2ell+1 weighted lattice obligation; retain the explicit warning that the absolute 1/4 slack may fail as rho approaches 1.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "reason_for_promotion": "The published real-order enclosure was specialized to half-integer shell orders, the determinant sign and strict endpoint count were reconstructed, and distinct incumbent, isolated clean-room, and adversarial checks passed. The promotion makes no weighted-sum or rho-uniform claim."
     },
     {
@@ -676,7 +768,8 @@
         "SHELL-weighted-lattice-fractional"
       ],
       "implies": [
-        "TARGET-shell-d3"
+        "TARGET-shell-d3",
+        "SHELL-rho-compact"
       ],
       "blockers": [],
       "evidence": {
@@ -700,8 +793,8 @@
       },
       "owner": "A3",
       "next_action": "Treat the fixed-rho high-energy spectral lattice bound as proved. Do not extend it to the finite window or rho endpoints without separate evidence.",
-      "last_updated_round": 4,
-      "last_updated_at": "2026-07-13T00:25:31",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "reason_for_promotion": "Round 3 proved the fixed-rho high-energy weighted proxy. Round 4 proves that this proxy is an unconditional upper bound for the exact strict d=3 eigenvalue count, including all multiplicities and spectral endpoints."
     },
     {
@@ -709,8 +802,8 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Uniformity in shell ratio rho",
-      "status": "open",
-      "statement_tex": "Upgrade fixed-rho shell estimates to rho in compact subintervals of (0,1), then separately treat rho -> 0 and rho -> 1.",
+      "status": "proved_internal",
+      "statement_tex": "For every 0<rho<1 and K>0, the small-hole theorem on 0<rho<=rho_*, the compact-middle theorem on rho_*<rho<7/8, and the thin-shell theorem on 7/8<=rho<1 form an exact disjoint cover and prove N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3.",
       "dependencies": [
         "SHELL-rho-compact",
         "SHELL-rho-zero-endpoint",
@@ -719,9 +812,7 @@
       "implies": [
         "TARGET-shell-d3"
       ],
-      "blockers": [
-        "SHELL-rho-compact"
-      ],
+      "blockers": [],
       "evidence": {
         "positive": [
           "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
@@ -785,7 +876,15 @@
           "state/lemma_packets/SHELL-exact-d20-closure-round21-scoped.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
-          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md",
+          "state/lemma_packets/TARGET-shell-d3-round22-theorem.md",
+          "rounds/polya-main/round_022/exploration/theorem-claim-freeze.md",
+          "rounds/polya-main/round_022/reviews/theorem-claim-scope-audit.md",
+          "rounds/polya-main/round_022/responses/shell-theorem-incumbent.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-cross-comparison.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -796,9 +895,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "The endpoint theorems and empty compact residual now provide all mathematical pieces. Keep this obligation open until the full all-rho assembly passes theorem-level clean-room and adversarial audits.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43",
+      "next_action": "Use this as the discharged all-ratio positive-frequency theorem. The K=0 check, Weyl normalization, Lambda formulation, and arbitrary-radius scaling are recorded in TARGET-shell-d3.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "falsification_cases": [
         "C17 is a strict compact-band compression, not compact all-frequency closure",
         "historical Round 17 checkpoint: D17 was the exact blocker after both endpoint theorems and before C18",
@@ -810,16 +909,37 @@
         "a k_11 staircase is not compact all-frequency closure below rho=39/50",
         "D21 empty but endpoint and compact owners not assembled coherently",
         "rho=rho_* or rho=7/8 lost at an endpoint seam",
-        "the full theorem promoted before fresh theorem review"
-      ]
+        "the full theorem promoted before fresh theorem review",
+        "rho=rho_* omitted or owned twice",
+        "rho=7/8 omitted or owned twice",
+        "the compact-middle open interval replaced by a closed interval",
+        "K=0 silently absorbed into a positive-frequency theorem"
+      ],
+      "criticality": "bottleneck",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-rho-compact",
+        "SHELL-rho-zero-endpoint",
+        "SHELL-rho-one-endpoint"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
+      ],
+      "reason_for_promotion": "The two promoted endpoint theorems and the newly promoted compact-middle theorem give an exact disjoint ratio partition for every positive frequency, and the theorem-level clean-room and adversarial audits found no seam or uniformity gap."
     },
     {
       "id": "SHELL-rho-compact",
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Uniform shell estimates on compact rho intervals",
-      "status": "open",
-      "statement_tex": "For every fixed 0<rho_0<rho_1<1, make the analytic threshold, phase bounds, lattice estimate, and finite-window certificate uniform for rho in [rho_0,rho_1].",
+      "status": "proved_internal",
+      "statement_tex": "For rho_*<rho<7/8 and every K>0, the complete accepted compact-middle cover through the exact empty residual D21 proves N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. Every inherited seam and strict spectral or phase wall retains its proved owner.",
       "dependencies": [
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
@@ -901,7 +1021,15 @@
           "rounds/polya-main/round_021/reviews/exact-d20-closure-clean-room-domain-addendum.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
-          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md",
+          "state/lemma_packets/TARGET-shell-d3-round22-theorem.md",
+          "rounds/polya-main/round_022/exploration/theorem-claim-freeze.md",
+          "rounds/polya-main/round_022/reviews/theorem-claim-scope-audit.md",
+          "rounds/polya-main/round_022/responses/shell-theorem-incumbent.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-cross-comparison.md",
+          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
         ],
         "negative": [],
         "inconclusive": []
@@ -926,12 +1054,33 @@
         "the optical rho=39/50 face is covered but ratios immediately below it still contain the open strip",
         "an empty residual is promoted without a theorem-level assembly",
         "legacy Bessel pilot certificates are treated as the D20 closure",
-        "compact interval uniformity is inferred without checking endpoint overlap and all K faces"
+        "compact interval uniformity is inferred without checking endpoint overlap and all K faces",
+        "rho_* or 7/8 assigned to the compact-middle owner",
+        "K=0 inferred from a positive-frequency compact argument",
+        "a historical residual substituted for exact empty D21",
+        "finite compact or K=200 aggregate evidence used outside its certified scope"
       ],
-      "next_action": "The exact analytic residual is empty and the obsolete diagnostic Bessel dependency is removed. Keep this obligation open for the separate theorem-level assembly and independent final reviews.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43",
-      "permitted_dependencies": []
+      "next_action": "Use this as the discharged positive-frequency compact-middle theorem. Preserve the exact seam owners and certificate scopes; no compact residual remains.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
+      "permitted_dependencies": [
+        "SHELL-phase-enclosures",
+        "SHELL-lattice-count",
+        "SHELL-fixed-rho-high-energy",
+        "SHELL-rho-compact-analytic-envelope"
+      ],
+      "criticality": "bottleneck",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
+      ],
+      "reason_for_promotion": "The complete compact-middle cover has exact empty successor residual D21, and the isolated theorem reconstruction, assembly audit, cross-comparison, and fresh adversarial referee independently verified every inherited seam, strict wall, and finite-versus-analytic boundary."
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -974,9 +1123,9 @@
         "ordinary-floor action walls",
         "nonuniformity of pointwise ball-root convergence"
       ],
-      "next_action": "Treat the small-hole endpoint as discharged. Begin the compact-rho residual interval at the inclusive endpoint rho=rho_*; no small-hole certificate is needed.",
-      "last_updated_round": 7,
-      "last_updated_at": "2026-07-13T14:22:34",
+      "next_action": "Retain this theorem as the completed small-hole owner on 0<rho<=rho_*, including the rho=rho_* seam.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -1073,9 +1222,9 @@
         "any hidden use of epsilon<=1/100, rho>=99/100, a>=125, an old bridge scale, or a Round 5, 6, or 11 conclusion",
         "the positive S1-S2 screens treated only as planning and the negative S3-S4 screens treated only as route obstructions"
       ],
-      "next_action": "Treat 7/8<=rho<1 as discharged. Any extension below rho=7/8 requires a separately frozen proof; S1-S2 remain planning screens and S3-S4 remain route obstructions only.",
-      "last_updated_round": 20,
-      "last_updated_at": "2026-07-15T03:16:14",
+      "next_action": "Retain this theorem as the completed thin-shell owner on 7/8<=rho<1, including the rho=7/8 seam.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -1332,7 +1481,8 @@
         "SHELL-combined-closure",
         "CERT-round21-compact-proxy",
         "CERT-round21-aggregate-tail",
-        "SHELL-exact-d20-closure"
+        "SHELL-exact-d20-closure",
+        "TARGET-shell-d3"
       ],
       "blockers": [],
       "evidence": {
@@ -1352,8 +1502,8 @@
       },
       "owner": "A4",
       "next_action": "Use this result as the discharged structural spectrum theorem. Do not infer rho-uniformity, a finite-window inequality, or numerical certification from it.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -1572,7 +1722,8 @@
         "SHELL-annulus-phase-transfer"
       ],
       "implies": [
-        "TARGET-shell-d3"
+        "TARGET-shell-d3",
+        "SHELL-rho-compact"
       ],
       "blockers": [],
       "evidence": {
@@ -1594,9 +1745,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Use the explicit K_0(rho) theorem as the analytic high-energy half of the shell program. The finite region and endpoint-uniform closure remain separate obligations.",
-      "last_updated_round": 4,
-      "last_updated_at": "2026-07-13T00:25:31",
+      "next_action": "Retain this theorem as the discharged fixed-ratio high-frequency input to the completed compact and shell theorems; do not broaden its own threshold or ratio scope.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "reason_for_promotion": "The sole remaining assumption in the Round 3 fixed-rho theorem was the separated-spectrum and strict-count bridge. Round 4 proves that bridge with independent and adversarial review, so the explicit K_0(rho) eigenvalue estimate is unconditional."
     },
     {
@@ -2610,9 +2761,9 @@
         "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md"
       ],
       "reason_for_promotion": "Round 16's endpoint and high-frequency conclusions are unchanged. All Round 17 PASS gates are satisfied, so the independently proved C17 band is added with exact old-face ownership, exact containment in D16, and exact residual subtraction; no certified box or sampled point is used to prove the analytic band.",
-      "next_action": "Treat D21 as empty. Keep higher obligations open until a coherent all-rho theorem assembly passes separate clean-room and fresh adversarial review.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43",
+      "next_action": "Retain the complete accepted compact-middle cover with D21 empty as the discharged analytic input to SHELL-rho-compact. Preserve every finite/analytic evidence boundary.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52",
       "artifact_hashes": {
         "residual_packet": "eca93c29423a619ab13a3118653256df2ad085219c6718d195723a0a6542026e",
         "residual_freeze": "23bfee8cddd64d0d9d956b8d1a288c6263095a2a04cc42052c4ace08ca36152a",
@@ -3957,9 +4108,89 @@
         "preserved_prior_referee_provenance": "48b259a94a0fd91a37ac2b606a22e1e4ca593f45bc2ef4392b7dd61dd359a5ab"
       },
       "reason_for_promotion": "The A3 proof and domain addendum reconstruct both spectral bridges, the universal aggregate propagation, and the exact scoped guard; the interval certificates discharge every finite premise; the authenticated-source lifecycle closes both the exact-constant and cached-bytecode gates; exact set arithmetic gives a disjoint exhaustive subtraction; and the final fresh referee plus provenance audit find no unsupported implication. D21 is empty, but theorem-level obligations remain deliberately open.",
-      "next_action": "Use this lemma only through the complete Round 21 cover with its exact face ownership. Assemble the full shell theorem, verify K=0, strict counting, endpoint overlap, volume normalization, and scaling, then run separate theorem-level clean-room and adversarial audits before promoting any higher obligation.",
-      "last_updated_round": 21,
-      "last_updated_at": "2026-07-15T08:48:43"
+      "next_action": "Retain the exact D20 split and empty D21 conclusion with K=200 compact-owned. Do not broaden either finite certificate or reuse superseded evidence.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52"
+    },
+    {
+      "id": "SHELL-spherical-shell-nontiling",
+      "type": "theorem",
+      "track": "target_conventions",
+      "title": "Three-dimensional spherical shells do not tile Euclidean space",
+      "status": "proved_internal",
+      "statement_tex": "For every 0<r<R, the open spherical shell A_{r,R}={x in R^3:r<|x|<R} admits no tiling of R^3 by congruent rigid-motion copies with pairwise-disjoint interiors and either exact or almost-everywhere coverage. The same conclusion holds when coverage is formulated using the closed copies, after the countable null boundary union is removed.",
+      "dependencies": [],
+      "implies": [
+        "POLYA-program-target"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-spherical-shell-nontiling-round22.md",
+          "rounds/polya-main/round_022/exploration/nontiling-claim-freeze.md",
+          "rounds/polya-main/round_022/reviews/nontiling-claim-scope-audit.md",
+          "rounds/polya-main/round_021/exploration/spherical-shell-nontiling-route.md",
+          "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room.md",
+          "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room-addendum.md",
+          "rounds/polya-main/round_022/reviews/spherical-shell-nontiling-adversarial-referee.md",
+          "rounds/polya-main/round_022/reviews/program-target-scope-audit-replacement.md"
+        ],
+        "negative": [
+          "rounds/polya-main/round_022/reviews/program-target-scope-audit.md",
+          "rounds/polya-main/round_022/judge/judge-022.md",
+          "rounds/polya-main/round_022/reviews/state-patch-final-audit.md",
+          "rounds/polya-main/round_022/judge/judge-022-replacement.md",
+          "rounds/polya-main/round_022/reviews/state-patch-final-audit-replacement.md"
+        ],
+        "inconclusive": [
+          "rounds/polya-main/round_021/exploration/literature-scope-note.md",
+          "rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md"
+        ]
+      },
+      "owner": "A1",
+      "criticality": "theorem",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [],
+      "falsification_cases": [
+        "an initially uncountable indexed family or accumulating centers",
+        "coverage supplied only by tile boundaries",
+        "almost-everywhere rather than exact coverage",
+        "closed-copy coverage",
+        "duplicate centers or orientation-reversing rigid motions",
+        "a limit point lying in the neighboring shell interior",
+        "tangent or coincident neighboring boundary spheres",
+        "the excluded endpoints r=0 or r=R",
+        "scaling with R<1 as well as R>1"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room.md",
+        "rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room-addendum.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_022/reviews/spherical-shell-nontiling-adversarial-referee.md"
+      ],
+      "artifact_hashes": {
+        "packet": "d8d0a9f59d132127033b338db95549d8e52b0252a832946670addab92baf4c8f",
+        "freeze": "c2067d2ec485a58b176352418a994e201415dfd410fdd324040a5019cbf97e7a",
+        "scope_audit": "96dc2866392d2140ae5271dd8d419b0eeef3f9c29f357c8e6a1c8f21e13cd8a7",
+        "incumbent": "67a622d4435f914a63190d8f0db5747aaaf7499422ac2e56adbc49b0ec7a5bca",
+        "clean_room": "6305b4a6d0441178fa8e81d111573bb81f4ff9b03a004b7c2175d504e69217f6",
+        "typography_addendum": "8f643b446d917f31596b8a7ad4effe6f6e2d18e399c93abfe7c89a3d3b6b9b55",
+        "adversarial_referee": "bfbed9e06f407e555c365524eef16a0d186e6745e2099dcbc4abb8af29499d53",
+        "program_scope_audit": "0ff8940a09adae1b510fcaa43bcd9d1eefeba903a3d20dd0d3997dd0a44960b2",
+        "superseded_program_scope_audit": "d36b646136f6cfc9729c5f88e6a0051cadd591e9ba94f8fccefa86b503bf49e5",
+        "failed_first_judge": "a7cc398e0014f6e42a6ebd2195b744ec2112331370545a1ff02105ad20eff576",
+        "failed_first_state_patch_audit": "b0a8e35d2a1adf291886b5f44215a2086687ab642d9358cdf994480acbf10573",
+        "failed_utf8_replacement_judge": "c6a440e9b064bf36925b66e6aea188cce1a624a706da76d9bd74daf417f2d415",
+        "failed_utf8_replacement_audit": "ce36df00ec78daca0771bb3e29d5281531beec5d41f22ce07dce15747364eb8d"
+      },
+      "reason_for_promotion": "The exact frozen geometry claim passed an independent scope audit, an isolated clean-room proof, and a fresh adversarial reconstruction covering local finiteness, countability, boundary removal, fixed-neighbor extraction, the finite sphere-cover contradiction, coincident-sphere cases, and scaling.",
+      "next_action": "Use this theorem only as the geometric dependency of POLYA-program-target. Do not infer a spectral inequality, literature novelty, priority, or a claim about another domain family from it.",
+      "last_updated_round": 22,
+      "last_updated_at": "2026-07-15T14:47:52"
     }
   ],
   "rejected_claims": [
