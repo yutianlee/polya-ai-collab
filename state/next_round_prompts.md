@@ -2,178 +2,126 @@
 
 Date: 2026-07-15
 
-Next phase: Round 22 theorem assembly and independent final review.
+Phase: post-completion handoff for the internal spherical-shell program.
 
-## Accepted boundary
+## Authoritative boundary
 
-The authoritative graph is the 60-obligation post-Round-21 graph. Its
-SHA-256 is
-`a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224`.
-Round 21 promotes:
+Read `state/proof_obligations.yml` first. It has 61 obligations and SHA-256
+`b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29`.
+The Round 22 patch has already been applied exactly once. Do not replay it or
+route new work from the graph's historical top-level `round_selection` prose.
 
-- `CERT-round21-compact-proxy` as `certified`;
-- `CERT-round21-aggregate-tail` as `certified`; and
-- `SHELL-exact-d20-closure` as `proved_internal`.
+The source-final judge and both independent application gates are:
 
-The historical residual
+- `rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md`,
+  SHA-256 `8bf97553a3c5bbab3de741a5c8752dc29bd5b9d39ce8289079e744b80b0721a2`;
+- `rounds/polya-main/round_022/reviews/state-patch-final-audit-source-utf8-final.md`,
+  SHA-256 `3d0952f7a0c3aac820427f90249e9f8d5ece5d6f20e1d0bdcc2e9af11f5adc69`,
+  **PASS** before application; and
+- `rounds/polya-main/round_022/reviews/state-patch-application-audit-source-utf8-final.md`,
+  SHA-256 `79a46f1e6398cb5887a98dc56142470a3b656b4153f969eec8db07df7604df58`,
+  **PASS** after application.
+
+## Completed internal result
+
+For every genuine bounded three-dimensional spherical shell
 
 $$
-\mathcal D_{20}=
-\{\rho_c\le\rho<39/50,\ k_{11}(\rho)<K<U(\rho)=K_0(\rho)\}
+A_{r,R}=\{x\in\mathbb R^3:r<|x|<R\},\qquad 0<r<R,
 $$
 
-is exactly split into compact-owned $K\le200$ and aggregate-owned $K>200$.
-The exact guards are $7/51<\rho_c$ and
-$k_{11}(\rho)>12$ for $\rho_c\le\rho<1$. Therefore
+and the strict Dirichlet count
 
 $$
-\boxed{\mathcal D_{21}=\varnothing.}
+N_D(\Omega,\Lambda)=\#\{j:\lambda_j^D(\Omega)<\Lambda\},
 $$
 
-This is already graph state, not exploratory routing. Do not rerun or
-reapply the Round 21 lemma patch.
+the internally reviewed theorem is
 
-`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
-`POLYA-program-target` remain `open`. `COMP-certified-bessel` remains
-`diagnostic_only` and is detached from the theorem path.
+$$
+N_D(A_{r,R},\Lambda)
+\le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
+=L_3|A_{r,R}|\Lambda^{3/2},
+\qquad \Lambda\ge0,
+$$
 
-## A1: freeze one theorem-assembly claim
+where $L_3=1/(6\pi^2)$. A separate internally reviewed theorem proves that
+no shell in the same complete $0<r<R$ family tiles $\mathbb R^3$ by congruent
+rigid-motion copies with pairwise-disjoint interiors and exact or
+almost-everywhere coverage. It also covers the corresponding closed-copy
+formulation after removal of the countable null boundary union.
 
-Create a proof-free theorem packet from the promoted graph. It must state,
-without importing incumbent proof prose:
+Accordingly, `SHELL-spherical-shell-nontiling`, `SHELL-rho-compact`,
+`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` are
+`proved_internal` with empty blockers. This closes the project-internal shell
+program only. It does not prove the general Pólya conjecture and makes no
+claim of literature novelty, priority, firstness, or publication readiness.
 
-1. the exact strict counting convention;
-2. the separated shell spectrum and multiplicities;
-3. the complete accepted cover for every $0<\rho<1$ and every $K>0$;
-4. ownership of every ratio and frequency seam, including
-   $\rho_*$, $\rho_c$, $39/50$, $7/8$, $K=200$, the high-frequency wall,
-   and all moving staircase faces;
-5. $N_D(A_{\rho,1},0)=0$ and equality at $K=0$;
-6. the Weyl normalization
-   $$
-   L_3=\frac1{6\pi^2},\qquad
-   |A_{\rho,1}|=\frac{4\pi}{3}(1-\rho^3),\qquad
-   L_3|A_{\rho,1}|=\frac{2}{9\pi}(1-\rho^3);
-   $$
-7. scaling from $A_{\rho,1}$ to every
-   $A_{r,R}=\{x\in\mathbb R^3:r<|x|<R\}$ using
-   $\rho=r/R$, eigenvalue scaling by $R^{-2}$, and volume scaling by $R^3$;
-8. the exact conclusion for all $\Lambda\ge0$; and
-9. a strict scope statement: three-dimensional spherical shells only, with
-   no novelty or publication-priority claim.
+## Scope that must remain fixed
 
-Freeze and hash the final packet before any reviewer receives it. A separate
-scope audit must compare its dependency list, seams, constants, and conclusion
-against the applied graph.
+- `CERT-round21-compact-proxy` certifies exactly 10,580 rational leaves on
+  $[7/51,39/50]\times[12,200]$.
+- `CERT-round21-aggregate-tail` certifies exactly 1,286 base boxes on
+  $7/51\le\rho\le39/50$ at the single frequency $K=200$; it makes no proof
+  decision for $K>200$. The tail on
+  $\rho_c\le\rho\le39/50$, $K\ge200$, is analytic.
+- `COMP-certified-bessel` remains `diagnostic_only` and detached from the
+  theorem path.
+- Strict eigenvalue walls, the $\Lambda=0$ case, the shell volume, and the
+  scaling identity
+  $N_D(A_{r,R},\Lambda)=N_D(A_{r/R,1},R^2\Lambda)$ remain part of the theorem.
 
-## A3: fresh clean-room theorem reconstruction
+## Next work: pre-publication, not proof blockers
 
-Give a new reviewer only the frozen theorem packet, the authoritative graph,
-the promoted obligation artifacts it names, and foundational source records.
-Do not provide `state/best_proof_draft.md`, prior synthesis prose, a proposed
-judge, or any theorem-level review written by another agent.
+These tasks do not reopen the proved-internal nodes unless they expose a
+specific mathematical defect.
 
-Require the reviewer to reconstruct:
+### Human reconstruction
 
-- the union of endpoint, high-frequency, staircase, Round 20, and Round 21
-  owners as an exhaustive cover of $(0,1)\times(0,\infty)$;
-- every included/excluded seam and strict eigenvalue wall;
-- the transition from strict $K>0$ estimates to the non-strict $K=0$ theorem;
-- the Weyl coefficient and shell volume product from first principles; and
-- the scaling identity for arbitrary inner and outer radii.
+Reconstruct every bottleneck lemma line by line from its accepted premises.
+In particular, check strict counting at integer walls, all ratio and frequency
+seams, the empty $\mathcal D_{21}$ set arithmetic, the analytic $K\ge200$
+propagation, $\Lambda=0$, Weyl normalization, arbitrary-radius scaling, and
+the rigid-motion non-tiling argument. Record the first concrete defect, if
+any; agreement or test output alone is not verification.
 
-The report must end with **PASS** or **FAIL** and name the first unsupported
-implication. Agreement with an incumbent is not evidence.
+### Manuscript assembly and audit
 
-## A4: theorem-assembly and provenance audit
+Turn the authenticated theorem and geometry lifecycles into one coherent
+manuscript. Keep computational certificates at their exact scopes, separate
+the spectral and geometric proofs until their conjunction, and commission a
+fresh manuscript-level referee after the exposition is frozen.
 
-Independently authenticate every promoted dependency used by the packet.
-Check that:
+### Current literature search
 
-- the Round 21 graph, judge, and both State-Patch audits have the current
-  bytes and are not reapplied;
-- the compact computation owns 10,580 finite leaves only;
-- the aggregate computation owns 1,286 finite base boxes at $K=200$ only,
-  while the universal $K\ge200$ result is analytic;
-- the accepted source-execution wrapper, not a stale or cache-vulnerable
-  predecessor, is the positive Round 21 executable route;
-- no historical $\mathcal D_j$ is substituted for its successor;
-- no seam is omitted or double-owned; and
-- no diagnostic-only or parallel-track artifact is promoted by prose.
+Run an independent, up-to-date search for prior results covering the exact
+strict inequality and the exact shell class. Until that search and a human
+comparison are complete, make no novelty or priority statement. Literature
+status is a publication question, not a dependency of the proved-internal
+mathematical graph.
 
-Preserve the Round 21 defect chronology: the unrestricted
-$k_{11}(\rho)>12$ claim failed, and the first scoped loader could execute a
-timestamp-valid adjacent `.pyc` after hashing source. These failed cycles
-remain negative evidence.
+### Optional parallel tracks
 
-## Fresh adversarial theorem referee
+`ELLIPSE-near-circular` and `CERT-certificate-family` remain open independent
+tracks. They may be pursued in parallel, but success, failure, or delay on
+either track must not change the completed shell statuses. The legacy Bessel
+framework may be used for diagnostics or regression tests only.
 
-After A3 and A4 finish, give a different fresh reviewer the frozen theorem
-packet and authenticated final evidence. Instruct the reviewer:
+## Preserved negative chronology
 
-> Assume `TARGET-shell-d3` is false. Reconstruct the cover, counting
-> convention, $K=0$ case, constants, and scaling. Identify the first
-> unsupported implication or certify that none exists.
+Do not cite the failed scope-line or encoding cycles as positive evidence.
+The first combined program-scope cycle misstated a 300-line geometry report
+as 299 lines; its first judge was never applied. A later replacement judge
+contained four `U+8D38` substitutions for intended `U+00F3` in “Pólya”; it
+also failed its gate and was never applied. Only the source-UTF-8 final judge
+and the two PASS audits listed above authorize the current graph.
 
-The referee must test at least the four ratio seams, $K=0$, $K=200$, every
-strict staircase boundary, the transition at the global high-frequency wall,
-and arbitrary-radius scaling.
+## Non-negotiable handoff rules
 
-## Non-tiling and program-scope audit
-
-Separately prove that no bounded three-dimensional spherical shell tiles
-Euclidean space by translations or by rigid motions under the stated tiling
-notion. Authenticate the existing non-tiling route and its clean-room and
-typography addenda, repair any gap, and state exactly which shell class the
-argument covers.
-
-Then audit `POLYA-program-target`:
-
-- the proved class must be the full natural family of 3D spherical shells;
-- the class must meet the stated non-tiling requirement;
-- the ellipse and certificate-family tracks remain outside the claim; and
-- no literature search is described as a novelty certificate or priority
-  claim.
-
-If the geometry passes, the final patch should create a narrowly scoped
-proved-internal non-tiling obligation (for example,
-`SHELL-spherical-shell-nontiling`) and make the program target depend on it,
-unless the judge gives an equally explicit graph representation of that
-premise. The obligation must state the exact tiling convention and the full
-$0<r<R$ domain. Calibrate the word "new" in the program target as new to this
-program's proved class, not as a publication-priority assertion.
-
-## Final judge and State Patch
-
-Only after the theorem clean-room report, A4 assembly audit, fresh adversarial
-referee, non-tiling proof audit, and program-scope audit all pass may a judge
-propose status changes for:
-
-- `SHELL-rho-compact`;
-- `SHELL-rho-uniformity`;
-- `TARGET-shell-d3`; and
-- `POLYA-program-target`.
-
-It may also create the scoped non-tiling obligation and corresponding
-dependency described above. The patch must reconcile the remaining logical
-blocker chain from compact assembly to uniformity to the shell target rather
-than merely changing status labels.
-
-The judge must not broaden the two scoped Round 21 certificates or the legacy
-diagnostic Bessel parent. Independently audit the proposed State Patch against
-the current 60-node graph, apply it exactly once only if the audit passes,
-then regenerate derived state and run the complete repository validation.
-
-## Mandatory do-not-claim rules
-
-- Empty $\mathcal D_{21}$ is an accepted lemma, but it is not yet a promoted
-  full theorem.
-- Do not broaden $k_{11}(\rho)>12$ beyond $\rho_c\le\rho<1$.
-- Do not call the aggregate finite computation an all-$K$ certificate.
-- Do not replace strict positive-eigenvalue counts by ordinary floors at
-  integer walls.
-- Do not omit the equality case $K=0$.
-- Do not claim arbitrary shells before the scaling calculation is explicit.
-- Do not infer proof from tests, displayed decimals, or agent consensus.
-- Do not promote the program target before the non-tiling and scope audits.
-- Do not claim novelty or publication priority.
+- Do not reapply the Round 22 State Patch.
+- Do not describe the internal shell result as the general Pólya conjecture.
+- Do not infer novelty, priority, or publication readiness from graph status.
+- Do not broaden either Round 21 certificate or promote diagnostic evidence.
+- Do not let optional ellipse or certificate-family work alter shell status.
+- If a genuine defect is found, freeze its exact claim and provenance before
+  proposing any graph change.

@@ -564,6 +564,51 @@ def generate_reading_packet(
     targets = [str(item) for item in selection.get("target_obligations", [])]
     route = by_id.get("POLYA-program-target", {})
     target = by_id.get("TARGET-shell-d3", {})
+    program_complete = (
+        route.get("status") == "proved_internal"
+        and target.get("status") == "proved_internal"
+    )
+
+    if program_complete:
+        targets = [
+            "POLYA-program-target",
+            "TARGET-shell-d3",
+            "SHELL-spherical-shell-nontiling",
+        ]
+        target_summary = (
+            "Target completed internally: exact Dirichlet P\u00f3lya for every "
+            "genuine three-dimensional spherical shell, together with non-tiling "
+            "of the same full class."
+        )
+        status_summary = (
+            "Current status: the shell theorem and the internal shell program target "
+            "are proved_internal. This does not solve the general P\u00f3lya conjecture "
+            "and makes no literature-novelty or publication-priority claim. The "
+            "ellipse and certificate-family tracks remain open and independent."
+        )
+        bottleneck_heading = "Completed Shell Target"
+        do_not_claim_rules = [
+            "- Do not describe this shell-class theorem as a proof of the general P\u00f3lya conjecture.",
+            "- Do not claim literature novelty, priority, or publication readiness without a separate current human audit.",
+            "- Do not describe the ellipse theorem or certificate-family theorem as proved.",
+            "- Keep every interval certificate within its exact finite scope and keep `COMP-certified-bessel` diagnostic-only.",
+        ]
+    else:
+        target_summary = (
+            "Target: exact Dirichlet P\u00f3lya for one natural non-tiling Euclidean "
+            "domain class."
+        )
+        status_summary = (
+            "Current status is governed by the live obligation statuses and blockers "
+            "below; historical round-selection prose is not authoritative."
+        )
+        bottleneck_heading = "Active Bottleneck"
+        do_not_claim_rules = [
+            "- Do not claim an open shell, ellipse, or certificate-family theorem has been proved.",
+            "- Floating-point and symbolic computation are diagnostic only; interval/formal certification discharges only an explicit finite computation obligation.",
+            "- Do not use external theorems as proof dependencies without completed source cards.",
+            "- Do not promote a bottleneck without exact proof evidence, a clean-room reconstruction, and an adversarial-review artifact.",
+        ]
 
     lines = [
         "# Reading Packet",
@@ -572,15 +617,15 @@ def generate_reading_packet(
         "",
         "## Current Theorem Target",
         "",
-        "Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.",
+        target_summary,
         "",
-        "Current status: no complete all-rho Pólya theorem has been proved. The exact d=3 spectrum, fixed-rho high-energy theorem, both uniform rho-endpoint neighborhoods (with rho>=7/8 on the thin side), and the all-rho analytic range K>=295^2=87025 are proved. The true nonrectangular residual is D_16 over I_16=[rho_*,7/8]. One central residual box is certified; exact coverage of D_16 and the final theorem audit remain open.",
+        status_summary,
         "",
         "## Current Route",
         "",
         str(route.get("statement_tex", "Program target statement missing from proof obligation graph.")),
         "",
-        "## Active Bottleneck",
+        f"## {bottleneck_heading}",
         "",
         f"`TARGET-shell-d3`: {target.get('status', 'unknown')}.",
         "",
@@ -588,11 +633,14 @@ def generate_reading_packet(
         "",
         "Current blockers:",
     ]
-    for blocker in target.get("blockers", []) if isinstance(target.get("blockers"), list) else []:
+    blockers = target.get("blockers", []) if isinstance(target.get("blockers"), list) else []
+    for blocker in blockers:
         blocker_item = by_id.get(blocker, {})
         title = blocker_item.get("title", "")
         status = blocker_item.get("status", "unknown")
         lines.append(f"- `{blocker}` ({status}): {title}")
+    if not blockers:
+        lines.append("- none")
 
     lines.extend(["", "## Round Target Obligations", ""])
     for obligation_id in targets:
@@ -610,10 +658,7 @@ def generate_reading_packet(
             "",
             "## Do-Not-Claim Rules",
             "",
-            "- Do not claim the shell theorem, ellipse theorem, or certificate-family theorem has been proved.",
-            "- Floating-point and symbolic computation are diagnostic only; interval/formal certification discharges only an explicit finite computation obligation.",
-            "- Do not use external theorems as proof dependencies without completed source cards.",
-            "- Do not promote a bottleneck without exact proof evidence, a clean-room reconstruction, and an adversarial-review artifact.",
+            *do_not_claim_rules,
             "",
             "## Obligation Roles",
             "",

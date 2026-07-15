@@ -6,13 +6,97 @@ The authoritative graph is `state/proof_obligations.yml`. The primary target is 
 
 Next run id: `polya-main`.
 
-## Current theorem boundary (Round 21 lemma patch applied)
+## Current theorem boundary (Round 22 final patch applied)
 
-The authoritative graph is the audited post-Round-21 graph, SHA-256
+The authoritative graph is the audited post-Round-22 graph, SHA-256
+`b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29`.
+It contains 61 obligations. Commit `d8fe505` applies the authenticated final
+State Patch exactly once. The source-final judge is
+`rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md`; its
+independent pre-application and post-application audits are
+`rounds/polya-main/round_022/reviews/state-patch-final-audit-source-utf8-final.md`
+and
+`rounds/polya-main/round_022/reviews/state-patch-application-audit-source-utf8-final.md`.
+Both audits pass, and the graph validator accepts the applied graph.
+
+The graph records each of
+`SHELL-spherical-shell-nontiling`, `SHELL-rho-compact`,
+`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` as
+`proved_internal`, with empty blockers. With the strict convention
+
+$$
+N_D(\Omega,\Lambda)=\#\{j:\lambda_j^D(\Omega)<\Lambda\},
+$$
+
+the internally reviewed theorem is
+
+$$
+\boxed{
+N_D(A_{r,R},\Lambda)
+\le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
+=L_3|A_{r,R}|\Lambda^{3/2}}
+$$
+
+for every genuine bounded three-dimensional spherical shell
+
+$$
+A_{r,R}=\{x\in\mathbb R^3:r<|x|<R\},\qquad 0<r<R,
+$$
+
+and every $\Lambda\ge0$, where $L_3=1/(6\pi^2)$. The unit-shell proof uses
+the exact disjoint ratio partition
+
+$$
+(0,1)=(0,\rho_*]\mathbin{\dot\cup}(\rho_*,7/8)
+\mathbin{\dot\cup}[7/8,1),
+$$
+
+treats $K=0$ by spectral positivity, preserves every inherited seam and
+strict counting wall, and scales by
+
+$$
+N_D(A_{r,R},\Lambda)=N_D(A_{r/R,1},R^2\Lambda).
+$$
+
+The separately reviewed geometric theorem proves that no member of this same
+$0<r<R$ family tiles $\mathbb R^3$ by congruent rigid-motion copies with
+pairwise-disjoint interiors and exact or almost-everywhere coverage. It also
+covers the corresponding closed-copy formulation after removal of the
+countable null boundary union. The spectral and geometric tracks meet only
+at `POLYA-program-target`.
+
+This is an internal proof status for the spherical-shell class. It does not
+solve the general Pólya conjecture, and it makes no claim of literature
+novelty, publication priority, first proof, or publication readiness. Human
+reconstruction of every bottleneck lemma, manuscript-level checking, and an
+independent current literature search remain required before any external
+claim.
+
+`COMP-certified-bessel` remains `diagnostic_only`, unchanged and detached
+from the theorem path; its two certified pilot boxes remain regression
+evidence. `ELLIPSE-near-circular` and `CERT-certificate-family` remain open
+parallel tracks, and `SRC-mathieu-ellipse` remains unchanged.
+
+Two failed provenance gates remain part of the negative chronology. The
+first judge/audit pair,
+`rounds/polya-main/round_022/judge/judge-022.md` and
+`rounds/polya-main/round_022/reviews/state-patch-final-audit.md`, was not
+applied because a bound scope report misstated a 300-line referee as 299
+lines. The replacement judge/audit pair,
+`rounds/polya-main/round_022/judge/judge-022-replacement.md` and
+`rounds/polya-main/round_022/reviews/state-patch-final-audit-replacement.md`,
+was not applied because four intended `Pólya` tokens were corrupted during
+text transfer. The source-UTF-8 final lifecycle repaired both provenance
+defects without changing the mathematical claim.
+
+## Historical theorem boundary after the Round 21 lemma patch
+
+The authoritative graph at that stage was the audited post-Round-21 graph,
+SHA-256
 `a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224`.
-It contains 60 obligations. Commit `13e9534` applies the final lemma State
+It contained 60 obligations. Commit `13e9534` applied the final lemma State
 Patch exactly once. The graph validator and the independent post-application
-audit both pass.
+audit both passed.
 
 The exact separated spectrum, strict counting convention, both endpoint
 theorems, the all-ratio high-frequency theorem, and every accepted staircase
@@ -162,16 +246,19 @@ adversarial referee, provenance/isolation audit, lemma judge, pre-application
 State-Patch audit, and post-application audit all passed. Superseded unscoped,
 stale-hash, and cache-vulnerable cycles remain negative chronology.
 
-No higher theorem status changed. `SHELL-rho-compact`,
-`SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` remain
-`open`. `COMP-certified-bessel` remains `diagnostic_only`; its obsolete
+At the end of Round 21 no higher theorem status had changed:
+`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`POLYA-program-target` were still `open`. Round 22 subsequently assembled,
+independently reviewed, and promoted all four. `COMP-certified-bessel`
+remained `diagnostic_only`; its obsolete
 theorem-path dependency, blocker, and implication were removed, while the
 two legacy pilot boxes remain regression evidence. The next admissible step
-is a coherent theorem assembly checking $K=0$, every ratio seam, strict
-counting, Weyl-volume normalization, and scaling, followed by a fresh
-clean-room theorem reconstruction, a separate adversarial theorem referee,
-and a program-scope/non-tiling audit. Empty $\mathcal D_{21}$ alone is not
-the final theorem promotion.
+at that historical point was a coherent theorem assembly checking $K=0$,
+every ratio seam, strict counting, Weyl-volume normalization, and scaling,
+followed by a fresh clean-room theorem reconstruction, a separate
+adversarial theorem referee, and a program-scope/non-tiling audit. Round 22
+completed that lifecycle; empty $\mathcal D_{21}$ alone was not used as the
+final theorem promotion.
 
 ## Historical boundary through Round 18
 
@@ -362,7 +449,8 @@ $$
 so $(1/2,30)\in\mathcal D_{18}$. At the end of Round 19 the same targets
 remained open for the strictly smaller residual $\mathcal D_{19}$, which is
 historical now. After Round 20 they remained open for $\mathcal D_{20}$;
-after Round 21 they remain open only for theorem assembly and review.
+after Round 21 they were open only for theorem assembly and review. Round 22
+subsequently completed that assembly and promoted the theorem path.
 
 At the left ratio face,
 
@@ -1060,8 +1148,9 @@ $$
 
 with its historical two-piece formula retained in the Round 17 state and
 judge artifacts.
-The full shell theorem, compact-ratio uniformity, and
-`SHELL-rho-compact` remain open.
+At the end of Round 17 the full shell theorem, compact-ratio uniformity, and
+`SHELL-rho-compact` were open. Rounds 18--22 subsequently closed these
+historical gaps.
 
 Immediately above $k_2(\rho)$, the same coarse comparison must allow the
 $\ell=2$ multiplicity, so its cap jumps from $4$ to $9$. At
@@ -1196,7 +1285,38 @@ exact guard $k_{11}(\rho)>12$ is asserted only for
 $\rho_c\le\rho<1$. Exact face bookkeeping gives
 $\mathcal D_{21}=\varnothing$.
 
-This is a lemma-level promotion only. The compact assembly, all-ratio
-uniformity, unit-shell target, and program target remain open until the
-full theorem is assembled and separately audited. The legacy Bessel parent
-remains diagnostic and is detached from the theorem path.
+This was a lemma-level promotion only. At the end of Round 21 the compact
+assembly, all-ratio uniformity, unit-shell target, and program target remained
+open until the full theorem could be assembled and separately audited. Round
+22 completed those steps and promoted all four. The legacy Bessel parent
+remains diagnostic and detached from the theorem path.
+
+## Round 22 Final Theorem and Program Update
+
+Date: 2026-07-15
+
+See `rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md`,
+`rounds/polya-main/round_022/reviews/state-patch-final-audit-source-utf8-final.md`,
+and
+`rounds/polya-main/round_022/reviews/state-patch-application-audit-source-utf8-final.md`.
+
+Round 22 promotes `SHELL-rho-compact`, `SHELL-rho-uniformity`,
+`TARGET-shell-d3`, and `POLYA-program-target` to `proved_internal` and creates
+`SHELL-spherical-shell-nontiling` at `proved_internal`. The resulting theorem
+is the exact strict Dirichlet Pólya inequality for every $0<r<R$ and every
+$\Lambda\ge0$ in the full three-dimensional spherical-shell family. The
+separate geometric theorem proves that the same family is non-tiling under
+the audited exact, almost-everywhere, and closed-copy conventions.
+
+Commit `d8fe505` is the one-time application, and the applied graph has
+SHA-256
+`b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29`.
+The first line-metadata provenance gate and the later UTF-8 provenance gate
+remain preserved failures; neither failed patch was applied. The accepted
+source-final lifecycle repaired both defects and changed no theorem scope.
+
+This closes the internal spherical-shell program target only. It does not
+settle the general Pólya conjecture and carries no literature novelty,
+priority, first-proof, or publication-readiness claim. The ellipse and
+certificate-family tracks remain open, while `COMP-certified-bessel` remains
+diagnostic-only and detached.

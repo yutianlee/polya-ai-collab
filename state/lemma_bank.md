@@ -1,6 +1,8 @@
 # Lemma Bank
 
 The authoritative statements and evidence are in state/proof_obligations.yml.
+The applied Round 22 graph is commit `d8fe505`, SHA-256
+`b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29`.
 
 Validated shell lemmas now include:
 
@@ -531,6 +533,61 @@ $$
   Earlier unscoped, stale-hash, and cache-vulnerable cycles remain negative
   chronology;
 
+- `SHELL-rho-compact`. The complete compact-middle cover now proves, for
+  every $\rho_*<\rho<7/8$ and $K>0$,
+
+$$
+N_D(A_{\rho,1},K^2)
+\le\frac{2}{9\pi}(1-\rho^3)K^3.
+$$
+
+  Its accepted analytic input has exact successor residual
+  $\mathcal D_{21}=\varnothing$. The 10,580 compact leaves remain confined to
+  $[7/51,39/50]\times[12,200]$, the 1,286 aggregate boxes certify only base
+  predicates at $K=200$, and the $K\ge200$ propagation remains analytic;
+
+- `SHELL-rho-uniformity`. The exact disjoint ratio owners
+
+$$
+(0,\rho_*],\qquad(\rho_*,7/8),\qquad[7/8,1)
+$$
+
+  prove the unit-shell inequality for every $0<\rho<1$ and $K>0$. The
+  small-hole theorem owns $\rho=\rho_*$ and the thin-shell theorem owns
+  $\rho=7/8$;
+
+- `TARGET-shell-d3`. Spectral positivity handles $K=0$ directly, the strict
+  count is retained at every eigenvalue wall, and
+
+$$
+L_3=\frac1{6\pi^2},\qquad
+L_3|A_{r,R}|=\frac{2}{9\pi}(R^3-r^3),
+$$
+
+  together with
+
+$$
+N_D(A_{r,R},\Lambda)=N_D(A_{r/R,1},R^2\Lambda)
+$$
+
+  gives the exact Dirichlet Pólya inequality for every genuine bounded shell
+  $0<r<R$ and every $\Lambda\ge0$;
+
+- `SHELL-spherical-shell-nontiling`. For every $0<r<R$, the open shell
+  $A_{r,R}$ admits no tiling of $\mathbb R^3$ by congruent rigid-motion copies
+  with pairwise-disjoint interiors and exact or almost-everywhere coverage.
+  The same conclusion holds for the audited closed-copy convention after the
+  countable null boundary union is removed. This geometric theorem has no
+  spectral premise;
+
+- `POLYA-program-target`. The reviewed spectral and geometric theorems hold
+  for literally the same complete shell family and meet only at this program
+  node. Its `proved_internal` status means completion within this project;
+  it is not a claim about the general Pólya conjecture, literature novelty,
+  publication priority, first proof, or publication readiness. Human
+  bottleneck reconstruction, manuscript checking, and a current independent
+  literature audit remain external prerequisites;
+
 - the independently checked certified pilot
 
 $$
@@ -556,23 +613,31 @@ $$
   margin. Both certified boxes lie inside $\mathcal C_{17}$, so they remain
   independent regression evidence but are analytically redundant.
 
-The exact analytic residual is now empty. Nevertheless,
+The exact analytic residual is empty, and Round 22 has now completed the
+separate coherent theorem assembly, clean-room reconstruction, adversarial
+theorem referee, geometry review, and program-scope audit. Consequently
 `SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
-`POLYA-program-target` remain open pending a separate coherent theorem
-assembly, clean-room reconstruction, adversarial theorem referee, and
-program-scope/non-tiling audit. The parent `COMP-certified-bessel` remains
-`diagnostic_only`; its obsolete theorem-path edges are removed and the two
-older pilot boxes remain regression evidence only. Empty residual arithmetic
-is not, by itself, the final theorem promotion.
+`POLYA-program-target` are `proved_internal`. The parent
+`COMP-certified-bessel` remains `diagnostic_only`; its obsolete theorem-path
+edges are removed and the two older pilot boxes remain regression evidence
+only. `ELLIPSE-near-circular` and `CERT-certificate-family` remain open
+parallel tracks and are not premises of the shell theorem. Empty residual
+arithmetic was not used by itself as the final theorem promotion.
 
 The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain unproved.
 The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only their
 tested proof routes; they are not counterexamples and do not weaken the
 proved endpoint $7/8\le\rho<1$.
 
-The Round 21 spherical-shell non-tiling route and its clean-room addendum are
-reviewed prospective program evidence, not yet graph promotion. They address
-all bounded shells $0<r<R$ under the stated congruent, disjoint-interior,
-almost-everywhere-cover convention. A fresh adversarial geometry review and
-program-scope audit remain mandatory, and the limited literature search is
-not a novelty or publication-priority certificate.
+The Round 21 spherical-shell non-tiling route and its clean-room addendum have
+now passed the fresh Round 22 adversarial geometry review and program-scope
+audit and support the promoted `SHELL-spherical-shell-nontiling` node. The
+source-final judge and audits are
+`rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md`,
+`rounds/polya-main/round_022/reviews/state-patch-final-audit-source-utf8-final.md`,
+and
+`rounds/polya-main/round_022/reviews/state-patch-application-audit-source-utf8-final.md`.
+The earlier physical-line metadata gate and UTF-8 text-transfer gate remain
+preserved failed provenance cycles; neither was applied. The limited
+literature search remains inconclusive and is not a novelty or
+publication-priority certificate.

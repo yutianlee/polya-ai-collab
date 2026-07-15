@@ -2,160 +2,154 @@
 
 Date: 2026-07-15
 
-Round: 21 lemma post-application synchronization
+Round: 22 final shell-program post-application validation
 
 ## Decision
 
-**PASS. First unsupported implication: none at the Round 21 lemma boundary.**
+**PASS. First unsupported implication: none at the final internal shell-program
+boundary.** The mathematical and provenance lifecycles passed, the final
+State Patch was applied exactly once, the derived state was synchronized, and
+the complete repository gate passed.
 
-This is not a full-theorem promotion report. It authenticates the exact
-closure of the Round 20 residual and the synchronized state from which the
-separate theorem-level lifecycle begins.
+This is a project-internal shell-class completion report. It is not a claim
+that the general Pólya conjecture is solved, and it makes no claim of
+literature novelty, priority, or publication readiness.
 
-The audited State Patch was applied exactly once in commit `13e9534`. The
+## Realized graph
+
+The final State Patch was applied exactly once in commit `d8fe505`. The
 authoritative graph is `state/proof_obligations.yml`, SHA-256
-`a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224`.
-It contains 60 unique obligations and validates with no dangling reference,
-impermissible dependency, duplicate relationship, or graph cycle.
+`b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29`.
+It has 61 unique obligations and validates with no dangling reference,
+impermissible dependency, duplicate relationship, dependency cycle, or
+implication cycle.
 
-The realized patch operation is exact:
+The realized operation was exact:
 
-- 57 obligations before and 60 after;
-- 3 creates;
-- 13 updates;
-- 0 rejected operations; and
-- no pre-existing status change.
+- 1 create;
+- 12 updates;
+- 0 rejects;
+- 6 explicit no-change decisions; and
+- one generated application timestamp, `2026-07-15T14:47:52`.
 
-The independent post-application audit is
-`rounds/polya-main/round_021/reviews/state-patch-lemma-application-audit.md`,
-SHA-256
-`c81fdc03124c3bd6c2b818b93810bd64b184b06735fd8a5cd72d59f0e0e158ef`.
-It reconstructs the patch in memory from the committed 57-node baseline and
-finds exact equality with the applied graph after normalizing only the single
-generated application timestamp.
+The application created `SHELL-spherical-shell-nontiling` and promoted
+`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
+`POLYA-program-target` to `proved_internal`. All five have empty blockers.
 
-## Promoted lemma boundary
+`COMP-certified-bessel` remains `diagnostic_only`, has no blockers or
+implications, and is absent from the dependency and blocker lists of the
+compact, spectral-target, and program-target nodes. The ellipse and
+certificate-family tracks remain open and independent; they are not premises
+of the completed shell theorem.
 
-The three created obligations are:
+## Exact theorem boundary
 
-- `CERT-round21-compact-proxy`: `certified`;
-- `CERT-round21-aggregate-tail`: `certified`; and
-- `SHELL-exact-d20-closure`: `proved_internal`.
-
-Let
+With the strict convention
 
 $$
-\rho_c=\frac1{1+2\pi},\qquad
-z_\rho=\frac{\pi}{1-\rho},\qquad
-k_{11}(\rho)=\sqrt{z_\rho^2+132}.
+N_D(\Omega,\Lambda)=\#\{j:\lambda_j^D(\Omega)<\Lambda\},
 $$
 
-The historical Round 20 residual is
+the internally proved spectral theorem is
 
 $$
-\mathcal D_{20}=
-\left\{\rho_c\le\rho<\frac{39}{50},\quad
-k_{11}(\rho)<K<U(\rho)=K_0(\rho)\right\}.
+\boxed{
+N_D(A_{r,R},\Lambda)
+\le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
+=L_3|A_{r,R}|\Lambda^{3/2}
+}
 $$
 
-The compact theorem is strict on
-$[7/51,39/50]\times[12,200]$. Its deterministic certificate has 10,580
-exact rational leaves and was replayed at 256- and 384-bit precision. The
-aggregate finite certificate has 1,286 ratio boxes at 192 and 384 bits and
-owns only its $K=200$ base signs. A3's independent analytic derivative,
-curvature, and two-integration chain owns the universal $K\ge200$
-propagation.
+for every $0<r<R$ and every $\Lambda\ge0$, where
+$L_3=1/(6\pi^2)$. The assembly separately checks $K=0$, every inherited
+ratio and spectral seam, the unit-shell normalization, and dilation to
+arbitrary radii.
 
-The exact guards are
-
-$$
-\frac7{51}<\rho_c,\qquad
-k_{11}(\rho)>12\quad(\rho_c\le\rho<1).
-$$
-
-They give the disjoint residual split into $K\le200$ and $K>200$, with
-$K=200$ compact-owned. The faces $\rho=39/50$, $K=k_{11}$, and $K=U$ are
-outside $\mathcal D_{20}$ and are not subtracted again. Consequently
+The compact proof chain retains the exact Round 21 conclusion
 
 $$
 \boxed{\mathcal D_{21}=\varnothing.}
 $$
 
-## Executable provenance and reproduced gates
+Its finite interval certificates remain confined to their declared compact
+and $K=200$ base scopes; the analytic tail owns the universal propagation.
 
-The accepted wrapper authenticates 18 input files. It reads the sealed
-producer source once, hashes those exact bytes, strict-decodes UTF-8,
-compiles with inherited flags disabled and optimization zero, and directly
-executes a registered cache-free module. It reproduces 243 exact sign rows,
-all 10,580 compact leaves, all 1,286 aggregate base boxes, and the same
-canonical digests.
+A separate internally proved geometry theorem states that the same complete
+$0<r<R$ shell family does not tile $\mathbb R^3$ by congruent rigid-motion
+copies with pairwise-disjoint interiors and exact or almost-everywhere
+coverage. The reviewed open- and closed-copy conventions differ only by the
+countable null union of tile boundaries.
 
-The accepted validation ledger is:
+## Final provenance chain
 
-- exact residual classifier: 47 tests passed;
-- final focused source-execution gate: 14 tests passed;
-- isolated full repository gate before application: 334 passed,
-  1 strict expected xfail, and 10 subtests passed;
-- fresh cache files before and after both isolated gates: 0; and
-- graph and State-Patch validators: PASS.
+The successful final judge is
+`rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md`, SHA-256
+`8bf97553a3c5bbab3de741a5c8752dc29bd5b9d39ce8289079e744b80b0721a2`.
+Its source bytes strict-decode as UTF-8 and contain exactly four U+00F3
+characters, one U+2014, zero U+8D38, and zero U+FFFD.
 
-The post-application derived-state suite is recorded below after regeneration:
+The successful pre-application audit is
+`rounds/polya-main/round_022/reviews/state-patch-final-audit-source-utf8-final.md`,
+SHA-256
+`3d0952f7a0c3aac820427f90249e9f8d5ece5d6f20e1d0bdcc2e9af11f5adc69`.
 
-- complete post-application suite: 339 passed, 1 strict expected xfail,
-  and 10 subtests passed in 195.92 seconds;
-- in-memory source compilation: PASS, 66 tracked Python files;
-- strict UTF-8 and C0/DEL scan of changed derived artifacts:
-  PASS, 8 synchronized/lifecycle files;
-- malformed-LaTeX-command scan: PASS, zero findings; and
-- `git diff --check`: PASS.
+The successful post-application audit is
+`rounds/polya-main/round_022/reviews/state-patch-application-audit-source-utf8-final.md`,
+SHA-256
+`79a46f1e6398cb5887a98dc56142470a3b656b4153f969eec8db07df7604df58`.
+It reconstructs the final patch from the committed baseline and finds exact
+mapping equality after substituting only the one generated timestamp.
 
-## Preserved failure chronology
+The accepted replacement program-scope audit is
+`rounds/polya-main/round_022/reviews/program-target-scope-audit-replacement.md`,
+SHA-256
+`0ff8940a09adae1b510fcaa43bcd9d1eefeba903a3d20dd0d3997dd0a44960b2`.
 
-The following are negative or superseded evidence, not promotion support:
+## Preserved negative chronology
 
-1. the initial candidate had isolation ambiguity and inconsistent aggregate
-   quantification;
-2. the initial aggregate route omitted its spectral bridge;
-3. the first exact audit left the Machin principal branch implicit;
-4. its replacement lacked mandatory mutation and lifecycle tests;
-5. the first fresh referee missed that lifecycle defect;
-6. a hardened-referee transcription incorrectly described its context as
-   proof-free;
-7. the candidate and first judge claimed the false or undefined guard
-   $k_{11}(\rho)>12$ for every $\rho\ge\rho_c$; at $\rho=1$ the shell formula
-   is singular and $\rho=2$ is an exact counterexample;
-8. the corrected guard made the earlier judge and State-Patch audit stale;
-   and
-9. the first scoped loader could hash `.py` while executing a
-   timestamp-valid adjacent `.pyc`.
+No failed gate is used as positive promotion evidence:
 
-The final source-execution route closes the last defect. Its malicious-cache
-test forces timestamp mode even when `SOURCE_DATE_EPOCH` is present, matches
-source size and mtime, installs conflicting semantics, requires source
-behavior, and removes the sentry. Superseded unscoped, stale-hash, and
-cache-vulnerable artifacts remain in their negative or inconclusive evidence
-buckets.
+1. The first program-scope audit was mathematically favorable but stated 299
+   physical lines for a file with 300 LF bytes and a terminal LF. Its hash
+   remains superseded evidence.
+2. The first judge and its first State-Patch audit inherited that provenance
+   defect and were never applied.
+3. The replacement judge contained four actual U+8D38 characters where
+   “Pólya” was required. Its replacement audit therefore failed, and neither
+   artifact was applied.
+4. The source-authored UTF-8 judge and its two successful audits are the sole
+   final authorization chain.
 
-## Status and next boundary
+The graph keeps the superseded scope audit and both failed judge/audit pairs
+in negative evidence buckets. The accepted replacement scope audit is
+positive evidence. The final judge reference remains an inconclusive
+auto-injected provenance pointer on the newly created geometry node, not a
+substitute for the positive theorem reviews.
 
-No higher target is promoted:
+## Validation ledger
 
-- `SHELL-rho-compact`: `open`;
-- `SHELL-rho-uniformity`: `open`;
-- `TARGET-shell-d3`: `open`;
-- `POLYA-program-target`: `open`; and
-- `COMP-certified-bessel`: `diagnostic_only`.
+Completed gates:
 
-The obsolete diagnostic-parent dependencies, blockers, and implication on
-the theorem path are removed, while the parent and its two legacy pilot boxes
-remain regression evidence.
+- focused Round 21/22 lifecycle gate before final report freeze: 18 passed;
+- test collection: 353 tests collected;
+- complete repository suite: 352 passed, 1 strict expected xfail, and 10
+  subtests passed in 138.83 seconds;
+- graph identity: 61 unique obligations at the exact final SHA-256;
+- promoted dependency closures: every premise is `proved_internal`,
+  `proved_external_dependency`, or `certified`;
+- exact theorem-path reciprocal edges and both whole relation DAGs: PASS;
+- immutable theorem, geometry, successful-audit, and failed-chronology hashes:
+  PASS;
+- generated reading-packet regression: completed-state branch selected, empty
+  target blockers rendered as `none`, and stale open-target text absent;
+- independent derived-state stale-claim audit: no actionable finding;
+- strict UTF-8 scan of synchronized state: zero U+8D38 and zero U+FFFD; and
+- `git diff --check`: PASS after report finalization.
 
-The top-level graph `round_selection` prose remains historical orchestration
-metadata by design; it is not copied into the next workflow. Current
-obligation statuses and `next_action` fields govern the Round 22 boundary.
+## Human boundary
 
-The next admissible work is a coherent theorem assembly covering $K=0$,
-strict counting, every ratio seam, the Weyl-volume normalization, and scaling
-to arbitrary shells. It must then pass a fresh clean-room theorem proof, a
-separate adversarial theorem referee, an adversarial non-tiling review, and a
-program-scope audit before any higher State Patch is proposed.
+The internal executable workflow is complete. External dissemination still
+requires a human line-by-line reconstruction of every bottleneck lemma,
+manuscript-level notation and dependency checking, and a separate current
+literature search. Those human and literature tasks do not change the
+internal graph status and must not be represented as already completed.

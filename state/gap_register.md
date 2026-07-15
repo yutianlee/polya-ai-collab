@@ -2,72 +2,64 @@
 
 The authoritative statuses are in state/proof_obligations.yml.
 
-## Active shell gaps
+## Current shell status and remaining work
 
-- The exact compact residual is closed. Round 21 proves
+- There is no open mathematical obligation on the internal spherical-shell
+  theorem path. In the authoritative post-Round-22 graph,
+  `SHELL-spherical-shell-nontiling`, `SHELL-rho-compact`,
+  `SHELL-rho-uniformity`, `TARGET-shell-d3`, and `POLYA-program-target` are
+  all `proved_internal` with empty blockers. The graph was applied once in
+  commit `d8fe505` and has SHA-256
+  `b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29`.
 
-  $$
-  \mathcal D_{20}=
-  \{\rho_c\le\rho<39/50,\ k_{11}(\rho)<K<U(\rho)=K_0(\rho)\}
-  $$
-
-  is the disjoint union of its compact-owned $K\le200$ part and its
-  aggregate-owned $K>200$ part. The exact guards are
-  $7/51<\rho_c$ and $k_{11}(\rho)>12$ only for
-  $\rho_c\le\rho<1$. Consequently the accepted successor residual is
+- The completed spectral theorem is
 
   $$
-  \boxed{\mathcal D_{21}=\varnothing.}
+  N_D(A_{r,R},\Lambda)
+  \le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
+  =L_3|A_{r,R}|\Lambda^{3/2},
+  \qquad 0<r<R,\quad\Lambda\ge0,
   $$
 
-  `CERT-round21-compact-proxy` and `CERT-round21-aggregate-tail` are
-  `certified`; `SHELL-exact-d20-closure` is `proved_internal`.
+  for the strict count and $L_3=1/(6\pi^2)$. The complete review lifecycle
+  checked $K=0$, the seams at $\rho_*$, $\rho_c$, $39/50$, and $7/8$, every
+  inherited frequency face and strict wall, Weyl-volume normalization, and
+  arbitrary-radius scaling.
 
-- The active mathematical gap is theorem assembly, not another residual
-  estimate. `SHELL-rho-compact`, `SHELL-rho-uniformity`,
-  `TARGET-shell-d3`, and `POLYA-program-target` remain `open`. A coherent
-  proof must reconstruct the complete unit-shell cover from the promoted
-  graph and explicitly check the seams at $\rho_*$, $\rho_c$, $39/50$, and
-  $7/8$, all frequency faces, the equality case $K=0$, and strict positive
-  counts at eigenvalue walls.
+- The separately reviewed non-tiling theorem covers the same complete
+  $0<r<R$ class under congruent rigid motions, pairwise-disjoint interiors,
+  exact or almost-everywhere coverage, and the corresponding closed-copy
+  convention after removal of the countable null boundary union. The
+  geometric node has no spectral premise; the two tracks meet only at
+  `POLYA-program-target`.
 
-- The theorem assembly must rederive the normalization
+- The source-final authority is
+  `rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md`. Its
+  passing pre-application and post-application audits are
+  `rounds/polya-main/round_022/reviews/state-patch-final-audit-source-utf8-final.md`
+  and
+  `rounds/polya-main/round_022/reviews/state-patch-application-audit-source-utf8-final.md`.
+  Two earlier provenance gates remain negative chronology: the first
+  judge/audit failed on a 299-versus-300 physical-line metadata statement,
+  and the replacement judge/audit failed on four corrupted `Pólya` tokens.
+  Neither failed patch was applied.
 
-  $$
-  L_3=\frac1{6\pi^2},\qquad
-  |A_{\rho,1}|=\frac{4\pi}{3}(1-\rho^3),\qquad
-  L_3|A_{\rho,1}|=\frac{2}{9\pi}(1-\rho^3),
-  $$
-
-  and then scale from $A_{\rho,1}$ to
-  $A_{r,R}=R A_{r/R,1}$ using volume scaling by $R^3$ and eigenvalue
-  scaling by $R^{-2}$.
-
-- A fresh clean-room theorem reviewer must reconstruct the global implication
-  without the incumbent proof draft. A separate adversarial referee must
-  assume `TARGET-shell-d3` false and identify the first unsupported seam,
-  convention, normalization, or scaling step. Only after both pass may a
-  theorem judge propose promoting the compact, uniformity, and shell-target
-  obligations.
-
-- Before `POLYA-program-target` can be promoted, a separate program-scope
-  audit must verify that the full family of three-dimensional spherical
-  shells is a natural non-tiling Euclidean class and that no ellipse or
-  certificate-family side track is silently claimed as solved. The result
-  must make no publication-priority or novelty claim. The final graph should
-  represent the non-tiling premise with a scoped proved obligation and an
-  explicit dependency, rather than leaving it only in narrative prose.
+- The remaining work is external-validation work, not an internal theorem
+  gap: human reconstruction of all bottleneck lemmas, manuscript-level
+  checking, and an independent current literature audit. The internal result
+  does not settle the general Pólya conjecture and makes no novelty,
+  publication-priority, first-proof, or publication-readiness claim.
 
 - The Round 8 box $B_0$ and face-connected Round 17 box $B_1$ remain
   independent regression evidence inside $\mathcal C_{17}$. They subtract
   nothing from empty $\mathcal D_{21}$. `COMP-certified-bessel` remains
-  `diagnostic_only` and is now detached from the theorem path. The scoped
+  `diagnostic_only`, unchanged and detached from the theorem path. The scoped
   Round 21 certificates carry the accepted executable evidence.
 
 - The stretch endpoint screens at $\rho=6/7$ and $\rho=23/27$ remain
-  unproved. The negative screens at $\rho=17/20$ and $\rho=5/6$ are
-  obstructions only to the tested extension routes, not counterexamples to
-  the shell theorem and not new shell blockers.
+  unproved, but they are obsolete exploratory extensions rather than theorem
+  blockers. The negative screens at $\rho=17/20$ and $\rho=5/6$ obstruct only
+  their tested routes and are not counterexamples.
 
 ## Closed shell prerequisites
 
@@ -281,5 +273,7 @@ The authoritative statuses are in state/proof_obligations.yml.
 
 ## Parallel-track gaps
 
-- Mathieu-function source audit for the ellipse track.
-- Jiang--Lin source audit for the certificate-family fallback.
+- `ELLIPSE-near-circular` remains open; its Mathieu-function source audit is
+  still a parallel-track gap.
+- `CERT-certificate-family` remains open; its Jiang--Lin source audit is
+  still a parallel-track gap.

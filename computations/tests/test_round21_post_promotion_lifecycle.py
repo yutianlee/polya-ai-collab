@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-GRAPH_SHA256 = "a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224"
+GRAPH_SHA256 = "b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29"
 APPLICATION_AUDIT_SHA256 = (
     "c81fdc03124c3bd6c2b818b93810bd64b184b06735fd8a5cd72d59f0e0e158ef"
 )
@@ -42,12 +42,12 @@ def _obligations_by_id() -> dict[str, dict[str, object]]:
     return {item["id"]: item for item in graph["proof_obligations"]}
 
 
-def test_applied_graph_has_authenticated_round21_bytes() -> None:
+def test_round21_nodes_survive_in_authenticated_final_graph() -> None:
     path = ROOT / "state/proof_obligations.yml"
     assert _sha256(path) == GRAPH_SHA256
     obligations = _graph()["proof_obligations"]
-    assert len(obligations) == 60
-    assert len({item["id"] for item in obligations}) == 60
+    assert len(obligations) == 61
+    assert len({item["id"] for item in obligations}) == 61
 
 
 def test_round21_created_statuses_and_empty_residual_are_exact() -> None:
@@ -62,7 +62,7 @@ def test_round21_created_statuses_and_empty_residual_are_exact() -> None:
     assert "K=200 assigned to the compact owner" in statement
 
 
-def test_higher_nodes_remain_open_and_diagnostic_parent_is_detached() -> None:
+def test_higher_nodes_are_now_proved_and_diagnostic_parent_stays_detached() -> None:
     obligations = _obligations_by_id()
     for obligation_id in (
         "SHELL-rho-compact",
@@ -70,7 +70,7 @@ def test_higher_nodes_remain_open_and_diagnostic_parent_is_detached() -> None:
         "TARGET-shell-d3",
         "POLYA-program-target",
     ):
-        assert obligations[obligation_id]["status"] == "open"
+        assert obligations[obligation_id]["status"] == "proved_internal"
 
     diagnostic = obligations["COMP-certified-bessel"]
     assert diagnostic["status"] == "diagnostic_only"
@@ -94,13 +94,14 @@ def test_application_audit_is_immutable() -> None:
     assert _sha256(path) == APPLICATION_AUDIT_SHA256
 
 
-def test_derived_state_records_empty_d21_without_higher_promotion() -> None:
+def test_derived_state_records_empty_d21_and_later_theorem_promotion() -> None:
     for relative_path in DERIVED_STATE_PATHS:
         text = (ROOT / relative_path).read_text("utf-8")
         assert "\\mathcal D_{21}" in text
     for relative_path in HASH_AUTHORITY_PATHS:
         text = (ROOT / relative_path).read_text("utf-8")
-        assert "a7f8c093f42522465862ea28bf57b1ee60be8b7f16804cebb300b0924ac7d224" in text
+        assert "b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29" in text
     prompts = (ROOT / "state/next_round_prompts.md").read_text("utf-8")
-    assert "Round 22 theorem assembly" in prompts
-    assert "Empty $\\mathcal D_{21}$ is an accepted lemma" in prompts
+    assert "post-completion handoff" in prompts
+    assert "POLYA-program-target" in prompts
+    assert "proved_internal" in prompts

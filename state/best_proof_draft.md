@@ -1,6 +1,8 @@
 # Best Proof Draft
 
-No complete all-$K$, all-$\rho$ shell Pólya proof exists.
+Round 22 completes the project-internal all-$K$, all-$\rho$ shell Pólya
+proof assembled below. This is neither a proof of the general conjecture nor
+a literature-novelty or publication-priority claim.
 
 ## Exact spectral bridge
 
@@ -1828,35 +1830,86 @@ subtract anything from the accepted cover or empty $\mathcal D_{21}$, do not pro
 numerics to proof, and do not make `COMP-certified-bessel` more than
 `diagnostic_only`.
 
-## Remaining gates
+## Round 22 final theorem assembly
 
-This file now contains every promoted analytic component through empty
-$\mathcal D_{21}$, but the graph deliberately has not yet promoted the full
-theorem. `SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
-`POLYA-program-target` remain open. The remaining gates are:
+The source-final Round 22 lifecycle discharges every former gate above. For
+$K=0$, positivity of the Dirichlet spectrum and strict counting give
 
-- assemble one explicit unit-shell cover for every $0<\rho<1$ and $K\ge0$,
-  with no gap or overlap error at $\rho_*$, $\rho_c$, $39/50$, $7/8$, the
-  high-frequency wall, or any moving staircase face;
-- state the strict counting convention at eigenvalue walls and isolate the
-  equality $N_D(A_{\rho,1},0)=0=W(\rho,0)$; every $K>0$ branch must retain
-  the strict comparison supplied by its owner;
-- rederive
-  $L_3=1/(6\pi^2)$,
-  $|A_{\rho,1}|=(4\pi/3)(1-\rho^3)$, and hence
-  $L_3|A_{\rho,1}|=(2/(9\pi))(1-\rho^3)$;
-- scale from unit shells to arbitrary
-  $A_{r,R}=R A_{r/R,1}$, using Dirichlet eigenvalue scaling by $R^{-2}$ and
-  volume scaling by $R^3$;
-- run a fresh clean-room theorem reconstruction that receives the promoted
-  obligations but not this incumbent draft, followed by a distinct referee
-  instructed to assume the shell theorem false and locate the first
-  unsupported implication;
-- prove and audit the non-tiling scope of the full spherical-shell family,
-  make no publication-priority claim, and ensure the ellipse and
-  certificate-family parallel tracks are not treated as solved; represent
-  that geometric premise by a scoped graph obligation and explicit program
-  dependency; and
-- only then issue a theorem judge and independently audited final State
-  Patch. Agent consensus is not proof, and executable certificates establish
-  only the exact analytic predicates they authenticate.
+$$
+N_D(A_{\rho,1},0)=0
+=\frac{2}{9\pi}(1-\rho^3)0^3.
+$$
+
+For $K>0$, the exact disjoint partition
+
+$$
+(0,1)
+=(0,\rho_*]\mathbin{\dot\cup}
+(\rho_*,7/8)\mathbin{\dot\cup}
+[7/8,1)
+$$
+
+has, respectively, the promoted small-hole, compact-middle, and thin-shell
+owners. The compact-middle proof includes every inherited face and the exact
+empty residual $\mathcal D_{21}$. Thus, for every $0<\rho<1$ and $K\ge0$,
+
+$$
+N_D(A_{\rho,1},K^2)
+\le \frac{2}{9\pi}(1-\rho^3)K^3.
+$$
+
+The normalization is
+
+$$
+L_3=\frac{\omega_3}{(2\pi)^3}=\frac1{6\pi^2},
+\qquad
+|A_{\rho,1}|=\frac{4\pi}{3}(1-\rho^3),
+$$
+
+so the right side is exactly $L_3|A_{\rho,1}|K^3$. For arbitrary
+$0<r<R$, write $\rho=r/R$. Unitary dilation gives
+
+$$
+A_{r,R}=R A_{\rho,1},
+\qquad
+N_D(A_{r,R},\Lambda)
+=N_D(A_{\rho,1},R^2\Lambda),
+$$
+
+and therefore
+
+$$
+\boxed{
+N_D(A_{r,R},\Lambda)
+\le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
+=L_3|A_{r,R}|\Lambda^{3/2}
+\quad(\Lambda\ge0).
+}
+$$
+
+## Non-tiling conjunction
+
+Every congruent copy of a shell is a translate because the shell is radial.
+Disjoint interiors force a uniform separation of centers, hence local
+finiteness and countability. Removing the countable null union of spherical
+boundaries reduces exact or closed-copy coverage to almost-everywhere
+coverage by open interiors. Approaching one fixed outer sphere from outside
+then assigns every point of that sphere to one of finitely many neighboring
+boundary spheres. Each distinct intersection is empty, a point, or a circle
+and has zero surface measure; a finite union cannot cover the outer sphere.
+The only coincident outer sphere would be a duplicate tile, and an inner
+sphere cannot coincide because $0<r/R<1$. This proves non-tiling for the same
+complete $0<r<R$ family.
+
+The graph now records `SHELL-rho-compact`, `SHELL-rho-uniformity`,
+`TARGET-shell-d3`, `SHELL-spherical-shell-nontiling`, and
+`POLYA-program-target` as `proved_internal`. The source-final judge and both
+pre- and post-application audits passed. The legacy
+`COMP-certified-bessel` node remains `diagnostic_only` and detached; the
+ellipse and certificate-family tracks remain open and independent.
+
+This is an internally reviewed theorem for the spherical-shell class. It is
+not a proof of the general Pólya conjecture and is not a publication-novelty
+or priority claim. External dissemination still requires a human
+line-by-line reconstruction, manuscript-level review, and a current
+literature search.
