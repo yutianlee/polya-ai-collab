@@ -1,0 +1,675 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,tabularx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\N}{\mathbb N}
+\newcommand{\strictbr}[1]{\mathopen{[}#1\mathclose{]}_{<}}
+\newcommand{\rhoc}{\rho_{c}}
+\newcommand{\rhozero}{\rho_{0}}
+\newcommand{\frB}{\mathfrak B}
+\newcommand{\frC}{\mathfrak C}
+\newcommand{\frZ}{\mathfrak Z}
+
+\title{Exact-ledger decomputerization:\\Packets A and B}
+\author{}
+\date{16 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note replaces two groups of executable exact-arithmetic checks in the
+three-dimensional spherical-shell P\'olya proof.  Packet~A proves once and
+for all the strict-bracket convention, odd-multiplicity block sums, the
+optical product-deficit identity, and monotonicity of propagated zero and
+channel cuts.  Packet~B gives exact hand-checkable tables for the five
+moving \(3z\)-crossings and for the seven first-excluded checkpoint
+channels.  It then proves, without a finite search, that the five printed
+checkpoint inventories are exhaustive.  Every numerical comparison below
+is an equality of rational numbers, a cross multiplication, or a
+positive-side squaring.  No program output, decimal approximation, or
+interval calculation is a premise.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope and notation}
+
+Throughout \(0<\rho<1\).  Put
+\[
+ z=z_\rho:=\frac{\pi}{1-\rho},\qquad
+ k_m(\rho)^2:=z_\rho^2+m(m+1),
+\]
+and define the two ratio endpoints
+\[
+ \rhozero:=\frac1{\sqrt{337}},
+ \qquad
+ \rhoc:=\frac1{1+2\pi}.
+\]
+The high-checkpoint argument uses the strict proxy
+\begin{equation}
+ b_{\ell,n}(z)^2
+ :=\max\{n^2z^2+\ell(\ell+1),\,\beta_{\ell,n}^2\}.
+ \label{eq:strict-proxy}
+\end{equation}
+A channel may be counted at \(K\) only when
+\(b_{\ell,n}(z)<K\).  The constants \(\beta_{\ell,n}\) are strict lower
+bounds for the corresponding ball zeros.  The zero bounds used in the
+checkpoint table are displayed explicitly in Section~\ref{sec:checkpoint}.
+
+The purpose of this note is deliberately limited.  It replaces the
+general exact-arithmetic and checkpoint-ordering rows of the old ledger; it
+does not replace the zero-sign proofs, high-event payment registry, seam
+arithmetic, optical endpoint screens, or formal owner subtraction.
+
+\section{A rational enclosure for \texorpdfstring{\(\pi\)}{pi}}
+\label{sec:pi}
+
+\begin{lemma}[Hand enclosure for \(\pi\)]
+\label{lem:pi}
+One has
+\begin{equation}
+ \frac{333}{106}<\pi<\frac{22}{7},
+ \qquad
+ \frac1\pi<\frac{106}{333}.
+ \label{eq:pi-bounds}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For \(0<x\leq1\), the alternating series for \(\arctan x\) gives a
+strict lower bound after a negative term and a strict upper bound after a
+positive term.  Hence
+\[
+ \arctan\frac15>
+ \frac15-\frac1{3\cdot5^3}+\frac1{5\cdot5^5}
+ -\frac1{7\cdot5^7}
+ =\frac{323852}{1640625},
+ \qquad
+ \arctan\frac1{239}<\frac1{239}.
+\]
+Machin's identity therefore yields
+\[
+ \pi=16\arctan\frac15-4\arctan\frac1{239}
+ >\frac{1231847548}{392109375},
+\]
+and direct subtraction gives the positive margin
+\[
+ \frac{1231847548}{392109375}-\frac{333}{106}
+ =\frac{3418213}{41563593750}>0.
+\]
+For the upper bound, polynomial division and elementary integration give
+\[
+ 0<\int_0^1\frac{x^4(1-x)^4}{1+x^2}\,dx
+ =\frac{22}{7}-\pi.
+\]
+Finally, reciprocation of the positive lower bound for \(\pi\) gives the
+last inequality.  Notice also that
+\(22/7-333/106=1/742>0\), so the enclosure is nonempty.
+\end{proof}
+
+\section{Packet A: universal exact-arithmetic lemmas}
+
+\subsection{Strict floors and equality owners}
+
+\begin{definition}
+For \(x\in\mathbb R\), let
+\[
+ \strictbr{x}:=\#\{q\in\mathbb Z_{\geq1}:q<x\}.
+\]
+Thus the bracket counts positive integers under a \emph{strict} cutoff.
+\end{definition}
+
+\begin{lemma}[Strict-bracket identity]
+\label{lem:strict-bracket}
+For every real \(x\),
+\begin{equation}
+ \strictbr{x}=\max\{0,\lceil x\rceil-1\}.
+ \label{eq:strict-bracket}
+\end{equation}
+In particular, for every integer \(m\geq1\),
+\[
+ \strictbr{m}=m-1,
+ \qquad
+ \strictbr{m+\tfrac12}=m.
+\]
+Consequently an integer equality wall is owned by the excluded side.
+\end{lemma}
+
+\begin{proof}
+If \(x\leq1\), both sides of \eqref{eq:strict-bracket} vanish.  If
+\(x>1\), the positive integers below \(x\) are exactly
+\(1,\ldots,\lceil x\rceil-1\).  This also proves the two specializations.
+\end{proof}
+
+The same lemma handles the two equality conventions used later.  If
+\(A+1/4=n\in\mathbb Z_{\geq1}\), then
+\(\strictbr{A+1/4}=n-1\).  If \(a=m\pi\) in the optical radial
+decomposition, the strict radial layers are represented by
+\((N,t)=(m-1,1)\), not by \((m,0)\).
+
+\subsection{Odd multiplicities and block caps}
+
+\begin{lemma}[Odd-sum and block-cap identity]
+\label{lem:block-cap}
+For every integer \(h\geq0\),
+\begin{equation}
+ \sum_{\ell=0}^{h}(2\ell+1)=(h+1)^2,
+ \qquad
+ \sum_{\ell=0}^{h-1}(2\ell+1)=h^2.
+ \label{eq:odd-sum}
+\end{equation}
+More generally, if radial layer \(n\) contains a complete angular block
+\(0\leq\ell\leq h_n\), with \(h_n=-1\) denoting an empty block, then its
+total multiplicity is
+\begin{equation}
+ \sum_n (h_n+1)^2.
+ \label{eq:block-cap}
+\end{equation}
+If \(x^2=h(h+1)\) is a strict product equality wall, the equality channel
+\(\ell=h\) is absent and the contribution is \(h^2\).
+\end{lemma}
+
+\begin{proof}
+The first identity follows either by induction or by
+\((\ell+1)^2-\ell^2=2\ell+1\).  Summing over independent radial layers
+gives \eqref{eq:block-cap}.  At \(x^2=h(h+1)\),
+\(\sqrt{x^2+1/4}-1/2=h\); Lemma~\ref{lem:strict-bracket} excludes
+\(\ell=h\), leaving \(0\leq\ell<h\) and hence \(h^2\).
+\end{proof}
+
+For completeness, the cap arithmetic collapsed by this lemma is printed
+in compact form below.  A dash means that another analytic argument has
+declared the cell impossible; the lemma asserts only the arithmetic of
+the non-dash entries.
+\[
+\begin{array}{c|ccccc}
+k_8:H\backslash h&\varnothing&0&1&2&3\\ \hline
+7&64&65&68&73&80\\
+6&49&50&53&-&-\\
+5&36&37&40&45&52\\
+4&25&26&29&34&41
+\end{array}
+\qquad
+\begin{array}{c|cccccc}
+k_9:H\backslash h&\varnothing&0&1&2&3&4\\ \hline
+8&81&-&-&-&-&-\\
+7&64&65&68&73&-&-\\
+6&49&50&53&58&65&74\\
+5&36&37&40&45&52&61\\
+4&25&26&29&34&41&50
+\end{array}
+\]
+Indeed every entry is \((H+1)^2\) plus \(0\) or \((h+1)^2\).
+At \(k_7\), the first blocks \(H=4,5,6\) give
+\(25,36,49\), and second channels \(0,1\) contribute \(1+3=4\).
+The remaining printed caps decompose as
+\begin{align*}
+k_{10}:\quad&10^2;\quad9^2,\ 9^2+4^2;\\
+&8^2,\ 8^2+4^2,\ 8^2+5^2,\ 8^2+6^2;\\
+&7^2+5^2,\ 7^2+4^2+2^2,\ 7^2+5^2+2^2,
+  7^2+6^2,\ 7^2+6^2+2^2\\
+&=100;\quad81,97;\quad64,80,89,100;\quad74,69,78,85,89,\\[2mm]
+k_{11}:\quad&11^2;\quad10^2,\ 10^2+5^2;\quad
+9^2+5^2,\ 9^2+5^2+2^2;\quad8^2+5^2+2^2\\
+&=121;\quad100,125;\quad106,110;\quad93.
+\end{align*}
+The conservative cap-74 row is the same identity \(7^2+5^2=74\).
+
+The six lower inventories similarly give, in their printed order,
+\[
+ (6^2+3^2,\ 6^2+3^2+1,\ 7^2+3^2+1,
+  7^2+4^2+1,\ 7^2+4^2+1+3,\ 7^2+5^2+1+3)
+ =(45,46,59,66,69,78).
+\]
+Finally, the ten lower-\(d\) caps are the successive odd sums
+\[
+\begin{array}{c|c@{\qquad}c|c}
+\text{channels}&\text{cap}&\text{channels}&\text{cap}\\ \hline
+1&1&1+3&4\\
+1+3+5&9&1+3+5+1&10\\
+1+3+5+7&16&1+3+5+7+1&17\\
+1+3+5+7+9+1&26&1+3+5+7+9+1+3&29\\
+1+3+5+7+9+11+1+3&40&
+1+3+5+7+9+11+1+3+5&45.
+\end{array}
+\]
+
+\subsection{The symbolic optical product deficit}
+
+\begin{proposition}[Product-deficit identity and uniform reserve]
+\label{prop:product-deficit}
+Let \(N\geq1\) be an integer, \(0<t\leq1\), and \(x=N+t\).  Then
+\begin{align}
+ \frac23x^3-Nx^2+\sum_{n=1}^N n^2
+ &=\frac{N^2}{2}+N\left(t^2+\frac16\right)+\frac{2t^3}{3}.
+ \label{eq:product-identity}
+\end{align}
+For
+\(C_D=1382/3125\), the right-hand side is strictly larger than
+\(C_D(N+t)^2\).  More precisely, its difference from
+\(C_D(N+t)^2\) is at least
+\begin{equation}
+ \frac{1822532}{91552734375}>0.
+ \label{eq:product-margin}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Insert
+\(\sum_{n=1}^Nn^2=N(N+1)(2N+1)/6\) and expand; this proves
+\eqref{eq:product-identity} for all \(N,t\), rather than at sampled
+values.  Put \(C=C_D\), \(A=1/2-C=361/6250\), and let \(G_N(t)\)
+denote the difference under consideration.  Then
+\[
+ G_N(t)=AN^2+N\left(t^2-2Ct+\frac16\right)
+       +\frac{2t^3}{3}-Ct^2.
+\]
+Consequently
+\[
+ G_{N+1}(t)-G_N(t)
+ =A(2N+1)+t^2-2Ct+\frac16.
+\]
+Since \(0<C<1\), the last quadratic has minimum \(1/6-C^2\) on
+\((0,1]\).  For \(N\geq1\),
+\[
+ G_{N+1}(t)-G_N(t)
+ \geq3A+\frac16-C^2
+ =\frac{4229603}{29296875}>0.
+\]
+It remains to minimize \(G_1\).  Direct differentiation gives
+\[
+ G_1'(t)=2(t-C)(t+1),
+\]
+so its unique minimum on \(0<t\leq1\) is at \(t=C\).  Exact
+substitution gives
+\[
+ G_1(C)=\frac{1822532}{91552734375}>0,
+\]
+which proves both assertions.
+\end{proof}
+
+\subsection{Monotonic propagated cuts}
+
+\begin{lemma}[Zero-cut/channel-cut monotonicity]
+\label{lem:cut-monotonicity}
+Fix \(n\geq2\), a checkpoint \(m\), and \(M=m(m+1)\).  Let
+\(\mathcal A_n\) be a finite collection of anchor pairs
+\((j,q_{j,n}^2)\), where
+\(j_{j+1/2,n}^2>q_{j,n}^2\) at each anchor.  For every \(\ell\)
+above at least one anchor, set
+\begin{align}
+ \frB_n(\ell)
+ &:=\max_{(j,q_{j,n}^2)\in\mathcal A_n,\ j\leq\ell}
+ \bigl(q_{j,n}^2+\ell(\ell+1)-j(j+1)\bigr),\label{eq:propagated-B}\\
+ \frZ_{m,n}(\ell)&:=\frB_n(\ell)-M,\label{eq:zero-cut}\\
+ \frC_{m,n}(\ell)&:=
+ \frac{M-\ell(\ell+1)}{n^2-1}.\label{eq:channel-cut}
+\end{align}
+Then
+\begin{align}
+ \frZ_{m,n}(\ell+1)&\geq
+ \frZ_{m,n}(\ell)+2(\ell+1)>\frZ_{m,n}(\ell),\label{eq:Z-monotone}\\
+ \frC_{m,n}(\ell+1)&=
+ \frC_{m,n}(\ell)-\frac{2(\ell+1)}{n^2-1}
+ <\frC_{m,n}(\ell).\label{eq:C-monotone}
+\end{align}
+In particular, if
+\(\frZ_{m,n}(\ell_0)\geq\frC_{m,n}(\ell_0)\), then no channel
+\((\ell,n)\) with \(\ell\geq\ell_0\) can satisfy the strict proxy
+\eqref{eq:strict-proxy} at \(K=k_m\).
+\end{lemma}
+
+\begin{proof}
+Every old candidate in \eqref{eq:propagated-B} gains exactly
+\((\ell+1)(\ell+2)-\ell(\ell+1)=2(\ell+1)\) when \(\ell\) is
+replaced by \(\ell+1\); a new anchor can only increase the maximum.  This
+proves \eqref{eq:Z-monotone}.  Formula \eqref{eq:C-monotone} is direct.
+
+If a channel were counted at \(k_m\), its product part would give
+\[
+ (n^2-1)z^2<M-\ell(\ell+1),
+ \quad\text{hence}\quad z^2<\frC_{m,n}(\ell),
+\]
+whereas its propagated ball-zero part would give
+\[
+ \frB_n(\ell)<z^2+M,
+ \quad\text{hence}\quad z^2>\frZ_{m,n}(\ell).
+\]
+These strict inequalities are incompatible when
+\(\frZ\geq\frC\).  Equations \eqref{eq:Z-monotone} and
+\eqref{eq:C-monotone} propagate the incompatibility to every larger
+angular index.
+\end{proof}
+
+\section{Packet B: moving-\texorpdfstring{\(3z\)}{3z} ordering}
+\label{sec:moving}
+
+We first record rational radical enclosures.  All six follow by positive
+squaring; the exact square margins are
+\[
+\begin{array}{c|c@{\qquad}c|c}
+\text{lower comparison}&\text{margin}&\text{upper comparison}&\text{margin}\\ \hline
+(183/10)^2<337&211/100&337<(92/5)^2&39/25\\
+(1051/100)^2<7073/64&2221/40000&7073/64<(1052/100)^2&6191/40000\\
+(1067/100)^2<114&1511/10000&114<(107/10)^2&49/100.
+\end{array}
+\]
+Thus
+\begin{equation}
+ \frac{183}{10}<\sqrt{337}<\frac{92}{5},\quad
+ \frac{1051}{100}<\frac{\sqrt{7073}}8<\frac{1052}{100},\quad
+ \frac{1067}{100}<\sqrt{114}<\frac{107}{10}.
+ \label{eq:radical-bounds}
+\end{equation}
+
+\begin{lemma}[Endpoint and fixed-wall order]
+\label{lem:fixed-order}
+With \(d=\sqrt{337}/2\),
+\begin{equation}
+ d<3z_{\rhozero}<10<\frac{81}{8}<\frac{21}{2}
+ <\frac{\sqrt{7073}}8<\sqrt{114}<3z_{\rhoc}.
+ \label{eq:full-fixed-order}
+\end{equation}
+Moreover
+\((81/8)^2+8=7073/64\).
+\end{lemma}
+
+\begin{proof}
+The nontrivial endpoint estimates have the following rational margins.
+From \eqref{eq:pi-bounds} and \eqref{eq:radical-bounds},
+\[
+ 3z_{\rhozero}>3\pi>\frac{999}{106},
+ \qquad d<\frac{46}{5},
+ \qquad
+ \frac{999}{106}-\frac{46}{5}=\frac{119}{530}>0.
+\]
+Also \(\rhozero<10/183\), whence
+\[
+ 3z_{\rhozero}
+ <\frac{66}{7}\frac{183}{173}
+ =\frac{12078}{1211},
+ \qquad
+ 10-\frac{12078}{1211}=\frac{32}{1211}>0.
+\]
+At the other endpoint, \(z_{\rhoc}=\pi+1/2\); therefore
+\[
+ 3z_{\rhoc}>\frac{579}{53},
+ \qquad
+ \sqrt{114}<\frac{107}{10},
+ \qquad
+ \frac{579}{53}-\frac{107}{10}=\frac{119}{530}>0.
+\]
+The rational middle comparisons are immediate.  For the two radical
+steps one may square positive quantities:
+\[
+ \frac{7073}{64}-\left(\frac{21}{2}\right)^2=\frac{17}{64}>0,
+ \qquad
+ 114-\frac{7073}{64}=\frac{223}{64}>0.
+\]
+Finally,
+\((81/8)^2+8=(6561+512)/64=7073/64\).
+\end{proof}
+
+For a positive wall \(w\), the unique solution of \(3z_\rho=w\) is
+\[
+ r_w:=1-\frac{3\pi}{w}.
+\]
+The following table encloses each crossing between explicit rational
+numbers.  The bounds use only Lemma~\ref{lem:pi} and
+\eqref{eq:radical-bounds}; for instance \(r_w\) increases with \(w\) and
+decreases with \(\pi\).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{c|c|c}
+wall \(w\)&exact rational enclosure for \(w\)&exact enclosure for \(r_w\)\\ \hline
+\(10\)&\(10\)&\(\displaystyle \frac2{35}<r_{10}<\frac{61}{1060}\)\\[1mm]
+\(81/8\)&\(81/8\)&\(\displaystyle \frac{13}{189}<r_{81/8}<\frac{11}{159}\)\\[1mm]
+\(21/2\)&\(21/2\)&\(\displaystyle \frac5{49}<r_{21/2}<\frac{38}{371}\)\\[1mm]
+\(\sqrt{7073}/8\)&\(1051/100<w<1052/100\)&
+\(\displaystyle \frac{757}{7357}<r_w<\frac{2903}{27878}\)\\[1mm]
+\(\sqrt{114}\)&\(1067/100<w<107/10\)&
+\(\displaystyle \frac{79}{679}<r_w<\frac{676}{5671}\)
+\end{tabular}
+\end{center}
+
+The four gaps between consecutive rational enclosures are, in order,
+\begin{equation}
+ \frac{2251}{200340},\qquad
+ \frac{256}{7791},\qquad
+ \frac{183}{389921},\qquad
+ \frac{231225}{18929162},
+ \label{eq:crossing-gaps}
+\end{equation}
+and are all positive.  For example, the first is
+\(13/189-61/1060\), and similarly for the other three.  The endpoint
+margins are also explicit:
+\[
+ \rhozero<\frac{10}{183}<\frac2{35},
+ \quad
+ \frac2{35}-\frac{10}{183}=\frac{16}{6405}>0,
+\]
+and, since \(\rhoc>7/51\),
+\[
+ \frac{676}{5671}<\frac7{51}<\rhoc,
+ \quad
+ \frac7{51}-\frac{676}{5671}=\frac{5221}{289221}>0.
+\]
+We have therefore proved the complete strict order
+\begin{equation}
+ \rhozero<r_{10}<r_{81/8}<r_{21/2}
+ <r_{\sqrt{7073}/8}<r_{\sqrt{114}}<\rhoc.
+ \label{eq:moving-order}
+\end{equation}
+This single table replaces the ten crossing-location predicates and the
+four crossing-order predicates of the executable registry.
+
+\section{Packet B: checkpoint boundary table and exhaustiveness}
+\label{sec:checkpoint}
+
+The ball-zero input consists of the following strict rational lower
+bounds:
+\begin{equation}
+\begin{array}{c|cccc}
+n=2,\ \ell&1&2&3&5\\ \hline
+q_{\ell,2}^2&(77/10)^2&9^2&(103/10)^2&(129/10)^2
+\end{array}
+\qquad
+\begin{array}{c|cc}
+n=3,\ \ell&1&2\\ \hline
+q_{\ell,3}^2&(21/2)^2&(61/5)^2.
+\end{array}
+\label{eq:zero-anchors}
+\end{equation}
+Angular propagation gives the lower bound \eqref{eq:propagated-B} at all
+larger angular indices.  The seven first-excluded channels have the exact
+cuts shown below.  Here \(M=m(m+1)\), \(B=\frB_n(\ell_0)\),
+\(Z=B-M\), \(C=(M-\ell_0(\ell_0+1))/(n^2-1)\), and the last column is
+the decisive incompatibility margin \(Z-C\).
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.22}
+\begin{tabular}{c|c|c|c|c|c|c}
+\(m\)&\(n\)&first excluded \(\ell_0\)&\(B\)&\(Z\)&\(C\)&\(Z-C\)\\ \hline
+7&2&2&\(81\)&\(25\)&\(50/3\)&\(25/3\)\\
+8&2&4&\(11409/100\)&\(4209/100\)&\(52/3\)&\(7427/300\)\\
+9&2&5&\(16641/100\)&\(7641/100\)&\(20\)&\(5641/100\)\\
+10&2&6&\(17841/100\)&\(6841/100\)&\(68/3\)&\(13723/300\)\\
+11&2&5&\(16641/100\)&\(3441/100\)&\(34\)&\(41/100\)\\
+10&3&2&\(3721/25\)&\(971/25\)&\(13\)&\(646/25\)\\
+11&3&2&\(3721/25\)&\(421/25\)&\(63/4\)&\(109/100\)
+\end{tabular}
+\end{center}
+
+Every table entry is reconstructible from \eqref{eq:zero-anchors}.  The
+only propagated base values not already anchors are
+\[
+ \frac{11409}{100}=\left(\frac{103}{10}\right)^2+(4\cdot5-3\cdot4),
+ \qquad
+ \frac{17841}{100}=\left(\frac{129}{10}\right)^2+(6\cdot7-5\cdot6).
+\]
+All seven margins are positive; the smallest is \(41/100\), so none of
+these exclusions relies on an equality convention.  By
+Lemma~\ref{lem:cut-monotonicity}, each row excludes not merely the displayed
+channel but its entire angular tail.
+
+It remains to rule out the radial tails.  On the high strip
+\(\rhoc\leq\rho<1\),
+\[
+ z\geq z_{\rhoc}=\pi+\frac12>
+ \frac{333}{106}+\frac12=\frac{193}{53},
+ \qquad
+ z^2>\frac{37249}{2809}.
+\]
+The exact margins needed below are
+\begin{equation}
+ \frac{37249}{2809}-\frac{90}{8}
+ =\frac{22591}{11236}>0,
+ \qquad
+ \frac{37249}{2809}-\frac{132}{15}
+ =\frac{62649}{14045}>0.
+ \label{eq:radial-margins}
+\end{equation}
+At \(m\leq9\), an \(n=3\) channel would require
+\(8z^2<M-\ell(\ell+1)\leq90\), contradicting the first inequality.
+At \(m\leq11\), every \(n\geq4\) channel would require
+\(15z^2\leq(n^2-1)z^2<M-\ell(\ell+1)\leq132\), contradicting the
+second inequality.  These are the two base radial exclusions.
+
+\begin{theorem}[Exhaustive checkpoint inventories]
+\label{thm:inventories}
+For \(\rhoc\leq\rho<1\), the channels that can satisfy the strict proxy
+\eqref{eq:strict-proxy} at the five checkpoints are contained in the
+following lists:
+\begin{center}
+\begin{tabular}{c|l}
+checkpoint&possible modes\\ \hline
+\(k_7\)&first \(0{:}6\), second \(0{:}1\), no \(n\geq3\)\\
+\(k_8\)&first \(0{:}7\), second \(0{:}3\), no \(n\geq3\)\\
+\(k_9\)&first \(0{:}8\), second \(0{:}4\), no \(n\geq3\)\\
+\(k_{10}\)&first \(0{:}9\), second \(0{:}5\), third \(0{:}1\), no \(n\geq4\)\\
+\(k_{11}\)&first \(0{:}10\), second \(0{:}4\), third \(0{:}1\), no \(n\geq4\).
+\end{tabular}
+\end{center}
+Here \(n\)-th means radial index \(n\), and \(a{:}b\) denotes the angular
+indices \(a,a+1,\ldots,b\).  The word ``possible'' asserts an exhaustive
+upper inventory, not that every listed channel is present for every ratio.
+\end{theorem}
+
+\begin{proof}
+For \(n=1\), the product part of the strict proxy at \(k_m\) is
+\[
+ z^2+\ell(\ell+1)<z^2+m(m+1).
+\]
+Thus \(\ell<m\).  The equality channel \(\ell=m\) and all larger
+indices are excluded, with the equality ownership fixed by
+Lemma~\ref{lem:strict-bracket}.  This gives precisely first
+\(0{:}m-1\).
+
+For \(n=2\), apply the first five rows of the checkpoint table and then
+Lemma~\ref{lem:cut-monotonicity}.  They give first-excluded angular indices
+\(2,4,5,6,5\) at \(m=7,8,9,10,11\), respectively.  Hence the second
+blocks end at \(1,3,4,5,4\).
+
+For \(n=3\), the first inequality in \eqref{eq:radial-margins} removes
+all channels through \(k_9\).  At \(k_{10}\) and \(k_{11}\), the last
+two rows of the checkpoint table and cut monotonicity remove every
+\(\ell\geq2\), leaving only \(\ell=0,1\).  Finally, the second
+inequality in \eqref{eq:radial-margins} removes all \(n\geq4\) through
+\(k_{11}\).  The five lists follow, without any bounded angular search.
+\end{proof}
+
+\section{Executable-row coverage contract}
+\label{sec:coverage}
+
+The former executable baseline contained 611 rows and had canonical digest
+\begin{center}
+\texttt{afd7e054f52aa9a3992fc8ef16d3e7551586c76bfb589053714f5f55a36792f1}.
+\end{center}
+The digest is included only to identify the audited baseline.  It is not a
+premise of any proof above.  The exhibits above replace disjoint row groups
+as follows:
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.16}
+\begin{tabularx}{\textwidth}{@{}p{0.27\textwidth}|r|>{\raggedright\arraybackslash}X@{}}
+analytic exhibit&rows&exact ledger subfamilies\\ \hline
+Lemma~\ref{lem:pi}&4&one enclosure-nonemptiness row, two rational
+\(\pi\)-bound rows, and one reciprocal row\\
+Lemma~\ref{lem:strict-bracket}&24&sixteen integer/half-integer strict
+brackets, seven phase-proxy integer walls, and one optical radial equality
+owner\\
+Lemma~\ref{lem:block-cap}&97&twelve strict angular equality blocks, twelve
+optical angular blocks, 62 high-checkpoint cap identities, one six-cap lower
+tuple, and ten lower-\(d\) cap identities\\
+Proposition~\ref{prop:product-deficit}&23&five general product-deficit
+predicates and eighteen sampled expansions\\
+Lemma~\ref{lem:cut-monotonicity}, the checkpoint boundary table, and
+Theorem~\ref{thm:inventories}&117&76 repeated cut-monotonicity rows, seven
+first-excluded comparisons, two radial exclusions, and 32 metadata/tail
+instances\\
+Lemma~\ref{lem:fixed-order} and the moving-crossing table&23&five fixed-wall
+orders, one propagation identity, three endpoint comparisons, ten crossing
+locations, and four crossing-order rows\\ \hline
+\textbf{total}&\textbf{288}&
+\end{tabularx}
+\end{center}
+
+The following family table gives the same accounting against the executable
+entry points and makes the partial-family boundaries explicit.  It maps the
+exact rows
+replaced by this note.  ``Collapsed'' means that multiple sampled or
+bookkeeping rows are consequences of one displayed identity; it does not
+mean that an unprinted program enumeration is being used.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.29\textwidth}|r|r|>{\raggedright\arraybackslash}X@{}}
+executable family&family rows&replaced here&analytic replacement\\ \hline
+\path{verify_pi}&4&4&Lemma~\ref{lem:pi}\\
+\path{verify_thresholds}&34&23&five fixed-wall orders, one propagation identity, three endpoint comparisons, and fourteen moving-crossing predicates\\
+\path{verify_strict_face_conventions}&35&35&Lemmas~\ref{lem:strict-bracket} and \ref{lem:block-cap}\\
+\path{verify_lower_inventories_and_payments}&44&1&single six-cap tuple bookkeeping row\\
+\path{verify_checkpoint_inventories}&117&117&boundary table, radial margins, and Theorem~\ref{thm:inventories}\\
+\path{verify_cap_tables_and_payments}&98&62&all block-cap arithmetic: 61 cap-table rows plus the cap-74 block identity\\
+\path{verify_optical_constants}&50&36&twelve angular blocks, one radial equality owner, five general product-deficit facts, and eighteen sampled expansions\\
+supplemental \(k_6\)/lower-\(d\) ledger&26&10&ten lower-\(d\) block-cap identities\\ \hline
+\textbf{total}& &\textbf{288}&
+\end{tabularx}
+\end{center}
+
+For the checkpoint family, the 117 rows decompose exactly as follows:
+32 finite metadata/tail instances, seven first-excluded zero/channel
+comparisons, two base radial exclusions, and 76 repeated cut-monotonicity
+instances.  Theorem~\ref{thm:inventories} replaces all four groups.  For
+the optical family, Proposition~\ref{prop:product-deficit} replaces the
+18 sampled \((N,t)\) expansions by a symbolic identity valid for every
+integer \(N\geq1\) and every \(0<t\leq1\).
+
+The remaining 323 rows are outside Packets A and B.  In particular, this
+note makes no claim to replace the high-event cap/payment implications,
+the Bessel sign registry, seam payments, optical screen constants, or the
+exact owner subtraction.  Those require the other analytic replacement
+packets.  This separation prevents a universal arithmetic lemma from being
+mistaken for proof of a geometric event assignment.
+
+\end{document}

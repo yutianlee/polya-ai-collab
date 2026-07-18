@@ -1,0 +1,5314 @@
+Purely Analytic Supplement for
+A Dirichlet Pólya Inequality on
+Three-Dimensional Spherical Shells
+16 July 2026
+Abstract
+This support volume contains the detailed hand proofs and exact-rational tables used
+to remove every executable predicate from the logical dependency chain of the spherical-
+shell theorem. Parts I–VI retain the previously audited 611-row exact ledger, including
+superseded rows as optional cross-checks; Parts VII–IX prove the retained-remainder
+theorem for every frequency above the final staircase; and Part X assembles the final
+residual closure. The former aggregate-tail argument, programs, and interval certificates
+remain available only as optional independent regression checks and are not premises of
+this analytic proof.
+Reading convention. The volume is modular so that each bottleneck lemma can be
+reviewed and hashed independently. Every included part is generated from its corresponding
+LaTeX source in the manuscript/analytic directory. The repeated title pages deliberately
+mark the trust boundary between exhibits.
+Global census of the exact ledger
+The canonical ledger has 553 core rows and 58 supplemental rows. The following inclusive
+ranges give a one-to-one allocation; the part numbers refer to this volume. The family codes
+denote, in order, rational-π checks (PI), thresholds (TH), strict-floor conventions (SF), zero
+specializations (Z), lower inventories (LI), checkpoint inventories (KI), cap payments (CP),
+localizations (LOC), the upper owner (U), optical screens (OPT), exact subtraction (SUB),
+and supplemental seam/payment rows (SUP).
+canonical family row range unique owner
+PI PI1–PI4 II
+TH TH1–TH7, TH31–TH34 / TH8–TH30 I / II
+SF SF1–SF35 II
+Z Z1–Z48 I
+LI LI1–LI8, LI10–LI44 / LI9 I / II
+KI KI1–KI117 II
+CP CP1–CP43, CP56, CP60–CP77 / remaining rows II / III
+LOC LOC1–LOC47 III
+U U1–U8 V
+OPT OPT1–OPT14 / OPT15–OPT50 V / II
+SUB SUB1–SUB68 VI
+SUP SUP1–SUP57 / SUP58 IV / I
+1
+Spherical-shell Pólya inequality Purely analytic supplement
+Here “remaining rows” in CP means CP44–CP55, CP57–CP59, and CP78–CP98. Thus the
+six disjoint owner totals are
+103 + 278 + 83 + 57 + 22 + 68 = 611.
+In particular, the ten lower-d identities SUP36–SUP45 are assigned to Part IV although
+Part II also proves their general odd-sum identity; SUP58 is assigned to Part I; and OPT15–
+OPT50 are assigned to Part II although Part V reuses their consequences. These are proof
+redundancies, not row overlaps. The displayed ranges exhaust every canonical row and have
+empty pairwise intersections.
+Contents
+Global census of the exact ledger 1
+1 I. Remaining hand-visible ledger rows 3
+2 II. Universal arithmetic and checkpoint inventories 10
+3 III. Connected high-event registry 19
+4 IV. Seam and two-sided payments 26
+5 V. Upper owner and optical screens 32
+6 VI. Exact owner subtraction 37
+7 VII. Global retained-remainder identity 40
+8 VIII. Global middle-ratio angular bound 46
+9 IX. Upward-closed scalar positivity 52
+10 X. Final all-frequency residual closure 60
+2
+Hand-visible analytic derivations for 103 finite-ledger predicates
+1 Scope and logical convention
+This note exposes, in hand-checkable form, the predicates not assigned to the other five ledger packets.
+They are precisely
+11 threshold predicates + 48 zero predicates + 43 lower-closure predicates + 1 cap–74 predicate = 103.
+The omitted lower-closure predicate is the single six-cap tuple identity; it belongs to the cap-inventory
+packet. Every inequality below is proved from a displayed analytic inequality, integer arithmetic, rational
+cross multiplication, or positive-side squaring. An executable ledger may check the same arithmetic, but
+no executable output is used as a premise.
+We use
+ω0 =
+√
+3
+2π
+−
+1
+6
+, C0 = 1 +
+8
+√
+2
+15
+, ρ∗ =
+ω0
+2C0
+, ρ0 =
+1
+√
+337
+, σ =
+3ω0
+4
+, ρc =
+1
+1 + 2π
+, d =
+√
+337
+2
+.
+The elementary enclosure
+333
+106
+< π <
+355
+113
+<
+22
+7
+(1)
+is analytic: the lower and middle bounds follow from alternating truncations of Machin’s identity π =
+16 arctan(1/5) − 4 arctan(1/239), and the last one is immediate by cross multiplication. For reference,
+355/113 exceeds the upper Machin truncation by the positive rational numerator 45167474711 over de-
+nominator 189820334689453125. The classical integral
+0 <
+∫ 1
+0
+x4(1 − x)4
+1 + x2
+dx =
+22
+7
+− π
+also gives the final upper bound directly.
+2 The eleven threshold predicates
+First we obtain a rational two-sided enclosure for ω0. The exact integer residuals
+3 11012
+1132
+− 6072
+3552
+= 1998482 > 0, 25 3332
+− 243 1062
+= 41877 > 0
+and (1) imply
+√
+3 >
+607 355
+1101 113
+>
+607π
+1101
+, 9
+√
+3 < 5π.
+Consequently
+40
+367
+< ω0 <
+1
+9
+. (2)
+1
+Indeed, 607/2202 − 1/6 = 40/367, while 5/18 − 1/6 = 1/9.
+Since 2 322 − 452 = 23 > 0, one has
+√
+2 > 45/32, hence C0 > 7/4 and ρ∗ < 2/63. The following
+chain consists entirely of strict rational comparisons, with the indicated radical comparisons justified by
+squaring:
+ρ∗ <
+2
+63
+<
+1
+√
+337
+<
+1
+18
+<
+3
+40
+<
+3ω0
+4
+<
+1
+12
+<
+7
+51
+<
+1
+1 + 2π
+<
+1
+7
+<
+39
+50
+<
+7
+8
+.
+Here
+4 · 337 < 632
+, qquad182
+< 337, qquad367 < 400, 51 < 84, qquad367 < 420,
+and 7/51 < ρc < 1/7 follows respectively from π < 22/7 and π > 3. This proves the five ratio-order rows.
+It also proves
+ω0 <
+1
+9
+<
+7
+51
+< ρc.
+Moreover
+ω0d >
+20
+√
+337
+367
+> 1, 400 · 337 − 3672
+= 111 > 0.
+The four terminal comparisons follow from the same bounds:
+√
+114 < 18 <
+2
+ω0
+,
+2
+ω0
+<
+367
+20
+,
+ρc <
+1
+7
+<
+60
+367
+<
+3ω0
+2
+, ω0
+√
+114 >
+40
+√
+114
+367
+> 1.
+The last positive-side squaring has residual
+1600 · 114 − 3672
+= 47711 > 0.
+Thus the one-to-one threshold registry is
+ID source row proved predicate
+T1–T5 1–5 ρ∗ < ρ0 < σ < ρc < 39/50 < 7/8, one adjacent pair per row
+T6 6 ω0 < ρc
+T7 7 ω0d > 1
+T8 31
+√
+114 < 2/ω0
+T9 32 2/ω0 < 367/20
+T10 33 ρc < 3ω0/2
+T11 34 ω0
+√
+114 > 1
+3 The forty-eight zero specializations
+3.1 A recurrence and elementary tangent bounds
+Put
+jℓ(x) =
+√
+π
+2x
+Jℓ+1/2(x), Pℓ(x) = xℓ+1
+jℓ(x).
+Then
+Pℓ+1 = (2ℓ + 1)Pℓ − x2
+Pℓ−1, P0 = sin x, quadP1 = sin x − x cos x. (3)
+2
+Write Pℓ = Aℓ(t) sin x + xCℓ(t) cos x, t = x2. The recurrence gives
+A2 = 3 − t, C2 = −3,
+A3 = 15 − 6t, C3 = t − 15,
+A5 = 945 − 420t + 15t2
+, C5 = −945 + 105t − t2
+,
+A6 = 10395 − 4725t + 210t2
+− t3
+, C6 = −10395 + 1260t − 21t2
+,
+A7 = 135135 − 62370t + 3150t2
+− 28t3
+, C7 = −135135 + 17325t − 378t2
++ t3
+.
+For 0 < s < π/2, differentiation and integration give
+tan s > s, qquad tan s > s +
+s3
+3
+. (4)
+For 0 < s < 1, sin s < s and cos s > 1 − s2/2 give
+tan s <
+s
+1 − s2/2
+. (5)
+3.2 Sixteen half-period locations
+For each internal face, the first displayed margin below is w−(hL/2)(22/7); the second is (hR/2)(333/106)−
+w. Positivity therefore proves both strict half-period location rows without a decimal approximation.
+(ℓ, n) w (hL, hR) left margin right margin
+(1, 2) 77/10 (4, 5) 99/70 163/1060
+(2, 2) 9 (5, 6) 8/7 45/106
+(3, 2) 103/10 (6, 7) 61/70 737/1060
+(5, 2) 129/10 (8, 9) 23/70 1311/1060
+(1, 3) 21/2 (6, 7) 15/14 105/212
+(2, 3) 61/5 (7, 8) 6/5 97/265
+(6, 1) 10 (6, 7) 4/7 211/212
+(7, 1) 23/2 (7, 8) 1/2 113/106
+3.3 Sixteen half-period signs
+At an integral or half-integral multiple of π, exactly one of sin x, cos x vanishes. Direct substitution in the
+displayed polynomials gives the following complete sign table.
+(ℓ, n) hL left sign (ℓ, n) hR right sign
+(1, 2) 4 − (1, 2) 5 +
+(2, 2) 5 − (2, 2) 6 +
+(3, 2) 6 − (3, 2) 7 +
+(5, 2) 8 − (5, 2) 9 +
+(1, 3) 6 + (1, 3) 7 −
+(2, 3) 7 + (2, 3) 8 −
+(6, 1) 6 + (6, 1) 7 −
+(7, 1) 7 + (7, 1) 8 −
+Here are explicit polynomial witnesses for the only signs not immediate from A1 = 1, C1 = −1, A2 =
+3 − t, C2 = −3, A3 = 15 − 6t, C3 = t − 15. From (1), at x = 4π one has 144 < t < 159, at x = 9π/2 one
+3
+has t > 182, and at x = 7π/2 one has 110 < t < 121. Monotonicity on these rational intervals and direct
+evaluation give
+C5(t) < C5(144) = −6561, qquadA5(t) > A5(182) = 421365,
+C6(t) < C6(81) = −46116, qquadA6(t) > A6(110) = 700645,
+A7(t) < A7(110) = −5878565, qquadC7(t) < C7(144) = −2492559.
+For example, A′
+6 = −4725 + 420t − 3t2 is positive on [110, 121], while A′
+7 is negative there; the other
+asserted monotonicities follow at once from their displayed derivatives. Combining these signs with the
+quadrant signs of sine and cosine proves all sixteen entries.
+3.4 Eight rational-wall signs
+Substitution in (3) reduces each rational-wall sign to one of the following exact tangent comparisons. The
+shifted angle is always in (0, π/2), as already proved by the location table.
+(ℓ, n) wall hand certificate sgn jℓ(w)
+(1, 2) 77/10 For u = 5π/2 − w, tan u > 3/20 > 10/77 = 1/w; hence tan(w − 2π) =
+cot u < w.
+−
+(2, 2) 9 For u = 3π − w, tan u > 21/50 > 9/26 = 3w/(w2
+− 3). −
+(3, 2) 103/10 For u = 7π/2−w, tan u > 69/100 > 621540/938227 = (6w2
+−15)/(w(w2
+−
+15)).
+−
+(5, 2) 129/10 For y = w − 4π, 0 < y < 17/50, so tan y < 1700/4711 <
+177800829/427700150 = −wC5/A5.
+−
+(1, 3) 21/2 For u = 7π/2 − w, tan u > 49/100 > 2/21 = 1/w, hence tan(w − 3π) < w. +
+(2, 3) 61/5 For u = 4π − w, tan u > 9/25 > 915/3646 = 3w/(w2
+− 3). +
+(6, 1) 10 For y = w − 3π, 4/7 < y < 29/50, so tan y < 2900/4159 <
+188790/127579 = −wC6/A6.
++
+(7, 1) 23/2 For u = 4π − w, tan u > u + u3
+/3 > 546377/375000 >
+3153151489/2276518664 = wC7/A7.
++
+For complete cross-multiplication visibility, the four less immediate positive gaps in that table are
+69
+100
+−
+621540
+938227
+=
+2583663
+93822700
+,
+177800829
+427700150
+−
+1700
+4711
+=
+110529450419
+2014895406650
+,
+188790
+127579
+−
+2900
+4159
+=
+415198510
+530601061
+,
+546377
+375000
+−
+3153151489
+2276518664
+=
+3837851856583
+53355906187500
+.
+The four small gaps are respectively 31/1540, 24/325, 829/2100, 9939/91150.
+3.5 Six Lorch rows and two wall-order rows
+For ν = ℓ + 1/2, Lorch’s strict analytic first-zero estimate is
+j2
+ν,1 >
+24(ν + 1)2
+1 − 2ν +
+√
+(2ν + 3)(2ν + 11)
+− 2(ν2
+− 1) =: Rℓ.
+After rationalization,
+Rℓ =
+3(2ℓ + 3)
+√
+(ℓ + 2)(ℓ + 6) − 2ℓ2 + ℓ + 6
+4
+.
+4
+All sides being squared are positive, and the following integer residuals prove the three required strict
+specializations:
+ℓ wall c positive squared residual proving Rℓ > c2
+8 71/6 10262 · 35 − 60672 = 35171
+9 64/5 15752 · 165 − 200592 = 6939644
+10 69/5 34502 · 3 − 59112 = 767579
+Since jℓ(x) > 0 for suﬀiciently small x > 0, and its first positive zero is strictly to the right of c, these same
+three rows imply jℓ(c) > 0. Thus the three executable sign rows are analytic corollaries, not independent
+numerical assumptions. Finally,
+103
+10
+−
+81
+8
+=
+7
+40
+> 0,
+61
+5
+−
+21
+2
+=
+17
+10
+> 0.
+The one-to-one zero registry is as follows. Number the eight internal faces in the order of the location
+table. For face r, IDs Z5r−4, . . . , Z5r are, in order: right of the left half-period, left of the right half-period,
+left half-period sign, right half-period sign, and rational-wall sign. This bijects IDs Z1–Z40 with the first
+forty source rows. The remaining bijection is
+ID source row predicate
+Z41 41 Lorch specialization ℓ = 8, c = 71/6
+Z42 42 positive sign at ℓ = 8, c = 71/6
+Z43 43 Lorch specialization ℓ = 9, c = 64/5
+Z44 44 positive sign at ℓ = 9, c = 64/5
+Z45 45 Lorch specialization ℓ = 10, c = 69/5
+Z46 46 positive sign at ℓ = 10, c = 69/5
+Z47 47 103/10 > 81/8
+Z48 48 61/5 > 21/2
+4 The forty-three lower-closure predicates
+4.1 Eight activation and exclusion rows
+The complete arithmetic is
+(23/2)2
+− 114 = 73/4 > 0, 102
+= 100,
+(129/10)2
+− 114 = 5241/100 > 0, 103/10 − 81/8 = 7/40 > 0,
+(81/8)2
++ 8 = 7073/64, (81/8)2
++ 18 − 114 = 417/64 > 0,
+(21/2)2
++ 4 − 114 = 1/4 > 0, 16π2
+> 16 · 32
+> 114.
+These are exactly lower IDs L1–L8, corresponding to source rows 1–8.
+4.2 Five Weyl payments
+For 0 < ρ < ρc < 1/7, (1) yields the uniform analytic lower bound
+W(ρ, K) =
+2
+9π
+(1 − ρ3
+)K3
+>
+38
+539
+K3
+. (6)
+Using d > 9 and
+√
+7073/8 > 21/2, the five payments are the following exact positive reserves:
+5
+ID source row threshold/cap reserve from (6)
+L9 10 K > d, 46 (38/539)93 − 46 = 2908/539
+L10 11 K > 10, 59 (38/539)103 − 59 = 6199/539
+L11 12 K > 81/8, 66 (38/539)(81/8)3 − 66 = 990435/137984
+L12 13 K > 21/2, 69 (38/539)(21/2)3 − 69 = 555/44
+L13 14 K >
+√
+7073/8, 78 (38/539)(21/2)3 − 78 = 159/44
+4.3 The cap–395 cell: eighteen rows
+Put R = 367/20, zℓ = ℓ + 1/2. The analytic turning estimate
+GK(z) <
+(K − z)3/2
+3
+√
+K
+is increasing in K, so on K < R a strict cap cℓ follows from
+(R − zℓ)3
+9R
+=
+(357 − 20ℓ)3
+1321200
+<
+(
+cℓ +
+3
+4
+)2
+. (7)
+The following table gives all fifteen caps and the exact positive numerator 82575(4cℓ + 3)2 − (357 − 20ℓ)3
+obtained by clearing the positive denominators in (7).
+ℓ 0 1 2 3 4 5 6 7
+cℓ 6 5 5 4 4 3 3 3
+margin 14697882 5409422 11827162 3611502 8555642 1604782 5267322 8361062
+ℓ 8 9 10 11 12 13 14
+cℓ 2 2 1 1 1 1 0
+margin 2346202 4446342 176282 1474822 2444562 3133502 286642
+Thus L15–L29 correspond bijectively to source rows 16–30, with L(15 + ℓ) the ℓ-th table column. Since
+GR(z) is strictly decreasing in z, the c14 = 0 row removes every ℓ ≥ 14 tail; this is L30/source row 31.
+The weighted cap itself, L14/source row 15, is visible from the contributions
+6, 15, 25, 28, 36, 33, 39, 45, 34, 38, 21, 23, 25, 27,
+13
+∑
+ℓ=0
+(2ℓ + 1)cℓ = 395.
+Finally, on the exceptional cell ρK ≥ 5/2, with ρ < 11/80 and 1/π > 113/355,
+W(ρ, K) >
+2
+9
+113
+355
+(
+5
+2
+)3
+[(
+80
+11
+)3
+− 1
+]
+=
+160293325
+378004
+= 395 +
+10981745
+378004
+> 395.
+This is L31/source row 32.
+4.4 Twelve floor and boundary-owner rows
+The nine finite arithmetic rows are instances of one identity:
+3
+2
+(p + 1) ≤ 2p +
+1
+2
+(p ≥ 2), qquad
+(
+2p +
+1
+2
+)
+−
+3
+2
+(p + 1) =
+p − 2
+2
+≥ 0. (8)
+6
+At p = 2, (3/2)3 = 9/2; this is L32/source row 33. For p = 2, . . . , 9, formula (8) is respectively L33–
+L40/source rows 34–41.
+The half-integer face is exact: 5/2 = 2 + 1/2. Assigning it to the high side makes the interface remainder
+vanish and leaves the exceptional cell closed; this is L41/source row 42. At K = 2/ω0,
+p = ⌊ω0K⌋ = 2, ρK ≤
+2ρc
+ω0
+< 3
+by T10. This proves L42/source row 43. Moreover
+ρK −
+1
+2
+<
+5
+2
+, qquadm =
+⌊
+ρK −
+1
+2
+⌋
+≤ 2 ≤ 2p − 1 = 3,
+and the strict exceptional condition K < 2/ω0 fails at equality. Thus the complementary average-floor
+branch owns the equality face, proving L43/source row 44. More generally, if K ≥ 2/ω0, then p ≥ 2 and
+ρK <
+3
+2
+(p + 1) ≤ 2p +
+1
+2
+, m ≤ 2p − 1,
+so the finite instances conceal no unproved large-p case.
+5 The supplemental cap–74 incompatibility
+The propagated ball wall requires z2 > 2409/100, while the product wall requires z2 < 70/3. They are
+incompatible because
+2409
+100
+−
+70
+3
+=
+7227 − 7000
+300
+=
+227
+300
+> 0.
+This is supplemental ID S1 and is a hand proof, not merely a reported certificate value.
+6 Census and source-visibility verdict
+family count IDs hand-visible status before this note
+threshold remainder 11 T1–T11 printed, with a few implications compressed
+zero specializations 48 Z1–Z48 tables printed; several recurrence steps compressed
+lower remainder 43 L1–L43 payments printed; floor instances generated implicitly
+supplemental cap–74 1 S1 printed exactly
+total 103
+No predicate in this 103-row allocation is an unsupported executable-only mathematical premise. Before
+this note, the principal visibility gaps were the one-to-one expansion of the forty zero sign/location rows,
+the fact that the three Lorch-wall signs are logical corollaries of the strict first-zero bounds, and the
+expansion of the twelve floor/boundary rows. The displayed recurrences, rational margins, general floor
+identity, and exact ownership arguments close those presentation gaps.
+7
+Exact-ledger decomputerization:
+Packets A and B
+16 July 2026
+Abstract
+This note replaces two groups of executable exact-arithmetic checks in the three-dimensional
+spherical-shell Pólya proof. Packet A proves once and for all the strict-bracket convention, odd-
+multiplicity block sums, the optical product-deﬁcit identity, and monotonicity of propagated zero
+and channel cuts. Packet B gives exact hand-checkable tables for the ﬁve moving 3z-crossings
+and for the seven ﬁrst-excluded checkpoint channels. It then proves, without a ﬁnite search, that
+the ﬁve printed checkpoint inventories are exhaustive. Every numerical comparison below is an
+equality of rational numbers, a cross multiplication, or a positive-side squaring. No program
+output, decimal approximation, or interval calculation is a premise.
+Contents
+1 Scope and notation 1
+2 A rational enclosure for π 2
+3 Packet A: universal exact-arithmetic lemmas 2
+3.1 Strict ﬂoors and equality owners . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+3.2 Odd multiplicities and block caps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+3.3 The symbolic optical product deﬁcit . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3.4 Monotonic propagated cuts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+4 Packet B: moving-3z ordering 5
+5 Packet B: checkpoint boundary table and exhaustiveness 7
+6 Executable-row coverage contract 8
+1 Scope and notation
+Throughout 0 < ρ < 1. Put
+z = zρ :=
+π
+1 − ρ
+, km(ρ)2
+:= z2
+ρ + m(m + 1),
+and deﬁne the two ratio endpoints
+ρ0 :=
+1
+√
+337
+, ρc :=
+1
+1 + 2π
+.
+1
+The high-checkpoint argument uses the strict proxy
+bℓ,n(z)2
+:= max{n2
+z2
++ ℓ(ℓ + 1), β2
+ℓ,n}. (1)
+A channel may be counted at K only when bℓ,n(z) < K. The constants βℓ,n are strict lower bounds
+for the corresponding ball zeros. The zero bounds used in the checkpoint table are displayed
+explicitly in Section 5.
+The purpose of this note is deliberately limited. It replaces the general exact-arithmetic and
+checkpoint-ordering rows of the old ledger; it does not replace the zero-sign proofs, high-event
+payment registry, seam arithmetic, optical endpoint screens, or formal owner subtraction.
+2 A rational enclosure for π
+Lemma 2.1 (Hand enclosure for π). One has
+333
+106
+< π <
+22
+7
+,
+1
+π
+<
+106
+333
+. (2)
+Proof. For 0 < x ≤ 1, the alternating series for arctan x gives a strict lower bound after a negative
+term and a strict upper bound after a positive term. Hence
+arctan
+1
+5
+>
+1
+5
+−
+1
+3 · 53
++
+1
+5 · 55
+−
+1
+7 · 57
+=
+323852
+1640625
+, arctan
+1
+239
+<
+1
+239
+.
+Machin’s identity therefore yields
+π = 16 arctan
+1
+5
+− 4 arctan
+1
+239
+>
+1231847548
+392109375
+,
+and direct subtraction gives the positive margin
+1231847548
+392109375
+−
+333
+106
+=
+3418213
+41563593750
+> 0.
+For the upper bound, polynomial division and elementary integration give
+0 <
+∫ 1
+0
+x4(1 − x)4
+1 + x2
+dx =
+22
+7
+− π.
+Finally, reciprocation of the positive lower bound for π gives the last inequality. Notice also that
+22/7 − 333/106 = 1/742 > 0, so the enclosure is nonempty.
+3 Packet A: universal exact-arithmetic lemmas
+3.1 Strict ﬂoors and equality owners
+Deﬁnition 3.1. For x ∈ R, let
+[x]< := #{q ∈ Z≥1 : q < x}.
+Thus the bracket counts positive integers under a strict cutoﬀ.
+2
+Lemma 3.2 (Strict-bracket identity). For every real x,
+[x]< = max{0, ⌈x⌉ − 1}. (3)
+In particular, for every integer m ≥ 1,
+[m]< = m − 1, [m + 1
+2]< = m.
+Consequently an integer equality wall is owned by the excluded side.
+Proof. If x ≤ 1, both sides of (3) vanish. If x > 1, the positive integers below x are exactly
+1, . . . , ⌈x⌉ − 1. This also proves the two specializations.
+The same lemma handles the two equality conventions used later. If A + 1/4 = n ∈ Z≥1, then
+[A + 1/4]< = n − 1. If a = mπ in the optical radial decomposition, the strict radial layers are
+represented by (N, t) = (m − 1, 1), not by (m, 0).
+3.2 Odd multiplicities and block caps
+Lemma 3.3 (Odd-sum and block-cap identity). For every integer h ≥ 0,
+h
+∑
+ℓ=0
+(2ℓ + 1) = (h + 1)2
+,
+h−1
+∑
+ℓ=0
+(2ℓ + 1) = h2
+. (4)
+More generally, if radial layer n contains a complete angular block 0 ≤ ℓ ≤ hn, with hn = −1
+denoting an empty block, then its total multiplicity is
+∑
+n
+(hn + 1)2
+. (5)
+If x2 = h(h + 1) is a strict product equality wall, the equality channel ℓ = h is absent and the
+contribution is h2.
+Proof. The ﬁrst identity follows either by induction or by (ℓ + 1)2 − ℓ2 = 2ℓ + 1. Summing over
+independent radial layers gives (5). At x2 = h(h + 1),
+√
+x2 + 1/4 − 1/2 = h; Lemma 3.2 excludes
+ℓ = h, leaving 0 ≤ ℓ < h and hence h2.
+For completeness, the cap arithmetic collapsed by this lemma is printed in compact form below.
+A dash means that another analytic argument has declared the cell impossible; the lemma asserts
+only the arithmetic of the non-dash entries.
+k8 : H\h ∅ 0 1 2 3
+7 64 65 68 73 80
+6 49 50 53 − −
+5 36 37 40 45 52
+4 25 26 29 34 41
+k9 : H\h ∅ 0 1 2 3 4
+8 81 − − − − −
+7 64 65 68 73 − −
+6 49 50 53 58 65 74
+5 36 37 40 45 52 61
+4 25 26 29 34 41 50
+3
+Indeed every entry is (H + 1)2 plus 0 or (h + 1)2. At k7, the ﬁrst blocks H = 4, 5, 6 give 25, 36, 49,
+and second channels 0, 1 contribute 1 + 3 = 4. The remaining printed caps decompose as
+k10 : 102
+; 92
+, 92
++ 42
+;
+82
+, 82
++ 42
+, 82
++ 52
+, 82
++ 62
+;
+72
++ 52
+, 72
++ 42
++ 22
+, 72
++ 52
++ 22
+, 72
++ 62
+, 72
++ 62
++ 22
+= 100; 81, 97; 64, 80, 89, 100; 74, 69, 78, 85, 89,
+k11 : 112
+; 102
+, 102
++ 52
+; 92
++ 52
+, 92
++ 52
++ 22
+; 82
++ 52
++ 22
+= 121; 100, 125; 106, 110; 93.
+The conservative cap-74 row is the same identity 72 + 52 = 74.
+The six lower inventories similarly give, in their printed order,
+(62
++32
+, 62
++32
++1, 72
++32
++1, 72
++42
++1, 72
++42
++1+3, 72
++52
++1+3) = (45, 46, 59, 66, 69, 78).
+Finally, the ten lower-d caps are the successive odd sums
+channels cap channels cap
+1 1 1 + 3 4
+1 + 3 + 5 9 1 + 3 + 5 + 1 10
+1 + 3 + 5 + 7 16 1 + 3 + 5 + 7 + 1 17
+1 + 3 + 5 + 7 + 9 + 1 26 1 + 3 + 5 + 7 + 9 + 1 + 3 29
+1 + 3 + 5 + 7 + 9 + 11 + 1 + 3 40 1 + 3 + 5 + 7 + 9 + 11 + 1 + 3 + 5 45.
+3.3 The symbolic optical product deﬁcit
+Proposition 3.4 (Product-deﬁcit identity and uniform reserve). Let N ≥ 1 be an integer, 0 < t ≤
+1, and x = N + t. Then
+2
+3
+x3
+− Nx2
++
+N
+∑
+n=1
+n2
+=
+N2
+2
++ N
+(
+t2
++
+1
+6
+)
++
+2t3
+3
+. (6)
+For CD = 1382/3125, the right-hand side is strictly larger than CD(N + t)2. More precisely, its
+diﬀerence from CD(N + t)2 is at least
+1822532
+91552734375
+> 0. (7)
+Proof. Insert
+∑N
+n=1 n2 = N(N + 1)(2N + 1)/6 and expand; this proves (6) for all N, t, rather than
+at sampled values. Put C = CD, A = 1/2 − C = 361/6250, and let GN (t) denote the diﬀerence
+under consideration. Then
+GN (t) = AN2
++ N
+(
+t2
+− 2Ct +
+1
+6
+)
++
+2t3
+3
+− Ct2
+.
+Consequently
+GN+1(t) − GN (t) = A(2N + 1) + t2
+− 2Ct +
+1
+6
+.
+Since 0 < C < 1, the last quadratic has minimum 1/6 − C2 on (0, 1]. For N ≥ 1,
+GN+1(t) − GN (t) ≥ 3A +
+1
+6
+− C2
+=
+4229603
+29296875
+> 0.
+4
+It remains to minimize G1. Direct diﬀerentiation gives
+G′
+1(t) = 2(t − C)(t + 1),
+so its unique minimum on 0 < t ≤ 1 is at t = C. Exact substitution gives
+G1(C) =
+1822532
+91552734375
+> 0,
+which proves both assertions.
+3.4 Monotonic propagated cuts
+Lemma 3.5 (Zero-cut/channel-cut monotonicity). Fix n ≥ 2, a checkpoint m, and M = m(m+1).
+Let An be a ﬁnite collection of anchor pairs (j, q2
+j,n), where j2
+j+1/2,n > q2
+j,n at each anchor. For every
+ℓ above at least one anchor, set
+Bn(ℓ) := max
+(j,q2
+j,n)∈An, j≤ℓ
+(
+q2
+j,n + ℓ(ℓ + 1) − j(j + 1)
+)
+, (8)
+Zm,n(ℓ) := Bn(ℓ) − M, (9)
+Cm,n(ℓ) :=
+M − ℓ(ℓ + 1)
+n2 − 1
+. (10)
+Then
+Zm,n(ℓ + 1) ≥ Zm,n(ℓ) + 2(ℓ + 1) > Zm,n(ℓ), (11)
+Cm,n(ℓ + 1) = Cm,n(ℓ) −
+2(ℓ + 1)
+n2 − 1
+< Cm,n(ℓ). (12)
+In particular, if Zm,n(ℓ0) ≥ Cm,n(ℓ0), then no channel (ℓ, n) with ℓ ≥ ℓ0 can satisfy the strict proxy
+(1) at K = km.
+Proof. Every old candidate in (8) gains exactly (ℓ+1)(ℓ+2)−ℓ(ℓ+1) = 2(ℓ+1) when ℓ is replaced
+by ℓ + 1; a new anchor can only increase the maximum. This proves (11). Formula (12) is direct.
+If a channel were counted at km, its product part would give
+(n2
+− 1)z2
+< M − ℓ(ℓ + 1), hence z2
+< Cm,n(ℓ),
+whereas its propagated ball-zero part would give
+Bn(ℓ) < z2
++ M, hence z2
+> Zm,n(ℓ).
+These strict inequalities are incompatible when Z ≥ C. Equations (11) and (12) propagate the
+incompatibility to every larger angular index.
+4 Packet B: moving-3z ordering
+We ﬁrst record rational radical enclosures. All six follow by positive squaring; the exact square
+margins are
+lower comparison margin upper comparison margin
+(183/10)2 < 337 211/100 337 < (92/5)2 39/25
+(1051/100)2 < 7073/64 2221/40000 7073/64 < (1052/100)2 6191/40000
+(1067/100)2 < 114 1511/10000 114 < (107/10)2 49/100.
+5
+Thus
+183
+10
+<
+√
+337 <
+92
+5
+,
+1051
+100
+<
+√
+7073
+8
+<
+1052
+100
+,
+1067
+100
+<
+√
+114 <
+107
+10
+. (13)
+Lemma 4.1 (Endpoint and ﬁxed-wall order). With d =
+√
+337/2,
+d < 3zρ0 < 10 <
+81
+8
+<
+21
+2
+<
+√
+7073
+8
+<
+√
+114 < 3zρc . (14)
+Moreover (81/8)2 + 8 = 7073/64.
+Proof. The nontrivial endpoint estimates have the following rational margins. From (2) and (13),
+3zρ0 > 3π >
+999
+106
+, d <
+46
+5
+,
+999
+106
+−
+46
+5
+=
+119
+530
+> 0.
+Also ρ0 < 10/183, whence
+3zρ0 <
+66
+7
+183
+173
+=
+12078
+1211
+, 10 −
+12078
+1211
+=
+32
+1211
+> 0.
+At the other endpoint, zρc = π + 1/2; therefore
+3zρc >
+579
+53
+,
+√
+114 <
+107
+10
+,
+579
+53
+−
+107
+10
+=
+119
+530
+> 0.
+The rational middle comparisons are immediate. For the two radical steps one may square positive
+quantities:
+7073
+64
+−
+(
+21
+2
+)2
+=
+17
+64
+> 0, 114 −
+7073
+64
+=
+223
+64
+> 0.
+Finally, (81/8)2 + 8 = (6561 + 512)/64 = 7073/64.
+For a positive wall w, the unique solution of 3zρ = w is
+rw := 1 −
+3π
+w
+.
+The following table encloses each crossing between explicit rational numbers. The bounds use only
+Lemma 2.1 and (13); for instance rw increases with w and decreases with π.
+wall w exact rational enclosure for w exact enclosure for rw
+10 10
+2
+35
+< r10 <
+61
+1060
+81/8 81/8
+13
+189
+< r81/8 <
+11
+159
+21/2 21/2
+5
+49
+< r21/2 <
+38
+371
+√
+7073/8 1051/100 < w < 1052/100
+757
+7357
+< rw <
+2903
+27878
+√
+114 1067/100 < w < 107/10
+79
+679
+< rw <
+676
+5671
+The four gaps between consecutive rational enclosures are, in order,
+2251
+200340
+,
+256
+7791
+,
+183
+389921
+,
+231225
+18929162
+, (15)
+6
+and are all positive. For example, the ﬁrst is 13/189 − 61/1060, and similarly for the other three.
+The endpoint margins are also explicit:
+ρ0 <
+10
+183
+<
+2
+35
+,
+2
+35
+−
+10
+183
+=
+16
+6405
+> 0,
+and, since ρc > 7/51,
+676
+5671
+<
+7
+51
+< ρc,
+7
+51
+−
+676
+5671
+=
+5221
+289221
+> 0.
+We have therefore proved the complete strict order
+ρ0 < r10 < r81/8 < r21/2 < r√
+7073/8 < r√
+114 < ρc. (16)
+This single table replaces the ten crossing-location predicates and the four crossing-order predicates
+of the executable registry.
+5 Packet B: checkpoint boundary table and exhaustiveness
+The ball-zero input consists of the following strict rational lower bounds:
+n = 2, ℓ 1 2 3 5
+q2
+ℓ,2 (77/10)2 92 (103/10)2 (129/10)2
+n = 3, ℓ 1 2
+q2
+ℓ,3 (21/2)2 (61/5)2.
+(17)
+Angular propagation gives the lower bound (8) at all larger angular indices. The seven ﬁrst-excluded
+channels have the exact cuts shown below. Here M = m(m + 1), B = Bn(ℓ0), Z = B − M,
+C = (M − ℓ0(ℓ0 + 1))/(n2 − 1), and the last column is the decisive incompatibility margin Z − C.
+m n ﬁrst excluded ℓ0 B Z C Z − C
+7 2 2 81 25 50/3 25/3
+8 2 4 11409/100 4209/100 52/3 7427/300
+9 2 5 16641/100 7641/100 20 5641/100
+10 2 6 17841/100 6841/100 68/3 13723/300
+11 2 5 16641/100 3441/100 34 41/100
+10 3 2 3721/25 971/25 13 646/25
+11 3 2 3721/25 421/25 63/4 109/100
+Every table entry is reconstructible from (17). The only propagated base values not already
+anchors are
+11409
+100
+=
+(
+103
+10
+)2
++ (4 · 5 − 3 · 4),
+17841
+100
+=
+(
+129
+10
+)2
++ (6 · 7 − 5 · 6).
+All seven margins are positive; the smallest is 41/100, so none of these exclusions relies on an
+equality convention. By Lemma 3.5, each row excludes not merely the displayed channel but its
+entire angular tail.
+It remains to rule out the radial tails. On the high strip ρc ≤ ρ < 1,
+z ≥ zρc = π +
+1
+2
+>
+333
+106
++
+1
+2
+=
+193
+53
+, z2
+>
+37249
+2809
+.
+7
+The exact margins needed below are
+37249
+2809
+−
+90
+8
+=
+22591
+11236
+> 0,
+37249
+2809
+−
+132
+15
+=
+62649
+14045
+> 0. (18)
+At m ≤ 9, an n = 3 channel would require 8z2 < M − ℓ(ℓ + 1) ≤ 90, contradicting the ﬁrst
+inequality. At m ≤ 11, every n ≥ 4 channel would require 15z2 ≤ (n2 − 1)z2 < M − ℓ(ℓ + 1) ≤ 132,
+contradicting the second inequality. These are the two base radial exclusions.
+Theorem 5.1 (Exhaustive checkpoint inventories). For ρc ≤ ρ < 1, the channels that can satisfy
+the strict proxy (1) at the ﬁve checkpoints are contained in the following lists:
+checkpoint possible modes
+k7 ﬁrst 0:6, second 0:1, no n ≥ 3
+k8 ﬁrst 0:7, second 0:3, no n ≥ 3
+k9 ﬁrst 0:8, second 0:4, no n ≥ 3
+k10 ﬁrst 0:9, second 0:5, third 0:1, no n ≥ 4
+k11 ﬁrst 0:10, second 0:4, third 0:1, no n ≥ 4.
+Here n-th means radial index n, and a:b denotes the angular indices a, a + 1, . . . , b. The word
+“possible” asserts an exhaustive upper inventory, not that every listed channel is present for every
+ratio.
+Proof. For n = 1, the product part of the strict proxy at km is
+z2
++ ℓ(ℓ + 1) < z2
++ m(m + 1).
+Thus ℓ < m. The equality channel ℓ = m and all larger indices are excluded, with the equality
+ownership ﬁxed by Lemma 3.2. This gives precisely ﬁrst 0:m − 1.
+For n = 2, apply the ﬁrst ﬁve rows of the checkpoint table and then Lemma 3.5. They give
+ﬁrst-excluded angular indices 2, 4, 5, 6, 5 at m = 7, 8, 9, 10, 11, respectively. Hence the second blocks
+end at 1, 3, 4, 5, 4.
+For n = 3, the ﬁrst inequality in (18) removes all channels through k9. At k10 and k11, the last
+two rows of the checkpoint table and cut monotonicity remove every ℓ ≥ 2, leaving only ℓ = 0, 1.
+Finally, the second inequality in (18) removes all n ≥ 4 through k11. The ﬁve lists follow, without
+any bounded angular search.
+6 Executable-row coverage contract
+The former executable baseline contained 611 rows and had canonical digest
+afd7e054f52aa9a3992fc8ef16d3e7551586c76bfb589053714f5f55a36792f1.
+The digest is included only to identify the audited baseline. It is not a premise of any proof above.
+The exhibits above replace disjoint row groups as follows:
+8
+analytic exhibit rows exact ledger subfamilies
+Lemma 2.1 4 one enclosure-nonemptiness row, two rational π-bound rows, and
+one reciprocal row
+Lemma 3.2 24 sixteen integer/half-integer strict brackets, seven phase-proxy
+integer walls, and one optical radial equality owner
+Lemma 3.3 97 twelve strict angular equality blocks, twelve optical angular blocks,
+62 high-checkpoint cap identities, one six-cap lower tuple, and ten
+lower-d cap identities
+Proposition 3.4 23 ﬁve general product-deﬁcit predicates and eighteen sampled
+expansions
+Lemma 3.5, the checkpoint
+boundary table, and Theo-
+rem 5.1
+117 76 repeated cut-monotonicity rows, seven ﬁrst-excluded
+comparisons, two radial exclusions, and 32 metadata/tail instances
+Lemma 4.1 and the moving-
+crossing table
+23 ﬁve ﬁxed-wall orders, one propagation identity, three endpoint
+comparisons, ten crossing locations, and four crossing-order rows
+total 288
+The following family table gives the same accounting against the executable entry points and
+makes the partial-family boundaries explicit. It maps the exact rows replaced by this note. “Col-
+lapsed” means that multiple sampled or bookkeeping rows are consequences of one displayed iden-
+tity; it does not mean that an unprinted program enumeration is being used.
+executable family family rows replaced here analytic replacement
+verify_pi 4 4 Lemma 2.1
+verify_thresholds 34 23 ﬁve ﬁxed-wall orders, one propagation
+identity, three endpoint comparisons, and
+fourteen moving-crossing predicates
+verify_strict_face_
+conventions
+35 35 Lemmas 3.2 and 3.3
+verify_lower_inventories_
+and_payments
+44 1 single six-cap tuple bookkeeping row
+verify_checkpoint_
+inventories
+117 117 boundary table, radial margins, and
+Theorem 5.1
+verify_cap_tables_and_
+payments
+98 62 all block-cap arithmetic: 61 cap-table rows
+plus the cap-74 block identity
+verify_optical_constants 50 36 twelve angular blocks, one radial equality
+owner, ﬁve general product-deﬁcit facts,
+and eighteen sampled expansions
+supplemental k6/lower-d ledger 26 10 ten lower-d block-cap identities
+total 288
+For the checkpoint family, the 117 rows decompose exactly as follows: 32 ﬁnite metadata/tail
+instances, seven ﬁrst-excluded zero/channel comparisons, two base radial exclusions, and 76 re-
+peated cut-monotonicity instances. Theorem 5.1 replaces all four groups. For the optical family,
+Proposition 3.4 replaces the 18 sampled (N, t) expansions by a symbolic identity valid for every
+integer N ≥ 1 and every 0 < t ≤ 1.
+The remaining 323 rows are outside Packets A and B. In particular, this note makes no claim to
+replace the high-event cap/payment implications, the Bessel sign registry, seam payments, optical
+screen constants, or the exact owner subtraction. Those require the other analytic replacement
+packets. This separation prevents a universal arithmetic lemma from being mistaken for proof of a
+geometric event assignment.
+9
+Connected High-Event Registry
+Analytic ledger replacement, Packet C
+Abstract
+This note replaces the exact-executable arithmetic used in the high spherical-shell staircase by
+displayed rational witnesses. It contains the complete seventeen-face localization registry, the three
+algebraic splits, the three dashed (impossible) cap cells, the ﬁve global checkpoint payments, the seven
+conditional payments, and the corrected cap–74 path. All comparisons are strict rational comparisons
+after the two elementary bounds 333/106 < π < 22/7. In particular, no decimal approximation,
+interval package, or external ledger is a logical input to this packet.
+1 Deﬁnitions and strict proxy convention
+For 0 < ρ < 1, put
+z = zρ :=
+π
+1 − ρ
+, x = xρ := z2
+ρ, km(ρ) :=
+√
+xρ + m(m + 1). (1)
+The three-dimensional Weyl term is
+W(ρ, K) :=
+2
+9π
+(1 − ρ3
+)K3
+. (2)
+At K = km(ρ), the product part of the strict channel proxy for the mode (ℓ, n), n ≥ 2, is
+n2
+x + ℓ(ℓ + 1) < x + m(m + 1).
+It is therefore governed by
+∆m;n,ℓ(ρ) := m(m + 1) − ℓ(ℓ + 1) − (n2
+− 1)xρ. (3)
+The channel is product-possible only when ∆m;n,ℓ > 0. Equality is excluded because the spectral proxy
+is strict. Since
+x′
+ρ =
+2π2
+(1 − ρ)3
+> 0, ∆′
+m;n,ℓ = −(n2
+− 1)x′
+ρ < 0, (4)
+a positive witness at r controls the side ρ ≤ r, while a negative witness controls the side ρ ≥ r.
+We write H for the largest ﬁrst-mode angular index retained in a cap cell and h for the largest second-
+mode angular index. A complete block through H has multiplicity (H + 1)2, because
+∑H
+ℓ=0(2ℓ + 1) =
+(H + 1)2.
+2 The only transcendental enclosure
+Lemma 1 (Rational enclosure of π). One has
+π− :=
+333
+106
+< π <
+22
+7
+=: π+. (5)
+1
+Proof. For 0 < u < 1, the alternating expansion of arctan u lies between each pair of consecutive partial
+sums. The tangent addition formula gives
+tan
+(
+4 arctan
+1
+5
+− arctan
+1
+239
+)
+= 1;
+indeed, tan(4 arctan(1/5)) = 120/119, so both the numerator and denominator in the last tangent
+quotient are 28561/(119 · 239). The angle lies in (0, π/2), and hence Machin’s identity follows:
+π = 16 arctan
+1
+5
+− 4 arctan
+1
+239
+.
+Using an even partial sum for the positive term and an upper partial sum for the subtracted term gives
+π > 16
+(
+1
+5
+−
+1
+3 · 53
++
+1
+5 · 55
+−
+1
+7 · 57
+)
+−
+4
+239
+,
+[right side] −
+333
+106
+=
+3418213
+41563593750
+> 0.
+Likewise,
+π < 16
+(
+1
+5
+−
+1
+3 · 53
++
+1
+5 · 55
+)
+− 4
+(
+1
+239
+−
+1
+3 · 2393
+)
+,
+22
+7
+− [right side] =
+1845738322
+1493178640625
+> 0.
+This proves (5).
+3 The seventeen rational localization faces
+Let
+ρc :=
+1
+1 + 2π
+.
+Because π > 3, ρc < 1/7. The seventeen registry ratios are strictly ordered as follows:
+4
+25
+<
+1
+5
+<
+1
+4
+<
+3
+10
+<
+1
+3
+<
+7
+20
+<
+3
+8
+<
+2
+5
+<
+5
+12
+<
+3
+7
+<
+1
+2
+<
+8
+15
+<
+107
+200
+<
+3
+5
+<
+16
+25
+<
+13
+20
+<
+2
+3
+.
+(6)
+For a completely explicit distinctness check, the sixteen consecutive gaps in (6) are
+1
+25
+,
+1
+20
+,
+1
+20
+,
+1
+30
+,
+1
+60
+,
+1
+40
+,
+1
+40
+,
+1
+60
+,
+1
+84
+,
+1
+14
+,
+1
+30
+,
+1
+600
+,
+13
+200
+,
+1
+25
+,
+1
+100
+,
+1
+60
+. (7)
+Moreover
+4
+25
+−
+1
+7
+=
+3
+175
+> 0,
+7
+8
+−
+2
+3
+=
+5
+24
+> 0.
+Thus all seventeen ratios lie in the high strip ρc < ρ < 7/8.
+For a positive row below, we use
+∆m;n,ℓ(r) > m(m + 1) − ℓ(ℓ + 1) − (n2
+− 1)
+(
+π+
+1 − r
+)2
+.
+2
+For a negative row, we use
+−∆m;n,ℓ(r) > (n2
+− 1)
+(
+π−
+1 − r
+)2
+− m(m + 1) + ℓ(ℓ + 1).
+The resulting exact witnesses are the following. “Retain” means only that the product wall does not
+permit deletion of the indicated block; the independent Bessel wall may still remove it.
+no. r (m; n, ℓ) exact sign witness one-sided cap/event consequence
+1 1/5 (11; 3, 1) ∆ > 320/49 retain the third block 0:1 for
+ρ ≤ 1/5
+2 3/10 (8; 2, 3) −∆ > 58215/137641 at k8, h ≤ 2 for ρ ≥ 3/10
+3 1/3 (8; 2, 2) −∆ > 27699/44944 at k8, h ≤ 1 for ρ ≥ 1/3
+4 3/8 (9; 2, 3) ∆ > 2622/1225 retain the h = 3 column below this
+face
+5 2/5 (9; 2, 2) ∆ > 248/147 retain the h = 2 column below this
+face
+6 5/12 (9; 2, 1) ∆ > 2200/2401 retain the h = 1 column below this
+face
+7 3/7 (9; 2, 0) −∆ >
+120843/179776
+no second mode at k9 on the
+upper side
+8 1/2 (10; 2, 0) −∆ > 23677/2809 no second mode at k10 on the
+upper side
+9 107/200 (11; 2, 0) −∆ >
+13302732/2699449
+no second mode at k11 on the
+upper side
+10 8/15 (11; 2, 0) −∆ >
+2175627/550564
+the clean stated cutoﬀ: a second
+mode forces ρ < 8/15
+11 3/5 (8; 2, 0) −∆ >
+5080707/44944
+select the no-second k8
+cap/payment side
+12 16/25 (9; 2, 0) −∆ >
+1555635/11236
+select the no-second k9
+cap/payment side
+13 13/20 (10; 2, 0) −∆ >
+18126190/137641
+select the no-second k10
+cap/payment side
+14 2/3 (11; 2, 0) −∆ >
+1510851/11236
+select the no-second k11
+cap/payment side
+15 4/25 (10; 3, 0) −∆ >
+260740/137641
+no third mode at k10 on the upper
+side
+16 1/4 (11; 3, 0) −∆ > 23484/2809 a third mode at k11 forces ρ < 1/4
+17 7/20 (9; 2, 4) −∆ > 36230/474721 the H = 6, h = 4 cap–74 cell can
+occur only below this face
+Every entry is a displayed positive rational number. Together with the monotonicity (4), the table
+proves the asserted side on an interval, not merely at a sampled point.
+4 Three algebraic splits and the ﬁve k11 implications
+At ρ = ρc, x = (π + 1/2)2, while at ρ = 7/8, x = 64π2. Lemma 1 gives the exact chain
+(π + 1
+2 )2
+<
+(
+51
+14
+)2
+=
+2601
+196
+< 16 <
+68
+3
+< 34 < 64 · 32
+< 64π2
+. (8)
+3
+Consequently each of x = 16, 68/3, 34 is attained at a unique point in the high strip. The relevant
+channel arithmetic is
+x channel exact value of ∆
+16 (m; n, ℓ) = (11; 3, 1) 132 − 2 − 8 · 16 = 2 > 0,
+68/3 (10; 2, 6) 110 − 42 − 3(68/3) = 0,
+34 (11; 2, 5) 132 − 30 − 3 · 34 = 0.
+(9)
+Thus the ﬁrst split lies on the possible side. The latter two are exact channel walls, and their new modes
+are excluded by the strict convention.
+The two localization consequences at k11 may also be read without the table:
+x8/15 − 44 >
+(
+π−
+1 − 8/15
+)2
+− 44 =
+725209
+550564
+> 0, (10)
+x1/4 −
+33
+2
+>
+(
+π−
+1 − 1/4
+)2
+−
+33
+2
+=
+5871
+5618
+> 0. (11)
+Hence a second mode at k11 forces ρ < 8/15, and a third mode forces ρ < 1/4. Finally, the ﬁrst-mode
+ball walls give
+(
+69
+5
+)2
+− 132 =
+1461
+25
+= 44 +
+361
+25
+=
+33
+2
++
+2097
+50
+, (12)
+(
+64
+5
+)2
+− 132 =
+796
+25
+=
+33
+2
++
+767
+50
+. (13)
+If H = 10 is present at k11, then x is larger than both the second threshold 44 and the third threshold
+33/2; hence every second and third mode is excluded. If H = 9 is present, every third mode is excluded.
+Equations (10)–(13) are the ﬁve formerly separate k11 localization implications.
+5 The three impossible cap cells
+If the ﬁrst mode H is counted at km, its strict ball wall βH,1 < km forces x > β2
+H,1 − m(m + 1). If the
+second mode h is counted, its product wall forces x < (m(m + 1) − h(h + 1))/3. The three dashed cells
+are therefore empty by the following exact, incompatible bounds:
+cell required lower bound required upper bound gap
+k8 : H = 6, h ≥ 2 100 − 72 = 28 (72 − 6)/3 = 22 6
+k9 : H = 8, h ≥ 0 (71/6)2 − 90 = 1801/36 90/3 = 30 721/36
+k9 : H = 7, h ≥ 3 (23/2)2 − 90 = 169/4 (90 − 12)/3 = 26 65/4.
+(14)
+No limiting equality can rescue a cell: both necessary modal inequalities are strict.
+6 Checkpoint monotonicity and ﬁve global payments
+Put M = m(m + 1) and Wm(ρ) := W(ρ, km(ρ)). Logarithmic diﬀerentiation shows that W′
+m has the
+sign of
+π2
+(1 + ρ) − Mρ2
+(1 − ρ)2
+. (15)
+For m ≤ 11,
+π2
+(1 + ρ) − Mρ2
+(1 − ρ)2
+> 9 −
+132
+16
+=
+3
+4
+> 0.
+4
+Thus every Wm, m ≤ 11, is strictly increasing. This single argument replaces both executable derivative-
+bound predicates.
+At ρc, one has z = π + 1/2 > 193/53, ρc < 1/7, and 1/π > 7/22. Consequently
+W(ρc, K) >
+2
+9
+7
+22
+(
+1 −
+1
+73
+)
+K3
+=
+38
+539
+K3
+. (16)
+For each row in the next table, the middle column proves km(ρc) > tm, and the last column proves
+Wm(ρc) > Cm.
+m cap Cm tm (193/53)2
++ M − t2
+m (38/539)t3
+m − Cm
+7 40 208/25 67049/1755625 5083656/8421875
+8 53 923/100 1901439/28090000 656778873/269500000
+9 73 254/25 61431/1755625 7911557/8421875
+10 89 111/10 14211/280900 1999489/269500
+11 121 241/20 65271/1123600 5076899/2156000
+Every last-column entry is positive. Monotonicity therefore extends each global payment from ρc to the
+complete high strip.
+7 Seven conditional ﬁrst-block payments
+We now give a general reduction which avoids any numerical enclosure of a radical. Suppose the presence
+of ﬁrst mode H below the checkpoint km forces K > t. Set
+a2
+:= t2
+− m(m + 1), ρ0 := 1 −
+π
+a
+. (17)
+All seven rows below have a > π: the smallest listed radicand is
+89
+4
+,
+89
+4
+−
+(
+22
+7
+)2
+=
+2425
+196
+> 0.
+If the mode is present for some K ≤ km(ρ), then km(ρ) > t, hence xρ > a2 and ρ > ρ0. By the strict
+increase of Wm,
+Wm(ρ) > Wm(ρ0) = W(ρ0, t).
+Choose a rational r > ρ0. Since W(ρ, t) decreases with ρ at ﬁxed t, Lemma 1 yields
+W(ρ0, t) > W(r, t) >
+7
+99
+(1 − r3
+)t3
+. (18)
+The condition r > ρ0 follows, without taking a square root, from
+L := π2
+− − (1 − r)2
+a2
+> 0. (19)
+Here is the complete calculation. The column P is the reserve in (18) above the stated cap.
+m H t cap a2
+r L P = 7
+99 (1 − r3
+)t3
+− cap
+7 6 10 53 44 8/15 725209/2528100 18659/2673
+8 7 23/2 80 241/4 3/5 64349/280900 213281/49500
+5
+m H t cap a2
+r L P
+9 8 71/6 81 1801/36 3/5 4713989/2528100 14506973/1336500
+10 7 23/2 100 89/4 7/20 2105431/4494400 18539033/6336000
+10 8 71/6 97 1081/36 3/7 317585/4955076 2865431/261954
+10 9 64/5 100 1346/25 3/5 8811001/7022500 25143284/1546875
+11 9 64/5 125 796/25 1/2 536261/280900 58757/12375
+All L’s and P’s are positive. Each row therefore proves both the localization of its conditional branch
+and its Weyl payment.
+8 The connected cap–74 path
+The seventeenth localization row is tied to the exceptional k9, H = 6, h = 4 cap as follows. Angular
+propagation from the strict (3, 2) Bessel wall gives
+j2
+9/2,2 >
+(
+103
+10
+)2
++ 20 − 12 =
+11409
+100
+= 108 +
+609
+100
+. (20)
+Accordingly the strict proxy uses β2
+4,2 = 11409/100; the strict inequality belongs to the actual Bessel
+zero j9/2,2, not to the proxy constant. At k9, the product wall for (4, 2) is
+3x < 90 − 20 = 70, i.e. x <
+70
+3
+.
+The ball wall (20), on the other hand, forces
+x >
+11409
+100
+− 90 =
+2409
+100
+,
+2409
+100
+−
+70
+3
+=
+227
+300
+> 0.
+Thus the fully sharpened cap–74 cell is empty.
+For completeness, even the deliberately conservative cell is paid. At ρ = 7/20,
+x7/20 −
+70
+3
+>
+400
+169
+(
+333
+106
+)2
+−
+70
+3
+=
+36230
+1424163
+> 0, (21)
+so a counted (4, 2) mode forces ρ < 7/20. Also
+108 −
+(
+207
+20
+)2
+=
+351
+400
+> 0, (22)
+so its ball wall forces K > 207/20. Therefore
+W(ρ, K) >
+7
+99
+(
+1 −
+(
+7
+20
+)3
+) (
+207
+20
+)3
+=
+52823261673
+704000000
+= 74 +
+727261673
+704000000
+> 74. (23)
+The cap itself is exactly (6 + 1)2 + (4 + 1)2 = 49 + 25 = 74. Equations (20)–(23) cover both the actual
+incompatibility and every row of the conservative cap–74 fallback.
+6
+9 Exact row map and scope audit
+The following map uses the ordering of the two functions in the original exact registry. To keep the table
+readable, L denotes verify_localizations, and C denotes verify_cap_tables_and_payments. The
+map lets a referee match every replaced predicate to a displayed hand calculation.
+registry family row numbers analytic replacement here
+L 1–2 distinctness and connectedness: (6)–(7) and the seventeen-row table
+L 3–19 all ratios in the high strip, by ρc < 1/7 < 4/25 and 2/3 < 7/8
+L 20–36 the seventeen exact sign witnesses in the long table
+L 37–42 split location (8) and side/equality arithmetic (9)
+L 43–47 the ﬁve k11 implications (10)–(13)
+C 44–55 the twelve non-bookkeeping cap–74 predicates, (20)–(23); row C56, the block
+identity 49 + 25 = 74, is allocated to Packet A
+C 57–59 the three impossible cells, (14)
+C 78–79 the general checkpoint monotonicity proof (15)
+C 80–84 the ﬁve global-payment rows following (16)
+C 85–98 the seven localization and seven conditional-payment rows in the ﬁnal long
+table
+The count reconciliation is
+subfamily connected mathematical objects registry predicates
+registry metadata 1 2
+high-strip membership 17 17
+localization signs 17 17
+algebraic splits 3 6
+special k11 implications 5 5
+cap–74 path 1 12
+impossible cells 3 3
+checkpoint monotonicity 1 2
+global payments 5 5
+conditional payments 7 14
+total 60 83.
+In particular, the ﬁve headline Packet–C subfamilies contain exactly
+17 + 3 + 3 + 5 + 7 = 35
+connected objects (localization signs, algebraic splits, impossible cells, global payments, and conditional
+payments). Because each algebraic split has a location and a side predicate, and each conditional payment
+has a localization and a reserve predicate, these headline objects replace 17+6+3+5+14 = 45 registry
+predicates. The remaining 38 predicates in the total are the explicitly listed auxiliary closure rows.
+Thus this packet replaces all 47 predicates of L and 36 predicates of C. The elementary cap addition
+rows 1–43, row 56, and rows 60–77 of the latter family are outside the declared Packet C scope; they are
+instances of the general odd-sum/block-cap identity and are not claimed here. No row in the declared
+scope is unreconstructed.
+7
+Purely Analytic Ledger Replacement, Packet D:
+Seam Arithmetic and the Two-Sided Payments
+Exact hand-checkable exhibit
+Abstract
+This packet replaces the twenty-two executable seam predicates and the eleven moving/ﬁxed pay-
+ment predicates used in the high side through k6. Every premise is an analytic inequality already
+derived in the seam or staircase argument, and every remaining decision is displayed as an exact
+rational identity or strict rational comparison. In particular, the derivative of the seam comparison
+function is derived explicitly and is bounded by an exact proxy with a positive margin to 16/5. The
+six moving k6 payments are printed with their full rational diﬀerences, not merely their numerators.
+No program execution, ﬂoating-point value, or interval calculation is a premise.
+1 Rational constants used by both tables
+For completeness, the needed bounds for π can be checked from the alternating arctangent series, rather
+than imported from an executable Machin enclosure. Machin’s identity and the alternating remainder
+rule give
+π > 16
+
+1
+5
+−
+1
+3 53
++
+1
+5 55
+−
+1
+7 57
+
+−
+4
+239
+=: Lπ,
+π < 16
+
+1
+5
+−
+1
+3 53
++
+1
+5 55
+
+− 4
+
+1
+239
+−
+1
+3 2393
+
+=: Uπ.
+Indeed, the tangent-addition formula proves π = 16 arctan(1/5) − 4 arctan(1/239), and the displayed
+truncations have the indicated directions. Direct rational subtraction gives
+Lπ −
+333
+106
+=
+3418213
+41563593750
+> 0,
+1571
+500
+− Uπ =
+323354809
+853244937500
+> 0. (1)
+Since
+22
+7
+−
+1571
+500
+=
+3
+3500
+> 0, (2)
+we may use throughout
+π :=
+333
+106
+< π < π :=
+1571
+500
+<
+22
+7
+. (3)
+All later occurrences of a rational π bound refer to (3).
+2 The twenty-two seam rows
+2.1 Analytic input and comparison function
+We recall precisely the analytic data to which the ﬁnite arithmetic is applied. Put
+ϵ = 1 − ρ = y2
+, κ = Kϵ2
+, 0 < y ≤
+1
+√
+6
+, ρ ≥
+5
+6
+, κ ≥ 54.
+1
+For a ﬁrst plateau of length p, and the quantities m, R in the seam decomposition, set
+P = py, r = Ry, S = (p + m)y.
+The angular estimate d > 5/8 and R = p − dm imply, whenever r > 0,
+0 < r ≤ P, S ≤ S∗(P, r) :=
+13P − 8r
+5
+. (4)
+Equality in the second relation can occur when m = 0; no later step requires strictness at this comparison.
+The curvature-shelf calculation already proved in the seam argument gives the self-consistent inequality
+P2
+<
+2π2Q
+(1 − b
+q)2
+, Q = 1 +
+y2
+κ
++
+yS
+κ
+, b
+q =
+y2
+ρ
+(Q − 1). (5)
+Since the right-hand side increases with Q, deﬁne
+Q∗ = 1 +
+y2
+κ
++
+yS∗
+κ
+, q∗ = a(Q∗ − 1), a :=
+y2
+ρ
+≤
+1
+5
+, (6)
+and
+H(P, r) :=
+2π2Q∗
+(1 − q∗)2
+. (7)
+Then (4) gives Q ≤ Q∗ and b
+q ≤ q∗. Since (5) is itself strict and its right-hand side increases with Q, it
+follows that P2 < H(P, r).
+The remaining arithmetic is exactly the following table. Rows 1–5 are the ﬁve constant/shelf rows,
+rows 6–10 are the ﬁve displacement rows, rows 11–14 are the four derivative rows, rows 15–17 are the
+three endpoint rows, and rows 18–22 are the ﬁve terminal-payment rows. Thus the table reconciles
+one-for-one with all twenty-two seam predicates.
+For clarity, the radical used in rows 7–9 follows directly from the analytic shelf bound. Namely,
+p2
+<
+2πρK
+ϵ
+, P = py, K =
+κ
+y4
+imply
+
+y3P
+κρ
+2
+<
+2πy2
+κρ
+≤
+π
+135
+<
+π
+135
+.
+Together with S∗ ≤ 13P/5, this gives
+q∗ <
+1
+1620
++
+13
+5
+763
+5000
+,
+which is precisely the dependency recorded by rows 6–9.
+# quantity exact rational check role
+1 seam π bound π − Uπ = 323354809/853244937500 > 0 π < π; (1)
+2 lower
+√
+2 bound 2 − (140/99)2
+= 2/9801 > 0 140/99 <
+√
+2
+3 upper
+√
+2 bound (99/70)2
+− 2 = 1/4900 > 0
+√
+2 < 99/70
+4 y ceiling (49/120)2
+− 1/6 = 1/14400 > 0 y < 49/120
+5 shelf ceiling (13/5)2
+− 2π = 119/250 > 0
+√
+2πρ < 13/5;
+rows 1
+2
+# quantity exact rational check role
+6 ﬁrst displacement term
+(1/6)2
+54(5/6)
+=
+1
+1620
+y4
+/(κρ) ≤
+1/1620
+7 radical ceiling (763/5000)2
+−
+π
+135
+=
+8563
+675000000
+> 0 shelf radical; row
+1
+8 displacement proxy
+1
+1620
++
+13
+5
+763
+5000
+=
+804689
+2025000
+rows 6–7
+9 displacement margin
+159
+400
+−
+804689
+2025000
+=
+497
+4050000
+> 0 q∗, b
+q < q :=
+159/400
+10 outer-half localization
+5
+6
+(1 − 159/400) =
+241
+480
+=
+1
+2
++
+1
+480
+x0/K > 1/2; row
+9
+11 Q∗-derivative proxy DQ :=
+13
+5
+49/120
+54
+=
+637
+32400
+∂P Q∗ < DQ;
+row 4
+12 exact H-derivative proxy
+2π2
+DQ(1 + 159/400 + 2/5)
+(1 − 159/400)3
+=
+2260740364246
+708624500625
+rows 1, 9, 11 and
+a ≤ 1/5
+13 margin to 16/5
+16
+5
+−
+2260740364246
+708624500625
+=
+6858037754
+708624500625
+> 0 ∂P H(P, B) <
+16/5
+14 synthetic-slope margin 2
+14
+3
+−
+16
+5
+=
+92
+15
+> 0 ∂P (P2
+− H) >
+92/15
+15 endpoint Q∗ proxy Q := 1 +
+1/6
+54
++
+(49/120)(14/3)
+54
+=
+10093
+9720
+, Q − 1 =
+373
+9720
+Q∗(B, B) < Q
+16 endpoint q∗ proxy
+1
+5
+(Q − 1) =
+373
+48600
+q∗(B, B) <
+373/48600
+17 initial reserve
+
+14
+3
+2
+−
+2π2
+(10093/9720)
+(1 − 373/48600)2
+=
+2505132463469
+2616573970125
+> 0 B2
+− H(B, B) >
+0; rows 1, 15–16
+18 action-gain coeﬃcient g :=
+2(140/99)54
+3(1571/500)
+=
+280000
+17281
+Kη > g/y; rows
+1–2
+19 gain after R loss g −
+14
+3
+=
+598066
+51843
+use R < 14/(3y)
+20 interface loss proxy
+8
+15
+99
+70
+=
+132
+175
+4δ < 132/175;
+row 3
+21 dangerous-branch reserve
+598066
+51843
+120
+49
+− 1 −
+132
+175
+=
+80132733
+3024175
+> 0 R > 0; rows 4,
+19–20
+22 safe-branch reserve
+280000
+17281
+120
+49
+− 1 −
+132
+175
+=
+114694733
+3024175
+> 0 R ≤ 0; rows 4,
+18, 20
+2.2 Why the table proves the seam implications
+We spell out the two implications for which the table is more than a collection of arithmetic facts.
+First, on the segment r = B := 14/3 and P ≥ B,
+∂P Q∗ =
+13y
+5κ
+, ∂P q∗ = a ∂P Q∗.
+3
+Diﬀerentiation of (7), followed only by the identity aQ∗ = q∗ + a, gives
+∂P H = 2π2
+(∂P Q∗)
+1 − q∗ + 2aQ∗
+(1 − q∗)3
+= 2π2
+(∂P Q∗)
+1 + q∗ + 2a
+(1 − q∗)3
+. (8)
+Rows 1, 9, and 11 and a ≤ 1/5 substitute monotonically into (8); rows 12–13 then prove ∂P H < 16/5.
+Because P ≥ B, row 14 proves
+d
+dP
+P2
+− H(P, B)
+
+= 2P − ∂P H(P, B) >
+92
+15
+> 0. (9)
+Rows 15–17 prove B2 − H(B, B) > 0. Integration of (9) therefore yields P2 > H(P, B) for every P ≥ B.
+If r ≥ B, then H(P, r) ≤ H(P, B) because S∗(P, r) decreases with r and H increases with Q∗. This
+contradicts P2 < H(P, r). Hence
+r < B, R <
+14
+3y
+. (10)
+Second, the turning-point action bound gives
+Kη ≥
+2
+√
+2 κ
+3π
+1
+y
+>
+g
+y
+,
+where row 18 is the exact rational lower proxy. Also row 4 gives 1/y > 120/49, and row 20 gives
+4δ < 8
+√
+2/15 < 132/175. With M = ⌊Kη⌋ − R and the strict inequality ⌊x⌋ > x − 1, (10) and row 21
+give, when R > 0,
+M − 4δ >
+
+g −
+14
+3
+
+120
+49
+− 1 −
+132
+175
+> 0.
+When R ≤ 0, row 22 gives the still stronger estimate
+M − 4δ > g
+120
+49
+− 1 −
+132
+175
+> 0.
+Thus the seam tail has the strict action payment claimed in the main argument, including the R = 0
+and integer-Kη faces.
+Remark 1 (Notation correction in the executable label). The supplemental veriﬁer labels row 11 as an
+“exact dq/dP cap.” In the notation of the proof, the number 637/32400 is a proxy for ∂P Q∗, not for ∂P q∗.
+In fact ∂P q∗ = a∂P Q∗ and hence ∂P q∗ < 637/162000. Formula (8) and the veriﬁer both use 637/32400
+in its correct role as the Q∗-derivative proxy. The proof is therefore sound, but the old ledger label is
+inaccurate.
+Remark 2 (Source wording for the π bound). One sentence in the seam passage groups π < 1571/500
+with bounds said to be proved by positive rational squaring. Squaring proves rows 2–5, but not a bound
+for π. Equations (1)– (3) supply the required analytic alternating-series proof.
+3 The eleven k6 payment rows
+Put
+zρ =
+π
+1 − ρ
+, km(ρ)2
+= z2
+ρ + m(m + 1), p1(ρ)2
+= 4z2
+ρ + 2, (11)
+and
+W(ρ, K) =
+2
+9π
+(1 − ρ3
+)K3
+. (12)
+For a moving wall T2 = az2
+ρ + b, direct diﬀerentiation shows that W(ρ, T) increases whenever
+aπ2
+(1 + ρ) > bρ2
+(1 − ρ)2
+. (13)
+4
+Here b/a ≤ 42. Since ρ2(1 − ρ)2 ≤ 1/16 and π > 3, the left side of (13), after division by a, is greater
+than 9, whereas the right side is at most 42/16; hence every moving payment in the table is increasing.
+At a ﬁxed wall L, the function W(ρ, L) is decreasing in ρ.
+For a rational split r, deﬁne
+A(a, b; r) := a
+(333/106)2
+(1 − r)2
++ b, B(r) :=
+7
+99
+(1 − r3
+). (14)
+The bounds (3) give, on a moving wall at ρ = r,
+W(r, T) > B(r)A(a, b; r)3/2
+. (15)
+Thus, for a positive cap C, the rational inequality
+∆mov := B(r)2
+A(a, b; r)3
+− C2
+> 0 (16)
+implies the strict payment, because
+∆mov = B(r)A3/2
+− C
+
+B(r)A3/2
++ C
+
+and the second factor is positive. At a ﬁxed wall L, it is enough to check the ordinary rational reserve
+∆ﬁx := B(r)L3
+− C > 0. (17)
+The following is the complete eleven-row registry: six moving rows and ﬁve ﬁxed rows. The fractions
+in the last column are the full reduced diﬀerences in (16) or (17).
+wall/branch split r wall data cap C full exact rational diﬀerence
+k1 moving 1/8 (a, b) = (1, 2) 4 ∆mov =
+153864824754340538785
+348796101192617852928
+> 0
+k2 moving 3/10 (a, b) = (1, 6) 9 ∆mov =
+1399810848073457853053
+394237491401523000000
+> 0
+k3 moving 1/2 (a, b) = (1, 12) 16 ∆mov =
+137027505353736631
+514922437748928
+> 0
+k4 moving 1/2 (a, b) = (1, 20) 25 ∆mov =
+2507119282010251109
+13902905819221056
+> 0
+k5 moving 13/25 (a, b) = (1, 30) 36 ∆mov =
+92672404686738742434741
+709259556128000000000
+> 0
+p1 moving 1/5 (a, b) = (4, 2) 29 ∆mov =
+373255772037478993002833
+868931613701316000000
+> 0
+k2 ﬁxed 3/10 L = 51/10 9 ∆ﬁx =
+1387329
+11000000
+> 0
+k3 ﬁxed 1/2 L = 13/2 16 ∆ﬁx =
+6277
+6336
+> 0
+k4 ﬁxed 1/2 L = 15/2 25 ∆ﬁx =
+775
+704
+> 0
+k5 ﬁxed 13/25 L = 17/2 36 ∆ﬁx =
+452843
+343750
+> 0
+p1 ﬁxed 1/5 L = 77/10 29 ∆ﬁx =
+849901
+281250
+> 0
+We now verify that the table pays every branch rather than merely listing positive numbers. For
+each maximum entry wall
+max{k2, 51/10}, max{k3, 13/2}, max{k4, 15/2}, max{k5, 17/2}, max{p1, 77/10},
+partition the ratio interval at the displayed r. On ρ ≥ r, the maximum is at least the moving component
+and monotonicity together with the moving row pays C. On ρ ≤ r, the maximum is at least the ﬁxed
+component and the ﬁxed row pays C. This argument does not assume that the two components are equal
+at the rational split. For k1, the applicable ratio interval starts at ρc > 1/8 (because π < 22/7 < 7/2),
+so the ﬁrst moving row applies directly. Strict payments also cover coincident entry walls, while the wall
+itself remains assigned to the lower cap by the strict spectral convention.
+5
+4 Reconciliation with the lower-d rows
+The two rational π predicates used by the two-sided ledger are already proved in (3). The eleven k6
+predicates are exactly the eleven rows in the preceding table. The remaining thirteen wall/cap predicates
+in that ledger are the ten transparent multiplicity sums
+(1, 1 + 3, 1 + 3 + 5, 1 + 3 + 5 + 1, 1 + 3 + 5 + 7,
+1 + 3 + 5 + 7 + 1, 1 + 3 + 5 + 7 + 9 + 1,
+1 + 3 + 5 + 7 + 9 + 1 + 3,
+1 + 3 + 5 + 7 + 9 + 11 + 1 + 3,
+1 + 3 + 5 + 7 + 9 + 11 + 1 + 3 + 5)
+= (1, 4, 9, 10, 16, 17, 26, 29, 40, 45),
+(18)
+and the endpoint ordering 13/2 < 2zρ < 15/2. The latter follows without an executable check: using
+√
+337 < 19 on the lower endpoint and (3),
+2
+333
+106
+19
+18
+−
+13
+2
+=
+7
+53
+> 0,
+15
+2
+−
+
+2
+22
+7
++ 1
+
+=
+3
+14
+> 0. (19)
+Thus the cap–10 row is empty, and the three executable ordering rows collapse to (19) and its immediate
+empty-cell consequence.
+The nine lower-d payment rows need no new table here: the main paper’s lemma “Lower side through
+d” (label cm:lem-lower-d) already prints the seven ﬁxed-wall diﬀerences
+793292
+1546875
+,
+486236661
+1375000000
+,
+333100003
+99000000
+,
+329797
+88000
+,
+3590476297
+1125000000
+,
+327078887
+99000000
+,
+8805519
+1375000
+,
+and states the initial and moving payments W(ρc, L(ρc)) > 19/6, where L(ρ) = (2ρ)−1 on this branch,
+and W(1/19, 2z) > 508/27. If desired, their exact printed lower proxies close by the two one-line
+subtractions
+57421
+16854
+−
+19
+6
+=
+675
+2809
+> 0,
+173863
+8427
+−
+508
+27
+=
+137795
+75843
+> 0. (20)
+Consequently every seam and two-sided payment predicate assigned to Packet D is now visible as analytic
+reasoning plus printed integer arithmetic.
+5 Dependency count and conclusion
+The replacement count is exact:
+22
+|{z}
+seam table
++ (2 + 6 + 5 + 10 + 3)
+| {z }
+k6/lower-d wall–cap ledger
++ 9
+|{z}
+already printed lower-d payments
+.
+The two constant rows are supplied by (3); the six plus ﬁve payment rows are the eleven-row table; the
+ten bookkeeping rows are (18); the three ordering rows are (19); and the nine already printed payments
+are explicitly cross-referenced above. This removes program execution from the logical dependency of
+precisely the Packet-D portion of the exact ledger.
+6
+Upper-Owner and Optical Cleanup
+Analytic ledger replacement, Packet E
+Abstract
+This note replaces the executable scope checks surrounding the upper owner of the ﬁnal
+spherical-shell residual. It proves directly that the eligible upper wall is K0(ρ) and that k11(ρ) <
+K0(ρ) on the required ratio interval. It also records the symbolic identities that make the
+repeated optical ledger samples unnecessary.
+1 The upper owner
+For 0 < ρ < 1, set
+aρ :=
+2πρ
+1 − ρ
+, ηρ := G1(max{ρ, 1/2}) ,
+where
+G1(s) =
+√
+1 − s2 − s arccos s
+π
+, ω0 := G1(1/2) =
+√
+3
+2π
+−
+1
+6
+.
+Let C0 > 0, and deﬁne
+K0(ρ) :=
+(√
+aρ +
+√
+aρ + 4ηρC0
+2ηρ
+)2
+. (1)
+Also put
+ρc :=
+1
+1 + 2π
+, zρ :=
+π
+1 − ρ
+, k11(ρ) :=
+√
+z2
+ρ + 132.
+Lemma 1 (The ﬁnal upper wall is genuinely above the staircase). For
+ρc ≤ ρ <
+7
+8
+,
+one has
+k11(ρ) < 64 < U(ρ). (2)
+More precisely, U(ρ) = K0(ρ) > 64 for ρc ≤ ρ < 5/6, while
+U(ρ) =
+54
+(1 − ρ)2
+≥ 1944 (5/6 ≤ ρ < 7/8).
+In particular, on the ﬁnal surviving interval ρc ≤ ρ < 39/50, the upper owner is K0(ρ).
+Proof. We use only
+3 < π <
+22
+7
+,
+√
+3 <
+7
+4
+.
+1
+They imply
+ω0 =
+√
+3
+2π
+−
+1
+6
+<
+7/4
+6
+−
+1
+6
+=
+1
+8
+.
+Since
+G′
+1(s) = −
+arccos s
+π
+< 0 (0 ≤ s < 1), G1(1) = 0,
+one has 0 < ηρ ≤ ω0 < 1/8. The function aρ is increasing, and its value at ρc is exactly one:
+aρc =
+2π/(1 + 2π)
+2π/(1 + 2π)
+= 1.
+Thus aρ ≥ 1. Formula (1) and C0 > 0 give
+√
+K0(ρ) >
+√
+aρ
+ηρ
+> 8,
+so K0(ρ) > 64.
+On the other hand, ρ < 7/8, and therefore
+zρ < 8π <
+176
+7
+< 26.
+Consequently
+k11(ρ)2
+< 262
++ 132 = 808 < 642
+,
+which proves (2).
+The small-hole wall H0 is eligible only when ρ < ω0. But
+ρc >
+1
+8
+> ω0,
+because π < 22/7 < 7/2 implies 1 + 2π < 8. Also π > 3 gives the exact scope chain
+ρc <
+1
+7
+<
+39
+50
+<
+5
+6
+.
+For ρ < 5/6, the thin-seam wall is not eligible either, so the piecewise upper-owner formula gives
+U = K0 > 64. For 5/6 ≤ ρ < 7/8, the seam branch owns the equality face and
+U(ρ) =
+54
+(1 − ρ)2
+≥
+54
+(1/6)2
+= 1944 > 64.
+Combining this with k11 < 64 proves (2). Finally 39/50 < 5/6, so the ﬁnal surviving interval lies
+wholly in the K0 branch.
+2 Symbolic optical identities
+The optical ledger evaluates the same algebraic statements at several sample values. The following
+identities replace those repetitions.
+For a/π = N + t, with N ≥ 1 and 0 < t ≤ 1, the exact continuous-minus-product deﬁcit is
+D(a)
+π2
+=
+N2
+2
++ N
+(
+t2
++
+1
+6
+)
++
+2t3
+3
+. (3)
+2
+If CD = 1382/3125, direct subtraction gives
+D(a)
+π2
+− CD(N + t)2
+=
+(
+1
+2
+− CD
+)
+N2
++ N
+(
+t2
+− 2CDt +
+1
+6
+)
++
+2t3
+3
+− CDt2
+. (4)
+The coeﬃcient of N2 is positive. The diﬀerence between the right sides at N + 1 and N is
+2
+(
+1
+2
+− CD
+)
+N +
+(
+1
+2
+− CD
+)
++ t2
+− 2CDt +
+1
+6
+.
+The quadratic t2 − 2CDt + 1/6 has minimum 1/6 − C2
+D at t = CD. Consequently, for N ≥ 1, the
+displayed diﬀerence is at least
+3
+(
+1
+2
+− CD
+)
++
+1
+6
+− C2
+D =
+4229603
+29296875
+> 0.
+Therefore the deﬁcit increases in N, and it is enough to check N = 1. At N = 1, diﬀerentiation
+gives
+d
+dt
+(
+D(a)
+π2
+− CD(1 + t)2
+)
+= 2(t − CD)(t + 1).
+Thus the unique minimum on 0 < t ≤ 1 occurs at t = CD, where the exact value is
+1822532
+91552734375
+> 0. (5)
+This proves the product screen simultaneously for every N, t.
+Likewise, the twelve repeated angular block checks are all instances of
+m−1
+∑
+ℓ=0
+(2ℓ + 1) = m2
+(m ∈ N0), (6)
+proved by subtracting consecutive squares. At a radial equality wall the strict convention excludes
+the newly proposed layer, so no boundary sample is added. These symbolic statements cover every
+repeated optical row; the two exact endpoint reserves remain those printed in the main optical
+lemma.
+3 The two optical screens with all scaling shown
+For completeness, we now print the algebra that was compressed in the main optical lemma. Set
+ε0 =
+11
+50
+, c =
+1126
+625
+, q =
+106
+333
+, CD =
+1382
+3125
+.
+The inequalities
+π >
+333
+106
+, π <
+22
+7
+give q > 1/π, and 0 < ε ≤ ε0 < 1/2.
+Lemma 2 (Complete optical screen arithmetic). Let a = εK.
+1. If π < a ≤ c/ε, then
+CD >
+2cq
+3
++
+ε
+4
++ ε2
+q2
+. (L)
+3
+2. If a ≥ c/ε, deﬁne
+L(ε) :=
+(1 − ε)2
+4
+−
+(22/7)(1 − ε)ε
+4c
+,
+A(ε) := qε +
+ε2
+4c
++
+qε3
+4c
++
+ε4
+16c2
+.
+Then L(ε) > A(ε).
+3. The low and high domains are both closed at a = c/ε, so their union covers every a > π.
+Proof. For the low screen, D(a) > CDa2 was proved above. The suﬃcient product inequality
+obtained in the main optical argument is
+D(a) ≥ ε
+(
+2a3
+3π
++
+a2
+4
+)
++
+ε2a
+π
+. (1)
+After division by a2, the three terms on the right are bounded by
+2εa
+3π
+≤
+2cq
+3
+,
+ε
+4
+≤
+ε0
+4
+,
+ε2
+πa
+<
+ε2
+π2
+< ε2
+0q2
+.
+Exact subtraction gives
+CD −
+(
+2cq
+3
++
+11
+200
++
+(
+11
+50
+)2
+q2
+)
+=
+39569
+2772225000
+> 0. (7)
+This proves (L). For 0 ≤ a ≤ π, the strict radial count is zero, including a = π, so no low-frequency
+gap remains.
+For the high screen, the exact radial deﬁcit and angular ceiling error from the main analytic
+argument are
+Drad
+a2
+≥
+(1 − ε)2
+4
+−
+π(1 − ε)
+4a
+,
+E
+a2
+=
+ε
+π
++
+ε2
+4πa
++
+ε
+4a
++
+ε2
+16a2
+.
+Since a ≥ c/ε, one has 1/a ≤ ε/c. Using the two rational bounds for π therefore gives
+Drad
+a2
+≥ L(ε),
+E
+a2
+< A(ε).
+Moreover,
+L′
+(ε) = −
+1 − ε
+2
+−
+22/7
+4c
+(1 − 2ε) < 0 (0 < ε < 1/2),
+whereas A′(ε) > 0 coeﬃcientwise. Hence
+L(ε) − A(ε) ≥ L(ε0) − A(ε0).
+The endpoint subtraction is
+L(ε0) − A(ε0) =
+1
+4
+(
+39
+50
+)2
+−
+22
+7
+(39/50)(11/50)
+4(1126/625)
+−
+[
+11
+50
+q +
+(11/50)2
+4(1126/625)
++
+(11/50)3q
+4(1126/625)
++
+(11/50)4
+16(1126/625)2
+]
+=
+14817541
+472867032960000
+> 0.
+(8)
+4
+Thus the radial deﬁcit strictly exceeds the angular error.
+Finally,
+c
+ε
+≥
+c
+ε0
+=
+2252
+275
+>
+22
+7
+> π,
+2252
+275
+−
+22
+7
+=
+9714
+1925
+> 0.
+Therefore the common face lies in the low domain as well as the high domain, and
+{a : π < a ≤ c/ε} ∪ {a : a ≥ c/ε} = {a : a > π},
+and equality a = c/ε belongs to both pieces. Together with the zero-count interval 0 ≤ a ≤ π, this
+covers every a ≥ 0. At K = a = 0, both the spectral count and the Weyl term vanish.
+Ledger rows replaced. Lemma 1 replaces the eight executable verify_u_and_k11 scope checks.
+Equations (3)–(6) replace the repeated product samples and odd-block identities. These are rows of
+verify_optical_constants. Lemma 2 prints the remaining scaling, monotonicity, common-face,
+and exact-reserve implications. Thus all ﬁfty optical rows are consequences of displayed identities
+rather than executable predicates.
+5
+Exact Owner Subtraction and Direct Analytic Closure
+Analytic ledger replacement, Packet F
+Abstract
+The executable exact ledger checks a 9×7 truth table when the accepted lower and staircase
+regions are subtracted from the Round–19 residual. This note replaces all sixty-three state
+checks and the ﬁve additional interface checks by one set-theoretic calculation. The surviving
+set is then placed directly inside the closed domain of the all-frequency retained-remainder
+theorem. Every open and closed face is retained explicitly, and no artiﬁcial frequency interface
+is introduced.
+1 Sets and inherited owners
+Let
+0 < ρ∗ < ρ0 < ρc < ρopt, ρopt :=
+39
+50
+,
+and let U(ρ), k6(ρ), and k11(ρ) be the upper owner and the two staircase walls from the main proof.
+Put
+Dlow :=
+{
+ρ∗ < ρ ≤ ρ0, (2ρ)−1
+< K < U(ρ)
+}
+∪ {ρ0 < ρ < ρc, d < K < U(ρ)} , (1)
+Dhigh := {ρc ≤ ρ < ρopt, k6(ρ) < K < U(ρ)} , (2)
+where d = (2ρ0)−1, and deﬁne
+D19 := Dlow ˙
+∪ Dhigh. (3)
+The dot is justiﬁed by the disjoint ratio ranges.
+The already-proved inclusive owners used in the subtraction are:
+Lown := Dlow, (4)
+Sown := {ρc ≤ ρ < ρopt, k6(ρ) < K ≤ k11(ρ)} , (5)
+The lower owner includes the complete ρ = ρ0 ﬁbre. The staircase includes its upper wall K =
+k11(ρ). The optical owner from the main proof has already restricted the high component of D19
+to ρ < ρopt. The residual also excludes K = U(ρ).
+2 The subtraction
+Proposition 1 (Exact residual identity). One has
+D19 \ (Lown ∪ Sown) = D20, (6)
+where
+D20 := {ρc ≤ ρ < ρopt, k11(ρ) < K < U(ρ)} . (7)
+1
+Proof. Since Lown = Dlow and the union in (3) is disjoint,
+D19 \ Lown = Dhigh. (8)
+Inside Dhigh, the lower frequency inequality is strict: k6(ρ) < K. Removing the inclusive staircase
+(5) therefore gives exactly
+Dhigh \ Sown = {ρc ≤ ρ < ρopt, k11(ρ) < K < U(ρ)} . (9)
+There is no missing equality case: K = k11(ρ) belongs to Sown, while K = U(ρ) never belonged to
+D19. The face ρ = ρopt was already removed when the optical theorem was applied in forming D19,
+whereas ρ = ρc remains in Dhigh. Thus (9) is precisely (7).
+3 The ﬁve delicate interfaces
+For clarity, the ﬁve extra assertions formerly checked separately by the executable ledger are con-
+sequences of the displayed sets:
+1. At ρ = ρ0, the identity (2ρ0)−1 = d makes the prospective second lower ﬁbre empty; the ﬁrst
+set in (1) owns the full equality ﬁbre, and Lown removes it exactly once.
+2. The face ρ = ρc belongs to Dhigh. It is not an optical face, so points with k11(ρc) < K < U(ρc)
+remain in D20.
+3. The face ρ = ρopt = 39/50 belongs to the optical theorem and is already absent from D19,
+hence from D20.
+4. The frequency face K = k11(ρ) belongs to Sown, whereas K = U(ρ) is excluded already by
+the strict inequality in D19.
+5. If ρc < ρ < ρopt and k11(ρ) < K < U(ρ), the point is in Dhigh but in neither Lown nor Sown;
+hence it survives, and every surviving point has exactly these properties.
+4 Direct retained-remainder ownership
+Let
+Rrr := {(ρ, K) : ρc ≤ ρ ≤ ρopt, K ≥ k11(ρ)} . (10)
+This is the closed domain of the all-frequency retained-remainder theorem proved by the structural,
+angular-block, and scalar-positivity modules. In the notation of the main proof, that theorem states
+(ρ, K) ∈ Rrr =⇒ ND(Aρ,1, K2
+) < W(ρ, K). (11)
+Proposition 2 (Direct ownership of the exact residual). One has
+D20 ⊂ Rrr , D20 \ Rrr = ∅. (12)
+Consequently the strict Pólya inequality holds at every point of D20.
+2
+Proof. If (ρ, K) ∈ D20, then
+ρc ≤ ρ < ρopt and k11(ρ) < K < U(ρ).
+The ﬁrst pair of inequalities implies ρc ≤ ρ ≤ ρopt, and the second implies K ≥ k11(ρ). Hence
+(ρ, K) ∈ Rrr, which proves (12); the ﬁnal assertion follows from (11).
+The inclusion does not change any inherited owner. The face ρ = ρopt and the frequency face
+K = k11(ρ) are outside D20, although the stronger theorem also proves them. The face K = U(ρ)
+remains excluded from D20, while ρ = ρc remains included subject to the two strict frequency
+inequalities. There is no additional frequency face.
+Ledger rows replaced. Proposition 1 replaces all 9 · 7 = 63 state evaluations in the executable
+family verify_exact_subtraction. The ﬁve items above replace its ﬁve separately asserted in-
+terface predicates. Proposition 2 supplies the ﬁnal residual closure by one set inclusion, without a
+frequency classiﬁer or executable truth table.
+3
+A Global Structural Reduction for the Spherical-Shell Proxy
+Global analytic structural module
+Abstract
+This note gives the global structural component of the purely analytic middle-ratio argument
+for the spherical-shell proxy. The weighted proxy is ﬁrst written as an exact layer-cake sum. Its
+deﬁcit from the action integral is then decomposed into a radial shifted-quadrature deﬁcit and
+an angular rounding defect. A Stieltjes calculation retains two nonnegative remainders that are
+discarded by the optical estimate, and one of those remainders admits a smooth explicit lower
+bound. The result is the concrete suﬃcient inequality (37). All structural identities hold for
+every 0 < ρ < 1 and K > 0; in particular they apply on the upward-closed middle-ratio region
+ρc ≤ ρ ≤ 39/50, K ≥ k11(ρ).
+1 Action and the global target
+For a > 0 and z ≥ 0, put
+Ga(z) =
+
+
+
+1
+π
+(√
+a2 − z2 − z arccos
+z
+a
+)
+, 0 ≤ z < a,
+0, z ≥ a.
+(1)
+Fix 0 < ρ < 1 and K > 0, and deﬁne
+A(z) = Aρ,K(z) := GK(z) − GρK(z), T := A(0) =
+(1 − ρ)K
+π
+. (2)
+The strict positive-integer count is
+[x]< := #{n ∈ N : n < x}.
+The spherical-shell proxy and its continuous payment are
+P(ρ, K) :=
+∑
+ν=ℓ+1/2<K
+ℓ∈N0
+2ν
+[
+A(ν) + 1
+4
+]
+<
+, (3)
+W(ρ, K) :=
+∫ K
+0
+2zA(z) dz =
+2(1 − ρ3)K3
+9π
+. (4)
+The upward-closed middle-ratio region used below is
+Rc :=
+{
+(ρ, K) : ρc ≤ ρ ≤
+39
+50
+, K ≥ k11(ρ)
+}
+, ρc :=
+1
+1 + 2π
+, k11(ρ) :=
+√
+π2
+(1 − ρ)2
++ 132.
+(5)
+1
+The middle-ratio target is P < W on Rc.
+For 0 < z < K, direct diﬀerentiation gives
+−A′
+(z) =
+1
+π
+
+
+
+arccos
+z
+K
+− arccos
+z
+ρK
+, 0 < z < ρK,
+arccos
+z
+K
+, ρK ≤ z < K.
+(6)
+In particular, A is strictly decreasing from T to 0. Let
+R : [0, T] −→ [0, K]
+be its decreasing inverse, and set
+F(t) := R(t)2
+, g(t) := −F′
+(t), τ := A(ρK) = KG1(ρ). (7)
+The derivative in (6) increases in magnitude on (0, ρK) and decreases in magnitude on (ρK, K).
+The inverse curvature has the related, but slightly stronger, property
+g decreases on (0, τ), g increases on (τ, T). (8)
+Indeed, on the outer branch, if z = R(t) then
+g(t) =
+2πz
+arccos(z/K)
+;
+the quotient increases with z, while z decreases with t. On the inner branch, put
+δ(z) := arccos
+z
+K
+− arccos
+z
+ρK
+.
+Diﬀerentiation with respect to the intermediate ratio gives
+δ(z)
+z
+=
+∫ 1
+ρ
+ds
+s
+√
+s2K2 − z2
+.
+This integral increases with z. Thus z/δ(z) decreases with z, and g(t) = 2πz/δ(z) increases as t
+increases and z decreases. The endpoint and interface data are
+F(τ) = ρ2
+K2
+, g(τ) =
+2πρK
+arccos ρ
+, g(T) =
+2πρK
+1 − ρ
+. (9)
+Here and below g(T) is the one-sided limit. Near t = 0, one has g(t) = O(t−1/3), so all improper
+Stieltjes boundary terms used below vanish.
+2 Exact layer cake and angular rounding
+Let
+xn := n −
+1
+4
+, M(r) := #
+{
+ℓ ∈ N0 : ℓ +
+1
+2
+< r
+}
+= max
+{
+0,
+⌈
+r −
+1
+2
+⌉}
+. (10)
+Lemma 1 (Exact layer cake). For every 0 < ρ < 1 and K > 0,
+P(ρ, K) =
+∑
+n≥1
+xn<T
+M(R(xn))2
+, W(ρ, K) =
+∫ T
+0
+F(t) dt. (11)
+Both identities retain the strict convention at every radial and angular wall.
+2
+Proof. For a ﬁxed half-integer ν,
+[
+A(ν) +
+1
+4
+]
+<
+= #{n ≥ 1 : xn < A(ν)}.
+Since A and R are decreasing, xn < A(ν) is equivalent to ν < R(xn). Interchanging the two ﬁnite
+sums and using
+m−1
+∑
+ℓ=0
+(2ℓ + 1) = m2
+proves the ﬁrst identity. At R(xn) = m + 1/2, the strict angular count is m, exactly as speciﬁed
+by M.
+For the second identity, the area formula for a decreasing inverse gives
+∫ T
+0
+R(t)2
+dt =
+∫ K
+0
+2zA(z) dz.
+The last integral is (4).
+For every active n, abbreviate
+rn := R(xn), mn := M(rn), αn := rn − mn +
+1
+2
+. (12)
+The strict convention implies
+mn −
+1
+2
+< rn ≤ mn +
+1
+2
+, 0 < αn ≤ 1. (13)
+This includes mn = 0. Deﬁne the angular rounding defect
+Eang(ρ, K) :=
+∑
+xn<T
+(m2
+n − r2
+n). (14)
+The defect of a single radial layer is exactly
+m2
+n − r2
+n = (1 − 2αn)rn +
+(
+αn −
+1
+2
+)2
+. (15)
+Unlike the one-sided estimate m2
+n − r2
+n < rn + 1/4, formula (15) retains the cancellation when
+αn > 1/2.
+Combining (11) and (14) gives the ﬁrst exact two-term decomposition:
+W − P = Drad − Eang, Drad :=
+∫ T
+0
+F(t) dt −
+∑
+xn<T
+F(xn). (16)
+3 The radial deﬁcit with retained positive remainders
+Deﬁne the shifted counting function and its two primitives by
+C(t) := #{n ≥ 1 : xn < t}, w(t) := t − C(t), W(t) :=
+∫ t
+0
+w(s) ds, Ψ(t) := W(t) −
+t
+4
+. (17)
+3
+On 0 ≤ t ≤ 3/4,
+Ψ(t) =
+1
+2
+(
+t −
+1
+4
+)2
+−
+1
+32
+. (18)
+For t = xn + u, 0 ≤ u ≤ 1,
+Ψ(t) =
+1
+2
+(
+u −
+1
+2
+)2
+−
+1
+32
+. (19)
+Consequently
+W(t) ≥ 0, −
+1
+32
+≤ Ψ(t) ≤
+3
+32
+(t ≥ 0). (20)
+Proposition 2 (Exact retained-remainder identity). For every 0 < ρ < 1 and K > 0, put
+Rdec := −
+∫
+(0,τ)
+W(t) dg(t), (21)
+Rosc :=
+(
+Ψ(T) +
+1
+32
+)
+g(T) +
+∫
+(τ,T)
+(
+3
+32
+− Ψ(t)
+)
+dg(t). (22)
+Then both remainders are nonnegative, and
+Drad =
+F(τ)
+4
+−
+g(T)
+8
++ g(τ)
+(
+τ
+4
++
+3
+32
+)
++ Rdec + Rosc.
+(23)
+Therefore
+W − P = B(ρ, K) + Rdec + Rosc − Eang, (24)
+where
+B(ρ, K) :=
+ρ2K2
+4
+−
+πρK
+4(1 − ρ)
++
+2πρK
+arccos ρ
+(
+KG1(ρ)
+4
++
+3
+32
+)
+. (25)
+Proof. Distributionally, dw = dt−dC. Stieltjes integration by parts, using F(T) = 0 and w(0) = 0,
+gives
+Drad =
+∫ T
+0
+w(t)g(t) dt. (26)
+The improper boundary term at 0 vanishes because W(t) = t2/2 there and g(t) = O(t−1/3).
+On (0, τ), integrate with dW = w dt:
+∫ τ
+0
+wg = W(τ)g(τ) −
+∫
+(0,τ)
+W dg. (27)
+On (τ, T), use w = 1/4 + Ψ′ and
+∫ T
+τ g = F(τ):
+∫ T
+τ
+wg =
+F(τ)
+4
++ Ψ(T)g(T) − Ψ(τ)g(τ) −
+∫
+(τ,T)
+Ψ dg. (28)
+Since W(τ) = τ/4 + Ψ(τ), adding (27) and (28) cancels the uncontrolled interface value Ψ(τ).
+Now add and subtract the extremal sawtooth values in (20). The exact identity
+Ψ(T)g(T) −
+∫
+(τ,T)
+Ψ dg
+= −
+g(T)
+8
++
+3g(τ)
+32
++
+(
+Ψ(T) +
+1
+32
+)
+g(T) +
+∫
+(τ,T)
+(
+3
+32
+− Ψ
+)
+dg
+4
+gives (23). By (8), −dg is a positive measure on (0, τ) and dg is a positive measure on (τ, T).
+Equations (20), (21), and (22) therefore prove nonnegativity of both remainders. Finally substitute
+(9) and τ = KG1(ρ), and then use (16).
+4 A smooth lower bound for the decreasing-branch remainder
+The term Rdec is quantitatively important on the middle-ratio region; discarding it loses too much.
+It has the following elementary smooth minorant.
+Lemma 3 (A global primitive minorant). For t ≥ 0, deﬁne
+L(t) :=
+t2
+2(1 + 2t)
+, L′
+(t) =
+t(1 + t)
+(1 + 2t)2
+. (29)
+Then
+0 ≤ L(t) ≤ W(t) (t ≥ 0). (30)
+Proof. For 0 ≤ t ≤ 3/4, one has W(t) = t2/2 ≥ L(t). For t ≥ 3/4, (20) gives
+W(t) ≥
+t
+4
+−
+1
+32
+.
+Moreover,
+t
+4
+−
+1
+32
+−
+t2
+2(1 + 2t)
+=
+6t − 1
+32(1 + 2t)
+≥ 0.
+This proves (30).
+Deﬁne
+R∗(ρ, K) := −
+∫
+(0,τ)
+L(t) dg(t). (31)
+Because −dg is positive on the decreasing branch,
+0 ≤ R∗ ≤ Rdec. (32)
+Integration by parts is legitimate at 0 because L(t)g(t) = O(t5/3). Hence
+R∗ = −L(τ)g(τ) +
+∫ τ
+0
+L′
+(t)g(t) dt. (33)
+On the outer branch t = A(z), one has g(t) dt = −2z dz. Therefore
+R∗ = −
+τ2
+2(1 + 2τ)
+g(τ) +
+∫ K
+ρK
+2z
+A(z)(1 + A(z))
+(1 + 2A(z))2
+dz. (34)
+This expression is smooth at every point with 0 < ρ < 1 and K > 0 and has no ﬂoor or wall
+discontinuity.
+Corollary 4 (A concrete suﬃcient inequality). For every 0 < ρ < 1 and K > 0, deﬁne
+H(ρ, K) :=
+ρ2K2
+4
+−
+πρK
+4(1 − ρ)
++
+2πρK
+arccos ρ
+(
+τ
+4(1 + 2τ)
++
+3
+32
+)
++
+∫ K
+ρK
+2z
+A(z)(1 + A(z))
+(1 + 2A(z))2
+dz, τ = KG1(ρ).
+(35)
+5
+If
+Eang(ρ, K) < H(ρ, K), (36)
+then P(ρ, K) < W(ρ, K).
+Proof. By (25), (34), and
+τ
+4
+−
+τ2
+2(1 + 2τ)
+=
+τ
+4(1 + 2τ)
+,
+one has H = B + R∗. Now use (24), (32), and Rosc ≥ 0.
+5 The reduced angular inequality
+The preceding calculation reduces the global structural argument to the following statement on the
+upward-closed middle-ratio region:
+∑
+n≥1
+n−1/4<T
+(
+M(R(n − 1/4))2
+− R(n − 1/4)2
+)
+< H(ρ, K) ((ρ, K) ∈ Rc). (37)
+This is the angular inequality passed to the companion block estimate. Everything to its right is the
+smooth action expression (35), and everything to its left is an explicitly centered angular rounding
+error. In particular, writing rn = mn − 1/2 + αn gives its exact summands as (15); replacing them
+by rn + 1/4 destroys the cancellation and is too coarse for the middle-ratio range.
+The remaining discontinuities are transparent. For a ﬁxed n, the summand is smooth until rn
+crosses a half-integer. At rn = m + 1/2, strict counting assigns M(rn) = m; immediately on the
+side rn > m + 1/2, the summand jumps upward by 2m + 1. These are exactly the original proxy
+walls, now separated from the radial Stieltjes deﬁcit.
+There is a natural second summation problem behind (37). Put
+e(r) := M(r)2
+− r2
+, q(r) := −A′
+(r), h(t) := e(R(t)). (38)
+On every complete angular cell (m ≥ 1),
+∫ m+1/2
+m−1/2
+(m2
+− r2
+) dr = −
+1
+12
+. (39)
+Thus the continuous comparison
+∫ T
+0
+h(t) dt =
+∫ K
+0
+e(r)q(r) dr
+has a favorable cell-average drift. Passing from this integral to the shifted samples h(n − 1/4)
+produces the genuine double-sawtooth correlation. Its atoms contain the proxy-wall jumps and
+cannot simply be discarded by sign. In particular, if an angular wall coincides with a radial sample,
+Stieltjes integration by parts must retain the common-jump term dictated by the strict convention.
+The companion angular-block lemma pairs those jump terms with the positive quantity already
+retained in H by using the single-peaked shape of q from (6).
+Remark 5 (Status). All identities and inequalities through Corollary 4 are analytic and require no
+ﬁnite computation. Equation (37) is the remaining angular inequality in this structural module;
+the companion angular-block and scalar-positivity modules prove it throughout Rc. Thus no upper
+cutoﬀ in K is used or needed in the structural implication.
+6
+Global Angular Blocks for the Middle-Ratio Shell Proxy
+Global analytic angular module
+Abstract
+The global structural reduction for the spherical-shell proxy leaves an angular rounding defect
+Eang and a smooth positive payment H. This note controls the defect for every 0 < ρ < 1 and
+K > 0 with at least one active radial layer. First, an exact Stieltjes formula is given with the
+strict common-jump convention made explicit. The negative mean of every complete angular
+cell is combined with the single-peaked shape of q = −A′
+to obtain continuous block estimates.
+A paired radial block argument then controls the full shifted sample sum, including all common
+jumps, by
+Eang <
+(1 − ρ2
+)K2
+6
+−
+N
+2
+,
+where N is the number of active shifted radial layers. On the upward-closed middle-ratio region
+ρc ≤ ρ ≤ 39/50, K ≥ k11(ρ), one has N ≥ 1. The global middle-ratio theorem is therefore
+reduced to the smooth scalar inequality (28), which is established in the companion scalar-
+positivity module.
+1 Deﬁnitions and the target payment
+For a > 0 and z ≥ 0, deﬁne
+Ga(z) =
+
+
+
+1
+π
+(√
+a2 − z2 − z arccos
+z
+a
+)
+, 0 ≤ z < a,
+0, z ≥ a.
+(1)
+Fix 0 < ρ < 1 and K > 0, and put
+A(z) := GK(z) − GρK(z), T := A(0) =
+(1 − ρ)K
+π
+. (2)
+The function A decreases strictly from T to 0. Denote its decreasing inverse by R : [0, T] → [0, K],
+and set
+F(t) := R(t)2
+, q(z) := −A′
+(z), τ := A(ρK) = KG1(ρ). (3)
+Direct diﬀerentiation gives
+q(z) =
+1
+π
+
+
+
+arccos
+z
+K
+− arccos
+z
+ρK
+, 0 < z < ρK,
+arccos
+z
+K
+, ρK ≤ z < K.
+(4)
+Consequently
+0 ≤ q(z) ≤
+1
+2
+, q increases on (0, ρK), q decreases on (ρK, K). (5)
+1
+Let
+xn := n −
+1
+4
+, M(r) := max
+{
+0,
+⌈
+r −
+1
+2
+⌉}
+, N := #{n ≥ 1 : xn < T}. (6)
+For 1 ≤ n ≤ N, write
+rn := R(xn), mn := M(rn), (7)
+and deﬁne the exact angular rounding defect
+Eang(ρ, K) :=
+N
+∑
+n=1
+(m2
+n − r2
+n). (8)
+The strict convention is built into M: at r = m + 1/2 one has M(r) = m, not m + 1.
+The smooth payment obtained from the retained radial Stieltjes remainder is
+H(ρ, K) :=
+ρ2K2
+4
+−
+πρK
+4(1 − ρ)
++
+2πρK
+arccos ρ
+(
+τ
+4(1 + 2τ)
++
+3
+32
+)
++
+∫ K
+ρK
+2z
+A(z)(1 + A(z))
+(1 + 2A(z))2
+dz.
+(9)
+The preceding structural reduction proves
+Eang < H =⇒ P(ρ, K) < W(ρ, K). (10)
+This note derives a smooth upper bound for the left side.
+2 Complete angular cells and the single peak
+Deﬁne the angular sawtooth error
+e(r) := M(r)2
+− r2
+. (11)
+For m ≥ 1, the strict m-cell is
+Im = (m − 1/2, m + 1/2], e(r) = m2
+− r2
+(r ∈ Im).
+Endpoint values do not aﬀect the following Lebesgue integrals. The positive and negative half-cell
+masses are
+Pm :=
+∫ m
+m−1/2
+(m2
+− r2
+) dr =
+m
+4
+−
+1
+24
+, (12)
+Qm := −
+∫ m+1/2
+m
+(m2
+− r2
+) dr =
+m
+4
++
+1
+24
+. (13)
+In particular,
+∫ m+1/2
+m−1/2
+e(r) dr = Pm − Qm = −
+1
+12
+. (14)
+Lemma 1 (Weighted complete-cell bounds). Let m ≥ 1 and suppose the complete cell [m−1/2, m+
+1/2] lies in [0, K].
+2
+1. If m + 1/2 ≤ ρK, then
+∫ m+1/2
+m−1/2
+e(r)q(r) dr ≤ −
+q(m)
+12
+≤ 0. (15)
+2. If m − 1/2 ≥ ρK, then
+∫ m+1/2
+m−1/2
+e(r)q(r) dr ≤ Pmq(m − 1/2) − Qmq(m + 1/2). (16)
+3. On the unique cell, if any, whose interior contains ρK,
+∫ m+1/2
+m−1/2
+e(r)q(r) dr ≤ Pmq(ρK). (17)
+The initial partial cell 0 ≤ r ≤ 1/2 contributes nonpositively.
+Proof. On the left half of a cell e ≥ 0, and on the right half e ≤ 0. If q is increasing, then q(r) ≤ q(m)
+on the positive half and q(r) ≥ q(m) on the negative half. Equations (12)–(14) give (15).
+If q is decreasing, then q(r) ≤ q(m − 1/2) on the positive half and q(r) ≥ q(m + 1/2) on the
+negative half. This gives (16). On the peak cell, discard the negative half and use q ≤ q(ρK) on
+the positive half. Finally, M(r) = 0 and e(r) = −r2 for 0 ≤ r ≤ 1/2.
+Thus the continuous angular defect has a favorable analytic block structure:
+∫ T
+0
+e(R(t)) dt =
+∫ K
+0
+e(r)q(r) dr. (18)
+All complete cells below the peak are nonpositive, and the decreasing side is controlled by the
+endpoint diﬀerences in (16). The diﬃculty is passing from the integral in (18) to the shifted
+samples in (8); the next subsection records that passage with all common jumps included.
+3 Exact common-jump convention
+Let
+h(t) := e(R(t)), C(t) := #{n : 0 < xn ≤ t, xn < T}, p(t) := C(t) − t. (19)
+Choose the right-continuous versions of C, p, and h. Right continuity of h is exactly the strict
+angular convention: when R(t) = m + 1/2, the post-jump value uses M = m. The atomic measure
+dC therefore samples the correct value even when a radial point xn is also an angular wall.
+Lemma 2 (Euler identity with common jumps). With the preceding representatives,
+Eang =
+∫ T
+0
+h(t) dt −
+∫
+(0,T]
+p(t−
+) dh(t). (20)
+At a common radial–angular wall the second integral uses the left value p(t−) = −3/4; no extra or
+omitted wall term is permitted.
+3
+Proof. The measure dC has a unit atom at every active xn, so
+Eang =
+∫
+(0,T)
+h(t) dC(t).
+Since dC = dt + dp,
+Eang =
+∫ T
+0
+h(t) dt +
+∫
+(0,T]
+h(t) dp(t).
+For right-continuous functions of bounded variation, the product formula in the form
+∫
+(0,T]
+h(t) dp(t) = [hp]T
+0 −
+∫
+(0,T]
+p(t−
+) dh(t)
+already contains the product of simultaneous jumps. Here p(0) = 0 and h(T) = e(0) = 0, so the
+boundary term vanishes. This proves (20). If t = xn, then C(t−) = n − 1 and hence p(t−) =
+n − 1 − (n − 1/4) = −3/4, including a common angular wall.
+Equation (20) explains why the negative means in (14) cannot be used without a jump audit.
+The second term contains both the continuous rise inside each angular cell and the downward atom
+at its strict lower wall. A direct sign deletion would be invalid. The paired estimate below controls
+the integral and all its atoms simultaneously.
+4 A paired radial-block estimate
+The cap q ≤ 1/2 in (5) forces a useful separation: one unit of radial action spans at least two units
+of angular radius. The shift xn = n − 1/4 leaves a left block of length 3/4, enough to pay the worst
+angular rounding in that layer.
+Lemma 3 (One-layer paired block). For every active n,
+rn ≤
+4
+3
+∫ xn
+n−1
+R(t) dt −
+3
+4
+, (21)
+and
+m2
+n − r2
+n < rn +
+1
+4
+. (22)
+Both statements remain valid, with the displayed strictness, at every radial–angular common wall.
+Proof. Fix t ∈ [n − 1, xn] and put z = R(t) ≥ rn. Since A(rn) = xn, (5) gives
+xn − t = A(rn) − A(z) =
+∫ z
+rn
+q(s) ds ≤
+z − rn
+2
+.
+Hence
+R(t) ≥ rn + 2(xn − t).
+Integration over the interval of length 3/4 yields
+∫ xn
+n−1
+R(t) dt ≥
+3
+4
+rn +
+9
+16
+,
+which is (21).
+By strict counting, mn < rn + 1/2 even when rn is a half-integer: at rn = m + 1/2 the value is
+mn = m. Squaring gives
+m2
+n < (rn + 1/2)2
+= r2
+n + rn + 1/4,
+and proves (22).
+4
+Proposition 4 (Global angular block bound). For every 0 < ρ < 1 and every K > 0 with N ≥ 1,
+Eang(ρ, K) <
+(1 − ρ2)K2
+6
+−
+N
+2
+. (23)
+In particular,
+Eang(ρ, K) <
+(1 − ρ2)K2
+6
+−
+1
+2
+. (24)
+Proof. The left blocks [n−1, xn], 1 ≤ n ≤ N, are disjoint subsets of [0, T]. Summing (21) and then
+(22) gives
+Eang <
+N
+∑
+n=1
+(
+rn +
+1
+4
+)
+≤
+4
+3
+N
+∑
+n=1
+∫ xn
+n−1
+R(t) dt −
+N
+2
+≤
+4
+3
+∫ T
+0
+R(t) dt −
+N
+2
+.
+The area identity for decreasing inverses gives
+∫ T
+0
+R(t) dt =
+∫ K
+0
+A(z) dz.
+Scaling z = as in (1) and using
+∫ 1
+0
+√
+1 − s2 ds =
+π
+4
+,
+∫ 1
+0
+s arccos s ds =
+π
+8
+,
+shows that ∫ a
+0
+Ga(z) dz =
+a2
+8
+.
+Consequently ∫ T
+0
+R(t) dt =
+(1 − ρ2)K2
+8
+,
+which proves (23). Equation (24) follows from N ≥ 1.
+5 The upward-closed middle-ratio scalar inequality
+Set
+ρc :=
+1
+1 + 2π
+, k11(ρ) :=
+√
+π2
+(1 − ρ)2
++ 132, (25)
+and consider the upward-closed middle-ratio region
+Rc :=
+{
+(ρ, K) : ρc ≤ ρ ≤
+39
+50
+, K ≥ k11(ρ)
+}
+. (26)
+On this set,
+T ≥
+(1 − ρ)k11(ρ)
+π
+=
+√
+1 +
+132(1 − ρ)2
+π2
+> 1, (27)
+5
+so N ≥ 1. Proposition 4 and (10) reduce the global middle-ratio theorem to the single inequality
+S(ρ, K) := H(ρ, K) −
+(1 − ρ2)K2
+6
++
+1
+2
+> 0 ((ρ, K) ∈ Rc). (28)
+Everything in S is smooth at every ﬁnite point of Rc; the ﬂoor functions and all radial–angular
+common jumps have disappeared. Substituting (9) gives the explicit form
+S(ρ, K) =
+(5ρ2 − 2)K2
+12
+−
+πρK
+4(1 − ρ)
++
+1
+2
++
+2πρK
+arccos ρ
+(
+KG1(ρ)
+4(1 + 2KG1(ρ))
++
+3
+32
+)
++
+∫ K
+ρK
+2z
+A(z)(1 + A(z))
+(1 + 2A(z))2
+dz.
+(29)
+The elementary identity
+u(1 + u)
+(1 + 2u)2
+=
+1
+4
+−
+1
+4(1 + 2u)2
+(30)
+turns the same scalar gap into the more useful loss form
+S(ρ, K) =
+(1 + 2ρ2)K2
+12
+−
+1
+2
+∫ K
+ρK
+z
+(1 + 2A(z))2
+dz
+−
+πρK
+4(1 − ρ)
++
+1
+2
++
+2πρK
+arccos ρ
+(
+KG1(ρ)
+4(1 + 2KG1(ρ))
++
+3
+32
+)
+.
+(31)
+Thus the only non-endpoint quantity still requiring control is the positive boundary-layer loss
+integral in (31).
+Remark 5 (Status and next step). The complete-cell bounds, the common-jump formula, and the
+global estimate (23) are proved analytically. The ﬁrst remaining step within this module is the
+smooth scalar inequality (28). The companion scalar-positivity module proves it on all of Rc by
+a uniform upper bound for the boundary-layer loss in (31) and strict positivity on the base curve.
+No upper cutoﬀ in K occurs in the angular estimate or in the veriﬁcation that N ≥ 1.
+6
+Purely Analytic Positivity of the Upward-Closed Scalar Gap
+Global middle-ratio analytic module
+Abstract
+The angular-block reduction for the middle-ratio spherical-shell proxy leaves one smooth
+scalar inequality. This note proves that inequality on the upward-closed region ρc ≤ ρ ≤
+39/50, K ≥ k11(ρ) without interval arithmetic or a ﬁnite numerical certiﬁcate. The loss integral
+is ﬁrst diﬀerentiated with respect to the spectral cutoﬀ. A turning-point lower bound and an
+exact beta integral show that the scalar gap is strictly increasing in that cutoﬀ for every K > 12.
+At the base curve, a rational secant majorant gives a uniform analytic estimate for the loss. The
+remaining one-variable inequality is then reduced to positivity of a degree-nine polynomial; all
+of its Bernstein coeﬃcients on one rational interval are displayed and are positive. Thus there
+is no upper-frequency cutoﬀ in the scalar-positivity theorem.
+1 The scalar gap
+For 0 ≤ s ≤ 1, put
+G1(s) :=
+1
+π
+(√
+1 − s2 − s arccos s
+)
+. (1)
+Fix
+ρc :=
+1
+1 + 2π
+, k11(ρ) :=
+√
+π2
+(1 − ρ)2
++ 132, (2)
+and consider
+Rc :=
+{
+(ρ, K) : ρc ≤ ρ ≤
+39
+50
+, K ≥ k11(ρ)
+}
+. (3)
+The scalar gap left by the angular-block estimate is
+S(ρ, K) :=
+(1 + 2ρ2)K2
+12
+− J (ρ, K) −
+πρK
+4(1 − ρ)
++
+1
+2
++
+2πρK
+arccos ρ
+(
+KG1(ρ)
+4(1 + 2KG1(ρ))
++
+3
+32
+)
+,
+(4)
+where
+J (ρ, K) :=
+K2
+2
+∫ 1
+ρ
+s
+(1 + 2KG1(s))2
+ds. (5)
+Theorem 1 (Upward-closed scalar positivity). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11(ρ),
+S(ρ, K) > 0. (6)
+1
+We use only the elementary rational estimates
+157
+50
+< π <
+22
+7
+,
+140
+99
+<
+√
+2,
+5
+3
+<
+√
+3. (7)
+The two square-root estimates follow immediately by squaring; the displayed bounds for π are the
+classical Archimedean bounds (with the lower one weakened to 157/50).
+2 Strict monotonicity in the spectral cutoﬀ
+The identity
+G1(s) =
+1
+π
+∫ 1
+s
+arccos u du (8)
+and 1 − cos v ≤ v2/2 imply
+G1(s) ≥
+2
+√
+2
+3π
+(1 − s)3/2
+. (9)
+Indeed, arccos u ≥
+√
+2(1 − u), and integration gives (9).
+Lemma 2 (Derivative of the boundary-layer loss). For every ﬁxed 0 < ρ < 1 and every K > 0,
+∂KJ (ρ, K) = K
+∫ 1
+ρ
+s
+(1 + 2KG1(s))3
+ds. (10)
+Moreover, if K > 12, then ∫ 1
+ρ
+s
+(1 + 2KG1(s))3
+ds <
+88
+567
+. (11)
+Proof. Diﬀerentiating (5) under the integral sign gives
+∂KJ = K
+∫ 1
+ρ
+s
+(1 + 2KG1(s))2
+ds − 2K2
+∫ 1
+ρ
+sG1(s)
+(1 + 2KG1(s))3
+ds
+= K
+∫ 1
+ρ
+s
+(1 + 2KG1(s))3
+ds,
+which proves (10).
+Set a = 4
+√
+2/(3π). By (9), the change of variable t = 1 − s, and s ≤ 1,
+∫ 1
+ρ
+s ds
+(1 + 2KG1(s))3
+≤
+∫ ∞
+0
+dt
+(1 + aKt3/2)3
+=
+8π
+27
+√
+3
+(aK)−2/3
+. (12)
+The last equality is the beta integral
+2
+3
+(aK)−2/3
+B
+(
+2
+3
+,
+7
+3
+)
+=
+8π
+27
+√
+3
+(aK)−2/3
+.
+At K = 12, the cube of the last member of (12) is
+π5
+59049
+√
+3
+.
+2
+Using (7),
+π5
+59049
+√
+3
+<
+5153632
+1654060905
+<
+(
+88
+567
+)3
+,
+where the second strict inequality is the exact identity
+(
+88
+567
+)3
+−
+5153632
+1654060905
+=
+27812576
+44659644435
+> 0.
+The right side of (12) decreases with K, proving (11).
+Proposition 3 (Monotonicity of the scalar gap). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11(ρ),
+∂KS(ρ, K) > 0. (13)
+Consequently,
+S(ρ, K) ≥ S
+(
+ρ, k11(ρ)
+)
+. (14)
+Proof. Write
+θ := arccos ρ, y := KG1(ρ).
+The derivative of the ﬁnal line of (4) is
+2πρ
+θ
+(
+y(1 + y)
+2(1 + 2y)2
++
+3
+32
+)
+≥
+3ρ
+8
+, (15)
+because θ ≤ π/2. Also
+−
+πρ
+4(1 − ρ)
+> −
+11ρ
+14(1 − ρ)
+.
+Every K ≥ k11(ρ) in the stated ratio interval is greater than 12; this also follows from the stronger
+estimate established in Lemma 4 below. Lemma 2 therefore gives
+∂KS > K
+(
+1 + 2ρ2
+6
+−
+88
+567
+)
++
+3ρ
+8
+−
+11ρ
+14(1 − ρ)
+= K
+(
+13
+1134
++
+ρ2
+3
+)
++
+3ρ
+8
+−
+11ρ
+14(1 − ρ)
+>
+26
+189
++ 4ρ2
++
+3ρ
+8
+−
+11ρ
+14(1 − ρ)
+. (16)
+It remains to check the sign of the last expression. Multiplication by 1 − ρ produces
+p(ρ) := (1 − ρ)
+(
+26
+189
++ 4ρ2
++
+3ρ
+8
+)
+−
+11ρ
+14
+. (17)
+The bound π < 22/7 gives ρc > 7/51. On the larger rational interval [7/51, 39/50], set
+u :=
+ρ − 7/51
+39/50 − 7/51
+∈ [0, 1].
+In the degree-three Bernstein basis Bj,3(u) =
+(3
+j
+)
+uj(1 − u)3−j, exact expansion gives
+p(ρ) =
+3
+∑
+j=0
+bjBj,3(u), (18)
+3
+with
+j bj
+0
+335005
+2785671
+1
+32947387
+196635600
+2
+281783183
+578340000
+3
+231517
+13500000
+(19)
+All four coeﬃcients are positive. Since the Bernstein basis functions are nonnegative and sum to
+one, p(ρ) > 0. Equation (16) proves (13), and (14) follows by integration in K.
+3 An exact rational upper bound for the loss
+Lemma 4 (Uniform loss bound). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11(ρ),
+K >
+241
+20
+(20)
+and ∫ 1
+ρ
+x
+(1 + 2KG1(x))2
+dx <
+17
+100
+. (21)
+Proof. Since ρ ≥ ρc,
+π
+1 − ρ
+≥
+π
+1 − ρc
+= π +
+1
+2
+>
+91
+25
+.
+Consequently
+K2
+≥ k11(ρ)2
+> 132 +
+(
+91
+25
+)2
+=
+(
+241
+20
+)2
++
+471
+10000
+,
+which proves (20). The rational bounds in (7) now give
+4
+√
+2K
+3π
+>
+4(140/99)(241/20)
+3(22/7)
+=
+23618
+3267
+=
+36
+5
++
+478
+16335
+. (22)
+Put y = 1 − x. Equations (9) and (22) yield
+∫ 1
+ρ
+x dx
+(1 + 2KG1(x))2
+<
+∫ 1−ρ
+0
+1 − y
+(1 + (36/5)y3/2)2
+dy
+≤
+∫ 1
+0
+1 − y
+(1 + (36/5)y3/2)2
+dy. (23)
+We bound the last integral by exact rational arithmetic. Set
+c :=
+36
+5
+, ϕ(z) :=
+1
+(1 + z)2
+,
+and use the rational grid
+(ti)10
+i=0 =
+(
+0,
+1
+4
+,
+5
+16
+,
+3
+8
+,
+7
+16
+,
+1
+2
+,
+9
+16
+,
+5
+8
+,
+3
+4
+,
+7
+8
+, 1
+)
+. (24)
+4
+For zi = ct3
+i , let
+βi :=
+ϕ(zi+1) − ϕ(zi)
+zi+1 − zi
+, αi := ϕ(zi) − βizi.
+Because ϕ′′(z) = 6(1 + z)−4 > 0, its secant satisﬁes
+ϕ(z) ≤ αi + βiz (zi ≤ z ≤ zi+1).
+After y = t2, the integral in (23) is
+∫ 1
+0
+2t(1 − t2
+)ϕ(ct3
+) dt.
+Thus it is at most
+Q :=
+9
+∑
+i=0
+(
+Fi(ti+1) − Fi(ti)
+)
+, (25)
+where the exact polynomial antiderivative is
+Fi(t) := αi
+(
+t2
+−
+t4
+2
+)
++ 2cβi
+(
+t5
+5
+−
+t7
+7
+)
+. (26)
+Every number in (25) is rational. Substitution of the grid (24) gives
+Q =
+1305767238061446154064110434835938779253983373178558326887
+7706446260271137290663804190970969288616921855152043745280
+, (27)
+and direct subtraction gives
+17
+100
+− Q =
+21643130923235926743681388145629999054466710986445549053
+38532231301355686453319020954854846443084609275760218726400
+> 0. (28)
+Equations (23)–(28) prove (21).
+4 The base curve
+Fix ρ and now set
+t :=
+√
+1 − ρ, k := k11(ρ) =
+√
+132 +
+π2
+t4
+, ρ = 1 − t2
+. (29)
+The middle-ratio range lies strictly inside the rational interval
+7
+15
+< t <
+14
+15
+. (30)
+Indeed,
+t2
+≥
+11
+50
+>
+(
+7
+15
+)2
+,
+while ρ ≥ ρc > 7/51 gives
+t2
+= 1 − ρ <
+44
+51
+<
+(
+14
+15
+)2
+.
+5
+Lemma 5 (Analytic endpoint payment). For every ρc ≤ ρ ≤ 39/50, let t and k be as in (29), and
+let
+C(ρ) :=
+100ρ2 − 1
+600
+(31)
+and
+E(t) :=
+11
+14t2
+−
+14
+15(1 + 2t)
+−
+3
+8t
+. (32)
+Then C(ρ) > 0, E(t) > 0, and
+S(ρ, k) > C(ρ)k2
+− ρE(t)k +
+1
+2
+. (33)
+Proof. First, ρ ≥ ρc > 7/51 > 1/10, so C(ρ) > 0. Lemma 4 and
+1 + 2ρ2
+12
+−
+17
+200
+=
+100ρ2 − 1
+600
+show that the ﬁrst two terms in (4) are strictly greater than C(ρ)k2.
+Set θ = arccos ρ and Y = kG1(ρ). For 0 ≤ t ≤ 1,
+θ = arccos(1 − t2
+) = 2 arcsin
+t
+√
+2
+≤
+πt
+2
+. (34)
+To see the last inequality, use convexity of arcsin on [0, 1/
+√
+2]: its graph lies below the chord joining
+(0, 0) to (1/
+√
+2, π/4). Furthermore, (9) and k > π/t2 give
+Y >
+2
+√
+2
+3
+t >
+14
+15
+t. (35)
+Since Y 7→ Y/(1 + 2Y ) is increasing, (34)–(35) imply
+2πρk
+θ
+(
+Y
+4(1 + 2Y )
++
+3
+32
+)
+> ρk
+(
+14
+15(1 + 2t)
++
+3
+8t
+)
+. (36)
+Also
+−
+πρk
+4t2
+> −
+11ρk
+14t2
+.
+Combining these inequalities with (4) proves (33).
+Finally,
+840t2
+(1 + 2t)E(t) = 660 + 1005t − 1414t2
+. (37)
+The quadratic on the right is concave, so its minimum on [7/15, 14/15] occurs at an endpoint. Its
+endpoint values are
+184739
+225
+,
+82406
+225
+,
+respectively. Both are positive, proving E(t) > 0.
+Proposition 6 (Rational positivity on the base curve). For every ρc ≤ ρ ≤ 39/50,
+S
+(
+ρ, k11(ρ)
+)
+> 0. (38)
+6
+Proof. The elementary inequality
+√
+x2 + 132 < x +
+66
+x
+(x > 0)
+and (7) give
+k2
+> 132 +
+(157/50)2
+t4
+, (39)
+k <
+22
+7t2
++
+3300t2
+157
+. (40)
+Since C(ρ) > 0 and ρE(t) > 0, Lemma 5 yields
+S(ρ, k) > R(t), (41)
+where
+R(t) := C(1 − t2
+)
+(
+132 +
+(157/50)2
+t4
+)
+− (1 − t2
+)E(t)
+(
+22
+7t2
++
+3300t2
+157
+)
++
+1
+2
+.
+(42)
+It remains only exact polynomial algebra. Put
+H(t) := t4
+(1 + 2t)R(t).
+Using (37), its factorized form is
+H(t) = C(1 − t2
+)(1 + 2t)
+(
+132t4
++
+(
+157
+50
+)2
+)
+−
+(1 − t2)(660 + 1005t − 1414t2)
+840
+(
+22
+7
++
+3300
+157
+t4
+)
++
+1
+2
+t4
+(1 + 2t).
+(43)
+For an independently checkable expansion,
+H(t) = −
+20642567
+24500000
+−
+6205067
+12250000
+t +
+547983
+122500
+t2
+−
+1033727
+367500
+t3
++
+34911551
+16485000
+t4
++
+187093801
+8242500
+t5
++
+8679
+1099
+t6
+−
+138149
+2198
+t7
+−
+2101
+157
+t8
++ 44t9
+.
+(44)
+Set
+u :=
+t − 7/15
+7/15
+∈ [0, 1].
+In the degree-nine Bernstein basis,
+H(t) =
+9
+∑
+j=0
+djBj,9(u), Bj,9(u) =
+(
+9
+j
+)
+uj
+(1 − u)9−j
+, (45)
+7
+where exact conversion of (44) gives
+j dj
+0
+65408801807437
+9463832437500000
+1
+299549381760793
+1135659892500000
+2
+15904699805720773
+28391497312500000
+3
+2765605256590021
+3154610812500000
+4
+33203943051258761
+28391497312500000
+5
+38636221171331747
+28391497312500000
+6
+2538003206646073
+1892766487500000
+7
+28758289199580211
+28391497312500000
+8
+12920786461478803
+28391497312500000
+9
+3428732855971679
+9463832437500000
+(46)
+Every dj is positive. The Bernstein basis functions are nonnegative and sum to one; hence H(t) > 0
+throughout [7/15, 14/15]. Since t4(1+2t) > 0, this proves R(t) > 0. Equation (41) proves (38).
+Proof of Theorem 1. Proposition 3 reduces every point of the upward-closed middle-ratio region
+to the base curve K = k11(ρ). Proposition 6 proves strict positivity on that curve. Therefore
+S(ρ, K) > 0 throughout Rc, with no upper restriction on K.
+Remark 7 (Nature of the certiﬁcate). The rational secants and Bernstein expansions above are
+ﬁnite exact algebra, not interval arithmetic: convexity proves the functional majorant on each
+secant interval, and positivity follows from explicitly displayed rational coeﬃcients. No ﬂoating-
+point evaluation, sampled minimum, or numerical root isolation is used as a premise.
+8
+Purely Analytic Closure of the Final Spherical-Shell Residual
+Abstract
+This note assembles the all-frequency retained-remainder estimate after the exact owner
+subtraction. It proves that the ﬁnal spherical-shell residual is empty without invoking an interval
+certiﬁcate, an executable truth table, an aggregate tail argument, or a frequency split. The
+structural, angular-block, and scalar-positivity modules cover one closed superset of the entire
+residual.
+1 Notation and analytic inputs
+Let
+Aρ,1 := {x ∈ R3
+: ρ < |x| < 1}, W(ρ, K) :=
+2(1 − ρ3)K3
+9π
+,
+and let ND(Aρ,1, K2) count Dirichlet eigenvalues strictly below K2. Put
+ρc :=
+1
+1 + 2π
+, k11(ρ) :=
+√
+π2
+(1 − ρ)2
++ 132.
+The preceding analytic owner lemmas and the exact set subtraction give
+D20 =
+{
+(ρ, K) : ρc ≤ ρ <
+39
+50
+, k11(ρ) < K < U(ρ)
+}
+. (1)
+On this interval U(ρ) = K0(ρ), although the formula for the upper wall will not be needed below.
+We use the shell action
+Ga(z) :=
+1
+π
+(√
+a2 − z2 − z arccos
+z
+a
+)
+(0 ≤ z < a), Ga(z) := 0 (z ≥ a),
+Aρ,K(z) := GK(z) − GρK(z),
+and the strict lattice proxy
+P(ρ, K) :=
+∑
+ν=ℓ+1/2<K
+ℓ∈N0
+2ν #
+{
+n ∈ N : n < Aρ,K(ν) +
+1
+4
+}
+. (2)
+The analytic Bessel-phase reduction proved earlier in the main argument is
+ND(Aρ,1, K2
+) ≤ P(ρ, K). (3)
+Put
+Mc(ρ, K) :=
+(1 − ρ2)K2
+6
+−
+1
+2
+.
+1
+Parts VII–IX of the detailed analytic supplement establish, respectively, the following three inputs.
+The retained-remainder module gives the structural implication
+Eang(ρ, K) < H(ρ, K) =⇒ P(ρ, K) < W(ρ, K). (4)
+The paired angular-block module gives, on ρc ≤ ρ ≤ 39/50 and K ≥ k11(ρ),
+Eang(ρ, K) < Mc(ρ, K). (5)
+The scalar-positivity module gives on the same unbounded domain
+H(ρ, K) − Mc(ρ, K) > 0. (6)
+The all-frequency scope in (6) is part of that module: its scalar gap has positive K-derivative
+whenever K > 12, one has k11(ρ) > 241/20 > 12, and the gap is strictly positive on the base curve
+K = k11(ρ). Thus the proof integrates upward from the base curve to every ﬁnite K ≥ k11(ρ); it
+uses no upper-frequency bound.
+2 All-frequency retained-remainder closure
+Theorem 1 (All-frequency middle-ratio theorem). For
+ρc ≤ ρ ≤
+39
+50
+, K ≥ k11(ρ),
+one has
+ND(Aρ,1, K2
+) < W(ρ, K).
+Proof. Equations (5) and (6) give the strict chain
+Eang(ρ, K) < Mc(ρ, K) < H(ρ, K).
+The structural implication (4) therefore gives P(ρ, K) < W(ρ, K), and the phase reduction (3)
+completes the proof. Strictness includes both closed ratio faces, the base face K = k11(ρ), and
+every common radial–angular proxy wall.
+3 Direct ownership of the exact residual
+Proposition 2 (Analytic closure of D20). Deﬁne the closed all-frequency theorem domain
+Rrr :=
+{
+(ρ, K) : ρc ≤ ρ ≤
+39
+50
+, K ≥ k11(ρ)
+}
+.
+Then D20 ⊂ Rrr, the strict Pólya inequality holds throughout D20, and the successor residual is
+empty.
+Proof. If (ρ, K) ∈ D20, then (1) gives
+ρc ≤ ρ <
+39
+50
+, k11(ρ) < K < U(ρ).
+After weakening the strict upper ratio and lower frequency inequalities, these conditions place (ρ, K)
+in Rrr. Therefore Theorem 1 proves every point of D20, and
+D20 \ Rrr = ∅.
+The already owned faces ρ = 39/50, K = k11(ρ), and K = U(ρ) remain outside D20, even though
+the stronger theorem also covers the ﬁrst two. The face ρ = ρc remains in D20 whenever both strict
+frequency inequalities hold. No artiﬁcial frequency face is present.
+2
+Logical dependency. After Parts I–VI identify D20, the closure uses only the structural, angular-
+block, and scalar-positivity modules in Parts VII–IX. It does not use an aggregate-tail module, a
+frequency split, the former 10,580-box compact certiﬁcate, the 1,286-box aggregate certiﬁcate, or
+the 63-state executable subtraction table.
+3
+

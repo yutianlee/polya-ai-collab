@@ -24,9 +24,33 @@ the target inequality is
 N_D(A_{rho,1}, Lambda) <= L_3 |A_{rho,1}| Lambda^{3/2}
 ```
 
-for all `Lambda >= 0`, first for fixed `rho`, then uniformly over useful parameter ranges, and finally over the full shell family if the analytic and certified-computation components close.
+for all `Lambda >= 0`.  The full three-dimensional shell family has now been
+closed internally by the purely analytic route described below; the active
+work is proof simplification, reconstruction, and external review.
 
 The parallel flagship track is the Dirichlet ellipse / Mathieu-function program. A lower-risk backup track is a Jiang-Lin-style certificate theorem for a smooth non-tiling comparison family.
+
+## Current shell result
+
+As of 17 July 2026, the repository contains a project-internal purely
+analytic proof of the three-dimensional spherical-shell target. The
+computer-assisted proof is retained as a regression baseline, but no
+executable truth value or interval enclosure is a premise of the analytic
+argument. The review artifacts are:
+
+- [main paper](manuscript/spherical-shell-polya-proof.tex);
+- [analytic support-volume master](manuscript/spherical-shell-polya-analytic-supplement.tex);
+- [modular analytic sources and audits](manuscript/analytic/);
+- [release main PDF](output/pdf/spherical-shell-polya-proof-analytic.pdf);
+- [release analytic supplement](output/pdf/spherical-shell-polya-analytic-supplement.pdf);
+- [flattened Revision 2 review bundle](output/submission/spherical-shell-polya-revision2/);
+- [response to the two referee reports](human/outbox/response-to-referees.md);
+  and
+- [evaluation of the three revised strategies](human/outbox/strategy-evaluation-and-revised-approach.md).
+
+This status is restricted to the spherical-shell class and is an internal
+proof claim. It is not a claim of literature novelty, priority, or external
+publication acceptance.
 
 ## Functional Roles
 
@@ -50,6 +74,18 @@ Each cycle is organized around one primary proof obligation and at most one inde
 5. One lead integrates discharged obligations and writes a machine-readable `State Patch`.
 6. The validator applies accepted changes and regenerates the reading packet.
 7. A fresh final referee audits an assembled theorem before promotion.
+
+The Revision 2 reviewed release uses the exact layer cake as its explanatory spine and
+has no live finite owner graph.  Its disjoint cover is: no mode for
+`K <= pi/(1-rho)`; one ratio-sharp analytic defect theorem for larger `K` and
+`0 < rho < 39/50`; and the optical theorem for larger `K` and
+`39/50 <= rho < 1`.  The `rho = 39/50` face is optical-owned and the threshold
+frequency face is no-mode-owned.
+
+The old `rho_*` split, staircases through `k_11`, 38-state theorem, residual
+sets, 611-row allocation, and executable certificates are detached historical
+or regression evidence.  The live graph edge is
+`SHELL-analytic-retained-remainder-closure -> SHELL-rho-uniformity`.
 
 Barriers are enforced only at genuine mathematical dependencies. The configured workflow currently gives A1 an integration review of A2/A3/A4 and gives A4 an adversarial review of the frozen A2/A3 attempts; A2 and A3 do not perform universal cross-reviews.
 
@@ -143,16 +179,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\auto_obligation_ru
 
 Add `-SubmitPrompts` if you want the helper to press Enter after pasting prompts. Add `-NoAutoPublish` to apply Stage D locally without committing/pushing to GitHub.
 
-## Round 1 Focus
+## Current Focus
 
-Round 1 should produce a clean proof-obligation graph, not a theorem claim.
-
-- A1 drafts the target theorem memo and source-audit priorities.
-- A2 identifies shell-route blockers and missing lemmas.
-- A3 reviews the graph and compares shell, ellipse, and certificate-family route risks.
-- A4 audits formulas: shell eigenvalue equation, multiplicities, strict counting convention, and computation plan.
-
-No Round 1 output may promote the shell theorem, the ellipse theorem, or a certificate-family theorem to proved status.
+- Preserve the revised purely analytic theorem and its strict wall ownership.
+- Independently reconstruct the ratio-sharp angular, radial/ball, and scalar
+  arguments line by line.
+- Keep all finite ledgers and numerical programs detached as regression
+  evidence.
+- Obtain conventional peer review and a current literature/novelty search
+  before any publication claim.
 
 ## Human Steering
 

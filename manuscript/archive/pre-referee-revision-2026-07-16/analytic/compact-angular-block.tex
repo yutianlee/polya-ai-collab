@@ -1,0 +1,476 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[lemma]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+
+\title{Global Angular Blocks for the Middle-Ratio Shell Proxy}
+\author{}
+\date{Global analytic angular module}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The global structural reduction for the spherical-shell proxy leaves an
+angular rounding defect $\mathcal E_{\rm ang}$ and a smooth positive payment
+$\mathcal H$.  This note controls the defect for every $0<\rho<1$ and $K>0$
+with at least one active radial layer.  First, an exact Stieltjes formula is
+given with the strict common-jump convention made explicit.  The negative
+mean of every complete angular cell is combined with the single-peaked shape
+of $q=-A'$ to obtain continuous block estimates.  A paired radial block
+argument then controls the full shifted sample sum, including all common
+jumps, by
+\[
+ \mathcal E_{\rm ang}
+ <\frac{(1-\rho^2)K^2}{6}-\frac N2,
+\]
+where $N$ is the number of active shifted radial layers.  On the
+upward-closed middle-ratio region
+\(
+ \rho_c\leq\rho\leq39/50,
+ \ K\geq k_{11}(\rho)
+\), one has $N\geq1$.  The global middle-ratio theorem is therefore reduced
+to the smooth scalar inequality \eqref{eq:scalar-gap}, which is established
+in the companion scalar-positivity module.
+\end{abstract}
+
+\section{Definitions and the target payment}
+
+For $a>0$ and $z\geq0$, define
+\begin{equation}
+ G_a(z)=
+ \begin{cases}
+ \displaystyle\frac1\pi\left(\sqrt{a^2-z^2}
+       -z\arccos\frac za\right),&0\leq z<a,\\[4pt]
+ 0,&z\geq a.
+ \end{cases}
+ \label{eq:G}
+\end{equation}
+Fix $0<\rho<1$ and $K>0$, and put
+\begin{equation}
+ A(z):=G_K(z)-G_{\rho K}(z),
+ \qquad
+ T:=A(0)=\frac{(1-\rho)K}{\pi}.
+ \label{eq:A}
+\end{equation}
+The function $A$ decreases strictly from $T$ to $0$.  Denote its
+decreasing inverse by $R:[0,T]\to[0,K]$, and set
+\begin{equation}
+ F(t):=R(t)^2,
+ \qquad
+ q(z):=-A'(z),
+ \qquad
+ \tau:=A(\rho K)=KG_1(\rho).
+ \label{eq:inverse}
+\end{equation}
+Direct differentiation gives
+\begin{equation}
+ q(z)=\frac1\pi
+ \begin{cases}
+ \displaystyle
+ \arccos\frac zK-\arccos\frac z{\rho K},&0<z<\rho K,\\[6pt]
+ \displaystyle\arccos\frac zK,&\rho K\leq z<K.
+ \end{cases}
+ \label{eq:q}
+\end{equation}
+Consequently
+\begin{equation}
+ 0\leq q(z)\leq\frac12,
+ \qquad
+ q\text{ increases on }(0,\rho K),
+ \qquad
+ q\text{ decreases on }(\rho K,K).
+ \label{eq:q-shape}
+\end{equation}
+
+Let
+\begin{equation}
+ x_n:=n-\frac14,
+ \qquad
+ M(r):=\max\left\{0,\left\lceil r-\frac12\right\rceil\right\},
+ \qquad
+ N:=\#\{n\geq1:x_n<T\}.
+ \label{eq:grids}
+\end{equation}
+For $1\leq n\leq N$, write
+\begin{equation}
+ r_n:=R(x_n),
+ \qquad m_n:=M(r_n),
+ \label{eq:rn-mn}
+\end{equation}
+and define the exact angular rounding defect
+\begin{equation}
+ \mathcal E_{\rm ang}(\rho,K)
+ :=\sum_{n=1}^N(m_n^2-r_n^2).
+ \label{eq:Eang}
+\end{equation}
+The strict convention is built into $M$: at $r=m+1/2$ one has
+$M(r)=m$, not $m+1$.
+
+The smooth payment obtained from the retained radial Stieltjes remainder
+is
+\begin{equation}
+ \begin{aligned}
+ \mathcal H(\rho,K):={}&
+ \frac{\rho^2K^2}{4}
+ -\frac{\pi\rho K}{4(1-\rho)}\\
+ &+\frac{2\pi\rho K}{\arccos\rho}
+   \left(\frac{\tau}{4(1+2\tau)}+\frac3{32}\right)\\
+ &+\int_{\rho K}^{K}
+ 2z\,\frac{A(z)(1+A(z))}{(1+2A(z))^2}\,dz.
+ \end{aligned}
+ \label{eq:H}
+\end{equation}
+The preceding structural reduction proves
+\begin{equation}
+ \mathcal E_{\rm ang}<\mathcal H
+ \quad\Longrightarrow\quad
+ P(\rho,K)<W(\rho,K).
+ \label{eq:structural-implication}
+\end{equation}
+This note derives a smooth upper bound for the left side.
+
+\section{Complete angular cells and the single peak}
+
+Define the angular sawtooth error
+\begin{equation}
+ e(r):=M(r)^2-r^2.
+ \label{eq:e}
+\end{equation}
+For $m\geq1$, the strict $m$-cell is
+\[
+ I_m=(m-1/2,m+1/2],
+ \qquad e(r)=m^2-r^2\quad(r\in I_m).
+\]
+Endpoint values do not affect the following Lebesgue integrals.  The
+positive and negative half-cell masses are
+\begin{align}
+ P_m&:=\int_{m-1/2}^{m}(m^2-r^2)\,dr
+     =\frac m4-\frac1{24},
+ \label{eq:Pm}\\
+ Q_m&:=-\int_m^{m+1/2}(m^2-r^2)\,dr
+     =\frac m4+\frac1{24}.
+ \label{eq:Qm}
+\end{align}
+In particular,
+\begin{equation}
+ \int_{m-1/2}^{m+1/2}e(r)\,dr
+ =P_m-Q_m=-\frac1{12}.
+ \label{eq:negative-mean}
+\end{equation}
+
+\begin{lemma}[Weighted complete-cell bounds]
+\label{lem:weighted-cells}
+Let $m\geq1$ and suppose the complete cell
+$[m-1/2,m+1/2]$ lies in $[0,K]$.
+\begin{enumerate}
+\item If $m+1/2\leq\rho K$, then
+\begin{equation}
+ \int_{m-1/2}^{m+1/2}e(r)q(r)\,dr
+ \leq-\frac{q(m)}{12}\leq0.
+ \label{eq:increasing-cell}
+\end{equation}
+\item If $m-1/2\geq\rho K$, then
+\begin{equation}
+ \int_{m-1/2}^{m+1/2}e(r)q(r)\,dr
+ \leq P_mq(m-1/2)-Q_mq(m+1/2).
+ \label{eq:decreasing-cell}
+\end{equation}
+\item On the unique cell, if any, whose interior contains $\rho K$,
+\begin{equation}
+ \int_{m-1/2}^{m+1/2}e(r)q(r)\,dr
+ \leq P_m q(\rho K).
+ \label{eq:peak-cell}
+\end{equation}
+\end{enumerate}
+The initial partial cell $0\leq r\leq1/2$ contributes nonpositively.
+\end{lemma}
+
+\begin{proof}
+On the left half of a cell $e\geq0$, and on the right half $e\leq0$.
+If $q$ is increasing, then $q(r)\leq q(m)$ on the positive half and
+$q(r)\geq q(m)$ on the negative half.  Equations
+\eqref{eq:Pm}--\eqref{eq:negative-mean} give
+\eqref{eq:increasing-cell}.
+
+If $q$ is decreasing, then $q(r)\leq q(m-1/2)$ on the positive half and
+$q(r)\geq q(m+1/2)$ on the negative half.  This gives
+\eqref{eq:decreasing-cell}.  On the peak cell, discard the negative half
+and use $q\leq q(\rho K)$ on the positive half.  Finally, $M(r)=0$ and
+$e(r)=-r^2$ for $0\leq r\leq1/2$.
+\end{proof}
+
+Thus the continuous angular defect has a favorable analytic block
+structure:
+\begin{equation}
+ \int_0^T e(R(t))\,dt=\int_0^K e(r)q(r)\,dr.
+ \label{eq:continuous-defect}
+\end{equation}
+All complete cells below the peak are nonpositive, and the decreasing
+side is controlled by the endpoint differences in
+\eqref{eq:decreasing-cell}.  The difficulty is passing from the integral
+in \eqref{eq:continuous-defect} to the shifted samples in
+\eqref{eq:Eang}; the next subsection records that passage with all common
+jumps included.
+
+\section{Exact common-jump convention}
+
+Let
+\begin{equation}
+ h(t):=e(R(t)),
+ \qquad
+ C(t):=\#\{n:0<x_n\leq t,\ x_n<T\},
+ \qquad
+ p(t):=C(t)-t.
+ \label{eq:Euler-data}
+\end{equation}
+Choose the right-continuous versions of $C,p$, and $h$.  Right continuity
+of $h$ is exactly the strict angular convention: when $R(t)=m+1/2$,
+the post-jump value uses $M=m$.  The atomic measure $dC$ therefore samples
+the correct value even when a radial point $x_n$ is also an angular wall.
+
+\begin{lemma}[Euler identity with common jumps]
+\label{lem:common-jump}
+With the preceding representatives,
+\begin{equation}
+ \mathcal E_{\rm ang}
+ =\int_0^T h(t)\,dt
+  -\int_{(0,T]}p(t^- )\,dh(t).
+ \label{eq:common-jump-identity}
+\end{equation}
+At a common radial--angular wall the second integral uses the left value
+$p(t^- )=-3/4$; no extra or omitted wall term is permitted.
+\end{lemma}
+
+\begin{proof}
+The measure $dC$ has a unit atom at every active $x_n$, so
+\[
+ \mathcal E_{\rm ang}=\int_{(0,T)}h(t)\,dC(t).
+\]
+Since $dC=dt+dp$,
+\[
+ \mathcal E_{\rm ang}=\int_0^T h(t)\,dt+\int_{(0,T]}h(t)\,dp(t).
+\]
+For right-continuous functions of bounded variation, the product formula
+in the form
+\[
+ \int_{(0,T]}h(t)\,dp(t)
+ =[hp]_0^T-\int_{(0,T]}p(t^- )\,dh(t)
+\]
+already contains the product of simultaneous jumps.  Here $p(0)=0$ and
+$h(T)=e(0)=0$, so the boundary term vanishes.  This proves
+\eqref{eq:common-jump-identity}.  If $t=x_n$, then
+$C(t^-)=n-1$ and hence $p(t^-)=n-1-(n-1/4)=-3/4$, including a common
+angular wall.
+\end{proof}
+
+Equation \eqref{eq:common-jump-identity} explains why the negative means
+in \eqref{eq:negative-mean} cannot be used without a jump audit.  The
+second term contains both the continuous rise inside each angular cell and
+the downward atom at its strict lower wall.  A direct sign deletion would
+be invalid.  The paired estimate below controls the integral and all its
+atoms simultaneously.
+
+\section{A paired radial-block estimate}
+
+The cap $q\leq1/2$ in \eqref{eq:q-shape} forces a useful separation:
+one unit of radial action spans at least two units of angular radius.  The
+shift $x_n=n-1/4$ leaves a left block of length $3/4$, enough to pay the
+worst angular rounding in that layer.
+
+\begin{lemma}[One-layer paired block]
+\label{lem:one-layer}
+For every active $n$,
+\begin{equation}
+ r_n
+ \leq\frac43\int_{n-1}^{x_n}R(t)\,dt-\frac34,
+ \label{eq:rn-block}
+\end{equation}
+and
+\begin{equation}
+ m_n^2-r_n^2<r_n+\frac14.
+ \label{eq:rounding-pointwise}
+\end{equation}
+Both statements remain valid, with the displayed strictness, at every
+radial--angular common wall.
+\end{lemma}
+
+\begin{proof}
+Fix $t\in[n-1,x_n]$ and put $z=R(t)\geq r_n$.  Since
+$A(r_n)=x_n$, \eqref{eq:q-shape} gives
+\[
+ x_n-t=A(r_n)-A(z)
+ =\int_{r_n}^{z}q(s)\,ds
+ \leq\frac{z-r_n}{2}.
+\]
+Hence
+\[
+ R(t)\geq r_n+2(x_n-t).
+\]
+Integration over the interval of length $3/4$ yields
+\[
+ \int_{n-1}^{x_n}R(t)\,dt
+ \geq\frac34r_n+\frac9{16},
+\]
+which is \eqref{eq:rn-block}.
+
+By strict counting, $m_n<r_n+1/2$ even when $r_n$ is a half-integer:
+at $r_n=m+1/2$ the value is $m_n=m$.  Squaring gives
+\[
+ m_n^2<(r_n+1/2)^2=r_n^2+r_n+1/4,
+\]
+and proves \eqref{eq:rounding-pointwise}.
+\end{proof}
+
+\begin{proposition}[Global angular block bound]
+\label{prop:global-E}
+For every $0<\rho<1$ and every $K>0$ with $N\geq1$,
+\begin{equation}
+ \boxed{
+ \mathcal E_{\rm ang}(\rho,K)
+ <\frac{(1-\rho^2)K^2}{6}-\frac N2.}
+ \label{eq:global-E-bound}
+\end{equation}
+In particular,
+\begin{equation}
+ \mathcal E_{\rm ang}(\rho,K)
+ <\frac{(1-\rho^2)K^2}{6}-\frac12.
+ \label{eq:smooth-E-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The left blocks $[n-1,x_n]$, $1\leq n\leq N$, are disjoint subsets of
+$[0,T]$.  Summing \eqref{eq:rn-block} and then
+\eqref{eq:rounding-pointwise} gives
+\begin{align*}
+ \mathcal E_{\rm ang}
+ &<\sum_{n=1}^N\left(r_n+\frac14\right)\\
+ &\leq\frac43\sum_{n=1}^N
+       \int_{n-1}^{x_n}R(t)\,dt-\frac N2\\
+ &\leq\frac43\int_0^T R(t)\,dt-\frac N2.
+\end{align*}
+The area identity for decreasing inverses gives
+\[
+ \int_0^T R(t)\,dt=\int_0^K A(z)\,dz.
+\]
+Scaling $z=as$ in \eqref{eq:G} and using
+\[
+ \int_0^1\sqrt{1-s^2}\,ds=\frac\pi4,
+ \qquad
+ \int_0^1s\arccos s\,ds=\frac\pi8,
+\]
+shows that
+\[
+ \int_0^aG_a(z)\,dz=\frac{a^2}{8}.
+\]
+Consequently
+\[
+ \int_0^T R(t)\,dt=\frac{(1-\rho^2)K^2}{8},
+\]
+which proves \eqref{eq:global-E-bound}.  Equation
+\eqref{eq:smooth-E-bound} follows from $N\geq1$.
+\end{proof}
+
+\section{The upward-closed middle-ratio scalar inequality}
+
+Set
+\begin{equation}
+ \rho_c:=\frac1{1+2\pi},
+ \qquad
+ k_{11}(\rho):=
+ \sqrt{\frac{\pi^2}{(1-\rho)^2}+132},
+ \label{eq:compact-constants}
+\end{equation}
+and consider the upward-closed middle-ratio region
+\begin{equation}
+ \mathcal R_{\rm c}:=
+ \left\{(\rho,K):
+ \rho_c\leq\rho\leq\frac{39}{50},\quad
+ K\geq k_{11}(\rho)\right\}.
+ \label{eq:compact-region}
+\end{equation}
+On this set,
+\begin{equation}
+ T\geq\frac{(1-\rho)k_{11}(\rho)}\pi
+ =\sqrt{1+\frac{132(1-\rho)^2}{\pi^2}}>1,
+ \label{eq:N-positive}
+\end{equation}
+so $N\geq1$.  Proposition~\ref{prop:global-E} and
+\eqref{eq:structural-implication} reduce the global middle-ratio theorem to
+the single inequality
+\begin{equation}
+ \boxed{
+ \mathcal S(\rho,K):=
+ \mathcal H(\rho,K)
+ -\frac{(1-\rho^2)K^2}{6}
+ +\frac12>0
+ }
+ \qquad ((\rho,K)\in\mathcal R_{\rm c}).
+ \label{eq:scalar-gap}
+\end{equation}
+Everything in $\mathcal S$ is smooth at every finite point of
+$\mathcal R_{\rm c}$; the floor functions and all radial--angular common
+jumps have disappeared.  Substituting \eqref{eq:H} gives the explicit form
+\begin{equation}
+ \begin{aligned}
+ \mathcal S(\rho,K)={}&
+ \frac{(5\rho^2-2)K^2}{12}
+ -\frac{\pi\rho K}{4(1-\rho)}+\frac12\\
+ &+\frac{2\pi\rho K}{\arccos\rho}
+   \left(\frac{KG_1(\rho)}{4(1+2KG_1(\rho))}
+         +\frac3{32}\right)\\
+ &+\int_{\rho K}^{K}
+ 2z\,\frac{A(z)(1+A(z))}{(1+2A(z))^2}\,dz.
+ \end{aligned}
+ \label{eq:scalar-expanded}
+\end{equation}
+The elementary identity
+\begin{equation}
+ \frac{u(1+u)}{(1+2u)^2}
+ =\frac14-\frac{1}{4(1+2u)^2}
+ \label{eq:kernel-loss}
+\end{equation}
+turns the same scalar gap into the more useful loss form
+\begin{equation}
+ \begin{aligned}
+ \mathcal S(\rho,K)={}&
+ \frac{(1+2\rho^2)K^2}{12}
+ -\frac12\int_{\rho K}^{K}
+       \frac{z}{(1+2A(z))^2}\,dz\\
+ &-\frac{\pi\rho K}{4(1-\rho)}+\frac12
+ +\frac{2\pi\rho K}{\arccos\rho}
+   \left(\frac{KG_1(\rho)}{4(1+2KG_1(\rho))}
+         +\frac3{32}\right).
+ \end{aligned}
+ \label{eq:scalar-loss-form}
+\end{equation}
+Thus the only non-endpoint quantity still requiring control is the
+positive boundary-layer loss integral in
+\eqref{eq:scalar-loss-form}.
+
+\begin{remark}[Status and next step]
+The complete-cell bounds, the common-jump formula, and the global estimate
+\eqref{eq:global-E-bound} are proved analytically.  The first remaining
+step within this module is the smooth scalar inequality
+\eqref{eq:scalar-gap}.  The companion scalar-positivity module proves it on
+all of $\mathcal R_{\rm c}$ by a uniform upper bound for the boundary-layer
+loss in \eqref{eq:scalar-loss-form} and strict positivity on the base curve.
+No upper cutoff in $K$ occurs in the angular estimate or in the verification
+that $N\geq1$.
+\end{remark}
+
+\end{document}

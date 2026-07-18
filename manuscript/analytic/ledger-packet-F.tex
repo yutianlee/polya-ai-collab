@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+
+\title{Exact Owner Subtraction and Direct Analytic Closure}
+\author{}
+\date{Analytic ledger replacement, Packet F}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The executable exact ledger checks a \(9\times7\) truth table when the
+accepted lower and staircase regions are subtracted from the
+Round--19 residual. This note replaces all sixty-three state checks and
+the five additional interface checks by one set-theoretic calculation.
+The surviving set is then placed directly inside the closed domain of the
+all-frequency retained-remainder theorem.  Every open and closed face is
+retained explicitly, and no artificial frequency interface is introduced.
+\end{abstract}
+
+\section{Sets and inherited owners}
+
+Let
+\[
+ 0<\rho_*<\rho_0<\rho_c<\rho_{\rm opt},
+ \qquad \rho_{\rm opt}:=\frac{39}{50},
+\]
+and let \(U(\rho)\), \(k_6(\rho)\), and \(k_{11}(\rho)\) be the upper
+owner and the two staircase walls from the main proof. Put
+\begin{align}
+ D_{\rm low}:={}&
+ \left\{\rho_*<\rho\leq\rho_0,
+       \ (2\rho)^{-1}<K<U(\rho)\right\}\notag\\
+ &\mathbin{\cup}
+ \left\{\rho_0<\rho<\rho_c,
+       \ d<K<U(\rho)\right\},
+ \label{eq:D-low}\\
+ D_{\rm high}:={}&
+ \left\{\rho_c\leq\rho<\rho_{\rm opt},
+       \ k_6(\rho)<K<U(\rho)\right\},
+ \label{eq:D-high}
+\end{align}
+where \(d=(2\rho_0)^{-1}\), and define
+\begin{equation}
+       D_{19}:=D_{\rm low}\mathbin{\dot\cup}D_{\rm high}.
+       \label{eq:D19}
+\end{equation}
+The dot is justified by the disjoint ratio ranges.
+
+The already-proved inclusive owners used in the subtraction are:
+\begin{align}
+ L_{\rm own}&:=D_{\rm low},
+ \label{eq:lower-owner}\\
+ S_{\rm own}&:=
+ \left\{\rho_c\leq\rho<\rho_{\rm opt},
+          \ k_6(\rho)<K\leq k_{11}(\rho)\right\},
+ \label{eq:stair-owner}
+\end{align}
+The lower owner includes the complete \(\rho=\rho_0\) fibre. The
+staircase includes its upper wall \(K=k_{11}(\rho)\). The optical owner
+from the main proof has already restricted the high component of
+\(D_{19}\) to \(\rho<\rho_{\rm opt}\).  The residual also excludes
+\(K=U(\rho)\).
+
+\section{The subtraction}
+
+\begin{proposition}[Exact residual identity]
+\label{prop:D20}
+One has
+\begin{equation}
+ \boxed{
+ D_{19}\setminus
+ (L_{\rm own}\cup S_{\rm own})
+ =D_{20},}
+ \label{eq:D20-identity}
+\end{equation}
+where
+\begin{equation}
+ D_{20}:=
+ \left\{\rho_c\leq\rho<\rho_{\rm opt},
+          \ k_{11}(\rho)<K<U(\rho)\right\}.
+ \label{eq:D20}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Since \(L_{\rm own}=D_{\rm low}\) and the union in
+\eqref{eq:D19} is disjoint,
+\begin{equation}
+ D_{19}\setminus L_{\rm own}=D_{\rm high}.
+ \label{eq:remove-low}
+\end{equation}
+Inside \(D_{\rm high}\), the lower frequency inequality is strict:
+\(k_6(\rho)<K\). Removing the inclusive staircase
+\eqref{eq:stair-owner} therefore gives exactly
+\begin{equation}
+ D_{\rm high}\setminus S_{\rm own}
+ =\left\{\rho_c\leq\rho<\rho_{\rm opt},
+          \ k_{11}(\rho)<K<U(\rho)\right\}.
+ \label{eq:remove-stair}
+\end{equation}
+There is no missing equality case: \(K=k_{11}(\rho)\) belongs to
+\(S_{\rm own}\), while \(K=U(\rho)\) never belonged to \(D_{19}\).
+The face \(\rho=\rho_{\rm opt}\) was already removed when the optical
+theorem was applied in forming \(D_{19}\), whereas \(\rho=\rho_c\)
+remains in \(D_{\rm high}\).  Thus \eqref{eq:remove-stair} is precisely
+\eqref{eq:D20}.
+\end{proof}
+
+\section{The five delicate interfaces}
+
+For clarity, the five extra assertions formerly checked separately by
+the executable ledger are consequences of the displayed sets:
+\begin{enumerate}
+\item At \(\rho=\rho_0\), the identity
+      \((2\rho_0)^{-1}=d\) makes the prospective second lower fibre empty;
+      the first set in \eqref{eq:D-low} owns the full equality fibre, and
+      \(L_{\rm own}\) removes it exactly once.
+\item The face \(\rho=\rho_c\) belongs to \(D_{\rm high}\). It is not an
+      optical face, so points with
+      \(k_{11}(\rho_c)<K<U(\rho_c)\) remain in \(D_{20}\).
+\item The face \(\rho=\rho_{\rm opt}=39/50\) belongs to
+      the optical theorem and is already absent from \(D_{19}\), hence
+      from \(D_{20}\).
+\item The frequency face \(K=k_{11}(\rho)\) belongs to
+      \(S_{\rm own}\), whereas \(K=U(\rho)\) is excluded already by the
+      strict inequality in \(D_{19}\).
+\item If \(\rho_c<\rho<\rho_{\rm opt}\) and
+      \(k_{11}(\rho)<K<U(\rho)\), the point is in \(D_{\rm high}\) but in
+      neither \(L_{\rm own}\) nor \(S_{\rm own}\); hence it survives,
+      and every surviving point has exactly these properties.
+\end{enumerate}
+
+\section{Direct retained-remainder ownership}
+
+Let
+\begin{equation}
+ \mathcal R_{\rm rr}:=
+ \left\{(\rho,K):
+  \rho_c\leq\rho\leq\rho_{\rm opt},\quad
+  K\geq k_{11}(\rho)\right\}.
+ \label{eq:R-rr}
+\end{equation}
+This is the closed domain of the all-frequency retained-remainder theorem
+proved by the structural, angular-block, and scalar-positivity modules.
+In the notation of the main proof, that theorem states
+\begin{equation}
+ (\rho,K)\in\mathcal R_{\rm rr}
+ \quad\Longrightarrow\quad
+ N_D(A_{\rho,1},K^2)<W(\rho,K).
+ \label{eq:all-K-rr}
+\end{equation}
+
+\begin{proposition}[Direct ownership of the exact residual]
+\label{prop:direct-closure}
+One has
+\begin{equation}
+ \boxed{D_{20}\subset\mathcal R_{\rm rr}},
+ \qquad
+ D_{20}\setminus\mathcal R_{\rm rr}=\varnothing.
+ \label{eq:direct-closure}
+\end{equation}
+Consequently the strict P\'olya inequality holds at every point of
+\(D_{20}\).
+\end{proposition}
+
+\begin{proof}
+If \((\rho,K)\in D_{20}\), then
+\[
+ \rho_c\leq\rho<\rho_{\rm opt}
+ \quad\text{and}\quad
+ k_{11}(\rho)<K<U(\rho).
+\]
+The first pair of inequalities implies
+\(\rho_c\leq\rho\leq\rho_{\rm opt}\), and the second implies
+\(K\geq k_{11}(\rho)\).  Hence \((\rho,K)\in\mathcal R_{\rm rr}\),
+which proves \eqref{eq:direct-closure}; the final assertion follows from
+\eqref{eq:all-K-rr}.
+
+The inclusion does not change any inherited owner.  The face
+\(\rho=\rho_{\rm opt}\) and the frequency face
+\(K=k_{11}(\rho)\) are outside \(D_{20}\), although the stronger theorem
+also proves them.  The face \(K=U(\rho)\) remains excluded from
+\(D_{20}\), while \(\rho=\rho_c\) remains included subject to the two
+strict frequency inequalities.  There is no additional frequency face.
+\end{proof}
+
+\paragraph{Ledger rows replaced.}
+Proposition~\ref{prop:D20} replaces all \(9\cdot7=63\) state evaluations
+in the executable family \texttt{verify\_exact\_subtraction}. The five
+items above replace its five separately asserted interface predicates.
+Proposition~\ref{prop:direct-closure} supplies the final residual closure
+by one set inclusion, without a frequency classifier or executable truth
+table.
+
+\end{document}

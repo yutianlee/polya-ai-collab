@@ -1,0 +1,29 @@
+START pid=23596 f=3 n=43..50 precision=512 runtime_sha256=4AD4BAD7CECE561102B84C4983BD4C50D1BC39D59DA4D1ECD3D04BC7ADA9319F root_steps=12 panels=4 angle_steps=32 max_depth=72 max_boxes=500000
+CASE f=3 n=43 phase=corner boxes=1109 positive=193 pruned=362 depth=12 smallest=0.00485839922165767 seconds=0.301990
+CASE f=3 n=43 phase=lower boxes=80523 positive=0 pruned=40262 depth=21 smallest=inf seconds=129.933056
+CASE f=3 n=43 phase=open boxes=40151 positive=0 pruned=20076 depth=21 smallest=inf seconds=15.369126
+CASE f=3 n=44 phase=corner boxes=1145 positive=202 pruned=371 depth=12 smallest=0.010967962398455091 seconds=0.567219
+CASE f=3 n=44 phase=lower boxes=83199 positive=0 pruned=41600 depth=21 smallest=inf seconds=138.014726
+CASE f=3 n=44 phase=open boxes=40691 positive=0 pruned=20346 depth=21 smallest=inf seconds=9.728157
+CASE f=3 n=45 phase=corner boxes=1181 positive=213 pruned=378 depth=12 smallest=0.027769364953259646 seconds=0.468999
+CASE f=3 n=45 phase=lower boxes=84411 positive=0 pruned=42206 depth=21 smallest=inf seconds=152.738530
+CASE f=3 n=45 phase=open boxes=41085 positive=0 pruned=20543 depth=21 smallest=inf seconds=9.417793
+CASE f=3 n=46 phase=corner boxes=1211 positive=219 pruned=387 depth=12 smallest=0.01293893014285571 seconds=0.390251
+CASE f=3 n=46 phase=lower boxes=82609 positive=0 pruned=41305 depth=21 smallest=inf seconds=133.359674
+CASE f=3 n=46 phase=open boxes=42919 positive=0 pruned=21460 depth=21 smallest=inf seconds=11.478431
+CASE f=3 n=47 phase=corner boxes=1241 positive=213 pruned=408 depth=13 smallest=0.005001900631022021 seconds=0.420475
+CASE f=3 n=47 phase=lower boxes=79709 positive=0 pruned=39855 depth=21 smallest=inf seconds=122.952005
+CASE f=3 n=47 phase=open boxes=41817 positive=0 pruned=20909 depth=21 smallest=inf seconds=9.422246
+CASE f=3 n=48 phase=corner boxes=1301 positive=194 pruned=457 depth=13 smallest=0.006079956933403398 seconds=0.401778
+CASE f=3 n=48 phase=lower boxes=76779 positive=0 pruned=38390 depth=21 smallest=inf seconds=122.683081
+CASE f=3 n=48 phase=open boxes=42557 positive=0 pruned=21279 depth=21 smallest=inf seconds=11.160522
+CASE f=3 n=49 phase=corner boxes=1347 positive=181 pruned=493 depth=13 smallest=0.01835099953636825 seconds=0.416645
+CASE f=3 n=49 phase=lower boxes=74779 positive=0 pruned=37390 depth=21 smallest=inf seconds=110.591144
+CASE f=3 n=49 phase=open boxes=42355 positive=0 pruned=21178 depth=21 smallest=inf seconds=9.471931
+CASE f=3 n=50 phase=corner boxes=1395 positive=170 pruned=528 depth=13 smallest=0.014955856777783143 seconds=0.398275
+CASE f=3 n=50 phase=lower boxes=72145 positive=0 pruned=36073 depth=23 smallest=inf seconds=108.613408
+CASE f=3 n=50 phase=open boxes=42501 positive=0 pruned=21251 depth=23 smallest=inf seconds=17.291718
+PASS f=3 n=43..50 cases=24 boxes=978160 positive=1585 pruned=487507 depth=23 smallest=0.00485839922165767 seconds=1115.593604
+PHASE corner cases=8 boxes=9930 positive=1585 pruned=3384 depth=13 smallest=0.00485839922165767
+PHASE lower cases=8 boxes=634154 positive=0 pruned=317081 depth=23 smallest=inf
+PHASE open cases=8 boxes=334076 positive=0 pruned=167042 depth=23 smallest=inf

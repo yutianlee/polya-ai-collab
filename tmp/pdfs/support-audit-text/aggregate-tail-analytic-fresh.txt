@@ -1,0 +1,260 @@
+                   A Purely Analytic Aggregate-Tail Theorem
+
+
+                                                  Abstract
+          We assemble three independently proved analytic base-frequency inequalities with the curva-
+      ture propagation from the spherical-shell argument. The result replaces the aggregate interval
+      certiﬁcate: for 7/51 ≤ ρ ≤ 39/50 and K ≥ 200, the continuous reserve is strictly positive
+      and the discrete aggregate implication proves the Dirichlet Pólya inequality. The inclusion
+      ρc = 1/(1 + 2π) > 7/51 then gives the exact ratio range required in the main proof. No interval
+      enclosure, numerical sign test, or certiﬁcate output is used.
+
+
+1     Deﬁnitions and analytic inputs
+For 0 ≤ s ≤ 1, put                    √                             ∫ 1
+                                          1 − s2 − s arccos s   1
+                           G1 (s) =                           =            arccos t dt.
+                                                 π              π     s
+For 0 < ρ < 1, deﬁne
+                              (              )              2 arcsin ρ                 2πρ
+                     ηρ = G1 max{ρ, 21 } ,           dρ =              ,        bρ =       .
+                                                                π                      1−ρ
+For K > 0, let                                                       √
+                                                 1                          2
+                            µ = ρK,          R=µ+ ,            S=          R + bρ K,
+                                                 2
+                                             [                                    ]
+                                      1                    R      2
+                            I(ρ, K) =   RS + bρ K arsinh √      −R ,                                    (1)
+                                      2                    bρ K
+and
+                                                              dρ
+                           B(ρ, K) = (µ − 21 )(Kηρ − 1) +        (µ − 32 )(µ − 21 )
+                                                               2
+                                                                                                        (2)
+                                                               8(µ + 12 )
+                                          − (1 + dρ )I(ρ, K) −     √ .
+                                                                 15 µ
+Finally, deﬁne the curvature ﬂoor
+                                                              3(1 + dρ )bρ
+                                  F (ρ) = 2ρηρ + dρ ρ2 −                   .                            (3)
+                                                                  800
+
+The three local analytic inputs. The following statements have complete hand proofs in the
+indicated local notes. They are the only facts imported from those ﬁles.
+                   source                   imported conclusion on 7/51 ≤ ρ ≤ 39/50
+                   B-positive.tex           B(ρ, 200) > 60
+                   BK-positive.tex          BK (ρ, 200) > 0
+                   F-positive.tex           F (ρ) > 1549/84150 > 0
+Each source uses only elementary inequalities and ﬁnite exact-rational tables. In particular, none
+of the three conclusions depends on an interval certiﬁcate.
+
+                                                       1
+The discrete aggregate input from the main analytic argument.                      Let
+
+                                      Aρ,1 = {x ∈ R3 : ρ < |x| < 1},
+
+and let ND (Aρ,1 , K 2 ) count its Dirichlet eigenvalues strictly below K 2 . When µ > 1/2, write
+uniquely
+                                  1
+                             µ − = J + τ,          J ∈ N0 ,    0 ≤ τ < 1,
+                                  2
+and set                               {
+                                        J,       τ = 0,
+                                 R=                         C = bρ K.
+                                        J + 1, τ > 0.
+For C > 0, deﬁne                         [                                     ]
+                                        1  √                   R
+                          I(C, R) =       R R2 + C + C arsinh √ − R2
+                                        2                       C
+and
+                                              J(J + 1)                      8Rτ 5/2
+                   Q(ρ, K) = RbKηρ c + dρ              − (1 + dρ )I(C, R) −    √ .             (4)
+                                                 2                           15 µ
+The already-proved discrete aggregate lemma is the analytic implication
+
+                                                                           2(1 − ρ3 )K 3
+                 Q(ρ, K) ≥ 0     =⇒       ND (Aρ,1 , K 2 ) < W (ρ, K) :=                 .     (5)
+                                                                                9π
+Its proof is the concave-head/convex-tail summation and weighted layer-cake argument; it contains
+no ﬁnite computation. We reproduce below the short continuous-to-discrete comparison needed to
+invoke it.
+
+Lemma 1 (Continuous reserve implies the discrete reserve). If µ > 3/2, Kηρ > 1, and B(ρ, K) ≥ 0,
+then
+                                  Q(ρ, K) > B(ρ, K) ≥ 0.
+
+Proof. Put y = Kηρ > 1. The strict ﬂoor inequality gives
+
+                                Rbyc > R(y − 1) ≥ (µ − 21 )(y − 1).
+
+The deﬁnition of J, τ, R also gives
+
+                                  dρ J(J + 1)  dρ
+                                              > (µ − 32 )(µ − 12 ).
+                                       2       2
+Indeed, with x = µ − 1/2 = J + τ > 1, the function x 7→ x(x − 1) is increasing.
+                                                                         √       If τ > 0, then
+x(x − 1) < J(J + 1); if τ = 0, the diﬀerence is 2J > 0. The function x 7→ x2 + C − x is positive,
+and                                         ∫       R √
+                                 I(C, R) =          ( x2 + C − x) dx.
+                                                0
+
+Since R < µ + 1/2 = R,
+                                      I(C, R) < I(C, R) = I(ρ, K).
+Finally Rτ 5/2 < R. Substitution of these four inequalities in (4) gives exactly Q(ρ, K) > B(ρ, K).
+
+
+
+
+                                                      2
+2      Derivative identities and curvature propagation
+For ﬁxed ρ, abbreviate I(K) = I(ρ, K) and
+
+                                               P = S − R.
+
+Diﬀerentiating (1) gives
+
+                                              bρ          R
+                                IK = ρP +        arsinh √      ,                                        (6)
+                                              2           bρ K
+                                         (        )
+                                             R      ρbρ bρ (2ρK − 1)
+                              IKK = ρ2         −1 +    +             .                                  (7)
+                                             S      2S       8KS
+
+Correspondingly,
+
+                                                                              2ρ(2µ − 1)
+                BK = ρ(Kηρ − 1) + (µ − 21 )ηρ + dρ ρ(µ − 1) − (1 + dρ )IK −              ,              (8)
+                                                                                15µ3/2
+                       ρ2 (2µ − 3)
+                 EKK =             ,                                                                    (9)
+                         15µ5/2
+                 BKK = 2ρηρ + dρ ρ2 − (1 + dρ )IKK + EKK .                                             (10)
+
+These are identities, not estimates.
+
+Lemma 2 (Exact validity conditions on the rational superset). If
+                                        7    39
+                                          ≤ρ≤ ,             K ≥ 200,
+                                       51    50
+then
+                                           3
+                                         µ> ,             Kηρ > 1.
+                                           2
+Proof. First,
+                                                1400     3
+                                         µ = ρK ≥     > .
+                                                  51     2
+                                       0
+The function G1 is decreasing because G1 (s) = − arccos(s)/π. Since max{ρ, 1/2} ≤ 39/50,
+
+                                             ηρ ≥ G1 (39/50).
+                                         √                                                   √
+The elementary inequality arccos t ≥ 2(1 − t) follows on writing t = cos θ, since                2(1 − t) =
+2 sin(θ/2) ≤ θ. Combining this with π < 22/7 gives
+                                                       √ ( )
+                                                   1400 2 11 3/2
+                          200ηρ ≥ 200G1 (39/50) >                  .
+                                                     33    50
+The square of the ﬁnal positive quantity is
+                                                 8624
+                                                      > 1.
+                                                  225
+Thus 200ηρ > 1, and Kηρ ≥ 200ηρ > 1.
+
+
+
+                                                      3
+Proposition 3 (Analytic curvature propagation). For
+                                    7     39
+                                       ≤ρ≤ ,             K ≥ 200,
+                                    51    50
+one has
+                                                          1549
+                                 BKK (ρ, K) > F (ρ) >           > 0.                          (11)
+                                                          84150
+Proof. Here
+                                           S > R > ρK.
+In (7), the ﬁrst term is negative. The remaining two terms satisfy
+
+                             ρbρ bρ (2ρK − 1)   ρbρ 2ρKbρ
+                                +             <     +
+                             2S       8KS       2S     8KS
+                                                3ρbρ    3bρ   3bρ
+                                              =      <      ≤     .
+                                                 4S     4K    800
+Therefore
+                                               3bρ
+                                            IKK <  .
+                                               800
+Lemma 2 gives 2µ − 3 > 0, so EKK > 0. Substitution in (10) yields
+
+                                                      3(1 + dρ )bρ
+                            BKK > 2ρηρ + dρ ρ2 −                   = F (ρ).
+                                                          800
+The ﬁnal strict rational bound is precisely the imported conclusion of F-positive.tex.
+
+
+3    The analytic aggregate-tail theorem
+Theorem 4 (Continuous aggregate reserve for all K ≥ 200). For every
+                                    7     39
+                                       ≤ρ≤ ,             K ≥ 200,
+                                    51    50
+one has the quantitative estimate
+                                                 1549
+                               B(ρ, K) > 60 +          (K − 200)2 > 0.                        (12)
+                                                168300
+Proof. Fix ρ in the stated interval. The imported local lemmas give
+
+                                B(ρ, 200) > 60,       BK (ρ, 200) > 0.
+
+Proposition 3 gives
+                                               1549
+                                 BKK (ρ, s) >            (s ≥ 200).
+                                               84150
+Twice integrating this strict inequality from 200 to K gives
+                                                                ∫ K
+              B(ρ, K) = B(ρ, 200) + (K − 200)BK (ρ, 200) +             (K − s)BKK (ρ, s) ds
+                                                                 200
+                               1 1549
+                      > 60 +           (K − 200)2 ,
+                               2 84150
+including K = 200 by the strict imported base value. This is (12).
+
+                                                  4
+Theorem 5 (Purely analytic aggregate tail for spherical shells). Let
+                                                      1
+                                            ρc =          .
+                                                   1 + 2π
+For every
+                                              39
+                                    ρc ≤ ρ ≤     ,     K ≥ 200,
+                                              50
+the Dirichlet counting function of the unit outer-radius spherical shell satisﬁes
+
+                                                        2(1 − ρ3 )K 3
+                                   ND (Aρ,1 , K 2 ) <                 .
+                                                             9π
+Proof. The exact Archimedean bound π < 22/7 gives
+                                         44  51                               7
+                          1 + 2π < 1 +      = ,            hence      ρc >      .
+                                         7   7                               51
+(Also π > 3 gives ρc < 1/7 < 39/50.) Thus the stated ratio interval is contained in the rational
+superset used in Theorem 4.
+    On this superset, Lemma 2 veriﬁes µ > 3/2 and Kηρ > 1, while Theorem 4 gives B(ρ, K) > 0.
+Lemma 1 therefore gives Q(ρ, K) > 0. The analytic discrete implication (5) now proves the asserted
+strict Pólya bound.
+
+Dependency boundary. The only local-ﬁle imports are the three base inequalities listed at
+the start. The derivative identities, curvature propagation, continuous-to- discrete comparison,
+rational-domain checks, and two integrations are all displayed in this note. The remaining discrete
+implication is the previously proved analytic layer-cake lemma from the main manuscript. No
+aggregate certiﬁcate predicate or interval-arithmetic result appears in the dependency chain.
+
+
+
+
+                                                   5
+

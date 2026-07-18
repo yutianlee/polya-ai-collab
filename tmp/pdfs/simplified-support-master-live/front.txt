@@ -1,0 +1,92 @@
+                      Purely Analytic Supplement for
+                      A Dirichlet Pólya Inequality on
+                     Three-Dimensional Spherical Shells
+
+
+                                         16 July 2026
+
+
+                                            Abstract
+         This support volume contains the detailed hand proofs and exact-rational tables used
+     to remove every executable predicate from the logical dependency chain of the spherical-
+     shell theorem. Parts I–VI retain the previously audited 611-row exact ledger, including
+     superseded rows as optional cross-checks; Parts VII–IX prove the retained-remainder
+     theorem for every frequency above the final staircase; and Part X assembles the final
+     residual closure. The former aggregate-tail argument, programs, and interval certificates
+     remain available only as optional independent regression checks and are not premises of
+     this analytic proof.
+
+Reading convention. The volume is modular so that each bottleneck lemma can be
+reviewed and hashed independently. Every included part is generated from its corresponding
+LaTeX source in the manuscript/analytic directory. The repeated title pages deliberately
+mark the trust boundary between exhibits.
+
+
+Global census of the exact ledger
+The canonical ledger has 553 core rows and 58 supplemental rows. The following inclusive
+ranges give a one-to-one allocation; the part numbers refer to this volume. The family codes
+denote, in order, rational-π checks (PI), thresholds (TH), strict-floor conventions (SF), zero
+specializations (Z), lower inventories (LI), checkpoint inventories (KI), cap payments (CP),
+localizations (LOC), the upper owner (U), optical screens (OPT), exact subtraction (SUB),
+and supplemental seam/payment rows (SUP).
+
+       canonical family   row range                                           unique owner
+       PI                 PI1–PI4                                             II
+       TH                 TH1–TH7, TH31–TH34 / TH8–TH30                       I / II
+       SF                 SF1–SF35                                            II
+       Z                  Z1–Z48                                              I
+       LI                 LI1–LI8, LI10–LI44 / LI9                            I / II
+       KI                 KI1–KI117                                           II
+       CP                 CP1–CP43, CP56, CP60–CP77 / remaining rows          II / III
+       LOC                LOC1–LOC47                                          III
+       U                  U1–U8                                               V
+       OPT                OPT1–OPT14 / OPT15–OPT50                            V / II
+       SUB                SUB1–SUB68                                          VI
+       SUP                SUP1–SUP57 / SUP58                                  IV / I
+
+
+
+                                                1
+Spherical-shell Pólya inequality                                     Purely analytic supplement
+
+
+Here “remaining rows” in CP means CP44–CP55, CP57–CP59, and CP78–CP98. Thus the
+six disjoint owner totals are
+
+                              103 + 278 + 83 + 57 + 22 + 68 = 611.
+
+In particular, the ten lower-d identities SUP36–SUP45 are assigned to Part IV although
+Part II also proves their general odd-sum identity; SUP58 is assigned to Part I; and OPT15–
+OPT50 are assigned to Part II although Part V reuses their consequences. These are proof
+redundancies, not row overlaps. The displayed ranges exhaust every canonical row and have
+empty pairwise intersections.
+
+
+Contents
+Global census of the exact ledger                                                            1
+
+1 I. Remaining hand-visible ledger rows                                                      3
+
+2 II. Universal arithmetic and checkpoint inventories                                       10
+
+3 III. Connected high-event registry                                                        19
+
+4 IV. Seam and two-sided payments                                                           26
+
+5 V. Upper owner and optical screens                                                        32
+
+6 VI. Exact owner subtraction                                                               37
+
+7 VII. Global retained-remainder identity                                                   40
+
+8 VIII. Global middle-ratio angular bound                                                   46
+
+9 IX. Upward-closed scalar positivity                                                       52
+
+10 X. Final all-frequency residual closure                                                  60
+
+
+
+
+                                               2
+

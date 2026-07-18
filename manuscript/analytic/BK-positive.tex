@@ -1,0 +1,200 @@
+% Analytic-replacement programme: standalone lemma.
+% This file is deliberately independent of the interval certificates.
+% Status: candidate proof, awaiting clean-room audit before insertion into the
+% main manuscript.
+
+\begin{lemma}[Analytic positivity of the aggregate base derivative]
+\label{an:lem-BK200-positive}
+For
+\[
+        \frac7{51}\leq \rho\leq\frac{39}{50},
+\]
+the continuous aggregate reserve defined in
+\eqref{cm:eq-B-def} satisfies
+\[
+        \mathcal B_K(\rho,200)>0.
+\]
+This assertion uses no numerical or interval certificate.
+\end{lemma}
+
+\begin{proof}
+We use only the elementary rational bounds
+\begin{equation}
+  3<\pi<\frac{22}{7},\qquad
+  \frac{78}{25}<\pi,
+  \qquad
+  \frac75<\sqrt2,
+  \qquad
+  \frac{265}{153}<\sqrt3<\frac{26}{15}.
+  \label{an:eq-elementary-constants}
+\end{equation}
+The two square-root bounds in \eqref{an:eq-elementary-constants} follow
+immediately by squaring; the displayed rational bounds for \(\pi\) are the
+classical Archimedean bounds.
+
+Put
+\[
+  \mu=200\rho,
+  \qquad
+  b_\rho=\frac{2\pi\rho}{1-\rho},
+  \qquad
+  \overline R=200\rho+\frac12,
+  \qquad
+  S=\sqrt{\overline R^2+200b_\rho},
+\]
+and
+\[
+  u=\frac{\overline R}{\sqrt{200b_\rho}},
+  \qquad P=S-\overline R.
+\]
+We first obtain a uniform elementary upper bound for the derivative of the
+integral term.  Since \(\rho>1/8\), one has
+\(\overline R<204\rho\).  Therefore
+\[
+ u^2
+ <\frac{204^2\rho(1-\rho)}{400\pi}
+ \leq\frac{41616}{1600\pi}
+ <\frac{867}{100}<9.
+\]
+Thus \(u<3\).  Moreover
+\[
+ \sinh 2=2+\frac{2^3}{3!}+\frac{2^5}{5!}+\cdots
+ >\frac{10}{3}>3,
+\]
+and hence \(\operatorname{arsinh}u<2\).  The identity
+\[
+ P=\frac{200b_\rho}{S+\overline R}
+\]
+and the inequalities \(S>\overline R>200\rho\) give
+\(P<b_\rho/(2\rho)\).  Formula \eqref{cm:eq-IK} now yields
+\begin{equation}
+ I_K(200)
+ =\rho P+\frac{b_\rho}{2}\operatorname{arsinh}u
+ <\frac{3b_\rho}{2}.
+ \label{an:eq-IK-simple-upper}
+\end{equation}
+
+The final error term in \eqref{cm:eq-BK} obeys
+\begin{equation}
+ 0<\frac{2\rho(2\mu-1)}{15\mu^{3/2}}
+ <\frac{4\sqrt\rho}{15\sqrt{200}}
+ <\frac{2}{105}<\frac1{50}.
+ \label{an:eq-BK-error-upper}
+\end{equation}
+At \(K=200\), formula \eqref{cm:eq-BK} becomes
+\begin{equation}
+\begin{split}
+ \mathcal B_K(\rho,200)
+ ={}&400\rho\eta_\rho-\rho-\frac{\eta_\rho}{2}
+ +d_\rho\rho(200\rho-1)\\
+ &-(1+d_\rho)I_K(200)
+ -\frac{2\rho(400\rho-1)}{15(200\rho)^{3/2}}.
+\end{split}
+\label{an:eq-BK200-expanded}
+\end{equation}
+
+We first treat \(7/51\leq\rho\leq1/2\).  On this interval
+\[
+ \eta_\rho=\omega_0=\frac{\sqrt3}{2\pi}-\frac16,
+ \qquad 0<d_\rho\leq\frac13.
+\]
+The last two bounds in \eqref{an:eq-elementary-constants} give
+\[
+ \frac{13}{120}<\eta_\rho<\frac19.
+\]
+Indeed,
+\[
+ \frac{\sqrt3}{2\pi}>
+ \frac{265}{153}\frac7{44}=\frac{1855}{6732}>
+ \frac{11}{40},
+\]
+whereas
+\[
+ \frac{\sqrt3}{2\pi}<
+ \frac{26}{15}\frac{25}{156}=\frac5{18}.
+\]
+The term \(d_\rho\rho(200\rho-1)\) is nonnegative.  Combining
+\eqref{an:eq-IK-simple-upper}, \eqref{an:eq-BK-error-upper},
+\(2\pi<44/7\), and \eqref{an:eq-BK200-expanded}, we obtain
+\begin{align*}
+ \mathcal B_K(\rho,200)
+ &>\rho\left(\frac{127}{3}
+       -\frac{88}{7(1-\rho)}\right)-\frac{17}{225}\\
+ &\geq \frac7{51}\left(\frac{127}{3}-\frac{176}{7}\right)
+       -\frac{17}{225}
+ =\frac{2912}{1275}>0.
+\end{align*}
+
+It remains to treat \(1/2\leq\rho\leq39/50\).  Monotonicity of
+\(\arcsin\), together with \(\arcsin\rho\geq\rho\), gives
+\begin{equation}
+       \frac{7\rho}{11}<d_\rho<\frac35.
+ \label{an:eq-d-high-bounds}
+\end{equation}
+For the upper bound, note that
+\[
+ \frac{39}{50}<\sin\frac{3\pi}{10}
+ =\frac{1+\sqrt5}{4};
+\]
+the strict rational comparison follows from
+\(\sqrt5>53/25\).  For the lower bound use
+\(2/\pi>7/11\).
+
+Since
+\[
+ \eta_\rho=G_1(\rho)
+ =\frac1\pi\int_\rho^1\arccos t\,dt
+\]
+and \(\arccos t\geq\sqrt{2(1-t)}\), we have
+\begin{equation}
+ \eta_\rho
+ \geq\frac{2\sqrt2}{3\pi}(1-\rho)^{3/2}
+ >\frac{49}{165}(1-\rho)^{3/2}.
+ \label{an:eq-eta-high-lower}
+\end{equation}
+Also \(0<\eta_\rho\leq\omega_0<1/9\).
+
+Let \([a,c]\) be any of the six intervals in the table below, and let
+\(s_c\) be the displayed rational number.  Direct squaring proves
+\(s_c^2\leq1-c\).  Hence \eqref{an:eq-eta-high-lower} gives
+\[
+ \eta_\rho\geq \eta_c
+ :=\frac{49}{165}(1-c)s_c
+ \qquad(a\leq\rho\leq c).
+\]
+Equations \eqref{an:eq-IK-simple-upper}--\eqref{an:eq-d-high-bounds}
+then imply the entirely rational lower bound
+\begin{equation}
+ \mathcal B_K(\rho,200)>L(a,c),
+ \label{an:eq-BK-slab-bound}
+\end{equation}
+where
+\[
+ L(a,c):=
+ 400a\eta_c-c-\frac1{18}
+ +\frac{7a^2}{11}(200a-1)
+ -\frac{528}{35}\frac{c}{1-c}-\frac1{50}.
+\]
+Every entry in the last column is obtained by substitution and integer
+cross-multiplication:
+\[
+\begin{array}{c|c|c|c|c}
+ a&c&s_c&\eta_c&L(a,c)\\ \hline
+ \frac12&\frac{11}{20}&\frac23&\frac{49}{550}
+   &\frac{251291}{17325}\\[2pt]
+ \frac{11}{20}&\frac35&\frac58&\frac{49}{660}
+   &\frac{70619}{5040}\\[2pt]
+ \frac35&\frac{13}{20}&\frac7{12}&\frac{2401}{39600}
+   &\frac{576451}{44100}\\[2pt]
+ \frac{13}{20}&\frac7{10}&\frac6{11}&\frac{147}{3025}
+   &\frac{4940821}{435600}\\[2pt]
+ \frac7{10}&\frac34&\frac12&\frac{49}{1320}
+   &\frac{2411}{315}\\[2pt]
+ \frac34&\frac{39}{50}&\frac{23}{50}&\frac{1127}{37500}
+   &\frac{11101801}{1386000}
+\end{array}
+\]
+All six rational lower bounds are strictly positive, and the intervals
+tile \([1/2,39/50]\).  This proves the assertion on the high branch and
+completes the proof.
+\end{proof}

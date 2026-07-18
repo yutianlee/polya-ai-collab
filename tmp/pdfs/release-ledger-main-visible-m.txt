@@ -1,0 +1,580 @@
+Hand-visible analytic derivations for 103 finite-ledger predicates
+1 Scope and logical convention
+This note exposes, in hand-checkable form, the predicates not assigned to the other five ledger packets.
+They are precisely
+11 threshold predicates + 48 zero predicates + 43 lower-closure predicates + 1 cap–74 predicate = 103.
+The omitted lower-closure predicate is the single six-cap tuple identity; it belongs to the cap-inventory
+packet. Every inequality below is proved from a displayed analytic inequality, integer arithmetic, rational
+cross multiplication, or positive-side squaring. An executable ledger may check the same arithmetic, but
+no executable output is used as a premise.
+We use
+ω0 =
+√
+3
+2π
+−
+1
+6
+, C0 = 1 +
+8
+√
+2
+15
+, ρ∗ =
+ω0
+2C0
+, ρ0 =
+1
+√
+337
+, σ =
+3ω0
+4
+, ρc =
+1
+1 + 2π
+, d =
+√
+337
+2
+.
+The elementary enclosure
+333
+106
+< π <
+355
+113
+<
+22
+7
+(1)
+is analytic: the lower and middle bounds follow from alternating truncations of Machin’s identity π =
+16 arctan(1/5) − 4 arctan(1/239), and the last one is immediate by cross multiplication. For reference,
+355/113 exceeds the upper Machin truncation by the positive rational numerator 45167474711 over de-
+nominator 189820334689453125. The classical integral
+0 <
+∫ 1
+0
+x4(1 − x)4
+1 + x2
+dx =
+22
+7
+− π
+also gives the final upper bound directly.
+2 The eleven threshold predicates
+First we obtain a rational two-sided enclosure for ω0. The exact integer residuals
+3 11012
+1132
+− 6072
+3552
+= 1998482 > 0, 25 3332
+− 243 1062
+= 41877 > 0
+and (1) imply
+√
+3 >
+607 355
+1101 113
+>
+607π
+1101
+, 9
+√
+3 < 5π.
+Consequently
+40
+367
+< ω0 <
+1
+9
+. (2)
+1
+Indeed, 607/2202 − 1/6 = 40/367, while 5/18 − 1/6 = 1/9.
+Since 2 322 − 452 = 23 > 0, one has
+√
+2 > 45/32, hence C0 > 7/4 and ρ∗ < 2/63. The following
+chain consists entirely of strict rational comparisons, with the indicated radical comparisons justified by
+squaring:
+ρ∗ <
+2
+63
+<
+1
+√
+337
+<
+1
+18
+<
+3
+40
+<
+3ω0
+4
+<
+1
+12
+<
+7
+51
+<
+1
+1 + 2π
+<
+1
+7
+<
+39
+50
+<
+7
+8
+.
+Here
+4 · 337 < 632
+, qquad182
+< 337, qquad367 < 400, 51 < 84, qquad367 < 420,
+and 7/51 < ρc < 1/7 follows respectively from π < 22/7 and π > 3. This proves the five ratio-order rows.
+It also proves
+ω0 <
+1
+9
+<
+7
+51
+< ρc.
+Moreover
+ω0d >
+20
+√
+337
+367
+> 1, 400 · 337 − 3672
+= 111 > 0.
+The four terminal comparisons follow from the same bounds:
+√
+114 < 18 <
+2
+ω0
+,
+2
+ω0
+<
+367
+20
+,
+ρc <
+1
+7
+<
+60
+367
+<
+3ω0
+2
+, ω0
+√
+114 >
+40
+√
+114
+367
+> 1.
+The last positive-side squaring has residual
+1600 · 114 − 3672
+= 47711 > 0.
+Thus the one-to-one threshold registry is
+ID source row proved predicate
+T1–T5 1–5 ρ∗ < ρ0 < σ < ρc < 39/50 < 7/8, one adjacent pair per row
+T6 6 ω0 < ρc
+T7 7 ω0d > 1
+T8 31
+√
+114 < 2/ω0
+T9 32 2/ω0 < 367/20
+T10 33 ρc < 3ω0/2
+T11 34 ω0
+√
+114 > 1
+3 The forty-eight zero specializations
+3.1 A recurrence and elementary tangent bounds
+Put
+jℓ(x) =
+√
+π
+2x
+Jℓ+1/2(x), Pℓ(x) = xℓ+1
+jℓ(x).
+Then
+Pℓ+1 = (2ℓ + 1)Pℓ − x2
+Pℓ−1, P0 = sin x, quadP1 = sin x − x cos x. (3)
+2
+Write Pℓ = Aℓ(t) sin x + xCℓ(t) cos x, t = x2. The recurrence gives
+A2 = 3 − t, C2 = −3,
+A3 = 15 − 6t, C3 = t − 15,
+A5 = 945 − 420t + 15t2
+, C5 = −945 + 105t − t2
+,
+A6 = 10395 − 4725t + 210t2
+− t3
+, C6 = −10395 + 1260t − 21t2
+,
+A7 = 135135 − 62370t + 3150t2
+− 28t3
+, C7 = −135135 + 17325t − 378t2
++ t3
+.
+For 0 < s < π/2, differentiation and integration give
+tan s > s, qquad tan s > s +
+s3
+3
+. (4)
+For 0 < s < 1, sin s < s and cos s > 1 − s2/2 give
+tan s <
+s
+1 − s2/2
+. (5)
+3.2 Sixteen half-period locations
+For each internal face, the first displayed margin below is w−(hL/2)(22/7); the second is (hR/2)(333/106)−
+w. Positivity therefore proves both strict half-period location rows without a decimal approximation.
+(ℓ, n) w (hL, hR) left margin right margin
+(1, 2) 77/10 (4, 5) 99/70 163/1060
+(2, 2) 9 (5, 6) 8/7 45/106
+(3, 2) 103/10 (6, 7) 61/70 737/1060
+(5, 2) 129/10 (8, 9) 23/70 1311/1060
+(1, 3) 21/2 (6, 7) 15/14 105/212
+(2, 3) 61/5 (7, 8) 6/5 97/265
+(6, 1) 10 (6, 7) 4/7 211/212
+(7, 1) 23/2 (7, 8) 1/2 113/106
+3.3 Sixteen half-period signs
+At an integral or half-integral multiple of π, exactly one of sin x, cos x vanishes. Direct substitution in the
+displayed polynomials gives the following complete sign table.
+(ℓ, n) hL left sign (ℓ, n) hR right sign
+(1, 2) 4 − (1, 2) 5 +
+(2, 2) 5 − (2, 2) 6 +
+(3, 2) 6 − (3, 2) 7 +
+(5, 2) 8 − (5, 2) 9 +
+(1, 3) 6 + (1, 3) 7 −
+(2, 3) 7 + (2, 3) 8 −
+(6, 1) 6 + (6, 1) 7 −
+(7, 1) 7 + (7, 1) 8 −
+Here are explicit polynomial witnesses for the only signs not immediate from A1 = 1, C1 = −1, A2 =
+3 − t, C2 = −3, A3 = 15 − 6t, C3 = t − 15. From (1), at x = 4π one has 144 < t < 159, at x = 9π/2 one
+3
+has t > 182, and at x = 7π/2 one has 110 < t < 121. Monotonicity on these rational intervals and direct
+evaluation give
+C5(t) < C5(144) = −6561, qquadA5(t) > A5(182) = 421365,
+C6(t) < C6(81) = −46116, qquadA6(t) > A6(110) = 700645,
+A7(t) < A7(110) = −5878565, qquadC7(t) < C7(144) = −2492559.
+For example, A′
+6 = −4725 + 420t − 3t2 is positive on [110, 121], while A′
+7 is negative there; the other
+asserted monotonicities follow at once from their displayed derivatives. Combining these signs with the
+quadrant signs of sine and cosine proves all sixteen entries.
+3.4 Eight rational-wall signs
+Substitution in (3) reduces each rational-wall sign to one of the following exact tangent comparisons. The
+shifted angle is always in (0, π/2), as already proved by the location table.
+(ℓ, n) wall hand certificate sgn jℓ(w)
+(1, 2) 77/10 For u = 5π/2 − w, tan u > 3/20 > 10/77 = 1/w; hence tan(w − 2π) =
+cot u < w.
+−
+(2, 2) 9 For u = 3π − w, tan u > 21/50 > 9/26 = 3w/(w2
+− 3). −
+(3, 2) 103/10 For u = 7π/2−w, tan u > 69/100 > 621540/938227 = (6w2
+−15)/(w(w2
+−
+15)).
+−
+(5, 2) 129/10 For y = w − 4π, 0 < y < 17/50, so tan y < 1700/4711 <
+177800829/427700150 = −wC5/A5.
+−
+(1, 3) 21/2 For u = 7π/2 − w, tan u > 49/100 > 2/21 = 1/w, hence tan(w − 3π) < w. +
+(2, 3) 61/5 For u = 4π − w, tan u > 9/25 > 915/3646 = 3w/(w2
+− 3). +
+(6, 1) 10 For y = w − 3π, 4/7 < y < 29/50, so tan y < 2900/4159 <
+188790/127579 = −wC6/A6.
++
+(7, 1) 23/2 For u = 4π − w, tan u > u + u3
+/3 > 546377/375000 >
+3153151489/2276518664 = wC7/A7.
++
+For complete cross-multiplication visibility, the four less immediate positive gaps in that table are
+69
+100
+−
+621540
+938227
+=
+2583663
+93822700
+,
+177800829
+427700150
+−
+1700
+4711
+=
+110529450419
+2014895406650
+,
+188790
+127579
+−
+2900
+4159
+=
+415198510
+530601061
+,
+546377
+375000
+−
+3153151489
+2276518664
+=
+3837851856583
+53355906187500
+.
+The four small gaps are respectively 31/1540, 24/325, 829/2100, 9939/91150.
+3.5 Six Lorch rows and two wall-order rows
+For ν = ℓ + 1/2, Lorch’s strict analytic first-zero estimate is
+j2
+ν,1 >
+24(ν + 1)2
+1 − 2ν +
+√
+(2ν + 3)(2ν + 11)
+− 2(ν2
+− 1) =: Rℓ.
+After rationalization,
+Rℓ =
+3(2ℓ + 3)
+√
+(ℓ + 2)(ℓ + 6) − 2ℓ2 + ℓ + 6
+4
+.
+4
+All sides being squared are positive, and the following integer residuals prove the three required strict
+specializations:
+ℓ wall c positive squared residual proving Rℓ > c2
+8 71/6 10262 · 35 − 60672 = 35171
+9 64/5 15752 · 165 − 200592 = 6939644
+10 69/5 34502 · 3 − 59112 = 767579
+Since jℓ(x) > 0 for suﬀiciently small x > 0, and its first positive zero is strictly to the right of c, these same
+three rows imply jℓ(c) > 0. Thus the three executable sign rows are analytic corollaries, not independent
+numerical assumptions. Finally,
+103
+10
+−
+81
+8
+=
+7
+40
+> 0,
+61
+5
+−
+21
+2
+=
+17
+10
+> 0.
+The one-to-one zero registry is as follows. Number the eight internal faces in the order of the location
+table. For face r, IDs Z5r−4, . . . , Z5r are, in order: right of the left half-period, left of the right half-period,
+left half-period sign, right half-period sign, and rational-wall sign. This bijects IDs Z1–Z40 with the first
+forty source rows. The remaining bijection is
+ID source row predicate
+Z41 41 Lorch specialization ℓ = 8, c = 71/6
+Z42 42 positive sign at ℓ = 8, c = 71/6
+Z43 43 Lorch specialization ℓ = 9, c = 64/5
+Z44 44 positive sign at ℓ = 9, c = 64/5
+Z45 45 Lorch specialization ℓ = 10, c = 69/5
+Z46 46 positive sign at ℓ = 10, c = 69/5
+Z47 47 103/10 > 81/8
+Z48 48 61/5 > 21/2
+4 The forty-three lower-closure predicates
+4.1 Eight activation and exclusion rows
+The complete arithmetic is
+(23/2)2
+− 114 = 73/4 > 0, 102
+= 100,
+(129/10)2
+− 114 = 5241/100 > 0, 103/10 − 81/8 = 7/40 > 0,
+(81/8)2
++ 8 = 7073/64, (81/8)2
++ 18 − 114 = 417/64 > 0,
+(21/2)2
++ 4 − 114 = 1/4 > 0, 16π2
+> 16 · 32
+> 114.
+These are exactly lower IDs L1–L8, corresponding to source rows 1–8.
+4.2 Five Weyl payments
+For 0 < ρ < ρc < 1/7, (1) yields the uniform analytic lower bound
+W(ρ, K) =
+2
+9π
+(1 − ρ3
+)K3
+>
+38
+539
+K3
+. (6)
+Using d > 9 and
+√
+7073/8 > 21/2, the five payments are the following exact positive reserves:
+5
+ID source row threshold/cap reserve from (6)
+L9 10 K > d, 46 (38/539)93 − 46 = 2908/539
+L10 11 K > 10, 59 (38/539)103 − 59 = 6199/539
+L11 12 K > 81/8, 66 (38/539)(81/8)3 − 66 = 990435/137984
+L12 13 K > 21/2, 69 (38/539)(21/2)3 − 69 = 555/44
+L13 14 K >
+√
+7073/8, 78 (38/539)(21/2)3 − 78 = 159/44
+4.3 The cap–395 cell: eighteen rows
+Put R = 367/20, zℓ = ℓ + 1/2. The analytic turning estimate
+GK(z) <
+(K − z)3/2
+3
+√
+K
+is increasing in K, so on K < R a strict cap cℓ follows from
+(R − zℓ)3
+9R
+=
+(357 − 20ℓ)3
+1321200
+<
+(
+cℓ +
+3
+4
+)2
+. (7)
+The following table gives all fifteen caps and the exact positive numerator 82575(4cℓ + 3)2 − (357 − 20ℓ)3
+obtained by clearing the positive denominators in (7).
+ℓ 0 1 2 3 4 5 6 7
+cℓ 6 5 5 4 4 3 3 3
+margin 14697882 5409422 11827162 3611502 8555642 1604782 5267322 8361062
+ℓ 8 9 10 11 12 13 14
+cℓ 2 2 1 1 1 1 0
+margin 2346202 4446342 176282 1474822 2444562 3133502 286642
+Thus L15–L29 correspond bijectively to source rows 16–30, with L(15 + ℓ) the ℓ-th table column. Since
+GR(z) is strictly decreasing in z, the c14 = 0 row removes every ℓ ≥ 14 tail; this is L30/source row 31.
+The weighted cap itself, L14/source row 15, is visible from the contributions
+6, 15, 25, 28, 36, 33, 39, 45, 34, 38, 21, 23, 25, 27,
+13
+∑
+ℓ=0
+(2ℓ + 1)cℓ = 395.
+Finally, on the exceptional cell ρK ≥ 5/2, with ρ < 11/80 and 1/π > 113/355,
+W(ρ, K) >
+2
+9
+113
+355
+(
+5
+2
+)3
+[(
+80
+11
+)3
+− 1
+]
+=
+160293325
+378004
+= 395 +
+10981745
+378004
+> 395.
+This is L31/source row 32.
+4.4 Twelve floor and boundary-owner rows
+The nine finite arithmetic rows are instances of one identity:
+3
+2
+(p + 1) ≤ 2p +
+1
+2
+(p ≥ 2), qquad
+(
+2p +
+1
+2
+)
+−
+3
+2
+(p + 1) =
+p − 2
+2
+≥ 0. (8)
+6
+At p = 2, (3/2)3 = 9/2; this is L32/source row 33. For p = 2, . . . , 9, formula (8) is respectively L33–
+L40/source rows 34–41.
+The half-integer face is exact: 5/2 = 2 + 1/2. Assigning it to the high side makes the interface remainder
+vanish and leaves the exceptional cell closed; this is L41/source row 42. At K = 2/ω0,
+p = ⌊ω0K⌋ = 2, ρK ≤
+2ρc
+ω0
+< 3
+by T10. This proves L42/source row 43. Moreover
+ρK −
+1
+2
+<
+5
+2
+, qquadm =
+⌊
+ρK −
+1
+2
+⌋
+≤ 2 ≤ 2p − 1 = 3,
+and the strict exceptional condition K < 2/ω0 fails at equality. Thus the complementary average-floor
+branch owns the equality face, proving L43/source row 44. More generally, if K ≥ 2/ω0, then p ≥ 2 and
+ρK <
+3
+2
+(p + 1) ≤ 2p +
+1
+2
+, m ≤ 2p − 1,
+so the finite instances conceal no unproved large-p case.
+5 The supplemental cap–74 incompatibility
+The propagated ball wall requires z2 > 2409/100, while the product wall requires z2 < 70/3. They are
+incompatible because
+2409
+100
+−
+70
+3
+=
+7227 − 7000
+300
+=
+227
+300
+> 0.
+This is supplemental ID S1 and is a hand proof, not merely a reported certificate value.
+6 Census and source-visibility verdict
+family count IDs hand-visible status before this note
+threshold remainder 11 T1–T11 printed, with a few implications compressed
+zero specializations 48 Z1–Z48 tables printed; several recurrence steps compressed
+lower remainder 43 L1–L43 payments printed; floor instances generated implicitly
+supplemental cap–74 1 S1 printed exactly
+total 103
+No predicate in this 103-row allocation is an unsupported executable-only mathematical premise. Before
+this note, the principal visibility gaps were the one-to-one expansion of the forty zero sign/location rows,
+the fact that the three Lorch-wall signs are logical corollaries of the strict first-zero bounds, and the
+expansion of the twelve floor/boundary rows. The displayed recurrences, rational margins, general floor
+identity, and exact ownership arguments close those presentation gaps.
+7
+

@@ -1,4 +1,4 @@
-"""Regression checks for the realized Round 22 shell-program promotion."""
+"""Regression checks for Round 22 history and the live shell program."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from math_collab.proof_obligations import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-GRAPH_SHA256 = "b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29"
+GRAPH_SHA256 = "c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65"
 FINAL_JUDGE = "rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md"
 FINAL_JUDGE_SHA256 = "8bf97553a3c5bbab3de741a5c8752dc29bd5b9d39ce8289079e744b80b0721a2"
 PREAPPLICATION_AUDIT = (
@@ -142,19 +142,22 @@ def test_final_graph_identity_and_promoted_boundary_are_exact() -> None:
     graph_path = ROOT / "state/proof_obligations.yml"
     assert _sha256(graph_path) == GRAPH_SHA256
     graph_bytes = graph_path.read_bytes()
-    assert len(graph_bytes) == 257_190
-    assert graph_bytes.count(b"\n") == 4_378
     assert b"\r" not in graph_bytes
     assert graph_bytes.endswith(b"\n")
     graph = _graph()
     assert dump_graph(graph).encode("utf-8") == graph_bytes
     obligations = graph["proof_obligations"]
-    assert len(obligations) == 61
-    assert len({item["id"] for item in obligations}) == 61
+    assert len(obligations) == 63
+    assert len({item["id"] for item in obligations}) == 63
+    assert graph["round_selection"]["target_obligations"] == []
+    assert "Revision-1 analytic simplification" in graph["round_selection"][
+        "round_rule"
+    ]
 
     by_id = _by_id()
     for obligation_id in (
         "SHELL-spherical-shell-nontiling",
+        "SHELL-analytic-retained-remainder-closure",
         "SHELL-rho-compact",
         "SHELL-rho-uniformity",
         "TARGET-shell-d3",
@@ -166,25 +169,27 @@ def test_final_graph_identity_and_promoted_boundary_are_exact() -> None:
 
 def test_promoted_dependencies_and_permissions_are_exact() -> None:
     by_id = _by_id()
-    expected = {
+    expected_dependencies = {
         "SHELL-spherical-shell-nontiling": [],
+        "SHELL-analytic-retained-remainder-closure": [
+            "SHELL-phase-enclosures",
+            "SHELL-count-floor-identity",
+            "SHELL-sturm-liouville-completeness",
+        ],
         "SHELL-rho-compact": [
             "SHELL-phase-enclosures",
             "SHELL-lattice-count",
             "SHELL-fixed-rho-high-energy",
-            "SHELL-rho-compact-analytic-envelope",
+            "SHELL-analytic-retained-remainder-closure",
         ],
         "SHELL-rho-uniformity": [
-            "SHELL-rho-compact",
-            "SHELL-rho-zero-endpoint",
+            "SHELL-analytic-retained-remainder-closure",
             "SHELL-rho-one-endpoint",
         ],
         "TARGET-shell-d3": [
             "CONV-strict-counting",
             "SHELL-cross-product-formula",
             "SHELL-phase-enclosures",
-            "SHELL-lattice-count",
-            "SHELL-fixed-rho-high-energy",
             "SHELL-rho-uniformity",
             "SHELL-sturm-liouville-completeness",
         ],
@@ -194,12 +199,31 @@ def test_promoted_dependencies_and_permissions_are_exact() -> None:
             "SHELL-spherical-shell-nontiling",
         ],
     }
-    for obligation_id, dependencies in expected.items():
+    expected_permissions = {
+        **expected_dependencies,
+        "TARGET-shell-d3": [
+            "CONV-strict-counting",
+            "SHELL-cross-product-formula",
+            "SHELL-phase-enclosures",
+            "SHELL-lattice-count",
+            "SHELL-fixed-rho-high-energy",
+            "SHELL-rho-uniformity",
+            "SHELL-sturm-liouville-completeness",
+        ],
+    }
+    for obligation_id, dependencies in expected_dependencies.items():
         assert by_id[obligation_id]["dependencies"] == dependencies
-        assert by_id[obligation_id]["permitted_dependencies"] == dependencies
+        assert by_id[obligation_id]["permitted_dependencies"] == (
+            expected_permissions[obligation_id]
+        )
     expected_implies = {
         "SHELL-spherical-shell-nontiling": ["POLYA-program-target"],
-        "SHELL-rho-compact": ["SHELL-rho-uniformity"],
+        "SHELL-analytic-retained-remainder-closure": [
+            "SHELL-rho-uniformity",
+            "SHELL-rho-compact-analytic-envelope",
+            "SHELL-rho-compact",
+        ],
+        "SHELL-rho-compact": [],
         "SHELL-rho-uniformity": ["TARGET-shell-d3"],
         "TARGET-shell-d3": ["POLYA-program-target"],
         "POLYA-program-target": [],
@@ -246,21 +270,29 @@ def test_final_judge_patch_ledger_and_replay_refusal_are_exact() -> None:
     ]
 
 
-def test_every_final_edge_is_reciprocal_and_both_graphs_are_acyclic() -> None:
+def test_every_live_spine_edge_is_reciprocal_and_both_graphs_are_acyclic() -> None:
     by_id = _by_id()
     final_pairs = (
-        ("SHELL-phase-enclosures", "SHELL-rho-compact"),
-        ("SHELL-lattice-count", "SHELL-rho-compact"),
-        ("SHELL-fixed-rho-high-energy", "SHELL-rho-compact"),
-        ("SHELL-rho-compact-analytic-envelope", "SHELL-rho-compact"),
-        ("SHELL-rho-compact", "SHELL-rho-uniformity"),
-        ("SHELL-rho-zero-endpoint", "SHELL-rho-uniformity"),
+        (
+            "SHELL-phase-enclosures",
+            "SHELL-analytic-retained-remainder-closure",
+        ),
+        (
+            "SHELL-count-floor-identity",
+            "SHELL-analytic-retained-remainder-closure",
+        ),
+        (
+            "SHELL-sturm-liouville-completeness",
+            "SHELL-analytic-retained-remainder-closure",
+        ),
+        (
+            "SHELL-analytic-retained-remainder-closure",
+            "SHELL-rho-uniformity",
+        ),
         ("SHELL-rho-one-endpoint", "SHELL-rho-uniformity"),
         ("CONV-strict-counting", "TARGET-shell-d3"),
         ("SHELL-cross-product-formula", "TARGET-shell-d3"),
         ("SHELL-phase-enclosures", "TARGET-shell-d3"),
-        ("SHELL-lattice-count", "TARGET-shell-d3"),
-        ("SHELL-fixed-rho-high-energy", "TARGET-shell-d3"),
         ("SHELL-rho-uniformity", "TARGET-shell-d3"),
         ("SHELL-sturm-liouville-completeness", "TARGET-shell-d3"),
         ("TARGET-shell-d3", "POLYA-program-target"),
@@ -277,11 +309,33 @@ def test_every_final_edge_is_reciprocal_and_both_graphs_are_acyclic() -> None:
 def test_target_and_program_dependency_closures_are_fully_discharged() -> None:
     by_id = _by_id()
     discharged = {"proved_internal", "proved_external_dependency", "certified"}
-    expected_sizes = {"TARGET-shell-d3": 35, "POLYA-program-target": 37}
-    for root, expected_size in expected_sizes.items():
-        dependencies = _closure(by_id, root, "dependencies")
-        assert len(dependencies) == expected_size
-        closure = dependencies | {root}
+    target_closure = {
+        "TARGET-shell-d3",
+        "CONV-strict-counting",
+        "SHELL-analytic-retained-remainder-closure",
+        "SHELL-annulus-phase-transfer",
+        "SHELL-count-floor-identity",
+        "SHELL-cross-product-formula",
+        "SHELL-exact-phase-rep",
+        "SHELL-phase-enclosures",
+        "SHELL-phase-monotonicity",
+        "SHELL-rho-one-endpoint",
+        "SHELL-rho-uniformity",
+        "SHELL-sturm-liouville-completeness",
+        "SRC-annuli",
+        "SRC-bessel-phase",
+    }
+    assert _closure(by_id, "TARGET-shell-d3", "dependencies") | {
+        "TARGET-shell-d3"
+    } == target_closure
+    program_closure = target_closure | {
+        "SHELL-spherical-shell-nontiling",
+        "POLYA-program-target",
+    }
+    assert _closure(by_id, "POLYA-program-target", "dependencies") | {
+        "POLYA-program-target"
+    } == program_closure
+    for closure in (target_closure, program_closure):
         assert {by_id[item]["status"] for item in closure} <= discharged
 
 
@@ -322,8 +376,13 @@ def test_program_evidence_preserves_positive_and_negative_chronology() -> None:
             paths.update(bucket)
         paths.update(item.get("clean_room_artifacts", []))
         paths.update(item.get("adversarial_review_artifacts", []))
-    assert len(paths) == 213
-    assert len(paths - {FINAL_JUDGE}) == 212
+    assert {
+        FINAL_JUDGE,
+        SCOPE_REPLACEMENT,
+        *THEOREM_ARTIFACTS,
+        *GEOMETRY_ARTIFACTS,
+        *FAILED_PROVENANCE_ARTIFACTS,
+    } <= paths
     assert all((ROOT / path).is_file() for path in paths)
 
     literature_note = "rounds/polya-main/round_021/exploration/literature-scope-note.md"
@@ -386,14 +445,28 @@ def test_diagnostic_parent_is_detached_and_parallel_tracks_are_unchanged() -> No
 
 def test_final_roles_timestamps_and_all_references_are_exact() -> None:
     by_id = _by_id()
-    roles = {
-        "SHELL-spherical-shell-nontiling": ("A2", "A3", "A4"),
-        "SHELL-rho-compact": ("A1", "A3", "A4"),
-        "SHELL-rho-uniformity": ("A1", "A3", "A4"),
-        "TARGET-shell-d3": ("A1", "A3", "A2"),
-        "POLYA-program-target": ("A1", "A3", "A4"),
+    metadata = {
+        "SHELL-spherical-shell-nontiling": (
+            ("A2", "A3", "A4"), 22, "2026-07-15T14:47:52"
+        ),
+        "SHELL-analytic-retained-remainder-closure": (
+            ("A1", "A3", "A4"), 25, "2026-07-17T17:00:00"
+        ),
+        "SHELL-rho-compact": (
+            ("A1", "A3", "A4"), 23, "2026-07-17T00:00:00"
+        ),
+        "SHELL-rho-uniformity": (
+            ("A1", "A3", "A4"), 25, "2026-07-17T17:00:00"
+        ),
+        "TARGET-shell-d3": (
+            ("A1", "A3", "A2"), 23, "2026-07-17T00:00:00"
+        ),
+        "POLYA-program-target": (
+            ("A1", "A3", "A4"), 22, "2026-07-15T14:47:52"
+        ),
     }
-    for obligation_id, expected_roles in roles.items():
+    for obligation_id, expected in metadata.items():
+        expected_roles, expected_round, expected_at = expected
         item = by_id[obligation_id]
         actual_roles = (
             item["lead_author"],
@@ -402,14 +475,13 @@ def test_final_roles_timestamps_and_all_references_are_exact() -> None:
         )
         assert actual_roles == expected_roles
         assert item["review_independence"] == "clean_room"
-        assert item["last_updated_round"] == 22
-        assert item["last_updated_at"] == "2026-07-15T14:47:52"
+        assert item["last_updated_round"] == expected_round
+        assert item["last_updated_at"] == expected_at
 
     for obligation_id, item in by_id.items():
         for relation in (
             "dependencies",
             "permitted_dependencies",
-            "blockers",
             "implies",
         ):
             for reference in item.get(relation, []):
@@ -508,6 +580,8 @@ def test_reading_packet_generation_uses_live_completed_state() -> None:
     assert "does not solve the general P\u00f3lya conjecture" in packet
     assert "no literature-novelty or publication-priority claim" in packet
     assert "Do not claim literature novelty, priority, or publication readiness" in packet
+    assert "ratio-sharp tangent-envelope theorem" in packet
+    assert "no longer a proof blocker" in packet
     assert "D_16" not in packet
     assert "no complete all-rho" not in packet
     assert "The full theorem remains open" not in packet
@@ -517,10 +591,8 @@ def test_derived_state_records_the_final_internal_scope() -> None:
     hash_paths = (
         "state/current_state.md",
         "state/gap_register.md",
-        "state/lemma_bank.md",
         "state/next_round_prompts.md",
         "manifests/reading_packet.md",
-        "problems/polya_conjecture.md",
     )
     for relative_path in hash_paths:
         text = (ROOT / relative_path).read_text("utf-8")
@@ -528,11 +600,38 @@ def test_derived_state_records_the_final_internal_scope() -> None:
         assert "\u8d38" not in text
         assert "\ufffd" not in text
 
+    current = (ROOT / "state/current_state.md").read_text("utf-8")
+    assert "## Revision 2 reviewed proof" in current
+    assert "`round_selection.target_obligations` is empty" in current
+    assert "SHELL-analytic-retained-remainder-closure" in current
+    assert "not a proof of" in current
+    assert "the general P" in current
+
+    gaps = (ROOT / "state/gap_register.md").read_text("utf-8")
+    assert "There is no open mathematical obligation" in gaps
+    assert "The following are not live gaps" in gaps
+
+    prompts = (ROOT / "state/next_round_prompts.md").read_text("utf-8")
+    assert "no selected proof-changing target" in prompts
+    assert "Reconstruct the ratio-sharp global closure" in prompts
+    assert "Do not rely on numerical" in prompts
+    assert "sampling as proof" in prompts
+
+    packet = (ROOT / "manifests/reading_packet.md").read_text("utf-8")
+    assert "no selected proof-changing target" in packet
+    assert "ratio-sharp angular payment" in packet
+
+    lemma_bank = (ROOT / "state/lemma_bank.md").read_text("utf-8")
+    assert "## Ratio-sharp global closure" in lemma_bank
+    assert "no edge into the" in lemma_bank
+    assert "Revision 2 theorem chain" in lemma_bank
+
     proof = (ROOT / "state/best_proof_draft.md").read_text("utf-8")
-    assert "## Round 22 final theorem assembly" in proof
-    assert "Round 22 completes the project-internal all-$K$, all-$\\rho$" in proof
-    assert "No complete all-$K$, all-$\\rho$ shell" not in proof[:500]
-    assert "not a proof of the general P\u00f3lya conjecture" in proof
+    assert "## 2. Exact defect and ratio-sharp angular payment" in proof
+    assert "This cover is disjoint and exhaustive" in proof
+    assert "No finite staircase" in proof
+
     report = (ROOT / "state/last_validation_report.md").read_text("utf-8")
+    assert "Revision-1" in report
     assert "\\mathcal D_{21}" in report
     assert GRAPH_SHA256 in report

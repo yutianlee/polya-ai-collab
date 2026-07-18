@@ -1,0 +1,337 @@
+        Global Angular Blocks for the Middle-Ratio Shell Proxy
+
+
+                                   Global analytic angular module
+
+
+                                                 Abstract
+         The global structural reduction for the spherical-shell proxy leaves an angular rounding defect
+     Eang and a smooth positive payment H. This note controls the defect for every 0 < ρ < 1 and
+     K > 0 with at least one active radial layer. First, an exact Stieltjes formula is given with the
+     strict common-jump convention made explicit. The negative mean of every complete angular
+     cell is combined with the single-peaked shape of q = −A′ to obtain continuous block estimates.
+     A paired radial block argument then controls the full shifted sample sum, including all common
+     jumps, by
+                                                  (1 − ρ2 )K 2    N
+                                         Eang <                − ,
+                                                       6          2
+     where N is the number of active shifted radial layers. On the upward-closed middle-ratio region
+     ρc ≤ ρ ≤ 39/50, K ≥ k11 (ρ), one has N ≥ 1. The global middle-ratio theorem is therefore
+     reduced to the smooth scalar inequality (28), which is established in the companion scalar-
+     positivity module.
+
+
+1    Deﬁnitions and the target payment
+For a > 0 and z ≥ 0, deﬁne
+                                 (√
+                                1                       z)
+                                     a2 − z 2 − z arccos    ,          0 ≤ z < a,
+                        Ga (z) = π                       a                                                 (1)
+                                0,                                    z ≥ a.
+
+Fix 0 < ρ < 1 and K > 0, and put
+                                                                         (1 − ρ)K
+                       A(z) := GK (z) − GρK (z),          T := A(0) =             .                        (2)
+                                                                             π
+The function A decreases strictly from T to 0. Denote its decreasing inverse by R : [0, T ] → [0, K],
+and set
+                F (t) := R(t)2 ,     q(z) := −A′ (z),    τ := A(ρK) = KG1 (ρ).                    (3)
+Direct diﬀerentiation gives
+                                         z           z
+                                1 arccos K − arccos ρK ,          0 < z < ρK,
+                         q(z) =                                                                            (4)
+                                π arccos z ,                      ρK ≤ z < K.
+                                          K
+Consequently
+                         1
+               0 ≤ q(z) ≤ ,        q increases on (0, ρK),        q decreases on (ρK, K).                  (5)
+                         2
+
+                                                     1
+    Let
+                                         { ⌈       ⌉}
+                    1                            1
+           xn := n − ,       M (r) := max 0, r −      ,                N := #{n ≥ 1 : xn < T }.    (6)
+                    4                            2
+For 1 ≤ n ≤ N , write
+                                   rn := R(xn ),          mn := M (rn ),                           (7)
+and deﬁne the exact angular rounding defect
+
+                                                      ∑
+                                                      N
+                                     Eang (ρ, K) :=         (m2n − rn2 ).                          (8)
+                                                      n=1
+
+The strict convention is built into M : at r = m + 1/2 one has M (r) = m, not m + 1.
+   The smooth payment obtained from the retained radial Stieltjes remainder is
+
+                                            ρ2 K 2     πρK
+                             H(ρ, K) :=            −
+                                              4      4(1 − ρ)
+                                                        (                )
+                                                2πρK          τ        3
+                                            +                      +                               (9)
+                                               arccos ρ 4(1 + 2τ ) 32
+                                               ∫ K
+                                                       A(z)(1 + A(z))
+                                            +       2z                dz.
+                                                ρK      (1 + 2A(z))2
+
+The preceding structural reduction proves
+
+                              Eang < H        =⇒     P (ρ, K) < W (ρ, K).                         (10)
+
+This note derives a smooth upper bound for the left side.
+
+
+2    Complete angular cells and the single peak
+Deﬁne the angular sawtooth error
+                                            e(r) := M (r)2 − r2 .                                 (11)
+For m ≥ 1, the strict m-cell is
+
+                     Im = (m − 1/2, m + 1/2],             e(r) = m2 − r2           (r ∈ Im ).
+
+Endpoint values do not aﬀect the following Lebesgue integrals. The positive and negative half-cell
+masses are
+                                   ∫ m
+                                                          m    1
+                           Pm :=          (m2 − r2 ) dr =    − ,                             (12)
+                                    m−1/2                  4   24
+                                     ∫ m+1/2
+                                                             m    1
+                           Qm := −           (m2 − r2 ) dr =    + .                          (13)
+                                      m                      4    24
+In particular,
+                                  ∫ m+1/2
+                                                                            1
+                                            e(r) dr = Pm − Qm = −              .                  (14)
+                                   m−1/2                                    12
+Lemma 1 (Weighted complete-cell bounds). Let m ≥ 1 and suppose the complete cell [m−1/2, m+
+1/2] lies in [0, K].
+
+                                                      2
+    1. If m + 1/2 ≤ ρK, then
+                                        ∫ m+1/2
+                                                                               q(m)
+                                                     e(r)q(r) dr ≤ −                ≤ 0.                        (15)
+                                            m−1/2                               12
+
+    2. If m − 1/2 ≥ ρK, then
+                           ∫ m+1/2
+                                       e(r)q(r) dr ≤ Pm q(m − 1/2) − Qm q(m + 1/2).                             (16)
+                               m−1/2
+
+
+    3. On the unique cell, if any, whose interior contains ρK,
+                                            ∫ m+1/2
+                                                      e(r)q(r) dr ≤ Pm q(ρK).                                   (17)
+                                             m−1/2
+
+
+The initial partial cell 0 ≤ r ≤ 1/2 contributes nonpositively.
+
+Proof. On the left half of a cell e ≥ 0, and on the right half e ≤ 0. If q is increasing, then q(r) ≤ q(m)
+on the positive half and q(r) ≥ q(m) on the negative half. Equations (12)–(14) give (15).
+   If q is decreasing, then q(r) ≤ q(m − 1/2) on the positive half and q(r) ≥ q(m + 1/2) on the
+negative half. This gives (16). On the peak cell, discard the negative half and use q ≤ q(ρK) on
+the positive half. Finally, M (r) = 0 and e(r) = −r2 for 0 ≤ r ≤ 1/2.
+
+      Thus the continuous angular defect has a favorable analytic block structure:
+                                       ∫ T                    ∫ K
+                                             e(R(t)) dt =             e(r)q(r) dr.                              (18)
+                                        0                      0
+
+All complete cells below the peak are nonpositive, and the decreasing side is controlled by the
+endpoint diﬀerences in (16). The diﬃculty is passing from the integral in (18) to the shifted
+samples in (8); the next subsection records that passage with all common jumps included.
+
+
+3      Exact common-jump convention
+Let
+            h(t) := e(R(t)),       C(t) := #{n : 0 < xn ≤ t, xn < T },                      p(t) := C(t) − t.   (19)
+Choose the right-continuous versions of C, p, and h. Right continuity of h is exactly the strict
+angular convention: when R(t) = m + 1/2, the post-jump value uses M = m. The atomic measure
+dC therefore samples the correct value even when a radial point xn is also an angular wall.
+
+Lemma 2 (Euler identity with common jumps). With the preceding representatives,
+                                             ∫ T               ∫
+                                  Eang =           h(t) dt −                p(t− ) dh(t).                       (20)
+                                              0                    (0,T ]
+
+At a common radial–angular wall the second integral uses the left value p(t− ) = −3/4; no extra or
+omitted wall term is permitted.
+
+
+
+
+                                                          3
+Proof. The measure dC has a unit atom at every active xn , so
+                                          ∫
+                                   Eang =      h(t) dC(t).
+                                                  (0,T )
+
+Since dC = dt + dp,                      ∫ T               ∫
+                                Eang =         h(t) dt +                h(t) dp(t).
+                                          0                    (0,T ]
+For right-continuous functions of bounded variation, the product formula in the form
+                            ∫                          ∫
+                                  h(t) dp(t) = [hp]0 −
+                                                   T
+                                                           p(t− ) dh(t)
+                              (0,T ]                              (0,T ]
+
+already contains the product of simultaneous jumps. Here p(0) = 0 and h(T ) = e(0) = 0, so the
+boundary term vanishes. This proves (20). If t = xn , then C(t− ) = n − 1 and hence p(t− ) =
+n − 1 − (n − 1/4) = −3/4, including a common angular wall.
+    Equation (20) explains why the negative means in (14) cannot be used without a jump audit.
+The second term contains both the continuous rise inside each angular cell and the downward atom
+at its strict lower wall. A direct sign deletion would be invalid. The paired estimate below controls
+the integral and all its atoms simultaneously.
+
+
+4     A paired radial-block estimate
+The cap q ≤ 1/2 in (5) forces a useful separation: one unit of radial action spans at least two units
+of angular radius. The shift xn = n − 1/4 leaves a left block of length 3/4, enough to pay the worst
+angular rounding in that layer.
+Lemma 3 (One-layer paired block). For every active n,
+                                        ∫
+                                      4 xn            3
+                                 rn ≤        R(t) dt − ,                                         (21)
+                                      3 n−1           4
+and
+                                                         1
+                                       m2n − rn2 < rn + .                                    (22)
+                                                         4
+Both statements remain valid, with the displayed strictness, at every radial–angular common wall.
+Proof. Fix t ∈ [n − 1, xn ] and put z = R(t) ≥ rn . Since A(rn ) = xn , (5) gives
+                                                     ∫ z
+                                                                    z − rn
+                            xn − t = A(rn ) − A(z) =      q(s) ds ≤        .
+                                                       rn              2
+Hence
+                                         R(t) ≥ rn + 2(xn − t).
+Integration over the interval of length 3/4 yields
+                                      ∫ xn
+                                                    3    9
+                                           R(t) dt ≥ rn + ,
+                                       n−1          4    16
+which is (21).
+   By strict counting, mn < rn + 1/2 even when rn is a half-integer: at rn = m + 1/2 the value is
+mn = m. Squaring gives
+                               m2n < (rn + 1/2)2 = rn2 + rn + 1/4,
+and proves (22).
+
+                                                      4
+Proposition 4 (Global angular block bound). For every 0 < ρ < 1 and every K > 0 with N ≥ 1,
+
+                                                        (1 − ρ2 )K 2 N
+                                   Eang (ρ, K) <                    − .                            (23)
+                                                             6       2
+In particular,
+                                                        (1 − ρ2 )K 2 1
+                                    Eang (ρ, K) <                   − .                            (24)
+                                                             6       2
+Proof. The left blocks [n − 1, xn ], 1 ≤ n ≤ N , are disjoint subsets of [0, T ]. Summing (21) and then
+(22) gives
+                                             N (
+                                             ∑          )
+                                                      1
+                                   Eang <       rn +
+                                                      4
+                                          n=1
+                                             N ∫
+                                          4 ∑ xn                N
+                                        ≤             R(t) dt −
+                                          3                     2
+                                            n=1 n−1
+                                            ∫ T
+                                          4                N
+                                        ≤        R(t) dt − .
+                                          3 0               2
+The area identity for decreasing inverses gives
+                                    ∫ T            ∫ K
+                                         R(t) dt =     A(z) dz.
+                                       0                      0
+
+Scaling z = as in (1) and using
+                          ∫ 1√                                ∫ 1
+                                                  π                                     π
+                                  1 − s2 ds =       ,                 s arccos s ds =     ,
+                            0                     4               0                     8
+shows that                                  ∫ a
+                                                                      a2
+                                                  Ga (z) dz =            .
+                                             0                        8
+Consequently                          ∫ T
+                                                             (1 − ρ2 )K 2
+                                            R(t) dt =                     ,
+                                       0                          8
+which proves (23). Equation (24) follows from N ≥ 1.
+
+
+5     The upward-closed middle-ratio scalar inequality
+Set                                                                   √
+                                    1                                        π2
+                           ρc :=        ,          k11 (ρ) :=                      + 132,          (25)
+                                 1 + 2π                                   (1 − ρ)2
+and consider the upward-closed middle-ratio region
+                               {                                                        }
+                                                   39
+                         Rc := (ρ, K) : ρc ≤ ρ ≤ ,                         K ≥ k11 (ρ) .           (26)
+                                                   50
+On this set,                                            √
+                                (1 − ρ)k11 (ρ)                        132(1 − ρ)2
+                            T ≥                =             1+                   > 1,             (27)
+                                      π                                   π2
+
+                                                         5
+so N ≥ 1. Proposition 4 and (10) reduce the global middle-ratio theorem to the single inequality
+
+                                          (1 − ρ2 )K 2 1
+                  S(ρ, K) := H(ρ, K) −                + >0       ((ρ, K) ∈ Rc ).             (28)
+                                               6       2
+
+Everything in S is smooth at every ﬁnite point of Rc ; the ﬂoor functions and all radial–angular
+common jumps have disappeared. Substituting (9) gives the explicit form
+
+                                      (5ρ2 − 2)K 2     πρK      1
+                          S(ρ, K) =                −          +
+                                           12        4(1 − ρ) 2
+                                                 (                     )
+                                          2πρK         KG1 (ρ)       3
+                                      +                            +                         (29)
+                                         arccos ρ 4(1 + 2KG1 (ρ)) 32
+                                        ∫ K
+                                                A(z)(1 + A(z))
+                                      +      2z                dz.
+                                          ρK     (1 + 2A(z))2
+
+The elementary identity
+                                   u(1 + u)    1      1
+                                            2
+                                              = −                                            (30)
+                                   (1 + 2u)    4 4(1 + 2u)2
+turns the same scalar gap into the more useful loss form
+                                              ∫ K
+                          (1 + 2ρ2 )K 2 1          z
+                S(ρ, K) =              −                 2
+                                                           dz
+                               12        2ρK (1 + 2A(z))
+                                                  (                  )                       (31)
+                                πρK    1   2πρK        KG1 (ρ)     3
+                            −         + +                        +     .
+                              4(1 − ρ) 2 arccos ρ 4(1 + 2KG1 (ρ)) 32
+
+Thus the only non-endpoint quantity still requiring control is the positive boundary-layer loss
+integral in (31).
+Remark 5 (Status and next step). The complete-cell bounds, the common-jump formula, and the
+global estimate (23) are proved analytically. The ﬁrst remaining step within this module is the
+smooth scalar inequality (28). The companion scalar-positivity module proves it on all of Rc by
+a uniform upper bound for the boundary-layer loss in (31) and strict positivity on the base curve.
+No upper cutoﬀ in K occurs in the angular estimate or in the veriﬁcation that N ≥ 1.
+
+
+
+
+                                                 6
+

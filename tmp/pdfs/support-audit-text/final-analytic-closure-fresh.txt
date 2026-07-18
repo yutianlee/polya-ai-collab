@@ -1,0 +1,106 @@
+       Purely Analytic Closure of the Final Spherical-Shell Residual
+
+
+                                                    Abstract
+            This note assembles the analytic compact and aggregate estimates after the exact owner
+        subtraction. It proves that the ﬁnal spherical-shell residual is empty without invoking an interval
+        certiﬁcate or an executable truth table. The compact estimate covers a closed superset of the
+        actual sub-200 residual; the aggregate estimate covers the complementary frequency tail.
+
+
+1      Notation and analytic inputs
+Let
+                                                                       2(1 − ρ3 )K 3
+                      Aρ,1 := {x ∈ R3 : ρ < |x| < 1},            W (ρ, K) :=         ,
+                                                                            9π
+and let ND (Aρ,1 , K 2 ) count Dirichlet eigenvalues strictly below K 2 . Put
+                                                                 √
+                                        1                               π2
+                               ρc :=        ,       k11 (ρ) :=                + 132.
+                                     1 + 2π                          (1 − ρ)2
+      The preceding analytic owner lemmas and the exact set subtraction give
+                              {                                          }
+                                                39
+                       D20 = (ρ, K) : ρc ≤ ρ < , k11 (ρ) < K < U (ρ) .                                        (1)
+                                                50
+On this interval U (ρ) = K0 (ρ), although the formula for the upper wall will not be needed below.
+   We use the shell action
+                       (                       )
+                     1 √ 2                   z
+          Ga (z) :=       a − z 2 − z arccos      (0 ≤ z < a),     Ga (z) := 0 (z ≥ a),
+                     π                       a
+                                         Aρ,K (z) := GK (z) − GρK (z),
+and the strict lattice proxy
+                                          ∑             {                              }
+                                                                           1
+                         P (ρ, K) :=           2ν # n ∈ N : n < Aρ,K (ν) +   .                                (2)
+                                     ν=ℓ+1/2<K
+                                                                           4
+                                          ℓ∈N0
+
+The analytic Bessel-phase reduction proved earlier in the main argument is
+                                           ND (Aρ,1 , K 2 ) ≤ P (ρ, K).                                       (3)
+    The detailed analytic supplement establishes the following two estimates. They are stated here
+in exactly the form used in the assembly:
+                                                  (                                )
+                                                              39
+                  P (ρ, K) < W (ρ, K)               ρc ≤ ρ ≤ , k11 (ρ) ≤ K ≤ 200 ,             (4)
+                                                              50
+                                                  (                       )
+                                                              39
+             ND (Aρ,1 , K 2 ) < W (ρ, K)            ρc ≤ ρ ≤ , K ≥ 200 .                       (5)
+                                                              50
+For clarity, the proof of (4) is recalled in the next section. The proof of (5) is the analytic curvature
+propagation from the three exact base inequalities at K = 200.
+
+                                                        1
+2    Compact closure
+Theorem 1 (Analytic compact theorem). For
+                                   39
+                          ρc ≤ ρ ≤ ,          k11 (ρ) ≤ K ≤ 200,
+                                   50
+one has
+                               ND (Aρ,1 , K 2 ) < W (ρ, K).
+Proof. The retained-remainder identity in the analytic compact argument gives
+                                    W − P = B + Rdec + Rosc − Eang ,
+with both retained remainders nonnegative. A global primitive minorant then proves the structural
+implication
+                       Eang (ρ, K) < H(ρ, K) =⇒ P (ρ, K) < W (ρ, K).                          (6)
+    The paired angular-block lemma, including all common radial–angular jumps, gives
+                                               (1 − ρ2 )K 2 1
+                                     Eang (ρ, K) <         − .                                 (7)
+                                                    6       2
+The scalar positivity theorem proves on the same closed domain that
+                                          (1 − ρ2 )K 2 1
+                                     H(ρ, K) −        + > 0.                                (8)
+                                               6        2
+Combining (7) and (8) yields Eang < H. Hence (6) gives P < W , and (3) completes the proof.
+
+
+3    Exact compact/tail ownership
+Proposition 2 (Analytic closure of D20 ). Deﬁne
+                       C21 := D20 ∩ {K ≤ 200},            T21 := D20 ∩ {K > 200}.
+Then C21 and T21 are disjoint, exhaust D20 , and the strict Pólya inequality holds on both. Conse-
+quently the successor residual is empty.
+Proof. The two frequency conditions K ≤ 200 and K > 200 form a disjoint partition, so
+                                              D20 = C21 ∪˙ T21 .
+If (ρ, K) ∈ C21 , then (1) gives
+                                        39
+                                   ρc ≤ ρ <,          k11 (ρ) < K ≤ 200.
+                                        50
+This lies in the closed domain of Theorem 1.
+   If (ρ, K) ∈ T21 , then
+                                              39
+                                       ρc ≤ ρ <  ,   K > 200,
+                                              50
+so the analytic aggregate estimate (5) applies. Therefore every point of D20 is proved, and
+                                         D20 \ (C21 ∪ T21 ) = ∅.
+The face K = 200 is assigned only to C21 ; the already owned faces ρ = 39/50, K = k11 (ρ), and
+K = U (ρ) remain outside D20 .
+
+Logical dependency. The proof uses ﬁnite exact-rational tables only through displayed ana-
+lytic lemmas. It does not use the former 10,580-box compact certiﬁcate, the 1,286-box aggregate
+certiﬁcate, or the 63-state executable subtraction table.
+
+                                                      2
+

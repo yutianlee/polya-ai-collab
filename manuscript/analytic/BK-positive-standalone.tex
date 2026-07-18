@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+
+\newtheorem{lemma}{Lemma}
+\DeclareMathOperator{\arsinh}{arsinh}
+
+\title{Analytic Positivity of the Aggregate Base Derivative}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+For \(0\leq s\leq1\), set
+\[
+ G_1(s)=\frac{\sqrt{1-s^2}-s\arccos s}{\pi}.
+\]
+For \(0<\rho<1\) and \(K>0\), put
+\[
+ \eta_\rho=G_1(\max\{\rho,1/2\}),\qquad
+ d_\rho=\frac{2\arcsin\rho}{\pi},\qquad
+ b_\rho=\frac{2\pi\rho}{1-\rho},
+\]
+\[
+ \mu=\rho K,\qquad
+ \overline R=\mu+\frac12,\qquad
+ S=\sqrt{\overline R^2+b_\rho K},
+\]
+\[
+ I(\rho,K)=\frac12\left[
+ \overline R S+b_\rho K\arsinh
+ \frac{\overline R}{\sqrt{b_\rho K}}-\overline R^2
+ \right],
+\]
+and define the continuous aggregate reserve
+\begin{equation}
+\begin{aligned}
+ \mathcal B(\rho,K)={}&
+ (\mu-\tfrac12)(K\eta_\rho-1)
+ +\frac{d_\rho}{2}(\mu-\tfrac32)(\mu-\tfrac12)\\
+ &-(1+d_\rho)I(\rho,K)
+ -\frac{8(\mu+\tfrac12)}{15\sqrt\mu}.
+\end{aligned}
+\label{cm:eq-B-def}
+\end{equation}
+Direct differentiation gives
+\begin{equation}
+ I_K=\rho(S-\overline R)
+ +\frac{b_\rho}{2}\arsinh
+ \frac{\overline R}{\sqrt{b_\rho K}},
+\label{cm:eq-IK}
+\end{equation}
+and
+\begin{equation}
+\begin{aligned}
+ \mathcal B_K={}&
+ \rho(K\eta_\rho-1)+(\mu-\tfrac12)\eta_\rho
+ +d_\rho\rho(\mu-1)\\
+ &-(1+d_\rho)I_K
+ -\frac{2\rho(2\mu-1)}{15\mu^{3/2}}.
+\end{aligned}
+\label{cm:eq-BK}
+\end{equation}
+
+\input{BK-positive.tex}
+
+\end{document}

@@ -1,0 +1,103 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=28mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\definecolor{linkblue}{RGB}{24,78,119}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  urlcolor=linkblue,
+  pdftitle={Analytic Supplement for the Dirichlet Polya Inequality on Three-Dimensional Spherical Shells},
+  pdfsubject={Ratio-sharp global defect proof}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Spherical-shell P\'olya inequality}
+\fancyhead[R]{\small Analytic supplement}
+\fancyfoot[C]{\thepage}
+\setlength{\emergencystretch}{3em}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Analytic Supplement for\\
+A Dirichlet P\'olya Inequality on\\
+Three-Dimensional Spherical Shells}
+\author{Anonymous for peer review}
+\date{17 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This support volume contains the detailed global defect proof used for
+$0<\rho\leq39/50$.  It proves the ratio-sharp angular estimate, the
+tangent-envelope retained-radial estimate, reduction to a universal ball
+quarter-layer, and the exact scalar convexity closure.  Together with the
+phase bridge, no-mode comparison, and optical theorem in the main paper,
+this is the complete live analytic implication chain.  The former finite
+staircase, 38-state theorem, zero registry, 611-row provenance census,
+programs, and interval certificates remain in the repository as historical
+audit material and optional regression checks; none is a theorem premise.
+\end{abstract}
+
+\paragraph{Reading convention.}
+The detailed argument is read directly from
+\path{analytic/ratio-sharp-global-closure-body.tex}; no precompiled PDF is
+required.  A summarized form is included in the main paper.  Every displayed
+rational bound below is part of the proof; numerical replay is not.
+
+\section*{Live dependency graph}
+\addcontentsline{toc}{section}{Live dependency graph}
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{3.3cm}p{5.1cm}p{3.2cm}@{}}
+\toprule
+result&premises&location\\
+\midrule
+phase-to-proxy bound&
+separation and strict Bessel-phase enclosure&
+main paper\\
+no-mode region&
+one-dimensional Dirichlet comparison&
+main paper\\
+global low/middle theorem&
+exact layer cake, ratio-sharp blocks, tangent envelope,
+ball quarter-layer, scalar convexity&
+Part I below\\
+outer optical theorem&
+product and complementary-action screens&
+main paper\\
+shell theorem&
+the preceding disjoint owners and dilation&
+main paper\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\renewcommand{\thesection}{\Roman{section}}
+\tableofcontents
+\clearpage
+
+\section{Ratio-sharp global defect closure}
+\label{part:ratio}
+
+\input{analytic/ratio-sharp-global-closure-body.tex}
+
+\end{document}

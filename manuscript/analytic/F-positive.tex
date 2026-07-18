@@ -1,0 +1,324 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}[lemma]{Theorem}
+
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+\title{A Hand-Checkable Proof of Positivity\\
+for the Aggregate Curvature Floor}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove, without numerical computation, the strict positivity of the
+one-variable function that supplies the curvature floor in the aggregate-tail
+argument for spherical shells. Every estimate is reduced to an exact
+rational comparison. In fact, on the full required interval we obtain the
+uniform lower bound
+\[
+ F(\rho)>\frac{1549}{84150}>0.
+\]
+\end{abstract}
+
+\section{Definitions and elementary estimates}
+
+For \(0\leq s\leq1\), define
+\begin{equation}
+ G_1(s):=\frac{1}{\pi}
+ \left(\sqrt{1-s^2}-s\arccos s\right).
+ \label{eq:G1-definition}
+\end{equation}
+For \(0<\rho<1\), put
+\begin{equation}
+ \eta_\rho:=G_1\!\left(\max\{\rho,1/2\}\right),
+ \qquad
+ d_\rho:=\frac{2\arcsin\rho}{\pi},
+ \qquad
+ b_\rho:=\frac{2\pi\rho}{1-\rho}.
+ \label{eq:definitions}
+\end{equation}
+The function to be estimated is
+\begin{equation}
+ F(\rho):=2\rho\eta_\rho+d_\rho\rho^2
+ -\frac{3(1+d_\rho)b_\rho}{800}.
+ \label{eq:F-definition}
+\end{equation}
+The interval in question is well inside \((0,1)\), since
+\[
+ 0<\frac7{51}<\frac12<\frac{39}{50}<1;
+\]
+the two nontrivial middle comparisons are respectively \(14<51\) and
+\(25<39\). Thus all quantities in \eqref{eq:definitions} and
+\eqref{eq:F-definition} are well defined there.
+
+We first record all numerical inequalities used below, together with exact
+proofs.
+
+\begin{lemma}[Rational bounds for \(\pi\) and square roots]
+\label{lem:rational-bounds}
+One has
+\begin{equation}
+ \pi<\frac{22}{7},\qquad
+ \sqrt2>\frac75,\qquad
+ \sqrt3>\frac53,\qquad
+ \sqrt{\frac{11}{50}}>\frac7{15}.
+ \label{eq:rational-bounds}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Polynomial division gives the identity
+\[
+ \frac{x^4(1-x)^4}{1+x^2}
+ =x^6-4x^5+5x^4-4x^2+4-\frac4{1+x^2}.
+\]
+The left-hand side is positive for \(0<x<1\). Hence
+\begin{align*}
+ 0
+ &<\int_0^1\frac{x^4(1-x)^4}{1+x^2}\,\dd x\\
+ &=\frac17-\frac{4}{6}+1-\frac43+4
+   -4\arctan(1)\\
+ &=\frac{22}{7}-\pi,
+\end{align*}
+where \(\arctan(1)=\pi/4\). This proves \(\pi<22/7\).
+
+All three square-root estimates follow by squaring positive quantities:
+\[
+ 2-\left(\frac75\right)^2=\frac1{25}>0,
+ \qquad
+ 3-\left(\frac53\right)^2=\frac29>0,
+\]
+and
+\[
+ \frac{11}{50}-\left(\frac7{15}\right)^2
+ =\frac{11}{50}-\frac{49}{225}
+ =\frac1{450}>0.
+\]
+\end{proof}
+
+\begin{lemma}[Integral representation and a lower bound for \(G_1\)]
+\label{lem:G1-lower}
+For \(0\leq s\leq1\),
+\begin{equation}
+ G_1(s)=\frac1\pi\int_s^1\arccos t\,\dd t
+ \geq\frac{2\sqrt2}{3\pi}(1-s)^{3/2}.
+ \label{eq:G1-integral-lower}
+\end{equation}
+In particular, if \(1/2\leq s\leq39/50\), then
+\begin{equation}
+ G_1(s)>\frac{343}{11250}.
+ \label{eq:G1-rational-lower}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The antiderivative
+\[
+ \int\arccos t\,\dd t=t\arccos t-\sqrt{1-t^2}
+\]
+shows directly that
+\[
+ \int_s^1\arccos t\,\dd t
+ =\sqrt{1-s^2}-s\arccos s,
+\]
+which proves the first equality in \eqref{eq:G1-integral-lower}.
+
+For \(0\leq t\leq1\), let \(y=\arccos t\), so
+\(0\leq y\leq\pi/2\). Since \(\sin u\leq u\) for \(u\geq0\),
+\[
+ \sqrt{2(1-t)}
+ =\sqrt{2(1-\cos y)}
+ =2\sin\frac y2
+ \leq y=\arccos t.
+\]
+Integrating this pointwise inequality gives
+\begin{align*}
+ G_1(s)
+ &\geq\frac1\pi\int_s^1\sqrt{2(1-t)}\,\dd t\\
+ &=\frac{2\sqrt2}{3\pi}(1-s)^{3/2},
+\end{align*}
+which completes \eqref{eq:G1-integral-lower}. For completeness,
+\(\sin u\leq u\) follows because the derivative of
+\(u-\sin u\) is \(1-\cos u\geq0\), and the function vanishes at zero.
+
+Now assume \(1/2\leq s\leq39/50\). Then
+\(1-s\geq11/50\). Lemma~\ref{lem:rational-bounds} yields
+\begin{align*}
+ G_1(s)
+ &\geq\frac{2\sqrt2}{3\pi}(1-s)^{3/2}\\
+ &\geq\frac{2\sqrt2}{3\pi}
+       \left(\frac{11}{50}\right)^{3/2}\\
+ &>\frac{2(7/5)}{3(22/7)}
+       \frac{11}{50}\frac7{15}\\
+ &=\frac{49}{165}\frac{77}{750}
+  =\frac{343}{11250}.
+\end{align*}
+Here the last equality follows by cancelling a factor \(11\) from
+\(3773/123750\).
+\end{proof}
+
+\section{Strict positivity of the curvature floor}
+
+\begin{theorem}
+\label{thm:F-positive}
+For every
+\[
+ \frac7{51}\leq\rho\leq\frac{39}{50},
+\]
+the function in \eqref{eq:F-definition} satisfies
+\begin{equation}
+ F(\rho)>\frac{1549}{84150}>0.
+ \label{eq:uniform-F-lower}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Because \(\rho>0\), substitution of
+\(b_\rho=2\pi\rho/(1-\rho)\) into \eqref{eq:F-definition} and division
+by \(\rho\) give the exact identity
+\begin{equation}
+ \frac{F(\rho)}{\rho}
+ =2\eta_\rho+d_\rho\rho
+ -\frac{3\pi(1+d_\rho)}{400(1-\rho)}.
+ \label{eq:F-over-rho}
+\end{equation}
+We treat the two branches in the definition of \(\eta_\rho\) separately.
+
+\medskip
+\noindent
+\textbf{First branch: \(7/51\leq\rho\leq1/2\).}
+Here \(\max\{\rho,1/2\}=1/2\), and therefore
+\begin{align}
+ \eta_\rho
+ &=G_1(1/2)
+ =\frac1\pi\left(\frac{\sqrt3}{2}
+ -\frac12\arccos\frac12\right)\notag\\
+ &=\frac{\sqrt3}{2\pi}-\frac16,
+ \label{eq:eta-low-branch}
+\end{align}
+because \(\arccos(1/2)=\pi/3\). Since \(\arcsin\) is increasing on
+\([0,1]\),
+\[
+ 0<d_\rho=\frac{2\arcsin\rho}{\pi}
+ \leq\frac{2\arcsin(1/2)}{\pi}=\frac13.
+\]
+Also \(1-\rho\geq1/2\), so \((1-\rho)^{-1}\leq2\). It follows that
+\begin{equation}
+ \frac{3\pi(1+d_\rho)}{400(1-\rho)}
+ \leq\frac{3\pi(4/3)\,2}{400}
+ =\frac\pi{50}
+ <\frac{11}{175}.
+ \label{eq:low-negative-bound}
+\end{equation}
+On the other hand, Lemma~\ref{lem:rational-bounds} gives
+\begin{equation}
+ 2\eta_\rho
+ =\frac{\sqrt3}{\pi}-\frac13
+ >\frac{5/3}{22/7}-\frac13
+ =\frac{35}{66}-\frac{22}{66}
+ =\frac{13}{66}.
+ \label{eq:low-eta-bound}
+\end{equation}
+The middle term \(d_\rho\rho\) in \eqref{eq:F-over-rho} is nonnegative.
+Combining \eqref{eq:F-over-rho}, \eqref{eq:low-negative-bound}, and
+\eqref{eq:low-eta-bound}, we obtain
+\begin{equation}
+ \frac{F(\rho)}{\rho}
+ >\frac{13}{66}-\frac{11}{175}
+ =\frac{2275-726}{11550}
+ =\frac{1549}{11550}.
+ \label{eq:low-F-over-rho}
+\end{equation}
+Since \(\rho\geq7/51\) and \(11550=7\cdot1650\), this implies
+\begin{equation}
+ F(\rho)>\frac7{51}\frac{1549}{11550}
+ =\frac{1549}{84150}.
+ \label{eq:low-uniform-F}
+\end{equation}
+
+\medskip
+\noindent
+\textbf{Second branch: \(1/2\leq\rho\leq39/50\).}
+Here \(\max\{\rho,1/2\}=\rho\), so
+\(\eta_\rho=G_1(\rho)\). Lemma~\ref{lem:G1-lower} gives
+\begin{equation}
+ 2\eta_\rho>\frac{343}{5625}.
+ \label{eq:high-eta-bound}
+\end{equation}
+Monotonicity of \(\arcsin\), together with \(\rho\geq1/2\), gives
+\begin{equation}
+ d_\rho\geq\frac13,
+ \qquad
+ d_\rho\rho\geq\frac16.
+ \label{eq:high-d-lower}
+\end{equation}
+For the required upper bound on \(d_\rho\), observe that
+\[
+ \left(\frac{39}{50}\right)^2
+ =\frac{1521}{2500}
+ <\frac{1875}{2500}=\frac34
+ =\left(\frac{\sqrt3}{2}\right)^2.
+\]
+Both sides are positive, hence \(39/50<\sqrt3/2\). Consequently
+\begin{equation}
+ d_\rho
+ \leq\frac{2\arcsin(39/50)}{\pi}
+ <\frac{2\arcsin(\sqrt3/2)}{\pi}
+ =\frac23.
+ \label{eq:high-d-upper}
+\end{equation}
+Finally, \(1-\rho\geq11/50\), so
+\((1-\rho)^{-1}\leq50/11\). From
+\eqref{eq:high-d-upper} and Lemma~\ref{lem:rational-bounds},
+\begin{align}
+ \frac{3\pi(1+d_\rho)}{400(1-\rho)}
+ &<\frac{3\pi(5/3)}{400}\frac{50}{11}
+ =\frac{5\pi}{88}\notag\\
+ &<\frac{5(22/7)}{88}
+ =\frac5{28}.
+ \label{eq:high-negative-bound}
+\end{align}
+Substitution of \eqref{eq:high-eta-bound},
+\eqref{eq:high-d-lower}, and \eqref{eq:high-negative-bound} into
+\eqref{eq:F-over-rho} yields
+\begin{align}
+ \frac{F(\rho)}{\rho}
+ &>\frac{343}{5625}+\frac16-\frac5{28}\notag\\
+ &=\frac{9604+26250-28125}{157500}\notag\\
+ &=\frac{7729}{157500}.
+ \label{eq:high-F-over-rho}
+\end{align}
+Since \(\rho\geq1/2\),
+\begin{equation}
+ F(\rho)>\frac{7729}{315000}.
+ \label{eq:high-uniform-F}
+\end{equation}
+The high-branch lower bound is stronger than the one asserted in
+\eqref{eq:uniform-F-lower}, because exact subtraction gives
+\[
+ \frac{7729}{315000}-\frac{1549}{84150}
+ =\frac{120341}{19635000}>0.
+\]
+
+The two branches cover the full interval. Their definitions agree at
+\(\rho=1/2\), because
+\[
+ G_1\!\left(\max\{1/2,1/2\}\right)=G_1(1/2).
+\]
+Consequently, \eqref{eq:low-uniform-F} and
+\eqref{eq:high-uniform-F} prove \eqref{eq:uniform-F-lower} everywhere
+on \([7/51,39/50]\).
+\end{proof}
+
+\end{document}

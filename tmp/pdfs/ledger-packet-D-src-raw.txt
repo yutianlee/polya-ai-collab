@@ -1,0 +1,696 @@
+Purely Analytic Ledger Replacement, Packet D:
+Seam Arithmetic and the Two-Sided Payments
+Exact hand-checkable exhibit
+Abstract
+This packet replaces the twenty-two executable seam predicates and the eleven moving/ﬁxed pay-
+ment predicates used in the high side through k6. Every premise is an analytic inequality already
+derived in the seam or staircase argument, and every remaining decision is displayed as an exact
+rational identity or strict rational comparison. In particular, the derivative of the seam comparison
+function is derived explicitly and is bounded by an exact proxy with a positive margin to 16/5. The
+six moving k6 payments are printed with their full rational diﬀerences, not merely their numerators.
+No program execution, ﬂoating-point value, or interval calculation is a premise.
+1 Rational constants used by both tables
+For completeness, the needed bounds for π can be checked from the alternating arctangent series, rather
+than imported from an executable Machin enclosure. Machin’s identity and the alternating remainder
+rule give
+π > 16
+
+1
+5
+−
+1
+3 53
++
+1
+5 55
+−
+1
+7 57
+
+−
+4
+239
+=: Lπ,
+π < 16
+
+1
+5
+−
+1
+3 53
++
+1
+5 55
+
+− 4
+
+1
+239
+−
+1
+3 2393
+
+=: Uπ.
+Indeed, the tangent-addition formula proves π = 16 arctan(1/5) − 4 arctan(1/239), and the displayed
+truncations have the indicated directions. Direct rational subtraction gives
+Lπ −
+333
+106
+=
+3418213
+41563593750
+> 0,
+1571
+500
+− Uπ =
+323354809
+853244937500
+> 0. (1)
+Since
+22
+7
+−
+1571
+500
+=
+3
+3500
+> 0, (2)
+we may use throughout
+π :=
+333
+106
+< π < π :=
+1571
+500
+<
+22
+7
+. (3)
+All later occurrences of a rational π bound refer to (3).
+2 The twenty-two seam rows
+2.1 Analytic input and comparison function
+We recall precisely the analytic data to which the ﬁnite arithmetic is applied. Put
+ϵ = 1 − ρ = y2
+, κ = Kϵ2
+, 0 < y ≤
+1
+√
+6
+, ρ ≥
+5
+6
+, κ ≥ 54.
+1
+For a ﬁrst plateau of length p, and the quantities m, R in the seam decomposition, set
+P = py, r = Ry, S = (p + m)y.
+The angular estimate d > 5/8 and R = p − dm imply, whenever r > 0,
+0 < r ≤ P, S ≤ S∗(P, r) :=
+13P − 8r
+5
+. (4)
+Equality in the second relation can occur when m = 0; no later step requires strictness at this comparison.
+The curvature-shelf calculation already proved in the seam argument gives the self-consistent inequality
+P2
+<
+2π2Q
+(1 − b
+q)2
+, Q = 1 +
+y2
+κ
++
+yS
+κ
+, b
+q =
+y2
+ρ
+(Q − 1). (5)
+Since the right-hand side increases with Q, deﬁne
+Q∗ = 1 +
+y2
+κ
++
+yS∗
+κ
+, q∗ = a(Q∗ − 1), a :=
+y2
+ρ
+≤
+1
+5
+, (6)
+and
+H(P, r) :=
+2π2Q∗
+(1 − q∗)2
+. (7)
+Then (4) gives Q ≤ Q∗ and b
+q ≤ q∗. Since (5) is itself strict and its right-hand side increases with Q, it
+follows that P2 < H(P, r).
+The remaining arithmetic is exactly the following table. Rows 1–5 are the ﬁve constant/shelf rows,
+rows 6–10 are the ﬁve displacement rows, rows 11–14 are the four derivative rows, rows 15–17 are the
+three endpoint rows, and rows 18–22 are the ﬁve terminal-payment rows. Thus the table reconciles
+one-for-one with all twenty-two seam predicates.
+For clarity, the radical used in rows 7–9 follows directly from the analytic shelf bound. Namely,
+p2
+<
+2πρK
+ϵ
+, P = py, K =
+κ
+y4
+imply
+
+y3P
+κρ
+2
+<
+2πy2
+κρ
+≤
+π
+135
+<
+π
+135
+.
+Together with S∗ ≤ 13P/5, this gives
+q∗ <
+1
+1620
++
+13
+5
+763
+5000
+,
+which is precisely the dependency recorded by rows 6–9.
+# quantity exact rational check role
+1 seam π bound π − Uπ = 323354809/853244937500 > 0 π < π; (1)
+2 lower
+√
+2 bound 2 − (140/99)2
+= 2/9801 > 0 140/99 <
+√
+2
+3 upper
+√
+2 bound (99/70)2
+− 2 = 1/4900 > 0
+√
+2 < 99/70
+4 y ceiling (49/120)2
+− 1/6 = 1/14400 > 0 y < 49/120
+5 shelf ceiling (13/5)2
+− 2π = 119/250 > 0
+√
+2πρ < 13/5;
+rows 1
+2
+# quantity exact rational check role
+6 ﬁrst displacement term
+(1/6)2
+54(5/6)
+=
+1
+1620
+y4
+/(κρ) ≤
+1/1620
+7 radical ceiling (763/5000)2
+−
+π
+135
+=
+8563
+675000000
+> 0 shelf radical; row
+1
+8 displacement proxy
+1
+1620
++
+13
+5
+763
+5000
+=
+804689
+2025000
+rows 6–7
+9 displacement margin
+159
+400
+−
+804689
+2025000
+=
+497
+4050000
+> 0 q∗, b
+q < q :=
+159/400
+10 outer-half localization
+5
+6
+(1 − 159/400) =
+241
+480
+=
+1
+2
++
+1
+480
+x0/K > 1/2; row
+9
+11 Q∗-derivative proxy DQ :=
+13
+5
+49/120
+54
+=
+637
+32400
+∂P Q∗ < DQ;
+row 4
+12 exact H-derivative proxy
+2π2
+DQ(1 + 159/400 + 2/5)
+(1 − 159/400)3
+=
+2260740364246
+708624500625
+rows 1, 9, 11 and
+a ≤ 1/5
+13 margin to 16/5
+16
+5
+−
+2260740364246
+708624500625
+=
+6858037754
+708624500625
+> 0 ∂P H(P, B) <
+16/5
+14 synthetic-slope margin 2
+14
+3
+−
+16
+5
+=
+92
+15
+> 0 ∂P (P2
+− H) >
+92/15
+15 endpoint Q∗ proxy Q := 1 +
+1/6
+54
++
+(49/120)(14/3)
+54
+=
+10093
+9720
+, Q − 1 =
+373
+9720
+Q∗(B, B) < Q
+16 endpoint q∗ proxy
+1
+5
+(Q − 1) =
+373
+48600
+q∗(B, B) <
+373/48600
+17 initial reserve
+
+14
+3
+2
+−
+2π2
+(10093/9720)
+(1 − 373/48600)2
+=
+2505132463469
+2616573970125
+> 0 B2
+− H(B, B) >
+0; rows 1, 15–16
+18 action-gain coeﬃcient g :=
+2(140/99)54
+3(1571/500)
+=
+280000
+17281
+Kη > g/y; rows
+1–2
+19 gain after R loss g −
+14
+3
+=
+598066
+51843
+use R < 14/(3y)
+20 interface loss proxy
+8
+15
+99
+70
+=
+132
+175
+4δ < 132/175;
+row 3
+21 dangerous-branch reserve
+598066
+51843
+120
+49
+− 1 −
+132
+175
+=
+80132733
+3024175
+> 0 R > 0; rows 4,
+19–20
+22 safe-branch reserve
+280000
+17281
+120
+49
+− 1 −
+132
+175
+=
+114694733
+3024175
+> 0 R ≤ 0; rows 4,
+18, 20
+2.2 Why the table proves the seam implications
+We spell out the two implications for which the table is more than a collection of arithmetic facts.
+First, on the segment r = B := 14/3 and P ≥ B,
+∂P Q∗ =
+13y
+5κ
+, ∂P q∗ = a ∂P Q∗.
+3
+Diﬀerentiation of (7), followed only by the identity aQ∗ = q∗ + a, gives
+∂P H = 2π2
+(∂P Q∗)
+1 − q∗ + 2aQ∗
+(1 − q∗)3
+= 2π2
+(∂P Q∗)
+1 + q∗ + 2a
+(1 − q∗)3
+. (8)
+Rows 1, 9, and 11 and a ≤ 1/5 substitute monotonically into (8); rows 12–13 then prove ∂P H < 16/5.
+Because P ≥ B, row 14 proves
+d
+dP
+P2
+− H(P, B)
+
+= 2P − ∂P H(P, B) >
+92
+15
+> 0. (9)
+Rows 15–17 prove B2 − H(B, B) > 0. Integration of (9) therefore yields P2 > H(P, B) for every P ≥ B.
+If r ≥ B, then H(P, r) ≤ H(P, B) because S∗(P, r) decreases with r and H increases with Q∗. This
+contradicts P2 < H(P, r). Hence
+r < B, R <
+14
+3y
+. (10)
+Second, the turning-point action bound gives
+Kη ≥
+2
+√
+2 κ
+3π
+1
+y
+>
+g
+y
+,
+where row 18 is the exact rational lower proxy. Also row 4 gives 1/y > 120/49, and row 20 gives
+4δ < 8
+√
+2/15 < 132/175. With M = ⌊Kη⌋ − R and the strict inequality ⌊x⌋ > x − 1, (10) and row 21
+give, when R > 0,
+M − 4δ >
+
+g −
+14
+3
+
+120
+49
+− 1 −
+132
+175
+> 0.
+When R ≤ 0, row 22 gives the still stronger estimate
+M − 4δ > g
+120
+49
+− 1 −
+132
+175
+> 0.
+Thus the seam tail has the strict action payment claimed in the main argument, including the R = 0
+and integer-Kη faces.
+Remark 1 (Notation correction in the executable label). The supplemental veriﬁer labels row 11 as an
+“exact dq/dP cap.” In the notation of the proof, the number 637/32400 is a proxy for ∂P Q∗, not for ∂P q∗.
+In fact ∂P q∗ = a∂P Q∗ and hence ∂P q∗ < 637/162000. Formula (8) and the veriﬁer both use 637/32400
+in its correct role as the Q∗-derivative proxy. The proof is therefore sound, but the old ledger label is
+inaccurate.
+Remark 2 (Source wording for the π bound). One sentence in the seam passage groups π < 1571/500
+with bounds said to be proved by positive rational squaring. Squaring proves rows 2–5, but not a bound
+for π. Equations (1)– (3) supply the required analytic alternating-series proof.
+3 The eleven k6 payment rows
+Put
+zρ =
+π
+1 − ρ
+, km(ρ)2
+= z2
+ρ + m(m + 1), p1(ρ)2
+= 4z2
+ρ + 2, (11)
+and
+W(ρ, K) =
+2
+9π
+(1 − ρ3
+)K3
+. (12)
+For a moving wall T2 = az2
+ρ + b, direct diﬀerentiation shows that W(ρ, T) increases whenever
+aπ2
+(1 + ρ) > bρ2
+(1 − ρ)2
+. (13)
+4
+Here b/a ≤ 42. Since ρ2(1 − ρ)2 ≤ 1/16 and π > 3, the left side of (13), after division by a, is greater
+than 9, whereas the right side is at most 42/16; hence every moving payment in the table is increasing.
+At a ﬁxed wall L, the function W(ρ, L) is decreasing in ρ.
+For a rational split r, deﬁne
+A(a, b; r) := a
+(333/106)2
+(1 − r)2
++ b, B(r) :=
+7
+99
+(1 − r3
+). (14)
+The bounds (3) give, on a moving wall at ρ = r,
+W(r, T) > B(r)A(a, b; r)3/2
+. (15)
+Thus, for a positive cap C, the rational inequality
+∆mov := B(r)2
+A(a, b; r)3
+− C2
+> 0 (16)
+implies the strict payment, because
+∆mov = B(r)A3/2
+− C
+
+B(r)A3/2
++ C
+
+and the second factor is positive. At a ﬁxed wall L, it is enough to check the ordinary rational reserve
+∆ﬁx := B(r)L3
+− C > 0. (17)
+The following is the complete eleven-row registry: six moving rows and ﬁve ﬁxed rows. The fractions
+in the last column are the full reduced diﬀerences in (16) or (17).
+wall/branch split r wall data cap C full exact rational diﬀerence
+k1 moving 1/8 (a, b) = (1, 2) 4 ∆mov =
+153864824754340538785
+348796101192617852928
+> 0
+k2 moving 3/10 (a, b) = (1, 6) 9 ∆mov =
+1399810848073457853053
+394237491401523000000
+> 0
+k3 moving 1/2 (a, b) = (1, 12) 16 ∆mov =
+137027505353736631
+514922437748928
+> 0
+k4 moving 1/2 (a, b) = (1, 20) 25 ∆mov =
+2507119282010251109
+13902905819221056
+> 0
+k5 moving 13/25 (a, b) = (1, 30) 36 ∆mov =
+92672404686738742434741
+709259556128000000000
+> 0
+p1 moving 1/5 (a, b) = (4, 2) 29 ∆mov =
+373255772037478993002833
+868931613701316000000
+> 0
+k2 ﬁxed 3/10 L = 51/10 9 ∆ﬁx =
+1387329
+11000000
+> 0
+k3 ﬁxed 1/2 L = 13/2 16 ∆ﬁx =
+6277
+6336
+> 0
+k4 ﬁxed 1/2 L = 15/2 25 ∆ﬁx =
+775
+704
+> 0
+k5 ﬁxed 13/25 L = 17/2 36 ∆ﬁx =
+452843
+343750
+> 0
+p1 ﬁxed 1/5 L = 77/10 29 ∆ﬁx =
+849901
+281250
+> 0
+We now verify that the table pays every branch rather than merely listing positive numbers. For
+each maximum entry wall
+max{k2, 51/10}, max{k3, 13/2}, max{k4, 15/2}, max{k5, 17/2}, max{p1, 77/10},
+partition the ratio interval at the displayed r. On ρ ≥ r, the maximum is at least the moving component
+and monotonicity together with the moving row pays C. On ρ ≤ r, the maximum is at least the ﬁxed
+component and the ﬁxed row pays C. This argument does not assume that the two components are equal
+at the rational split. For k1, the applicable ratio interval starts at ρc > 1/8 (because π < 22/7 < 7/2),
+so the ﬁrst moving row applies directly. Strict payments also cover coincident entry walls, while the wall
+itself remains assigned to the lower cap by the strict spectral convention.
+5
+4 Reconciliation with the lower-d rows
+The two rational π predicates used by the two-sided ledger are already proved in (3). The eleven k6
+predicates are exactly the eleven rows in the preceding table. The remaining thirteen wall/cap predicates
+in that ledger are the ten transparent multiplicity sums
+(1, 1 + 3, 1 + 3 + 5, 1 + 3 + 5 + 1, 1 + 3 + 5 + 7,
+1 + 3 + 5 + 7 + 1, 1 + 3 + 5 + 7 + 9 + 1,
+1 + 3 + 5 + 7 + 9 + 1 + 3,
+1 + 3 + 5 + 7 + 9 + 11 + 1 + 3,
+1 + 3 + 5 + 7 + 9 + 11 + 1 + 3 + 5)
+= (1, 4, 9, 10, 16, 17, 26, 29, 40, 45),
+(18)
+and the endpoint ordering 13/2 < 2zρ < 15/2. The latter follows without an executable check: using
+√
+337 < 19 on the lower endpoint and (3),
+2
+333
+106
+19
+18
+−
+13
+2
+=
+7
+53
+> 0,
+15
+2
+−
+
+2
+22
+7
++ 1
+
+=
+3
+14
+> 0. (19)
+Thus the cap–10 row is empty, and the three executable ordering rows collapse to (19) and its immediate
+empty-cell consequence.
+The nine lower-d payment rows need no new table here: the main paper’s lemma “Lower side through
+d” (label cm:lem-lower-d) already prints the seven ﬁxed-wall diﬀerences
+793292
+1546875
+,
+486236661
+1375000000
+,
+333100003
+99000000
+,
+329797
+88000
+,
+3590476297
+1125000000
+,
+327078887
+99000000
+,
+8805519
+1375000
+,
+and states the initial and moving payments W(ρc, L(ρc)) > 19/6, where L(ρ) = (2ρ)−1 on this branch,
+and W(1/19, 2z) > 508/27. If desired, their exact printed lower proxies close by the two one-line
+subtractions
+57421
+16854
+−
+19
+6
+=
+675
+2809
+> 0,
+173863
+8427
+−
+508
+27
+=
+137795
+75843
+> 0. (20)
+Consequently every seam and two-sided payment predicate assigned to Packet D is now visible as analytic
+reasoning plus printed integer arithmetic.
+5 Dependency count and conclusion
+The replacement count is exact:
+22
+|{z}
+seam table
++ (2 + 6 + 5 + 10 + 3)
+| {z }
+k6/lower-d wall–cap ledger
++ 9
+|{z}
+already printed lower-d payments
+.
+The two constant rows are supplied by (3); the six plus ﬁve payment rows are the eleven-row table; the
+ten bookkeeping rows are (18); the three ordering rows are (19); and the nine already printed payments
+are explicitly cross-referenced above. This removes program execution from the logical dependency of
+precisely the Packet-D portion of the exact ledger.
+6
+

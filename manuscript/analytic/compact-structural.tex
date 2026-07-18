@@ -1,0 +1,487 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[lemma]{Remark}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\strict}[1]{\left[#1\right]_{<}}
+
+\title{A Global Structural Reduction for the Spherical-Shell Proxy}
+\author{}
+\date{Global analytic structural module}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note gives the global structural component of the purely analytic
+middle-ratio argument for the spherical-shell proxy.  The weighted proxy is
+first written as an exact layer-cake sum.  Its deficit from the action
+integral is then decomposed into a radial shifted-quadrature deficit and an
+angular rounding defect.  A Stieltjes calculation retains two nonnegative
+remainders that are discarded by the optical estimate, and one of those
+remainders admits a smooth explicit lower bound.  The result is the direct
+lower bound \eqref{eq:direct-structural-gap}.  All structural identities
+hold for every $0<\rho<1$ and $K>0$; in particular they apply on the
+upward-closed
+middle-ratio region
+\(
+ \rho_c\leq\rho\leq39/50,
+ \ K\geq k_{11}(\rho)
+\).
+\end{abstract}
+
+\section{Action and the global target}
+
+For $a>0$ and $z\geq0$, put
+\begin{equation}
+ G_a(z)=
+ \begin{cases}
+ \displaystyle \frac1\pi\left(\sqrt{a^2-z^2}
+       -z\arccos\frac za\right),&0\leq z<a,\\[4pt]
+ 0,&z\geq a.
+ \end{cases}
+ \label{eq:G-def}
+\end{equation}
+Fix $0<\rho<1$ and $K>0$, and define
+\begin{equation}
+ A(z)=A_{\rho,K}(z):=G_K(z)-G_{\rho K}(z),
+ \qquad
+ T:=A(0)=\frac{(1-\rho)K}{\pi}.
+ \label{eq:A-def}
+\end{equation}
+The strict positive-integer count is
+\[
+ \strict{x}:=\#\{n\in\N:n<x\}.
+\]
+The spherical-shell proxy and its continuous payment are
+\begin{align}
+ P(\rho,K)
+ &:=\sum_{\substack{\nu=\ell+1/2<K\\ \ell\in\mathbb N_0}}
+       2\nu\,\strict{A(\nu)+\tfrac14},
+ \label{eq:proxy-def}\\
+ W(\rho,K)
+ &:=\int_0^K2zA(z)\,dz
+   =\frac{2(1-\rho^3)K^3}{9\pi}.
+ \label{eq:W-def}
+\end{align}
+The upward-closed middle-ratio region used below is
+\begin{equation}
+ \mathcal R_{\mathrm c}:=
+ \left\{(\rho,K):
+ \rho_c\leq\rho\leq\frac{39}{50},\quad
+ K\geq k_{11}(\rho)\right\},
+ \qquad
+ \rho_c:=\frac1{1+2\pi},
+ \qquad
+ k_{11}(\rho):=
+ \sqrt{\frac{\pi^2}{(1-\rho)^2}+132}.
+ \label{eq:compact-residual}
+\end{equation}
+The middle-ratio target is $P<W$ on $\mathcal R_{\mathrm c}$.
+
+For $0<z<K$, direct differentiation gives
+\begin{equation}
+ -A'(z)=\frac1\pi
+ \begin{cases}
+ \displaystyle
+ \arccos\frac zK-\arccos\frac z{\rho K},&0<z<\rho K,\\[6pt]
+ \displaystyle \arccos\frac zK,&\rho K\leq z<K.
+ \end{cases}
+ \label{eq:A-prime}
+\end{equation}
+In particular, $A$ is strictly decreasing from $T$ to $0$.  Let
+\[
+ R:[0,T]\longrightarrow[0,K]
+\]
+be its decreasing inverse, and set
+\begin{equation}
+ F(t):=R(t)^2,
+ \qquad
+ g(t):=-F'(t),
+ \qquad
+ \tau:=A(\rho K)=K G_1(\rho).
+ \label{eq:inverse-data}
+\end{equation}
+The derivative in \eqref{eq:A-prime} increases in magnitude on
+$(0,\rho K)$ and decreases in magnitude on $(\rho K,K)$.  The inverse
+curvature has the related, but slightly stronger, property
+\begin{equation}
+ g\text{ decreases on }(0,\tau),
+ \qquad
+ g\text{ increases on }(\tau,T).
+ \label{eq:g-shape}
+\end{equation}
+Indeed, on the outer branch, if $z=R(t)$ then
+\[
+ g(t)=\frac{2\pi z}{\arccos(z/K)};
+\]
+the quotient increases with $z$, while $z$ decreases with $t$.  On the
+inner branch, put
+\[
+ \delta(z):=\arccos\frac zK-\arccos\frac z{\rho K}.
+\]
+Differentiation with respect to the intermediate ratio gives
+\[
+ \frac{\delta(z)}z
+ =\int_\rho^1\frac{ds}{s\sqrt{s^2K^2-z^2}}.
+\]
+This integral increases with $z$.  Thus $z/\delta(z)$ decreases with
+$z$, and $g(t)=2\pi z/\delta(z)$ increases as $t$ increases and $z$
+decreases.
+The endpoint and interface data are
+\begin{equation}
+ F(\tau)=\rho^2K^2,
+ \qquad
+ g(\tau)=\frac{2\pi\rho K}{\arccos\rho},
+ \qquad
+ g(T)=\frac{2\pi\rho K}{1-\rho}.
+ \label{eq:g-data}
+\end{equation}
+Here and below $g(T)$ is the one-sided limit.  Near $t=0$, one has
+$g(t)=O(t^{-1/3})$, so all improper Stieltjes boundary terms used below
+vanish.
+
+\section{Exact layer cake and angular rounding}
+
+Let
+\begin{equation}
+ x_n:=n-\frac14,
+ \qquad
+ M(r):=\#\left\{\ell\in\mathbb N_0:\ell+\frac12<r\right\}
+       =\max\left\{0,\left\lceil r-\frac12\right\rceil\right\}.
+ \label{eq:shifted-grids}
+\end{equation}
+
+\begin{lemma}[Exact layer cake]
+\label{lem:layer-cake}
+For every $0<\rho<1$ and $K>0$,
+\begin{equation}
+ P(\rho,K)=\sum_{\substack{n\geq1\\x_n<T}}M(R(x_n))^2,
+ \qquad
+ W(\rho,K)=\int_0^T F(t)\,dt.
+ \label{eq:layer-cake}
+\end{equation}
+Both identities retain the strict convention at every radial and angular
+wall.
+\end{lemma}
+
+\begin{proof}
+For a fixed half-integer $\nu$,
+\[
+ \strict{A(\nu)+\frac14}
+ =\#\{n\geq1:x_n<A(\nu)\}.
+\]
+Since $A$ and $R$ are decreasing, $x_n<A(\nu)$ is equivalent to
+$\nu<R(x_n)$.  Interchanging the two finite sums and using
+\[
+ \sum_{\ell=0}^{m-1}(2\ell+1)=m^2
+\]
+proves the first identity.  At $R(x_n)=m+1/2$, the strict angular count is
+$m$, exactly as specified by $M$.
+
+For the second identity, the area formula for a decreasing inverse gives
+\[
+ \int_0^T R(t)^2\,dt
+ =\int_0^K2zA(z)\,dz.
+\]
+The last integral is \eqref{eq:W-def}.
+\end{proof}
+
+For every active $n$, abbreviate
+\begin{equation}
+ r_n:=R(x_n),
+ \qquad m_n:=M(r_n),
+ \qquad
+ \alpha_n:=r_n-m_n+\frac12.
+ \label{eq:angular-phase}
+\end{equation}
+The strict convention implies
+\begin{equation}
+ m_n-\frac12<r_n\leq m_n+\frac12,
+ \qquad 0<\alpha_n\leq1.
+ \label{eq:angular-cell}
+\end{equation}
+This includes $m_n=0$.  Define the angular rounding defect
+\begin{equation}
+ \mathcal E_{\mathrm{ang}}(\rho,K)
+ :=\sum_{x_n<T}(m_n^2-r_n^2).
+ \label{eq:E-ang-def}
+\end{equation}
+The defect of a single radial layer is exactly
+\begin{equation}
+ m_n^2-r_n^2
+ =(1-2\alpha_n)r_n
+  +\left(\alpha_n-\frac12\right)^2.
+ \label{eq:E-ang-cell}
+\end{equation}
+Unlike the one-sided estimate
+$m_n^2-r_n^2<r_n+1/4$, formula
+\eqref{eq:E-ang-cell} retains the cancellation when
+$\alpha_n>1/2$.
+
+Combining \eqref{eq:layer-cake} and \eqref{eq:E-ang-def} gives the first
+exact two-term decomposition:
+\begin{equation}
+ W-P=\mathcal D_{\mathrm{rad}}-\mathcal E_{\mathrm{ang}},
+ \qquad
+ \mathcal D_{\mathrm{rad}}
+ :=\int_0^TF(t)\,dt-\sum_{x_n<T}F(x_n).
+ \label{eq:two-term-basic}
+\end{equation}
+
+\section{The radial deficit with retained positive remainders}
+
+Define the shifted counting function and its two primitives by
+\begin{equation}
+ C(t):=\#\{n\geq1:x_n<t\},
+ \quad
+ w(t):=t-C(t),
+ \quad
+ \mathfrak W(t):=\int_0^tw(s)\,ds,
+ \quad
+ \Psi(t):=\mathfrak W(t)-\frac t4.
+ \label{eq:sawtooth-def}
+\end{equation}
+On $0\leq t\leq3/4$,
+\begin{equation}
+ \Psi(t)=\frac12\left(t-\frac14\right)^2-\frac1{32}.
+ \label{eq:first-cell}
+\end{equation}
+For $t=x_n+u$, $0\leq u\leq1$,
+\begin{equation}
+ \Psi(t)=\frac12\left(u-\frac12\right)^2-\frac1{32}.
+ \label{eq:periodic-cell}
+\end{equation}
+Consequently
+\begin{equation}
+ \mathfrak W(t)\geq0,
+ \qquad
+ -\frac1{32}\leq\Psi(t)\leq\frac3{32}
+ \quad(t\geq0).
+ \label{eq:sawtooth-bounds}
+\end{equation}
+
+\begin{proposition}[Exact retained-remainder identity]
+\label{prop:exact-deficit}
+For every $0<\rho<1$ and $K>0$, put
+\begin{align}
+ \mathcal R_{\mathrm{dec}}
+ &:=-\int_{(0,\tau)}\mathfrak W(t)\,dg(t),
+ \label{eq:R-dec}\\
+ \mathcal R_{\mathrm{osc}}
+ &:={}
+ \left(\Psi(T)+\frac1{32}\right)g(T)
+ +\int_{(\tau,T)}
+       \left(\frac3{32}-\Psi(t)\right)\,dg(t).
+ \label{eq:R-osc}
+\end{align}
+Then both remainders are nonnegative, and
+\begin{equation}
+ \begin{aligned}
+ \mathcal D_{\mathrm{rad}}
+ ={}&\frac{F(\tau)}4-\frac{g(T)}8
+ +g(\tau)\left(\frac\tau4+\frac3{32}\right)\\
+ &+\mathcal R_{\mathrm{dec}}+\mathcal R_{\mathrm{osc}}.
+ \end{aligned}
+ \label{eq:exact-radial-deficit}
+\end{equation}
+Therefore
+\begin{equation}
+ W-P=
+ \mathcal B(\rho,K)
+ +\mathcal R_{\mathrm{dec}}+\mathcal R_{\mathrm{osc}}
+ -\mathcal E_{\mathrm{ang}},
+ \label{eq:master-identity}
+\end{equation}
+where
+\begin{equation}
+ \mathcal B(\rho,K):=
+ \frac{\rho^2K^2}{4}
+ -\frac{\pi\rho K}{4(1-\rho)}
+ +\frac{2\pi\rho K}{\arccos\rho}
+  \left(\frac{KG_1(\rho)}4+\frac3{32}\right).
+ \label{eq:B-def}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Distributionally, $dw=dt-dC$.  Stieltjes integration by parts, using
+$F(T)=0$ and $w(0)=0$, gives
+\begin{equation}
+ \mathcal D_{\mathrm{rad}}=\int_0^T w(t)g(t)\,dt.
+ \label{eq:radial-stieltjes}
+\end{equation}
+The improper boundary term at $0$ vanishes because
+$\mathfrak W(t)=t^2/2$ there and $g(t)=O(t^{-1/3})$.
+
+On $(0,\tau)$, integrate with $d\mathfrak W=w\,dt$:
+\begin{equation}
+ \int_0^\tau wg
+ =\mathfrak W(\tau)g(\tau)
+  -\int_{(0,\tau)}\mathfrak W\,dg.
+ \label{eq:decreasing-part}
+\end{equation}
+On $(\tau,T)$, use $w=1/4+\Psi'$ and
+$\int_\tau^Tg=F(\tau)$:
+\begin{equation}
+ \int_\tau^T wg
+ =\frac{F(\tau)}4
+  +\Psi(T)g(T)-\Psi(\tau)g(\tau)
+  -\int_{(\tau,T)}\Psi\,dg.
+ \label{eq:increasing-part}
+\end{equation}
+Since $\mathfrak W(\tau)=\tau/4+\Psi(\tau)$, adding
+\eqref{eq:decreasing-part} and \eqref{eq:increasing-part} cancels the
+uncontrolled interface value $\Psi(\tau)$.
+
+Now add and subtract the extremal sawtooth values in
+\eqref{eq:sawtooth-bounds}.  The exact identity
+\begin{align*}
+ &\Psi(T)g(T)-\int_{(\tau,T)}\Psi\,dg\\
+ &\quad={}-\frac{g(T)}8+\frac{3g(\tau)}{32}
+ +\left(\Psi(T)+\frac1{32}\right)g(T)
+ +\int_{(\tau,T)}
+     \left(\frac3{32}-\Psi\right)dg
+\end{align*}
+gives \eqref{eq:exact-radial-deficit}.  By
+\eqref{eq:g-shape}, $-dg$ is a positive measure on $(0,\tau)$ and
+$dg$ is a positive measure on $(\tau,T)$.  Equations
+\eqref{eq:sawtooth-bounds}, \eqref{eq:R-dec}, and
+\eqref{eq:R-osc} therefore prove nonnegativity of both remainders.
+Finally substitute \eqref{eq:g-data} and $\tau=KG_1(\rho)$, and then use
+\eqref{eq:two-term-basic}.
+\end{proof}
+
+\section{A smooth lower bound for the decreasing-branch remainder}
+
+The term $\mathcal R_{\mathrm{dec}}$ is quantitatively important on the
+middle-ratio region; discarding it loses too much.  It has the following
+elementary smooth minorant.
+
+\begin{lemma}[A global primitive minorant]
+\label{lem:L-minorant}
+For $t\geq0$, define
+\begin{equation}
+ L(t):=\frac{t^2}{2(1+2t)},
+ \qquad
+ L'(t)=\frac{t(1+t)}{(1+2t)^2}.
+ \label{eq:L-def}
+\end{equation}
+Then
+\begin{equation}
+ 0\leq L(t)\leq\mathfrak W(t)
+ \qquad(t\geq0).
+ \label{eq:L-minorant}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $0\leq t\leq3/4$, one has
+$\mathfrak W(t)=t^2/2\geq L(t)$.  For $t\geq3/4$,
+\eqref{eq:sawtooth-bounds} gives
+\[
+ \mathfrak W(t)\geq\frac t4-\frac1{32}.
+\]
+Moreover,
+\[
+ \frac t4-\frac1{32}-\frac{t^2}{2(1+2t)}
+ =\frac{6t-1}{32(1+2t)}\geq0.
+\]
+This proves \eqref{eq:L-minorant}.
+\end{proof}
+
+Define
+\begin{equation}
+ \mathcal R_*(\rho,K):=-\int_{(0,\tau)}L(t)\,dg(t).
+ \label{eq:R-star-def}
+\end{equation}
+Because $-dg$ is positive on the decreasing branch,
+\begin{equation}
+ 0\leq\mathcal R_*\leq\mathcal R_{\mathrm{dec}}.
+ \label{eq:R-star-order}
+\end{equation}
+Integration by parts is legitimate at $0$ because
+$L(t)g(t)=O(t^{5/3})$.  Hence
+\begin{equation}
+ \mathcal R_*
+ =-L(\tau)g(\tau)+\int_0^\tau L'(t)g(t)\,dt.
+ \label{eq:R-star-parts}
+\end{equation}
+On the outer branch $t=A(z)$, one has
+$g(t)\,dt=-2z\,dz$.  Therefore
+\begin{equation}
+ \mathcal R_*
+ =-\frac{\tau^2}{2(1+2\tau)}g(\tau)
+ +\int_{\rho K}^{K}
+   2z\,\frac{A(z)(1+A(z))}{(1+2A(z))^2}\,dz.
+ \label{eq:R-star-action}
+\end{equation}
+This expression is smooth at every point with $0<\rho<1$ and $K>0$ and has
+no floor or wall discontinuity.
+
+\begin{corollary}[Direct retained-remainder bound]
+\label{cor:sufficient}
+For every $0<\rho<1$ and $K>0$, define
+\begin{equation}
+ \begin{aligned}
+ \mathcal H(\rho,K):={}&
+ \frac{\rho^2K^2}{4}
+ -\frac{\pi\rho K}{4(1-\rho)}\\
+ &+\frac{2\pi\rho K}{\arccos\rho}
+   \left(\frac{\tau}{4(1+2\tau)}+\frac3{32}\right)\\
+ &+\int_{\rho K}^{K}
+   2z\,\frac{A(z)(1+A(z))}{(1+2A(z))^2}\,dz,
+ \qquad \tau=KG_1(\rho).
+ \end{aligned}
+ \label{eq:H-def}
+\end{equation}
+Then
+\begin{equation}
+ W(\rho,K)-P(\rho,K)
+ \geq \mathcal H(\rho,K)-\mathcal E_{\mathrm{ang}}(\rho,K).
+ \label{eq:direct-structural-gap}
+\end{equation}
+In particular,
+$\mathcal E_{\mathrm{ang}}(\rho,K)<\mathcal H(\rho,K)$ implies
+$P(\rho,K)<W(\rho,K)$.
+\end{corollary}
+
+\begin{proof}
+By \eqref{eq:B-def}, \eqref{eq:R-star-action}, and
+\[
+ \frac\tau4-\frac{\tau^2}{2(1+2\tau)}
+ =\frac{\tau}{4(1+2\tau)},
+\]
+one has $\mathcal H=\mathcal B+\mathcal R_*$.  Now use
+\eqref{eq:master-identity},
+\eqref{eq:R-star-order}, and $\mathcal R_{\mathrm{osc}}\geq0$.
+\end{proof}
+
+\begin{remark}[Handoff]
+The companion one-layer estimate proves, whenever at least one shifted
+radial layer is active,
+\[
+ \mathcal E_{\mathrm{ang}}
+ <\frac{(1-\rho^2)K^2}{6}-\frac N2,
+ \qquad N=\#\{n\geq1:n-1/4<T\}.
+\]
+Combining this with \eqref{eq:direct-structural-gap} gives one direct smooth
+lower bound for $W-P$.  The separate double-sawtooth expansion is not needed
+for this implication and is kept outside the live proof as a research
+reformulation.
+\end{remark}
+
+\end{document}

@@ -1,0 +1,14 @@
+\contentsline {paragraph}{Reading convention.}{1}{section*.1}%
+\contentsline {paragraph}{Two review paths.}{1}{section*.2}%
+\contentsline {section}{Minimal dependency graph}{2}{section*.3}%
+\contentsline {section}{Provenance census of the exact ledger}{2}{section*.4}%
+\contentsline {section}{\numberline {I}\ignorespaces Remaining hand-visible ledger rows}{4}{section.1}%
+\contentsline {section}{\numberline {II}\ignorespaces Universal arithmetic and checkpoint inventories}{13}{section.2}%
+\contentsline {section}{\numberline {III}\ignorespaces Connected high-event registry}{22}{section.3}%
+\contentsline {section}{\numberline {IV}\ignorespaces Seam and two-sided payments}{34}{section.4}%
+\contentsline {section}{\numberline {V}\ignorespaces Upper owner and optical screens}{40}{section.5}%
+\contentsline {section}{\numberline {VI}\ignorespaces Exact owner subtraction}{45}{section.6}%
+\contentsline {section}{\numberline {VII}\ignorespaces Global retained-remainder identity}{48}{section.7}%
+\contentsline {section}{\numberline {VIII}\ignorespaces Global middle-ratio angular bound}{54}{section.8}%
+\contentsline {section}{\numberline {IX}\ignorespaces Upward-closed scalar positivity}{59}{section.9}%
+\contentsline {section}{\numberline {X}\ignorespaces Final all-frequency residual closure}{67}{section.10}%

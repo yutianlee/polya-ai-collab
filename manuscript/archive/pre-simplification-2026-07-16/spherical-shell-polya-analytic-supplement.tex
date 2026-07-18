@@ -1,0 +1,172 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=28mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+
+\definecolor{linkblue}{RGB}{24,78,119}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  urlcolor=linkblue,
+  pdftitle={Purely Analytic Supplement for the Dirichlet Polya Inequality on Three-Dimensional Spherical Shells},
+  pdfsubject={Hand-checkable analytic estimates and finite exact tables}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Spherical-shell P\'olya inequality}
+\fancyhead[R]{\small Purely analytic supplement}
+\fancyfoot[C]{\thepage}
+\setlength{\emergencystretch}{3em}
+
+\title{Purely Analytic Supplement for\\
+A Dirichlet P\'olya Inequality on\\
+Three-Dimensional Spherical Shells}
+\author{}
+\date{16 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This support volume contains the detailed hand proofs and exact-rational
+tables used to remove every executable predicate from the logical dependency
+chain of the spherical-shell theorem. Parts~I--VI replace the 611-row exact
+ledger; Parts~VII--IX replace the compact interval certificate; Parts~X--XIII
+replace the aggregate base certificate; and Part~XIV assembles the final
+residual closure. Programs and interval certificates remain available only
+as optional regression checks and are not premises of this analytic proof.
+\end{abstract}
+
+\paragraph{Reading convention.}
+The volume is modular so that each bottleneck lemma can be reviewed and
+hashed independently. Every included part is generated from its corresponding
+LaTeX source in the \texttt{manuscript/analytic} directory. The repeated title
+pages deliberately mark the trust boundary between exhibits.
+
+\section*{Global census of the exact ledger}
+\addcontentsline{toc}{section}{Global census of the exact ledger}
+
+The canonical ledger has \(553\) core rows and \(58\) supplemental rows.
+The following inclusive ranges give a one-to-one allocation; the part numbers
+refer to this volume.  The family codes denote, in order, rational-\(\pi\)
+checks (PI), thresholds (TH), strict-floor conventions (SF), zero
+specializations (Z), lower inventories (LI), checkpoint inventories (KI),
+cap payments (CP), localizations (LOC), the upper owner (U), optical screens
+(OPT), exact subtraction (SUB), and supplemental seam/payment rows (SUP).
+\begin{center}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+canonical family&row range&unique owner\\
+\midrule
+PI&PI1--PI4&II\\
+TH&TH1--TH7, TH31--TH34 / TH8--TH30&I / II\\
+SF&SF1--SF35&II\\
+Z&Z1--Z48&I\\
+LI&LI1--LI8, LI10--LI44 / LI9&I / II\\
+KI&KI1--KI117&II\\
+CP&CP1--CP43, CP56, CP60--CP77 / remaining rows&II / III\\
+LOC&LOC1--LOC47&III\\
+U&U1--U8&V\\
+OPT&OPT1--OPT14 / OPT15--OPT50&V / II\\
+SUB&SUB1--SUB68&VI\\
+SUP&SUP1--SUP57 / SUP58&IV / I\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here ``remaining rows'' in CP means CP44--CP55, CP57--CP59, and
+CP78--CP98.  Thus the six disjoint owner totals are
+\[
+ 103+278+83+57+22+68=611.
+\]
+In particular, the ten lower-\(d\) identities SUP36--SUP45 are assigned to
+Part~IV although Part~II also proves their general odd-sum identity; SUP58
+is assigned to Part~I; and OPT15--OPT50 are assigned to Part~II although
+Part~V reuses their consequences.  These are proof redundancies, not row
+overlaps.  The displayed ranges exhaust every canonical row and have empty
+pairwise intersections.
+
+\tableofcontents
+\clearpage
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{I. Remaining hand-visible ledger rows},part:mainvisible}
+]{analytic/compiled/ledger-main-visible.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{II. Universal arithmetic and checkpoint inventories},part:ab}
+]{analytic/compiled/ledger-packets-AB.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{III. Connected high-event registry},part:c}
+]{analytic/compiled/ledger-packet-C.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{IV. Seam and two-sided payments},part:d}
+]{analytic/compiled/ledger-packet-D.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{V. Upper owner and optical screens},part:e}
+]{analytic/compiled/ledger-packet-E.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{VI. Exact owner subtraction},part:f}
+]{analytic/compiled/ledger-packet-F.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{VII. Compact retained-remainder identity},part:compactstruct}
+]{analytic/compiled/compact-structural.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{VIII. Compact angular-block bound},part:compactangular}
+]{analytic/compiled/compact-angular-block.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{IX. Compact scalar positivity},part:compactscalar}
+]{analytic/compiled/compact-scalar-positive.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{X. Aggregate curvature floor},part:fpositive}
+]{analytic/compiled/F-positive.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{XI. Aggregate base derivative},part:bkpositive}
+]{analytic/compiled/BK-positive-standalone.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{XII. Aggregate base reserve},part:bpositive}
+]{analytic/compiled/B-positive.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{XIII. Analytic aggregate-tail theorem},part:aggregate}
+]{analytic/compiled/aggregate-tail-analytic.pdf}
+
+\includepdf[
+ pages=-,
+ addtotoc={1,section,1,{XIV. Final analytic residual closure},part:closure}
+]{analytic/compiled/final-analytic-closure.pdf}
+
+\end{document}

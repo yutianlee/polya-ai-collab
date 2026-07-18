@@ -24,11 +24,8 @@
   "round_selection": {
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
-    "target_obligations": [
-      "SHELL-rho-compact",
-      "COMP-certified-bessel"
-    ],
-    "round_rule": "Round 19 froze the exact D_18 mask and independently proved the two-sided staircase: rho_c<=rho<=7/8 with z_rho<=K<=k_6(rho), and 1/sqrt(337)<rho<rho_c with 1/(2rho)<K<=sqrt(337)/2. Its genuinely new set C_19 is analytically proved. The exact surviving residual is D_19={rho_*<rho<=1/sqrt(337), 1/(2rho)<K<U(rho)} union {1/sqrt(337)<rho<rho_c, sqrt(337)/2<K<U(rho)} union {rho_c<=rho<7/8, k_6(rho)<K<U(rho)}. The certified boxes B0 and B1 remain regression evidence inside the older analytic cover and are not subtracted again. The full theorem remains open. Primary Round 20 target: freeze and hash this exact three-piece D_19 before freezing any candidate, then close its lower, middle, and high components with every strict face preserved. Do not merge the two lower vertical cells without proving the empty fiber at rho=1/sqrt(337), and do not carry a cap beyond sqrt(337)/2 or k_6 without a new proof. Existing Round 20 exploratory notes are prospective only until the residual and proof-free candidate gates are complete. Secondary: after the mask is frozen, certify at most one predeclared face-connected subset proved wholly inside D_19. A1 owns the exact residual and proof-free freeze gates, A2 develops bounded incumbent workstreams, A3 reconstructs the frozen claim in strict isolation, A4 independently audits constants and exact set arithmetic plus any bounded certificate, and a fresh referee performs final adversarial review."
+    "target_obligations": [],
+    "round_rule": "Revision-1 analytic simplification (17 July 2026). The live proof has one global no-mode owner, the ratio-sharp retained-remainder theorem on 0<rho<39/50 above K=pi/(1-rho), and the optical theorem on 39/50<=rho<1. The tangent-envelope radial minorant and ratio-dependent angular slope cap replace rho_*, k_6,...,k_11, the 38-state theorem, D16,...,D20, and every finite owner row as theorem premises. The old staircase, ledgers, low-interface shifted-tail target, executable replays, and interval checks are historical or optional regression material only. Preserve strict radial and angular walls, the seam rho=39/50, and the scope tau>1/4. Human reconstruction, conventional peer review, and a current literature/novelty search remain required before external publication."
   },
   "proof_obligations": [
     {
@@ -184,8 +181,6 @@
         "CONV-strict-counting",
         "SHELL-cross-product-formula",
         "SHELL-phase-enclosures",
-        "SHELL-lattice-count",
-        "SHELL-fixed-rho-high-energy",
         "SHELL-rho-uniformity",
         "SHELL-sturm-liouville-completeness"
       ],
@@ -271,7 +266,9 @@
           "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md",
           "rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md",
           "rounds/polya-main/round_022/reviews/shell-theorem-cross-comparison.md",
-          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
+          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md",
+          "manuscript/analytic/simplified-main-proof-audit.md",
+          "manuscript/spherical-shell-polya-proof.tex"
         ],
         "negative": [],
         "inconclusive": [
@@ -329,8 +326,8 @@
         "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
       ],
       "next_action": "Use this as the proved strict Dirichlet P\u00f3lya theorem for all genuine three-dimensional spherical shells. External dissemination still requires a human line-by-line proof audit and a separate current literature search.",
-      "last_updated_round": 22,
-      "last_updated_at": "2026-07-15T14:47:52",
+      "last_updated_round": 23,
+      "last_updated_at": "2026-07-17T00:00:00",
       "artifact_hashes": {
         "packet": "8d77925828ccabd2dbe1ce066c5e07a513e991754ed8d5a0ff6aec1a41739228",
         "freeze": "6c332d8b2ab388e81a7b190e2674912227271a3425ea3e0ecac99fdaf950f99d",
@@ -557,6 +554,7 @@
         "SHELL-combined-closure",
         "CERT-round21-compact-proxy",
         "SHELL-exact-d20-closure",
+        "SHELL-analytic-retained-remainder-closure",
         "SHELL-rho-compact"
       ],
       "blockers": [],
@@ -584,7 +582,8 @@
         "SRC-annuli",
         "SRC-shell-weyl",
         "SHELL-exact-phase-rep",
-        "SHELL-phase-monotonicity"
+        "SHELL-phase-monotonicity",
+        "SHELL-annulus-phase-transfer"
       ],
       "falsification_cases": [
         "k-nu on the Airy scale",
@@ -803,10 +802,9 @@
       "track": "shell_analytic",
       "title": "Uniformity in shell ratio rho",
       "status": "proved_internal",
-      "statement_tex": "For every 0<rho<1 and K>0, the small-hole theorem on 0<rho<=rho_*, the compact-middle theorem on rho_*<rho<7/8, and the thin-shell theorem on 7/8<=rho<1 form an exact disjoint cover and prove N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3.",
+      "statement_tex": "For every 0<rho<1 and K>=0, put K_0(rho)=pi/(1-rho). The no-mode region K<=K_0, the ratio-sharp retained-remainder theorem on K>K_0 and 0<rho<39/50, and the optical theorem on K>K_0 and 39/50<=rho<1 form an exact disjoint cover and prove N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3.",
       "dependencies": [
-        "SHELL-rho-compact",
-        "SHELL-rho-zero-endpoint",
+        "SHELL-analytic-retained-remainder-closure",
         "SHELL-rho-one-endpoint"
       ],
       "implies": [
@@ -884,7 +882,9 @@
           "rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md",
           "rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md",
           "rounds/polya-main/round_022/reviews/shell-theorem-cross-comparison.md",
-          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
+          "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md",
+          "manuscript/analytic/simplified-main-proof-audit.md",
+          "manuscript/spherical-shell-polya-proof.tex"
         ],
         "negative": [
           "rounds/polya-main/round_005/exploration/thin-shell-product-analytic.md",
@@ -895,9 +895,9 @@
         ]
       },
       "owner": "A2",
-      "next_action": "Use this as the discharged all-ratio positive-frequency theorem. The K=0 check, Weyl normalization, Lambda formulation, and arbitrary-radius scaling are recorded in TARGET-shell-d3.",
-      "last_updated_round": 22,
-      "last_updated_at": "2026-07-15T14:47:52",
+      "next_action": "Use this as the discharged all-ratio theorem. The old small-hole and compact-middle owners are detached historical proofs; the Lambda formulation and arbitrary-radius scaling are recorded in TARGET-shell-d3.",
+      "last_updated_round": 25,
+      "last_updated_at": "2026-07-17T17:00:00",
       "falsification_cases": [
         "C17 is a strict compact-band compression, not compact all-frequency closure",
         "historical Round 17 checkpoint: D17 was the exact blocker after both endpoint theorems and before C18",
@@ -907,11 +907,11 @@
         "the exact nonempty D19 remains the blocker after both endpoint theorems",
         "the complete lower and optical closures do not cover the exact nonempty D20",
         "a k_11 staircase is not compact all-frequency closure below rho=39/50",
-        "D21 empty but endpoint and compact owners not assembled coherently",
-        "rho=rho_* or rho=7/8 lost at an endpoint seam",
+        "D20 closed analytically but the small-hole, compact-middle, and optical owners not assembled coherently",
+        "rho=rho_* or rho=39/50 lost at an endpoint seam",
         "the full theorem promoted before fresh theorem review",
         "rho=rho_* omitted or owned twice",
-        "rho=7/8 omitted or owned twice",
+        "rho=39/50 omitted or owned twice",
         "the compact-middle open interval replaced by a closed interval",
         "K=0 silently absorbed into a positive-frequency theorem"
       ],
@@ -921,8 +921,7 @@
       "adversarial_reviewer": "A4",
       "review_independence": "clean_room",
       "permitted_dependencies": [
-        "SHELL-rho-compact",
-        "SHELL-rho-zero-endpoint",
+        "SHELL-analytic-retained-remainder-closure",
         "SHELL-rho-one-endpoint"
       ],
       "clean_room_artifacts": [
@@ -931,7 +930,7 @@
       "adversarial_review_artifacts": [
         "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
       ],
-      "reason_for_promotion": "The two promoted endpoint theorems and the newly promoted compact-middle theorem give an exact disjoint ratio partition for every positive frequency, and the theorem-level clean-room and adversarial audits found no seam or uniformity gap."
+      "reason_for_promotion": "Revision 1 replaces the finite owner graph by the exact no-mode region, the audited ratio-sharp retained-remainder theorem below rho=39/50, and the existing optical theorem on and above rho=39/50. Independent angular, radial, scalar, and reference audits found no endpoint or seam gap."
     },
     {
       "id": "SHELL-rho-compact",
@@ -939,16 +938,14 @@
       "track": "shell_analytic",
       "title": "Uniform shell estimates on compact rho intervals",
       "status": "proved_internal",
-      "statement_tex": "For rho_*<rho<7/8 and every K>0, the complete accepted compact-middle cover through the exact empty residual D21 proves N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. Every inherited seam and strict spectral or phase wall retains its proved owner.",
+      "statement_tex": "For rho_*<rho<39/50 and every K>0, the simplified analytic owner graph together with the all-frequency retained-remainder closure proves N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. Every strict spectral or phase wall retains its proved owner.",
       "dependencies": [
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
-        "SHELL-rho-compact-analytic-envelope"
+        "SHELL-analytic-retained-remainder-closure"
       ],
-      "implies": [
-        "SHELL-rho-uniformity"
-      ],
+      "implies": [],
       "blockers": [],
       "evidence": {
         "positive": [
@@ -1060,14 +1057,14 @@
         "a historical residual substituted for exact empty D21",
         "finite compact or K=200 aggregate evidence used outside its certified scope"
       ],
-      "next_action": "Use this as the discharged positive-frequency compact-middle theorem. Preserve the exact seam owners and certificate scopes; no compact residual remains.",
-      "last_updated_round": 22,
-      "last_updated_at": "2026-07-15T14:47:52",
+      "next_action": "Use this as the discharged positive-frequency compact-middle theorem in the three-owner proof. Preserve the strict face assignments; no compact residual remains and no numerical certificate is a premise.",
+      "last_updated_round": 23,
+      "last_updated_at": "2026-07-17T00:00:00",
       "permitted_dependencies": [
         "SHELL-phase-enclosures",
         "SHELL-lattice-count",
         "SHELL-fixed-rho-high-energy",
-        "SHELL-rho-compact-analytic-envelope"
+        "SHELL-analytic-retained-remainder-closure"
       ],
       "criticality": "bottleneck",
       "lead_author": "A1",
@@ -1080,7 +1077,7 @@
       "adversarial_review_artifacts": [
         "rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md"
       ],
-      "reason_for_promotion": "The complete compact-middle cover has exact empty successor residual D21, and the isolated theorem reconstruction, assembly audit, cross-comparison, and fresh adversarial referee independently verified every inherited seam, strict wall, and finite-versus-analytic boundary."
+      "reason_for_promotion": "The accepted lower and staircase owners leave exactly D20, and the all-frequency retained-remainder theorem closes D20 by direct containment. The current simplified-proof audits verify every inherited strict wall and confirm that executable and interval artifacts are not premises."
     },
     {
       "id": "SHELL-rho-zero-endpoint",
@@ -1097,9 +1094,7 @@
         "SHELL-high-angular-shifted-tails",
         "SHELL-low-interface-small-hole"
       ],
-      "implies": [
-        "SHELL-rho-uniformity"
-      ],
+      "implies": [],
       "blockers": [],
       "evidence": {
         "positive": [
@@ -1152,9 +1147,9 @@
       "id": "SHELL-rho-one-endpoint",
       "type": "lemma",
       "track": "shell_analytic",
-      "title": "Thin-shell endpoint rho -> 1",
+      "title": "All-frequency optical owner on the outer ratio strip",
       "status": "proved_internal",
-      "statement_tex": "For every 7/8<=rho<1 and every K>=0, the strict three-dimensional shell count satisfies N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. The lower endpoint rho=7/8 is included, rho=1 is excluded as the degenerate zero-width limit, equality holds at K=0, and the proof comparison is strict for K>0.",
+      "statement_tex": "For every 39/50<=rho<1 and every K>=0, the product and complementary-action optical screens prove N_D(A_{rho,1},K^2)<=(2/(9 pi))(1-rho^3)K^3. The lower endpoint rho=39/50 is included, rho=1 is excluded as the degenerate zero-width limit, equality holds at K=0, and the comparison is strict for K>0.",
       "dependencies": [
         "CONV-strict-counting",
         "SHELL-sturm-liouville-completeness",
@@ -1162,8 +1157,7 @@
         "SHELL-annulus-phase-transfer"
       ],
       "implies": [
-        "SHELL-rho-uniformity",
-        "SHELL-combined-closure"
+        "SHELL-rho-uniformity"
       ],
       "blockers": [],
       "evidence": {
@@ -1222,9 +1216,9 @@
         "any hidden use of epsilon<=1/100, rho>=99/100, a>=125, an old bridge scale, or a Round 5, 6, or 11 conclusion",
         "the positive S1-S2 screens treated only as planning and the negative S3-S4 screens treated only as route obstructions"
       ],
-      "next_action": "Retain this theorem as the completed thin-shell owner on 7/8<=rho<1, including the rho=7/8 seam.",
-      "last_updated_round": 22,
-      "last_updated_at": "2026-07-15T14:47:52",
+      "next_action": "Use this as the completed optical owner on 39/50<=rho<1, including the rho=39/50 seam and all K>=0.",
+      "last_updated_round": 25,
+      "last_updated_at": "2026-07-17T17:00:00",
       "criticality": "bottleneck",
       "lead_author": "A1",
       "clean_room_reviewer": "A3",
@@ -1249,7 +1243,7 @@
         "rounds/polya-main/round_011/reviews/ultrathin-bridge-adversarial-referee.md",
         "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md"
       ],
-      "reason_for_promotion": "The frozen Round 16 endpoint was reconstructed through two independent complete proof routes. The low min-max product proof establishes the exact zero range, strict walls, D>(2/5)a^2, and reserve 577/2880. The complementary-action proof establishes the actual ungridded curvature split, improper Stieltjes trace, every strict proxy wall, P_A<I, and reserve 143/4096. Both pieces independently own their common face, use only the exact whitelist, and passed a fresh adversarial and post-repair audit with no unsupported implication."
+      "reason_for_promotion": "The product and complementary-action screens in the current manuscript prove the stronger outer-strip range 39/50<=rho<1 for all frequencies. The proof retains the strict zero range, radial and angular walls, curvature interface, and common optical screen face."
     },
     {
       "id": "COMP-certified-bessel",
@@ -1482,6 +1476,7 @@
         "CERT-round21-compact-proxy",
         "CERT-round21-aggregate-tail",
         "SHELL-exact-d20-closure",
+        "SHELL-analytic-retained-remainder-closure",
         "TARGET-shell-d3"
       ],
       "blockers": [],
@@ -1618,6 +1613,7 @@
       ],
       "implies": [
         "SHELL-lattice-count",
+        "SHELL-analytic-retained-remainder-closure",
         "SHELL-weighted-lattice-fractional",
         "SHELL-fixed-rho-high-energy"
       ],
@@ -1996,8 +1992,8 @@
       "type": "lemma",
       "track": "shell_analytic",
       "title": "Shifted shell tails crossing the inner interface",
-      "status": "open",
-      "statement_tex": "For every integer r>=0 with r+1/2<rho K, prove that the ordinary-floor tail of A_{rho,K}(r+j+1/2)+1/4 is at most 2 int_{r+1/2}^K A_{rho,K}(z) dz, or prove the corresponding optimized-envelope bound if the coarse statement fails.",
+      "status": "proposed",
+      "statement_tex": "Let A=G_K-G_{rho K}, mu=rho K, x_r=r+1/2<mu, and b_j=floor(A(x_r+j)+1/4), with A zero-extended after K. For every 0<rho<1, K>0, and integer r>=0, prove Delta_r:=2 int_{x_r}^K A(z) dz-b_0-2 sum_{j>=1} b_j>=0. Equivalently sum_{j>=0}b_j-b_0/2<=int_{x_r}^K A. Ordinary floor owns exact action walls, x_r=mu belongs to the proved high-interface tail lemma, and b_0/2 is the exact first-sample endpoint correction. The statement is for the exact shell action, not for arbitrary unimodal 1/2-Lipschitz actions.",
       "dependencies": [
         "SHELL-weighted-lattice-scaffold",
         "SHELL-high-angular-shifted-tails",
@@ -2008,7 +2004,12 @@
       "implies": [
         "SHELL-weighted-lattice-fractional"
       ],
-      "blockers": [],
+      "blockers": [
+        "no uniform concave-convex splice has been proved for every low-interface start",
+        "the current high-energy scalar compensation is negative in valid cases even when the exact tail margin is positive",
+        "shape-only double-sawtooth and local first-layer packing arguments have exact counterexamples",
+        "broad numerical falsification searches are diagnostic and no full clean-room or adversarial proof exists"
+      ],
       "evidence": {
         "positive": [
           "state/lemma_packets/SHELL-low-interface-fixed-rho-high-energy.md",
@@ -2021,7 +2022,9 @@
           "rounds/polya-main/round_003/reviews/weighted-lattice-clean-room.md",
           "rounds/polya-main/round_003/reviews/weighted-lattice-adversarial.md",
           "computations/SHELL-weighted-lattice-fractional-diagnostic.md",
-          "rounds\\polya-main\\round_003\\judge\\judge-003.md"
+          "rounds\\polya-main\\round_003\\judge\\judge-003.md",
+          "human/outbox/weighted-double-sawtooth-and-packing-outcome.md",
+          "rounds/polya-main/round_024/exploration/low-interface-shifted-tail-target-freeze.md"
         ]
       },
       "owner": "A2",
@@ -2034,9 +2037,11 @@
         "SHELL-weighted-lattice-scaffold",
         "SHELL-high-angular-shifted-tails",
         "SRC-annuli",
-        "SRC-FLPS-balls"
+        "SRC-FLPS-balls",
+        "SHELL-low-interface-fixed-rho-high-energy"
       ],
       "falsification_cases": [
+        "the first-sample half-weight b_0/2 is omitted or assigned the wrong endpoint convention",
         "rho K equal to a half-integer grid point",
         "tail start immediately below rho K",
         "coarse proxy on an integer wall",
@@ -2046,9 +2051,9 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "The fixed-rho high-energy part is discharged and no longer blocks the weighted proxy. The unrestricted all-K strengthening remains open; finite theorem closure belongs to certified computation and endpoint analysis.",
-      "last_updated_round": 3,
-      "last_updated_at": "2026-07-12T23:54:19"
+      "next_action": "Treat this as a detached optional strengthening only. The ratio-sharp tangent-envelope theorem has already removed every finite regional owner from the live proof, so this tail inequality is no longer a proof blocker.",
+      "last_updated_round": 24,
+      "last_updated_at": "2026-07-17T00:00:00"
     },
     {
       "id": "SHELL-thin-width-phase-zero",
@@ -2530,24 +2535,12 @@
       "track": "shell_analytic",
       "title": "Explicit analytic envelope on the remaining compact shell-ratio interval",
       "status": "proved_internal",
-      "statement_tex": "Retain the complete accepted cover through Round 20, both endpoint theorems, and the all-ratio high-frequency theorem. Round 21 adds the strict compact theorem on 7/51<=rho<=39/50 and 12<=K<=200 and the strict aggregate theorem on rho_c<=rho<=39/50 and K>=200. Exact guards put every point of D20={rho_c<=rho<39/50, k_11(rho)<K<U(rho)=K_0(rho)} in their disjoint K<=200 or K>200 subtraction owners, with K=200 compact-owned. Thus the exact residual D21 is empty. All inherited faces remain with their prior owners; the Round 21 theorem domains may overcover the residual without double subtraction. B0 and B1 remain analytically redundant regression certificates.",
+      "statement_tex": "Retain the accepted primitive owners, the lower and k_11 staircase closures, and the all-frequency optical theorem through SHELL-combined-closure. Their exact complement is D20={rho_c<=rho<39/50, k_11(rho)<K<U(rho)=K_0(rho)}. The all-frequency retained-remainder theorem proves the strict shell inequality on the closed superset rho_c<=rho<=39/50, K>=k_11(rho), so D20 is empty by direct containment, without a frequency split or a numerical certificate. The faces rho=39/50, K=k_11, and K=U retain their earlier owners. Retired seam branches, the global ledger census, and executable or interval certificates remain provenance or optional regression evidence only.",
       "dependencies": [
-        "SHELL-rho-zero-endpoint",
-        "SHELL-rho-one-endpoint",
-        "SHELL-high-angular-shifted-tails",
-        "SHELL-low-interface-small-hole",
-        "SHELL-thin-width-phase-zero",
-        "SHELL-fixed-rho-high-energy",
-        "SHELL-central-thin-seam-compression",
-        "SHELL-first-angular-bands",
-        "SHELL-next-angular-staircase",
-        "SHELL-two-sided-staircase",
         "SHELL-combined-closure",
-        "SHELL-exact-d20-closure"
+        "SHELL-analytic-retained-remainder-closure"
       ],
-      "implies": [
-        "SHELL-rho-compact"
-      ],
+      "implies": [],
       "blockers": [],
       "evidence": {
         "positive": [
@@ -2663,7 +2656,11 @@
           "rounds/polya-main/round_021/reviews/exact-d20-closure-certificates-source-exec-replacement.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md",
           "rounds/polya-main/round_021/reviews/exact-d20-closure-adversarial-referee-source-exec.md",
-          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md"
+          "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-provenance-audit.md",
+          "manuscript/analytic/final-analytic-closure.tex",
+          "manuscript/analytic/final-analytic-closure-audit.md",
+          "manuscript/analytic/simplified-main-proof-audit.md",
+          "manuscript/spherical-shell-polya-proof.tex"
         ],
         "negative": [],
         "inconclusive": [
@@ -2677,18 +2674,8 @@
       "adversarial_reviewer": "A4",
       "review_independence": "clean_room",
       "permitted_dependencies": [
-        "SHELL-rho-zero-endpoint",
-        "SHELL-rho-one-endpoint",
-        "SHELL-high-angular-shifted-tails",
-        "SHELL-low-interface-small-hole",
-        "SHELL-thin-width-phase-zero",
-        "SHELL-fixed-rho-high-energy",
-        "SHELL-central-thin-seam-compression",
-        "SHELL-first-angular-bands",
-        "SHELL-next-angular-staircase",
-        "SHELL-two-sided-staircase",
         "SHELL-combined-closure",
-        "SHELL-exact-d20-closure"
+        "SHELL-analytic-retained-remainder-closure"
       ],
       "falsification_cases": [
         "rho=rho_*",
@@ -2728,10 +2715,10 @@
         "U=K_0 on the exact remaining ratio interval because H_0 and the seam branch are ineligible",
         "the strict open frequency strip k_11<K<K_0 with both boundary faces covered by their inherited owners",
         "nonemptiness of D20 at rho=1/2 and K=30 not confused with theorem closure",
-        "D21 declared empty without both the compact and aggregate theorem domains",
-        "K=200 omitted or subtracted twice",
-        "finite K=200 boxes confused with universal aggregate propagation",
-        "any assumed ordering of U with 200",
+        "D20 declared empty without the all-frequency retained-remainder theorem",
+        "a frequency split or a K=200 face reintroduced into the live proof",
+        "finite boxes or aggregate executable checks confused with analytic premises",
+        "the direct containment D20 subset {rho_c<=rho<=39/50, K>=k_11(rho)} misstated",
         "rho=39/50, K=k_11, or K=U subtracted again",
         "empty residual confused with theorem-level promotion"
       ],
@@ -2760,10 +2747,10 @@
         "rounds/polya-main/round_016/reviews/thin-endpoint-adversarial-referee.md",
         "rounds/polya-main/round_017/reviews/analytic-compression-adversarial-referee.md"
       ],
-      "reason_for_promotion": "Round 16's endpoint and high-frequency conclusions are unchanged. All Round 17 PASS gates are satisfied, so the independently proved C17 band is added with exact old-face ownership, exact containment in D16, and exact residual subtraction; no certified box or sampled point is used to prove the analytic band.",
-      "next_action": "Retain the complete accepted compact-middle cover with D21 empty as the discharged analytic input to SHELL-rho-compact. Preserve every finite/analytic evidence boundary.",
-      "last_updated_round": 22,
-      "last_updated_at": "2026-07-15T14:47:52",
+      "reason_for_promotion": "The current main proof and the structural, angular-block, scalar-positivity, and final-closure modules prove the all-frequency retained-remainder theorem analytically. The simplified-proof audit verifies direct containment of D20 and preservation of every equality face; executable and interval artifacts are not antecedents of the live implication.",
+      "next_action": "Retain this expanded historical envelope as a provenance summary only. The live compact theorem depends directly on SHELL-analytic-retained-remainder-closure; executable and interval artifacts remain regression evidence only.",
+      "last_updated_round": 23,
+      "last_updated_at": "2026-07-17T00:00:00",
       "artifact_hashes": {
         "residual_packet": "eca93c29423a619ab13a3118653256df2ad085219c6718d195723a0a6542026e",
         "residual_freeze": "23bfee8cddd64d0d9d956b8d1a288c6263095a2a04cc42052c4ace08ca36152a",
@@ -3741,7 +3728,7 @@
         "adversarial_referee": "acea3818e562a8bc27496f1c727835f7a08e70ce60aaa28946fb8999ddf6c9cc"
       },
       "reason_for_promotion": "Every mandatory gate passed. Independent analytic reconstructions close both lower residual components, extend the strict staircase through k_11, and prove the all-frequency optical theorem from rho=39/50. The zero/source boundary is exact, the final repaired A4 bundle verifies every finite constant and face, the cross-comparison finds no discrepancy, and the fresh referee reconstructs the complete implication adversarially. Exact subtraction leaves the explicitly nonempty D20, so no theorem-level target is promoted.",
-      "next_action": "Treat D20 as the authenticated input to SHELL-exact-d20-closure. Do not reuse the Round 20 lemma outside its stated lower, staircase, and optical domains.",
+      "next_action": "Treat D20 as the exact input to the live SHELL-analytic-retained-remainder-closure. Retain SHELL-exact-d20-closure only as a historical computer-assisted alternate route, and do not reuse this lemma outside its stated lower, staircase, and optical domains.",
       "last_updated_round": 21,
       "last_updated_at": "2026-07-15T08:48:43"
     },
@@ -3850,7 +3837,7 @@
         "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md"
       ],
       "reason_for_promotion": "Every exact leaf, strict wall, interface, monotone corner, coverage invariant, input hash, source-execution gate, and precision gate passes at the frozen precision and at 384 bits. The analytic bridge was independently reconstructed and the final fresh referee found no unsupported implication.",
-      "next_action": "Retain this certificate with its exact closed rectangle and immutable digest. Use it only through SHELL-exact-d20-closure; do not broaden it into a Bessel-root or all-frequency certificate.",
+      "next_action": "Retain this certificate with its exact closed rectangle and immutable digest as historical alternate-closure and regression evidence. It may be used only through SHELL-exact-d20-closure and is not a premise of the live purely analytic theorem.",
       "last_updated_round": 21,
       "last_updated_at": "2026-07-15T08:48:43"
     },
@@ -3960,15 +3947,181 @@
         "rounds/polya-main/round_021/reviews/exact-d20-closure-source-exec-cross-comparison.md"
       ],
       "reason_for_promotion": "Every base sign, guard, consistency predicate, branch, endpoint containment, partition invariant, input hash, authenticated source-execution gate, and precision gate passes at 192 and 384 bits. The wrapper and independent reviews explicitly preserve the finite K=200 scope.",
-      "next_action": "Retain this certificate as the K=200 base face only. Use its signs through the analytic propagation in SHELL-exact-d20-closure; never cite it as a finite-box proof at K>200.",
+      "next_action": "Retain this certificate as the K=200 base face of the historical alternate closure only. Use its signs only through SHELL-exact-d20-closure; never cite it in the live analytic theorem or as a finite-box proof at K>200.",
       "last_updated_round": 21,
       "last_updated_at": "2026-07-15T08:48:43"
+    },
+    {
+      "id": "SHELL-analytic-retained-remainder-closure",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Ratio-sharp global retained-remainder closure",
+      "status": "proved_internal",
+      "statement_tex": "Put K_0(rho)=pi/(1-rho). For every 0<rho<1 and 0<=K<=K_0(rho), the strict shell count is zero. For 0<rho<39/50 and K>K_0(rho), let theta=arccos rho and N=#{n>=1:n-1/4<(1-rho)K/pi}. The ratio-sharp angular blocks give E_ang<(1-rho^2)K^2/6-N(3 pi/(8 theta)-1/4). The tangent-envelope retained radial remainder reduces to a universal ball quarter-layer B_0(K), and exact scalar convexity proves W-P>G_under(rho,K)>0. Hence N_D(A_{rho,1},K^2)<=P<W throughout the low and middle ratio range from the first possible radial frequency onward. Strict common walls are retained; no finite staircase, state theorem, numerical certificate, executable table, or interval computation is a premise.",
+      "dependencies": [
+        "SHELL-phase-enclosures",
+        "SHELL-count-floor-identity",
+        "SHELL-sturm-liouville-completeness"
+      ],
+      "implies": [
+        "SHELL-rho-uniformity",
+        "SHELL-rho-compact-analytic-envelope",
+        "SHELL-rho-compact"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "human/inbox/revision_1.md",
+          "manuscript/analytic/ratio-sharp-global-closure-body.tex",
+          "manuscript/analytic/ratio-sharp-global-closure.tex",
+          "computations/certification/verify_ratio_sharp_scalar.py",
+          "computations/tests/test_revision1_ratio_sharp_scalar.py",
+          "rounds/polya-main/round_025/reviews/revision1-independent-audit.md",
+          "manuscript/analytic/compact-structural.tex",
+          "manuscript/analytic/compact-structural-audit.md",
+          "manuscript/analytic/compact-angular-block.tex",
+          "manuscript/analytic/compact-angular-block-audit.md",
+          "manuscript/analytic/compact-scalar-positive.tex",
+          "manuscript/analytic/compact-scalar-positive-audit.md",
+          "manuscript/analytic/ledger-packet-F.tex",
+          "manuscript/analytic/final-analytic-closure.tex",
+          "manuscript/analytic/final-analytic-closure-audit.md",
+          "manuscript/analytic/integrated-main-audit.md",
+          "manuscript/analytic/simplified-main-proof-audit.md",
+          "manuscript/analytic/simplified-support-audit.md",
+          "manuscript/spherical-shell-polya-proof.tex",
+          "manuscript/spherical-shell-polya-analytic-supplement.tex",
+          "rounds/polya-main/round_023/reviews/retained-remainder-current-hash-clean-room.md",
+          "rounds/polya-main/round_023/reviews/retained-remainder-current-hash-adversarial.md",
+          "rounds/polya-main/round_024/exploration/direct-gap-simplification-freeze.md",
+          "rounds/polya-main/round_024/reviews/direct-gap-current-hash-clean-room.md",
+          "rounds/polya-main/round_024/reviews/direct-gap-current-hash-adversarial.md"
+        ],
+        "negative": [],
+        "inconclusive": []
+      },
+      "owner": "A2",
+      "next_action": "Use this node as the sole low/middle-ratio owner in the live theorem chain. Preserve the strict K=pi/(1-rho) no-mode face, the rho=39/50 optical seam, the tau>1/4 scope, and the pointwise strict angular-wall convention.",
+      "last_updated_round": 25,
+      "last_updated_at": "2026-07-17T17:00:00",
+      "criticality": "bottleneck",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-phase-enclosures",
+        "SHELL-count-floor-identity",
+        "SHELL-sturm-liouville-completeness"
+      ],
+      "falsification_cases": [
+        "the first radial layer and the terminal partial radial cell",
+        "the initial and terminal angular cells",
+        "the inner-interface turning cell",
+        "a radial sample coincident with an angular wall",
+        "rho tending to zero and rho=39/50",
+        "K=pi/(1-rho) and every finite K above it",
+        "tau=1/4 and the first active shifted layer",
+        "the tangent-envelope splice t=1/4",
+        "the ball-inverse lower bound squared before its right side is nonnegative",
+        "an executable or interval artifact used as an antecedent",
+        "a finite staircase or owner ledger retained as a theorem premise"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_025/reviews/revision1-independent-audit.md",
+        "manuscript/analytic/final-analytic-closure-audit.md",
+        "manuscript/analytic/integrated-main-audit.md",
+        "rounds/polya-main/round_023/reviews/retained-remainder-current-hash-clean-room.md",
+        "rounds/polya-main/round_024/reviews/direct-gap-current-hash-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_025/reviews/revision1-independent-audit.md",
+        "manuscript/analytic/simplified-main-proof-audit.md",
+        "manuscript/analytic/compact-angular-block-audit.md",
+        "manuscript/analytic/compact-scalar-positive-audit.md",
+        "rounds/polya-main/round_023/reviews/retained-remainder-current-hash-adversarial.md",
+        "rounds/polya-main/round_024/reviews/direct-gap-current-hash-adversarial.md"
+      ],
+      "artifact_hashes": {
+        "main_source": "e456265c7e0c30a0ea0b56f1f8b9742548d2d6c0296671bd22ec60df5ad19fd4",
+        "main_pdf": "fc5afa529e7a797e89509c40f6be05cd7bf4c61462fddf826476f3ce7ea1c63f",
+        "supplement_source": "58c3d303bfe1b17a21cd31445fd6f8b52a52384817dbfdc2fec4ba00ca3c3706",
+        "supplement_pdf": "cd6974ea1e1fa9e61a7dff21c664b175bb4ca0321240f5fdb3b22a1bd53bb294",
+        "ratio_sharp_body": "ed25b51a95a3e9217209f44695cfdc198dcccc96eb99024cc7269619b3d7fbfd",
+        "ratio_sharp_pdf": "e82c035c02cba0c40cab9d2e2c7d630acb6063fdc2015d62964d45ff8dbfab5d",
+        "revision1_audit": "c0abeafb45d50e50ac5bb9b093d7e7a3511210fe0465709dd378a5fe76e4ebbb",
+        "scalar_regression": "a74d677c39040827e50f92839dba899765bc319ec528bb44c5e999c90864f864"
+      },
+      "reason_for_promotion": "Revision 1 sharpens the angular cap to arccos(rho)/pi and replaces the rational radial primitive by the tangent envelope. Three independent audits rederived the angular, Stieltjes/ball, and scalar arguments; a second source audit found no transcription or reference error. Exact rational tests and outward-rounded intervals are retained only as regression checks."
+    },
+    {
+      "id": "SHELL-weighted-double-sawtooth-simplification",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Diagnostic double-sawtooth identity and shifted-packing obstruction",
+      "status": "diagnostic_only",
+      "statement_tex": "For the exact shell action, P-W=int_0^K (M(r)^2-r^2)(-A'(r)) dr+sum_{m+1/2<K}(2m+1) sigma(A(m+1/2)), where sigma(t)=#{n>=1:n-1/4<t}-t with sigma(n-1/4)=-3/4. A graph-following unit-cell construction rigorously packs every radial layer n>=2. Neither reformulation proves the global sign: the continuous and atomic double-sawtooth terms can each be positive, the first layer has no local packing payment, and the shape-only theorem for arbitrary unimodal 1/2-Lipschitz actions is false. This node is diagnostic and has no theorem implication; Revision 1 instead uses the ratio-sharp tangent-envelope closure.",
+      "dependencies": [
+        "CONV-strict-counting",
+        "SHELL-phase-enclosures",
+        "SHELL-count-floor-identity",
+        "SHELL-weighted-lattice-scaffold"
+      ],
+      "implies": [],
+      "blockers": [],
+      "evidence": {
+        "positive": [],
+        "negative": [
+          "human/outbox/weighted-double-sawtooth-and-packing-outcome.md"
+        ],
+        "inconclusive": [
+          "human/inbox/strategy_revised1.md",
+          "human/outbox/strategy-evaluation-and-revised-approach.md",
+          "manuscript/analytic/compact-structural.tex",
+          "manuscript/analytic/compact-angular-block.tex",
+          "human/inbox/strategy_revised2.md",
+          "human/inbox/strategy_revised3.md",
+          "state/next_round_prompts.md",
+          "rounds/polya-main/round_024/exploration/low-interface-shifted-tail-target-freeze.md"
+        ]
+      },
+      "owner": "A2",
+      "next_action": "Retain the exact identities and counterexamples as detached research diagnostics. Do not infer a theorem from the n>=2 packing or from the negative unweighted angular-cell mean.",
+      "last_updated_round": 24,
+      "last_updated_at": "2026-07-17T00:00:00",
+      "criticality": "standard",
+      "lead_author": "A2",
+      "clean_room_reviewer": "A3",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "CONV-strict-counting",
+        "SHELL-phase-enclosures",
+        "SHELL-count-floor-identity",
+        "SHELL-weighted-lattice-scaffold"
+      ],
+      "falsification_cases": [
+        "no active radial layer",
+        "exactly one active radial layer",
+        "a terminal partial radial cell",
+        "an initial or terminal partial angular cell",
+        "rho K at an angular half-integer wall",
+        "n-1/4 coincident with an angular jump",
+        "rho tending to zero or one",
+        "the inner-interface turning cell",
+        "loss of the multiplicity weight",
+        "an asymptotic remainder used without an explicit signed reserve",
+        "the proposed packing cells overlap or leave the first layer unpaid",
+        "a non-strict estimate is used where theorem strictness is required"
+      ],
+      "clean_room_artifacts": [],
+      "adversarial_review_artifacts": []
     },
     {
       "id": "SHELL-exact-d20-closure",
       "type": "lemma",
       "track": "shell_analytic",
-      "title": "Round 21 exact closure of the final compact-shell residual",
+      "title": "Historical Round 21 certificate-backed closure of the final compact-shell residual",
       "status": "proved_internal",
       "statement_tex": "Let rho_c=1/(1+2 pi), z_rho=pi/(1-rho), k_11(rho)=sqrt(z_rho^2+132), and W(rho,K)=(2/(9 pi))(1-rho^3)K^3. The strict shell inequality N_D(A_(rho,1),K^2)<W(rho,K) holds on the closed compact rectangle 7/51<=rho<=39/50, 12<=K<=200, and on rho_c<=rho<=39/50, K>=200. The exact guards 7/51<rho_c and k_11(rho)>12 for rho_c<=rho<1 imply that D20={rho_c<=rho<39/50, k_11(rho)<K<U(rho)=K_0(rho)} is the disjoint union of its K<=200 and K>200 parts, with K=200 assigned to the compact owner. Hence the exact successor residual D21 is empty. The faces rho=39/50, K=k_11, and K=U remain outside D20 and are not subtracted again.",
       "dependencies": [
@@ -3982,9 +4135,7 @@
         "CERT-round21-compact-proxy",
         "CERT-round21-aggregate-tail"
       ],
-      "implies": [
-        "SHELL-rho-compact-analytic-envelope"
-      ],
+      "implies": [],
       "blockers": [],
       "evidence": {
         "positive": [
@@ -4108,9 +4259,9 @@
         "preserved_prior_referee_provenance": "48b259a94a0fd91a37ac2b606a22e1e4ca593f45bc2ef4392b7dd61dd359a5ab"
       },
       "reason_for_promotion": "The A3 proof and domain addendum reconstruct both spectral bridges, the universal aggregate propagation, and the exact scoped guard; the interval certificates discharge every finite premise; the authenticated-source lifecycle closes both the exact-constant and cached-bytecode gates; exact set arithmetic gives a disjoint exhaustive subtraction; and the final fresh referee plus provenance audit find no unsupported implication. D21 is empty, but theorem-level obligations remain deliberately open.",
-      "next_action": "Retain the exact D20 split and empty D21 conclusion with K=200 compact-owned. Do not broaden either finite certificate or reuse superseded evidence.",
-      "last_updated_round": 22,
-      "last_updated_at": "2026-07-15T14:47:52"
+      "next_action": "Retain this as a historical computer-assisted alternate closure and regression route only. The live theorem chain uses SHELL-analytic-retained-remainder-closure; do not cite either finite certificate as a premise of the purely analytic release.",
+      "last_updated_round": 23,
+      "last_updated_at": "2026-07-17T00:00:00"
     },
     {
       "id": "SHELL-spherical-shell-nontiling",

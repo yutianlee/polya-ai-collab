@@ -2,158 +2,90 @@
 
 Run: `polya-main`
 
-Current phase: completed internal spherical-shell program; pre-publication
-reconstruction, manuscript preparation, and literature review.
+Current phase: internally completed spherical-shell theorem; human
+reconstruction, conventional review, and literature comparison.
 
 ## Authority
 
-The authoritative graph is `state/proof_obligations.yml`, with 61 obligations
-and SHA-256
-`b17b173ef58b24548584a7124d1fb2f087a3d8bc90e2e6445f28903f820dfa29`.
-Its Round 22 State Patch has already been applied exactly once. Current
-obligation records override the preserved historical `round_selection` text.
+The authoritative graph is `state/proof_obligations.yml`, with 63 unique
+obligations, no selected proof-changing target, and frozen SHA-256
+`c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65`.
 
-The final application chain is:
+The Round 22 State Patch is historical and must not be replayed. The current
+top-level `round_selection`, the Round 25 proof artifacts, and the Revision 2
+referee repairs control the live proof.
 
-1. source-final judge:
-   `rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md`,
-   SHA-256 `8bf97553a3c5bbab3de741a5c8752dc29bd5b9d39ce8289079e744b80b0721a2`;
-2. independent pre-application audit, **PASS**:
-   `rounds/polya-main/round_022/reviews/state-patch-final-audit-source-utf8-final.md`,
-   SHA-256 `3d0952f7a0c3aac820427f90249e9f8d5ece5d6f20e1d0bdcc2e9af11f5adc69`;
-3. independent post-application audit, **PASS**:
-   `rounds/polya-main/round_022/reviews/state-patch-application-audit-source-utf8-final.md`,
-   SHA-256 `79a46f1e6398cb5887a98dc56142470a3b656b4153f969eec8db07df7604df58`.
+## Exact claim
 
-Do not reapply the patch.
+For every genuine three-dimensional spherical shell
+\(A_{r,R}=\{x:r<|x|<R\}\), \(0<r<R\), and \(\Lambda\geq0\), the internal
+theorem proves
 
-## Exact completed claim
-
-For
-
-$$
-A_{r,R}=\{x\in\mathbb R^3:r<|x|<R\},\qquad 0<r<R,
-$$
-
-with strict counting
-
-$$
-N_D(\Omega,\Lambda)=\#\{j:\lambda_j^D(\Omega)<\Lambda\},
-$$
-
-the internal theorem proves, for every $\Lambda\ge0$,
-
-$$
+\[
 N_D(A_{r,R},\Lambda)
-\le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
-=L_3|A_{r,R}|\Lambda^{3/2},
+\leq L_3|A_{r,R}|\Lambda^{3/2},
 \qquad L_3=\frac1{6\pi^2}.
-$$
+\]
 
-The separately reviewed geometry theorem proves that every shell in exactly
-the same $0<r<R$ class fails to tile $\mathbb R^3$ by congruent rigid-motion
-copies with pairwise-disjoint interiors and exact or almost-everywhere
-coverage. The closed-copy formulation follows after removing the countable
-null union of boundaries.
+It uses strict counting internally. This is not a result for general domains
+and carries no novelty, priority, or publication claim.
 
-The graph therefore records `SHELL-spherical-shell-nontiling`,
-`SHELL-rho-compact`, `SHELL-rho-uniformity`, `TARGET-shell-d3`, and
-`POLYA-program-target` as `proved_internal` with empty blockers. This is an
-internal result for genuine three-dimensional spherical shells only. It is
-not the general Pólya conjecture and carries no literature-novelty, priority,
-first-proof, or publication-readiness claim.
+## Minimal reading order
 
-## Minimal canonical reading order
+1. `human/inbox/revision_2.md` and `human/inbox/revision_2_2.md` for the
+   line-by-line referee recommendations and verification-boundary audit.
+2. `human/inbox/revision_1.md` for the two simplifying estimates.
+3. `rounds/polya-main/round_025/reviews/revision1-independent-audit.md` for
+   corrections and independent checks.
+4. `manuscript/spherical-shell-polya-proof.tex` for the assembled proof.
+5. `manuscript/analytic/ratio-sharp-global-closure-body.tex` for every detail
+   of the new low/middle-ratio theorem.
+6. `manuscript/spherical-shell-polya-analytic-supplement.tex` for the compiled
+   support-volume wrapper.
+7. `output/submission/spherical-shell-polya-revision2/` for the flattened,
+   self-contained review handoff.
+8. `state/proof_obligations.yml` for authoritative dependency metadata.
 
-1. Applied authority: `state/proof_obligations.yml`.
-2. Spectral statement:
-   `state/lemma_packets/TARGET-shell-d3-round22-theorem.md`, SHA-256
-   `8d77925828ccabd2dbe1ce066c5e07a513e991754ed8d5a0ff6aec1a41739228`.
-3. Spectral reconstruction and adversarial review:
-   `rounds/polya-main/round_022/reviews/shell-theorem-clean-room.md`,
-   `rounds/polya-main/round_022/reviews/shell-theorem-assembly-audit.md`, and
-   `rounds/polya-main/round_022/reviews/shell-theorem-adversarial-referee.md`.
-4. Geometry statement:
-   `state/lemma_packets/SHELL-spherical-shell-nontiling-round22.md`, SHA-256
-   `d8d0a9f59d132127033b338db95549d8e52b0252a832946670addab92baf4c8f`.
-5. Geometry reconstruction and adversarial review:
-   `rounds/polya-main/round_021/reviews/spherical-shell-nontiling-clean-room.md`,
-   its `spherical-shell-nontiling-clean-room-addendum.md`, and
-   `rounds/polya-main/round_022/reviews/spherical-shell-nontiling-adversarial-referee.md`.
-6. Same-class conjunction and scope:
-   `rounds/polya-main/round_022/reviews/program-target-scope-audit-replacement.md`.
-7. Source-final judge and the two PASS audits in the authority section.
+## Live proof spine
 
-Read older artifacts only when reconstructing a cited premise or its failure
-chronology. They do not supersede this order.
+The phase enclosure gives \(N_D\leq P\), and the exact layer cake compares
+\(P\) with the Weyl action \(W\). The disjoint parameter cover is:
 
-## Proof and certificate boundary
+- \(K\leq\pi/(1-\rho)\): no mode;
+- \(K>\pi/(1-\rho)\), \(0<\rho<39/50\): ratio-sharp angular payment,
+  tangent-envelope radial reserve, ball quarter-layer, and scalar convexity;
+- \(K>\pi/(1-\rho)\), \(39/50\leq\rho<1\): optical theorem.
 
-The unit-shell theorem includes $\Lambda=0$, strict phase/eigenvalue walls,
-all ratio and frequency seams, the exact empty successor residual
-$\mathcal D_{21}=\varnothing$, Weyl normalization, and
+The first frequency face is no-mode-owned and \(\rho=39/50\) is
+optical-owned. Dilation gives all \(A_{r,R}\).
 
-$$
-N_D(A_{r,R},\Lambda)=N_D(A_{r/R,1},R^2\Lambda).
-$$
+The former small-hole split, finite staircases, 38-state theorem, residual
+sets, finite ledgers, and certificates are historical or optional regression
+material only.
 
-The computational scope is deliberately narrower than the theorem:
+## Release identification
 
-- `CERT-round21-compact-proxy` is `certified` only on
-  $[7/51,39/50]\times[12,200]$, with 10,580 exact rational leaves;
-- `CERT-round21-aggregate-tail` is `certified` only for 1,286 base boxes on
-  $7/51\le\rho\le39/50$ at the single frequency $K=200$ and makes no proof
-  decision for $K>200$; analytic curvature and integration prove the tail on
-  $\rho_c\le\rho\le39/50$, $K\ge200$; and
-- `COMP-certified-bessel` remains `diagnostic_only`, detached from the
-  theorem path.
+| Artifact | TeX SHA-256 | PDF SHA-256 |
+|---|---|---|
+| Main paper | `e456265c7e0c30a0ea0b56f1f8b9742548d2d6c0296671bd22ec60df5ad19fd4` | `fc5afa529e7a797e89509c40f6be05cd7bf4c61462fddf826476f3ce7ea1c63f` |
+| Analytic supplement | `58c3d303bfe1b17a21cd31445fd6f8b52a52384817dbfdc2fec4ba00ca3c3706` | `cd6974ea1e1fa9e61a7dff21c664b175bb4ca0321240f5fdb3b22a1bd53bb294` |
 
-Tests, displayed decimals, and agent agreement are not substitutes for the
-accepted analytic bridges.
+The main paper is 23 pages and the supplement is 9 pages. The full component
+manifest is `manuscript/analytic/MANIFEST.md`.
 
-## Negative chronology to preserve
+## Verification boundary
 
-Two failed Round 22 gates remain negative evidence only:
+The Revision 2 release passed independent angular, radial/ball, scalar,
+source-reference, packaging, and exact-fraction audits. Exact-rational and
+outward-rounded interval checks are regression checks only, not proof premises.
 
-1. the first combined program-scope cycle described the hash-matching
-   geometry referee as 299 lines although the authenticated file has 300;
-   the associated first judge was never applied; and
-2. a subsequent replacement judge changed four intended `U+00F3` characters
-   in “Pólya” to `U+8D38`; its audit failed and that judge was never applied.
-
-The source-final judge repaired both provenance issues. Only it and the PASS
-pre- and post-application audits authorize graph hash `b17b173e…`.
-
-## What remains
-
-The remaining work is pre-publication quality control, not an open theorem
-dependency:
-
-- a human line-by-line reconstruction of every bottleneck lemma;
-- conversion of the accepted evidence into a coherent manuscript followed
-  by an independent manuscript-level referee; and
-- a separate current literature search and human comparison before any
-  novelty or priority language is considered.
-
-If this work finds a concrete mathematical error, freeze the exact disputed
-claim and evidence before proposing a new audited graph patch. Otherwise, do
-not reopen or downgrade the completed shell nodes merely because publication
-work is unfinished.
-
-## Independent optional tracks
-
-`ELLIPSE-near-circular` and `CERT-certificate-family` remain open and may run
-in parallel. They are neither premises nor blockers of the shell theorem.
-Their progress must not alter `TARGET-shell-d3` or `POLYA-program-target`.
-Use `COMP-certified-bessel` only for diagnostics or regression checking.
+Before external publication, require a human line-by-line reconstruction,
+conventional referee review, and a current literature/novelty search.
 
 ## Do-not-claim rules
 
-- Do not call this a proof of the general Pólya conjecture.
-- Do not claim literature novelty, priority, firstness, or readiness for
-  publication from internal graph status.
-- Do not broaden either Round 21 certificate to an all-frequency numerical
-  proof.
-- Do not omit strict counting, $\Lambda=0$, or arbitrary-radius scaling.
-- Do not promote diagnostic or optional-track evidence into the shell path.
-- Do not reapply the Round 22 State Patch.
+- Do not call this a proof for general domains.
+- Do not claim novelty, priority, firstness, or publication acceptance.
+- Do not reintroduce finite or numerical artifacts as premises of the analytic
+  theorem.
+- Do not omit strict walls, \(\Lambda=0\), or arbitrary-radius scaling.
