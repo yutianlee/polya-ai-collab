@@ -8,7 +8,30 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-GRAPH_SHA256 = "c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65"
+FROZEN_GRAPH_SHA256 = (
+    "c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65"
+)
+FROZEN_OBLIGATION_COUNT = 63
+FROZEN_ROUND_SELECTION = {
+    "primary_track": "shell_analytic",
+    "secondary_track": "certified_computation",
+    "target_obligations": [],
+    "round_rule": (
+        "Revision-1 analytic simplification (17 July 2026). The live proof "
+        "has one global no-mode owner, the ratio-sharp retained-remainder "
+        "theorem on 0<rho<39/50 above K=pi/(1-rho), and the optical theorem "
+        "on 39/50<=rho<1. The tangent-envelope radial minorant and "
+        "ratio-dependent angular slope cap replace rho_*, k_6,...,k_11, "
+        "the 38-state theorem, D16,...,D20, and every finite owner row as "
+        "theorem premises. The old staircase, ledgers, low-interface "
+        "shifted-tail target, executable replays, and interval checks are "
+        "historical or optional regression material only. Preserve strict "
+        "radial and angular walls, the seam rho=39/50, and the scope "
+        "tau>1/4. Human reconstruction, conventional peer review, and a "
+        "current literature/novelty search remain required before external "
+        "publication."
+    ),
+}
 APPLICATION_AUDIT_SHA256 = (
     "c81fdc03124c3bd6c2b818b93810bd64b184b06735fd8a5cd72d59f0e0e158ef"
 )
@@ -26,17 +49,50 @@ def _graph() -> dict[str, object]:
     return json.loads((ROOT / "state/proof_obligations.yml").read_text("utf-8"))
 
 
+def _is_general_d_addition(obligation_id: str) -> bool:
+    return obligation_id.startswith(("SHELL-general-d-", "COMP-general-d-")) or (
+        obligation_id == "TARGET-shell-general-d"
+    )
+
+
+def _frozen_revision1_graph() -> dict[str, object]:
+    snapshot = dict(_graph())
+    snapshot["round_selection"] = FROZEN_ROUND_SELECTION
+    snapshot["proof_obligations"] = [
+        item
+        for item in snapshot["proof_obligations"]
+        if not _is_general_d_addition(item["id"])
+    ]
+    snapshot["rejected_claims"] = [
+        item
+        for item in snapshot["rejected_claims"]
+        if not item["id"].startswith("general-d-")
+    ]
+    return snapshot
+
+
+def _frozen_revision1_sha256() -> str:
+    frozen = json.dumps(
+        _frozen_revision1_graph(), indent=2, ensure_ascii=True
+    ).encode("utf-8") + b"\n"
+    return hashlib.sha256(frozen).hexdigest()
+
+
 def _obligations_by_id() -> dict[str, dict[str, object]]:
     graph = _graph()
     return {item["id"]: item for item in graph["proof_obligations"]}
 
 
 def test_round21_nodes_survive_in_authenticated_revision1_graph() -> None:
-    path = ROOT / "state/proof_obligations.yml"
-    assert _sha256(path) == GRAPH_SHA256
-    obligations = _graph()["proof_obligations"]
-    assert len(obligations) == 63
-    assert len({item["id"] for item in obligations}) == 63
+    assert _frozen_revision1_sha256() == FROZEN_GRAPH_SHA256
+    obligations = _frozen_revision1_graph()["proof_obligations"]
+    assert len(obligations) == FROZEN_OBLIGATION_COUNT
+    assert len({item["id"] for item in obligations}) == FROZEN_OBLIGATION_COUNT
+
+    live = _graph()
+    selected = live["round_selection"]["target_obligations"]
+    assert selected
+    assert all(_is_general_d_addition(item) for item in selected)
 
 
 def test_round21_created_statuses_and_empty_residual_are_exact() -> None:

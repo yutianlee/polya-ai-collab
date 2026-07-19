@@ -16,7 +16,31 @@ from math_collab.proof_obligations import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-GRAPH_SHA256 = "c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65"
+FROZEN_GRAPH_SHA256 = (
+    "c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65"
+)
+FROZEN_GRAPH_SIZE = 267_331
+FROZEN_OBLIGATION_COUNT = 63
+FROZEN_ROUND_SELECTION = {
+    "primary_track": "shell_analytic",
+    "secondary_track": "certified_computation",
+    "target_obligations": [],
+    "round_rule": (
+        "Revision-1 analytic simplification (17 July 2026). The live proof "
+        "has one global no-mode owner, the ratio-sharp retained-remainder "
+        "theorem on 0<rho<39/50 above K=pi/(1-rho), and the optical theorem "
+        "on 39/50<=rho<1. The tangent-envelope radial minorant and "
+        "ratio-dependent angular slope cap replace rho_*, k_6,...,k_11, "
+        "the 38-state theorem, D16,...,D20, and every finite owner row as "
+        "theorem premises. The old staircase, ledgers, low-interface "
+        "shifted-tail target, executable replays, and interval checks are "
+        "historical or optional regression material only. Preserve strict "
+        "radial and angular walls, the seam rho=39/50, and the scope "
+        "tau>1/4. Human reconstruction, conventional peer review, and a "
+        "current literature/novelty search remain required before external "
+        "publication."
+    ),
+}
 FINAL_JUDGE = "rounds/polya-main/round_022/judge/judge-022-source-utf8-final.md"
 FINAL_JUDGE_SHA256 = "8bf97553a3c5bbab3de741a5c8752dc29bd5b9d39ce8289079e744b80b0721a2"
 PREAPPLICATION_AUDIT = (
@@ -98,6 +122,29 @@ def _graph() -> dict[str, object]:
     return json.loads((ROOT / "state/proof_obligations.yml").read_text("utf-8"))
 
 
+def _is_general_d_addition(obligation_id: str) -> bool:
+    return obligation_id.startswith(("SHELL-general-d-", "COMP-general-d-")) or (
+        obligation_id == "TARGET-shell-general-d"
+    )
+
+
+def _frozen_revision1_graph(graph: dict[str, object] | None = None) -> dict[str, object]:
+    """Project the additive live graph onto the authenticated d=3 snapshot."""
+    snapshot = dict(_graph() if graph is None else graph)
+    snapshot["round_selection"] = FROZEN_ROUND_SELECTION
+    snapshot["proof_obligations"] = [
+        item
+        for item in snapshot["proof_obligations"]
+        if not _is_general_d_addition(item["id"])
+    ]
+    snapshot["rejected_claims"] = [
+        item
+        for item in snapshot["rejected_claims"]
+        if not item["id"].startswith("general-d-")
+    ]
+    return snapshot
+
+
 def _by_id() -> dict[str, dict[str, object]]:
     return {item["id"]: item for item in _graph()["proof_obligations"]}
 
@@ -138,21 +185,30 @@ def _assert_acyclic(
         visit(obligation_id)
 
 
-def test_final_graph_identity_and_promoted_boundary_are_exact() -> None:
+def test_frozen_d3_graph_identity_and_promoted_boundary_are_exact() -> None:
     graph_path = ROOT / "state/proof_obligations.yml"
-    assert _sha256(graph_path) == GRAPH_SHA256
     graph_bytes = graph_path.read_bytes()
     assert b"\r" not in graph_bytes
     assert graph_bytes.endswith(b"\n")
     graph = _graph()
     assert dump_graph(graph).encode("utf-8") == graph_bytes
-    obligations = graph["proof_obligations"]
-    assert len(obligations) == 63
-    assert len({item["id"] for item in obligations}) == 63
-    assert graph["round_selection"]["target_obligations"] == []
-    assert "Revision-1 analytic simplification" in graph["round_selection"][
+    frozen = _frozen_revision1_graph(graph)
+    frozen_bytes = dump_graph(frozen).encode("utf-8")
+    assert hashlib.sha256(frozen_bytes).hexdigest() == FROZEN_GRAPH_SHA256
+    assert len(frozen_bytes) == FROZEN_GRAPH_SIZE
+    obligations = frozen["proof_obligations"]
+    assert len(obligations) == FROZEN_OBLIGATION_COUNT
+    assert len({item["id"] for item in obligations}) == FROZEN_OBLIGATION_COUNT
+    assert "Revision-1 analytic simplification" in frozen["round_selection"][
         "round_rule"
     ]
+
+    live_ids = {item["id"] for item in graph["proof_obligations"]}
+    assert len(live_ids) == len(graph["proof_obligations"])
+    selected = graph["round_selection"]["target_obligations"]
+    assert selected
+    assert set(selected) <= live_ids
+    assert all(_is_general_d_addition(item) for item in selected)
 
     by_id = _by_id()
     for obligation_id in (
@@ -533,13 +589,14 @@ def test_round22_artifact_bytes_and_graph_hash_fields_are_immutable() -> None:
 
 
 def test_graph_unicode_is_clean_and_polya_spelling_survives_decoding() -> None:
-    graph_bytes = (ROOT / "state/proof_obligations.yml").read_bytes()
+    frozen = _frozen_revision1_graph()
+    graph_bytes = dump_graph(frozen).encode("utf-8")
     raw_text = graph_bytes.decode("utf-8", errors="strict")
     assert "\ufffd" not in raw_text
     assert "\u8d38" not in raw_text
     assert graph_bytes.count(b"\\u00f3") == 10
     assert "\u00f3" not in raw_text
-    canonical = json.dumps(_graph(), ensure_ascii=False, sort_keys=True)
+    canonical = json.dumps(frozen, ensure_ascii=False, sort_keys=True)
     assert canonical.count("\u00f3") == 10
     assert "\u8d38" not in canonical
     assert "\ufffd" not in canonical
@@ -566,9 +623,9 @@ def test_graph_unicode_is_clean_and_polya_spelling_survives_decoding() -> None:
     ) == (0, 4, 1, 0)
 
 
-def test_reading_packet_generation_uses_live_completed_state() -> None:
+def test_reading_packet_generation_replays_frozen_completed_state() -> None:
     packet = generate_reading_packet(
-        _graph(),
+        _frozen_revision1_graph(),
         run_id="round22-final-regression",
         round_index=22,
         patch_summary="Final graph already applied exactly once.",
@@ -588,21 +645,20 @@ def test_reading_packet_generation_uses_live_completed_state() -> None:
 
 
 def test_derived_state_records_the_final_internal_scope() -> None:
-    hash_paths = (
+    handoff_paths = (
         "state/current_state.md",
         "state/gap_register.md",
         "state/next_round_prompts.md",
         "manifests/reading_packet.md",
     )
-    for relative_path in hash_paths:
+    for relative_path in handoff_paths:
         text = (ROOT / relative_path).read_text("utf-8")
-        assert GRAPH_SHA256 in text
         assert "\u8d38" not in text
         assert "\ufffd" not in text
 
     current = (ROOT / "state/current_state.md").read_text("utf-8")
     assert "## Revision 2 reviewed proof" in current
-    assert "`round_selection.target_obligations` is empty" in current
+    assert "completed three-dimensional chain is unchanged" in current
     assert "SHELL-analytic-retained-remainder-closure" in current
     assert "not a proof of" in current
     assert "the general P" in current
@@ -612,13 +668,13 @@ def test_derived_state_records_the_final_internal_scope() -> None:
     assert "The following are not live gaps" in gaps
 
     prompts = (ROOT / "state/next_round_prompts.md").read_text("utf-8")
-    assert "no selected proof-changing target" in prompts
+    assert "completed (d=3)" in prompts
     assert "Reconstruct the ratio-sharp global closure" in prompts
     assert "Do not rely on numerical" in prompts
     assert "sampling as proof" in prompts
 
     packet = (ROOT / "manifests/reading_packet.md").read_text("utf-8")
-    assert "no selected proof-changing target" in packet
+    assert "### Completed d=3 review packet" in packet
     assert "ratio-sharp angular payment" in packet
 
     lemma_bank = (ROOT / "state/lemma_bank.md").read_text("utf-8")
@@ -632,6 +688,6 @@ def test_derived_state_records_the_final_internal_scope() -> None:
     assert "No finite staircase" in proof
 
     report = (ROOT / "state/last_validation_report.md").read_text("utf-8")
-    assert "Revision-1" in report
+    assert "Revision 2 referee repair and release freeze" in report
     assert "\\mathcal D_{21}" in report
-    assert GRAPH_SHA256 in report
+    assert FROZEN_GRAPH_SHA256 in report

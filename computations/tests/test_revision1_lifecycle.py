@@ -9,8 +9,31 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 GRAPH = ROOT / "state/proof_obligations.yml"
-GRAPH_SHA256 = "c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65"
-GRAPH_SIZE = 267_331
+FROZEN_GRAPH_SHA256 = (
+    "c11958f81da30cadb08c46421b60769fec3a40c7345aa13f9c22a9f86069af65"
+)
+FROZEN_GRAPH_SIZE = 267_331
+FROZEN_OBLIGATION_COUNT = 63
+FROZEN_ROUND_SELECTION = {
+    "primary_track": "shell_analytic",
+    "secondary_track": "certified_computation",
+    "target_obligations": [],
+    "round_rule": (
+        "Revision-1 analytic simplification (17 July 2026). The live proof "
+        "has one global no-mode owner, the ratio-sharp retained-remainder "
+        "theorem on 0<rho<39/50 above K=pi/(1-rho), and the optical theorem "
+        "on 39/50<=rho<1. The tangent-envelope radial minorant and "
+        "ratio-dependent angular slope cap replace rho_*, k_6,...,k_11, "
+        "the 38-state theorem, D16,...,D20, and every finite owner row as "
+        "theorem premises. The old staircase, ledgers, low-interface "
+        "shifted-tail target, executable replays, and interval checks are "
+        "historical or optional regression material only. Preserve strict "
+        "radial and angular walls, the seam rho=39/50, and the scope "
+        "tau>1/4. Human reconstruction, conventional peer review, and a "
+        "current literature/novelty search remain required before external "
+        "publication."
+    ),
+}
 LIVE_CLOSURE = "SHELL-analytic-retained-remainder-closure"
 
 EXPECTED_CLOSURE = {
@@ -59,6 +82,35 @@ def _graph() -> dict[str, object]:
     return json.loads(GRAPH.read_text("utf-8"))
 
 
+def _is_general_d_addition(obligation_id: str) -> bool:
+    return obligation_id.startswith(("SHELL-general-d-", "COMP-general-d-")) or (
+        obligation_id == "TARGET-shell-general-d"
+    )
+
+
+def _frozen_revision1_graph() -> dict[str, object]:
+    """Reconstruct the authenticated 63-node snapshot from the additive graph."""
+    snapshot = dict(_graph())
+    snapshot["round_selection"] = FROZEN_ROUND_SELECTION
+    snapshot["proof_obligations"] = [
+        item
+        for item in snapshot["proof_obligations"]
+        if not _is_general_d_addition(item["id"])
+    ]
+    snapshot["rejected_claims"] = [
+        item
+        for item in snapshot["rejected_claims"]
+        if not item["id"].startswith("general-d-")
+    ]
+    return snapshot
+
+
+def _frozen_revision1_bytes() -> bytes:
+    return (
+        json.dumps(_frozen_revision1_graph(), indent=2, ensure_ascii=True) + "\n"
+    ).encode("utf-8")
+
+
 def _by_id() -> dict[str, dict[str, object]]:
     return {item["id"]: item for item in _graph()["proof_obligations"]}
 
@@ -98,14 +150,22 @@ def _assert_acyclic(
         visit(node)
 
 
-def test_graph_identity_and_revision1_selection_are_frozen() -> None:
-    assert _sha256(GRAPH) == GRAPH_SHA256
-    assert GRAPH.stat().st_size == GRAPH_SIZE
-    graph = _graph()
-    obligations = graph["proof_obligations"]
-    assert len(obligations) == 63
-    assert len({item["id"] for item in obligations}) == 63
-    assert graph["round_selection"]["target_obligations"] == []
+def test_revision1_subgraph_and_selection_snapshot_are_frozen() -> None:
+    snapshot_bytes = _frozen_revision1_bytes()
+    assert hashlib.sha256(snapshot_bytes).hexdigest() == FROZEN_GRAPH_SHA256
+    assert len(snapshot_bytes) == FROZEN_GRAPH_SIZE
+    frozen = _frozen_revision1_graph()
+    obligations = frozen["proof_obligations"]
+    assert len(obligations) == FROZEN_OBLIGATION_COUNT
+    assert len({item["id"] for item in obligations}) == FROZEN_OBLIGATION_COUNT
+
+    live = _graph()
+    live_ids = {item["id"] for item in live["proof_obligations"]}
+    assert len(live_ids) == len(live["proof_obligations"])
+    selected = live["round_selection"]["target_obligations"]
+    assert selected
+    assert set(selected) <= live_ids
+    assert all(_is_general_d_addition(item) for item in selected)
 
 
 def test_exact_live_closure_has_only_accepted_unblocked_nodes() -> None:
@@ -184,7 +244,7 @@ def test_graph_relations_are_acyclic() -> None:
     _assert_acyclic(by_id, "implies")
 
 
-def test_current_handoff_files_name_the_frozen_graph() -> None:
+def test_current_handoff_preserves_d3_and_history_names_frozen_graph() -> None:
     for relative in (
         "state/current_state.md",
         "state/gap_register.md",
@@ -192,5 +252,9 @@ def test_current_handoff_files_name_the_frozen_graph() -> None:
         "manifests/reading_packet.md",
     ):
         text = (ROOT / relative).read_text("utf-8")
-        assert GRAPH_SHA256 in text
         assert "ratio-sharp" in text.lower()
+
+    report = (ROOT / "state/last_validation_report.md").read_text("utf-8")
+    assert FROZEN_GRAPH_SHA256 in report
+    assert "63 unique obligations" in report
+    assert "selected proof-changing target" in report

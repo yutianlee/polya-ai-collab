@@ -129,3 +129,396 @@ This cover is disjoint and exhaustive. Dilation gives arbitrary \(r,R\).
 
 No finite staircase, event-state theorem, numerical root isolation, interval
 certificate, or executable ledger is a premise of this proof.
+
+## Separate general-dimensional extension (incomplete)
+
+The incumbent research manuscript is
+`manuscript/spherical-shell-polya-general-d.tex`.  It is not part of the
+proved statement above and must not inherit the (d=3) theorem status.
+
+Its preserved proof spine is
+
+\[
+\text{real-order phase proxy}
+\longrightarrow
+\text{exact harmonic branching}
+\longrightarrow
+W_d-P_d^{<}=\mathcal B_d(A)+\sum_m c_{d,m}D_A(r_m).
+\]
+
+The current replacement endgame is developed in the Round 10 terminal note
+and the Round 11--19 first-floor notes.  Round 10 proves and independently
+audits the fractional terminal reserve.  Round 11 proves and independently
+audits the (B=0) first-floor corner and derives a lossy (B=1) pre-shelf scalar.
+Round 12 validly reduces that scalar to an endpoint, but Round 13 gives an
+exact rational extension-grid counterexample to both proposed surrogate sign
+claims; the exact defect stays positive.  Round 14 restores the exact no-drop
+head and exact inner cap.  Round 15 restores the exact terminal count and
+proves the audited exact endpoint identity and monotonic move.  Round 16
+reduces that endpoint to \(F(K,a)\ge1/2\), proves \(F_K>0\), and closes the
+suspected \(q=3\) double face with a rational reserve.  Round 17 exposes the
+exact action-face quantile structure.  Round 18 proves a symbolic rational
+reserve at the simultaneous wall.  Round 19 bypasses the chord scalar and
+proves \(dF/da>0\) on the full action face by a one-radius Jensen inequality.
+Thus \(F(K,a)>1/2\) and the hard \(B=1\) endpoint are closed.  The independent
+WP2 integration audit then verifies the exhaustive \(B\)-phase union, both
+extension grids, owner activity, every strict wall, and the exact redundancy
+of \(z=2\).  The first-floor no-drop theorem is therefore proved internally.
+The high-floor first-drop CST theorem remains open.
+Round 20 gives a wall-aware, independently replayed diagnostic of
+\(\mathscr S\) and \(\Phi_\delta\) on 19,619 active records, with no sampled
+negative and a smallest sampled surrogate value about \(0.837805\); this is
+not a proof.  Round 21 proves the uniform cap bound \(J<1/7\), an
+interface-complete-level/top-interval terminal transport, and simultaneous
+elasticity/curvature shelf transport.  It first reduces the analytic target to
+
+\[
+ \Phi_\delta>\mathcal R,
+ \quad\text{under exact feasibility (4.3)}.
+\]
+
+The displayed inequality is proved and independently audited.  Round 22 then
+certifies an exact active tuple with \(\mathcal R<-1/300\), so the coarse sign
+\(\mathcal R\ge0\) is rejected.  Keeping the exact cap
+\(J=2I_\mu(q)\) repairs the reduction to
+
+\[
+ \Phi_\delta>\mathcal R_J,
+ \qquad
+ \mathcal R_J=\mathcal R+\frac17-J.
+\]
+
+The same certified tuple has \(\mathcal R_J>1/20\).  Round 23 then retains
+the exact cap through its final comparison and proves
+
+\[
+ J<\frac18,
+ \qquad \mathcal R_J>\mathcal C_8.
+\]
+
+For fixed intrinsic discrete data and \(\alpha\), the sufficient scalar
+\(\mathcal C_8\) is strictly convex on every literal action/top-payment cell.
+Its sign reduces to exact intrinsic walls or one stationary point.  This
+reduction remains valid, but Round 26 later proves that the universal sign
+\(\mathcal C_8\ge0\) is false.  The exact-cap repaired scalar
+\(\mathcal R_J\) and the exact reduced scalar \(\mathscr S\) remain distinct
+available quantities.
+
+Round 24 makes that scalar problem coordinatewise.  At fixed \(x=r+p\),
+strict convexity in \(p\) leaves at most two adjacent shelf owners.  On the
+delicate quadratic top cell the terminal action eliminates \(\alpha\) exactly
+in favor of \((B,u)\), and the lower shelf wall obeys
+\(t_\mu<0\), \(W_\mu<0\), \(\lambda_\mu>0\).  The resulting \(t\)- and
+\(p\)-candidate rules are coupled; \(\widehat{\mathcal C}_8\) is used only
+when \(B=f-1\) and \(0<u<1/\sqrt2\), while other cells are not reduced by
+this step.  At the end of Round 24 the analytic obligation was the coupled
+stationary-value sign, not a global monotonicity assertion in \(\alpha\).
+
+Round 25 evaluates that stationary value exactly on the delicate cell.  Put
+
+\[
+ H=\tan t-t,\qquad z=\tan(t/2),\qquad
+ L=\frac{4u(B+u)\tan^2t}{H},
+\]
+
+and
+
+\[
+ R=\frac m\pi+\frac{B\pi}{2t^2}-L.
+\]
+
+Put
+
+\[
+ P=\frac{3\pi^2(B+u)R}{H\sin t},
+ \qquad
+ p_{\max}=\min\{\mu-m-1,\psi(P)\},
+\]
+
+where \(\psi(P)\) is the positive root of
+\(\psi^2(2\psi+3)=P\).
+
+At an interior fixed-\(\mu\) stationary point, \(R>0\) and
+
+\[
+ \mathcal C_8=
+ m\left(\frac12-\frac t\pi+\frac z\pi\right)
+ +B\left(\frac\pi{2t}-1+\frac{\pi z}{2t^2}\right)
+ -\frac p2-\frac18+2u^2-zL.
+\]
+
+The two exact shelf integrals imply a strict \(m\)-window.  Together with
+stationarity and the interface/owner bounds they give
+\(p\le p_{\max}\) and hence
+
+\[
+ \mathcal C_8\ge\mathcal F(B,m,t,u).
+\]
+
+This reduction cannot be closed from the endpoint window alone: directed Arb
+arithmetic certifies \(\mathcal F<-34.18\) at the relaxed rational point
+\((B,m,t,u)=(1,11,1/5,1/1000)\).  That point is not in the exact projected
+shelf image, so it is not a counterexample to \(\mathcal C_8\), CST, or the
+theorem.  At the end of Round 25, the remaining proposed pointwise obligation
+was \(\mathcal F\ge0\) on the full paired-shelf projection.
+
+Round 26 reconstructs that exact projection and shows that this last
+relaxation is also too weak.  For fixed \((B,m,t,u)\) and a parity grid, the
+values \(\mu,q,\alpha,x\) are determined, and a stationary owner must solve
+\(p^2(3x-p)=P\); the left side is strictly increasing on the owner range.
+At the certified half-grid tuple
+
+\[
+ (B,f,m,r,p,\alpha,\mu)
+ =\left(1,2,6,\frac{25}{2},6,\frac9{10},\frac{127}{5}\right),
+\]
+
+\(p=6\) is the unique stationary and discrete minimizing owner, all exact
+shelf/activity/cell conditions hold, and
+
+\[
+ \mathcal F<-\frac1{50}<0<\frac{77}{50}<\mathcal C_8.
+\]
+
+Thus the \(p\mapsto p_{\max}\) replacement, not the shelf projection, causes
+the failure.  A second certified exact feasible half-grid point
+
+\[
+ r=\frac{57755}{2},\qquad p=80,\qquad m=15,\qquad
+ f=2,\qquad \alpha=\frac12,
+\]
+
+and its nearby unique stationary point satisfy \(\mathcal C_8<-7\).  At the
+same point the exact reserve accounting is
+
+\[
+ \mathcal R_J
+ =\mathcal C_8+(p+a_p)(L_0-L_{\rm curv})
+  +\left(\frac18-J\right)>20.
+\]
+
+Hence neither \(\mathcal F\ge0\) nor \(\mathcal C_8\ge0\) is a valid global
+sufficient target.  Round 27 shows that the next two compressed global signs
+also fail.  At the exact integer-grid tuple
+\[
+ (r,p,m,f,\alpha,\mu,t)
+ =\left(4036,32,1,2,\frac1{16},\frac{65105}{16},\frac{79}{500}\right)
+\]
+directed Arb arithmetic certifies
+\[
+ \mathcal C_{\max,8}<-\frac43,
+ \qquad \mathcal R_J<-\frac65,
+ \qquad \mathscr S>47,
+ \qquad \Phi_\delta>40.
+\]
+Thus the failure is in the compression, not in the exact shifted-tail lower
+bound.
+
+To recover the strategy's intrinsic remainder-rich case, set \(d=1-2t/\pi\)
+and
+\[
+ E=e_0+e_p,\qquad \Delta=e_0-e_p,
+ \qquad E_*=\frac12-\frac{dm}{2p}.
+\]
+The exact Round 10 inequality is
+\[
+ D_A(r)\ge
+ \max\{0,L_T\}+a_p\Delta+p(E-E_*).
+\]
+It proves \(D_A(r)\ge0\) whenever \(p\le dm\) or \(E\ge E_*\).  The Round
+27 negative \(\mathcal R_J\) witness has \(E>1>E_*\) and therefore belongs to
+this closed automatic branch.  Only
+\[
+ p>dm,\qquad 0\le E<E_*<\frac12
+\]
+remains, with the exact obligation
+\[
+ \max\{0,L_T\}+a_p\Delta\ge p(E_*-E).
+\]
+The available sharpened wall transport is
+\[
+ \Delta\ge\frac{s-1}{s+1}(E+2\lambda).
+\]
+A proof of \(\mathcal C_{\max,8}\ge0\) is sufficient only on this residual
+sector and is strictly stronger than the exact obligation; it must not be
+treated as an equivalent or global target.  If it fails, return to the exact
+residual, then to \(\mathscr S\) or the weighted aggregate.  No
+manuscript-level all-dimensional conclusion is currently available.
+
+Round 28 returns to the exact residual and retains the actual endpoint sum.
+The first two positive curvature-series terms give the strict payment
+\[
+ \mathcal K_4=
+ \frac{(\mu^{-1}-K^{-1})((r+p)^2-r^2)}{2\pi}
+ +\frac{(\mu^{-3}-K^{-3})((r+p)^4-r^4)}{24\pi},
+\]
+while elasticity gives
+\[
+ \Delta\ge\tau(E+2\lambda),\qquad \tau=\frac{s-1}{s+1}.
+\]
+Thus, with
+\[
+ M_4=\max\{\tau(E+2\lambda),\mathcal K_4\},
+\]
+the audited chain is
+\[
+ D_A(r)\ge\Phi_\delta^+
+ \ge\Psi^{L_T}_{4,E}
+ :=\max\{0,L_T\}+a_pM_4+p(E-E_*)
+ \ge\Psi^{\rm rf}_{4,E}.
+\]
+The first projected scalar is the primary target because it keeps every
+inverse fraction, the exact cap, the top interval, and \(E\).
+
+For fixed discrete/interface data, activity also gives
+\[
+ \frac{d}{dt}\{E(t)-E_*(t)\}>0
+ \quad\hbox{whenever }p>d(t)m.
+\]
+Hence the hard set is one initial phase interval.  A separate literal
+maximum analysis gives a unique elasticity/curvature switch, strict convexity
+on curvature cells, and at most one elasticity stationary minimum on the
+quadratic top-payment cell.  These are finite-candidate reductions only.
+Round 29 removes the interior-candidate ambiguity for the primary scalar.
+On every fixed-\(\alpha\) literal terminal count cell,
+\[
+ \frac{d}{dt}\Psi^{L_T}_{4,E}>0.
+\]
+On every fixed-\(Q\), constant-\(K\) inverse or outer-\(B\) wall segment on
+the inherited extension grids,
+\[
+ \frac{d}{d\mu}\Psi^{L_T}_{4,E}<0.
+\]
+The raw terminal jumps at inverse, \(Q\), and outer-\(B\) walls are
+\(-2\), \(-1\), and \(-1/(16\beta)\), respectively; clipping is retained in
+the exact one-sided scalar.  Finally, the entire component
+\[
+ (r,p,m,f)=(1,2,2,2),\qquad B=Q=1,\qquad 2<y_1<3
+\]
+satisfies the analytic estimate
+\[
+ \Psi^{L_T}_{4,E}>
+ \frac{371}{15840}+2\eta_1+2E>0.
+\]
+Round 30 treats the first nonconstant-\(K\) faces without restoring a lossy
+global scalar.  Activity is automatic throughout
+\(B=Q=1,\ 2<y_1<3\).  On its included lower shelf,
+\[
+ \frac{dL_T}{d\mu}>0,\qquad L_T>\frac7{10},
+\]
+and the exact retained-\(E\) projection is
+\[
+ \Psi^{L_T}_{4,E}>
+ \mathfrak F(q,r,p,m)
+ =
+ T(q)+a_p\mathcal K_{4,\min}
+ +p\left(E_{\min}-\frac12\right)
+ +\frac{m d_{\min}}2.
+\]
+The exact image must satisfy
+\[
+ G_{K_3}(q-m)-G_q(q-m)\ge\frac74,\qquad
+ p>d_{\min}m,\qquad
+ E_{\min}<\frac12-\frac{d_{\min}m}{2p}.
+\]
+The open lower \(Q\)-wall has \(0<y_1<\alpha<1\), so it has no inverse or
+\(B\)-wall intersection and cannot supply a noncorner endpoint to any
+\(y_1>1\) band.  On \(\alpha=0,\ f=2\), the complete terminal concavity
+bound and normalized curvature give positivity for
+\[
+ \frac45\le t<\frac{13}{10}.
+\]
+
+Round 31 proves that this shelf problem is finite.  For fixed \((q,m)\), the
+dependent profile \(p\mapsto\mathfrak F(q,q-m-p,p,m)\) is strictly convex.
+At fixed integration
+radius \(a\), its normalized second-derivative kernel is
+\[
+ \frac{2u}{\sqrt{1-u^2}}+
+ v\left(1+\frac{u^2}{2}+\frac{v^2}{3}
+ -(1-u^2)^{-3/2}\right)>0,\qquad
+ u=\frac ra,\quad v=\frac pa,\quad u+v<1.
+\]
+For \(q\ge1000\), exact phase estimates force
+\(m>11q^{1/3}/10\).  The retained-\(E\) lower bound then yields the intrinsic
+bootstrap
+\[
+ 1\to\frac{25}{17}\to\frac53\to2\to\frac{25}{11}
+ \to\frac52\to3\to4\to10
+\]
+for \(p/(d_{\min}m)\), ending in a contradiction to the hard bound.  This
+excludes every real \(q\ge1000\) without a shell-ratio ladder.  Moreover,
+discarding only positive terms gives a finite lower scalar \(L_q\) whose Hessian has
+negative determinant at every interior critical point, so its minimum reduces
+to the three strictly convex edges \(p=1\), \(r=r_0\), and \(m=1\).
+
+Round 32 closes that finite shelf without asserting the false full
+\(m=1\) edge.  With \(\psi=\arccos(q/K_3)\), shelf feasibility self-improves
+for every real \(q\ge35\) to
+\[
+ m>\frac65\left(\frac{\pi}{\psi}-3\right).
+\]
+The finite triangle is therefore truncated at the corresponding integer
+\(m_0\); below \(q=35\), retain \(m_0=1\).  The \(p=1\) edge is \(>1/5\).
+One compact directed-Arb certificate encloses the continuous convex minima
+on \(r=r_0\) and \(m=m_0\) for every exact integer and half-integer
+\(3\le q<1000\), proving the rational margin \(L_q>1/100\).  Together with
+the Round 31 real \(q\ge1000\) exclusion,
+\[
+ \Psi^{L_T}_{4,E}>\mathfrak F>L_q>0
+\]
+on the entire Round 30 included shelf.  The finite scan with 933 relaxed
+records and cutoff \(q=33\) remains diagnostic only.
+
+Round 33 now controls the geometry of the cleanest first face.  On the open
+lower-\(Q\) hard arc, \(B=1\), \(0<y_1<\alpha<1\), no inverse or outer-\(B\)
+wall intersects, and
+\[
+ L_Q=\frac{\pi}{2\theta_1}+2y_1-1-J>\frac3{28}+2y_1.
+\]
+The exact action \(A(x)-A(q)\ge1\) and the lower-\(Q\) wall factorization prove
+\[
+ \frac{d}{d\mu}(E-E_*)<0.
+\]
+Thus a hypothetical hard component persists to \(e_p=0\), an activity wall,
+or \(\alpha\to1^-\).  This does not make the full projected scalar monotone.
+Round 34 removes the activity wall on every high-floor first shelf.  More
+importantly, it compares the terminal action and preceding shelf through the
+same radial-parameter integral and reduces lower-\(Q\) hard exclusion to the
+intrinsic \(Q\to1^-\) face and one possible second stationary root.  The
+small-phase adjacent-action theorem closes \(0<t\le\pi/8\).  Round 35 closes
+the middle phase by a retained quadrature estimate, the large boundary by one
+exact polynomial, the stationary root by an action-cutoff discriminant, and
+proves the domain empty for \(t\ge3\pi/14\).  Thus the lower-\(Q\) hard sector
+is closed.  Round 36 then gives the exact count topology
+\[
+ B-Q\in\{0,1\}.
+\]
+On the one-level-gap branch,
+\[
+ L_T>1-J>\frac67,
+ \qquad
+ \Psi^{L_T}_{4,E}>\frac67-\frac{p-dm}{2},
+\]
+so \(p-dm\le12/7\) is closed, including all hard \(p=1\) gap faces and
+old inverse collisions.  The exact wall map transports the residual gap
+candidates to general lower shelves or \(\alpha\to1^-\).  Round 37 then
+proves on every hard gap point that
+\[
+ B_0=Q=B-1\ge1,
+ \qquad j=f-B=\lfloor\lambda\rfloor,
+\]
+and that the terminal top interval is zero.  Defining the exact positive
+inverse-angle reserve \(\Omega\) and \(\Xi=E-M_4\ge0\), it obtains the
+lossless identity
+\[
+ \Gamma_{\rm gap}
+ =1-J+\frac{B_0d}{2c}+\Omega
+ +(p+a_p)M_4+p\Xi-\frac{p-dm}{2}.
+\]
+It also proves \(\Phi_\delta^+>\mathcal H_\Delta\) for a count-free maximum
+of three correlated shelf payments.  No sign of either right-hand side is
+proved on the remaining continuum.  Higher
+equal-count \(Q_N\) and inverse faces, the \(\alpha=0\) combined corners,
+and lower shelves outside Round 32 are still open.  No global
+\(\alpha\)-monotonicity shortcut or all-dimensional conclusion is available.
