@@ -1,0 +1,540 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{booktabs,longtable,array}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+
+\newcommand{\W}{\mathcal W}
+\newcommand{\Dlt}{\Delta}
+\newcommand{\pimin}{\pi_-}
+\newcommand{\pimax}{\pi_+}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{Connected High-Event Registry}
+\author{}
+\date{Analytic ledger replacement, Packet C}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note replaces the exact-executable arithmetic used in the high
+spherical-shell staircase by displayed rational witnesses.  It contains
+the complete seventeen-face localization registry, the three algebraic
+splits, the three dashed (impossible) cap cells, the five global checkpoint
+payments, the seven conditional payments, and the corrected cap--74 path.
+All comparisons are strict rational comparisons after the two elementary
+bounds \(333/106<\pi<22/7\).  In particular, no decimal approximation,
+interval package, or external ledger is a logical input to this packet.
+\end{abstract}
+
+\section{Definitions and strict proxy convention}
+
+For \(0<\rho<1\), put
+\begin{equation}
+ z=z_\rho:=\frac{\pi}{1-\rho},\qquad
+ x=x_\rho:=z_\rho^2,\qquad
+ k_m(\rho):=\sqrt{x_\rho+m(m+1)}.
+ \label{eq:def-z-k}
+\end{equation}
+The three-dimensional Weyl term is
+\begin{equation}
+ \W(\rho,K):=\frac{2}{9\pi}(1-\rho^3)K^3.
+ \label{eq:def-W}
+\end{equation}
+At \(K=k_m(\rho)\), the product part of the strict channel proxy for the
+mode \((\ell,n)\), \(n\geq2\), is
+\[
+ n^2x+\ell(\ell+1)<x+m(m+1).
+\]
+It is therefore governed by
+\begin{equation}
+ \Dlt_{m;n,\ell}(\rho)
+ :=m(m+1)-\ell(\ell+1)-(n^2-1)x_\rho.
+ \label{eq:delta}
+\end{equation}
+The channel is product-possible only when \(\Dlt_{m;n,\ell}>0\).
+Equality is excluded because the spectral proxy is strict.  Since
+\begin{equation}
+ x_\rho'=\frac{2\pi^2}{(1-\rho)^3}>0,
+ \qquad
+ \Dlt_{m;n,\ell}'=-(n^2-1)x_\rho'<0,
+ \label{eq:delta-monotone}
+\end{equation}
+a positive witness at \(r\) controls the side \(\rho\leq r\), while a
+negative witness controls the side \(\rho\geq r\).
+
+We write \(H\) for the largest first-mode angular index retained in a cap
+cell and \(h\) for the largest second-mode angular index.  A complete block
+through \(H\) has multiplicity \((H+1)^2\), because
+\(\sum_{\ell=0}^{H}(2\ell+1)=(H+1)^2\).
+
+\section{The only transcendental enclosure}
+
+\begin{lemma}[Rational enclosure of \(\pi\)]
+\label{lem:pi}
+One has
+\begin{equation}
+ \pimin:=\frac{333}{106}<\pi<\frac{22}{7}=: \pimax.
+ \label{eq:pi-bounds}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For \(0<u<1\), the alternating expansion of \(\arctan u\) lies between
+each pair of consecutive partial sums.  The tangent addition formula gives
+\[
+ \tan\!\left(4\arctan\frac15-\arctan\frac1{239}\right)=1;
+\]
+indeed, \(\tan(4\arctan(1/5))=120/119\), so both the numerator and
+denominator in the last tangent quotient are \(28561/(119\cdot239)\).
+The angle lies in \((0,\pi/2)\), and hence Machin's identity follows:
+\[
+ \pi=16\arctan\frac15-4\arctan\frac1{239}.
+\]
+Using an even partial sum for the positive term and an upper partial sum
+for the subtracted term gives
+\begin{align*}
+ \pi
+ &>16\left(\frac15-\frac1{3\cdot5^3}
+       +\frac1{5\cdot5^5}-\frac1{7\cdot5^7}\right)-\frac4{239},\\
+ \left[\text{right side}\right]-\frac{333}{106}
+ &=\frac{3418213}{41563593750}>0.
+\end{align*}
+Likewise,
+\begin{align*}
+ \pi
+ &<16\left(\frac15-\frac1{3\cdot5^3}
+       +\frac1{5\cdot5^5}\right)
+       -4\left(\frac1{239}-\frac1{3\cdot239^3}\right),\\
+ \frac{22}{7}-\left[\text{right side}\right]
+ &=\frac{1845738322}{1493178640625}>0.
+\end{align*}
+This proves \eqref{eq:pi-bounds}.
+\end{proof}
+
+\section{The seventeen rational localization faces}
+
+Let
+\[
+ \rho_c:=\frac1{1+2\pi}.
+\]
+Because \(\pi>3\), \(\rho_c<1/7\).  The seventeen registry ratios are
+strictly ordered as follows:
+\begin{equation}
+\begin{split}
+ \frac4{25}<\frac15<\frac14<\frac3{10}<\frac13<\frac7{20}
+ <\frac38<\frac25<\frac5{12}<\frac37<\frac12\\
+ <\frac8{15}<\frac{107}{200}<\frac35<\frac{16}{25}
+ <\frac{13}{20}<\frac23.
+\end{split}
+\label{eq:ratio-order}
+\end{equation}
+For a completely explicit distinctness check, the sixteen consecutive
+gaps in \eqref{eq:ratio-order} are
+\begin{equation}
+ \frac1{25},\frac1{20},\frac1{20},\frac1{30},\frac1{60},
+ \frac1{40},\frac1{40},\frac1{60},\frac1{84},\frac1{14},
+ \frac1{30},\frac1{600},\frac{13}{200},\frac1{25},
+ \frac1{100},\frac1{60}.
+ \label{eq:ratio-gaps}
+\end{equation}
+Moreover
+\[
+ \frac4{25}-\frac17=\frac3{175}>0,
+ \qquad
+ \frac78-\frac23=\frac5{24}>0.
+\]
+Thus all seventeen ratios lie in the high strip
+\(\rho_c<\rho<7/8\).
+
+For a positive row below, we use
+\[
+ \Dlt_{m;n,\ell}(r)>
+ m(m+1)-\ell(\ell+1)
+ -(n^2-1)\left(\frac{\pimax}{1-r}\right)^2.
+\]
+For a negative row, we use
+\[
+ -\Dlt_{m;n,\ell}(r)>
+ (n^2-1)\left(\frac{\pimin}{1-r}\right)^2
+ -m(m+1)+\ell(\ell+1).
+\]
+The resulting exact witnesses are the following.  ``Retain'' means only
+that the product wall does not permit deletion of the indicated block;
+the independent Bessel wall may still remove it.
+
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{@{}c c c L{3.15cm} L{5.35cm}@{}}
+\toprule
+no.&\(r\)&\((m;n,\ell)\)&exact sign witness&one-sided cap/event consequence\\
+\midrule
+\endfirsthead
+\toprule
+no.&\(r\)&\((m;n,\ell)\)&exact sign witness&one-sided cap/event consequence\\
+\midrule
+\endhead
+1&\(1/5\)&\((11;3,1)\)&
+ \(\Dlt>320/49\)&retain the third block \(0{:}1\) for \(\rho\leq1/5\)\\
+2&\(3/10\)&\((8;2,3)\)&
+ \(-\Dlt>58215/137641\)&at \(k_8\), \(h\leq2\) for \(\rho\geq3/10\)\\
+3&\(1/3\)&\((8;2,2)\)&
+ \(-\Dlt>27699/44944\)&at \(k_8\), \(h\leq1\) for \(\rho\geq1/3\)\\
+4&\(3/8\)&\((9;2,3)\)&
+ \(\Dlt>2622/1225\)&retain the \(h=3\) column below this face\\
+5&\(2/5\)&\((9;2,2)\)&
+ \(\Dlt>248/147\)&retain the \(h=2\) column below this face\\
+6&\(5/12\)&\((9;2,1)\)&
+ \(\Dlt>2200/2401\)&retain the \(h=1\) column below this face\\
+7&\(3/7\)&\((9;2,0)\)&
+ \(-\Dlt>120843/179776\)&no second mode at \(k_9\) on the upper side\\
+8&\(1/2\)&\((10;2,0)\)&
+ \(-\Dlt>23677/2809\)&no second mode at \(k_{10}\) on the upper side\\
+9&\(107/200\)&\((11;2,0)\)&
+ \(-\Dlt>13302732/2699449\)&no second mode at \(k_{11}\) on the upper side\\
+10&\(8/15\)&\((11;2,0)\)&
+ \(-\Dlt>2175627/550564\)&the clean stated cutoff: a second mode forces \(\rho<8/15\)\\
+11&\(3/5\)&\((8;2,0)\)&
+ \(-\Dlt>5080707/44944\)&select the no-second \(k_8\) cap/payment side\\
+12&\(16/25\)&\((9;2,0)\)&
+ \(-\Dlt>1555635/11236\)&select the no-second \(k_9\) cap/payment side\\
+13&\(13/20\)&\((10;2,0)\)&
+ \(-\Dlt>18126190/137641\)&select the no-second \(k_{10}\) cap/payment side\\
+14&\(2/3\)&\((11;2,0)\)&
+ \(-\Dlt>1510851/11236\)&select the no-second \(k_{11}\) cap/payment side\\
+15&\(4/25\)&\((10;3,0)\)&
+ \(-\Dlt>260740/137641\)&no third mode at \(k_{10}\) on the upper side\\
+16&\(1/4\)&\((11;3,0)\)&
+ \(-\Dlt>23484/2809\)&a third mode at \(k_{11}\) forces \(\rho<1/4\)\\
+17&\(7/20\)&\((9;2,4)\)&
+ \(-\Dlt>36230/474721\)&the \(H=6,h=4\) cap--74 cell can occur only below this face\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Every entry is a displayed positive rational number.  Together with the
+monotonicity \eqref{eq:delta-monotone}, the table proves the asserted side
+on an interval, not merely at a sampled point.
+
+\section{Three algebraic splits and the five \(k_{11}\) implications}
+
+At \(\rho=\rho_c\), \(x=(\pi+1/2)^2\), while at \(\rho=7/8\),
+\(x=64\pi^2\).  Lemma~\ref{lem:pi} gives the exact chain
+\begin{equation}
+ (\pi+\tfrac12)^2
+ <\left(\frac{51}{14}\right)^2
+ =\frac{2601}{196}<16<\frac{68}{3}<34<64\cdot3^2<64\pi^2.
+ \label{eq:split-strip}
+\end{equation}
+Consequently each of \(x=16,68/3,34\) is attained at a unique point in
+the high strip.  The relevant channel arithmetic is
+\begin{equation}
+\begin{array}{c|c|c}
+x&\text{channel}&\text{exact value of }\Dlt\\ \hline
+16&(m;n,\ell)=(11;3,1)&132-2-8\cdot16=2>0,\\
+68/3&(10;2,6)&110-42-3(68/3)=0,\\
+34&(11;2,5)&132-30-3\cdot34=0.
+\end{array}
+\label{eq:algebraic-splits}
+\end{equation}
+Thus the first split lies on the possible side.  The latter two are exact
+channel walls, and their new modes are excluded by the strict convention.
+
+The two localization consequences at \(k_{11}\) may also be read without
+the table:
+\begin{align}
+ x_{8/15}-44
+ &>\left(\frac{\pimin}{1-8/15}\right)^2-44
+ =\frac{725209}{550564}>0,\label{eq:k11-second}\\
+ x_{1/4}-\frac{33}{2}
+ &>\left(\frac{\pimin}{1-1/4}\right)^2-\frac{33}{2}
+ =\frac{5871}{5618}>0.\label{eq:k11-third}
+\end{align}
+Hence a second mode at \(k_{11}\) forces \(\rho<8/15\), and a third mode
+forces \(\rho<1/4\).  Finally, the first-mode ball walls give
+\begin{align}
+ \left(\frac{69}{5}\right)^2-132
+ &=\frac{1461}{25}
+ =44+\frac{361}{25}
+ =\frac{33}{2}+\frac{2097}{50},\label{eq:H10}\\
+ \left(\frac{64}{5}\right)^2-132
+ &=\frac{796}{25}
+ =\frac{33}{2}+\frac{767}{50}.\label{eq:H9}
+\end{align}
+If \(H=10\) is present at \(k_{11}\), then \(x\) is larger than both the
+second threshold \(44\) and the third threshold \(33/2\); hence every
+second and third mode is excluded.  If \(H=9\) is present, every third
+mode is excluded.  Equations \eqref{eq:k11-second}--\eqref{eq:H9} are the
+five formerly separate \(k_{11}\) localization implications.
+
+\section{The three impossible cap cells}
+
+If the first mode \(H\) is counted at \(k_m\), its strict ball wall
+\(\beta_{H,1}<k_m\) forces
+\(x>\beta_{H,1}^2-m(m+1)\).  If the second mode \(h\) is counted, its
+product wall forces
+\(x<(m(m+1)-h(h+1))/3\).  The three dashed cells are therefore empty by
+the following exact, incompatible bounds:
+\begin{equation}
+\begin{array}{c|c|c|c}
+\text{cell}&\text{required lower bound}&\text{required upper bound}
+&\text{gap}\\ \hline
+k_8: H=6,\ h\ge2&100-72=28&(72-6)/3=22&6\\
+k_9: H=8,\ h\ge0&(71/6)^2-90=1801/36&90/3=30&721/36\\
+k_9: H=7,\ h\ge3&(23/2)^2-90=169/4&(90-12)/3=26&65/4.
+\end{array}
+\label{eq:impossible-cells}
+\end{equation}
+No limiting equality can rescue a cell: both necessary modal inequalities
+are strict.
+
+\section{Checkpoint monotonicity and five global payments}
+
+Put \(M=m(m+1)\) and
+\(\W_m(\rho):=\W(\rho,k_m(\rho))\).  Logarithmic differentiation shows
+that \(\W_m'\) has the sign of
+\begin{equation}
+ \pi^2(1+\rho)-M\rho^2(1-\rho)^2.
+ \label{eq:Wm-derivative}
+\end{equation}
+For \(m\leq11\),
+\[
+ \pi^2(1+\rho)-M\rho^2(1-\rho)^2
+ >9-\frac{132}{16}=\frac34>0.
+\]
+Thus every \(\W_m\), \(m\leq11\), is strictly increasing.  This single
+argument replaces both executable derivative-bound predicates.
+
+At \(\rho_c\), one has \(z=\pi+1/2>193/53\),
+\(\rho_c<1/7\), and \(1/\pi>7/22\).  Consequently
+\begin{equation}
+ \W(\rho_c,K)>
+ \frac{2}{9}\frac7{22}\left(1-\frac1{7^3}\right)K^3
+ =\frac{38}{539}K^3.
+ \label{eq:global-coarse}
+\end{equation}
+For each row in the next table, the middle column proves
+\(k_m(\rho_c)>t_m\), and the last column proves
+\(\W_m(\rho_c)>C_m\).
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}c c c c c@{}}
+\toprule
+\(m\)&cap \(C_m\)&\(t_m\)&
+\((193/53)^2+M-t_m^2\)&\((38/539)t_m^3-C_m\)\\
+\midrule
+7&40&\(208/25\)&\(67049/1755625\)&\(5083656/8421875\)\\
+8&53&\(923/100\)&\(1901439/28090000\)&\(656778873/269500000\)\\
+9&73&\(254/25\)&\(61431/1755625\)&\(7911557/8421875\)\\
+10&89&\(111/10\)&\(14211/280900\)&\(1999489/269500\)\\
+11&121&\(241/20\)&\(65271/1123600\)&\(5076899/2156000\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every last-column entry is positive.  Monotonicity therefore extends each
+global payment from \(\rho_c\) to the complete high strip.
+
+\section{Seven conditional first-block payments}
+
+We now give a general reduction which avoids any numerical enclosure of a
+radical.  Suppose the presence of first mode \(H\) below the checkpoint
+\(k_m\) forces \(K>t\).  Set
+\begin{equation}
+ a^2:=t^2-m(m+1),\qquad
+ \rho_0:=1-\frac{\pi}{a}.
+ \label{eq:conditional-rho0}
+\end{equation}
+All seven rows below have \(a>\pi\): the smallest listed radicand is
+\[
+ \frac{89}{4},\qquad
+ \frac{89}{4}-\left(\frac{22}{7}\right)^2
+ =\frac{2425}{196}>0.
+\]
+If the mode is present for some
+\(K\leq k_m(\rho)\), then \(k_m(\rho)>t\), hence
+\(x_\rho>a^2\) and \(\rho>\rho_0\).  By the strict increase of
+\(\W_m\),
+\[
+ \W_m(\rho)>\W_m(\rho_0)=\W(\rho_0,t).
+\]
+Choose a rational \(r>\rho_0\).  Since \(\W(\rho,t)\) decreases with
+\(\rho\) at fixed \(t\), Lemma~\ref{lem:pi} yields
+\begin{equation}
+ \W(\rho_0,t)>\W(r,t)>
+ \frac7{99}(1-r^3)t^3.
+ \label{eq:conditional-coarse}
+\end{equation}
+The condition \(r>\rho_0\) follows, without taking a square root, from
+\begin{equation}
+ L:=\pimin^2-(1-r)^2a^2>0.
+ \label{eq:location-witness}
+\end{equation}
+Here is the complete calculation.  The column \(P\) is the reserve in
+\eqref{eq:conditional-coarse} above the stated cap.
+
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{longtable}{@{}c c c c c c c c@{}}
+\toprule
+\(m\)&\(H\)&\(t\)&cap&\(a^2\)&\(r\)&\(L\)&
+\(P=\frac7{99}(1-r^3)t^3-\mathrm{cap}\)\\
+\midrule
+\endfirsthead
+\toprule
+\(m\)&\(H\)&\(t\)&cap&\(a^2\)&\(r\)&\(L\)&\(P\)\\
+\midrule
+\endhead
+7&6&\(10\)&53&44&\(8/15\)&\(725209/2528100\)&\(18659/2673\)\\
+8&7&\(23/2\)&80&\(241/4\)&\(3/5\)&\(64349/280900\)&\(213281/49500\)\\
+9&8&\(71/6\)&81&\(1801/36\)&\(3/5\)&\(4713989/2528100\)&\(14506973/1336500\)\\
+10&7&\(23/2\)&100&\(89/4\)&\(7/20\)&\(2105431/4494400\)&\(18539033/6336000\)\\
+10&8&\(71/6\)&97&\(1081/36\)&\(3/7\)&\(317585/4955076\)&\(2865431/261954\)\\
+10&9&\(64/5\)&100&\(1346/25\)&\(3/5\)&\(8811001/7022500\)&\(25143284/1546875\)\\
+11&9&\(64/5\)&125&\(796/25\)&\(1/2\)&\(536261/280900\)&\(58757/12375\)\\
+\bottomrule
+\end{longtable}
+\endgroup
+All \(L\)'s and \(P\)'s are positive.  Each row therefore proves both
+the localization of its conditional branch and its Weyl payment.
+
+\section{The connected cap--74 path}
+
+The seventeenth localization row is tied to the exceptional
+\(k_9,H=6,h=4\) cap as follows.  Angular propagation from the strict
+\((3,2)\) Bessel wall gives
+\begin{equation}
+ j_{9/2,2}^2>\left(\frac{103}{10}\right)^2+20-12
+ =\frac{11409}{100}=108+\frac{609}{100}.
+ \label{eq:cap74-ball}
+\end{equation}
+Accordingly the strict proxy uses
+\(\beta_{4,2}^2=11409/100\); the strict inequality belongs to the actual
+Bessel zero \(j_{9/2,2}\), not to the proxy constant.
+At \(k_9\), the product wall for \((4,2)\) is
+\[
+ 3x<90-20=70,
+ \qquad\text{i.e.}\qquad x<\frac{70}{3}.
+\]
+The ball wall \eqref{eq:cap74-ball}, on the other hand, forces
+\[
+ x>\frac{11409}{100}-90=\frac{2409}{100},
+ \qquad
+ \frac{2409}{100}-\frac{70}{3}=\frac{227}{300}>0.
+\]
+Thus the fully sharpened cap--74 cell is empty.
+
+For completeness, even the deliberately conservative cell is paid.  At
+\(\rho=7/20\),
+\begin{equation}
+ x_{7/20}-\frac{70}{3}
+ >\frac{400}{169}\left(\frac{333}{106}\right)^2-\frac{70}{3}
+ =\frac{36230}{1424163}>0,
+ \label{eq:cap74-rho}
+\end{equation}
+so a counted \((4,2)\) mode forces \(\rho<7/20\).  Also
+\begin{equation}
+ 108-\left(\frac{207}{20}\right)^2=\frac{351}{400}>0,
+ \label{eq:cap74-K}
+\end{equation}
+so its ball wall forces \(K>207/20\).  Therefore
+\begin{align}
+ \W(\rho,K)
+ &>\frac7{99}\left(1-\left(\frac7{20}\right)^3\right)
+       \left(\frac{207}{20}\right)^3\notag\\
+ &=\frac{52823261673}{704000000}
+ =74+\frac{727261673}{704000000}>74.
+ \label{eq:cap74-payment}
+\end{align}
+The cap itself is exactly
+\((6+1)^2+(4+1)^2=49+25=74\).  Equations
+\eqref{eq:cap74-ball}--\eqref{eq:cap74-payment} cover both the actual
+incompatibility and every row of the conservative cap--74 fallback.
+
+\section{Exact row map and scope audit}
+
+The following map uses the ordering of the two functions in the original
+exact registry.  To keep the table readable, \(L\) denotes
+\texttt{verify\_localizations}, and \(C\) denotes
+\texttt{verify\_cap\_tables\_and\_payments}.  The map lets a referee match
+every replaced predicate to a displayed hand calculation.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.16}
+\begin{tabular}{@{}c c L{12.1cm}@{}}
+\toprule
+registry family&row numbers&analytic replacement here\\
+\midrule
+\(L\)&1--2&distinctness and connectedness:
+\eqref{eq:ratio-order}--\eqref{eq:ratio-gaps} and the seventeen-row table\\
+\(L\)&3--19&all ratios in the high strip, by
+\(\rho_c<1/7<4/25\) and \(2/3<7/8\)\\
+\(L\)&20--36&the seventeen exact sign witnesses in
+the long table\\
+\(L\)&37--42&split location
+\eqref{eq:split-strip} and side/equality arithmetic
+\eqref{eq:algebraic-splits}\\
+\(L\)&43--47&the five \(k_{11}\) implications
+\eqref{eq:k11-second}--\eqref{eq:H9}\\
+\(C\)&44--55&the twelve non-bookkeeping cap--74
+predicates, \eqref{eq:cap74-ball}--\eqref{eq:cap74-payment};
+row \(C56\), the block identity \(49+25=74\), is allocated to Packet~A\\
+\(C\)&57--59&the three impossible
+cells, \eqref{eq:impossible-cells}\\
+\(C\)&78--79&the general checkpoint
+monotonicity proof \eqref{eq:Wm-derivative}\\
+\(C\)&80--84&the five global-payment
+rows following \eqref{eq:global-coarse}\\
+\(C\)&85--98&the seven localization
+and seven conditional-payment rows in the final long table\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The count reconciliation is
+\[
+\begin{array}{c|c|c}
+\text{subfamily}&\text{connected mathematical objects}
+&\text{registry predicates}\\ \hline
+\text{registry metadata}&1&2\\
+\text{high-strip membership}&17&17\\
+\text{localization signs}&17&17\\
+\text{algebraic splits}&3&6\\
+\text{special }k_{11}\text{ implications}&5&5\\
+\text{cap--74 path}&1&12\\
+\text{impossible cells}&3&3\\
+\text{checkpoint monotonicity}&1&2\\
+\text{global payments}&5&5\\
+\text{conditional payments}&7&14\\ \hline
+\text{total}&60&83.
+\end{array}
+\]
+In particular, the five headline Packet--C subfamilies contain exactly
+\[
+ 17+3+3+5+7=35
+\]
+connected objects (localization signs, algebraic splits, impossible cells,
+global payments, and conditional payments).  Because each algebraic split
+has a location and a side predicate, and each conditional payment has a
+localization and a reserve predicate, these headline objects replace
+\(17+6+3+5+14=45\) registry predicates.  The remaining 38 predicates in
+the total are the explicitly listed auxiliary closure rows.
+
+Thus this packet replaces all 47 predicates of \(L\) and 36 predicates of
+\(C\).  The elementary cap addition rows \(1\)--\(43\), row \(56\), and
+rows \(60\)--\(77\) of the latter family are
+outside the declared Packet~C scope; they are instances of the general
+odd-sum/block-cap identity and are not claimed here.  No row in the
+declared scope is unreconstructed.
+
+\end{document}

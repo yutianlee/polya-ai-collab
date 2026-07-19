@@ -1,0 +1,112 @@
+       Purely Analytic Closure of the Final Spherical-Shell Residual
+
+
+
+                                                    Abstract
+            This note assembles the all-frequency retained-remainder estimate after the exact owner
+        subtraction. It proves that the ﬁnal spherical-shell residual is empty without invoking an interval
+        certiﬁcate, an executable truth table, an aggregate tail argument, or a frequency split. The
+        structural, angular-block, and scalar-positivity modules cover one closed superset of the entire
+        residual.
+
+
+1      Notation and analytic inputs
+Let
+                                                                               2(1 − ρ3 )K 3
+                      Aρ,1 := {x ∈ R3 : ρ < |x| < 1},            W (ρ, K) :=                 ,
+                                                                                    9π
+and let ND (Aρ,1 , K 2 ) count Dirichlet eigenvalues strictly below K 2 . Put
+                                                                 √
+                                        1                               π2
+                               ρc :=        ,       k11 (ρ) :=                + 132.
+                                     1 + 2π                          (1 − ρ)2
+
+      The preceding analytic owner lemmas and the exact set subtraction give
+                                  {                                                    }
+                                                  39
+                           D20 = (ρ, K) : ρc ≤ ρ < ,             k11 (ρ) < K < U (ρ) .                        (1)
+                                                  50
+
+On this interval U (ρ) = K0 (ρ), although the formula for the upper wall will not be needed below.
+   We use the shell action
+                           (                      )
+                         1 √ 2                  z
+             Ga (z) :=       a − z 2 − z arccos             (0 ≤ z < a),       Ga (z) := 0       (z ≥ a),
+                         π                      a
+
+                                         Aρ,K (z) := GK (z) − GρK (z),
+and the strict lattice proxy
+                                          ∑             {                               }
+                                                                           1
+                         P (ρ, K) :=           2ν # n ∈ N : n < Aρ,K (ν) +   .                                (2)
+                                     ν=ℓ+1/2<K
+                                                                           4
+                                          ℓ∈N0
+
+The analytic Bessel-phase reduction proved earlier in the main argument is
+
+                                           ND (Aρ,1 , K 2 ) ≤ P (ρ, K).                                       (3)
+
+      Put
+                                                       (1 − ρ2 )K 2 1
+                                        Mc (ρ, K) :=               − .
+                                                            6       2
+
+                                                        1
+Parts VII–IX of the detailed analytic supplement establish, respectively, the following three inputs.
+The retained-remainder module gives the structural implication
+                        Eang (ρ, K) < H(ρ, K)          =⇒     P (ρ, K) < W (ρ, K).                (4)
+The paired angular-block module gives, on ρc ≤ ρ ≤ 39/50 and K ≥ k11 (ρ),
+                                          Eang (ρ, K) < Mc (ρ, K).                                (5)
+The scalar-positivity module gives on the same unbounded domain
+                                      H(ρ, K) − Mc (ρ, K) > 0.                                    (6)
+The all-frequency scope in (6) is part of that module: its scalar gap has positive K-derivative
+whenever K > 12, one has k11 (ρ) > 241/20 > 12, and the gap is strictly positive on the base curve
+K = k11 (ρ). Thus the proof integrates upward from the base curve to every ﬁnite K ≥ k11 (ρ); it
+uses no upper-frequency bound.
+
+
+2    All-frequency retained-remainder closure
+Theorem 1 (All-frequency middle-ratio theorem). For
+                                                39
+                                   ρc ≤ ρ ≤        ,        K ≥ k11 (ρ),
+                                                50
+one has
+                                      ND (Aρ,1 , K 2 ) < W (ρ, K).
+Proof. Equations (5) and (6) give the strict chain
+                                 Eang (ρ, K) < Mc (ρ, K) < H(ρ, K).
+The structural implication (4) therefore gives P (ρ, K) < W (ρ, K), and the phase reduction (3)
+completes the proof. Strictness includes both closed ratio faces, the base face K = k11 (ρ), and
+every common radial–angular proxy wall.
+
+
+3    Direct ownership of the exact residual
+Proposition 2 (Analytic closure of D20 ). Deﬁne the closed all-frequency theorem domain
+                                  {                                         }
+                                                    39
+                         Rrr := (ρ, K) : ρc ≤ ρ ≤ , K ≥ k11 (ρ) .
+                                                    50
+Then D20 ⊂ Rrr , the strict Pólya inequality holds throughout D20 , and the successor residual is
+empty.
+Proof. If (ρ, K) ∈ D20 , then (1) gives
+                                         39
+                               ρc ≤ ρ <     ,     k11 (ρ) < K < U (ρ).
+                                         50
+After weakening the strict upper ratio and lower frequency inequalities, these conditions place (ρ, K)
+in Rrr . Therefore Theorem 1 proves every point of D20 , and
+                                              D20 \ Rrr = ∅.
+The already owned faces ρ = 39/50, K = k11 (ρ), and K = U (ρ) remain outside D20 , even though
+the stronger theorem also covers the ﬁrst two. The face ρ = ρc remains in D20 whenever both strict
+frequency inequalities hold. No artiﬁcial frequency face is present.
+
+                                                       2
+Logical dependency. After Parts I–VI identify D20 , the closure uses only the structural, angular-
+block, and scalar-positivity modules in Parts VII–IX. It does not use an aggregate-tail module, a
+frequency split, the former 10,580-box compact certiﬁcate, the 1,286-box aggregate certiﬁcate, or
+the 63-state executable subtraction table.
+
+
+
+
+                                                3
+

@@ -1,0 +1,1746 @@
+% !TEX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=28mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{array,booktabs,longtable}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\definecolor{linkblue}{RGB}{24,78,119}
+\definecolor{citegreen}{RGB}{36,104,71}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  citecolor=citegreen,
+  urlcolor=linkblue,
+  pdftitle={A Dirichlet Polya Inequality for Three-Dimensional Spherical Shells},
+  pdfsubject={Purely analytic main proof manuscript},
+  pdfkeywords={Polya conjecture, Dirichlet Laplacian, spherical shell, eigenvalue counting}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Dirichlet P\'olya inequality for spherical shells}
+\fancyhead[R]{\small Purely analytic proof}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\small Dirichlet P\'olya inequality for spherical shells}%
+  \fancyhead[R]{\small Purely analytic proof}%
+  \fancyfoot[C]{\thepage}%
+}
+\fancypagestyle{titlepage}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+\setlist{itemsep=0.25em,topsep=0.45em}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Nzero}{\mathbb N_0}
+\DeclareMathOperator{\arsinh}{arsinh}
+
+\title{A Dirichlet P\'olya Inequality for\\Three-Dimensional Spherical Shells\\[0.4em]
+\large Purely analytic main proof manuscript}
+\author{Anonymous for peer review}
+\date{17 July 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{titlepage}
+
+\begin{quote}
+\small
+\textbf{Scope and status.}
+This manuscript proves a theorem for the class of genuine three-dimensional
+spherical shells.  It does not claim the general P\'olya conjecture,
+literature novelty, or priority.  All shell-specific analytic reductions,
+boundary assignments, and exact constants are stated in this paper and its
+accompanying purely analytic supplement.  Executable replay sources and
+interval certificates are retained only as optional regression checks and
+are not premises of the proof.  The imported results are explicitly
+identified standard Sturm--Liouville and Bessel facts, the published uniform
+Bessel-phase enclosure, and the annular phase-difference estimate, each
+quoted with its precise scope.
+\end{quote}
+
+\begin{abstract}
+For \(0<r<R\), let
+\[
+  A_{r,R}=\{x\in\R^3:r<|x|<R\}.
+\]
+We prove, with the strict Dirichlet counting convention, that
+\[
+  N_D(A_{r,R},\Lambda)
+  \le L_3|A_{r,R}|\Lambda^{3/2},
+  \qquad
+  L_3=\frac1{6\pi^2},
+  \qquad \Lambda\ge0.
+\]
+The proof is purely analytic.  It separates variables, converts the radial
+spectrum into a strict multiplicity-weighted phase count, and combines an
+exact retained-remainder identity with a ratio-sharp angular block estimate,
+a tangent-envelope radial minorant, a universal ball quarter-layer, and an
+elementary scalar convexity argument.  The low- and middle-ratio proof starts
+at the first possible radial frequency; no finite Bessel-zero staircase,
+event-state theorem, floating-point conclusion, or interval-arithmetic
+conclusion is a proof premise.  An independent appendix gives an elementary
+proof that no genuine spherical shell tiles \(\R^3\) by congruent
+rigid-motion copies with disjoint interiors, under either exact or
+almost-everywhere coverage.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{Main results and conventions}
+
+The eigenvalues of the Dirichlet Laplacian on a bounded domain \(\Omega\) are
+listed with multiplicity as
+\[
+  0<\lambda_1^D(\Omega)\le\lambda_2^D(\Omega)\le\cdots.
+\]
+Throughout we use the strict counting function
+\begin{equation}
+  N_D(\Omega,\Lambda)
+  :=\#\{j:\lambda_j^D(\Omega)<\Lambda\}.
+  \label{eq:strict-count}
+\end{equation}
+This convention matters at every spectral wall.  We write
+\(\N=\{1,2,3,\ldots\}\) and \(\Nzero=\{0,1,2,\ldots\}\).
+
+\begin{theorem}[Spectral inequality]
+\label{thm:spectral}
+For every \(0<r<R\) and every \(\Lambda\ge0\),
+\begin{equation}
+  \boxed{
+  N_D(A_{r,R},\Lambda)
+  \le \frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}
+  =L_3|A_{r,R}|\Lambda^{3/2},
+  \qquad L_3=\frac1{6\pi^2}.}
+  \label{eq:main-theorem}
+\end{equation}
+\end{theorem}
+
+The standard non-strict formulation follows without changing the constant.
+Indeed, if
+\[
+ N_D^{\leq}(\Omega,\Lambda)
+ :=\#\{j:\lambda_j^D(\Omega)\leq\Lambda\},
+\]
+then discreteness of the Dirichlet spectrum gives
+\begin{equation}
+ N_D^{\leq}(\Omega,\Lambda)
+ =\lim_{\varepsilon\downarrow0}
+ N_D(\Omega,\Lambda+\varepsilon).
+ \label{eq:strict-to-nonstrict}
+\end{equation}
+Applying Theorem~\ref{thm:spectral} at
+\(\Lambda+\varepsilon\) and passing to the limit proves
+\eqref{eq:main-theorem} with \(N_D^{\leq}\) as well.  Thus the strict
+convention used for the wall bookkeeping is equivalent here to the usual
+non-strict P\'olya inequality.
+
+\begin{theorem}[Non-tiling]
+\label{thm:nontiling}
+For every \(0<r<R\), no family of congruent rigid-motion copies of
+\(A_{r,R}\) has pairwise-disjoint interiors and covers \(\R^3\) exactly or
+up to a three-dimensional Lebesgue-null set.  The same conclusion holds when
+coverage is formulated using closed shells.
+\end{theorem}
+
+The two theorems concern literally the same complete shell family.
+Theorem~\ref{thm:nontiling} is logically independent of the spectral proof.
+
+\subsection*{Proof map}
+
+For \(K>0\), the spectral argument has one global comparison, a no-mode
+region, and two high-frequency ratio owners.  After scaling to
+\(A_{\rho,1}\), separation of variables and the uniform Bessel-phase
+enclosure give a strict multiplicity-weighted lattice proxy \(P\) with
+\[
+ N_D(A_{\rho,1},K^2)\leq P.
+\]
+In the action variables of Part~I of the supplement, let \(R\) be
+the inverse action, \(F=R^2\), and let \(M(r)\) count the half-integers
+strictly below \(r\).  The inverse action gives the exact layer-cake picture
+\[
+ P=\sum_{\substack{n\geq1\\n-1/4<T}}M\bigl(R(n-1/4)\bigr)^2,
+ \qquad
+ W=\int_0^T R(t)^2\,dt,
+\]
+whose scaled version is Lemma~\ref{thin:lem-layer-cake}.  Thus the master
+comparison is
+\begin{equation}
+ W-P=\mathcal D_{\rm rad}-\mathcal E_{\rm ang}:
+ \quad\hbox{radial quadrature reserve pays angular rounding.}
+ \label{eq:proof-map-master-defect}
+\end{equation}
+The exact definitions and the retained positive remainders in
+\eqref{eq:proof-map-master-defect} are given in the accompanying
+\emph{Purely Analytic Supplement}.
+
+\begin{samepage}
+The parameter space is closed by the following disjoint owners.
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+frequency range&ratio range&owner\\
+\midrule
+\(0\leq K\leq\pi/(1-\rho)\)&\(0<\rho<1\)&strict no-mode bound\\
+\(K>\pi/(1-\rho)\)&\(0<\rho<39/50\)&global defect theorem\\
+\(K>\pi/(1-\rho)\)&\(39/50\leq\rho<1\)&optical theorem\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{samepage}
+Their union proves the unit-shell inequality; dilation proves the result for
+every \(A_{r,R}\).
+
+\section{Separated spectrum and phase reduction}
+\label{sec:separated-spectrum}
+
+Throughout this section
+\[
+  A_{\rho,1}=\{x\in\mathbb R^3:\rho<|x|<1\},
+  \qquad 0<\rho<1,
+\]
+and the Dirichlet counting function is strict:
+\[
+  N_D(A_{\rho,1},K^2)
+  :=\#\{j:\lambda_j^D(A_{\rho,1})<K^2\}.
+\]
+For \(x>0\) we use the strict positive-integer count
+\begin{equation}
+  [x]_<:=\#\{n\in\mathbb N:n<x\}
+  =\max\{0,\lceil x\rceil-1\}.
+  \label{eq:sc-strict-bracket}
+\end{equation}
+Thus \([m]_< =m-1\) for \(m\in\mathbb N\).  This convention is retained
+at every eigenfrequency, phase level, and half-integer angular wall.
+
+\subsection{The exact separated spectrum}
+
+Let \(H_\rho=-\Delta^D_{A_{\rho,1}}\) be the Friedrichs operator associated
+with
+\[
+  \mathfrak q[f]=\int_{A_{\rho,1}}|\nabla f|^2\,dx,
+  \qquad D(\mathfrak q)=H_0^1(A_{\rho,1}).
+\]
+Choose an orthonormal spherical-harmonic basis satisfying
+\[
+  -\Delta_{\mathbb S^2}Y_{\ell m}
+  =\ell(\ell+1)Y_{\ell m},
+  \qquad \ell\in\mathbb N_0,
+  \quad -\ell\le m\le\ell.
+\]
+
+\begin{proposition}[Unitary decomposition and completeness]
+\label{prop:sc-separated-spectrum}
+For
+\[
+  L_\ell=-\frac{d^2}{dr^2}+\frac{\ell(\ell+1)}{r^2},
+  \qquad
+  D(L_\ell)=H^2(\rho,1)\cap H_0^1(\rho,1),
+\]
+one has the unitary equivalence
+\begin{equation}
+  H_\rho\simeq
+  \bigoplus_{\ell=0}^{\infty}
+  \bigoplus_{m=-\ell}^{\ell}L_\ell.
+  \label{eq:sc-operator-sum}
+\end{equation}
+The exact form domain on the right is
+\begin{equation}
+  \left\{(u_{\ell m}):
+  \begin{array}{l}
+  u_{\ell m}\in H_0^1(\rho,1),\\
+  \displaystyle
+  \sum_{\ell,m}\left(\|u_{\ell m}\|_2^2
+  +\mathfrak a_\ell[u_{\ell m}]\right)<\infty
+  \end{array}\right\},
+  \label{eq:sc-global-form-domain}
+\end{equation}
+where
+\[
+  \mathfrak a_\ell[u]
+  =\int_\rho^1\left(|u'|^2
+  +\frac{\ell(\ell+1)}{r^2}|u|^2\right)dr.
+\]
+The exact operator domain is
+\begin{equation}
+  \left\{(u_{\ell m}):
+  \begin{array}{l}
+  u_{\ell m}\in D(L_\ell),\\
+  \displaystyle
+  \sum_{\ell,m}\left(\|u_{\ell m}\|_2^2
+  +\|L_\ell u_{\ell m}\|_2^2\right)<\infty
+  \end{array}\right\}.
+  \label{eq:sc-global-operator-domain}
+\end{equation}
+Each \(L_\ell\) has positive, simple eigenvalues tending to infinity and a
+complete orthonormal eigenbasis.  The full operator has compact resolvent.
+\end{proposition}
+
+\begin{proof}
+Write \(x=r\omega\), so \(dx=r^2\,dr\,d\omega\), and set
+\[
+  R_{\ell m}(r)=\int_{\mathbb S^2}
+  f(r,\omega)\overline{Y_{\ell m}(\omega)}\,d\omega,
+  \qquad u_{\ell m}(r)=rR_{\ell m}(r).
+\]
+Fubini, Tonelli, and Parseval on \(\mathbb S^2\) give
+\[
+  \|f\|_{L^2(A_{\rho,1})}^2
+  =\sum_{\ell,m}\int_\rho^1|R_{\ell m}(r)|^2r^2\,dr
+  =\sum_{\ell,m}\int_\rho^1|u_{\ell m}(r)|^2\,dr.
+\]
+Conversely, if \((u_{\ell m})\) is square summable, the finite sums
+\[
+  f_L(r,\omega)=\frac1r
+  \sum_{\ell\le L}\sum_{m=-\ell}^{\ell}
+  u_{\ell m}(r)Y_{\ell m}(\omega)
+\]
+are Cauchy in \(L^2(A_{\rho,1})\), and their limit maps back to the given
+family.  Hence the coefficient map is unitary onto the Hilbert direct sum.
+Because \(r,1/r\in W^{1,\infty}(\rho,1)\), multiplication by either function
+is bounded on \(H^1(\rho,1)\) and preserves the two zero endpoint traces.
+
+For a finite smooth harmonic expansion, polar coordinates and angular
+orthogonality yield
+\[
+  \mathfrak q[f]=\sum_{\ell,m}\int_\rho^1
+  \left(r^2|R_{\ell m}'|^2
+  +\ell(\ell+1)|R_{\ell m}|^2\right)dr.
+\]
+If \(u=rR\), then
+\[
+  r^2|R'|^2
+  =\left|u'-\frac ur\right|^2
+  =|u'|^2-\frac{(|u|^2)'}r+\frac{|u|^2}{r^2}.
+\]
+Since
+\[
+  \frac{(|u|^2)'}r
+  =\left(\frac{|u|^2}{r}\right)'
+  +\frac{|u|^2}{r^2}
+\]
+and \(u(\rho)=u(1)=0\), integration gives
+\[
+  \int_\rho^1r^2|R'|^2\,dr
+  =\int_\rho^1|u'|^2\,dr.
+\]
+The angular term becomes
+\(\ell(\ell+1)|u|^2/r^2\).  Closing finite harmonic expansions in the
+form norm proves \eqref{eq:sc-global-form-domain}: one inclusion follows
+from componentwise form convergence and Fatou's lemma, while the reverse
+inclusion follows by first truncating the square-summable family in
+\((\ell,m)\) and then approximating its finitely many components by
+\(C_c^\infty(\rho,1)\).  The uniqueness theorem for operators associated
+with closed semibounded forms gives \eqref{eq:sc-operator-sum}.
+
+For fixed \(\ell\), the potential \(\ell(\ell+1)/r^2\) is continuous and
+bounded on \([\rho,1]\).  The regular one-dimensional Dirichlet form
+therefore has associated operator \(L_\ell\) with the displayed
+\(H^2\cap H_0^1\) domain.  The standard domain formula for an orthogonal
+operator sum gives \eqref{eq:sc-global-operator-domain}.
+
+The embedding \(H_0^1(\rho,1)\hookrightarrow L^2(\rho,1)\) is compact, so
+every block has compact resolvent.  To pass to the infinite direct sum, note
+that \(r\le1\) implies
+\[
+  L_\ell\ge\ell(\ell+1),
+  \qquad
+  \|(L_\ell+1)^{-1}\|
+  \le\frac1{1+\ell(\ell+1)}.
+\]
+The resolvent of the full operator is consequently the operator-norm limit
+of its finite-\(\ell\) truncations, each of which is compact.  Hence the full
+resolvent is compact.
+
+Regular Dirichlet Sturm--Liouville theory gives a complete sequence of
+simple eigenvalues in every block.  They are strictly positive because
+\[
+  \mathfrak a_\ell[u]\ge\int_\rho^1|u'|^2\,dr
+  \ge\frac{\pi^2}{(1-\rho)^2}\|u\|_2^2.
+\]
+Simplicity also follows directly: two solutions of the same second-order
+equation that vanish at \(r=\rho\) have proportional initial derivatives
+and hence are proportional by uniqueness.  If \(u_{\ell,n}\) is a complete
+radial eigenbasis, then
+\[
+  \frac{u_{\ell,n}(r)}rY_{\ell m}(\omega)
+\]
+over all \((\ell,m,n)\) is exactly the inverse image of a complete
+orthonormal coordinate basis of the Hilbert direct sum.  This proves global
+completeness.
+\end{proof}
+
+\begin{proposition}[Bessel determinant and strict phase enumeration]
+\label{prop:sc-bessel-phase-count}
+Put \(\nu=\ell+\tfrac12\).  The positive eigenfrequencies in the
+\(\ell\)-th radial block are precisely the positive zeros of
+\begin{equation}
+  D_{\nu,\rho}(k)
+  :=J_\nu(\rho k)Y_\nu(k)-Y_\nu(\rho k)J_\nu(k).
+  \label{eq:sc-bessel-determinant}
+\end{equation}
+Every such zero is simple.  With the continuous phase branch
+\begin{equation}
+  J_\nu(x)+iY_\nu(x)=M_\nu(x)e^{i\theta_\nu(x)},
+  \qquad M_\nu(x)>0,
+  \qquad \theta_\nu(0+)=-\frac\pi2,
+  \label{eq:sc-phase-branch}
+\end{equation}
+and
+\[
+  \Psi_{\nu,\rho}(K)=\theta_\nu(K)-\theta_\nu(\rho K),
+  \qquad
+  \gamma_{\rho,K}(\nu)=\frac{\Psi_{\nu,\rho}(K)}\pi,
+\]
+the exact strict count is
+\begin{equation}
+  N_D(A_{\rho,1},K^2)
+  =\sum_{\ell=0}^{\infty}(2\ell+1)
+  [\gamma_{\rho,K}(\ell+\tfrac12)]_<.
+  \label{eq:sc-exact-phase-count}
+\end{equation}
+The sum is finite.  If \(K\) is a radial eigenfrequency in one or several
+angular channels, the root at \(K\) is excluded in each such channel and the
+excluded angular multiplicities add.
+\end{proposition}
+
+\begin{proof}
+For \(k>0\), the physical radial equation has the general solution
+\[
+  R(r)=r^{-1/2}
+  \bigl(c_1J_\nu(kr)+c_2Y_\nu(kr)\bigr).
+\]
+The two Dirichlet conditions admit a nonzero coefficient vector exactly when
+\[
+  \det\begin{pmatrix}
+  J_\nu(\rho k)&Y_\nu(\rho k)\\
+  J_\nu(k)&Y_\nu(k)
+  \end{pmatrix}=D_{\nu,\rho}(k)=0.
+\]
+The Wronskian
+\begin{equation}
+  J_\nu(x)Y_\nu'(x)-J_\nu'(x)Y_\nu(x)=\frac2{\pi x}
+  \label{eq:sc-bessel-wronskian}
+\end{equation}
+shows that the two entries in either row cannot vanish simultaneously.
+Thus the determinant criterion remains exact even if the \(J_\nu\) values,
+or the \(Y_\nu\) values, happen to vanish at both endpoints.
+
+For root simplicity define the left-normalized solution
+\begin{equation}
+  s_\ell(r,k)=\frac{\pi\sqrt\rho}{2}\sqrt r
+  \left[J_\nu(\rho k)Y_\nu(kr)
+  -Y_\nu(\rho k)J_\nu(kr)\right].
+  \label{eq:sc-left-normalized}
+\end{equation}
+Equation \eqref{eq:sc-bessel-wronskian} gives
+\[
+  s_\ell(\rho,k)=0,
+  \qquad \partial_rs_\ell(\rho,k)=1,
+  \qquad
+  s_\ell(1,k)=\frac{\pi\sqrt\rho}{2}D_{\nu,\rho}(k).
+\]
+Let \(v=\partial_ks_\ell\).  Differentiating
+\((L_\ell-k^2)s_\ell=0\) gives
+\[
+  (L_\ell-k^2)v=2ks_\ell,
+  \qquad v(\rho,k)=\partial_rv(\rho,k)=0.
+\]
+At a positive determinant root, Lagrange's identity yields
+\begin{equation}
+  \partial_ks_\ell(1,k)\,\partial_rs_\ell(1,k)
+  =2k\int_\rho^1s_\ell(r,k)^2\,dr>0.
+  \label{eq:sc-root-simplicity}
+\end{equation}
+Thus \(\partial_ks_\ell(1,k)\ne0\), and the zero of the determinant is
+simple.
+
+At zero energy the left-normalized solution is
+\[
+  s_\ell(r,0)=
+  \frac{\rho^{-\ell}r^{\ell+1}
+  -\rho^{\ell+1}r^{-\ell}}{2\ell+1},
+\]
+so
+\[
+  s_\ell(1,0)=
+  \frac{\rho^{-\ell}-\rho^{\ell+1}}{2\ell+1}>0.
+\]
+Equivalently, the standard small-argument expansions give
+\begin{equation}
+  \lim_{k\downarrow0}D_{\nu,\rho}(k)
+  =\frac{\rho^{-\nu}-\rho^\nu}{\pi\nu}>0.
+  \label{eq:sc-zero-determinant-limit}
+\end{equation}
+Hence the limiting phase level zero is not an eigenfrequency.
+
+From \eqref{eq:sc-phase-branch},
+\[
+  J_\nu=M_\nu\cos\theta_\nu,
+  \qquad Y_\nu=M_\nu\sin\theta_\nu,
+\]
+and direct substitution gives the sign-sensitive factorization
+\begin{equation}
+  D_{\nu,\rho}(k)
+  =M_\nu(\rho k)M_\nu(k)
+  \sin\Psi_{\nu,\rho}(k).
+  \label{eq:sc-determinant-factorization}
+\end{equation}
+The Wronskian also gives
+\[
+  \theta_\nu'(x)=\frac2{\pi xM_\nu(x)^2}>0.
+\]
+Nicholson's integral representation \cite[Eq.~(10.9.30)]{DLMF}
+\[
+  M_\nu(x)^2=\frac8{\pi^2}\int_0^\infty
+  \cosh(2\nu t)K_0(2x\sinh t)\,dt
+\]
+and the strict decrease of \(K_0\) imply that \(M_\nu(x)^2\) is strictly
+decreasing in \(x\).  Therefore
+\begin{equation}
+  \Psi_{\nu,\rho}'(k)
+  =\frac2{\pi k}
+  \left(M_\nu(k)^{-2}-M_\nu(\rho k)^{-2}\right)>0.
+  \label{eq:sc-phase-monotonicity}
+\end{equation}
+The branch condition gives \(\Psi_{\nu,\rho}(0+)=0\), while the standard
+large-argument Bessel expansion gives
+\[
+  \Psi_{\nu,\rho}(k)=(1-\rho)k+O(k^{-1})\longrightarrow\infty
+\]
+for fixed \(\nu\) and \(\rho\).  Hence the positive determinant roots are
+uniquely indexed by
+\[
+  \Psi_{\ell+1/2,\rho}(k_{\ell,n})=n\pi,
+  \qquad n=1,2,\ldots.
+\]
+Strict monotonicity gives
+\[
+  k_{\ell,n}<K
+  \quad\Longleftrightarrow\quad
+  n\pi<\Psi_{\ell+1/2,\rho}(K).
+\]
+The direct-sum decomposition supplies angular multiplicity \(2\ell+1\).
+If the same numerical eigenvalue occurs at distinct values of \(\ell\), the
+corresponding spherical-harmonic sectors are orthogonal and their
+multiplicities add.  Finally,
+\(\lambda_{\ell,n}\ge\ell(\ell+1)\), so only finitely many angular channels
+can contribute below \(K^2\).  These observations prove
+\eqref{eq:sc-exact-phase-count}, including every strict spectral wall.
+\end{proof}
+
+The only standard inputs in the preceding proof are completeness of the
+spherical harmonics, regular one-dimensional Dirichlet Sturm--Liouville
+theory, the Bessel equation, the Wronskian, Nicholson's representation, and
+the usual small- and large-argument Bessel formulas; see \cite{DLMF}.
+
+\subsection{Uniform phase enclosures and the strict lattice proxy}
+
+For \(a>0\), define
+\begin{equation}
+  G_a(z)=
+  \begin{cases}
+  \displaystyle\frac1\pi\left(\sqrt{a^2-z^2}
+  -z\arccos\frac za\right),&0\le z\le a,\\[1mm]
+  0,&z>a.
+  \end{cases}
+  \label{eq:sc-model-action}
+\end{equation}
+
+For \(0\le z<a\), put
+\[
+  H_a(z)=\frac{3a^2+2z^2}{24\pi(a^2-z^2)^{3/2}},
+\]
+and define
+\begin{equation}
+  \mathcal F_a(z)=
+  \begin{cases}
+  \max\{G_a(z)-H_a(z),-1/4\},&0\le z<a,\\
+  -1/4,&z\ge a.
+  \end{cases}
+  \label{eq:sc-auxiliary-F}
+\end{equation}
+
+We use the following published Bessel-phase result, stated here with every
+hypothesis needed in the sequel.
+
+\begin{lemma}[External uniform Bessel-phase enclosure]
+\label{lem:sc-external-phase}
+With the branch \eqref{eq:sc-phase-branch}, for every \(a>0\) and real
+\(z\ge0\),
+\begin{equation}
+  \mathcal F_a(z)-\frac14
+  <\frac{\theta_z(a)}\pi
+  <G_a(z)-\frac14.
+  \label{eq:sc-individual-phase-enclosure}
+\end{equation}
+If \(0<\mu<K\), \(0\le z\le K\), and
+\[
+  \Gamma_{K,\mu}(z)
+  :=\frac{\theta_z(K)-\theta_z(\mu)}\pi,
+\]
+then
+\begin{equation}
+  0<\Gamma_{K,\mu}(z)
+  <G_K(z)-\mathcal F_\mu(z)
+  \le G_K(z)+\frac14.
+  \label{eq:sc-global-difference-enclosure}
+\end{equation}
+If \(0\le z\le\mu\), including \(z=\mu\), then also
+\begin{equation}
+  G_K(z)-G_\mu(z)
+  <\Gamma_{K,\mu}(z)
+  <G_K(z)-G_\mu(z)+\frac14.
+  \label{eq:sc-action-difference-enclosure}
+\end{equation}
+No value of the divergent expression \(H_\mu(\mu)\) is used in the last
+statement.
+\end{lemma}
+
+Lemma~\ref{lem:sc-external-phase} is Theorem~5.1 and Lemma~5.2 of
+\cite{FLPSannuli}, based on the real-order phase enclosures of
+\cite{FLPSphase}.  The upper bound in
+\eqref{eq:sc-global-difference-enclosure} follows immediately by subtracting
+the lower bound for \(\theta_z(\mu)\) from the upper bound for
+\(\theta_z(K)\) in \eqref{eq:sc-individual-phase-enclosure}; the correlated
+two-sided estimate \eqref{eq:sc-action-difference-enclosure} is the sharper
+part of the annulus result.  Both theorems are stated for real order, so the
+half-integers \(z=\ell+\tfrac12\) require no interpolation.
+
+Fix now \(K>0\), set \(\mu=\rho K\), and define
+\begin{equation}
+  A_{\rho,K}(z)=G_K(z)-G_\mu(z).
+  \label{eq:sc-shell-action}
+\end{equation}
+For \(0\le z\le K\), let
+\begin{equation}
+  s_\mu(z)=
+  \begin{cases}
+  \min\{H_\mu(z),1/4\},&0\le z<\mu,\\
+  1/4,&\mu\le z\le K,
+  \end{cases}
+  \qquad
+  U_{\rho,K}(z)=A_{\rho,K}(z)+s_\mu(z).
+  \label{eq:sc-optimized-proxy}
+\end{equation}
+The second line, rather than \(H_\mu\), is always used at \(z=\mu\).
+
+\begin{proposition}[Strict phase-to-lattice reduction]
+\label{prop:sc-phase-lattice}
+For \(0<\rho<1\) and \(K>0\),
+\begin{equation}
+  \gamma_{\rho,K}(z)<U_{\rho,K}(z)
+  \le A_{\rho,K}(z)+\frac14,
+  \qquad 0\le z\le K.
+  \label{eq:sc-pointwise-phase-proxy}
+\end{equation}
+Because every \(G_a\) is zero-extended, \(A_{\rho,K}\) is the piecewise
+action \(G_K-G_{\rho K}\) below the inner interface and \(G_K\) at and
+above it.  Consequently,
+\begin{align}
+  N_D(A_{\rho,1},K^2)
+  &\le
+  \sum_{\nu_\ell<K}2\nu_\ell
+  [U_{\rho,K}(\nu_\ell)]_<
+  \label{eq:sc-optimized-spectral-proxy}\\
+  &\le
+  S_{\rho,K}:=
+  \sum_{\nu_\ell<K}2\nu_\ell
+  \left\lfloor A_{\rho,K}(\nu_\ell)+\frac14\right\rfloor,
+  \qquad \nu_\ell=\ell+\frac12.
+  \label{eq:sc-coarse-spectral-proxy}
+\end{align}
+The cutoff is strict: an order \(\nu_\ell=K\) is inactive.  At a true phase
+wall the radial count is one less than the ordinary floor; at a proxy wall
+the ordinary floor in \eqref{eq:sc-coarse-spectral-proxy} is retained.
+Moreover,
+\begin{equation}
+  \int_0^\infty2zA_{\rho,K}(z)\,dz
+  =\frac{2}{9\pi}(1-\rho^3)K^3.
+  \label{eq:sc-exact-action-integral}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For \(0\le z<\mu\), the first upper bound in
+\eqref{eq:sc-global-difference-enclosure} reads
+\[
+  \gamma_{\rho,K}(z)
+  <A_{\rho,K}(z)+G_\mu(z)-\mathcal F_\mu(z).
+\]
+From \eqref{eq:sc-auxiliary-F},
+\[
+  G_\mu(z)-\mathcal F_\mu(z)
+  =\min\{H_\mu(z),G_\mu(z)+1/4\}.
+\]
+The upper half of \eqref{eq:sc-action-difference-enclosure} also gives
+\(\gamma_{\rho,K}(z)<A_{\rho,K}(z)+1/4\).  Taking the better of these two
+strict upper bounds, and using \(G_\mu(z)+1/4\ge1/4\), gives
+\[
+  \gamma_{\rho,K}(z)
+  <A_{\rho,K}(z)+\min\{H_\mu(z),1/4\}
+  =U_{\rho,K}(z).
+\]
+For \(\mu\le z\le K\), one has \(G_\mu(z)=0\), and
+\eqref{eq:sc-global-difference-enclosure} gives
+\[
+  \gamma_{\rho,K}(z)<G_K(z)+1/4=U_{\rho,K}(z).
+\]
+
+Orders \(z\ge K\) do not contribute.  Indeed,
+\eqref{eq:sc-individual-phase-enclosure} gives
+\[
+  \frac{\theta_z(K)}\pi<-\frac14,
+  \qquad
+  \frac{\theta_z(\mu)}\pi>-\frac12,
+\]
+because \(G_K(z)=0\) and \(\mathcal F_\mu(z)=-1/4\).  Together with phase
+monotonicity this yields
+\[
+  0<\gamma_{\rho,K}(z)<\frac14<1,
+\]
+so there is no positive phase level below \(K\).  This includes \(z=K\).
+
+For positive \(x<y\), every positive integer strictly below \(x\) is also
+strictly below \(y\), so \([x]_<\le[y]_<\le\lfloor y\rfloor\).  Applying
+this observation to the exact phase count
+\eqref{eq:sc-exact-phase-count}, and then using
+\(s_\mu\le1/4\), proves
+\eqref{eq:sc-optimized-spectral-proxy}--
+\eqref{eq:sc-coarse-spectral-proxy} without changing either wall
+convention.
+
+Finally, scaling \(z=ax\) gives
+\[
+  \int_0^a2zG_a(z)\,dz
+  =\frac{2a^3}{\pi}
+  \left(\int_0^1x\sqrt{1-x^2}\,dx
+  -\int_0^1x^2\arccos x\,dx\right).
+\]
+The two elementary integrals are \(1/3\) and \(2/9\), respectively; hence
+the last expression is \(2a^3/(9\pi)\).  Subtracting the result with
+\(a=\mu=\rho K\) from that with \(a=K\) proves
+\eqref{eq:sc-exact-action-integral}.
+\end{proof}
+
+\section{Product and complementary-action tools}
+\label{sec:product-action-tools}
+
+We now prove the P\'olya inequality uniformly as the shell becomes thin.  In
+this section the counting function is strict:
+\[
+  N_D(\Omega,K^2)=\#\{j:\lambda_j(\Omega)<K^2\}.
+\]
+We retain the global convention
+\([u]_<:=\#\{n\in\mathbb N:n<u\}=\max\{0,\lceil u\rceil-1\}\).
+Thus a spectral level lying exactly on the wall \(K^2\) is not counted.  Put
+\begin{equation}
+  \varepsilon=1-\rho,
+  \qquad a=\varepsilon K,
+  \qquad
+  m_\varepsilon=1-\varepsilon+\frac{\varepsilon^2}{3}.
+  \label{thin:eq-normalized-variables}
+\end{equation}
+Since \(1-\rho^3=3\varepsilon m_\varepsilon\), the desired right-hand side
+has the two equivalent forms
+\begin{equation}
+  \frac{2}{9\pi}(1-\rho^3)K^3
+  =\frac{1}{\varepsilon^2}\frac{2a^3}{3\pi}m_\varepsilon.
+  \label{thin:eq-weyl-normalization}
+\end{equation}
+
+The proof uses the optimized phase estimate already established in
+Proposition~\ref{prop:sc-phase-lattice}.  We record precisely the consequence
+that is used here.  For
+\(\nu_\ell=\ell+\tfrac12\), let
+\(\gamma_{\rho,K}(\nu_\ell)\) be the normalized radial Bessel phase.  If
+\(0\leq\nu_\ell\leq K\), that proposition gives
+\begin{equation}
+  \gamma_{\rho,K}(\nu_\ell)
+  < A_{\rho,K}(\nu_\ell)+\frac14,
+  \label{thin:eq-phase-input}
+\end{equation}
+where, after the scaling in \eqref{thin:eq-normalized-variables},
+\(A_{\rho,K}(\nu)=\mathcal A(\varepsilon\nu)\) and
+\(\mathcal A\) is the explicit action in
+\eqref{thin:eq-action-definition} below.  The exact radial count in channel
+\(\ell\) is
+\begin{equation}
+  \#\{n\geq1:n<\gamma_{\rho,K}(\nu_\ell)\}.
+  \label{thin:eq-exact-phase-count}
+\end{equation}
+In particular, \eqref{thin:eq-phase-input} is an inequality for the strict
+count; it is not a replacement of that count by an ordinary floor.
+
+\subsection{The product comparison}
+
+Under the standard unitary radial transformation, the angular channel
+\(\ell\in\mathbb N_0\) is the Dirichlet operator
+\[
+  L_\ell=-\frac{d^2}{dr^2}+\frac{\ell(\ell+1)}{r^2}
+  \quad\hbox{in }L^2((\rho,1),dr),
+\]
+and it occurs with multiplicity \(2\ell+1\).  The following lemma includes
+the direction of the min--max comparison and every strict radial and angular
+wall.
+
+\begin{lemma}[Strict product majorant]
+\label{thin:lem-product-majorant}
+Let \(0<\varepsilon<1\), \(a=\varepsilon K\), and define
+\begin{equation}
+  N(a)=\max\left\{0,\left\lceil\frac a\pi\right\rceil-1\right\}.
+  \label{thin:eq-radial-count}
+\end{equation}
+For \(1\leq n\leq N(a)\), put
+\[
+  b_n=\sqrt{a^2-n^2\pi^2},
+  \qquad
+  M_n=
+  \left\lceil
+  \sqrt{\left(\frac{b_n}{\varepsilon}\right)^2+\frac14}
+  -\frac12
+  \right\rceil.
+\]
+Then
+\begin{equation}
+  N_D(A_{\rho,1},K^2)
+  \leq \mathcal P_\varepsilon(a)
+  :=\sum_{n=1}^{N(a)}M_n^2.
+  \label{thin:eq-product-majorant}
+\end{equation}
+In particular, the strict shell count is zero for \(0\leq a\leq\pi\).
+\end{lemma}
+
+\begin{proof}
+The two quadratic forms have the common domain \(H_0^1(\rho,1)\), and
+\[
+  \int_\rho^1\left(
+     |u'|^2+\frac{\ell(\ell+1)}{r^2}|u|^2
+  \right)dr
+  \geq
+  \int_\rho^1\left(|u'|^2+\ell(\ell+1)|u|^2\right)dr,
+\]
+because \(r\leq1\).  The min--max principle therefore gives
+\[
+  \lambda_{\ell,n}
+  \geq \left(\frac{n\pi}{\varepsilon}\right)^2
+       +\ell(\ell+1),
+  \qquad n\geq1.
+\]
+Consequently, a shell eigenvalue in this channel can be counted below
+\(K^2\) only if
+\begin{equation}
+  n^2\pi^2+\varepsilon^2\ell(\ell+1)<a^2.
+  \label{thin:eq-product-condition}
+\end{equation}
+The active radial integers are exactly those satisfying \(n\pi<a\), whose
+number is \eqref{thin:eq-radial-count}.  For a fixed active \(n\), condition
+\eqref{thin:eq-product-condition} is
+\[
+  \ell<
+  \sqrt{\left(\frac{b_n}{\varepsilon}\right)^2+\frac14}-\frac12.
+\]
+Hence the allowed angular indices are
+\(0,\ldots,M_n-1\), and their full spherical multiplicity is
+\[
+  \sum_{\ell=0}^{M_n-1}(2\ell+1)=M_n^2.
+\]
+Summing proves \eqref{thin:eq-product-majorant}.
+
+If \(a=m\pi\), the radial level \(n=m\) is excluded by the strict
+inequality \(n\pi<a\); thus \(N(a)=m-1\).  At an angular wall
+\(b_n^2/\varepsilon^2=L(L+1)\), the displayed expression inside the ceiling
+is exactly \(L\), so \(M_n=L\) and the level \(\ell=L\) is excluded.  The
+jump of multiplicity \(2L+1\) occurs only above the wall.  Finally, no
+positive integer satisfies \(n\pi<a\) when \(0\leq a\leq\pi\), including
+both endpoints, so the product majorant and hence the shell count are zero
+there.
+\end{proof}
+
+
+\subsection{The complementary-action comparison}
+
+For \(r\in\{\rho,1\}\) and \(0\leq y\leq ar\), define
+\begin{equation}
+  J_r(y)=\sqrt{a^2r^2-y^2}
+          -y\arccos\frac{y}{ar},
+  \label{thin:eq-J-action}
+\end{equation}
+and set
+\begin{equation}
+  \mathcal A(y)=
+  \begin{cases}
+  \dfrac{J_1(y)-J_\rho(y)}{\pi\varepsilon},
+    &0\leq y\leq\rho a,\\[6pt]
+  \dfrac{J_1(y)}{\pi\varepsilon},
+    &\rho a\leq y\leq a.
+  \end{cases}
+  \label{thin:eq-action-definition}
+\end{equation}
+We extend \(\mathcal A(y)=0\) for \(y>a\).
+
+\begin{lemma}[Action geometry and curvature switch]
+\label{thin:lem-action-geometry}
+The function \(\mathcal A\) is continuous, continuously differentiable at
+\(y=\rho a\), and strictly decreasing from
+\[
+  T:=\mathcal A(0)=\frac a\pi
+  \quad\hbox{to}\quad \mathcal A(a)=0.
+\]
+Let \(R:[0,T]\to[0,a]\) be its decreasing inverse, let
+\[
+  \tau=\mathcal A(\rho a),
+  \qquad F(t)=R(t)^2,
+  \qquad g(t)=-F'(t).
+\]
+Then
+\begin{equation}
+\begin{gathered}
+  g\text{ decreases on }(0,\tau),
+  \qquad g\text{ increases on }(\tau,T),\\
+  F(0)=a^2,
+  \qquad F(\tau)=\rho^2a^2,
+  \qquad F(T)=0,
+  \qquad g(T)=2\pi\rho a,
+\end{gathered}
+  \label{thin:eq-action-geometry}
+\end{equation}
+where \(g(T)\) denotes the one-sided limit.  Moreover \(g(t)=O(t^{-1/3})\)
+as \(t\downarrow0\).
+\end{lemma}
+
+\begin{proof}
+Direct differentiation on the appropriate open intervals gives
+\begin{equation}
+  J_r'(y)=-\arccos\frac{y}{ar},
+  \qquad
+  J_r''(y)=\frac1{\sqrt{a^2r^2-y^2}}.
+  \label{thin:eq-J-derivatives}
+\end{equation}
+At \(y=\rho a\), \(J_\rho(\rho a)=0\), and the two one-sided first
+derivatives of \eqref{thin:eq-action-definition} both equal
+\(-\arccos\rho/(\pi\varepsilon)\).  Thus the two pieces and their first
+derivatives match.  Both derivatives are negative away from \(y=a\), so the
+inverse exists on exactly the stated interval.
+
+On the outer branch \(\rho a<y<a\), put
+\(\alpha=\arccos(y/a)\).  If \(t=\mathcal A(y)\), then
+\begin{equation}
+  g(t)=-\frac{2y}{\mathcal A'(y)}
+      =\frac{2\pi\varepsilon y}{\alpha}.
+  \label{thin:eq-g-outer}
+\end{equation}
+The required monotonicity is explicit:
+\[
+ \frac{d}{dy}\left(\frac{y}{\alpha}\right)
+ =\frac{\alpha+y/\sqrt{a^2-y^2}}{\alpha^2}>0.
+\]
+Since \(y=R(t)\) decreases with \(t\), equation
+\eqref{thin:eq-g-outer} shows that \(g\) decreases on \(0<t<\tau\).
+
+On the inner branch \(0<y<\rho a\), put
+\[
+  \delta(y)=\arccos\frac ya-\arccos\frac{y}{\rho a}>0.
+\]
+Differentiating \(\arccos(y/(ar))\) with respect to \(r\) gives the exact
+identity
+\begin{equation}
+  \frac{\delta(y)}{y}
+  =\int_\rho^1\frac{dr}{r\sqrt{a^2r^2-y^2}}.
+  \label{thin:eq-delta-integral}
+\end{equation}
+The integrand increases strictly with \(y\), so \(\delta(y)/y\) increases,
+and \(y/\delta(y)\) decreases, with \(y\).  Since
+\[
+  g(t)=\frac{2\pi\varepsilon y}{\delta(y)}
+\]
+and \(y=R(t)\) decreases, \(g\) increases on \(\tau<t<T\).  Formula
+\eqref{thin:eq-g-outer} and its inner counterpart agree at the interface.
+
+The three values of \(F\) follow from
+\(R(0)=a\), \(R(\tau)=\rho a\), and \(R(T)=0\).  As \(y\downarrow0\),
+\eqref{thin:eq-delta-integral} gives
+\[
+  \delta(y)=\frac{\varepsilon}{\rho a}y+O(y^3),
+\]
+and therefore \(g(T)=2\pi\rho a\).
+
+Finally, on the outer branch write \(y=a\cos\theta\).  Then
+\begin{equation}
+  t=\frac{a}{\pi\varepsilon}
+       (\sin\theta-\theta\cos\theta)
+    \sim\frac{a\theta^3}{3\pi\varepsilon},
+  \qquad
+  g(t)=\frac{2\pi\varepsilon a\cos\theta}{\theta}
+       =O(t^{-1/3}).
+  \label{thin:eq-improper-asymptotic}
+\end{equation}
+This proves the asserted improper endpoint behavior.  All square roots and
+arccosines in the proof are taken on their stated closed domains; every
+division occurs in an open interval where its denominator is positive, and
+the endpoint zeros are handled by the limits just computed.
+\end{proof}
+
+\begin{lemma}[Strict phase-to-action layer cake]
+\label{thin:lem-layer-cake}
+For \(\ell\in\mathbb N_0\), set
+\begin{equation}
+  y_\ell=\varepsilon\left(\ell+\frac12\right),
+  \qquad
+  q_\ell=\left[\mathcal A(y_\ell)+\frac14\right]_<,
+  \qquad
+  P_{\mathcal A}=\varepsilon\sum_{\ell\geq0}y_\ell q_\ell.
+  \label{thin:eq-phase-proxy}
+\end{equation}
+Then
+\begin{equation}
+  N_D(A_{\rho,1},K^2)
+  \leq\frac{2P_{\mathcal A}}{\varepsilon^2}.
+  \label{thin:eq-phase-transfer}
+\end{equation}
+For \(n\geq1\), put \(x_n=n-\tfrac14\), and define
+\begin{equation}
+  M_\varepsilon(x)
+  =\#\left\{\ell\in\mathbb N_0:
+       \varepsilon\left(\ell+\frac12\right)<x\right\}
+  =\max\left\{0,
+       \left\lceil\frac{x}{\varepsilon}-\frac12\right\rceil
+       \right\}.
+  \label{thin:eq-half-integer-count}
+\end{equation}
+The proxy has the exact finite representation
+\begin{equation}
+  P_{\mathcal A}
+  =\frac{\varepsilon^2}{2}
+    \sum_{\substack{n\geq1\\x_n<T}}
+       M_\varepsilon(R(x_n))^2.
+  \label{thin:eq-discrete-layer-cake}
+\end{equation}
+Moreover,
+\begin{equation}
+  I:=\frac12\int_0^T F(t)\,dt
+  =\frac{a^3}{3\pi}
+     \left(1-\varepsilon+\frac{\varepsilon^2}{3}\right),
+  \qquad
+  \frac{2I}{\varepsilon^2}
+  =\frac{2}{9\pi}(1-\rho^3)K^3.
+  \label{thin:eq-continuous-normalization}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For \(y_\ell<a\), equations \eqref{thin:eq-phase-input} and
+\eqref{thin:eq-exact-phase-count} show that the number of radial levels in
+channel \(\ell\) is at most \(q_\ell\).  If \(y_\ell\geq a\), equivalently
+\(\nu_\ell\geq K\), the product comparison gives
+\[
+  \lambda_{\ell,1}
+  \geq\frac{\pi^2}{\varepsilon^2}+\ell(\ell+1)
+  =\frac{\pi^2}{\varepsilon^2}+\nu_\ell^2-\frac14
+  >K^2,
+\]
+so there is no radial level; at \(y_\ell=a\), the definition also gives
+\(q_\ell=[1/4]_< =0\).  Multiplicity \(2\ell+1=2y_\ell/\varepsilon\)
+now yields
+\[
+  N_D(A_{\rho,1},K^2)
+  \leq\sum_{\ell\geq0}\frac{2y_\ell}{\varepsilon}q_\ell
+  =\frac{2P_{\mathcal A}}{\varepsilon^2},
+\]
+which proves \eqref{thin:eq-phase-transfer}.  If
+\(\mathcal A(y_\ell)+1/4=m\in\mathbb Z\), then \(q_\ell=m-1\), so the
+phase-proxy wall is excluded exactly as required.
+
+For every \(y\geq0\), the strict bracket is
+\[
+  \left[\mathcal A(y)+\frac14\right]_<
+  =\#\{n\geq1:x_n<\mathcal A(y)\}.
+\]
+The sums are finite.  Since \(\mathcal A\) and \(R\) are decreasing,
+\(x_n<\mathcal A(y_\ell)\) is equivalent to \(y_\ell<R(x_n)\).  Therefore
+\[
+\begin{aligned}
+  P_{\mathcal A}
+  &=\varepsilon
+    \sum_{\substack{n\geq1\\x_n<T}}
+      \sum_{y_\ell<R(x_n)}y_\ell \\
+  &=\varepsilon
+    \sum_{\substack{n\geq1\\x_n<T}}
+      \varepsilon\sum_{\ell=0}^{M_\varepsilon(R(x_n))-1}
+        \left(\ell+\frac12\right) \\
+  &=\frac{\varepsilon^2}{2}
+    \sum_{\substack{n\geq1\\x_n<T}}
+      M_\varepsilon(R(x_n))^2,
+\end{aligned}
+\]
+because \(\sum_{\ell=0}^{M-1}(\ell+1/2)=M^2/2\).  This proves
+\eqref{thin:eq-discrete-layer-cake}.  Formula
+\eqref{thin:eq-half-integer-count} follows from the same strict counting;
+at \(x/\varepsilon=m+1/2\), it equals \(m\), excluding \(\ell=m\).
+
+Differentiation of \eqref{thin:eq-J-action} with respect to \(r\) gives
+\[
+  \frac{\partial J_r(y)}{\partial r}
+  =\sqrt{a^2-\frac{y^2}{r^2}}
+  \quad(0\leq y\leq ar).
+\]
+Consequently the two cases of \eqref{thin:eq-action-definition} combine as
+\begin{equation}
+  \mathcal A(y)
+  =\frac1{\pi\varepsilon}
+    \int_\rho^1
+      \left(a^2-\frac{y^2}{r^2}\right)_+^{1/2}\,dr,
+  \label{thin:eq-action-integral}
+\end{equation}
+where \(s_+=\max\{s,0\}\).
+The area identity for a decreasing inverse and Tonelli's theorem give
+\[
+  \frac12\int_0^T R(t)^2\,dt
+  =\int_0^a y\mathcal A(y)\,dy.
+\]
+Using \eqref{thin:eq-action-integral} and then \(y=rz\),
+\[
+\begin{aligned}
+  \int_0^a y\mathcal A(y)\,dy
+  &=\frac1{\pi\varepsilon}
+    \int_\rho^1r^2\,dr
+    \int_0^a z\sqrt{a^2-z^2}\,dz \\
+  &=\frac{a^3}{3\pi\varepsilon}\int_\rho^1r^2\,dr
+   =\frac{a^3}{3\pi}
+      \left(1-\varepsilon+\frac{\varepsilon^2}{3}\right).
+\end{aligned}
+\]
+This is \eqref{thin:eq-continuous-normalization}; its final equality follows
+from \(1-\rho^3=3\varepsilon m_\varepsilon\) and \(K=a/\varepsilon\).
+\end{proof}
+
+\begin{lemma}[Shifted sawtooth and radial quadrature deficit]
+\label{thin:lem-radial-deficit}
+Let
+\[
+  C(t)=\#\{n\geq1:n-\tfrac14<t\},
+  \qquad w(t)=t-C(t),
+  \qquad \mathfrak W(t)=\int_0^t w(s)\,ds,
+\]
+and put \(\Psi(t)=\mathfrak W(t)-t/4\).  Then, for all \(t\geq0\),
+\begin{equation}
+  \mathfrak W(t)\geq0,
+  \qquad
+  -\frac1{32}\leq\Psi(t)\leq\frac3{32}.
+  \label{thin:eq-sawtooth-bounds}
+\end{equation}
+Furthermore, with
+\begin{equation}
+  D_{\mathrm{rad}}
+  =\int_0^T F(t)\,dt
+   -\sum_{\substack{n\geq1\\x_n<T}}F(x_n),
+  \label{thin:eq-radial-deficit-definition}
+\end{equation}
+one has
+\begin{equation}
+  D_{\mathrm{rad}}
+  \geq\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4}.
+  \label{thin:eq-radial-deficit-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+On \(0\leq t\leq3/4\), \(C(t)=0\), and hence
+\begin{equation}
+  \Psi(t)=\frac12\left(t-\frac14\right)^2-\frac1{32}.
+  \label{thin:eq-first-sawtooth-cell}
+\end{equation}
+For \(x_n=n-1/4\), \(n\geq1\), and \(t=x_n+u\) with
+\(0\leq u\leq1\), direct integration gives
+\begin{equation}
+  \Psi(t)=\frac12\left(u-\frac12\right)^2-\frac1{32}.
+  \label{thin:eq-periodic-sawtooth-cell}
+\end{equation}
+These formulas agree at cell endpoints and prove the two-sided bound for
+\(\Psi\).  On the first cell \(\mathfrak W=t^2/2\geq0\).  Thereafter
+\(\mathfrak W=t/4+\Psi\geq t/4-1/32>0\), proving
+\eqref{thin:eq-sawtooth-bounds}.  At a jump \(x_n\), strict counting gives
+the one-sided values \(w(x_n^-)=3/4\) and \(w(x_n^+)=-1/4\), while
+\(\mathfrak W\)
+and \(\Psi\) are continuous.
+
+Distributionally, \(dw=dt-dC\).  Since \(F(T)=0\), an atom at \(x_n=T\)
+has zero weight and is consistent with its exclusion from
+\eqref{thin:eq-radial-deficit-definition}.  Stieltjes integration by parts,
+first on \([\eta,T]\) and then with \(\eta\downarrow0\), gives
+\begin{equation}
+  D_{\mathrm{rad}}=\int_0^T w(t)g(t)\,dt.
+  \label{thin:eq-stieltjes-start}
+\end{equation}
+Indeed, \eqref{thin:eq-improper-asymptotic}, together with
+\(w(t)=t\) and \(\mathfrak W(t)=t^2/2\) near zero, gives
+\(w(t)g(t)=O(t^{2/3})\) and
+\(\mathfrak W(t)g(t)=O(t^{5/3})\to0\), so the improper
+boundary term vanishes.
+
+Split \eqref{thin:eq-stieltjes-start} at the actual value \(\tau\), with
+no assumption that \(\tau\) belongs to any particular sawtooth cell.  On
+\((0,\tau)\), \(g\) decreases and \(\mathfrak W\geq0\); hence
+\begin{equation}
+  \int_0^\tau wg
+  =\mathfrak W(\tau)g(\tau)-\int_0^\tau \mathfrak W\,dg
+  \geq \mathfrak W(\tau)g(\tau).
+  \label{thin:eq-decreasing-stieltjes}
+\end{equation}
+On \((\tau,T)\), \(g\) increases and \(w=1/4+\Psi'\) almost everywhere.
+Adding its integration-by-parts identity to
+\eqref{thin:eq-decreasing-stieltjes}, and using
+\(\mathfrak W(\tau)=\tau/4+\Psi(\tau)\), cancels the interface value and
+yields
+\[
+  D_{\mathrm{rad}}
+  \geq \frac{F(\tau)}4+\frac{\tau g(\tau)}4
+     +\Psi(T)g(T)-\int_\tau^T\Psi\,dg.
+\]
+Because \(dg\) is a positive measure on \((\tau,T)\), the bounds
+\eqref{thin:eq-sawtooth-bounds} imply
+\[
+\begin{aligned}
+  D_{\mathrm{rad}}
+  &\geq \frac{F(\tau)}4-\frac{g(T)}8
+    +g(\tau)\left(\frac\tau4+\frac3{32}\right) \\
+  &\geq \frac{F(\tau)}4-\frac{g(T)}8.
+\end{aligned}
+\]
+The two discarded quantities,
+\(-\int_0^\tau \mathfrak W\,dg\) and
+\(g(\tau)(\tau/4+3/32)\), are explicitly nonnegative.  Substitution of
+\(F(\tau)=\rho^2a^2\) and \(g(T)=2\pi\rho a\) from
+Lemma~\ref{thin:lem-action-geometry} proves
+\eqref{thin:eq-radial-deficit-bound}.  Continuity of
+\(\mathfrak W,\Psi,g\) at the
+split shows that the same proof covers \(\tau\) below, on, or above every
+sawtooth grid point.
+\end{proof}
+
+
+\section{Global two-ratio closure}
+\label{sec:global-two-owner}
+
+\subsection{Ratio-sharp defect theorem below the optical strip}
+
+\input{analytic/ratio-sharp-global-closure-summary.tex}
+
+\begin{lemma}[Rational bounds for \(\pi\)]
+\label{lem:rational-pi-bounds}
+One has
+\[
+ \frac{157}{50}<\frac{333}{106}<\pi<\frac{22}{7},
+ \qquad\text{and hence}\qquad \frac1\pi<\frac{106}{333}.
+\]
+\end{lemma}
+
+\begin{proof}
+Put \(a=\arctan(1/5)\) and \(b=\arctan(1/239)\).  The tangent addition
+formula gives
+\[
+ \tan(2a)=\frac5{12},\qquad
+ \tan(4a)=\frac{120}{119},\qquad
+ \tan(4a-b)=1.
+\]
+Here \(b<a\), while \((6/5)^2<2\) gives
+\(1/5<\sqrt2-1=\tan(\pi/8)\), and hence \(a<\pi/8\).  Therefore
+\(0<4a-b<\pi/2\).  Thus this is Machin's identity
+\(\pi=16a-4b\).  The alternating arctangent expansion gives
+\[
+ a>\frac15-\frac1{3\,5^3}+\frac1{5\,5^5}-\frac1{7\,5^7}
+  =\frac{323852}{1640625},
+ \qquad b<\frac1{239}.
+\]
+Indeed, these inequalities follow by integrating
+\[
+ \frac1{1+t^2}=1-t^2+t^4-t^6+\frac{t^8}{1+t^2}
+ \qquad(0\leq t\leq1)
+\]
+and using \(1/(1+t^2)<1\) for \(t>0\).
+Therefore
+\[
+ \pi>
+ \frac{1231847548}{392109375}
+ =\frac{333}{106}+\frac{3418213}{41563593750}.
+\]
+Also \(333/106-157/50=2/1325>0\).  For the upper bound,
+\[
+ \frac{x^4(1-x)^4}{1+x^2}
+ =x^6-4x^5+5x^4-4x^2+4-\frac4{1+x^2},
+\]
+so integration and \(4\arctan1=\pi\) give
+\[
+ 0<\int_0^1\frac{x^4(1-x)^4}{1+x^2}\,dx
+ =\frac{22}{7}-\pi.
+\]
+Since \(22/7-333/106=1/742>0\), all four rational numbers are ordered
+as asserted.
+This proves every displayed comparison.
+\end{proof}
+
+\subsection{All-frequency optical theorem}
+
+\begin{lemma}[All-frequency optical theorem]
+\label{cm:lem-optical}
+For \(39/50\leq\rho<1\) and \(K\geq0\),
+\(N_D(A_{\rho,1},K^2)\leq W(\rho,K)\), with strict inequality for
+\(K>0\).
+\end{lemma}
+
+\begin{proof}
+Put \(\varepsilon=1-\rho\leq11/50\),
+\(a=\varepsilon K\), and \(c=1126/625\).  We use two inclusive screens
+meeting at \(a=c/\varepsilon\).
+
+For the product screen, the strict min--max condition
+\eqref{thin:eq-product-condition} implies that a counted mode satisfies
+\[
+ n^2\pi^2+\varepsilon^2\ell(\ell+1)<a^2.
+\]
+There is no mode for \(a\leq\pi\).  For \(a>\pi\), write
+\(a/\pi=N+t\), with \(N\geq1\), \(0<t\leq1\), assigning
+\((N,t)=(m-1,1)\) at \(a=m\pi\).  If
+\[
+ b_n=\sqrt{a^2-n^2\pi^2},\qquad
+ M_n=\left\lceil\sqrt{(b_n/\varepsilon)^2+1/4}-1/2\right\rceil,
+\]
+the exact angular multiplicity is bounded by
+\[
+ \mathcal P_\varepsilon(a)=\sum_{n=1}^N M_n^2.
+\]
+Set
+\[
+ I_0(a)=\int_0^{a/\pi}(a^2-\pi^2x^2)\,dx
+       =\frac{2a^3}{3\pi},
+ \qquad
+ S_0(a)=\sum_{n=1}^N b_n^2,
+ \qquad D(a)=I_0(a)-S_0(a).
+\]
+Direct summation of the continuous-minus-discrete product deficit gives
+\begin{equation}
+ \frac{D(a)}{\pi^2}=\frac{N^2}{2}
+ +N\left(t^2+\frac16\right)+\frac{2t^3}{3}.
+ \label{cm:eq-optical-product-deficit}
+\end{equation}
+For \(C_D=1382/3125\), the difference
+\(H(N,t):=D/\pi^2-C_D(N+t)^2\) increases in \(N\).  Indeed, for
+\(N\geq1\) and \(0<t\leq1\),
+\[
+ \partial_NH
+ =(1-2C_D)N+t^2+\frac16-2C_Dt
+ \geq1-2C_D+\frac16-C_D^2
+ =\frac{5074831}{58593750}>0.
+\]
+At \(N=1\), one has
+\[
+ \partial_tH(1,t)=2(t-C_D)(1+t),
+\]
+so the minimum occurs at \(t=C_D\), where it equals
+\(1822532/91552734375>0\).  Thus \(D>C_Da^2\).
+
+For \(x>0\),
+\[
+\left\lceil\sqrt{x^2+\frac14}-\frac12\right\rceil^2
+ <x^2+x+1.
+\]
+Indeed the ceiling is strictly smaller than
+\(\sqrt{x^2+1/4}+1/2\), whose square is
+\(x^2+1/2+\sqrt{x^2+1/4}<x^2+x+1\).  Applying this with
+\(x=b_n/\varepsilon\), then using the monotone left-sum estimate and the
+quarter-circle integral,
+\[
+ \sum_{n=1}^N b_n
+ <\int_0^{a/\pi}\sqrt{a^2-\pi^2x^2}\,dx=\frac{a^2}{4},
+ \qquad N<\frac a\pi,
+\]
+gives
+\[
+ \varepsilon^2\mathcal P_\varepsilon
+ <S_0+\varepsilon a^2/4+\varepsilon^2a/\pi.
+\]
+On \(a\leq c/\varepsilon\), using
+\(q=106/333>1/\pi\) from Lemma~\ref{lem:rational-pi-bounds} and
+\(\varepsilon\leq11/50\), the exact reserve is
+\begin{equation}
+ C_D-\left(\frac{2cq}{3}+\frac{11}{200}
+ +(11/50)^2q^2\right)
+ =\frac{39569}{2772225000}>0.
+ \label{cm:eq-optical-low-reserve}
+\end{equation}
+Indeed, \(a\leq c/\varepsilon\), \(\varepsilon\leq11/50\),
+\(a>\pi\), and \(q>1/\pi\) give
+\[
+ \varepsilon I_0+\frac{\varepsilon a^2}{4}
+ +\frac{\varepsilon^2a}{\pi}
+ <a^2\left(\frac{2cq}{3}+\frac{11}{200}
+ +(11/50)^2q^2\right)<C_Da^2<D.
+\]
+Consequently
+\[
+ \varepsilon^2\mathcal P_\varepsilon
+ <I_0-D+\frac{\varepsilon a^2}{4}
+ +\frac{\varepsilon^2a}{\pi}
+ <(1-\varepsilon)I_0<m_\varepsilon I_0
+ =\varepsilon^2W,
+\]
+where the last identity is \eqref{thin:eq-weyl-normalization}.
+This proves the low screen, including all radial and angular equality walls.
+
+For the complementary-action screen, use the inverse-action construction
+proved in Lemma~\ref{thin:lem-action-geometry}: let the decreasing shell
+action have inverse \(R_{\mathcal A}\), put \(F=R_{\mathcal A}^2\), and
+\(g=-F'\).  If \(\tau\) is the actual curvature interface and
+\(T=a/\pi\), that lemma gives
+\[
+ g\text{ decreasing on }(0,\tau),\quad
+ g\text{ increasing on }(\tau,T),
+\]
+\[
+ F(0)=a^2,\quad F(\tau)=\rho^2a^2,\quad F(T)=0,\quad
+ g(T)=2\pi\rho a.
+\]
+For \(C(t)=\#\{n:n-1/4<t\}\), set \(w=t-C(t)\) and
+\(\Psi(t)=\int_0^tw(s)\,ds-t/4\).  The complete sawtooth and Stieltjes
+calculation in Lemma~\ref{thin:lem-radial-deficit}, including the ungridded
+curvature interface \(\tau\), gives
+\begin{equation}
+ D_{\rm rad}:=\int_0^TF(t)\,dt
+ -\sum_{n-1/4<T}F(n-1/4)
+ \geq\frac{\rho^2a^2}{4}-\frac{\pi\rho a}{4}.
+ \label{cm:eq-optical-radial-deficit}
+\end{equation}
+The exact half-integer angular count from
+Lemma~\ref{thin:lem-layer-cake} satisfies
+\(\varepsilon^2M_\varepsilon(x)^2<(x+\varepsilon/2)^2\), even on an
+angular wall.  Since fewer than \(a/\pi+1/4\) radial layers occur, the
+angular error is strictly below
+\begin{equation}
+ E=\left(\frac a\pi+\frac14\right)
+ \left(\varepsilon a+\frac{\varepsilon^2}{4}\right).
+ \label{cm:eq-optical-angular-error}
+\end{equation}
+On \(a\geq c/\varepsilon\), one has \(1/a\leq\varepsilon/c\).  Put
+\[
+ L_{\rm opt}(\varepsilon)
+ :=\frac{(1-\varepsilon)^2}{4}
+ -\frac{(22/7)(1-\varepsilon)\varepsilon}{4c},
+\]
+\[
+ A_{\rm opt}(\varepsilon)
+ :=q\varepsilon+\frac{\varepsilon^2}{4c}
+ +\frac{q\varepsilon^3}{4c}
+ +\frac{\varepsilon^4}{16c^2}.
+\]
+Dividing \eqref{cm:eq-optical-radial-deficit} and
+\eqref{cm:eq-optical-angular-error} by \(a^2\), then using
+Lemma~\ref{lem:rational-pi-bounds}, gives
+\[
+ \frac{D_{\rm rad}}{a^2}\geq L_{\rm opt}(\varepsilon),
+ \qquad
+ \frac{E}{a^2}<A_{\rm opt}(\varepsilon).
+\]
+For \(0<\varepsilon\leq11/50<1/2\),
+\[
+ L_{\rm opt}'(\varepsilon)
+ =-\frac{1-\varepsilon}{2}
+ -\frac{22/7}{4c}(1-2\varepsilon)<0,
+ \qquad
+ A_{\rm opt}'(\varepsilon)>0.
+\]
+At \(\varepsilon=11/50\), the exact endpoint difference is
+\begin{equation}
+ L_{\rm opt}(11/50)-A_{\rm opt}(11/50)
+ =\frac{14817541}{472867032960000}>0.
+ \label{cm:eq-optical-high-reserve}
+\end{equation}
+Thus the strict layer-cake sum is below the action integral, and the phase
+bridge proves the high screen.  The common face lies in the nonzero radial
+range because
+\[
+ \frac c\varepsilon\geq\frac{c}{11/50}
+ =\frac{2252}{275}>\frac{22}{7}>\pi,
+ \qquad
+ \frac{2252}{275}-\frac{22}{7}=\frac{9714}{1925}>0.
+\]
+Both screens include \(a=c/\varepsilon\), so their union has neither a gap
+nor an unowned equality face.  At \(K=0\) both sides vanish.
+\end{proof}
+
+\paragraph{Exact optical reserve ledger.}
+The small margins in the preceding proof are recorded here to make later
+constant changes auditable.  Each entry is an exact positive rational
+quantity, not a decimal or numerical premise.
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+certificate&positive reserve\\
+\midrule
+Machin lower certificate above \(333/106\)&
+\(3418213/41563593750\)\\
+minimum of the product-deficit function \(H\)&
+\(1822532/91552734375\)\\
+low optical screen&\(39569/2772225000\)\\
+high optical screen&\(14817541/472867032960000\)\\
+meeting face above \(22/7\)&\(9714/1925\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Proof of the spectral theorem}
+
+We now assemble the three disjoint phase-space owners.  Fix
+\(0<\rho<1\) and put
+\[
+ K_0(\rho):=\frac{\pi}{1-\rho}.
+\]
+If \(0\leq K\leq K_0(\rho)\), the strict product majorant in
+Lemma~\ref{thin:lem-product-majorant} gives
+\begin{equation}
+ N_D(A_{\rho,1},K^2)=0.
+ \label{eq:global-no-mode}
+\end{equation}
+This includes \(K=K_0(\rho)\): the first one-dimensional Dirichlet
+frequency lies on the spectral wall and is excluded.
+
+It remains to take \(K>K_0(\rho)\).  If
+\(0<\rho<39/50\), apply
+Theorem~\ref{rs:thm:global-proxy}.  If
+\(39/50\leq\rho<1\), apply Lemma~\ref{cm:lem-optical}.  These cases,
+together with \eqref{eq:global-no-mode}, are disjoint and exhaustive.
+Therefore
+\begin{equation}
+  N_D(A_{\rho,1},K^2)
+  \le\frac{2}{9\pi}(1-\rho^3)K^3
+  \qquad(K\ge0).
+  \label{eq:unit-shell-theorem}
+\end{equation}
+
+Now
+\[
+  \omega_3=\frac{4\pi}{3},
+  \qquad
+  L_3=\frac{\omega_3}{(2\pi)^3}=\frac1{6\pi^2},
+  \qquad
+  |A_{\rho,1}|=\frac{4\pi}{3}(1-\rho^3),
+\]
+so
+\begin{equation}
+  L_3|A_{\rho,1}|=\frac{2}{9\pi}(1-\rho^3).
+  \label{eq:weyl-normalization}
+\end{equation}
+Taking \(K=\sqrt\Lambda\) in \eqref{eq:unit-shell-theorem} proves the
+unit-shell form of Theorem~\ref{thm:spectral} for every \(\Lambda\ge0\).
+
+For arbitrary \(0<r<R\), put \(\rho=r/R\).  The unitary dilation
+\[
+  (D_Ru)(x)=R^{-3/2}u(x/R)
+\]
+maps \(L^2(A_{\rho,1})\) onto \(L^2(A_{r,R})\), and its Dirichlet form
+scales by \(R^{-2}\).  Hence
+\[
+  \lambda_j^D(A_{r,R})=R^{-2}\lambda_j^D(A_{\rho,1}),
+\]
+and the strict threshold transforms as
+\begin{equation}
+  N_D(A_{r,R},\Lambda)
+  =N_D(A_{\rho,1},R^2\Lambda).
+  \label{eq:dilation-count}
+\end{equation}
+Applying the unit-shell result at \(R^2\Lambda\),
+\[
+\begin{aligned}
+  N_D(A_{r,R},\Lambda)
+  &\le\frac{2}{9\pi}(1-\rho^3)(R^2\Lambda)^{3/2}\\
+  &=\frac{2}{9\pi}(R^3-r^3)\Lambda^{3/2}\\
+  &=L_3|A_{r,R}|\Lambda^{3/2}.
+\end{aligned}
+\]
+This proves Theorem~\ref{thm:spectral} for every \(R>0\), including
+\(R<1\).
+
+\appendix
+
+\section{Independent non-tiling theorem}
+
+We prove Theorem~\ref{thm:nontiling} independently of the spectral argument.
+Set \(\alpha=r/R\in(0,1)\) and scale by \(1/R\).  It suffices to consider
+\[
+  T=A_{\alpha,1}=\{x:\alpha<|x|<1\}.
+\]
+Every rigid motion has the form \(x\mapsto Qx+a\), with \(Q\) orthogonal.
+Because \(T\) is radial, \(Q(T)=T\), so every congruent copy is a translate
+\[
+  T_a=a+T=\{x:\alpha<|x-a|<1\}.
+\]
+
+Assume for contradiction that \(\{T_a:a\in\mathfrak C\}\) has
+pairwise-disjoint interiors and covers almost everywhere.  Duplicate centers
+are impossible because they give the same nonempty open tile.
+
+Fix a unit vector \(e\) and put
+\[
+  c=\frac{1+\alpha}{2}e,
+  \qquad
+  \delta=\frac{1-\alpha}{2}.
+\]
+Write \(B(x,s)=\{y\in\R^3:|y-x|<s\}\) for the open Euclidean ball.
+Then \(B(c,\delta)\subset T\).  Therefore \(T_a\) contains
+\(B(a+c,\delta)\), and disjointness implies
+\begin{equation}
+  |a-b|\ge1-\alpha
+  \qquad(a\ne b).
+  \label{eq:center-separation}
+\end{equation}
+Thus the centers are locally finite: a bounded set cannot contain infinitely
+many points with fixed positive separation.  They are also countable, since
+\[
+  \mathfrak C
+  =\bigcup_{m\ge1}(\mathfrak C\cap\overline B(0,m))
+\]
+is a countable union of finite sets.
+
+Each tile boundary is a union of two spheres and is three-dimensional null.
+The countable union
+\[
+  Z=\bigcup_{a\in\mathfrak C}\partial T_a
+\]
+is therefore null.  Exact open-shell coverage is already a special case of
+almost-everywhere coverage.  If closed shells cover exactly or almost
+everywhere, removing \(Z\) shows that their open interiors still cover almost
+everywhere.  Hence it is enough to assume
+\begin{equation}
+  \left|\R^3\setminus\bigcup_{a\in\mathfrak C}T_a\right|=0.
+  \label{eq:ae-coverage}
+\end{equation}
+
+Choose one tile \(T_{a_0}\) and its outer sphere
+\[
+  \Sigma=\{x:|x-a_0|=1\}.
+\]
+Fix \(p\in\Sigma\) and put \(u=p-a_0\).  For \(n\ge1\), let
+\[
+  U_n=B\left(p+\frac2n u,\frac1n\right).
+\]
+Every \(U_n\) lies outside \(T_{a_0}\), is open, and has positive volume.
+By \eqref{eq:ae-coverage}, choose \(x_n\in U_n\cap T_{a_n}\) with
+\(a_n\ne a_0\).  Since \(x_n\to p\) and \(|x_n-a_n|<1\), the centers
+\(a_n\) eventually lie in a fixed bounded set.  Local finiteness lets us
+pass to a subsequence with one fixed center \(a\ne a_0\).  Thus
+\(p\in\overline{T_a}\).
+
+The point \(p\) is not in \(T_a\).  Otherwise some
+\(B(p,\varepsilon)\) lies in \(T_a\).  Choose
+\[
+  0<t<\min\{\varepsilon,1-\alpha\}.
+\]
+Then \(p-tu\in T_{a_0}\cap T_a\), contradicting disjoint interiors.
+Therefore every \(p\in\Sigma\) belongs to the boundary of a neighboring
+tile.
+
+If \(p\in\Sigma\cap\partial T_a\), then
+\(|p-a|\in\{\alpha,1\}\), hence \(|a-a_0|\le2\).  Only finitely many
+centers satisfy this bound.  Consequently \(\Sigma\) is covered by finitely
+many neighboring inner or outer boundary spheres.
+
+Translate so that \(a_0=0\).  The intersection of \(\Sigma\) with a
+neighboring sphere \(\{x:|x-a|=s\}\), \(s\in\{\alpha,1\}\), satisfies
+\[
+  |x|^2=1,
+  \qquad |x-a|^2=s^2,
+\]
+and hence
+\begin{equation}
+  2a\cdot x=|a|^2+1-s^2.
+  \label{eq:sphere-plane}
+\end{equation}
+Because \(a\ne0\), \eqref{eq:sphere-plane} is a genuine plane.  Its
+intersection with \(\Sigma\) is empty, a tangent point, or a circle, and
+therefore has zero surface measure on \(\Sigma\).  A finite union of such
+sets cannot cover \(\Sigma\), whose area is \(4\pi\).
+
+There is no coincident-sphere exception.  A neighboring outer sphere equals
+\(\Sigma\) only when it has the same center, which is the original tile or a
+forbidden duplicate.  A neighboring inner sphere cannot equal \(\Sigma\)
+because \(\alpha<1\).  We have reached a contradiction.  Scaling back proves
+Theorem~\ref{thm:nontiling}.
+
+\section{External inputs and verification boundary}
+\label{app:external-boundary}
+
+The proof above is self-contained with respect to every shell-specific
+spectral reduction, weighted count, regional subtraction, boundary assignment,
+and exact-rational inequality.  It uses only the following conventional
+external results, each in the scope stated where it enters the proof:
+\begin{enumerate}
+  \item standard spherical-harmonic decomposition, regular
+        Dirichlet Sturm--Liouville theory, direct-sum facts, and the min--max
+        principle;
+  \item the Bessel equation and standard identities, its Wronskian,
+        Nicholson's representation, and the usual small- and large-argument
+        formulas collected in \cite{DLMF};
+  \item the real-order phase enclosure of \cite{FLPSphase} and the annular
+        phase-difference estimates stated as Theorem~5.1 and Lemma~5.2 of
+        \cite{FLPSannuli}.
+\end{enumerate}
+
+The rational bounds
+\(157/50<333/106<\pi<22/7\), including the reciprocal inequality used in
+the optical theorem, are proved in Lemma~\ref{lem:rational-pi-bounds} rather
+than imported.  Every nonstandard scalar estimate is likewise proved in the
+paper or the accompanying \emph{Purely Analytic Supplement}.  No numerical
+experiment, floating-point computation, interval certificate, or executable
+program is a premise of the proof.
+
+\begin{thebibliography}{3}
+
+\bibitem{FLPSphase}
+N.~Filonov, M.~Levitin, I.~Polterovich, and D.~A.~Sher,
+\newblock Uniform enclosures for the phase and zeros of Bessel functions and
+their derivatives,
+\newblock \emph{SIAM J. Math. Anal.} \textbf{56} (2024), no.~6, 7644--7682.
+\newblock \href{https://doi.org/10.1137/24M1642032}{doi:10.1137/24M1642032}.
+
+\bibitem{FLPSannuli}
+N.~Filonov, M.~Levitin, I.~Polterovich, and D.~A.~Sher,
+\newblock P\'olya's conjecture for Dirichlet eigenvalues of annuli,
+\newblock \emph{J. Lond. Math. Soc.} \textbf{113} (2026), no.~2, e70425.
+\newblock \href{https://doi.org/10.1112/jlms.70425}{doi:10.1112/jlms.70425}.
+
+\bibitem{DLMF}
+NIST Digital Library of Mathematical Functions,
+\newblock Chapter 10: Bessel functions, in particular equation (10.9.30)
+and the standard identities and limiting formulas used above,
+\newblock \url{https://dlmf.nist.gov/10}, accessed 16 July 2026.
+
+\end{thebibliography}
+
+\end{document}

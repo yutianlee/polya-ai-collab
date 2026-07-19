@@ -1,0 +1,93 @@
+{
+  "assigned_shared_face": "K=168/25",
+  "certification_scope": "the single closed box B1 only",
+  "checks": {
+    "B1_subset_D16_verified": true,
+    "all_provenance_hashes_verified": true,
+    "all_uncounted_modes_excluded_by_Sturm": true,
+    "closed_faces_included": true,
+    "complete_face_intersection_verified": true,
+    "frozen_packet_hash_verified": true,
+    "no_spectral_wall_in_B1": true,
+    "strict_Weyl_margin_at_true_worst_corner": true,
+    "strict_lower_and_upper_residual_margins": true,
+    "uniform_root_brackets_ell_0_1": true
+  },
+  "exact_margin_displays": {
+    "K0_proxy_margin": "18.35252596152809946233111480436542162887",
+    "Weyl_lower": "18.77444611778998536633203727309752032357",
+    "Weyl_minus_count": "14.77444611778998536633203727309752032357",
+    "ell_two_Sturm_margin": "0.1066790466850177548105880128908100303840",
+    "lower_residual_margin": "0.2150473464102067615373566167204971158028",
+    "note": "decimal displays are non-decisive; PASS used exact Fractions",
+    "second_radial_Sturm_margin": "112.3054161867400710192423520515632401215"
+  },
+  "independent_determinants": {
+    "ell_0_lower_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "0.03848314863339058333774707794704987836924",
+      "sign": "positive",
+      "upper_display": "0.04467777664334459615126723811762228299119"
+    },
+    "ell_0_target_box": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.2248336836515255043780732229273692711924",
+      "sign": "negative",
+      "upper_display": "-0.2133936843867588414297155221763975022209"
+    },
+    "ell_0_upper_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.01155708912178611213887008896673470134662",
+      "sign": "negative",
+      "upper_display": "-0.005257322191668278890168854162094316842963"
+    },
+    "ell_1_lower_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "0.03587731348922702785505536915675757917248",
+      "sign": "positive",
+      "upper_display": "0.04337523876195023382998501369203632931058"
+    },
+    "ell_1_target_box": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.09030636370844005164297902858029317772519",
+      "sign": "negative",
+      "upper_display": "-0.07713415905095110331500920243931550097720"
+    },
+    "ell_1_upper_face": {
+      "display_note": "decimal display only; checker comparisons used exact Fraction endpoints",
+      "lower_display": "-0.01916349488834199067488090699986049275242",
+      "sign": "negative",
+      "upper_display": "-0.01157620322800810865965524524809089034529"
+    }
+  },
+  "limitations": [
+    "PASS applies only to B1 and does not cover D_16 or U_16.",
+    "B1 is certified coverage, not a new analytic-mask branch.",
+    "No theorem obligation is promoted by this local result."
+  ],
+  "schema": "polya-shell-round17-pilot-extension-check-v0.1",
+  "scope": {
+    "K": [
+      "168/25",
+      "673/100"
+    ],
+    "closed_faces": true,
+    "residual": "D_16",
+    "rho": [
+      "999/2000",
+      "1001/2000"
+    ]
+  },
+  "status": "PASS",
+  "strict_weighted_count": 4,
+  "verified_sha256": {
+    "arb_backend_helper": "8902a0fd4ff7db4b1443ca02326151d4d6e4b9b92b697c68220eb85454c4ec7e",
+    "fraction_checker_helper": "2ab1a31d8a22c6f1d5f7def2e33d2e3f0fb710fdb5cae50f8389d82f5b0475d5",
+    "freeze_record": "23bfee8cddd64d0d9d956b8d1a288c6263095a2a04cc42052c4ace08ca36152a",
+    "frozen_round17_packet": "eca93c29423a619ab13a3118653256df2ad085219c6718d195723a0a6542026e",
+    "independent_checker": "40a814e2a3557363d1d958f10c38c295ac0af894e4e8b441ea7dbd0c968991df",
+    "parent_B0_certificate": "f712c1ffb494461913665c578cc36c50d009b81cd48386afde6e49a68cddae00",
+    "parent_B0_check": "02b12e13ad329e77035d8438ec359b6be4dd35571c384543f3890d67c132e6cc",
+    "producer": "38362dd192c7918a3895eb4b13a1afdd076eaae28a650eb8bed31d517314a2a7"
+  }
+}

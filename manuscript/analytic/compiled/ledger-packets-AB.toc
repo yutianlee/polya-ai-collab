@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Scope and notation}{1}{section.1}%
+\contentsline {section}{\numberline {2}A rational enclosure for \(\pi \)}{2}{section.2}%
+\contentsline {section}{\numberline {3}Packet A: universal exact-arithmetic lemmas}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Strict floors and equality owners}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Odd multiplicities and block caps}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The symbolic optical product deficit}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Monotonic propagated cuts}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Packet B: moving-\(3z\) ordering}{5}{section.4}%
+\contentsline {section}{\numberline {5}Packet B: checkpoint boundary table and exhaustiveness}{7}{section.5}%
+\contentsline {section}{\numberline {6}Executable-row coverage contract}{8}{section.6}%

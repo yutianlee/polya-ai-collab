@@ -21,6 +21,7 @@ ALLOWED_STATUSES = {
     "derived_under_assumptions",
     "proved_internal",
     "proved_external_dependency",
+    "certified",
     "rejected",
 }
 
@@ -38,10 +39,29 @@ OPEN_ACTION_STATUSES = {
 }
 
 SOURCE_TYPES = {"external_theorem", "source_audit"}
-NON_PROOF_TYPES = {"computation"}
+COMPUTATION_TYPES = {"computation"}
+EVIDENCE_CLASSES = {
+    "floating_point_experiment",
+    "symbolic_sanity_check",
+    "interval_certified",
+    "formal_verified",
+}
+CERTIFYING_EVIDENCE_CLASSES = {"interval_certified", "formal_verified"}
+CRITICALITIES = {"standard", "bottleneck", "theorem"}
+REVIEW_INDEPENDENCE = {"dependent", "independent", "clean_room"}
 
 REQUIRED_FIELDS = {"id", "type", "status", "title", "track", "next_action"}
-LIST_FIELDS = {"dependencies", "implies", "blockers", "required_output"}
+LIST_FIELDS = {
+    "dependencies",
+    "implies",
+    "blockers",
+    "required_output",
+    "permitted_dependencies",
+    "falsification_cases",
+    "clean_room_artifacts",
+    "adversarial_review_artifacts",
+    "certification_artifacts",
+}
 
 
 @dataclass(frozen=True)
@@ -164,8 +184,62 @@ def validate_graph(graph: dict[str, Any], *, root: Path | None = None) -> list[s
         if status in OPEN_ACTION_STATUSES and not str(item.get("next_action", "")).strip():
             issues.append(f"{obligation_id}: open-like obligations require next_action")
 
-        if item.get("type") in NON_PROOF_TYPES and status in PROMOTED_STATUSES:
-            issues.append(f"{obligation_id}: computation obligations may not be proof statuses")
+        obligation_type = item.get("type")
+        criticality = item.get("criticality", "standard")
+        if criticality not in CRITICALITIES:
+            issues.append(f"{obligation_id}: unknown criticality {criticality!r}")
+
+        independence = item.get("review_independence")
+        if independence is not None and independence not in REVIEW_INDEPENDENCE:
+            issues.append(f"{obligation_id}: unknown review_independence {independence!r}")
+
+        role_fields = ("lead_author", "clean_room_reviewer", "adversarial_reviewer")
+        for field in role_fields:
+            if field in item and (not isinstance(item[field], str) or not item[field].strip()):
+                issues.append(f"{obligation_id}: {field} must be a non-empty string")
+
+        if obligation_type in COMPUTATION_TYPES and status in PROMOTED_STATUSES:
+            issues.append(f"{obligation_id}: computation obligations may not use mathematical proof statuses")
+        if status == "certified" and obligation_type not in COMPUTATION_TYPES:
+            issues.append(f"{obligation_id}: only computation obligations may use status 'certified'")
+
+        evidence_class = item.get("evidence_class")
+        if evidence_class is not None and evidence_class not in EVIDENCE_CLASSES:
+            issues.append(f"{obligation_id}: unknown evidence_class {evidence_class!r}")
+        if status == "certified":
+            if evidence_class not in CERTIFYING_EVIDENCE_CLASSES:
+                issues.append(
+                    f"{obligation_id}: certified computation requires interval_certified or formal_verified evidence"
+                )
+            for field in (
+                "software_version",
+                "reproduction_command",
+                "coverage_statement",
+                "artifact_hashes",
+            ):
+                if not item.get(field):
+                    issues.append(f"{obligation_id}: certified computation requires {field}")
+            if not item.get("certification_artifacts"):
+                issues.append(f"{obligation_id}: certified computation requires certification_artifacts")
+
+        if criticality in {"bottleneck", "theorem"}:
+            missing_roles = [field for field in role_fields if not item.get(field)]
+            if missing_roles:
+                issues.append(
+                    f"{obligation_id}: {criticality} obligations require roles: {', '.join(missing_roles)}"
+                )
+            role_values = [item.get(field) for field in role_fields if item.get(field)]
+            if len(role_values) != len(set(role_values)):
+                issues.append(f"{obligation_id}: lead and independent review roles must be distinct")
+            if item.get("review_independence") != "clean_room":
+                issues.append(f"{obligation_id}: {criticality} obligations require clean-room review")
+            if status in PROMOTED_STATUSES:
+                if not item.get("clean_room_artifacts"):
+                    issues.append(f"{obligation_id}: promoted {criticality} obligation lacks clean_room_artifacts")
+                if not item.get("adversarial_review_artifacts"):
+                    issues.append(
+                        f"{obligation_id}: promoted {criticality} obligation lacks adversarial_review_artifacts"
+                    )
 
         if item.get("type") in SOURCE_TYPES and status != "rejected":
             source_card = item.get("source_card")
@@ -250,6 +324,8 @@ def validate_patch_against_graph(graph: dict[str, Any], patch: dict[str, Any]) -
             issues.append(f"create entry duplicates existing obligation: {obligation_id}")
         if item.get("status") in PROMOTED_STATUSES and not _has_new_evidence(item):
             issues.append(f"{obligation_id}: promoted created obligation requires evidence")
+        if item.get("status") == "certified" and not _has_new_evidence(item):
+            issues.append(f"{obligation_id}: certified created obligation requires evidence")
 
     for item in ops["update"]:
         if not isinstance(item, dict):
@@ -267,6 +343,12 @@ def validate_patch_against_graph(graph: dict[str, Any], patch: dict[str, Any]) -
                 issues.append(f"{obligation_id}: promotion requires reason_for_promotion or reason")
             if not _has_new_evidence(item):
                 issues.append(f"{obligation_id}: promotion requires evidence_added or evidence")
+        if new_status == "certified" and old_status != "certified":
+            reason = str(item.get("reason_for_promotion") or item.get("reason") or "").strip()
+            if not reason:
+                issues.append(f"{obligation_id}: certification requires reason_for_promotion or reason")
+            if not _has_new_evidence(item):
+                issues.append(f"{obligation_id}: certification requires evidence_added or evidence")
 
     for key in ("reject", "no_change"):
         for item in ops[key]:
@@ -482,6 +564,51 @@ def generate_reading_packet(
     targets = [str(item) for item in selection.get("target_obligations", [])]
     route = by_id.get("POLYA-program-target", {})
     target = by_id.get("TARGET-shell-d3", {})
+    program_complete = (
+        route.get("status") == "proved_internal"
+        and target.get("status") == "proved_internal"
+    )
+
+    if program_complete:
+        targets = [
+            "POLYA-program-target",
+            "TARGET-shell-d3",
+            "SHELL-spherical-shell-nontiling",
+        ]
+        target_summary = (
+            "Target completed internally: exact Dirichlet P\u00f3lya for every "
+            "genuine three-dimensional spherical shell, together with non-tiling "
+            "of the same full class."
+        )
+        status_summary = (
+            "Current status: the shell theorem and the internal shell program target "
+            "are proved_internal. This does not solve the general P\u00f3lya conjecture "
+            "and makes no literature-novelty or publication-priority claim. The "
+            "ellipse and certificate-family tracks remain open and independent."
+        )
+        bottleneck_heading = "Completed Shell Target"
+        do_not_claim_rules = [
+            "- Do not describe this shell-class theorem as a proof of the general P\u00f3lya conjecture.",
+            "- Do not claim literature novelty, priority, or publication readiness without a separate current human audit.",
+            "- Do not describe the ellipse theorem or certificate-family theorem as proved.",
+            "- Keep every interval certificate within its exact finite scope and keep `COMP-certified-bessel` diagnostic-only.",
+        ]
+    else:
+        target_summary = (
+            "Target: exact Dirichlet P\u00f3lya for one natural non-tiling Euclidean "
+            "domain class."
+        )
+        status_summary = (
+            "Current status is governed by the live obligation statuses and blockers "
+            "below; historical round-selection prose is not authoritative."
+        )
+        bottleneck_heading = "Active Bottleneck"
+        do_not_claim_rules = [
+            "- Do not claim an open shell, ellipse, or certificate-family theorem has been proved.",
+            "- Floating-point and symbolic computation are diagnostic only; interval/formal certification discharges only an explicit finite computation obligation.",
+            "- Do not use external theorems as proof dependencies without completed source cards.",
+            "- Do not promote a bottleneck without exact proof evidence, a clean-room reconstruction, and an adversarial-review artifact.",
+        ]
 
     lines = [
         "# Reading Packet",
@@ -490,15 +617,15 @@ def generate_reading_packet(
         "",
         "## Current Theorem Target",
         "",
-        "Target: exact Dirichlet Pólya for one new natural non-tiling Euclidean domain class.",
+        target_summary,
         "",
-        "Current status: initialization/audit only. No new Pólya theorem has been proved.",
+        status_summary,
         "",
         "## Current Route",
         "",
         str(route.get("statement_tex", "Program target statement missing from proof obligation graph.")),
         "",
-        "## Active Bottleneck",
+        f"## {bottleneck_heading}",
         "",
         f"`TARGET-shell-d3`: {target.get('status', 'unknown')}.",
         "",
@@ -506,11 +633,14 @@ def generate_reading_packet(
         "",
         "Current blockers:",
     ]
-    for blocker in target.get("blockers", []) if isinstance(target.get("blockers"), list) else []:
+    blockers = target.get("blockers", []) if isinstance(target.get("blockers"), list) else []
+    for blocker in blockers:
         blocker_item = by_id.get(blocker, {})
         title = blocker_item.get("title", "")
         status = blocker_item.get("status", "unknown")
         lines.append(f"- `{blocker}` ({status}): {title}")
+    if not blockers:
+        lines.append("- none")
 
     lines.extend(["", "## Round Target Obligations", ""])
     for obligation_id in targets:
@@ -528,20 +658,18 @@ def generate_reading_packet(
             "",
             "## Do-Not-Claim Rules",
             "",
-            "- Do not claim the shell theorem, ellipse theorem, or certificate-family theorem has been proved.",
-            "- Do not treat computation as proof; computation evidence is diagnostic only.",
-            "- Do not use external theorems as proof dependencies without completed source cards.",
-            "- Do not promote a claim without exact statement, dependencies, evidence, and remaining caveats.",
+            *do_not_claim_rules,
             "",
-            "## Agent Assignments",
+            "## Obligation Roles",
             "",
-            f"Use `{next_round_prompts_path}` for any judge-assigned A1/A2/A3/A4 tasks.",
+            f"Use `{next_round_prompts_path}` for role-specific tasks selected from the graph.",
             "",
-            "Default target split:",
-            "- `A1`: target theorem memo, source-card discipline, synthesis, and State Patch authoring.",
-            "- `A2`: conservative shell-route proof surgery and obstruction analysis.",
-            "- `A3`: route comparison and independent obstruction search.",
-            "- `A4`: API formula audit and certified-computation planning.",
+            "Current functional split:",
+            "- `A1`: project lead, obligation mapping, proof integration, and State Patch authoring.",
+            "- `A2`: incumbent analytic proof author for the selected bottleneck.",
+            "- `A3`: clean-room reconstruction from a reduced packet with no incumbent proof.",
+            "- `A4`: adversarial referee and certified-computation engineer.",
+            "- Only assigned reviewers receive peer outputs; universal all-agent cross-review is not required.",
             "",
             "## Relevant Files",
             "",
@@ -570,6 +698,14 @@ def generate_reading_packet(
         lines.append(f"- Status: `{item.get('status')}`")
         lines.append(f"- Track: `{item.get('track')}`")
         lines.append(f"- Owner: `{item.get('owner', 'unassigned')}`")
+        if item.get("criticality"):
+            lines.append(f"- Criticality: `{item.get('criticality')}`")
+        if item.get("lead_author"):
+            lines.append(f"- Lead author: `{item.get('lead_author')}`")
+        if item.get("clean_room_reviewer"):
+            lines.append(f"- Clean-room reviewer: `{item.get('clean_room_reviewer')}`")
+        if item.get("adversarial_reviewer"):
+            lines.append(f"- Adversarial reviewer: `{item.get('adversarial_reviewer')}`")
         blockers = item.get("blockers", [])
         if blockers:
             lines.append(f"- Blockers: {', '.join(f'`{blocker}`' for blocker in blockers)}")

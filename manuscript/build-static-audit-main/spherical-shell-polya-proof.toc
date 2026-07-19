@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Main results and conventions}{3}{section.1}%
+\contentsline {section}{\numberline {2}Separated spectrum, phase reduction, and the small-hole endpoint}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The exact separated spectrum}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Uniform phase enclosures and the strict lattice proxy}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Multiplicity reduction to shifted one-dimensional tails}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}The low-interface estimate in the small-hole sector}{12}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Uniform closure of the small-hole endpoint}{14}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Product and complementary-action tools}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The product comparison}{15}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The complementary-action comparison}{16}{subsection.3.2}%
+\contentsline {section}{\numberline {4}The compact-middle argument in full detail}{20}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Constants and the primitive analytic envelope}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Variational comparisons and the complete zero registry}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}The two-sided staircase}{27}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Combined closure of the lower components and the high staircase}{28}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}The optical closure and the exact residual \(\mathcal D_{20}\)}{33}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}All-frequency analytic closure of the exact residual \(\mathcal D_{20}\)}{35}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Analytic dependencies and optional cross-checks}{36}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Proof of the spectral theorem}{36}{section.5}%
+\contentsline {section}{\numberline {6}Proof that spherical shells do not tile}{37}{section.6}%
+\contentsline {section}{\numberline {A}External inputs and verification boundary}{39}{appendix.A}%

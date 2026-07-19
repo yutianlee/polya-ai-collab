@@ -1,0 +1,673 @@
+Connected High-Event Registry
+Analytic ledger replacement, Packet C
+Abstract
+This note replaces the exact-executable arithmetic used in the high spherical-shell staircase by
+displayed rational witnesses. It contains the complete seventeen-face localization registry, the three
+algebraic splits, the three dashed (impossible) cap cells, the ﬁve global checkpoint payments, the seven
+conditional payments, and the corrected cap–74 path. All comparisons are strict rational comparisons
+after the two elementary bounds 333/106 < π < 22/7. In particular, no decimal approximation,
+interval package, or external ledger is a logical input to this packet.
+1 Deﬁnitions and strict proxy convention
+For 0 < ρ < 1, put
+z = zρ :=
+π
+1 − ρ
+, x = xρ := z2
+ρ, km(ρ) :=
+√
+xρ + m(m + 1). (1)
+The three-dimensional Weyl term is
+W(ρ, K) :=
+2
+9π
+(1 − ρ3
+)K3
+. (2)
+At K = km(ρ), the product part of the strict channel proxy for the mode (ℓ, n), n ≥ 2, is
+n2
+x + ℓ(ℓ + 1) < x + m(m + 1).
+It is therefore governed by
+∆m;n,ℓ(ρ) := m(m + 1) − ℓ(ℓ + 1) − (n2
+− 1)xρ. (3)
+The channel is product-possible only when ∆m;n,ℓ > 0. Equality is excluded because the spectral proxy
+is strict. Since
+x′
+ρ =
+2π2
+(1 − ρ)3
+> 0, ∆′
+m;n,ℓ = −(n2
+− 1)x′
+ρ < 0, (4)
+a positive witness at r controls the side ρ ≤ r, while a negative witness controls the side ρ ≥ r.
+We write H for the largest ﬁrst-mode angular index retained in a cap cell and h for the largest second-
+mode angular index. A complete block through H has multiplicity (H + 1)2, because
+∑H
+ℓ=0(2ℓ + 1) =
+(H + 1)2.
+2 The only transcendental enclosure
+Lemma 1 (Rational enclosure of π). One has
+π− :=
+333
+106
+< π <
+22
+7
+=: π+. (5)
+1
+Proof. For 0 < u < 1, the alternating expansion of arctan u lies between each pair of consecutive partial
+sums. The tangent addition formula gives
+tan
+(
+4 arctan
+1
+5
+− arctan
+1
+239
+)
+= 1;
+indeed, tan(4 arctan(1/5)) = 120/119, so both the numerator and denominator in the last tangent
+quotient are 28561/(119 · 239). The angle lies in (0, π/2), and hence Machin’s identity follows:
+π = 16 arctan
+1
+5
+− 4 arctan
+1
+239
+.
+Using an even partial sum for the positive term and an upper partial sum for the subtracted term gives
+π > 16
+(
+1
+5
+−
+1
+3 · 53
++
+1
+5 · 55
+−
+1
+7 · 57
+)
+−
+4
+239
+,
+[right side] −
+333
+106
+=
+3418213
+41563593750
+> 0.
+Likewise,
+π < 16
+(
+1
+5
+−
+1
+3 · 53
++
+1
+5 · 55
+)
+− 4
+(
+1
+239
+−
+1
+3 · 2393
+)
+,
+22
+7
+− [right side] =
+1845738322
+1493178640625
+> 0.
+This proves (5).
+3 The seventeen rational localization faces
+Let
+ρc :=
+1
+1 + 2π
+.
+Because π > 3, ρc < 1/7. The seventeen registry ratios are strictly ordered as follows:
+4
+25
+<
+1
+5
+<
+1
+4
+<
+3
+10
+<
+1
+3
+<
+7
+20
+<
+3
+8
+<
+2
+5
+<
+5
+12
+<
+3
+7
+<
+1
+2
+<
+8
+15
+<
+107
+200
+<
+3
+5
+<
+16
+25
+<
+13
+20
+<
+2
+3
+.
+(6)
+For a completely explicit distinctness check, the sixteen consecutive gaps in (6) are
+1
+25
+,
+1
+20
+,
+1
+20
+,
+1
+30
+,
+1
+60
+,
+1
+40
+,
+1
+40
+,
+1
+60
+,
+1
+84
+,
+1
+14
+,
+1
+30
+,
+1
+600
+,
+13
+200
+,
+1
+25
+,
+1
+100
+,
+1
+60
+. (7)
+Moreover
+4
+25
+−
+1
+7
+=
+3
+175
+> 0,
+7
+8
+−
+2
+3
+=
+5
+24
+> 0.
+Thus all seventeen ratios lie in the high strip ρc < ρ < 7/8.
+For a positive row below, we use
+∆m;n,ℓ(r) > m(m + 1) − ℓ(ℓ + 1) − (n2
+− 1)
+(
+π+
+1 − r
+)2
+.
+2
+For a negative row, we use
+−∆m;n,ℓ(r) > (n2
+− 1)
+(
+π−
+1 − r
+)2
+− m(m + 1) + ℓ(ℓ + 1).
+The resulting exact witnesses are the following. “Retain” means only that the product wall does not
+permit deletion of the indicated block; the independent Bessel wall may still remove it.
+no. r (m; n, ℓ) exact sign witness one-sided cap/event consequence
+1 1/5 (11; 3, 1) ∆ > 320/49 retain the third block 0:1 for
+ρ ≤ 1/5
+2 3/10 (8; 2, 3) −∆ > 58215/137641 at k8, h ≤ 2 for ρ ≥ 3/10
+3 1/3 (8; 2, 2) −∆ > 27699/44944 at k8, h ≤ 1 for ρ ≥ 1/3
+4 3/8 (9; 2, 3) ∆ > 2622/1225 retain the h = 3 column below this
+face
+5 2/5 (9; 2, 2) ∆ > 248/147 retain the h = 2 column below this
+face
+6 5/12 (9; 2, 1) ∆ > 2200/2401 retain the h = 1 column below this
+face
+7 3/7 (9; 2, 0) −∆ >
+120843/179776
+no second mode at k9 on the
+upper side
+8 1/2 (10; 2, 0) −∆ > 23677/2809 no second mode at k10 on the
+upper side
+9 107/200 (11; 2, 0) −∆ >
+13302732/2699449
+no second mode at k11 on the
+upper side
+10 8/15 (11; 2, 0) −∆ >
+2175627/550564
+the clean stated cutoﬀ: a second
+mode forces ρ < 8/15
+11 3/5 (8; 2, 0) −∆ >
+5080707/44944
+select the no-second k8
+cap/payment side
+12 16/25 (9; 2, 0) −∆ >
+1555635/11236
+select the no-second k9
+cap/payment side
+13 13/20 (10; 2, 0) −∆ >
+18126190/137641
+select the no-second k10
+cap/payment side
+14 2/3 (11; 2, 0) −∆ >
+1510851/11236
+select the no-second k11
+cap/payment side
+15 4/25 (10; 3, 0) −∆ >
+260740/137641
+no third mode at k10 on the upper
+side
+16 1/4 (11; 3, 0) −∆ > 23484/2809 a third mode at k11 forces ρ < 1/4
+17 7/20 (9; 2, 4) −∆ > 36230/474721 the H = 6, h = 4 cap–74 cell can
+occur only below this face
+Every entry is a displayed positive rational number. Together with the monotonicity (4), the table
+proves the asserted side on an interval, not merely at a sampled point.
+4 Three algebraic splits and the ﬁve k11 implications
+At ρ = ρc, x = (π + 1/2)2, while at ρ = 7/8, x = 64π2. Lemma 1 gives the exact chain
+(π + 1
+2 )2
+<
+(
+51
+14
+)2
+=
+2601
+196
+< 16 <
+68
+3
+< 34 < 64 · 32
+< 64π2
+. (8)
+3
+Consequently each of x = 16, 68/3, 34 is attained at a unique point in the high strip. The relevant
+channel arithmetic is
+x channel exact value of ∆
+16 (m; n, ℓ) = (11; 3, 1) 132 − 2 − 8 · 16 = 2 > 0,
+68/3 (10; 2, 6) 110 − 42 − 3(68/3) = 0,
+34 (11; 2, 5) 132 − 30 − 3 · 34 = 0.
+(9)
+Thus the ﬁrst split lies on the possible side. The latter two are exact channel walls, and their new modes
+are excluded by the strict convention.
+The two localization consequences at k11 may also be read without the table:
+x8/15 − 44 >
+(
+π−
+1 − 8/15
+)2
+− 44 =
+725209
+550564
+> 0, (10)
+x1/4 −
+33
+2
+>
+(
+π−
+1 − 1/4
+)2
+−
+33
+2
+=
+5871
+5618
+> 0. (11)
+Hence a second mode at k11 forces ρ < 8/15, and a third mode forces ρ < 1/4. Finally, the ﬁrst-mode
+ball walls give
+(
+69
+5
+)2
+− 132 =
+1461
+25
+= 44 +
+361
+25
+=
+33
+2
++
+2097
+50
+, (12)
+(
+64
+5
+)2
+− 132 =
+796
+25
+=
+33
+2
++
+767
+50
+. (13)
+If H = 10 is present at k11, then x is larger than both the second threshold 44 and the third threshold
+33/2; hence every second and third mode is excluded. If H = 9 is present, every third mode is excluded.
+Equations (10)–(13) are the ﬁve formerly separate k11 localization implications.
+5 The three impossible cap cells
+If the ﬁrst mode H is counted at km, its strict ball wall βH,1 < km forces x > β2
+H,1 − m(m + 1). If the
+second mode h is counted, its product wall forces x < (m(m + 1) − h(h + 1))/3. The three dashed cells
+are therefore empty by the following exact, incompatible bounds:
+cell required lower bound required upper bound gap
+k8 : H = 6, h ≥ 2 100 − 72 = 28 (72 − 6)/3 = 22 6
+k9 : H = 8, h ≥ 0 (71/6)2 − 90 = 1801/36 90/3 = 30 721/36
+k9 : H = 7, h ≥ 3 (23/2)2 − 90 = 169/4 (90 − 12)/3 = 26 65/4.
+(14)
+No limiting equality can rescue a cell: both necessary modal inequalities are strict.
+6 Checkpoint monotonicity and ﬁve global payments
+Put M = m(m + 1) and Wm(ρ) := W(ρ, km(ρ)). Logarithmic diﬀerentiation shows that W′
+m has the
+sign of
+π2
+(1 + ρ) − Mρ2
+(1 − ρ)2
+. (15)
+For m ≤ 11,
+π2
+(1 + ρ) − Mρ2
+(1 − ρ)2
+> 9 −
+132
+16
+=
+3
+4
+> 0.
+4
+Thus every Wm, m ≤ 11, is strictly increasing. This single argument replaces both executable derivative-
+bound predicates.
+At ρc, one has z = π + 1/2 > 193/53, ρc < 1/7, and 1/π > 7/22. Consequently
+W(ρc, K) >
+2
+9
+7
+22
+(
+1 −
+1
+73
+)
+K3
+=
+38
+539
+K3
+. (16)
+For each row in the next table, the middle column proves km(ρc) > tm, and the last column proves
+Wm(ρc) > Cm.
+m cap Cm tm (193/53)2
++ M − t2
+m (38/539)t3
+m − Cm
+7 40 208/25 67049/1755625 5083656/8421875
+8 53 923/100 1901439/28090000 656778873/269500000
+9 73 254/25 61431/1755625 7911557/8421875
+10 89 111/10 14211/280900 1999489/269500
+11 121 241/20 65271/1123600 5076899/2156000
+Every last-column entry is positive. Monotonicity therefore extends each global payment from ρc to the
+complete high strip.
+7 Seven conditional ﬁrst-block payments
+We now give a general reduction which avoids any numerical enclosure of a radical. Suppose the presence
+of ﬁrst mode H below the checkpoint km forces K > t. Set
+a2
+:= t2
+− m(m + 1), ρ0 := 1 −
+π
+a
+. (17)
+All seven rows below have a > π: the smallest listed radicand is
+89
+4
+,
+89
+4
+−
+(
+22
+7
+)2
+=
+2425
+196
+> 0.
+If the mode is present for some K ≤ km(ρ), then km(ρ) > t, hence xρ > a2 and ρ > ρ0. By the strict
+increase of Wm,
+Wm(ρ) > Wm(ρ0) = W(ρ0, t).
+Choose a rational r > ρ0. Since W(ρ, t) decreases with ρ at ﬁxed t, Lemma 1 yields
+W(ρ0, t) > W(r, t) >
+7
+99
+(1 − r3
+)t3
+. (18)
+The condition r > ρ0 follows, without taking a square root, from
+L := π2
+− − (1 − r)2
+a2
+> 0. (19)
+Here is the complete calculation. The column P is the reserve in (18) above the stated cap.
+m H t cap a2
+r L P = 7
+99 (1 − r3
+)t3
+− cap
+7 6 10 53 44 8/15 725209/2528100 18659/2673
+8 7 23/2 80 241/4 3/5 64349/280900 213281/49500
+5
+m H t cap a2
+r L P
+9 8 71/6 81 1801/36 3/5 4713989/2528100 14506973/1336500
+10 7 23/2 100 89/4 7/20 2105431/4494400 18539033/6336000
+10 8 71/6 97 1081/36 3/7 317585/4955076 2865431/261954
+10 9 64/5 100 1346/25 3/5 8811001/7022500 25143284/1546875
+11 9 64/5 125 796/25 1/2 536261/280900 58757/12375
+All L’s and P’s are positive. Each row therefore proves both the localization of its conditional branch
+and its Weyl payment.
+8 The connected cap–74 path
+The seventeenth localization row is tied to the exceptional k9, H = 6, h = 4 cap as follows. Angular
+propagation from the strict (3, 2) Bessel wall gives
+j2
+9/2,2 >
+(
+103
+10
+)2
++ 20 − 12 =
+11409
+100
+= 108 +
+609
+100
+. (20)
+Accordingly the strict proxy uses β2
+4,2 = 11409/100; the strict inequality belongs to the actual Bessel
+zero j9/2,2, not to the proxy constant. At k9, the product wall for (4, 2) is
+3x < 90 − 20 = 70, i.e. x <
+70
+3
+.
+The ball wall (20), on the other hand, forces
+x >
+11409
+100
+− 90 =
+2409
+100
+,
+2409
+100
+−
+70
+3
+=
+227
+300
+> 0.
+Thus the fully sharpened cap–74 cell is empty.
+For completeness, even the deliberately conservative cell is paid. At ρ = 7/20,
+x7/20 −
+70
+3
+>
+400
+169
+(
+333
+106
+)2
+−
+70
+3
+=
+36230
+1424163
+> 0, (21)
+so a counted (4, 2) mode forces ρ < 7/20. Also
+108 −
+(
+207
+20
+)2
+=
+351
+400
+> 0, (22)
+so its ball wall forces K > 207/20. Therefore
+W(ρ, K) >
+7
+99
+(
+1 −
+(
+7
+20
+)3
+) (
+207
+20
+)3
+=
+52823261673
+704000000
+= 74 +
+727261673
+704000000
+> 74. (23)
+The cap itself is exactly (6 + 1)2 + (4 + 1)2 = 49 + 25 = 74. Equations (20)–(23) cover both the actual
+incompatibility and every row of the conservative cap–74 fallback.
+6
+9 Exact row map and scope audit
+The following map uses the ordering of the two functions in the original exact registry. To keep the table
+readable, L denotes verify_localizations, and C denotes verify_cap_tables_and_payments. The
+map lets a referee match every replaced predicate to a displayed hand calculation.
+registry family row numbers analytic replacement here
+L 1–2 distinctness and connectedness: (6)–(7) and the seventeen-row table
+L 3–19 all ratios in the high strip, by ρc < 1/7 < 4/25 and 2/3 < 7/8
+L 20–36 the seventeen exact sign witnesses in the long table
+L 37–42 split location (8) and side/equality arithmetic (9)
+L 43–47 the ﬁve k11 implications (10)–(13)
+C 44–55 the twelve non-bookkeeping cap–74 predicates, (20)–(23); row C56, the block
+identity 49 + 25 = 74, is allocated to Packet A
+C 57–59 the three impossible cells, (14)
+C 78–79 the general checkpoint monotonicity proof (15)
+C 80–84 the ﬁve global-payment rows following (16)
+C 85–98 the seven localization and seven conditional-payment rows in the ﬁnal long
+table
+The count reconciliation is
+subfamily connected mathematical objects registry predicates
+registry metadata 1 2
+high-strip membership 17 17
+localization signs 17 17
+algebraic splits 3 6
+special k11 implications 5 5
+cap–74 path 1 12
+impossible cells 3 3
+checkpoint monotonicity 1 2
+global payments 5 5
+conditional payments 7 14
+total 60 83.
+In particular, the ﬁve headline Packet–C subfamilies contain exactly
+17 + 3 + 3 + 5 + 7 = 35
+connected objects (localization signs, algebraic splits, impossible cells, global payments, and conditional
+payments). Because each algebraic split has a location and a side predicate, and each conditional payment
+has a localization and a reserve predicate, these headline objects replace 17+6+3+5+14 = 45 registry
+predicates. The remaining 38 predicates in the total are the explicitly listed auxiliary closure rows.
+Thus this packet replaces all 47 predicates of L and 36 predicates of C. The elementary cap addition
+rows 1–43, row 56, and rows 60–77 of the latter family are outside the declared Packet C scope; they are
+instances of the general odd-sum/block-cap identity and are not claimed here. No row in the declared
+scope is unreconstructed.
+7
+

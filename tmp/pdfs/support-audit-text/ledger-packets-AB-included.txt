@@ -1,0 +1,494 @@
+                           Exact-ledger decomputerization:
+                                  Packets A and B
+
+
+                                               16 July 2026
+
+
+                                                 Abstract
+        This note replaces two groups of executable exact-arithmetic checks in the three-dimensional
+     spherical-shell Pólya proof. Packet A proves once and for all the strict-bracket convention, odd-
+     multiplicity block sums, the optical product-deﬁcit identity, and monotonicity of propagated zero
+     and channel cuts. Packet B gives exact hand-checkable tables for the ﬁve moving 3z-crossings
+     and for the seven ﬁrst-excluded checkpoint channels. It then proves, without a ﬁnite search, that
+     the ﬁve printed checkpoint inventories are exhaustive. Every numerical comparison below is an
+     equality of rational numbers, a cross multiplication, or a positive-side squaring. No program
+     output, decimal approximation, or interval calculation is a premise.
+
+
+Contents
+1 Scope and notation                                                                                     1
+
+2 A rational enclosure for π                                                                             2
+
+3 Packet A: universal exact-arithmetic lemmas                                                            2
+  3.1 Strict ﬂoors and equality owners . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         2
+  3.2 Odd multiplicities and block caps . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        3
+  3.3 The symbolic optical product deﬁcit . . . . . . . . . . . . . . . . . . . . . . . . . . .          4
+  3.4 Monotonic propagated cuts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          5
+
+4 Packet B: moving-3z ordering                                                                           5
+
+5 Packet B: checkpoint boundary table and exhaustiveness                                                 7
+
+6 Executable-row coverage contract                                                                       8
+
+
+1    Scope and notation
+Throughout 0 < ρ < 1. Put
+                                        π
+                           z = zρ :=       ,          km (ρ)2 := zρ2 + m(m + 1),
+                                       1−ρ
+and deﬁne the two ratio endpoints
+                                              1                       1
+                                    ρ0 := √       ,        ρc :=          .
+                                              337                  1 + 2π
+
+                                                       1
+The high-checkpoint argument uses the strict proxy
+
+                              bℓ,n (z)2 := max{n2 z 2 + ℓ(ℓ + 1), βℓ,n
+                                                                   2
+                                                                       }.                         (1)
+
+A channel may be counted at K only when bℓ,n (z) < K. The constants βℓ,n are strict lower bounds
+for the corresponding ball zeros. The zero bounds used in the checkpoint table are displayed
+explicitly in Section 5.
+    The purpose of this note is deliberately limited. It replaces the general exact-arithmetic and
+checkpoint-ordering rows of the old ledger; it does not replace the zero-sign proofs, high-event
+payment registry, seam arithmetic, optical endpoint screens, or formal owner subtraction.
+
+
+2     A rational enclosure for π
+Lemma 2.1 (Hand enclosure for π). One has
+                                     333    22            1   106
+                                         <π< ,              <     .                               (2)
+                                     106    7             π   333
+Proof. For 0 < x ≤ 1, the alternating series for arctan x gives a strict lower bound after a negative
+term and a strict upper bound after a positive term. Hence
+                     1  1   1      1      1      323852                           1     1
+            arctan     > −      +      −       =         ,              arctan       <     .
+                     5  5 3 · 53 5 · 55 7 · 57   1640625                         239   239
+Machin’s identity therefore yields
+                                            1             1    1231847548
+                          π = 16 arctan       − 4 arctan     >            ,
+                                            5            239   392109375
+and direct subtraction gives the positive margin
+                              1231847548 333       3418213
+                                         −     =             > 0.
+                               392109375   106   41563593750
+For the upper bound, polynomial division and elementary integration give
+                                       ∫ 1
+                                             x4 (1 − x)4      22
+                                  0<                     dx =    − π.
+                                        0      1 + x2          7
+Finally, reciprocation of the positive lower bound for π gives the last inequality. Notice also that
+22/7 − 333/106 = 1/742 > 0, so the enclosure is nonempty.
+
+
+3     Packet A: universal exact-arithmetic lemmas
+3.1   Strict ﬂoors and equality owners
+Deﬁnition 3.1. For x ∈ R, let
+
+                                     [x]< := #{q ∈ Z≥1 : q < x}.
+
+Thus the bracket counts positive integers under a strict cutoﬀ.
+
+
+
+
+                                                    2
+Lemma 3.2 (Strict-bracket identity). For every real x,
+
+                                           [x]< = max{0, ⌈x⌉ − 1}.                                 (3)
+
+In particular, for every integer m ≥ 1,
+
+                                     [m]< = m − 1,           [m + 12 ]< = m.
+
+Consequently an integer equality wall is owned by the excluded side.
+
+Proof. If x ≤ 1, both sides of (3) vanish. If x > 1, the positive integers below x are exactly
+1, . . . , ⌈x⌉ − 1. This also proves the two specializations.
+
+   The same lemma handles the two equality conventions used later. If A + 1/4 = n ∈ Z≥1 , then
+[A + 1/4]< = n − 1. If a = mπ in the optical radial decomposition, the strict radial layers are
+represented by (N, t) = (m − 1, 1), not by (m, 0).
+
+3.2   Odd multiplicities and block caps
+Lemma 3.3 (Odd-sum and block-cap identity). For every integer h ≥ 0,
+
+                             ∑
+                             h                                 ∑
+                                                               h−1
+                                   (2ℓ + 1) = (h + 1)2 ,              (2ℓ + 1) = h2 .              (4)
+                             ℓ=0                                ℓ=0
+
+More generally, if radial layer n contains a complete angular block 0 ≤ ℓ ≤ hn , with hn = −1
+denoting an empty block, then its total multiplicity is
+                                                ∑
+                                                     (hn + 1)2 .                                   (5)
+                                                 n
+
+If x2 = h(h + 1) is a strict product equality wall, the equality channel ℓ = h is absent and the
+contribution is h2 .
+
+Proof. The ﬁrst identity follows either by induction or√by (ℓ + 1)2 − ℓ2 = 2ℓ + 1. Summing over
+independent radial layers gives (5). At x2 = h(h + 1), x2 + 1/4 − 1/2 = h; Lemma 3.2 excludes
+ℓ = h, leaving 0 ≤ ℓ < h and hence h2 .
+
+   For completeness, the cap arithmetic collapsed by this lemma is printed in compact form below.
+A dash means that another analytic argument has declared the cell impossible; the lemma asserts
+only the arithmetic of the non-dash entries.
+
+                                                            k9 : H\h     ∅     0    1    2 3 4
+             k8 : H\h   ∅      0      1 2 3
+                                                                8        81   −    −    − − −
+                 7      64    65     68 73 80
+                                                                7        64   65   68   73 − −
+                 6      49    50     53 − −
+                                                                6        49   50   53   58 65 74
+                 5      36    37     40 45 52
+                                                                5        36   37   40   45 52 61
+                 4      25    26     29 34 41
+                                                                4        25   26   29   34 41 50
+
+
+
+
+                                                        3
+Indeed every entry is (H + 1)2 plus 0 or (h + 1)2 . At k7 , the ﬁrst blocks H = 4, 5, 6 give 25, 36, 49,
+and second channels 0, 1 contribute 1 + 3 = 4. The remaining printed caps decompose as
+
+                   k10 :   102 ;   9 2 , 92 + 4 2 ;
+                           82 , 82 + 4 2 , 82 + 5 2 , 82 + 6 2 ;
+                           72 + 5 2 , 72 + 4 2 + 2 2 , 72 + 5 2 + 2 2 , 72 + 6 2 , 72 + 6 2 + 2 2
+                           = 100;      81, 97;        64, 80, 89, 100;         74, 69, 78, 85, 89,
+
+                   k11 :   112 ;   102 , 102 + 52 ;          9 2 + 5 2 , 92 + 5 2 + 2 2 ;       8 2 + 52 + 22
+                           = 121;      100, 125;        106, 110;        93.
+
+The conservative cap-74 row is the same identity 72 + 52 = 74.
+   The six lower inventories similarly give, in their printed order,
+
+(62 + 32 , 62 + 32 + 1, 72 + 32 + 1, 72 + 42 + 1, 72 + 42 + 1 + 3, 72 + 52 + 1 + 3) = (45, 46, 59, 66, 69, 78).
+
+Finally, the ten lower-d caps are the successive odd sums
+                     channels            cap                                  channels              cap
+                         1                1                                     1+3                  4
+                     1+3+5                9                                 1+3+5+1                  10
+                   1+3+5+7                16                              1+3+5+7+1                  17
+               1+3+5+7+9+1                26                          1+3+5+7+9+1+3                  29
+          1 + 3 + 5 + 7 + 9 + 11 + 1 + 3 40                      1 + 3 + 5 + 7 + 9 + 11 + 1 + 3 + 5 45.
+
+3.3    The symbolic optical product deﬁcit
+Proposition 3.4 (Product-deﬁcit identity and uniform reserve). Let N ≥ 1 be an integer, 0 < t ≤
+1, and x = N + t. Then
+                                           ∑N                              (            )
+                              2 3                   N2          1                               2t3
+                                x − N x2 +     n2 =    + N t2 +                             +       .           (6)
+                              3            n=1
+                                                    2           6                                3
+
+For CD = 1382/3125, the right-hand side is strictly larger than CD (N + t)2 . More precisely, its
+diﬀerence from CD (N + t)2 is at least
+                                                    1822532
+                                                              > 0.                                              (7)
+                                                  91552734375
+               ∑
+Proof. Insert N      2
+               n=1 n = N (N + 1)(2N + 1)/6 and expand; this proves (6) for all N, t, rather than
+at sampled values. Put C = CD , A = 1/2 − C = 361/6250, and let GN (t) denote the diﬀerence
+under consideration. Then
+                                                         (                     )
+                                                       1                               2t3
+                             GN (t) = AN + N t − 2Ct +
+                                              2              2
+                                                                                   +       − Ct2 .
+                                                       6                                3
+Consequently
+                                                                      1
+                          GN +1 (t) − GN (t) = A(2N + 1) + t2 − 2Ct + .
+                                                                      6
+Since 0 < C < 1, the last quadratic has minimum 1/6 − C 2 on (0, 1]. For N ≥ 1,
+                                                                     1         4229603
+                            GN +1 (t) − GN (t) ≥ 3A +                  − C2 =          > 0.
+                                                                     6        29296875
+
+                                                                 4
+It remains to minimize G1 . Direct diﬀerentiation gives
+
+                                         G′1 (t) = 2(t − C)(t + 1),
+
+so its unique minimum on 0 < t ≤ 1 is at t = C. Exact substitution gives
+                                                    1822532
+                                       G1 (C) =               > 0,
+                                                  91552734375
+which proves both assertions.
+
+3.4    Monotonic propagated cuts
+Lemma 3.5 (Zero-cut/channel-cut monotonicity). Fix n ≥ 2, a checkpoint m, and M = m(m + 1).
+Let An be a ﬁnite collection of anchor pairs (j, qj,n
+                                                  2 ), where j 2         2
+                                                              j+1/2,n > qj,n at each anchor. For every
+ℓ above at least one anchor, set
+                                                        ( 2                         )
+                          Bn (ℓ) :=        max          qj,n + ℓ(ℓ + 1) − j(j + 1) ,                   (8)
+                                          2 )∈A , j≤ℓ
+                                      (j,qj,n  n
+
+                         Zm,n (ℓ) := Bn (ℓ) − M,                                                       (9)
+                                     M − ℓ(ℓ + 1)
+                         Cm,n (ℓ) :=              .                                                  (10)
+                                        n2 − 1
+Then
+
+                             Zm,n (ℓ + 1) ≥ Zm,n (ℓ) + 2(ℓ + 1) > Zm,n (ℓ),                          (11)
+                                                       2(ℓ + 1)
+                             Cm,n (ℓ + 1) = Cm,n (ℓ) − 2        < Cm,n (ℓ).                          (12)
+                                                        n −1
+In particular, if Zm,n (ℓ0 ) ≥ Cm,n (ℓ0 ), then no channel (ℓ, n) with ℓ ≥ ℓ0 can satisfy the strict proxy
+(1) at K = km .
+Proof. Every old candidate in (8) gains exactly (ℓ + 1)(ℓ + 2) − ℓ(ℓ + 1) = 2(ℓ + 1) when ℓ is replaced
+by ℓ + 1; a new anchor can only increase the maximum. This proves (11). Formula (12) is direct.
+   If a channel were counted at km , its product part would give
+
+                         (n2 − 1)z 2 < M − ℓ(ℓ + 1),           hence   z 2 < Cm,n (ℓ),
+
+whereas its propagated ball-zero part would give
+
+                               Bn (ℓ) < z 2 + M,        hence     z 2 > Zm,n (ℓ).
+
+These strict inequalities are incompatible when Z ≥ C. Equations (11) and (12) propagate the
+incompatibility to every larger angular index.
+
+
+4      Packet B: moving-3z ordering
+We ﬁrst record rational radical enclosures. All six follow by positive squaring; the exact square
+margins are
+              lower comparison     margin                       upper comparison      margin
+               (183/10)2 < 337    211/100                         337 < (92/5)2        39/25
+           (1051/100)2 < 7073/64 2221/40000                   7073/64 < (1052/100)2 6191/40000
+             (1067/100)2 < 114   1511/10000                      114 < (107/10)2      49/100.
+
+                                                        5
+Thus                                                    √
+              183 √     92               1051
+                                         7073   1052   1067 √       107
+                 < 337 < ,                    <
+                                              <      ,      < 114 <     .                              (13)
+              10        5                 8
+                                          100    100    100         10
+                                                   √
+Lemma 4.1 (Endpoint and ﬁxed-wall order). With d = 337/2,
+                                              √
+                                   81    21     7073 √
+                  d < 3zρ0 < 10 <     <     <        < 114 < 3zρc .                                    (14)
+                                   8      2      8
+Moreover (81/8)2 + 8 = 7073/64.
+
+Proof. The nontrivial endpoint estimates have the following rational margins. From (2) and (13),
+                                       999                  46             999 46    119
+                      3zρ0 > 3π >          ,       d<          ,               −   =     > 0.
+                                       106                   5             106   5   530
+Also ρ0 < 10/183, whence
+                                  66 183   12078                           12078    32
+                         3zρ0 <          =       ,                 10 −          =      > 0.
+                                  7 173    1211                             1211   1211
+At the other endpoint, zρc = π + 1/2; therefore
+                              579         √             107            579 107   119
+                     3zρc >       ,            114 <        ,             −    =     > 0.
+                              53                        10             53   10   530
+The rational middle comparisons are immediate. For the two radical steps one may square positive
+quantities:
+                             ( )2
+                      7073    21       17                7073    223
+                           −         =    > 0,    114 −       =       > 0.
+                       64      2       64                 64      64
+Finally, (81/8)2 + 8 = (6561 + 512)/64 = 7073/64.
+
+   For a positive wall w, the unique solution of 3zρ = w is
+                                                                    3π
+                                                  rw := 1 −            .
+                                                                    w
+The following table encloses each crossing between explicit rational numbers. The bounds use only
+Lemma 2.1 and (13); for instance rw increases with w and decreases with π.
+
+                 wall w       exact rational enclosure for w                  exact enclosure for rw
+                                                                                  2           61
+                    10                           10                                 < r10 <
+                                                                                 35          1060
+                                                                                 13            11
+                    81/8                        81/8                                < r81/8 <
+                                                                                189            159
+                                                                                 5             38
+                    21/2                        21/2                                < r21/2 <
+                                                                                 49           371
+                √                                                               757           2903
+                  7073/8          1051/100 < w < 1052/100                            < rw <
+                                                                               7357          27878
+                  √                                                              79           676
+                    114            1067/100 < w < 107/10                             < rw <
+                                                                                679          5671
+   The four gaps between consecutive rational enclosures are, in order,
+                             2251              256              183              231225
+                                   ,                ,                ,                   ,             (15)
+                            200340             7791           389921            18929162
+
+                                                            6
+and are all positive. For example, the ﬁrst is 13/189 − 61/1060, and similarly for the other three.
+The endpoint margins are also explicit:
+                                                10  2            2   10    16
+                                      ρ0 <         < ,             −    =      > 0,
+                                               183  35          35 183    6405
+and, since ρc > 7/51,
+                           676    7           7    676    5221
+                               <    < ρc ,      −      =        > 0.
+                          5671   51          51 5671     289221
+We have therefore proved the complete strict order
+
+                                ρ0 < r10 < r81/8 < r21/2 < r√7073/8 < r√114 < ρc .                                 (16)
+
+This single table replaces the ten crossing-location predicates and the four crossing-order predicates
+of the executable registry.
+
+
+5    Packet B: checkpoint boundary table and exhaustiveness
+The ball-zero input consists of the following strict rational lower bounds:
+
+        n = 2, ℓ    1     2      3         5                                   n = 3, ℓ    1       2
+           2                                                                                                       (17)
+          qℓ,2   (77/10)2 92 (103/10)2 (129/10)2                                  2
+                                                                                 qℓ,3   (21/2)2 (61/5)2 .
+
+Angular propagation gives the lower bound (8) at all larger angular indices. The seven ﬁrst-excluded
+channels have the exact cuts shown below. Here M = m(m + 1), B = Bn (ℓ0 ), Z = B − M ,
+C = (M − ℓ0 (ℓ0 + 1))/(n2 − 1), and the last column is the decisive incompatibility margin Z − C.
+
+                 m      n       ﬁrst excluded ℓ0            B             Z              C         Z −C
+                 7      2                  2                81            25         50/3            25/3
+                  8     2                  4            11409/100      4209/100      52/3         7427/300
+                  9     2                  5            16641/100      7641/100       20          5641/100
+                 10     2                  6            17841/100      6841/100      68/3        13723/300
+                 11     2                  5            16641/100      3441/100       34            41/100
+                 10     3                  2             3721/25        971/25        13            646/25
+                 11     3                  2             3721/25        421/25       63/4          109/100
+
+   Every table entry is reconstructible from (17). The only propagated base values not already
+anchors are
+                            (         )2                                       (         )2
+              11409             103                                  17841         129
+                    =                      + (4 · 5 − 3 · 4),              =                  + (6 · 7 − 5 · 6).
+               100              10                                    100           10
+
+All seven margins are positive; the smallest is 41/100, so none of these exclusions relies on an
+equality convention. By Lemma 3.5, each row excludes not merely the displayed channel but its
+entire angular tail.
+    It remains to rule out the radial tails. On the high strip ρc ≤ ρ < 1,
+                                                  1   333 1  193                             37249
+                            z ≥ zρc = π +           >    + =     ,                 z2 >            .
+                                                  2   106 2  53                               2809
+
+
+
+                                                                 7
+The exact margins needed below are
+                     37249 90    22591                 37249 132    62649
+                           −   =       > 0,                  −    =       > 0.                      (18)
+                      2809   8   11236                  2809   15   14045
+At m ≤ 9, an n = 3 channel would require 8z 2 < M − ℓ(ℓ + 1) ≤ 90, contradicting the ﬁrst
+inequality. At m ≤ 11, every n ≥ 4 channel would require 15z 2 ≤ (n2 − 1)z 2 < M − ℓ(ℓ + 1) ≤ 132,
+contradicting the second inequality. These are the two base radial exclusions.
+
+Theorem 5.1 (Exhaustive checkpoint inventories). For ρc ≤ ρ < 1, the channels that can satisfy
+the strict proxy (1) at the ﬁve checkpoints are contained in the following lists:
+
+                       checkpoint    possible modes
+                           k7        ﬁrst 0:6, second 0:1, no n ≥ 3
+                           k8        ﬁrst 0:7, second 0:3, no n ≥ 3
+                           k9        ﬁrst 0:8, second 0:4, no n ≥ 3
+                          k10        ﬁrst 0:9, second 0:5, third 0:1, no n ≥ 4
+                          k11        ﬁrst 0:10, second 0:4, third 0:1, no n ≥ 4.
+Here n-th means radial index n, and a:b denotes the angular indices a, a + 1, . . . , b. The word
+“possible” asserts an exhaustive upper inventory, not that every listed channel is present for every
+ratio.
+
+Proof. For n = 1, the product part of the strict proxy at km is
+
+                                    z 2 + ℓ(ℓ + 1) < z 2 + m(m + 1).
+
+Thus ℓ < m. The equality channel ℓ = m and all larger indices are excluded, with the equality
+ownership ﬁxed by Lemma 3.2. This gives precisely ﬁrst 0:m − 1.
+    For n = 2, apply the ﬁrst ﬁve rows of the checkpoint table and then Lemma 3.5. They give
+ﬁrst-excluded angular indices 2, 4, 5, 6, 5 at m = 7, 8, 9, 10, 11, respectively. Hence the second blocks
+end at 1, 3, 4, 5, 4.
+    For n = 3, the ﬁrst inequality in (18) removes all channels through k9 . At k10 and k11 , the last
+two rows of the checkpoint table and cut monotonicity remove every ℓ ≥ 2, leaving only ℓ = 0, 1.
+Finally, the second inequality in (18) removes all n ≥ 4 through k11 . The ﬁve lists follow, without
+any bounded angular search.
+
+
+6    Executable-row coverage contract
+The former executable baseline contained 611 rows and had canonical digest
+
+           afd7e054f52aa9a3992fc8ef16d3e7551586c76bfb589053714f5f55a36792f1.
+
+The digest is included only to identify the audited baseline. It is not a premise of any proof above.
+The exhibits above replace disjoint row groups as follows:
+
+
+
+
+                                                   8
+analytic exhibit                  rows   exact ledger subfamilies
+Lemma 2.1                            4   one enclosure-nonemptiness row, two rational π-bound rows, and
+                                         one reciprocal row
+Lemma 3.2                          24    sixteen integer/half-integer strict brackets, seven phase-proxy
+                                         integer walls, and one optical radial equality owner
+Lemma 3.3                          97    twelve strict angular equality blocks, twelve optical angular blocks,
+                                         62 high-checkpoint cap identities, one six-cap lower tuple, and ten
+                                         lower-d cap identities
+Proposition 3.4                    23    ﬁve general product-deﬁcit predicates and eighteen sampled
+                                         expansions
+Lemma 3.5, the checkpoint         117    76 repeated cut-monotonicity rows, seven ﬁrst-excluded
+boundary table, and Theo-                comparisons, two radial exclusions, and 32 metadata/tail instances
+rem 5.1
+Lemma 4.1 and the moving-          23    ﬁve ﬁxed-wall orders, one propagation identity, three endpoint
+crossing table                           comparisons, ten crossing locations, and four crossing-order rows
+total                             288
+    The following family table gives the same accounting against the executable entry points and
+makes the partial-family boundaries explicit. It maps the exact rows replaced by this note. “Col-
+lapsed” means that multiple sampled or bookkeeping rows are consequences of one displayed iden-
+tity; it does not mean that an unprinted program enumeration is being used.
+executable family                  family rows    replaced here   analytic replacement
+verify_pi                                    4                4   Lemma 2.1
+verify_thresholds                           34               23   ﬁve ﬁxed-wall orders, one propagation
+                                                                  identity, three endpoint comparisons, and
+                                                                  fourteen moving-crossing predicates
+verify_strict_face_                          35              35   Lemmas 3.2 and 3.3
+conventions
+verify_lower_inventories_                    44               1   single six-cap tuple bookkeeping row
+and_payments
+verify_checkpoint_                         117              117   boundary table, radial margins, and
+inventories                                                       Theorem 5.1
+verify_cap_tables_and_                       98              62   all block-cap arithmetic: 61 cap-table rows
+payments                                                          plus the cap-74 block identity
+verify_optical_constants                     50              36   twelve angular blocks, one radial equality
+                                                                  owner, ﬁve general product-deﬁcit facts,
+                                                                  and eighteen sampled expansions
+supplemental k6 /lower-d ledger              26             10    ten lower-d block-cap identities
+total                                                      288
+
+    For the checkpoint family, the 117 rows decompose exactly as follows: 32 ﬁnite metadata/tail
+instances, seven ﬁrst-excluded zero/channel comparisons, two base radial exclusions, and 76 re-
+peated cut-monotonicity instances. Theorem 5.1 replaces all four groups. For the optical family,
+Proposition 3.4 replaces the 18 sampled (N, t) expansions by a symbolic identity valid for every
+integer N ≥ 1 and every 0 < t ≤ 1.
+    The remaining 323 rows are outside Packets A and B. In particular, this note makes no claim to
+replace the high-event cap/payment implications, the Bessel sign registry, seam payments, optical
+screen constants, or the exact owner subtraction. Those require the other analytic replacement
+packets. This separation prevents a universal arithmetic lemma from being mistaken for proof of a
+geometric event assignment.
+
+                                                       9
+

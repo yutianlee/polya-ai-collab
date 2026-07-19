@@ -1,0 +1,105 @@
+         Exact Owner Subtraction without a State Enumeration
+
+
+                               Analytic ledger replacement, Packet F
+
+
+                                                 Abstract
+          The executable exact ledger checks a 9 × 7 truth table when the accepted lower, staircase,
+      and optical regions are subtracted from the Round–19 residual. This note replaces all sixty-three
+      state checks and the ﬁve additional interface checks by one set-theoretic calculation. Every open
+      and closed face is retained explicitly.
+
+
+1     Sets and inherited owners
+Let
+                                                        7               39
+                             0 < ρ∗ < ρ0 < ρc < ρopt < ,        ρopt := ,
+                                                        8               50
+and let U (ρ), k6 (ρ), and k11 (ρ) be the upper owner and the two staircase walls from the main proof.
+Put
+                                        {                                 }
+                               Dlow := ρ∗ < ρ ≤ ρ0 , (2ρ)−1 < K < U (ρ)
+                                     ∪ {ρ0 < ρ < ρc , d < K < U (ρ)} ,                                    (1)
+                                     {                               }
+                                                7
+                             Dhigh := ρc ≤ ρ < , k6 (ρ) < K < U (ρ) ,                                     (2)
+                                                8
+
+where d = (2ρ0 )−1 , and deﬁne
+                                          D19 := Dlow ∪˙ Dhigh .                                          (3)
+The dot is justiﬁed by the disjoint ratio ranges.
+   The already-proved inclusive owners used in the subtraction are:
+
+                             Lown := Dlow ,                                                               (4)
+                                     {                              }
+                                              7
+                             Sown := ρc ≤ ρ < , k6 (ρ) < K ≤ k11 (ρ) ,                                    (5)
+                                              8
+                                     {                   }
+                                                7
+                             Oown := ρopt ≤ ρ < , K ≥ 0 .                                                 (6)
+                                                8
+
+The lower owner includes the complete ρ = ρ0 ﬁbre. The staircase includes its upper wall K =
+k11 (ρ). The optical owner includes its lower ratio face ρ = ρopt . In contrast, D19 already excludes
+K = U (ρ).
+
+
+
+
+                                                     1
+2     The subtraction
+Proposition 1 (Exact residual identity). One has
+
+                                   D19 \ (Lown ∪ Sown ∪ Oown ) = D20 ,                                 (7)
+where
+                             D20 := {ρc ≤ ρ < ρopt , k11 (ρ) < K < U (ρ)} .                            (8)
+Proof. Since Lown = Dlow and the union in (3) is disjoint,
+                                           D19 \ Lown = Dhigh .                                        (9)
+Inside Dhigh , the lower frequency inequality is strict: k6 (ρ) < K. Removing the inclusive staircase
+(5) therefore gives exactly
+                                        {                                 }
+                                                     7
+                         Dhigh \ Sown = ρc ≤ ρ < , k11 (ρ) < K < U (ρ) .                         (10)
+                                                     8
+There is no missing equality case: K = k11 (ρ) belongs to Sown , while K = U (ρ) never belonged to
+D19 .
+   Finally, subtracting the inclusive ratio owner (6) changes ρ < 7/8 in (10) to ρ < ρopt . Its
+equality face is removed because ρ = ρopt belongs to Oown . The face ρ = ρc remains, since it
+belongs neither to Dlow nor to Oown . The result is precisely (8).
+
+
+3     The ﬁve delicate interfaces
+For clarity, the ﬁve extra assertions formerly checked separately by the executable ledger are con-
+sequences of the displayed sets:
+    1. At ρ = ρ0 , the identity (2ρ0 )−1 = d makes the prospective second lower ﬁbre empty; the ﬁrst
+       set in (1) owns the full equality ﬁbre, and Lown removes it exactly once.
+    2. The face ρ = ρc belongs to Dhigh . It is not an optical face, so points with k11 (ρc ) < K < U (ρc )
+       remain in D20 .
+    3. The face ρ = ρopt = 39/50 belongs to Oown and is therefore absent from D20 .
+    4. The frequency face K = k11 (ρ) belongs to Sown , whereas K = U (ρ) is excluded already by
+       the strict inequality in D19 .
+    5. If ρc < ρ < ρopt and k11 (ρ) < K < U (ρ), the point is in Dhigh but in none of Lown , Sown , Oown ;
+       hence it survives, and every surviving point has exactly these properties.
+
+
+4     Final compact/tail split
+Deﬁne
+                        C21 := D20 ∩ {K ≤ 200},          T21 := D20 ∩ {K > 200}.                      (11)
+The elementary partition (0, ∞) = {K ≤ 200} ∪˙ {K > 200} gives
+                              D20 = C21 ∪˙ T21 ,     D20 \ (C21 ∪ T21 ) = ∅.                          (12)
+Thus K = 200 is assigned uniquely to the compact part, regardless of whether U (ρ) lies below, at,
+or above 200.
+
+                                                     2
+Ledger rows replaced. Proposition 1 replaces all 9 · 7 = 63 state evaluations in the executable
+family verify_exact_subtraction. The ﬁve items above replace its ﬁve separately asserted inter-
+face predicates. Equation (12) supplies the subsequent compact/tail subtraction without a classiﬁer
+or executable truth table.
+
+
+
+
+                                                3
+

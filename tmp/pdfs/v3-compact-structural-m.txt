@@ -1,0 +1,554 @@
+A Global Structural Reduction for the Spherical-Shell Proxy
+Global analytic structural module
+Abstract
+This note gives the global structural component of the purely analytic middle-ratio argument
+for the spherical-shell proxy. The weighted proxy is ﬁrst written as an exact layer-cake sum. Its
+deﬁcit from the action integral is then decomposed into a radial shifted-quadrature deﬁcit and
+an angular rounding defect. A Stieltjes calculation retains two nonnegative remainders that are
+discarded by the optical estimate, and one of those remainders admits a smooth explicit lower
+bound. The result is the concrete suﬃcient inequality (37). All structural identities hold for
+every 0 < ρ < 1 and K > 0; in particular they apply on the upward-closed middle-ratio region
+ρc ≤ ρ ≤ 39/50, K ≥ k11(ρ).
+1 Action and the global target
+For a > 0 and z ≥ 0, put
+Ga(z) =
+
+
+
+
+
+1
+π
+(√
+a2 − z2 − z arccos
+z
+a
+)
+, 0 ≤ z < a,
+0, z ≥ a.
+(1)
+Fix 0 < ρ < 1 and K > 0, and deﬁne
+A(z) = Aρ,K(z) := GK(z) − GρK(z), T := A(0) =
+(1 − ρ)K
+π
+. (2)
+The strict positive-integer count is
+[x]< := #{n ∈ N : n < x}.
+The spherical-shell proxy and its continuous payment are
+P(ρ, K) :=
+∑
+ν=ℓ+1/2<K
+ℓ∈N0
+2ν
+[
+A(ν) + 1
+4
+]
+<
+, (3)
+W(ρ, K) :=
+∫ K
+0
+2zA(z) dz =
+2(1 − ρ3)K3
+9π
+. (4)
+The upward-closed middle-ratio region used below is
+Rc :=
+{
+(ρ, K) : ρc ≤ ρ ≤
+39
+50
+, K ≥ k11(ρ)
+}
+, ρc :=
+1
+1 + 2π
+, k11(ρ) :=
+√
+π2
+(1 − ρ)2
++ 132.
+(5)
+The middle-ratio target is P < W on Rc.
+1
+For 0 < z < K, direct diﬀerentiation gives
+−A′
+(z) =
+1
+π
+
+
+
+
+
+arccos
+z
+K
+− arccos
+z
+ρK
+, 0 < z < ρK,
+arccos
+z
+K
+, ρK ≤ z < K.
+(6)
+In particular, A is strictly decreasing from T to 0. Let
+R : [0, T] −→ [0, K]
+be its decreasing inverse, and set
+F(t) := R(t)2
+, g(t) := −F′
+(t), τ := A(ρK) = KG1(ρ). (7)
+The derivative in (6) increases in magnitude on (0, ρK) and decreases in magnitude on (ρK, K).
+The inverse curvature has the related, but slightly stronger, property
+g decreases on (0, τ), g increases on (τ, T). (8)
+Indeed, on the outer branch, if z = R(t) then
+g(t) =
+2πz
+arccos(z/K)
+;
+the quotient increases with z, while z decreases with t. On the inner branch, put
+δ(z) := arccos
+z
+K
+− arccos
+z
+ρK
+.
+Diﬀerentiation with respect to the intermediate ratio gives
+δ(z)
+z
+=
+∫ 1
+ρ
+ds
+s
+√
+s2K2 − z2
+.
+This integral increases with z. Thus z/δ(z) decreases with z, and g(t) = 2πz/δ(z) increases as t
+increases and z decreases. The endpoint and interface data are
+F(τ) = ρ2
+K2
+, g(τ) =
+2πρK
+arccos ρ
+, g(T) =
+2πρK
+1 − ρ
+. (9)
+Here and below g(T) is the one-sided limit. Near t = 0, one has g(t) = O(t−1/3), so all improper
+Stieltjes boundary terms used below vanish.
+2 Exact layer cake and angular rounding
+Let
+xn := n −
+1
+4
+, M(r) := #
+{
+ℓ ∈ N0 : ℓ +
+1
+2
+< r
+}
+= max
+{
+0,
+⌈
+r −
+1
+2
+⌉}
+. (10)
+Lemma 1 (Exact layer cake). For every 0 < ρ < 1 and K > 0,
+P(ρ, K) =
+∑
+n≥1
+xn<T
+M(R(xn))2
+, W(ρ, K) =
+∫ T
+0
+F(t) dt. (11)
+Both identities retain the strict convention at every radial and angular wall.
+2
+Proof. For a ﬁxed half-integer ν,
+[
+A(ν) +
+1
+4
+]
+<
+= #{n ≥ 1 : xn < A(ν)}.
+Since A and R are decreasing, xn < A(ν) is equivalent to ν < R(xn). Interchanging the two ﬁnite
+sums and using
+m−1
+∑
+ℓ=0
+(2ℓ + 1) = m2
+proves the ﬁrst identity. At R(xn) = m + 1/2, the strict angular count is m, exactly as speciﬁed
+by M.
+For the second identity, the area formula for a decreasing inverse gives
+∫ T
+0
+R(t)2
+dt =
+∫ K
+0
+2zA(z) dz.
+The last integral is (4).
+For every active n, abbreviate
+rn := R(xn), mn := M(rn), αn := rn − mn +
+1
+2
+. (12)
+The strict convention implies
+mn −
+1
+2
+< rn ≤ mn +
+1
+2
+, 0 < αn ≤ 1. (13)
+This includes mn = 0. Deﬁne the angular rounding defect
+Eang(ρ, K) :=
+∑
+xn<T
+(m2
+n − r2
+n). (14)
+The defect of a single radial layer is exactly
+m2
+n − r2
+n = (1 − 2αn)rn +
+(
+αn −
+1
+2
+)2
+. (15)
+Unlike the one-sided estimate m2
+n − r2
+n < rn + 1/4, formula (15) retains the cancellation when
+αn > 1/2.
+Combining (11) and (14) gives the ﬁrst exact two-term decomposition:
+W − P = Drad − Eang, Drad :=
+∫ T
+0
+F(t) dt −
+∑
+xn<T
+F(xn). (16)
+3 The radial deﬁcit with retained positive remainders
+Deﬁne the shifted counting function and its two primitives by
+C(t) := #{n ≥ 1 : xn < t}, w(t) := t − C(t), W(t) :=
+∫ t
+0
+w(s) ds, Ψ(t) := W(t) −
+t
+4
+. (17)
+3
+On 0 ≤ t ≤ 3/4,
+Ψ(t) =
+1
+2
+(
+t −
+1
+4
+)2
+−
+1
+32
+. (18)
+For t = xn + u, 0 ≤ u ≤ 1,
+Ψ(t) =
+1
+2
+(
+u −
+1
+2
+)2
+−
+1
+32
+. (19)
+Consequently
+W(t) ≥ 0, −
+1
+32
+≤ Ψ(t) ≤
+3
+32
+(t ≥ 0). (20)
+Proposition 2 (Exact retained-remainder identity). For every 0 < ρ < 1 and K > 0, put
+Rdec := −
+∫
+(0,τ)
+W(t) dg(t), (21)
+Rosc :=
+(
+Ψ(T) +
+1
+32
+)
+g(T) +
+∫
+(τ,T)
+(
+3
+32
+− Ψ(t)
+)
+dg(t). (22)
+Then both remainders are nonnegative, and
+Drad =
+F(τ)
+4
+−
+g(T)
+8
++ g(τ)
+(
+τ
+4
++
+3
+32
+)
++ Rdec + Rosc.
+(23)
+Therefore
+W − P = B(ρ, K) + Rdec + Rosc − Eang, (24)
+where
+B(ρ, K) :=
+ρ2K2
+4
+−
+πρK
+4(1 − ρ)
++
+2πρK
+arccos ρ
+(
+KG1(ρ)
+4
++
+3
+32
+)
+. (25)
+Proof. Distributionally, dw = dt−dC. Stieltjes integration by parts, using F(T) = 0 and w(0) = 0,
+gives
+Drad =
+∫ T
+0
+w(t)g(t) dt. (26)
+The improper boundary term at 0 vanishes because W(t) = t2/2 there and g(t) = O(t−1/3).
+On (0, τ), integrate with dW = w dt:
+∫ τ
+0
+wg = W(τ)g(τ) −
+∫
+(0,τ)
+W dg. (27)
+On (τ, T), use w = 1/4 + Ψ′ and
+∫ T
+τ g = F(τ):
+∫ T
+τ
+wg =
+F(τ)
+4
++ Ψ(T)g(T) − Ψ(τ)g(τ) −
+∫
+(τ,T)
+Ψ dg. (28)
+Since W(τ) = τ/4 + Ψ(τ), adding (27) and (28) cancels the uncontrolled interface value Ψ(τ).
+Now add and subtract the extremal sawtooth values in (20). The exact identity
+Ψ(T)g(T) −
+∫
+(τ,T)
+Ψ dg
+= −
+g(T)
+8
++
+3g(τ)
+32
++
+(
+Ψ(T) +
+1
+32
+)
+g(T) +
+∫
+(τ,T)
+(
+3
+32
+− Ψ
+)
+dg
+gives (23). By (8), −dg is a positive measure on (0, τ) and dg is a positive measure on (τ, T).
+Equations (20), (21), and (22) therefore prove nonnegativity of both remainders. Finally substitute
+(9) and τ = KG1(ρ), and then use (16).
+4
+4 A smooth lower bound for the decreasing-branch remainder
+The term Rdec is quantitatively important on the middle-ratio region; discarding it loses too much.
+It has the following elementary smooth minorant.
+Lemma 3 (A global primitive minorant). For t ≥ 0, deﬁne
+L(t) :=
+t2
+2(1 + 2t)
+, L′
+(t) =
+t(1 + t)
+(1 + 2t)2
+. (29)
+Then
+0 ≤ L(t) ≤ W(t) (t ≥ 0). (30)
+Proof. For 0 ≤ t ≤ 3/4, one has W(t) = t2/2 ≥ L(t). For t ≥ 3/4, (20) gives
+W(t) ≥
+t
+4
+−
+1
+32
+.
+Moreover,
+t
+4
+−
+1
+32
+−
+t2
+2(1 + 2t)
+=
+6t − 1
+32(1 + 2t)
+≥ 0.
+This proves (30).
+Deﬁne
+R∗(ρ, K) := −
+∫
+(0,τ)
+L(t) dg(t). (31)
+Because −dg is positive on the decreasing branch,
+0 ≤ R∗ ≤ Rdec. (32)
+Integration by parts is legitimate at 0 because L(t)g(t) = O(t5/3). Hence
+R∗ = −L(τ)g(τ) +
+∫ τ
+0
+L′
+(t)g(t) dt. (33)
+On the outer branch t = A(z), one has g(t) dt = −2z dz. Therefore
+R∗ = −
+τ2
+2(1 + 2τ)
+g(τ) +
+∫ K
+ρK
+2z
+A(z)(1 + A(z))
+(1 + 2A(z))2
+dz. (34)
+This expression is smooth at every point with 0 < ρ < 1 and K > 0 and has no ﬂoor or wall
+discontinuity.
+Corollary 4 (A concrete suﬃcient inequality). For every 0 < ρ < 1 and K > 0, deﬁne
+H(ρ, K) :=
+ρ2K2
+4
+−
+πρK
+4(1 − ρ)
++
+2πρK
+arccos ρ
+(
+τ
+4(1 + 2τ)
++
+3
+32
+)
++
+∫ K
+ρK
+2z
+A(z)(1 + A(z))
+(1 + 2A(z))2
+dz, τ = KG1(ρ).
+(35)
+If
+Eang(ρ, K) < H(ρ, K), (36)
+then P(ρ, K) < W(ρ, K).
+5
+Proof. By (25), (34), and
+τ
+4
+−
+τ2
+2(1 + 2τ)
+=
+τ
+4(1 + 2τ)
+,
+one has H = B + R∗. Now use (24), (32), and Rosc ≥ 0.
+5 The reduced angular inequality
+The preceding calculation reduces the global structural argument to the following statement on the
+upward-closed middle-ratio region:
+∑
+n≥1
+n−1/4<T
+(
+M(R(n − 1/4))2
+− R(n − 1/4)2
+)
+< H(ρ, K) ((ρ, K) ∈ Rc). (37)
+This is the angular inequality passed to the companion block estimate. Everything to its right is the
+smooth action expression (35), and everything to its left is an explicitly centered angular rounding
+error. In particular, writing rn = mn − 1/2 + αn gives its exact summands as (15); replacing them
+by rn + 1/4 destroys the cancellation and is too coarse for the middle-ratio range.
+The remaining discontinuities are transparent. For a ﬁxed n, the summand is smooth until rn
+crosses a half-integer. At rn = m + 1/2, strict counting assigns M(rn) = m; immediately on the
+side rn > m + 1/2, the summand jumps upward by 2m + 1. These are exactly the original proxy
+walls, now separated from the radial Stieltjes deﬁcit.
+There is a natural second summation problem behind (37). Put
+e(r) := M(r)2
+− r2
+, q(r) := −A′
+(r), h(t) := e(R(t)). (38)
+On every complete angular cell (m ≥ 1),
+∫ m+1/2
+m−1/2
+(m2
+− r2
+) dr = −
+1
+12
+. (39)
+Thus the continuous comparison
+∫ T
+0
+h(t) dt =
+∫ K
+0
+e(r)q(r) dr
+has a favorable cell-average drift. Passing from this integral to the shifted samples h(n − 1/4)
+produces the genuine double-sawtooth correlation. Its atoms contain the proxy-wall jumps and
+cannot simply be discarded by sign. In particular, if an angular wall coincides with a radial sample,
+Stieltjes integration by parts must retain the common-jump term dictated by the strict convention.
+The companion angular-block lemma pairs those jump terms with the positive quantity already
+retained in H by using the single-peaked shape of q from (6).
+Remark 5 (Status). All identities and inequalities through Corollary 4 are analytic and require no
+ﬁnite computation. Equation (37) is the remaining angular inequality in this structural module;
+the companion angular-block and scalar-positivity modules prove it throughout Rc. Thus no upper
+cutoﬀ in K is used or needed in the structural implication.
+6
+

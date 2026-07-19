@@ -1,0 +1,112 @@
+For $a>0$, let
+\[
+ G_a(z):=\frac1\pi\left(\sqrt{a^2-z^2}
+ -z\arccos\frac za\right)\quad(0\leq z<a),
+ \qquad G_a(z):=0\quad(z\geq a),
+\]
+and put
+\[
+ A(z):=G_K(z)-G_{\rho K}(z),
+ \qquad T:=\frac{(1-\rho)K}{\pi}.
+\]
+The strict phase reduction and the inverse-action layer cake give
+\begin{equation}
+ N_D(A_{\rho,1},K^2)\leq P,\qquad
+ P=\sum_{n-1/4<T}M(R(n-1/4))^2,\qquad
+ W=\int_0^TR(t)^2\,dt,
+ \label{rs-summary:eq:layer-cake}
+\end{equation}
+where $R$ is the decreasing inverse of $A$ and $M(r)$ counts
+half-integers strictly below $r$.  Thus
+\[
+ W-P=\mathcal D_{\rm rad}-\mathcal E_{\rm ang}.
+\]
+
+Write $\theta=\arccos\rho$ and
+$N=\#\{n\geq1:n-1/4<T\}$.  The exact action derivative satisfies
+$-A'\leq\theta/\pi$.  One disjoint left block per active layer therefore
+gives the ratio-sharp estimate
+\begin{equation}
+ \mathcal E_{\rm ang}
+ <\frac{(1-\rho^2)K^2}{6}
+ -N\left(\frac{3\pi}{8\theta}-\frac14\right).
+ \label{rs-summary:eq:angular}
+\end{equation}
+Strictness includes a half-integer angular wall.
+
+For $0<\rho\leq39/50$ and $K\geq\pi/(1-\rho)$, the curvature interface
+$\tau=KG_1(\rho)$ satisfies $\tau>1/4$.  Replacing the shifted-sawtooth
+primitive by its $C^1$ tangent envelope
+\[
+ L_\sharp(t)=
+ \begin{cases}t^2/2,&t\leq1/4,\\t/4-1/32,&t\geq1/4,\end{cases}
+\]
+and retaining the decreasing-branch Stieltjes remainder gives
+\begin{equation}
+ \mathcal D_{\rm rad}\geq
+ B_0(K)-\frac{\pi\rho K}{4(1-\rho)}
+ +\frac{\pi\rho K}{4\arccos\rho},
+ \qquad
+ B_0(K):=\int_0^{1/4}R_B(t)^2\,dt,
+ \label{rs-summary:eq:radial}
+\end{equation}
+where $R_B$ is the inverse ball action.  The turning estimate
+$G_1(s)\geq2\sqrt2(1-s)^{3/2}/(3\pi)$ yields
+\begin{equation}
+ B_0(K)\geq\frac{K^2}{4}-\alpha K^{4/3}+\beta K^{2/3},
+ \quad
+ \alpha=\frac{6C}{5\,4^{5/3}},\quad
+ \beta=\frac{3C^2}{7\,4^{7/3}},\quad
+ C=\frac{(3\pi)^{2/3}}2.
+ \label{rs-summary:eq:ball}
+\end{equation}
+
+Since $N\geq1$ and
+$\arccos\rho\leq(\pi/2)\sqrt{1-\rho}$, it remains to prove positivity of
+\begin{equation}
+ \begin{aligned}
+ \underline{\mathcal G}(\rho,K):={}&
+ \frac{1+2\rho^2}{12}K^2-\alpha K^{4/3}+\beta K^{2/3}
+ -\frac{\pi\rho K}{4(1-\rho)}\\
+ &+\frac{\rho K}{2\sqrt{1-\rho}}
+ +\frac3{4\sqrt{1-\rho}}-\frac14.
+ \end{aligned}
+ \label{rs-summary:eq:scalar}
+\end{equation}
+On the base $K=\pi/(1-\rho)$, the substitution
+$x=(1-\rho)^{-1/6}$ reduces \eqref{rs-summary:eq:scalar} to one explicit
+degree-nine expression.  The detailed support module proves it positive
+from $157/50<\pi<22/7$, positive-side cubing, and
+\[
+ F(1)>\frac14,\qquad F'(1)>-\frac52,\qquad F''(x)>14.
+\]
+It also proves that the base $K$-derivative is positive and
+\[
+ \partial_K^2\underline{\mathcal G}
+ >\frac{47447}{443682}>0.
+\]
+These are finite exact inequalities, not sampled or interval premises.
+
+\begin{theorem}[Global low- and middle-ratio theorem]
+\label{rs:thm:global-proxy}
+For
+\[
+ 0<\rho\leq\frac{39}{50},
+ \qquad K\geq\frac\pi{1-\rho},
+\]
+one has
+\[
+ N_D(A_{\rho,1},K^2)\leq P<W(\rho,K).
+\]
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{rs-summary:eq:angular}--\eqref{rs-summary:eq:ball}
+give
+\[
+ W-P>\underline{\mathcal G}(\rho,K).
+\]
+The exact scalar closure just described proves the right side positive on
+the stated domain.  All intermediate identities and the rational
+convexity proof are given in the accompanying analytic supplement.
+\end{proof}

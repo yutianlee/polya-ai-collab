@@ -1,0 +1,347 @@
+A purely analytic lower bound for the aggregate reserve at K = 200
+
+
+
+                                                    Abstract
+         This note proves analytically one base-frequency sign in the aggregate-tail argument. Every
+      deﬁnition is reproduced below. The proof uses one concave tangent bound, one Young inequality,
+      elementary rational enclosures, and two exact Bernstein-basis identities. In fact, it proves the
+      uniform, hand-checkable estimate
+                                                      (               )
+                                                         7         39
+                                   B(ρ, 200) > 60          ≤ρ≤          .
+                                                        51         50
+
+      No decimal approximation or machine-generated sign enclosure is a premise.
+
+
+1     The exact assertion
+For 0 < ρ < 1, put
+                       √                                      (               )
+                           1 − s2 − s arccos s                                             2 arcsin ρ
+            G1 (s) =                           ,     ηρ = G1 max{ρ, 12 } ,          dρ =              .
+                                  π                                                            π
+At the ﬁxed frequency K = 200, deﬁne
+                                                                                               √
+                               2πρ                    400πρ               1                         2
+          µ = 200ρ,         b=     ,         c = bK =       ,         R=µ+ ,              S=       R + c,
+                               1−ρ                    1−ρ                 2
+and                                           [                           ]
+                                          1               R    2
+                                       I=   RS + c arsinh √ − R .                                           (1)
+                                          2                c
+These are exactly the specializations at K = 200 of the aggregate-tail quantities in the main proof.
+The reserve to be estimated is
+                                                                 dρ
+                             B(ρ, 200) = (µ − 12 )(200ηρ − 1) +      (µ − 32 )(µ − 12 )
+                                                                  2
+                                                                                                            (2)
+                                                          8(µ + 12 )
+                                           − (1 + dρ )I −     √ .
+                                                           15 µ
+
+Theorem 1. For every
+                                                   7     39
+                                                      ≤ρ≤ ,
+                                                   51    50
+one has
+                                               B(ρ, 200) > 60 > 0.
+
+
+
+
+                                                         1
+2       A concave majorant for the integral term
+Set                                                                           ∫ u √
+                                  1[ √                      ]                    (                    )
+                     H(u) =         u 1 + u2 + arsinh u − u2 =                        1 + t2 − t dt.
+                                  2                                           0
+                           √
+Scaling (1) by u = R/ c gives the exact identity
+
+                                                      I = cH(u).                                             (3)
+
+Lemma 2 (Concave tangent). For every u > 0,
+                                                               6   12
+                                                  H(u) <         u+ .                                        (4)
+                                                              25   25
+Proof. One has                         √                                        u
+                           H ′ (u) =   1 + u2 − u,            H ′′ (u) = √           − 1 < 0.
+                                                                              1 + u2
+Thus every tangent line is a global upper bound. Choose
+                                                              √
+                                                  589                         661
+                                           u0 =       ,           1 + u20 =       .
+                                                  300                         300
+Then                                                                   (    √             )
+                       ′      6                                                                       25
+                     H (u0 ) = ,              arsinh u0 = log u0 +              1 + u20       = log      ,
+                              25                                                                       6
+and hence                                                      (                      )
+                                             6     1     25    589
+                                     H(u0 ) − u0 =   log    −      .                                         (5)
+                                             25    2      6   1250
+      For completeness, the elementary series
+                                                          ∞
+                                                          ∑         1
+                                            log 2 = 2                   2n+1
+                                                          n=0
+                                                              (2n + 1)3
+
+gives
+                                                        ∞
+                                                   2 2∑              25
+                                       log 2 <      +      3−(2n+1) = .
+                                                   3 3 n=1           36
+Also log(1 + x) < x for x > 0. Therefore
+                                  25                 25   25   1   103   1789
+                            log      = 2 log 2 + log    <    +   =     <      ;
+                                  6                  24   18 24     72   1250
+the last diﬀerence is 29/45000. Substitution in (5) makes the tangent intercept strictly smaller than
+12/25, proving (4) by concavity.
+
+      We shall rationalize the remaining square root using the elementary Young inequality
+                                             √         c   a
+                                                 c≤      +             (a > 0),                              (6)
+                                                      2a 2
+                        √
+which is equivalent to ( c − a)2 ≥ 0. The classical bound
+                                                                  22
+                                                          π<                                                 (7)
+                                                                   7
+
+                                                              2
+follows, for example, from
+                                         ∫ 1
+                                                x4 (1 − x)4      22
+                                    0<                  2
+                                                            dx =    − π.
+                                           0      1+x             7
+Consequently
+                                                             8800 ρ
+                                         c < c+ (ρ) :=              .
+                                                              7 1−ρ
+Combining Lemma 2 with (6) gives, for every a > 0,
+
+                                                    3Rc+ (ρ) 3aR 12c+ (ρ)
+                              I < Qa (ρ) :=                 +    +        .                    (8)
+                                                      25a     25   25
+All quantities on the right are rational functions of ρ when a is rational.
+
+
+3    The coeﬃcient of dρ is positive
+The replacement of dρ by an elementary lower bound requires the sign of its coeﬃcient. We verify
+that sign before making any such replacement.
+
+Lemma 3. On [7/51, 39/50],
+                                         1
+                                           (µ − 32 )(µ − 12 ) − I > 0.                         (9)
+                                         2
+Proof. Write
+                                                             21 − ρ
+                                                Φ(ρ) = R                .
+                                                                ρ
+Since
+                                 d             200ρ − 400ρ2 − 1/2
+                                    log Φ(ρ) =                    ,
+                                 dρ                ρ(1 − ρ)R
+its two critical points are                                √
+                                                     10 ± 7 2
+                                                q± =          .
+                                                        40
+                                √
+The elementary bounds 7/5 <         2 < 3/2 show
+                                           1    7         41  39
+                                  q− <        <    < q+ <    < .
+                                          200   51        80  50
+Thus Φ increases and then decreases on the interval in question, so its minimum is attained at one
+of the two endpoints. From (7),
+                                                2                   2
+                                               R (1 − ρ)   7R (1 − ρ)
+                                     u2 =                >            .
+                                                400πρ        8800ρ
+At the two endpoints the rational lower bounds on the right are
+                                          8128201              685783
+                                                  ,                   ,
+                                          2080800              124800
+respectively, and
+                 8128201 225    1625777                        685783 225    247033
+                         −    =         > 0,                          −    =        > 0.
+                 2080800   64   4161600                        124800   64   124800
+
+                                                         3
+Hence u > 15/8 throughout the interval.
+   By (3) and Lemma 2,
+                              I     H(u) 6     12    496
+                               2 = u2 < 25u + 25u2 ≤ 1875 .
+                             R
+Moreover R ≥ 2851/102 > 27, and the function
+
+                                        (R − 2)(R − 1)  1  3   1
+                                                2
+                                                       = −   + 2
+                                             2R         2 2R R
+is increasing for R > 4/3. Therefore
+
+                                        (µ − 32 )(µ − 12 )          25 · 26    325
+                                                               ≥             =     .
+                                              2R
+                                                   2                2 · 27 2   729
+Finally
+                                           325   496    82597
+                                               −     =        > 0,
+                                           729 1875    455625
+which proves (9).
+
+
+4    Rational lower envelopes
+We use only the consequences
+                                       1  7            √     7               √        5
+                                         > ,               2> ,                  3>
+                                       π  22                 5                        3
+of elementary positive-side squaring and (7).
+    On 7/51 ≤ ρ ≤ 1/2, one has
+                                    √
+                                      3 1      13                                2 arcsin ρ  7
+                   ηρ = G1 (1/2) =      − >       ,                       dρ =              > ρ.
+                                     2π   6   132                                    π       11
+Also 1400/51 ≤ µ ≤ 100, and (26/5)2 < 1400/51, so
+                                              (                     )        (            )
+                            8(µ + 1/2)   8 √    1                         8       5               70
+                                √      =     µ+ √                       <    10 +             =      .              (10)
+                              15 µ       15    2 µ                        15      52              13
+
+Deﬁne
+           13                                                                                               7        70
+    η< =       ,                                                                                    d< =      ρ, E< = ,
+           132                                                                                             11        13
+                                       d<
+L< (ρ) = (µ − 21 )(200η< − 1) +           (µ − 23 )(µ − 12 ) − (1 + d< )Q18 (ρ) − E< .
+                                        2
+                                                                                                                    (11)
+    On 1/2 ≤ ρ ≤ 39/50, the integral representation
+                                                        ∫ 1
+                                                    1
+                                               ηρ =                arccos t dt
+                                                    π      ρ
+                   √
+and arccos t ≥         2(1 − t) give                 √
+                                                    2 2
+                                               ηρ ≥     (1 − ρ)3/2 .
+                                                     3π
+
+                                                               4
+Here 1 − ρ ≥ 11/50 > (23/50)2 , and consequently
+                                                  1127
+                                          ηρ >         (1 − ρ) =: η> .                                      (12)
+                                                  8250
+The Maclaurin series for arcsin ρ has positive coeﬃcients, so
+
+                               7                                            ρ3 3ρ5   5ρ7
+                       dρ >      P7 (ρ) =: d> ,          P7 (ρ) = ρ +         +    +     .                  (13)
+                              11                                            6   40   112
+Finally 100 ≤ µ ≤ 156 < 169, whence
+                               (                 )           (              )
+                          8 √    1                     8       1                    174
+                              µ+ √                   <    13 +                  =       < 7.                (14)
+                          15    2 µ                    15      20                   25
+
+Deﬁne
+               E> = 7,
+                                         d>                                                  (15)
+            L> (ρ) = (µ − 12 )(200η> − 1) +   (µ − 23 )(µ − 12 ) − (1 + d> )Q67 (ρ) − E> .
+                                          2
+   Lemma 3, the lower bounds for dρ and ηρ , the upper bounds for the last term, and (8) now give
+the logically ordered implications
+                                   (                 )                                     (           )
+                                        7     1                                                1     39
+          B(ρ, 200) > L< (ρ)              ≤ρ≤   ,                B(ρ, 200) > L> (ρ)              ≤ρ≤    .   (16)
+                                       51     2                                                2     50
+
+The overlap at ρ = 1/2 is harmless.
+
+
+5    Exact Bernstein closure
+For 0 ≤ x ≤ 1, write                                  ( )
+                                                         n k
+                                        Bk,n (x) =         x (1 − x)n−k .
+                                                         k
+These functions are nonnegative and sum to one. The conversion from a power polynomial
+∑n       j
+ j=0 qj x to Bernstein coeﬃcients is the ﬁnite rational identity
+                                                                (k )   
+                                   ∑
+                                   n             ∑
+                                                 n           ∑
+                                                             k
+                                       qj x j =       (nj ) qj  Bk,n (x).                                 (17)
+                                   j=0          k=0 j=0 j
+
+Thus every entry below can be checked by additions and cross multiplications of integers.
+   For the lower interval set
+                                       ρ − 7/51     102ρ − 14
+                                x< =             =            .
+                                      1/2 − 7/51       37
+Direct substitution of (8) and (11), followed by (17), gives the exact identity
+
+                                    1 ∑4
+                (1 − ρ)L< (ρ) =           N<,k Bk,4 (x< ),                  D< = 10835145921600,            (18)
+                                   D< k=0
+
+
+
+
+                                                             5
+where
+                                         k                N<,k
+                                         0    2977383044192480
+                                         1    4628920786869499
+                                         2    5747338995812809
+                                         3    6988840660610010
+                                         4    6621947656848702
+The smallest entry is N<,0 , and
+
+                                N<,0 − 60D< = 2327274288896480 > 0.
+
+It follows from (18) that
+                                             (1 − ρ)L< (ρ) > 60.                           (19)
+   For the upper interval set
+                                                             (     )
+                                          ρ − 1/2     25    1
+                                   x> =             =    ρ−   .
+                                        39/50 − 1/2    7    2
+
+The corresponding exact identity obtained from (8), (15), and (17) is
+
+                             1 ∑10
+            (1 − ρ)L> (ρ) =        N>,k Bk,10 (x> ),        D> = 2487375000000000000000,   (20)
+                            D> k=0
+
+where
+                                    k                        N>,k
+                                    0    873011369240936279296875
+                                    1    881095006796855712890625
+                                    2    884923416376472412109375
+                                    3    881704924277462068359375
+                                    4    867541422038412498046875
+                                    5    837327296894843418528125
+                                    6    784608885866591053548975
+                                    7    701387295930232136634075
+                                    8    577837649792730661053099
+                                    9    401902155200474706698937
+                                    10   158688669397963044788415
+The smallest entry is N>,10 , and
+
+                            N>,10 − 60D> = 9446169397963044788415 > 0.
+
+Therefore
+                                             (1 − ρ)L> (ρ) > 60.                           (21)
+    Since 0 < 1 − ρ < 1, both (19) and (21) imply that the corresponding L-function is strictly
+larger than 60. Combining this conclusion with (16) proves Theorem 1.
+
+Veriﬁcation boundary. The two Bernstein identities are ﬁnite polynomial identities over Q.
+Formula (17) is a direct hand-checking recipe for every printed integer. No interval evaluation,
+ﬂoating-point comparison, or unprinted case is used in the proof.
+
+                                                     6
+

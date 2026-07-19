@@ -1,0 +1,623 @@
+% Shared body: included by the analytic supplement and standalone support module.
+
+Let
+\[
+ A_{\rho,1}:=\{x\in\mathbb R^3:\rho<|x|<1\}.
+\]
+Fix $0<\rho<1$ and $K>0$.  For $a>0$, define the zero-extended ball
+action
+\begin{equation}
+ G_a(z):=
+ \begin{cases}
+ \displaystyle \frac1\pi\left(\sqrt{a^2-z^2}
+      -z\arccos\frac za\right),&0\leq z<a,\\[4pt]
+ 0,&z\geq a,
+ \end{cases}
+ \label{rs:eq:G}
+\end{equation}
+and put
+\begin{equation}
+ A(z):=G_K(z)-G_{\rho K}(z),
+ \qquad
+ T:=A(0)=\frac{(1-\rho)K}{\pi}.
+ \label{rs:eq:A-T}
+\end{equation}
+Write
+\[
+ [u]_<:=\#\{n\in\mathbb N:n<u\}.
+\]
+The phase reduction in the main paper supplies
+\begin{equation}
+ N_D(A_{\rho,1},K^2)\leq P(\rho,K),
+ \qquad
+ P(\rho,K):=
+ \sum_{\substack{\nu=\ell+1/2<K\\ \ell\in\mathbb N_0}}
+ 2\nu\,[A(\nu)+\tfrac14]_<.
+ \label{rs:eq:phase-proxy}
+\end{equation}
+Indeed, the channel phase is strictly smaller than $A(\nu)+1/4$, so at an
+integral proxy wall the last radial integer remains excluded.  The
+continuous payment is
+\begin{equation}
+ W(\rho,K):=\int_0^K2zA(z)\,dz
+ =\frac{2(1-\rho^3)K^3}{9\pi}.
+ \label{rs:eq:W}
+\end{equation}
+
+\subsubsection*{Action geometry and the exact defect}
+
+Differentiating \eqref{rs:eq:G} gives
+\begin{equation}
+ q(z):=-A'(z)=\frac1\pi
+ \begin{cases}
+ \displaystyle
+ \arccos\frac zK-\arccos\frac z{\rho K},&0<z<\rho K,\\[6pt]
+ \displaystyle \arccos\frac zK,&\rho K\leq z<K.
+ \end{cases}
+ \label{rs:eq:q}
+\end{equation}
+Thus $A$ decreases strictly from $T$ to $0$.  Let
+$R:[0,T]\to[0,K]$ be its decreasing inverse and set
+\begin{equation}
+ F(t):=R(t)^2,
+ \qquad g(t):=-F'(t),
+ \qquad \tau:=A(\rho K)=KG_1(\rho).
+ \label{rs:eq:inverse-data}
+\end{equation}
+Write throughout
+\[
+ \theta:=\arccos\rho.
+\]
+
+\begin{lemma}[Shape and endpoint data]
+\label{rs:lem:shape}
+With this notation, one has
+\begin{equation}
+ 0\leq q(z)\leq\frac{\theta}{\pi},
+ \qquad
+ q\text{ increases on }(0,\rho K),
+ \qquad q\text{ decreases on }(\rho K,K),
+ \label{rs:eq:q-cap}
+\end{equation}
+and
+\begin{equation}
+ g\text{ decreases on }(0,\tau),
+ \qquad g\text{ increases on }(\tau,T).
+ \label{rs:eq:g-shape}
+\end{equation}
+Moreover,
+\begin{equation}
+ F(\tau)=\rho^2K^2,
+ \qquad
+ g(\tau)=\frac{2\pi\rho K}{\theta},
+ \qquad
+ g(T)=\frac{2\pi\rho K}{1-\rho}.
+ \label{rs:eq:g-data}
+\end{equation}
+The two formulas for $g$ agree at $t=\tau$, and
+$g(t)=O(t^{-1/3})$ as $t\downarrow0$.
+\end{lemma}
+
+\begin{proof}
+On the inner branch, direct differentiation of \eqref{rs:eq:q} shows that
+$q'>0$; on the outer branch $q'<0$.  Both one-sided values at
+$z=\rho K$ equal $\theta/\pi$, proving \eqref{rs:eq:q-cap}.
+
+If $z=R(t)>\rho K$, then
+\[
+ g(t)=\frac{2\pi z}{\arccos(z/K)}.
+\]
+The quotient on the right increases with $z$, while $z$ decreases with
+$t$, so $g$ decreases on $(0,\tau)$.  On the inner branch put
+\[
+ \delta(z):=\arccos\frac zK-\arccos\frac z{\rho K}.
+\]
+The identity
+\[
+ \frac{\delta(z)}z
+ =\int_\rho^1\frac{ds}{s\sqrt{s^2K^2-z^2}}
+\]
+shows that $\delta(z)/z$ increases with $z$.  Hence
+$g(t)=2\pi z/\delta(z)$ increases as $t$ increases and $z$ decreases.
+The endpoint values follow by substitution and the limit $z\downarrow0$.
+Finally, writing $z=K\cos u$ on the outer branch gives
+$t\asymp u^3$ and $g\asymp u^{-1}$.
+\end{proof}
+
+Put
+\begin{equation}
+ x_n:=n-\frac14,
+ \qquad
+ M(r):=\#\{\ell\in\mathbb N_0:\ell+\tfrac12<r\},
+ \qquad
+ N:=\#\{n\geq1:x_n<T\}.
+ \label{rs:eq:grids}
+\end{equation}
+For an active $n$, write $r_n:=R(x_n)$ and $m_n:=M(r_n)$.
+
+\begin{lemma}[Strict layer cake]
+\label{rs:lem:layer-cake}
+For every $0<\rho<1$ and $K>0$,
+\begin{equation}
+ P(\rho,K)=\sum_{x_n<T}m_n^2,
+ \qquad
+ W(\rho,K)=\int_0^T F(t)\,dt.
+ \label{rs:eq:layer-cake}
+\end{equation}
+Both identities retain every radial and angular equality wall.
+\end{lemma}
+
+\begin{proof}
+For a half-integer $\nu=\ell+1/2$,
+\[
+ [A(\nu)+\tfrac14]_<
+ =\#\{n\geq1:x_n<A(\nu)\}.
+\]
+Since $A$ and $R$ are decreasing, this is equivalent to
+$\nu<R(x_n)$.  Interchanging the finite sums and using
+$\sum_{\ell=0}^{m-1}(2\ell+1)=m^2$ proves the first identity.  At
+$R(x_n)=m+1/2$, strict angular counting gives $M(R(x_n))=m$.
+The second identity is the area formula
+$\int_0^TR(t)^2dt=\int_0^K2zA(z)dz$.
+\end{proof}
+
+Define
+\begin{equation}
+ \mathcal E_{\rm ang}:=\sum_{x_n<T}(m_n^2-r_n^2),
+ \qquad
+ \mathcal D_{\rm rad}:=\int_0^TF(t)\,dt-\sum_{x_n<T}F(x_n).
+ \label{rs:eq:defects}
+\end{equation}
+Then
+\begin{equation}
+ W-P=\mathcal D_{\rm rad}-\mathcal E_{\rm ang}.
+ \label{rs:eq:master-defect}
+\end{equation}
+
+\subsubsection*{The ratio-sharp angular payment}
+
+\begin{proposition}[Ratio-sharp angular blocks]
+\label{rs:prop:angular}
+For $N\geq1$,
+\begin{equation}
+ \mathcal E_{\rm ang}
+ <\frac{(1-\rho^2)K^2}{6}-N d(\rho),
+ \qquad
+ d(\rho):=\frac{3\pi}{8\arccos\rho}-\frac14.
+ \label{rs:eq:angular-sharp}
+\end{equation}
+The inequality is strict at every common radial--angular wall.  If $N=0$,
+then $\mathcal E_{\rm ang}=0$.
+\end{proposition}
+
+\begin{proof}
+Fix an active $n$ and $t\in[n-1,x_n]$.  Since $R(t)\geq r_n$,
+\[
+ x_n-t=A(r_n)-A(R(t))
+ =\int_{r_n}^{R(t)}q(s)\,ds
+ \leq\frac{\theta}{\pi}(R(t)-r_n).
+\]
+Integration over the left block of length $3/4$ yields
+\begin{equation}
+ r_n\leq\frac43\int_{n-1}^{x_n}R(t)\,dt
+       -\frac{3\pi}{8\theta}.
+ \label{rs:eq:rn-block}
+\end{equation}
+Strict angular counting gives $m_n<r_n+1/2$, including when $r_n$ is a
+half-integer, and hence
+\begin{equation}
+ m_n^2-r_n^2<r_n+\frac14
+ \leq\frac43\int_{n-1}^{x_n}R(t)\,dt-d(\rho).
+ \label{rs:eq:one-angular-block}
+\end{equation}
+The blocks are disjoint subsets of $[0,T]$.  Therefore
+\[
+ \mathcal E_{\rm ang}
+ <\frac43\int_0^TR(t)\,dt-Nd(\rho).
+\]
+The inverse area identity and scaling give
+\[
+ \int_0^TR(t)\,dt=\int_0^KA(z)\,dz
+ =\frac{(1-\rho^2)K^2}{8},
+\]
+which proves \eqref{rs:eq:angular-sharp}.
+\end{proof}
+
+\subsubsection*{The tangent-envelope radial payment}
+
+Let
+\begin{equation}
+ C_0(t):=\#\{n\geq1:x_n<t\},
+ \quad w(t):=t-C_0(t),
+ \quad \mathfrak W(t):=\int_0^tw(s)\,ds,
+ \quad \Psi(t):=\mathfrak W(t)-\frac t4.
+ \label{rs:eq:sawtooth}
+\end{equation}
+On $0\leq t\leq3/4$,
+\begin{equation}
+ \mathfrak W(t)=\frac{t^2}{2},
+ \qquad
+ \Psi(t)=\frac12\left(t-\frac14\right)^2-\frac1{32}.
+ \label{rs:eq:first-cell}
+\end{equation}
+On every later unit cell, direct integration gives
+\begin{equation}
+ -\frac1{32}\leq\Psi(t)\leq\frac3{32},
+ \qquad
+ \mathfrak W(t)\geq\frac t4-\frac1{32}.
+ \label{rs:eq:sawtooth-bounds}
+\end{equation}
+
+\begin{lemma}[Retained radial remainder]
+\label{rs:lem:retained}
+For all $0<\rho<1$ and $K>0$,
+\begin{equation}
+ \mathcal D_{\rm rad}
+ \geq\frac{F(\tau)}4-\frac{g(T)}8
+ +g(\tau)\left(\frac\tau4+\frac3{32}\right)
+ -\int_{(0,\tau)}\mathfrak W(t)\,dg(t).
+ \label{rs:eq:retained-radial}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Distributionally, $dw=dt-dC_0$.  Stieltjes integration by parts gives
+$\mathcal D_{\rm rad}=\int_0^Tw(t)g(t)dt$; the improper boundary term
+vanishes because $\mathfrak W(t)g(t)=O(t^{5/3})$ at zero.  On the
+decreasing branch,
+\[
+ \int_0^\tau wg
+ =\mathfrak W(\tau)g(\tau)
+  -\int_{(0,\tau)}\mathfrak W\,dg.
+\]
+On the increasing branch use $w=1/4+\Psi'$,
+$\int_\tau^Tg=F(\tau)$, and integrate by parts.  Since
+$\mathfrak W(\tau)=\tau/4+\Psi(\tau)$, the interface value cancels and
+\[
+ \mathcal D_{\rm rad}
+ =\frac{F(\tau)}4+\frac{\tau g(\tau)}4
+  +\Psi(T)g(T)-\int_{(\tau,T)}\Psi\,dg
+  -\int_{(0,\tau)}\mathfrak W\,dg.
+\]
+Because $dg$ is positive on $(\tau,T)$,
+\[
+ \Psi(T)g(T)-\int_{(\tau,T)}\Psi\,dg
+ \geq-\frac{g(T)}8+\frac{3g(\tau)}{32}.
+\]
+This proves \eqref{rs:eq:retained-radial}.  Continuity of $g$ and
+$\mathfrak W$ handles an interface on a sawtooth wall without an atom.
+\end{proof}
+
+Define the $C^1$ tangent envelope
+\begin{equation}
+ L_\sharp(t):=
+ \begin{cases}
+ t^2/2,&0\leq t\leq1/4,\\[2pt]
+ t/4-1/32,&t\geq1/4,
+ \end{cases}
+ \qquad
+ L_\sharp'(t)=\min\{t,1/4\}.
+ \label{rs:eq:L-sharp}
+\end{equation}
+Equations \eqref{rs:eq:first-cell}--\eqref{rs:eq:sawtooth-bounds} show
+\begin{equation}
+ 0\leq L_\sharp(t)\leq\mathfrak W(t)
+ \qquad(t\geq0).
+ \label{rs:eq:L-order}
+\end{equation}
+On $1/4\leq t\leq3/4$ the difference is
+$\tfrac12(t-1/4)^2$; after $3/4$ use
+\eqref{rs:eq:sawtooth-bounds}.
+
+Assume now
+\begin{equation}
+ 0<\rho\leq\frac{39}{50},
+ \qquad K\geq\frac\pi{1-\rho}.
+ \label{rs:eq:global-domain}
+\end{equation}
+The elementary turning estimate
+\begin{equation}
+ G_1(s)=\frac1\pi\int_s^1\arccos u\,du
+ \geq\frac{2\sqrt2}{3\pi}(1-s)^{3/2}
+ \label{rs:eq:G-turning}
+\end{equation}
+implies
+\[
+ \tau\geq\frac{2\sqrt2}{3}\sqrt{1-\rho}
+ \geq\frac{2\sqrt2}{3}\sqrt{\frac{11}{50}}>\frac14.
+\]
+The last inequality follows after squaring from
+$44/225-1/16=479/3600>0$.
+
+On $(0,\tau)$, the measure $-dg$ is positive.  Hence
+\begin{align}
+ -\int_{(0,\tau)}\mathfrak W\,dg
+ &\geq -\int_{(0,\tau)}L_\sharp\,dg \notag\\
+ &=-L_\sharp(\tau)g(\tau)
+   +\int_0^\tau L_\sharp'(t)g(t)\,dt.
+ \label{rs:eq:R-sharp-parts}
+\end{align}
+There is no boundary contribution at zero.  On the outer branch
+$t=A(z)=G_K(z)$ and $g(t)dt=-2z\,dz$, so
+\begin{equation}
+ \int_0^\tau L_\sharp'(t)g(t)\,dt
+ =\int_{\rho K}^K2z\min\{G_K(z),1/4\}\,dz.
+ \label{rs:eq:R-sharp-action}
+\end{equation}
+Since $\tau>1/4$, the interface factor becomes
+\[
+ g(\tau)\left(\frac\tau4+\frac3{32}-L_\sharp(\tau)\right)
+ =\frac{g(\tau)}8.
+\]
+Lemma~\ref{rs:lem:retained} and \eqref{rs:eq:g-data} now give
+\begin{equation}
+ \mathcal D_{\rm rad}\geq\mathcal H_\sharp(\rho,K),
+ \label{rs:eq:H-sharp-bound}
+\end{equation}
+where
+\begin{equation}
+ \mathcal H_\sharp(\rho,K):=
+ \frac{\rho^2K^2}{4}
+ -\frac{\pi\rho K}{4(1-\rho)}
+ +\frac{\pi\rho K}{4\arccos\rho}
+ +\int_{\rho K}^K2z\min\{G_K(z),1/4\}\,dz.
+ \label{rs:eq:H-sharp}
+\end{equation}
+The simplified interface payment is asserted only on
+\eqref{rs:eq:global-domain}.  Below $\tau=1/4$, its unsimplified factor is
+$g(\tau)(\tau/4+3/32-\tau^2/2)$.
+
+\subsubsection*{The universal ball quarter-layer}
+
+Let $R_B$ be the decreasing inverse of the restriction of $G_K$ to
+$[0,K]$.  Since
+$G_K(\rho K)=\tau>1/4$, truncated layer cake gives
+\begin{equation}
+ \frac{\rho^2K^2}{4}
+ +\int_{\rho K}^K2z\min\{G_K(z),1/4\}\,dz
+ =B_0(K):=\int_0^{1/4}R_B(t)^2\,dt.
+ \label{rs:eq:ball-layer}
+\end{equation}
+Therefore
+\begin{equation}
+ \mathcal H_\sharp(\rho,K)
+ =B_0(K)-\frac{\pi\rho K}{4(1-\rho)}
+ +\frac{\pi\rho K}{4\arccos\rho}.
+ \label{rs:eq:H-ball}
+\end{equation}
+
+From \eqref{rs:eq:G-turning} and $G_K(z)=KG_1(z/K)$,
+\begin{equation}
+ R_B(t)\geq K-C K^{1/3}t^{2/3},
+ \qquad
+ C:=\left(\frac{3\pi}{2\sqrt2}\right)^{2/3}
+   =\frac{(3\pi)^{2/3}}2.
+ \label{rs:eq:ball-inverse}
+\end{equation}
+The right side is nonnegative for $0\leq t\leq1/4$: it is enough that
+$K\geq C^{3/2}/4=3\pi/(8\sqrt2)$, whereas
+$K\geq\pi/(1-\rho)>\pi$.  Squaring and integrating gives
+\begin{equation}
+ B_0(K)\geq\frac{K^2}{4}-\alpha K^{4/3}+\beta K^{2/3},
+ \label{rs:eq:B0-lower}
+\end{equation}
+where
+\begin{equation}
+ \alpha:=\frac{6C}{5\,4^{5/3}},
+ \qquad
+ \beta:=\frac{3C^2}{7\,4^{7/3}}.
+ \label{rs:eq:alpha-beta}
+\end{equation}
+
+Combining \eqref{rs:eq:master-defect},
+\eqref{rs:eq:angular-sharp}, \eqref{rs:eq:H-sharp-bound}, and
+\eqref{rs:eq:B0-lower}, and using $T\geq1$, hence $N\geq1$, gives
+\begin{equation}
+ \begin{aligned}
+ W-P>{}&\frac{1+2\rho^2}{12}K^2
+ -\alpha K^{4/3}+\beta K^{2/3}
+ -\frac{\pi\rho K}{4(1-\rho)}\\
+ &+\frac{\pi\rho K}{4\arccos\rho}+d(\rho).
+ \end{aligned}
+ \label{rs:eq:pre-scalar-gap}
+\end{equation}
+
+\subsubsection*{Exact scalar closure}
+
+\begin{lemma}[Elementary angle bound]
+\label{rs:lem:angle}
+For $0\leq\rho<1$,
+\begin{equation}
+ \arccos\rho\leq\frac\pi2\sqrt{1-\rho}.
+ \label{rs:eq:angle-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $\rho=\cos\theta$, $0\leq\theta\leq\pi/2$, and
+$y=\theta/2$.  Since $\sin y/y$ decreases on $[0,\pi/4]$,
+\[
+ \frac{\sin y}{y}\geq\frac{2\sqrt2}{\pi}.
+\]
+Using $1-\rho=2\sin^2y$ gives \eqref{rs:eq:angle-bound}.
+\end{proof}
+
+Put $e:=1-\rho$.  It suffices to prove positivity of
+\begin{equation}
+ \begin{aligned}
+ \underline{\mathcal G}(\rho,K):={}&
+ \frac{1+2\rho^2}{12}K^2
+ -\alpha K^{4/3}+\beta K^{2/3}
+ -\frac{\pi\rho K}{4e}\\
+ &+\frac{\rho K}{2\sqrt e}
+ +\frac3{4\sqrt e}-\frac14.
+ \end{aligned}
+ \label{rs:eq:G-under}
+\end{equation}
+Define
+\begin{equation}
+ \mathsf A:=\alpha\pi^{4/3},
+ \quad \mathsf B:=\beta\pi^{2/3},
+ \quad C_1:=\frac43\alpha\pi^{1/3},
+ \quad C_2:=\frac23\beta\pi^{-1/3}.
+ \label{rs:eq:scaled-constants}
+\end{equation}
+Positive-side cubing and $157/50<\pi<22/7$ give
+\begin{equation}
+ \mathsf A<\frac{49}{40},
+ \qquad
+ \frac{179}{1000}<\mathsf B<\frac15,
+ \qquad
+ C_1<\frac{13}{25},
+ \qquad
+ C_2<\frac1{25}.
+ \label{rs:eq:constant-bounds}
+\end{equation}
+For completeness,
+\begin{equation}
+ \mathsf A^3=\frac{3^5\pi^6}{5^3 2^{10}},
+ \quad
+ \mathsf B^3=\frac{3^7\pi^6}{7^3 2^{20}},
+ \quad
+ C_1^3=\frac{3^2\pi^3}{5^3 2^4},
+ \quad
+ C_2^3=\frac{3^4\pi^3}{7^3 2^{17}}.
+ \label{rs:eq:constant-cubes}
+\end{equation}
+Thus each comparison in \eqref{rs:eq:constant-bounds} is an exact rational
+cross multiplication after cubing.
+
+Set
+\begin{equation}
+ K_0:=\frac\pi e,
+ \qquad x:=e^{-1/6}\geq1.
+ \label{rs:eq:base-x}
+\end{equation}
+Direct substitution gives
+\begin{equation}
+ \underline{\mathcal G}(\rho,K_0)=F_0(x),
+ \label{rs:eq:G-base}
+\end{equation}
+where
+\begin{equation}
+ \begin{aligned}
+ F_0(x):={}&\frac\pi2x^9-\mathsf A x^8
+ -\frac{\pi^2}{12}x^6+\mathsf Bx^4\\
+ &+\left(\frac34-\frac\pi2\right)x^3
+ +\frac{\pi^2}{6}-\frac14.
+ \end{aligned}
+ \label{rs:eq:F0}
+\end{equation}
+The constant bounds imply
+\begin{equation}
+ F_0(1)>\frac{8269}{30000}>\frac14,
+ \quad
+ F_0'(1)>-\frac{14437}{6125}>-\frac52,
+ \quad
+ F_0''(1)>\frac{18162}{1225}>14.
+ \label{rs:eq:F0-endpoint}
+\end{equation}
+For $x\geq1$, group the leading terms as
+$x^5(252\pi x-336\mathsf A)$ and use $x^5\geq x^3$ after the
+resulting coefficient is positive.  Dropping the positive
+$24\mathsf Bx$ term then gives
+\begin{equation}
+ \begin{aligned}
+ F_0'''(x)
+ &>x^3\left(
+ 252\frac{157}{50}-336\frac{49}{40}
+ -10\left(\frac{22}{7}\right)^2\right)-\frac{69}{14}\\
+ &\geq\frac{676141}{2450}>0.
+ \end{aligned}
+ \label{rs:eq:F0-third}
+\end{equation}
+Hence $F_0''(x)>14$.  With $y=x-1\geq0$, Taylor's formula yields
+\begin{equation}
+ F_0(x)>\frac14-\frac52y+7y^2
+ =7\left(y-\frac5{28}\right)^2+\frac3{112}>0.
+ \label{rs:eq:F0-positive}
+\end{equation}
+
+A direct differentiation gives
+\begin{equation}
+ \partial_K\underline{\mathcal G}(\rho,K_0)=D_0(x),
+ \label{rs:eq:base-derivative}
+\end{equation}
+where
+\begin{equation}
+ D_0(x):=
+ \frac\pi{12}(3x^6-5+4x^{-6})
+ +\frac12(x^3-x^{-3})-C_1x^2+C_2x^{-2}.
+ \label{rs:eq:D0}
+\end{equation}
+At $x=1$,
+\begin{equation}
+ D_0(1)>\frac1{300},
+ \qquad D_0'(1)>\frac{54}{175}.
+ \label{rs:eq:D0-endpoint}
+\end{equation}
+Moreover,
+\begin{equation}
+ \begin{aligned}
+ D_0''(x)={}&\frac\pi{12}(90x^4+168x^{-8})
+ +3x-6x^{-5}-2C_1+6C_2x^{-4}\\
+ &>\frac{15}{2}\frac{157}{50}-3-\frac{26}{25}
+ =\frac{1951}{100}>0.
+ \end{aligned}
+ \label{rs:eq:D0-convex}
+\end{equation}
+Thus $D_0(x)>0$ for every $x\geq1$.
+
+Finally,
+\begin{equation}
+ \partial_K^2\underline{\mathcal G}
+ =\frac{1+2\rho^2}{6}
+ -\frac{4\alpha}{9}K^{-2/3}
+ -\frac{2\beta}{9}K^{-4/3}.
+ \label{rs:eq:G-K-convex}
+\end{equation}
+For $K\geq K_0\geq\pi$,
+\[
+ \alpha K^{-2/3}\leq\frac{\mathsf A}{\pi^2},
+ \qquad
+ \beta K^{-4/3}\leq\frac{\mathsf B}{\pi^2}.
+\]
+Consequently,
+\begin{equation}
+ \partial_K^2\underline{\mathcal G}
+ >\frac16-
+ \frac{4(49/40)+2(1/5)}{9(157/50)^2}
+ =\frac{47447}{443682}>0.
+ \label{rs:eq:G-K-positive}
+\end{equation}
+The positive base derivative remains positive, and
+\begin{equation}
+ \underline{\mathcal G}(\rho,K)>0
+ \qquad(K\geq K_0).
+ \label{rs:eq:G-positive}
+\end{equation}
+
+\begin{theorem}[Global low- and middle-ratio proxy theorem]
+\label{rs:thm:global-proxy}
+For
+\[
+ 0<\rho\leq\frac{39}{50},
+ \qquad K\geq\frac\pi{1-\rho},
+\]
+one has
+\begin{equation}
+ P(\rho,K)<W(\rho,K).
+ \label{rs:eq:proxy-conclusion}
+\end{equation}
+Consequently,
+$N_D(A_{\rho,1},K^2)<W(\rho,K)$.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{rs:eq:pre-scalar-gap}, the angle bound, and
+\eqref{rs:eq:G-positive} give
+\[
+ W-P>\underline{\mathcal G}(\rho,K)>0.
+\]
+The layer-cake and angular-block proofs retain every strict wall.
+\end{proof}

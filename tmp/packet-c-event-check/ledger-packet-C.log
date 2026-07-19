@@ -1,0 +1,545 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.26)  16 JUL 2026 22:02
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"D:/BaiduSyncdisk/Codex/Polya conjecture/manuscript/analytic/ledger-packet-C.
+tex"
+
+(D:/BaiduSyncdisk/Codex/Polya conjecture/manuscript/analytic/ledger-packet-C.te
+x
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(D:\Program Files\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(D:\Program Files\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(D:\Program Files\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(D:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(D:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(D:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen149
+))
+(D:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen150
+)
+(D:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count283
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count284
+\leftroot@=\count285
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count286
+\DOTSCASE@=\count287
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count288
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count289
+\dotsspace@=\muskip17
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
+\tag@help=\toks18
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
+\andhelp@=\toks19
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks20
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(D:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(D:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(D:\Program Files\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
+\dth@everypar=\toks27
+)
+(D:\Program Files\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+
+(D:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+(D:\Program Files\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count295
+\calc@Bcount=\count296
+\calc@Adimen=\dimen158
+\calc@Bdimen=\dimen159
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count297
+\calc@Cskip=\skip59
+)
+(D:\Program Files\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count298
+\l_MT_multwidth_dim=\dimen160
+\origjot=\skip60
+\l_MT_shortvdotswithinadjustabove_dim=\dimen161
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen162
+\l_MT_above_intertext_sep=\dimen163
+\l_MT_below_intertext_sep=\dimen164
+\l_MT_above_shortintertext_sep=\dimen165
+\l_MT_below_shortintertext_sep=\dimen166
+\xmathstrut@box=\box55
+\xmathstrut@dim=\dimen167
+)
+(D:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(D:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(D:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count299
+\Gm@cntv=\count300
+\c@Gm@tempcnt=\count301
+\Gm@bindingoffset=\dimen168
+\Gm@wd@mp=\dimen169
+\Gm@odd@mp=\dimen170
+\Gm@even@mp=\dimen171
+\Gm@layoutwidth=\dimen172
+\Gm@layoutheight=\dimen173
+\Gm@layouthoffset=\dimen174
+\Gm@layoutvoffset=\dimen175
+\Gm@dimlist=\toks29
+
+(D:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg))
+(D:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen176
+\lightrulewidth=\dimen177
+\cmidrulewidth=\dimen178
+\belowrulesep=\dimen179
+\belowbottomsep=\dimen180
+\aboverulesep=\dimen181
+\abovetopsep=\dimen182
+\cmidrulesep=\dimen183
+\cmidrulekern=\dimen184
+\defaultaddspace=\dimen185
+\@cmidla=\count302
+\@cmidlb=\count303
+\@aboverulesep=\dimen186
+\@belowrulesep=\dimen187
+\@thisruleclass=\count304
+\@lastruleclass=\count305
+\@thisrulewidth=\dimen188
+)
+(D:\Program Files\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip61
+\LTright=\skip62
+\LTpre=\skip63
+\LTpost=\skip64
+\LTchunksize=\count306
+\LTcapwidth=\dimen189
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@gbox=\box60
+\LT@cols=\count307
+\LT@rows=\count308
+\c@LT@tables=\count309
+\c@LT@chunks=\count310
+\LT@p@ftn=\toks30
+)
+(D:\Program Files\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen190
+\ar@mcellbox=\box61
+\extrarowheight=\dimen191
+\NC@list=\toks31
+\extratabsurround=\skip65
+\backup@length=\skip66
+\ar@cellbox=\box62
+)
+\c@lemma=\count311
+
+(D:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count312
+)
+(D:/BaiduSyncdisk\Codex\Polya conjecture\tmp\packet-c-event-check\ledger-packet
+-C.aux)
+\openout1 = `ledger-packet-C.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+ (D:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(D:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(D:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+
+(D:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count313
+\scratchdimen=\dimen192
+\scratchbox=\box63
+\nofMPsegments=\count314
+\nofMParguments=\count315
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count316
+\MPscratchDim=\dimen193
+\MPnumerator=\count317
+\makeMPintoPDFobject=\count318
+\everyMPtoPDFconversion=\toks33
+))) (D:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(D:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+\Gin@req@height=\dimen194
+\Gin@req@width=\dimen195
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(59.26192pt, 495.77116pt, 59.26192pt)
+* v-part:(T,H,B)=(59.26192pt, 676.44615pt, 59.26192pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=495.77116pt
+* \textheight=676.44615pt
+* \oddsidemargin=-13.00807pt
+* \evensidemargin=-13.00807pt
+* \topmargin=-50.00807pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+
+(D:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+
+
+(D:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+LaTeX Warning: Reference `eq:pi-bounds' on page 2 undefined on input line 122.
+
+
+LaTeX Warning: Reference `eq:ratio-order' on page 2 undefined on input line 143
+.
+
+[2]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 1 on input line 223.
+
+
+LaTeX Warning: Reference `eq:delta-monotone' on page 3 undefined on input line 
+227.
+
+
+LaTeX Warning: Reference `lem:pi' on page 3 undefined on input line 233.
+
+[3]
+
+LaTeX Warning: Reference `eq:k11-second' on page 4 undefined on input line 278.
+
+
+
+LaTeX Warning: Reference `eq:H9' on page 4 undefined on input line 278.
+
+[4]
+
+LaTeX Warning: Reference `lem:pi' on page 5 undefined on input line 374.
+
+
+LaTeX Warning: Reference `eq:conditional-coarse' on page 5 undefined on input l
+ine 386.
+
+[5]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 2 on input line 409.
+
+
+LaTeX Warning: Reference `eq:cap74-ball' on page 6 undefined on input line 432.
+
+
+
+LaTeX Warning: Reference `eq:cap74-ball' on page 6 undefined on input line 464.
+
+
+
+LaTeX Warning: Reference `eq:cap74-payment' on page 6 undefined on input line 4
+64.
+
+LaTeX Font Info:    Trying to load font information for U+euf on input line 476
+.
+(D:\Program Files\MiKTeX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [6]
+
+LaTeX Warning: Reference `eq:impossible-cells' on page 7 undefined on input lin
+e 534.
+
+
+LaTeX Warning: Reference `eq:H10' on page 7 undefined on input line 537.
+
+
+LaTeX Warning: Reference `eq:H9' on page 7 undefined on input line 537.
+
+[7]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 3 on input line 582.
+
+
+LaTeX Warning: Reference `eq:Wm-derivative' on page 8 undefined on input line 5
+98.
+
+
+LaTeX Warning: Reference `eq:block-post-cap' on page 8 undefined on input line 
+635.
+
+[8]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 4 on input line 690.
+
+
+LaTeX Warning: Reference `eq:PQ-def' on page 9 undefined on input line 709.
+
+[9]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 5 on input line 766.
+
+
+LaTeX Warning: Reference `eq:global-coarse' on page 10 undefined on input line 
+773.
+
+
+LaTeX Warning: Reference `eq:event-inventories' on page 10 undefined on input l
+ine 802.
+
+
+LaTeX Warning: Reference `eq:algebraic-splits' on page 10 undefined on input li
+ne 803.
+
+
+LaTeX Warning: Reference `eq:closed-post-count' on page 10 undefined on input l
+ine 805.
+
+
+LaTeX Warning: Reference `eq:event-simultaneous-restrictions' on page 10 undefi
+ned on input line 807.
+
+
+LaTeX Warning: Reference `eq:block-post-cap' on page 10 undefined on input line
+ 809.
+
+[10]
+
+LaTeX Warning: Reference `eq:event-global-four' on page 11 undefined on input l
+ine 814.
+
+
+LaTeX Warning: Reference `eq:closed-post-count' on page 11 undefined on input l
+ine 836.
+
+
+LaTeX Warning: Reference `prop:closed-post-event-domination' on page 11 undefin
+ed on input line 844.
+
+
+LaTeX Warning: Reference `eq:ratio-order' on page 11 undefined on input line 86
+2.
+
+
+LaTeX Warning: Reference `eq:ratio-gaps' on page 11 undefined on input line 862
+.
+
+
+LaTeX Warning: Reference `eq:split-strip' on page 11 undefined on input line 86
+8.
+
+
+LaTeX Warning: Reference `eq:algebraic-splits' on page 11 undefined on input li
+ne 869.
+
+
+LaTeX Warning: Reference `eq:k11-second' on page 11 undefined on input line 871
+.
+
+
+LaTeX Warning: Reference `eq:H9' on page 11 undefined on input line 871.
+
+
+LaTeX Warning: Reference `eq:cap74-ball' on page 11 undefined on input line 873
+.
+
+
+LaTeX Warning: Reference `eq:cap74-payment' on page 11 undefined on input line 
+873.
+
+
+LaTeX Warning: Reference `eq:impossible-cells' on page 11 undefined on input li
+ne 876.
+
+
+LaTeX Warning: Reference `eq:Wm-derivative' on page 11 undefined on input line 
+878.
+
+
+LaTeX Warning: Reference `eq:global-coarse' on page 11 undefined on input line 
+880.
+
+[11]
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+[12]
+(D:/BaiduSyncdisk\Codex\Polya conjecture\tmp\packet-c-event-check\ledger-packet
+-C.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4439 strings out of 467867
+ 65532 string characters out of 5428398
+ 510221 words of memory out of 5000000
+ 33261 multiletter control sequences out of 15000+600000
+ 649905 words of font info for 103 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 63i,15n,70p,309b,346s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Lenovo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ect
+t1095.pk>
+!pdfTeX error: pdflatex (file ecrm0800): Font ecrm0800 at 600 not found
+ ==> Fatal error occurred, no output PDF file produced!

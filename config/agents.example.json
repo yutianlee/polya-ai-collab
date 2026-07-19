@@ -1,12 +1,21 @@
 {
   "judge_agent": "A1",
+  "workflow": {
+    "synthesis_agent": "A1",
+    "reasoning_agents": ["A1", "A2", "A3", "A4"],
+    "clean_room_agents": ["A3"],
+    "review_assignments": {
+      "A1": ["A2", "A3", "A4"],
+      "A4": ["A2", "A3"]
+    }
+  },
   "prompt_exclusions": ["qwen", "qwen_api", "gauss circle", "M9"],
   "agents": [
     {
       "id": "A1",
       "display_name": "GPT Pro Extended",
       "provider": "web_manual",
-      "role": "broad strategist, literature scout, synthesis writer, and default judge",
+      "role": "project lead, proof integrator, and State Patch author",
       "web_url": "https://chatgpt.com/",
       "copy_response_mode": "raw_markdown_fence",
       "instructions": "Use GPT Pro Extended. Action for A1/GPT: use the connected GitHub repo `yutianlee/polya-ai-collab`; prioritize `state/proof_obligations.yml`, `manifests/reading_packet.md`, and this pasted prompt. For the Pólya project, prioritize exact theorem statements, source-audit discipline, Bessel/Mathieu special-function hypotheses, lattice-counting reductions, certified finite verification plans, and conservative State Patch updates."
@@ -15,7 +24,7 @@
       "id": "A2",
       "display_name": "Claude Opus 4.8 Max",
       "provider": "web_manual",
-      "role": "focused analytic proof-surgeon and conservative referee",
+      "role": "incumbent proof author for a selected analytic bottleneck",
       "web_url": "https://claude.ai/",
       "copy_response_mode": "raw_markdown_fence",
       "instructions": "Use Claude Opus 4.8 Max. Attack narrow lemmas at formula level. Preserve status discipline: do not mark the shell theorem, ellipse theorem, or certificate-family theorem as proved without complete proof and dependencies."
@@ -24,16 +33,16 @@
       "id": "A3",
       "display_name": "Gemini Pro Deep Think",
       "provider": "web_manual",
-      "role": "independent deep-think critic, route comparator, and obstruction finder",
+      "role": "clean-room solver for a selected bottleneck",
       "web_url": "https://gemini.google.com/",
       "copy_response_mode": "raw_markdown_fence",
-      "instructions": "Use Gemini Pro Deep Think. Compare the shell, ellipse, and certificate-family routes conservatively. Surface missing hypotheses, parameter-uniformity gaps, source-audit needs, and finite-verification risks."
+      "instructions": "Use Gemini Pro Deep Think as a clean-room solver. Do not consult the incumbent proof or prior reviews. Work only from the exact obligation packet and permitted dependencies, and return an independent proof, counterexample, precise failure point, or sharper statement."
     },
     {
       "id": "A4",
       "display_name": "Deepseek V4-Pro",
       "provider": "openai_compatible",
-      "role": "API-based proof auditor, formula checker, and reproducible computation planner",
+      "role": "adversarial referee and certified-computation engineer",
       "endpoint": "https://api.deepseek.com/chat/completions",
       "api_key_env": "DEEPSEEK_API_KEY",
       "model_env": "DEEPSEEK_MODEL",

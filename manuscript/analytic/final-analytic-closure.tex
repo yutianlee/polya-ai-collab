@@ -1,0 +1,187 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newcommand{\ND}{N_D}
+\newcommand{\Rc}{\mathcal R_{\rm c}}
+\newcommand{\Dc}{\mathcal D_{20}}
+\newcommand{\Rrr}{\mathcal R_{\rm rr}}
+
+\title{Purely Analytic Closure of the Final Spherical-Shell Residual}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note assembles the all-frequency retained-remainder estimate after the
+exact owner subtraction. It proves that the final spherical-shell residual
+is empty without invoking an interval certificate, an executable truth
+table, an aggregate tail argument, or a frequency split.  The structural,
+angular-block, and scalar-positivity modules cover one closed superset of the
+entire residual.
+\end{abstract}
+
+\section{Notation and analytic inputs}
+
+Let
+\[
+ A_{\rho,1}:=\{x\in\mathbb R^3:\rho<|x|<1\},
+ \qquad
+ W(\rho,K):=\frac{2(1-\rho^3)K^3}{9\pi},
+\]
+and let \(\ND(A_{\rho,1},K^2)\) count Dirichlet eigenvalues strictly below
+\(K^2\). Put
+\[
+ \rho_c:=\frac1{1+2\pi},
+ \qquad
+ k_{11}(\rho):=
+ \sqrt{\frac{\pi^2}{(1-\rho)^2}+132}.
+\]
+
+The preceding analytic owner lemmas and the exact set subtraction give
+\begin{equation}
+ \Dc=
+ \left\{(\rho,K):
+ \rho_c\leq\rho<\frac{39}{50},\quad
+ k_{11}(\rho)<K<U(\rho)\right\}.
+ \label{eq:D20}
+\end{equation}
+On this interval \(U(\rho)=K_0(\rho)\), although the formula for the upper
+wall will not be needed below.
+
+We use the shell action
+\[
+ G_a(z):=\frac1\pi
+ \left(\sqrt{a^2-z^2}-z\arccos\frac za\right)
+ \quad(0\leq z<a),
+ \qquad G_a(z):=0\quad(z\geq a),
+\]
+\[
+ A_{\rho,K}(z):=G_K(z)-G_{\rho K}(z),
+\]
+and the strict lattice proxy
+\begin{equation}
+ P(\rho,K):=
+ \sum_{\substack{\nu=\ell+1/2<K\\\ell\in\mathbb N_0}}
+ 2\nu\,
+ \#\left\{n\in\mathbb N:
+ n<A_{\rho,K}(\nu)+\frac14\right\}.
+ \label{eq:P}
+\end{equation}
+The analytic Bessel-phase reduction proved earlier in the main argument is
+\begin{equation}
+ \ND(A_{\rho,1},K^2)\leq P(\rho,K).
+ \label{eq:phase}
+\end{equation}
+
+Put
+\[
+ M_c(\rho,K):=\frac{(1-\rho^2)K^2}{6}-\frac12.
+\]
+Let
+\begin{equation}
+ N:=\#\left\{n\geq1:n-\frac14<\frac{(1-\rho)K}{\pi}\right\}.
+ \label{eq:N}
+\end{equation}
+Parts VII--VIII of the detailed analytic supplement combine the retained
+radial remainder with one disjoint left block per active layer and give the
+single direct estimate
+\begin{equation}
+ W(\rho,K)-P(\rho,K)
+ >\mathcal H(\rho,K)-\frac{(1-\rho^2)K^2}{6}+\frac N2.
+ \label{eq:direct-gap-input}
+\end{equation}
+On
+\(\rho_c\leq\rho\leq39/50\) and \(K\geq k_{11}(\rho)\),
+one has \((1-\rho)K/\pi>1\), hence \(N\geq1\).  Part~IX gives on the same
+unbounded domain
+\begin{equation}
+ \mathcal H(\rho,K)-M_c(\rho,K)>0.
+ \label{eq:scalar-input}
+\end{equation}
+The all-frequency scope in \eqref{eq:scalar-input} is part of that module:
+its scalar gap has positive \(K\)-derivative whenever \(K>12\), one has
+\(k_{11}(\rho)>241/20>12\), and the gap is strictly positive on the base
+curve \(K=k_{11}(\rho)\).  Thus the proof integrates upward from the base
+curve to every finite \(K\geq k_{11}(\rho)\); it uses no upper-frequency
+bound.
+
+\section{All-frequency retained-remainder closure}
+
+\begin{theorem}[All-frequency middle-ratio theorem]
+\label{thm:all-frequency}
+For
+\[
+ \rho_c\leq\rho\leq\frac{39}{50},
+ \qquad
+ K\geq k_{11}(\rho),
+\]
+one has
+\[
+ \ND(A_{\rho,1},K^2)<W(\rho,K).
+\]
+\end{theorem}
+
+\begin{proof}
+Since \(N\geq1\), equations \eqref{eq:direct-gap-input} and
+\eqref{eq:scalar-input} give
+\[
+ W-P>\mathcal H-M_c>0.
+\]
+The phase reduction \eqref{eq:phase} completes the proof.  Strictness includes
+both closed ratio faces, the base face \(K=k_{11}(\rho)\), and every common
+radial--angular proxy wall.
+\end{proof}
+
+\section{Direct ownership of the exact residual}
+
+\begin{proposition}[Analytic closure of \(\mathcal D_{20}\)]
+\label{prop:closure}
+Define the closed all-frequency theorem domain
+\[
+ \Rrr:=\left\{(\rho,K):
+ \rho_c\leq\rho\leq\frac{39}{50},\quad
+ K\geq k_{11}(\rho)\right\}.
+\]
+Then \(\Dc\subset\Rrr\), the strict P\'olya inequality holds throughout
+\(\Dc\), and the successor residual is empty.
+\end{proposition}
+
+\begin{proof}
+If \((\rho,K)\in\Dc\), then \eqref{eq:D20} gives
+\[
+ \rho_c\leq\rho<\frac{39}{50},
+ \qquad
+ k_{11}(\rho)<K<U(\rho).
+\]
+After weakening the strict upper ratio and lower frequency inequalities,
+these conditions place \((\rho,K)\) in \(\Rrr\).  Therefore
+Theorem~\ref{thm:all-frequency} proves every point of \(\Dc\), and
+\[
+ \Dc\setminus\Rrr=\varnothing.
+\]
+The already owned faces \(\rho=39/50\), \(K=k_{11}(\rho)\), and
+\(K=U(\rho)\) remain outside \(\Dc\), even though the stronger theorem
+also covers the first two.  The face \(\rho=\rho_c\) remains in \(\Dc\)
+whenever both strict frequency inequalities hold.  No artificial
+frequency face is present.
+\end{proof}
+
+\paragraph{Logical dependency.}
+After Parts I--VI identify \(\mathcal D_{20}\), the closure uses only the
+structural, angular-block, and scalar-positivity modules in Parts VII--IX.
+It does not use an aggregate-tail module, a frequency split, the former
+\(10{,}580\)-box compact certificate, the \(1{,}286\)-box aggregate
+certificate, or the \(63\)-state executable subtraction table.
+
+\end{document}

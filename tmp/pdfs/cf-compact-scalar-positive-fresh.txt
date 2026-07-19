@@ -1,0 +1,817 @@
+Purely Analytic Positivity of the Upward-Closed Scalar Gap
+Global middle-ratio analytic module
+Abstract
+The angular-block reduction for the middle-ratio spherical-shell proxy leaves one smooth
+scalar inequality. This note proves that inequality on the upward-closed region ρc ≤ ρ ≤
+39/50, K ≥ k11(ρ) without interval arithmetic or a finite numerical certificate. The loss integral
+is first differentiated with respect to the spectral cutoff. A turning-point lower bound and an
+exact beta integral show that the scalar gap is strictly increasing in that cutoff for every K > 12.
+At the base curve, a rational secant majorant gives a uniform analytic estimate for the loss. The
+remaining one-variable inequality is then reduced to positivity of a degree-nine polynomial; all of
+its Bernstein coefficients on one rational interval are displayed and are positive. Thus there is no
+upper-frequency cutoff in the scalar-positivity theorem.
+1 The scalar gap
+For 0 ≤ s ≤ 1, put
+G1(s) :=
+1
+π
+p
+1 − s2 − s arccos s
+
+. (1)
+Fix
+ρc :=
+1
+1 + 2π
+, k11(ρ) :=
+s
+π2
+(1 − ρ)2
++ 132, (2)
+and consider
+Rc :=
+
+(ρ, K) : ρc ≤ ρ ≤
+39
+50
+, K ≥ k11(ρ)
+
+. (3)
+The scalar gap left by the angular-block estimate is
+S(ρ, K) :=
+(1 + 2ρ2)K2
+12
+− J (ρ, K) −
+πρK
+4(1 − ρ)
++
+1
+2
++
+2πρK
+arccos ρ
+
+KG1(ρ)
+4(1 + 2KG1(ρ))
++
+3
+32
+
+,
+(4)
+where
+J (ρ, K) :=
+K2
+2
+Z 1
+ρ
+s
+(1 + 2KG1(s))2
+ds. (5)
+Theorem 1 (Upward-closed scalar positivity). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11(ρ),
+S(ρ, K) > 0. (6)
+We use only the elementary rational estimates
+157
+50
+< π <
+22
+7
+,
+140
+99
+<
+√
+2,
+5
+3
+<
+√
+3. (7)
+The two square-root estimates follow immediately by squaring; the displayed bounds for π are the
+classical Archimedean bounds (with the lower one weakened to 157/50).
+1
+2 Strict monotonicity in the spectral cutoff
+The identity
+G1(s) =
+1
+π
+Z 1
+s
+arccos u du (8)
+and 1 − cos v ≤ v2/2 imply
+G1(s) ≥
+2
+√
+2
+3π
+(1 − s)3/2
+. (9)
+Indeed, arccos u ≥
+p
+2(1 − u), and integration gives (9).
+Lemma 2 (Derivative of the boundary-layer loss). For every fixed 0 < ρ < 1 and every K > 0,
+∂KJ (ρ, K) = K
+Z 1
+ρ
+s
+(1 + 2KG1(s))3
+ds. (10)
+Moreover, if K > 12, then Z 1
+ρ
+s
+(1 + 2KG1(s))3
+ds <
+88
+567
+. (11)
+Proof. Differentiating (5) under the integral sign gives
+∂KJ = K
+Z 1
+ρ
+s
+(1 + 2KG1(s))2
+ds − 2K2
+Z 1
+ρ
+sG1(s)
+(1 + 2KG1(s))3
+ds
+= K
+Z 1
+ρ
+s
+(1 + 2KG1(s))3
+ds,
+which proves (10).
+Set a = 4
+√
+2/(3π). By (9), the change of variable t = 1 − s, and s ≤ 1,
+Z 1
+ρ
+s ds
+(1 + 2KG1(s))3
+≤
+Z ∞
+0
+dt
+(1 + aKt3/2)3
+=
+8π
+27
+√
+3
+(aK)−2/3
+. (12)
+The last equality is the beta integral
+2
+3
+(aK)−2/3
+B
+
+2
+3
+,
+7
+3
+
+=
+8π
+27
+√
+3
+(aK)−2/3
+.
+At K = 12, the cube of the last member of (12) is
+π5
+59049
+√
+3
+.
+Using (7),
+π5
+59049
+√
+3
+<
+5153632
+1654060905
+<
+
+88
+567
+3
+,
+where the second strict inequality is the exact identity
+
+88
+567
+3
+−
+5153632
+1654060905
+=
+27812576
+44659644435
+> 0.
+The right side of (12) decreases with K, proving (11).
+2
+Proposition 3 (Monotonicity of the scalar gap). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11(ρ),
+∂KS(ρ, K) > 0. (13)
+Consequently,
+S(ρ, K) ≥ S ρ, k11(ρ)
+
+. (14)
+Proof. Write
+θ := arccos ρ, y := KG1(ρ).
+The derivative of the final line of (4) is
+2πρ
+θ
+
+y(1 + y)
+2(1 + 2y)2
++
+3
+32
+
+≥
+3ρ
+8
+, (15)
+because θ ≤ π/2. Also
+−
+πρ
+4(1 − ρ)
+> −
+11ρ
+14(1 − ρ)
+.
+Every K ≥ k11(ρ) in the stated ratio interval is greater than 12; this also follows from the stronger
+estimate established in Lemma 4 below. Lemma 2 therefore gives
+∂KS > K
+1 + 2ρ2
+6
+−
+88
+567
+!
++
+3ρ
+8
+−
+11ρ
+14(1 − ρ)
+= K
+13
+1134
++
+ρ2
+3
+!
++
+3ρ
+8
+−
+11ρ
+14(1 − ρ)
+>
+26
+189
++ 4ρ2
++
+3ρ
+8
+−
+11ρ
+14(1 − ρ)
+. (16)
+It remains to check the sign of the last expression. Multiplication by 1 − ρ produces
+p(ρ) := (1 − ρ)
+
+26
+189
++ 4ρ2
++
+3ρ
+8
+
+−
+11ρ
+14
+. (17)
+The bound π < 22/7 gives ρc > 7/51. On the larger rational interval [7/51, 39/50], set
+u :=
+ρ − 7/51
+39/50 − 7/51
+∈ [0, 1].
+In the degree-three Bernstein basis Bj,3(u) = 3
+j
+
+uj(1 − u)3−j, exact expansion gives
+p(ρ) =
+3
+X
+j=0
+bjBj,3(u), (18)
+with
+j bj
+0
+335005
+2785671
+1
+32947387
+196635600
+2
+281783183
+578340000
+3
+231517
+13500000
+(19)
+All four coefficients are positive. Since the Bernstein basis functions are nonnegative and sum to
+one, p(ρ) > 0. Equation (16) proves (13), and (14) follows by integration in K.
+3
+3 An exact rational upper bound for the loss
+Lemma 4 (Uniform loss bound). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11(ρ),
+K >
+241
+20
+(20)
+and Z 1
+ρ
+x
+(1 + 2KG1(x))2
+dx <
+17
+100
+. (21)
+Proof. Since ρ ≥ ρc,
+π
+1 − ρ
+≥
+π
+1 − ρc
+= π +
+1
+2
+>
+91
+25
+.
+Consequently
+K2
+≥ k11(ρ)2
+> 132 +
+
+91
+25
+2
+=
+
+241
+20
+2
++
+471
+10000
+,
+which proves (20). The rational bounds in (7) now give
+4
+√
+2K
+3π
+>
+4(140/99)(241/20)
+3(22/7)
+=
+23618
+3267
+=
+36
+5
++
+478
+16335
+. (22)
+Put y = 1 − x. Equations (9) and (22) yield
+Z 1
+ρ
+x dx
+(1 + 2KG1(x))2
+<
+Z 1−ρ
+0
+1 − y
+(1 + (36/5)y3/2)2
+dy
+≤
+Z 1
+0
+1 − y
+(1 + (36/5)y3/2)2
+dy. (23)
+We bound the last integral by exact rational arithmetic. Set
+c :=
+36
+5
+, ϕ(z) :=
+1
+(1 + z)2
+,
+and use the rational grid
+(ti)10
+i=0 =
+
+0,
+1
+4
+,
+5
+16
+,
+3
+8
+,
+7
+16
+,
+1
+2
+,
+9
+16
+,
+5
+8
+,
+3
+4
+,
+7
+8
+, 1
+
+. (24)
+For zi = ct3
+i , let
+βi :=
+ϕ(zi+1) − ϕ(zi)
+zi+1 − zi
+, αi := ϕ(zi) − βizi.
+Because ϕ′′(z) = 6(1 + z)−4 > 0, its secant satisfies
+ϕ(z) ≤ αi + βiz (zi ≤ z ≤ zi+1).
+After y = t2, the integral in (23) is
+Z 1
+0
+2t(1 − t2
+)ϕ(ct3
+) dt.
+Thus it is at most
+Q :=
+9
+X
+i=0
+Fi(ti+1) − Fi(ti)
+
+, (25)
+4
+where the exact polynomial antiderivative is
+Fi(t) := αi t2
+−
+t4
+2
+!
++ 2cβi
+t5
+5
+−
+t7
+7
+!
+. (26)
+Every number in (25) is rational. Substitution of the grid (24) gives
+Q =
+1305767238061446154064110434835938779253983373178558326887
+7706446260271137290663804190970969288616921855152043745280
+, (27)
+and direct subtraction gives
+17
+100
+− Q =
+21643130923235926743681388145629999054466710986445549053
+38532231301355686453319020954854846443084609275760218726400
+> 0. (28)
+Equations (23)–(28) prove (21).
+4 The base curve
+Fix ρ and now set
+t :=
+p
+1 − ρ, k := k11(ρ) =
+s
+132 +
+π2
+t4
+, ρ = 1 − t2
+. (29)
+The middle-ratio range lies strictly inside the rational interval
+7
+15
+< t <
+14
+15
+. (30)
+Indeed,
+t2
+≥
+11
+50
+>
+
+7
+15
+2
+,
+while ρ ≥ ρc > 7/51 gives
+t2
+= 1 − ρ <
+44
+51
+<
+
+14
+15
+2
+.
+Lemma 5 (Analytic endpoint payment). For every ρc ≤ ρ ≤ 39/50, let t and k be as in (29), and
+let
+C(ρ) :=
+100ρ2 − 1
+600
+(31)
+and
+E(t) :=
+11
+14t2
+−
+14
+15(1 + 2t)
+−
+3
+8t
+. (32)
+Then C(ρ) > 0, E(t) > 0, and
+S(ρ, k) > C(ρ)k2
+− ρE(t)k +
+1
+2
+. (33)
+Proof. First, ρ ≥ ρc > 7/51 > 1/10, so C(ρ) > 0. Lemma 4 and
+1 + 2ρ2
+12
+−
+17
+200
+=
+100ρ2 − 1
+600
+5
+show that the first two terms in (4) are strictly greater than C(ρ)k2.
+Set θ = arccos ρ and Y = kG1(ρ). For 0 ≤ t ≤ 1,
+θ = arccos(1 − t2
+) = 2 arcsin
+t
+√
+2
+≤
+πt
+2
+. (34)
+To see the last inequality, use convexity of arcsin on [0, 1/
+√
+2]: its graph lies below the chord joining
+(0, 0) to (1/
+√
+2, π/4). Furthermore, (9) and k > π/t2 give
+Y >
+2
+√
+2
+3
+t >
+14
+15
+t. (35)
+Since Y 7→ Y/(1 + 2Y ) is increasing, (34)–(35) imply
+2πρk
+θ
+
+Y
+4(1 + 2Y )
++
+3
+32
+
+> ρk
+
+14
+15(1 + 2t)
++
+3
+8t
+
+. (36)
+Also
+−
+πρk
+4t2
+> −
+11ρk
+14t2
+.
+Combining these inequalities with (4) proves (33).
+Finally,
+840t2
+(1 + 2t)E(t) = 660 + 1005t − 1414t2
+. (37)
+The quadratic on the right is concave, so its minimum on [7/15, 14/15] occurs at an endpoint. Its
+endpoint values are
+184739
+225
+,
+82406
+225
+,
+respectively. Both are positive, proving E(t) > 0.
+Proposition 6 (Rational positivity on the base curve). For every ρc ≤ ρ ≤ 39/50,
+S ρ, k11(ρ)
+
+> 0. (38)
+Proof. The elementary inequality
+p
+x2 + 132 < x +
+66
+x
+(x > 0)
+and (7) give
+k2
+> 132 +
+(157/50)2
+t4
+, (39)
+k <
+22
+7t2
++
+3300t2
+157
+. (40)
+Since C(ρ) > 0 and ρE(t) > 0, Lemma 5 yields
+S(ρ, k) > R(t), (41)
+6
+where
+R(t) := C(1 − t2
+) 132 +
+(157/50)2
+t4
+!
+− (1 − t2
+)E(t)
+22
+7t2
++
+3300t2
+157
+!
++
+1
+2
+.
+(42)
+It remains only exact polynomial algebra. Put
+H(t) := t4
+(1 + 2t)R(t).
+Using (37), its factorized form is
+H(t) = C(1 − t2
+)(1 + 2t) 132t4
++
+
+157
+50
+2
+!
+−
+(1 − t2)(660 + 1005t − 1414t2)
+840
+
+22
+7
++
+3300
+157
+t4
+
++
+1
+2
+t4
+(1 + 2t).
+(43)
+For an independently checkable expansion,
+H(t) = −
+20642567
+24500000
+−
+6205067
+12250000
+t +
+547983
+122500
+t2
+−
+1033727
+367500
+t3
++
+34911551
+16485000
+t4
++
+187093801
+8242500
+t5
++
+8679
+1099
+t6
+−
+138149
+2198
+t7
+−
+2101
+157
+t8
++ 44t9
+.
+(44)
+Set
+u :=
+t − 7/15
+7/15
+∈ [0, 1].
+In the degree-nine Bernstein basis,
+H(t) =
+9
+X
+j=0
+djBj,9(u), Bj,9(u) =
+9
+j
+!
+uj
+(1 − u)9−j
+, (45)
+7
+where exact conversion of (44) gives
+j dj
+0
+65408801807437
+9463832437500000
+1
+299549381760793
+1135659892500000
+2
+15904699805720773
+28391497312500000
+3
+2765605256590021
+3154610812500000
+4
+33203943051258761
+28391497312500000
+5
+38636221171331747
+28391497312500000
+6
+2538003206646073
+1892766487500000
+7
+28758289199580211
+28391497312500000
+8
+12920786461478803
+28391497312500000
+9
+3428732855971679
+9463832437500000
+(46)
+Every dj is positive. The Bernstein basis functions are nonnegative and sum to one; hence H(t) > 0
+throughout [7/15, 14/15]. Since t4(1 + 2t) > 0, this proves R(t) > 0. Equation (41) proves (38).
+Proof of Theorem 1. Proposition 3 reduces every point of the upward-closed middle-ratio region
+to the base curve K = k11(ρ). Proposition 6 proves strict positivity on that curve. Therefore
+S(ρ, K) > 0 throughout Rc, with no upper restriction on K.
+Remark 7 (Nature of the certificate). The rational secants and Bernstein expansions above are finite
+exact algebra, not interval arithmetic: convexity proves the functional majorant on each secant
+interval, and positivity follows from explicitly displayed rational coefficients. No floating-point
+evaluation, sampled minimum, or numerical root isolation is used as a premise.
+8
+

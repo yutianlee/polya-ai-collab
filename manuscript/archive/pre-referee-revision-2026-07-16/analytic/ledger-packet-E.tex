@@ -1,0 +1,358 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{lemma}{Lemma}
+
+\title{Upper-Owner and Optical Cleanup}
+\author{}
+\date{Analytic ledger replacement, Packet E}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note replaces the executable scope checks surrounding the upper owner
+of the final spherical-shell residual. It proves directly that the eligible
+upper wall is \(K_0(\rho)\) and that
+\(k_{11}(\rho)<K_0(\rho)\) on the required ratio interval. It also records
+the symbolic identities that make the repeated optical ledger samples
+unnecessary.
+\end{abstract}
+
+\section{The upper owner}
+
+For \(0<\rho<1\), set
+\[
+ a_\rho:=\frac{2\pi\rho}{1-\rho},
+ \qquad
+ \eta_\rho:=G_1\!\left(\max\{\rho,1/2\}\right),
+\]
+where
+\[
+ G_1(s)=\frac{\sqrt{1-s^2}-s\arccos s}{\pi},
+ \qquad
+ \omega_0:=G_1(1/2)=\frac{\sqrt3}{2\pi}-\frac16.
+\]
+Let \(C_0>0\), and define
+\begin{equation}
+ K_0(\rho):=
+ \left(
+  \frac{\sqrt{a_\rho}+\sqrt{a_\rho+4\eta_\rho C_0}}
+       {2\eta_\rho}
+ \right)^2.
+ \label{eq:K0}
+\end{equation}
+Also put
+\[
+ \rho_c:=\frac1{1+2\pi},
+ \qquad z_\rho:=\frac\pi{1-\rho},
+ \qquad k_{11}(\rho):=\sqrt{z_\rho^2+132}.
+\]
+
+\begin{lemma}[The final upper wall is genuinely above the staircase]
+\label{lem:k11-K0}
+For
+\[
+       \rho_c\leq\rho<\frac78,
+\]
+one has
+\begin{equation}
+       k_{11}(\rho)<64<U(\rho).
+       \label{eq:k11-K0}
+\end{equation}
+More precisely, \(U(\rho)=K_0(\rho)>64\) for
+\(\rho_c\leq\rho<5/6\), while
+\[
+ U(\rho)=\frac{54}{(1-\rho)^2}\geq1944
+ \qquad(5/6\leq\rho<7/8).
+\]
+In particular, on the final surviving interval
+\(\rho_c\leq\rho<39/50\), the upper owner is \(K_0(\rho)\).
+\end{lemma}
+
+\begin{proof}
+We use only
+\[
+       3<\pi<\frac{22}{7},
+       \qquad \sqrt3<\frac74.
+\]
+They imply
+\[
+ \omega_0
+ =\frac{\sqrt3}{2\pi}-\frac16
+ <\frac{7/4}{6}-\frac16=\frac18.
+\]
+Since
+\[
+  G_1'(s)=-\frac{\arccos s}{\pi}<0\quad(0\leq s<1),
+  \qquad G_1(1)=0,
+\]
+one has \(0<\eta_\rho\leq\omega_0<1/8\). The function
+\(a_\rho\) is increasing, and its value at \(\rho_c\) is exactly one:
+\[
+ a_{\rho_c}
+ =\frac{2\pi/(1+2\pi)}{2\pi/(1+2\pi)}=1.
+\]
+Thus \(a_\rho\geq1\). Formula \eqref{eq:K0} and \(C_0>0\) give
+\[
+ \sqrt{K_0(\rho)}
+ >\frac{\sqrt{a_\rho}}{\eta_\rho}>8,
+\]
+so \(K_0(\rho)>64\).
+
+ On the other hand, \(\rho<7/8\), and therefore
+\[
+ z_\rho<8\pi<\frac{176}{7}<26.
+\]
+Consequently
+\[
+ k_{11}(\rho)^2<26^2+132=808<64^2,
+\]
+which proves \eqref{eq:k11-K0}.
+
+ The small-hole wall \(H_0\) is eligible only when
+\(\rho<\omega_0\). But
+\[
+ \rho_c>\frac18>\omega_0,
+\]
+ because \(\pi<22/7<7/2\) implies \(1+2\pi<8\).
+ Also \(\pi>3\) gives the exact scope chain
+ \[
+   \rho_c<\frac17<\frac{39}{50}<\frac56.
+ \]
+ For \(\rho<5/6\), the thin-seam wall is not eligible either, so the
+ piecewise upper-owner formula gives \(U=K_0>64\). For
+ \(5/6\leq\rho<7/8\), the seam branch owns the equality face and
+ \[
+  U(\rho)=\frac{54}{(1-\rho)^2}
+  \geq \frac{54}{(1/6)^2}=1944>64.
+ \]
+ Combining this with \(k_{11}<64\) proves \eqref{eq:k11-K0}.
+ Finally \(39/50<5/6\), so the final surviving interval lies wholly in
+ the \(K_0\) branch.
+\end{proof}
+
+\section{Symbolic optical identities}
+
+The optical ledger evaluates the same algebraic statements at several
+sample values. The following identities replace those repetitions.
+
+For \(a/\pi=N+t\), with \(N\geq1\) and \(0<t\leq1\), the exact
+continuous-minus-product deficit is
+\begin{equation}
+ \frac{D(a)}{\pi^2}
+ =\frac{N^2}{2}+N\left(t^2+\frac16\right)
+  +\frac{2t^3}{3}.
+ \label{eq:product-deficit}
+\end{equation}
+If \(C_D=1382/3125\), direct subtraction gives
+\begin{equation}
+ \frac{D(a)}{\pi^2}-C_D(N+t)^2
+ =\left(\frac12-C_D\right)N^2
+  +N\left(t^2-2C_Dt+\frac16\right)
+  +\frac{2t^3}{3}-C_Dt^2.
+ \label{eq:product-symbolic}
+\end{equation}
+The coefficient of \(N^2\) is positive. The difference between the
+right sides at \(N+1\) and \(N\) is
+\[
+ 2\left(\frac12-C_D\right)N
+ +\left(\frac12-C_D\right)
+ +t^2-2C_Dt+\frac16.
+\]
+The quadratic \(t^2-2C_Dt+1/6\) has minimum
+\(1/6-C_D^2\) at \(t=C_D\).
+Consequently, for \(N\geq1\), the displayed difference is at least
+\[
+ 3\left(\frac12-C_D\right)+\frac16-C_D^2
+ =\frac{4229603}{29296875}>0.
+\]
+Therefore the deficit increases in \(N\), and it is enough to check
+\(N=1\). At \(N=1\), differentiation gives
+\[
+ \frac{d}{dt}\left(
+ \frac{D(a)}{\pi^2}-C_D(1+t)^2
+ \right)=2(t-C_D)(t+1).
+\]
+Thus the unique minimum on \(0<t\leq1\) occurs at \(t=C_D\), where the
+exact value is
+\begin{equation}
+       \frac{1822532}{91552734375}>0.
+       \label{eq:product-minimum}
+\end{equation}
+This proves the product screen simultaneously for every \(N,t\).
+
+Likewise, the twelve repeated angular block checks are all instances of
+\begin{equation}
+       \sum_{\ell=0}^{m-1}(2\ell+1)=m^2
+       \qquad(m\in\mathbb N_0),
+       \label{eq:odd-sum}
+\end{equation}
+proved by subtracting consecutive squares. At a radial equality wall the
+strict convention excludes the newly proposed layer, so no boundary
+sample is added. These symbolic statements cover every repeated optical
+row; the two exact endpoint reserves remain those printed in the main
+optical lemma.
+
+\section{The two optical screens with all scaling shown}
+
+For completeness, we now print the algebra that was compressed in the main
+optical lemma. Set
+\[
+ \varepsilon_0=\frac{11}{50},\qquad
+ c=\frac{1126}{625},\qquad
+ q=\frac{106}{333},\qquad
+ C_D=\frac{1382}{3125}.
+\]
+The inequalities
+\[
+ \pi>\frac{333}{106},\qquad \pi<\frac{22}{7}
+\]
+give \(q>1/\pi\), and \(0<\varepsilon\leq\varepsilon_0<1/2\).
+
+\begin{lemma}[Complete optical screen arithmetic]
+\label{lem:optical-screens}
+Let \(a=\varepsilon K\).
+\begin{enumerate}
+\item If \(\pi<a\leq c/\varepsilon\), then
+\[
+ C_D>
+ \frac{2cq}{3}+\frac{\varepsilon}{4}+\varepsilon^2q^2.
+ \tag{L}
+\]
+\item If \(a\geq c/\varepsilon\), define
+\begin{align*}
+ L(\varepsilon)
+ &:=
+ \frac{(1-\varepsilon)^2}{4}
+ -\frac{(22/7)(1-\varepsilon)\varepsilon}{4c},\\
+ A(\varepsilon)
+ &:=
+ q\varepsilon+\frac{\varepsilon^2}{4c}
+ +\frac{q\varepsilon^3}{4c}
+ +\frac{\varepsilon^4}{16c^2}.
+\end{align*}
+Then \(L(\varepsilon)>A(\varepsilon)\).
+\item The low and high domains are both closed at
+\(a=c/\varepsilon\), so their union covers every \(a>\pi\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For the low screen, \(D(a)>C_Da^2\) was proved above. The sufficient
+product inequality obtained in the main optical argument is
+\[
+ D(a)\geq
+ \varepsilon\left(\frac{2a^3}{3\pi}+\frac{a^2}{4}\right)
+ +\frac{\varepsilon^2a}{\pi}.
+ \tag{1}
+\]
+After division by \(a^2\), the three terms on the right are bounded by
+\[
+ \frac{2\varepsilon a}{3\pi}\leq\frac{2cq}{3},
+ \qquad
+ \frac{\varepsilon}{4}\leq\frac{\varepsilon_0}{4},
+ \qquad
+ \frac{\varepsilon^2}{\pi a}<\frac{\varepsilon^2}{\pi^2}
+ <\varepsilon_0^2q^2.
+\]
+Exact subtraction gives
+\begin{equation}
+ C_D-\left(
+ \frac{2cq}{3}+\frac{11}{200}
+ +\left(\frac{11}{50}\right)^2q^2
+ \right)
+ =\frac{39569}{2772225000}>0.
+ \label{eq:low-optical-reserve}
+\end{equation}
+This proves (L). For \(0\leq a\leq\pi\), the strict radial count is zero,
+including \(a=\pi\), so no low-frequency gap remains.
+
+For the high screen, the exact radial deficit and angular ceiling error
+from the main analytic argument are
+\[
+ \frac{D_{\rm rad}}{a^2}
+ \geq \frac{(1-\varepsilon)^2}{4}
+ -\frac{\pi(1-\varepsilon)}{4a},
+\]
+\[
+ \frac{E}{a^2}
+ =\frac{\varepsilon}{\pi}
+ +\frac{\varepsilon^2}{4\pi a}
+ +\frac{\varepsilon}{4a}
+ +\frac{\varepsilon^2}{16a^2}.
+\]
+Since \(a\geq c/\varepsilon\), one has \(1/a\leq\varepsilon/c\).
+Using the two rational bounds for \(\pi\) therefore gives
+\[
+ \frac{D_{\rm rad}}{a^2}\geq L(\varepsilon),
+ \qquad
+ \frac{E}{a^2}<A(\varepsilon).
+\]
+Moreover,
+\[
+ L'(\varepsilon)
+ =-\frac{1-\varepsilon}{2}
+ -\frac{22/7}{4c}(1-2\varepsilon)<0
+ \quad(0<\varepsilon<1/2),
+\]
+whereas \(A'(\varepsilon)>0\) coefficientwise. Hence
+\[
+ L(\varepsilon)-A(\varepsilon)
+ \geq L(\varepsilon_0)-A(\varepsilon_0).
+\]
+The endpoint subtraction is
+\begin{equation}
+\begin{aligned}
+ L(\varepsilon_0)-A(\varepsilon_0)
+ ={}&
+ \frac14\left(\frac{39}{50}\right)^2
+ -\frac{22}{7}
+  \frac{(39/50)(11/50)}{4(1126/625)}\\
+ &-\left[
+ \frac{11}{50}q
+ +\frac{(11/50)^2}{4(1126/625)}
+ +\frac{(11/50)^3q}{4(1126/625)}
+ +\frac{(11/50)^4}{16(1126/625)^2}
+ \right]\\
+ ={}&\frac{14817541}{472867032960000}>0.
+\end{aligned}
+\label{eq:high-optical-reserve}
+\end{equation}
+Thus the radial deficit strictly exceeds the angular error.
+
+Finally,
+\[
+ \frac{c}{\varepsilon}\geq\frac{c}{\varepsilon_0}
+ =\frac{2252}{275}>\frac{22}{7}>\pi,
+ \qquad
+ \frac{2252}{275}-\frac{22}{7}
+ =\frac{9714}{1925}>0.
+\]
+Therefore the common face lies in the low domain as well as the high
+domain, and
+\[
+ \{a:\pi<a\leq c/\varepsilon\}
+ \cup\{a:a\geq c/\varepsilon\}
+ =\{a:a>\pi\},
+\]
+and equality \(a=c/\varepsilon\) belongs to both pieces. Together with the
+zero-count interval \(0\leq a\leq\pi\), this covers every \(a\geq0\).
+At \(K=a=0\), both the spectral count and the Weyl term vanish.
+\end{proof}
+
+\paragraph{Ledger rows replaced.}
+Lemma~\ref{lem:k11-K0} replaces the eight executable
+\texttt{verify\_u\_and\_k11} scope checks. Equations
+\eqref{eq:product-deficit}--\eqref{eq:odd-sum} replace the repeated
+product samples and odd-block identities. These are rows of
+\texttt{verify\_optical\_constants}.
+Lemma~\ref{lem:optical-screens}
+prints the remaining scaling, monotonicity, common-face, and exact-reserve
+implications. Thus all fifty optical rows are consequences of displayed
+identities rather than executable predicates.
+
+\end{document}

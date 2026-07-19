@@ -1,0 +1,237 @@
+{
+  "arithmetic": {
+    "input_convention": "exact rational endpoints; closed Arb hull",
+    "output_convention": "parseable outward Arb ball plus mid_rad_10exp",
+    "precision_bits": 256,
+    "producer": "python-flint Arb through frozen Round 8 Riccati backend"
+  },
+  "boundary_policy": {
+    "B0_overlap_is_exactly_assigned_complete_face": true,
+    "all_B1_faces_included": true,
+    "one_new_box_only": true,
+    "root_brackets_end_strictly_below_B1": true
+  },
+  "channels": [
+    {
+      "determinant_lower_face": {
+        "enclosure": {
+          "arb": "[0.0415804626383633315173112779503764072806554855049083156071657140807910670929908984688247305 +/- 3.10e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "415804626383633315173112779503764072806554855049083156071657140807910670929908984",
+            "radius_integer": "30973150722158808512192209947124590590058080553516575253248319723588647510867969"
+          }
+        },
+        "sign": "positive"
+      },
+      "determinant_on_target_box": {
+        "enclosure": {
+          "arb": "[-0.219108502717196665837981085373909428810334352261328889366889864599372006459532258304534480 +/- 0.0107]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -81,
+            "midpoint_integer": "-219108502717196665837981085373909428810334352261328889366889864599372006459532258",
+            "radius_integer": "10618806445983166871996361978988655059286172261454131798604168548738743333289985"
+          }
+        },
+        "sign": "negative"
+      },
+      "determinant_upper_face": {
+        "enclosure": {
+          "arb": "[-0.00840720565672628062867205804455537556192624731674597768879126246400705998299179336885832342 +/- 3.15e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "-84072056567262806286720580445553755619262473167459776887912624640070599829917933",
+            "radius_integer": "31498844759962187727462380314418054705855096068801617909363989431573387371610113"
+          }
+        },
+        "sign": "negative"
+      },
+      "ell": 0,
+      "multiplicity": 1,
+      "root_count_below_every_K_in_box": 1,
+      "uniform_root_bracket": [
+        "31/5",
+        "63/10"
+      ]
+    },
+    {
+      "determinant_lower_face": {
+        "enclosure": {
+          "arb": "[0.0396267865991168965375550840331969266927008893284478450868006598258075714524127273149355975 +/- 3.95e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "396267865991168965375550840331969266927008893284478450868006598258075714524127273",
+            "radius_integer": "39428844639033009524271016208587749597016027193485118195751133172744375433691137"
+          }
+        },
+        "sign": "positive"
+      },
+      "determinant_on_target_box": {
+        "enclosure": {
+          "arb": "[-0.0837144995250496454294426548521262989414536123013823651578452819232295523121933911170344800 +/- 0.0133]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -81,
+            "midpoint_integer": "-83714499525049645429442654852126298941453612301382365157845281923229552312193391",
+            "radius_integer": "13283312171060852775805443911459213689104096617067020544872062763390227997261825"
+          }
+        },
+        "sign": "negative"
+      },
+      "determinant_upper_face": {
+        "enclosure": {
+          "arb": "[-0.0153692646686358963336876760210645128205419015328935912631064744095791951215297154336486760 +/- 4.07e-3]",
+          "mid_rad_10exp": {
+            "decimal_exponent": -82,
+            "midpoint_integer": "-153692646686358963336876760210645128205419015328935912631064744095791951215297154",
+            "radius_integer": "40640609864421468095003715253141487728021347894245577659715910314006736575397889"
+          }
+        },
+        "sign": "negative"
+      },
+      "ell": 1,
+      "multiplicity": 3,
+      "root_count_below_every_K_in_box": 1,
+      "uniform_root_bracket": [
+        "13/2",
+        "33/5"
+      ]
+    }
+  ],
+  "claim": "For every rho in [999/2000,1001/2000] and K in [168/25,673/100], the strict Dirichlet shell count is 4 and is strictly smaller than (2/(9*pi))*(1-rho^3)*K^3.",
+  "limitations": [
+    "This certifies one face-connected box only, not D_16 or U_16.",
+    "It does not promote COMP-certified-bessel or any analytic theorem.",
+    "The independent checker is required; producer signs alone are insufficient."
+  ],
+  "parent_box": {
+    "K": [
+      "67/10",
+      "168/25"
+    ],
+    "assigned_shared_face": "K=168/25",
+    "id": "B0",
+    "intersection": "[999/2000,1001/2000] x {168/25}; complete closed upper face of B0 and lower face of B1",
+    "rho": [
+      "999/2000",
+      "1001/2000"
+    ]
+  },
+  "proof_dependencies": [
+    "frozen Round 17 residual equation (9) and its K0 lower bound",
+    "d=3 shell determinant zero criterion and multiplicity 2*ell+1",
+    "positive radial roots are simple and complete",
+    "strict spectral counting convention",
+    "Dirichlet Poincare-Sturm lower bound"
+  ],
+  "provenance": {
+    "frozen_packet_expected_sha256": "eca93c29423a619ab13a3118653256df2ad085219c6718d195723a0a6542026e",
+    "sha256": {
+      "arb_backend_helper": "8902a0fd4ff7db4b1443ca02326151d4d6e4b9b92b697c68220eb85454c4ec7e",
+      "fraction_checker_helper": "2ab1a31d8a22c6f1d5f7def2e33d2e3f0fb710fdb5cae50f8389d82f5b0475d5",
+      "freeze_record": "23bfee8cddd64d0d9d956b8d1a288c6263095a2a04cc42052c4ace08ca36152a",
+      "frozen_round17_packet": "eca93c29423a619ab13a3118653256df2ad085219c6718d195723a0a6542026e",
+      "independent_checker": "40a814e2a3557363d1d958f10c38c295ac0af894e4e8b441ea7dbd0c968991df",
+      "parent_B0_certificate": "f712c1ffb494461913665c578cc36c50d009b81cd48386afde6e49a68cddae00",
+      "parent_B0_check": "02b12e13ad329e77035d8438ec359b6be4dd35571c384543f3890d67c132e6cc",
+      "producer": "38362dd192c7918a3895eb4b13a1afdd076eaae28a650eb8bed31d517314a2a7"
+    }
+  },
+  "residual_membership": {
+    "analytic_basis": "Frozen packet equation (9): rho_*<rho<7/8 and pi/(1-rho)<K<K0(rho) on this ratio box",
+    "conclusion": "the complete closed B1 lies strictly inside D_16",
+    "ratio_cell": "rho_c<rho<5/6, including the K0 formula interface rho=1/2",
+    "strict_lower_margin": {
+      "enclosure": {
+        "arb": "[0.215047346410206761537356616720497115802830600624894179025055407692183593713778004833187839 +/- 5.19e-77]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -81,
+          "midpoint_integer": "215047346410206761537356616720497115802830600624894179025055407692183593713778004",
+          "radius_integer": "51819"
+        }
+      },
+      "sign": "positive"
+    },
+    "strict_upper_proxy_margin": {
+      "enclosure": {
+        "arb": "[18.3525259615280994623311148043654216288749029368689767444872699118122564625767822714489648 +/- 1.41e-75]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -79,
+          "midpoint_integer": "183525259615280994623311148043654216288749029368689767444872699118122564625767822",
+          "radius_integer": "14092"
+        }
+      },
+      "sign": "positive"
+    },
+    "upper_proxy_justification": "K0(rho)>8*pi*rho/(1-rho) on rho>rho_c, from eta_rho<1/2"
+  },
+  "schema": "polya-shell-round17-pilot-extension-v0.1",
+  "scope": {
+    "K": [
+      "168/25",
+      "673/100"
+    ],
+    "closed_faces": true,
+    "residual": "D_16",
+    "rho": [
+      "999/2000",
+      "1001/2000"
+    ]
+  },
+  "status": "certified_extension_when_independent_checker_returns_PASS",
+  "strict_count": {
+    "calculation": "1*(ell=0 root) + 3*(ell=1 root) = 4",
+    "spectral_wall_in_target_box": false,
+    "weighted_count": 4
+  },
+  "sturm_bounds": {
+    "conclusion": "ell>=2 contributes no roots; ell=0,1 have at most one root",
+    "first_ell_two_minus_K_squared": {
+      "enclosure": {
+        "arb": "[0.106679046685017754810588012890810030383999246470974086506298401778221069317363272806519365 +/- 4.70e-75]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -81,
+          "midpoint_integer": "106679046685017754810588012890810030383999246470974086506298401778221069317363272",
+          "radius_integer": "4695656"
+        }
+      },
+      "sign": "positive"
+    },
+    "formula": "lambda_(n,ell) >= (n*pi/(1-rho))^2 + ell*(ell+1)",
+    "second_ell_zero_minus_K_squared": {
+      "enclosure": {
+        "arb": "[112.305416186740071019242352051563240121535996985883896346025193607112884277267624268537111 +/- 1.55e-74]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -78,
+          "midpoint_integer": "112305416186740071019242352051563240121535996985883896346025193607112884277267624",
+          "radius_integer": "15442"
+        }
+      },
+      "sign": "positive"
+    }
+  },
+  "weyl": {
+    "right_hand_side_lower": {
+      "arb": "[18.7744461177899853663320372730975203235669536347213272681050416800511264701480735180898462 +/- 1.93e-75]",
+      "mid_rad_10exp": {
+        "decimal_exponent": -79,
+        "midpoint_integer": "187744461177899853663320372730975203235669536347213272681050416800511264701480735",
+        "radius_integer": "19288"
+      }
+    },
+    "right_hand_side_minus_strict_count": {
+      "enclosure": {
+        "arb": "[14.7744461177899853663320372730975203235669536347213272681050416800511264701480735180898462 +/- 1.93e-75]",
+        "mid_rad_10exp": {
+          "decimal_exponent": -79,
+          "midpoint_integer": "147744461177899853663320372730975203235669536347213272681050416800511264701480735",
+          "radius_integer": "19288"
+        }
+      },
+      "sign": "positive"
+    },
+    "true_worst_corner": {
+      "K": "168/25",
+      "rho": "1001/2000"
+    }
+  }
+}

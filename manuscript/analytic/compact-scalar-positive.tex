@@ -1,0 +1,675 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+
+\title{Purely Analytic Positivity of the Upward-Closed Scalar Gap}
+\author{}
+\date{Global middle-ratio analytic module}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The angular-block reduction for the middle-ratio spherical-shell proxy
+leaves one smooth scalar inequality.  This note proves that inequality on
+the upward-closed region
+\(
+ \rho_c\leq\rho\leq39/50,
+ \ K\geq k_{11}(\rho)
+\)
+without interval arithmetic or a finite numerical certificate.  The loss
+integral is first differentiated with respect to the spectral cutoff.  A
+turning-point lower bound and an exact beta integral show that the scalar gap
+is strictly increasing in that cutoff for every $K>12$.  At the base curve,
+a rational secant majorant gives a uniform analytic estimate for the loss.
+The remaining one-variable inequality is then reduced to positivity of a
+degree-nine polynomial; all of its Bernstein coefficients on one rational
+interval are displayed and are positive.  Thus there is no upper-frequency
+cutoff in the scalar-positivity theorem.
+\end{abstract}
+
+\section{The scalar gap}
+
+For \(0\leq s\leq1\), put
+\begin{equation}
+ G_1(s):=\frac1\pi\left(\sqrt{1-s^2}
+                 -s\arccos s\right).
+ \label{eq:G1}
+\end{equation}
+Fix
+\begin{equation}
+ \rho_c:=\frac1{1+2\pi},
+ \qquad
+ k_{11}(\rho):=
+ \sqrt{\frac{\pi^2}{(1-\rho)^2}+132},
+ \label{eq:constants}
+\end{equation}
+and consider
+\begin{equation}
+ \mathcal R_{\rm c}:=
+ \left\{(\rho,K):
+ \rho_c\leq\rho\leq\frac{39}{50},\quad
+ K\geq k_{11}(\rho)\right\}.
+ \label{eq:region}
+\end{equation}
+The scalar gap left by the angular-block estimate is
+\begin{equation}
+ \begin{aligned}
+ \mathcal S(\rho,K):={}&
+ \frac{(1+2\rho^2)K^2}{12}
+ -\mathcal J(\rho,K)
+ -\frac{\pi\rho K}{4(1-\rho)}+\frac12\\
+ &+\frac{2\pi\rho K}{\arccos\rho}
+ \left(
+ \frac{KG_1(\rho)}{4(1+2KG_1(\rho))}
+ +\frac3{32}
+ \right),
+ \end{aligned}
+ \label{eq:S}
+\end{equation}
+where
+\begin{equation}
+ \mathcal J(\rho,K):=
+ \frac{K^2}{2}\int_\rho^1
+ \frac{s}{(1+2KG_1(s))^2}\,ds.
+ \label{eq:J}
+\end{equation}
+
+\begin{theorem}[Upward-closed scalar positivity]
+\label{thm:scalar-positive}
+For every \(\rho_c\leq\rho\leq39/50\) and every
+\(K\geq k_{11}(\rho)\),
+\begin{equation}
+ \boxed{\mathcal S(\rho,K)>0.}
+ \label{eq:target}
+\end{equation}
+\end{theorem}
+
+We use only the elementary rational estimates
+\begin{equation}
+ \frac{157}{50}<\pi<\frac{22}{7},
+ \qquad
+ \frac{140}{99}<\sqrt2,
+ \qquad
+ \frac53<\sqrt3.
+ \label{eq:rational-constants}
+\end{equation}
+The two square-root estimates follow immediately by squaring; for the
+closer one we record the exact margin
+\[
+ 2\cdot99^2-140^2=2>0.
+\]
+The displayed bounds for \(\pi\) are the classical Archimedean bounds
+(with the lower one weakened to \(157/50\)).
+
+\section{Strict monotonicity in the spectral cutoff}
+
+The identity
+\begin{equation}
+ G_1(s)=\frac1\pi\int_s^1\arccos u\,du
+ \label{eq:G-integral}
+\end{equation}
+and \(1-\cos v\leq v^2/2\) imply
+\begin{equation}
+ G_1(s)\geq
+ \frac{2\sqrt2}{3\pi}(1-s)^{3/2}.
+ \label{eq:turning-lower}
+\end{equation}
+Indeed, \(\arccos u\geq\sqrt{2(1-u)}\), and integration gives
+\eqref{eq:turning-lower}.
+
+\begin{lemma}[Derivative of the boundary-layer loss]
+\label{lem:J-derivative}
+For every fixed \(0<\rho<1\) and every \(K>0\),
+\begin{equation}
+ \partial_K\mathcal J(\rho,K)
+ =K\int_\rho^1
+ \frac{s}{(1+2KG_1(s))^3}\,ds.
+ \label{eq:J-derivative}
+\end{equation}
+Moreover, if \(K>12\), then
+\begin{equation}
+ \int_\rho^1
+ \frac{s}{(1+2KG_1(s))^3}\,ds
+ <\frac{88}{567}.
+ \label{eq:cubic-loss}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Differentiating \eqref{eq:J} under the integral sign gives
+\[
+ \begin{aligned}
+ \partial_K\mathcal J
+ &=
+ K\int_\rho^1\frac{s}{(1+2KG_1(s))^2}\,ds
+ -2K^2\int_\rho^1
+ \frac{sG_1(s)}{(1+2KG_1(s))^3}\,ds\\
+ &=K\int_\rho^1
+ \frac{s}{(1+2KG_1(s))^3}\,ds,
+ \end{aligned}
+ \]
+which proves \eqref{eq:J-derivative}.
+
+Set \(a=4\sqrt2/(3\pi)\).  By \eqref{eq:turning-lower},
+the change of variable \(t=1-s\), and \(s\leq1\),
+\begin{align}
+ \int_\rho^1
+ \frac{s\,ds}{(1+2KG_1(s))^3}
+ &\leq
+ \int_0^\infty\frac{dt}{(1+aKt^{3/2})^3}\notag\\
+ &=
+ \frac{8\pi}{27\sqrt3}(aK)^{-2/3}.
+ \label{eq:beta-bound}
+\end{align}
+The last equality is the beta integral
+\[
+ \frac23(aK)^{-2/3}
+ B\left(\frac23,\frac73\right)
+ =\frac{8\pi}{27\sqrt3}(aK)^{-2/3}.
+ \]
+At \(K=12\), the cube of the last member of
+\eqref{eq:beta-bound} is
+\[
+ \frac{\pi^5}{59049\sqrt3}.
+ \]
+Using \eqref{eq:rational-constants},
+\[
+ \frac{\pi^5}{59049\sqrt3}
+ <
+ \frac{5153632}{1654060905}
+ <
+ \left(\frac{88}{567}\right)^3,
+ \]
+where the second strict inequality is the exact identity
+\[
+ \left(\frac{88}{567}\right)^3
+ -\frac{5153632}{1654060905}
+ =\frac{27812576}{44659644435}>0.
+ \]
+The right side of \eqref{eq:beta-bound} decreases with \(K\), proving
+\eqref{eq:cubic-loss}.
+\end{proof}
+
+\begin{proposition}[Monotonicity of the scalar gap]
+\label{prop:K-monotone}
+For every \(\rho_c\leq\rho\leq39/50\) and every
+\(K\geq k_{11}(\rho)\),
+\begin{equation}
+ \partial_K\mathcal S(\rho,K)>0.
+ \label{eq:S-monotone}
+\end{equation}
+Consequently,
+\begin{equation}
+ \mathcal S(\rho,K)\geq
+ \mathcal S\bigl(\rho,k_{11}(\rho)\bigr).
+ \label{eq:base-reduction}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write
+\[
+ \theta:=\arccos\rho,\qquad y:=KG_1(\rho).
+ \]
+The derivative of the final line of \eqref{eq:S} is
+\begin{equation}
+ \frac{2\pi\rho}{\theta}
+ \left(
+ \frac{y(1+y)}{2(1+2y)^2}+\frac3{32}
+ \right)
+ \geq\frac{3\rho}{8},
+ \label{eq:endpoint-derivative}
+\end{equation}
+because \(\theta\leq\pi/2\).  Also
+\[
+ -\frac{\pi\rho}{4(1-\rho)}
+ >-\frac{11\rho}{14(1-\rho)}.
+ \]
+Every \(K\geq k_{11}(\rho)\) in the stated ratio interval is greater than
+\(12\); this also
+follows from the stronger estimate established in
+Lemma~\ref{lem:uniform-loss} below.  Lemma~\ref{lem:J-derivative}
+therefore gives
+\begin{align}
+ \partial_K\mathcal S
+ &>
+ K\left(\frac{1+2\rho^2}{6}-\frac{88}{567}\right)
+ +\frac{3\rho}{8}
+ -\frac{11\rho}{14(1-\rho)}
+ \notag\\
+ &=
+ K\left(\frac{13}{1134}+\frac{\rho^2}{3}\right)
+ +\frac{3\rho}{8}
+ -\frac{11\rho}{14(1-\rho)}
+ \notag\\
+ &>
+ \frac{26}{189}+4\rho^2+\frac{3\rho}{8}
+ -\frac{11\rho}{14(1-\rho)}.
+ \label{eq:S-derivative-lower}
+\end{align}
+
+It remains to check the sign of the last expression.  Multiplication by
+\(1-\rho\) produces
+\begin{equation}
+ p(\rho):=
+ (1-\rho)
+ \left(\frac{26}{189}+4\rho^2+\frac{3\rho}{8}\right)
+ -\frac{11\rho}{14}.
+ \label{eq:p}
+\end{equation}
+The bound \(\pi<22/7\) gives
+\(\rho_c>7/51\).  On the larger rational interval
+\([7/51,39/50]\), set
+\[
+ u:=\frac{\rho-7/51}{39/50-7/51}\in[0,1].
+ \]
+In the degree-three Bernstein basis
+\(B_{j,3}(u)=\binom3j u^j(1-u)^{3-j}\), exact expansion gives
+\begin{equation}
+ p(\rho)=\sum_{j=0}^3 b_jB_{j,3}(u),
+ \label{eq:p-Bernstein}
+\end{equation}
+with
+\begin{equation}
+ \begin{array}{c|c}
+ j&b_j\\ \hline
+ 0&\dfrac{335005}{2785671}\\[3pt]
+ 1&\dfrac{32947387}{196635600}\\[3pt]
+ 2&\dfrac{281783183}{578340000}\\[3pt]
+ 3&\dfrac{231517}{13500000}
+ \end{array}
+ \label{eq:p-coefficients}
+\end{equation}
+All four coefficients are positive.  Since the Bernstein basis functions
+are nonnegative and sum to one, \(p(\rho)>0\).  Equation
+\eqref{eq:S-derivative-lower} proves \eqref{eq:S-monotone}, and
+\eqref{eq:base-reduction} follows by integration in \(K\).
+\end{proof}
+
+\section{An exact rational upper bound for the loss}
+
+\begin{lemma}[Uniform loss bound]
+\label{lem:uniform-loss}
+For every \(\rho_c\leq\rho\leq39/50\) and every
+\(K\geq k_{11}(\rho)\),
+\begin{equation}
+ K>\frac{241}{20}
+ \label{eq:K-lower}
+\end{equation}
+and
+\begin{equation}
+ \int_\rho^1
+ \frac{x}{(1+2KG_1(x))^2}\,dx
+ <\frac{17}{100}.
+ \label{eq:loss-17}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since \(\rho\geq\rho_c\),
+\[
+ \frac{\pi}{1-\rho}\geq
+ \frac{\pi}{1-\rho_c}=\pi+\frac12>\frac{91}{25}.
+ \]
+Consequently
+\[
+ K^2\geq k_{11}(\rho)^2
+ >132+\left(\frac{91}{25}\right)^2
+ =\left(\frac{241}{20}\right)^2+\frac{471}{10000},
+ \]
+which proves \eqref{eq:K-lower}.  The rational bounds in
+\eqref{eq:rational-constants} now give
+\begin{equation}
+ \frac{4\sqrt2K}{3\pi}
+ >
+ \frac{4(140/99)(241/20)}{3(22/7)}
+ =\frac{23618}{3267}
+ =\frac{36}{5}+\frac{478}{16335}.
+ \label{eq:turning-coefficient}
+\end{equation}
+
+Put \(y=1-x\).  Equations \eqref{eq:turning-lower} and
+\eqref{eq:turning-coefficient} yield
+\begin{align}
+ \int_\rho^1\frac{x\,dx}{(1+2KG_1(x))^2}
+ &<
+ \int_0^{1-\rho}
+ \frac{1-y}{(1+(36/5)y^{3/2})^2}\,dy\notag\\
+ &\leq
+ \int_0^1
+ \frac{1-y}{(1+(36/5)y^{3/2})^2}\,dy.
+ \label{eq:universal-loss}
+\end{align}
+We bound the last integral by exact rational arithmetic.  Set
+\[
+ c:=\frac{36}{5},\qquad
+ \phi(z):=\frac1{(1+z)^2},
+ \]
+and use the rational grid
+\begin{equation}
+ (t_i)_{i=0}^{10}=
+ \left(
+ 0,\frac14,\frac5{16},\frac38,\frac7{16},\frac12,
+ \frac9{16},\frac58,\frac34,\frac78,1
+ \right).
+ \label{eq:secant-grid}
+\end{equation}
+For \(z_i=ct_i^3\), let
+\[
+ \beta_i:=
+ \frac{\phi(z_{i+1})-\phi(z_i)}{z_{i+1}-z_i},
+ \qquad
+ \alpha_i:=\phi(z_i)-\beta_i z_i.
+ \]
+Because \(\phi''(z)=6(1+z)^{-4}>0\), its secant satisfies
+\[
+ \phi(z)\leq\alpha_i+\beta_i z
+ \qquad(z_i\leq z\leq z_{i+1}).
+ \]
+After \(y=t^2\), the integral in \eqref{eq:universal-loss} is
+\[
+ \int_0^1 2t(1-t^2)\phi(ct^3)\,dt.
+ \]
+Thus it is at most
+\begin{equation}
+ Q:=\sum_{i=0}^9
+ \bigl(F_i(t_{i+1})-F_i(t_i)\bigr),
+ \label{eq:Q-def}
+\end{equation}
+where the exact polynomial antiderivative is
+\begin{equation}
+ F_i(t):=
+ \alpha_i\left(t^2-\frac{t^4}{2}\right)
+ +2c\beta_i\left(\frac{t^5}{5}-\frac{t^7}{7}\right).
+ \label{eq:Fi}
+\end{equation}
+Every number in \eqref{eq:Q-def} is rational.  Substitution of the grid
+\eqref{eq:secant-grid} gives
+\begin{equation}
+ Q=
+ \frac{
+ 1305767238061446154064110434835938779253983373178558326887
+ }{
+ 7706446260271137290663804190970969288616921855152043745280
+ },
+ \label{eq:Q-value}
+\end{equation}
+and direct subtraction gives
+\begin{equation}
+ \frac{17}{100}-Q
+ =
+ \frac{
+ 21643130923235926743681388145629999054466710986445549053
+ }{
+ 38532231301355686453319020954854846443084609275760218726400
+ }>0.
+ \label{eq:Q-gap}
+\end{equation}
+Equations \eqref{eq:universal-loss}--\eqref{eq:Q-gap} prove
+\eqref{eq:loss-17}.
+\end{proof}
+
+\section{The base curve}
+
+Fix \(\rho\) and now set
+\begin{equation}
+ t:=\sqrt{1-\rho},
+ \qquad
+ k:=k_{11}(\rho)
+ =\sqrt{132+\frac{\pi^2}{t^4}},
+ \qquad
+ \rho=1-t^2.
+ \label{eq:t-base}
+\end{equation}
+The middle-ratio range lies strictly inside the rational interval
+\begin{equation}
+ \frac7{15}<t<\frac{14}{15}.
+ \label{eq:t-interval}
+\end{equation}
+Indeed,
+\[
+ t^2\geq\frac{11}{50},
+ \qquad
+ \frac{11}{50}-\left(\frac7{15}\right)^2
+ =\frac1{450}>0,
+\]
+while \(\rho\geq\rho_c>7/51\) gives
+\[
+ t^2=1-\rho<\frac{44}{51}
+ <\left(\frac{14}{15}\right)^2,
+ \qquad
+ \left(\frac{14}{15}\right)^2-\frac{44}{51}
+ =\frac{32}{3825}>0.
+\]
+
+\begin{lemma}[Analytic endpoint payment]
+\label{lem:endpoint-payment}
+For every \(\rho_c\leq\rho\leq39/50\), let \(t\) and \(k\) be as in
+\eqref{eq:t-base}, and let
+\begin{equation}
+ C(\rho):=\frac{100\rho^2-1}{600}
+ \label{eq:C}
+\end{equation}
+and
+\begin{equation}
+ E(t):=
+ \frac{11}{14t^2}
+ -\frac{14}{15(1+2t)}
+ -\frac{3}{8t}.
+ \label{eq:E}
+\end{equation}
+Then \(C(\rho)>0\), \(E(t)>0\), and
+\begin{equation}
+ \mathcal S(\rho,k)>
+ C(\rho)k^2-\rho E(t)k+\frac12.
+ \label{eq:S-base-lower}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+First, \(\rho\geq\rho_c>7/51>1/10\), so \(C(\rho)>0\).
+Lemma~\ref{lem:uniform-loss} and
+\[
+ \frac{1+2\rho^2}{12}-\frac{17}{200}
+ =\frac{100\rho^2-1}{600}
+ \]
+show that the first two terms in \eqref{eq:S} are strictly greater
+than \(C(\rho)k^2\).
+
+Set \(\theta=\arccos\rho\) and \(Y=kG_1(\rho)\).
+For \(0\leq t\leq1\),
+\begin{equation}
+ \theta=\arccos(1-t^2)
+ =2\arcsin\frac{t}{\sqrt2}
+ \leq\frac{\pi t}{2}.
+ \label{eq:theta-bound}
+\end{equation}
+To see the last inequality, use convexity of \(\arcsin\) on
+\([0,1/\sqrt2]\): its graph lies below the chord joining
+\((0,0)\) to \((1/\sqrt2,\pi/4)\).
+Furthermore, \eqref{eq:turning-lower} and
+\(k>\pi/t^2\) give
+\begin{equation}
+ Y>
+ \frac{2\sqrt2}{3}t
+ >\frac{14}{15}t.
+ \label{eq:Y-lower}
+\end{equation}
+Since \(Y\mapsto Y/(1+2Y)\) is increasing,
+\eqref{eq:theta-bound}--\eqref{eq:Y-lower} imply
+\begin{align}
+ &\frac{2\pi\rho k}{\theta}
+ \left(\frac{Y}{4(1+2Y)}+\frac3{32}\right)\notag\\
+ &\qquad\quad>
+ \rho k\left(
+ \frac{14}{15(1+2t)}+\frac{3}{8t}
+ \right).
+ \label{eq:endpoint-lower}
+\end{align}
+Also
+\[
+ -\frac{\pi\rho k}{4t^2}>
+ -\frac{11\rho k}{14t^2}.
+ \]
+Combining these inequalities with \eqref{eq:S} proves
+\eqref{eq:S-base-lower}.
+
+Finally,
+\begin{equation}
+ 840t^2(1+2t)E(t)
+ =660+1005t-1414t^2.
+ \label{eq:E-numerator}
+\end{equation}
+The quadratic on the right is concave, so its minimum on
+\([7/15,14/15]\) occurs at an endpoint.  Its endpoint values are
+\[
+ \frac{184739}{225},
+ \qquad
+ \frac{82406}{225},
+ \]
+respectively.  Both are positive, proving \(E(t)>0\).
+\end{proof}
+
+\begin{proposition}[Rational positivity on the base curve]
+\label{prop:base-positive}
+For every \(\rho_c\leq\rho\leq39/50\),
+\begin{equation}
+ \mathcal S\bigl(\rho,k_{11}(\rho)\bigr)>0.
+ \label{eq:base-positive}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The elementary inequality
+\[
+ \sqrt{x^2+132}<x+\frac{66}{x}\qquad(x>0)
+ \]
+and \eqref{eq:rational-constants} give
+\begin{align}
+ k^2&>
+ 132+\frac{(157/50)^2}{t^4},
+ \label{eq:k-square-lower}\\
+ k&<
+ \frac{22}{7t^2}+\frac{3300t^2}{157}.
+ \label{eq:k-upper}
+\end{align}
+Since \(C(\rho)>0\) and \(\rho E(t)>0\),
+Lemma~\ref{lem:endpoint-payment} yields
+\begin{equation}
+ \mathcal S(\rho,k)>R(t),
+ \label{eq:R-lower}
+\end{equation}
+where
+\begin{equation}
+ \begin{aligned}
+ R(t):={}&
+ C(1-t^2)
+ \left(132+\frac{(157/50)^2}{t^4}\right)\\
+ &-(1-t^2)E(t)
+ \left(\frac{22}{7t^2}+\frac{3300t^2}{157}\right)
+ +\frac12.
+ \end{aligned}
+ \label{eq:R}
+\end{equation}
+
+It remains only exact polynomial algebra.  Put
+\[
+ H(t):=t^4(1+2t)R(t).
+ \]
+Using \eqref{eq:E-numerator}, its factorized form is
+\begin{equation}
+ \begin{aligned}
+ H(t)={}&
+ C(1-t^2)(1+2t)
+ \left(132t^4+\left(\frac{157}{50}\right)^2\right)\\
+ &-\frac{(1-t^2)(660+1005t-1414t^2)}{840}
+ \left(\frac{22}{7}+\frac{3300}{157}t^4\right)\\
+ &+\frac12t^4(1+2t).
+ \end{aligned}
+ \label{eq:H-factorized}
+\end{equation}
+For an independently checkable expansion,
+\begin{equation}
+ \begin{aligned}
+ H(t)={}&
+ -\frac{20642567}{24500000}
+ -\frac{6205067}{12250000}t
+ +\frac{547983}{122500}t^2
+ -\frac{1033727}{367500}t^3\\
+ &+\frac{34911551}{16485000}t^4
+ +\frac{187093801}{8242500}t^5
+ +\frac{8679}{1099}t^6\\
+ &-\frac{138149}{2198}t^7
+ -\frac{2101}{157}t^8
+ +44t^9.
+ \end{aligned}
+ \label{eq:H-expanded}
+\end{equation}
+
+Set
+\[
+ u:=\frac{t-7/15}{7/15}\in[0,1].
+ \]
+In the degree-nine Bernstein basis,
+\begin{equation}
+ H(t)=\sum_{j=0}^9 d_jB_{j,9}(u),
+ \qquad
+ B_{j,9}(u)=\binom9j u^j(1-u)^{9-j},
+ \label{eq:H-Bernstein}
+\end{equation}
+where exact conversion of \eqref{eq:H-expanded} gives
+\begin{equation}
+ \begin{array}{c|c}
+ j&d_j\\ \hline
+ 0&\dfrac{65408801807437}{9463832437500000}\\[3pt]
+ 1&\dfrac{299549381760793}{1135659892500000}\\[3pt]
+ 2&\dfrac{15904699805720773}{28391497312500000}\\[3pt]
+ 3&\dfrac{2765605256590021}{3154610812500000}\\[3pt]
+ 4&\dfrac{33203943051258761}{28391497312500000}\\[3pt]
+ 5&\dfrac{38636221171331747}{28391497312500000}\\[3pt]
+ 6&\dfrac{2538003206646073}{1892766487500000}\\[3pt]
+ 7&\dfrac{28758289199580211}{28391497312500000}\\[3pt]
+ 8&\dfrac{12920786461478803}{28391497312500000}\\[3pt]
+ 9&\dfrac{3428732855971679}{9463832437500000}
+ \end{array}
+ \label{eq:H-coefficients}
+\end{equation}
+Every \(d_j\) is positive.  The Bernstein basis functions are
+nonnegative and sum to one; hence \(H(t)>0\) throughout
+\([7/15,14/15]\).  Since \(t^4(1+2t)>0\), this proves \(R(t)>0\).
+Equation \eqref{eq:R-lower} proves \eqref{eq:base-positive}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:scalar-positive}]
+Proposition~\ref{prop:K-monotone} reduces every point of
+the upward-closed middle-ratio region to the base curve
+\(K=k_{11}(\rho)\).
+Proposition~\ref{prop:base-positive} proves strict positivity on that
+curve.  Therefore \(\mathcal S(\rho,K)>0\) throughout
+\(\mathcal R_{\rm c}\), with no upper restriction on \(K\).
+\end{proof}
+
+\begin{remark}[Nature of the certificate]
+The rational secants and Bernstein expansions above are finite exact
+algebra, not interval arithmetic: convexity proves the functional
+majorant on each secant interval, and positivity follows from explicitly
+displayed rational coefficients.  No floating-point evaluation, sampled
+minimum, or numerical root isolation is used as a premise.
+\end{remark}
+
+\end{document}

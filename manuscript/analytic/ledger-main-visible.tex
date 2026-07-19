@@ -1,0 +1,680 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\om}{\omega _0}
+\newcommand{\rc}{\rho _c}
+\newcommand{\rs}{\rho _*}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newtheorem{lemma}{Lemma}[section]
+
+\title{Hand-visible analytic derivations for 103 finite-ledger predicates}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Scope and logical convention}
+
+This note exposes, in hand-checkable form, the predicates not assigned to
+the other five ledger packets.  They are precisely
+\[
+  11\ \hbox{threshold predicates}
+  +48\ \hbox{zero predicates}
+  +43\ \hbox{lower-closure predicates}
+  +1\ \hbox{cap--74 predicate}=103.
+\]
+The omitted lower-closure predicate is the single six-cap tuple identity;
+it belongs to the cap-inventory packet.  Every inequality below is proved
+from a displayed analytic inequality, integer arithmetic, rational cross
+multiplication, or positive-side squaring.  An executable ledger may check
+the same arithmetic, but no executable output is used as a premise.
+
+We use
+\[
+ \om=\frac{\sqrt3}{2\pi}-\frac16,
+ \quad C_0=1+\frac{8\sqrt2}{15},
+ \quad \rs=\frac{\om}{2C_0},
+ \quad \rho _0=\frac1{\sqrt{337}},
+ \quad \sigma=\frac{3\om}{4},
+ \quad \rc=\frac1{1+2\pi},
+ \quad d=\frac{\sqrt{337}}2.
+\]
+
+The elementary enclosure
+\begin{equation}
+ \frac{333}{106}<\pi<\frac{355}{113}<\frac{22}{7}
+ \label{eq:pi-bounds}
+\end{equation}
+is analytic: the lower and middle bounds follow from alternating truncations
+of Machin's identity
+\(\pi=16\arctan(1/5)-4\arctan(1/239)\), and the last one is immediate by
+cross multiplication.  For reference, \(355/113\) exceeds the upper
+Machin truncation by the positive rational numerator
+\(45167474711\) over denominator
+\(189820334689453125\).  The classical integral
+\[
+ 0<\int_0^1\frac{x^4(1-x)^4}{1+x^2}\,dx=\frac{22}{7}-\pi
+\]
+also gives the final upper bound directly.
+
+\section{The eleven threshold predicates}
+
+First we obtain a rational two-sided enclosure for \(\om\).  The exact
+integer residuals
+\[
+ 3\,1101^2 113^2-607^2 355^2=1998482>0,
+ \qquad
+ 25\,333^2-243\,106^2=41877>0
+\]
+and \eqref{eq:pi-bounds} imply
+\[
+ \sqrt3>\frac{607\,355}{1101\,113}>\frac{607\pi}{1101},
+ \qquad 9\sqrt3<5\pi.
+\]
+Consequently
+\begin{equation}
+ \frac{40}{367}<\om<\frac19.
+ \label{eq:omega-bounds}
+\end{equation}
+Indeed, \(607/2202-1/6=40/367\), while
+\(5/18-1/6=1/9\).
+
+Since \(2\,32^2-45^2=23>0\), one has
+\(\sqrt2>45/32\), hence \(C_0>7/4\) and
+\(\rs<2/63\).  The following chain consists entirely of strict rational
+comparisons, with the indicated radical comparisons justified by squaring:
+\[
+ \rs<\frac2{63}<\frac1{\sqrt{337}}<\frac1{18}
+ <\frac3{40}<\frac{3\om}{4}<\frac1{12}<\frac7{51}
+ <\frac1{1+2\pi}<\frac17<\frac{39}{50}<\frac78.
+\]
+Here
+\[
+ 4\cdot337<63^2,\qquad 18^2<337,\qquad 367<400,
+ \qquad 51<84,\qquad 367<420,
+\]
+and \(7/51<\rc<1/7\) follows respectively from
+\(\pi<22/7\) and \(\pi>3\).  This proves the five ratio-order rows.
+It also proves
+\[
+ \om<\frac19<\frac7{51}<\rc.
+\]
+Moreover
+\[
+ \om d>\frac{20\sqrt{337}}{367}>1,
+ \qquad 400\cdot337-367^2=111>0.
+\]
+
+The four terminal comparisons follow from the same bounds:
+\begin{align*}
+ \sqrt{114}&<18<\frac2\om,\qquad
+ &\frac2\om&<\frac{367}{20},\\
+ \rc&<\frac17<\frac{60}{367}<\frac{3\om}{2},
+ &\om\sqrt{114}&>\frac{40\sqrt{114}}{367}>1.
+\end{align*}
+The last positive-side squaring has residual
+\[
+ 1600\cdot114-367^2=47711>0.
+\]
+
+Thus the one-to-one threshold registry is
+\begin{center}
+\small
+\begin{tabular}{ccl}
+\toprule
+ID&source row&proved predicate\\
+\midrule
+T1--T5&1--5&\(\rs<\rho _0<\sigma<\rc<39/50<7/8\), one adjacent pair per row\\
+T6&6&\(\om<\rc\)\\
+T7&7&\(\om d>1\)\\
+T8&31&\(\sqrt{114}<2/\om\)\\
+T9&32&\(2/\om<367/20\)\\
+T10&33&\(\rc<3\om/2\)\\
+T11&34&\(\om\sqrt{114}>1\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The forty-eight zero specializations}
+
+\subsection{A recurrence and elementary tangent bounds}
+
+Put
+\[
+ \mathsf j_\ell(x)=\sqrt{\frac{\pi}{2x}}J_{\ell+1/2}(x),
+ \qquad P_\ell(x)=x^{\ell+1}\mathsf j_\ell(x).
+\]
+Then
+\begin{equation}
+ P_{\ell+1}=(2\ell+1)P_\ell-x^2P_{\ell-1},
+ \qquad P_0=\sin x,\qquad P_1=\sin x-x\cos x.
+ \label{eq:P-rec}
+\end{equation}
+Write
+\(P_\ell=A_\ell(t)\sin x+xC_\ell(t)\cos x\), \(t=x^2\).
+The recurrence gives
+\begin{align*}
+ A_2&=3-t,&C_2&=-3,\\
+ A_3&=15-6t,&C_3&=t-15,\\
+ A_5&=945-420t+15t^2,&C_5&=-945+105t-t^2,\\
+ A_6&=10395-4725t+210t^2-t^3,
+ &C_6&=-10395+1260t-21t^2,\\
+ A_7&=135135-62370t+3150t^2-28t^3,
+ &C_7&=-135135+17325t-378t^2+t^3.
+\end{align*}
+For \(0<s<\pi/2\), differentiation and integration give
+\begin{equation}
+ \tan s>s,\qquad \tan s>s+\frac{s^3}{3}.
+ \label{eq:tan-lower}
+\end{equation}
+For \(0<s<1\), \(\sin s<s\) and
+\(\cos s>1-s^2/2\) give
+\begin{equation}
+ \tan s<\frac{s}{1-s^2/2}.
+ \label{eq:tan-upper}
+\end{equation}
+
+\subsection{Sixteen half-period locations}
+
+For each internal face, the first displayed margin below is
+\(w-(h_L/2)(22/7)\); the second is
+\((h_R/2)(333/106)-w\).  Positivity therefore proves both strict
+half-period location rows without a decimal approximation.
+\begin{center}
+\small
+\begin{tabular}{c|c|c|c|c}
+\toprule
+\((\ell,n)\)&\(w\)&\((h_L,h_R)\)&left margin&right margin\\
+\midrule
+\((1,2)\)&\(77/10\)&\((4,5)\)&\(99/70\)&\(163/1060\)\\
+\((2,2)\)&\(9\)&\((5,6)\)&\(8/7\)&\(45/106\)\\
+\((3,2)\)&\(103/10\)&\((6,7)\)&\(61/70\)&\(737/1060\)\\
+\((5,2)\)&\(129/10\)&\((8,9)\)&\(23/70\)&\(1311/1060\)\\
+\((1,3)\)&\(21/2\)&\((6,7)\)&\(15/14\)&\(105/212\)\\
+\((2,3)\)&\(61/5\)&\((7,8)\)&\(6/5\)&\(97/265\)\\
+\((6,1)\)&\(10\)&\((6,7)\)&\(4/7\)&\(211/212\)\\
+\((7,1)\)&\(23/2\)&\((7,8)\)&\(1/2\)&\(113/106\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Sixteen half-period signs}
+
+At an integral or half-integral multiple of \(\pi\), exactly one of
+\(\sin x,\cos x\) vanishes.  Direct substitution in the displayed
+polynomials gives the following complete sign table.
+\begin{center}
+\small
+\begin{tabular}{c|c|c@{\qquad}c|c|c}
+\toprule
+\((\ell,n)\)&\(h_L\)&left sign&\((\ell,n)\)&\(h_R\)&right sign\\
+\midrule
+\((1,2)\)&4&\(-\)&\((1,2)\)&5&\(+\)\\
+\((2,2)\)&5&\(-\)&\((2,2)\)&6&\(+\)\\
+\((3,2)\)&6&\(-\)&\((3,2)\)&7&\(+\)\\
+\((5,2)\)&8&\(-\)&\((5,2)\)&9&\(+\)\\
+\((1,3)\)&6&\(+\)&\((1,3)\)&7&\(-\)\\
+\((2,3)\)&7&\(+\)&\((2,3)\)&8&\(-\)\\
+\((6,1)\)&6&\(+\)&\((6,1)\)&7&\(-\)\\
+\((7,1)\)&7&\(+\)&\((7,1)\)&8&\(-\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here are explicit polynomial witnesses for the only signs not immediate
+from \(A_1=1,C_1=-1,A_2=3-t,C_2=-3,A_3=15-6t,C_3=t-15\).
+From \eqref{eq:pi-bounds}, at \(x=4\pi\) one has
+\(144<t<159\), at \(x=9\pi/2\) one has \(t>182\), and at
+\(x=7\pi/2\) one has \(110<t<121\).  Monotonicity on these rational
+intervals and direct evaluation give
+\[
+ C_5(t)<C_5(144)=-6561,\qquad
+ A_5(t)>A_5(182)=421365,
+\]
+\[
+ C_6(t)<C_6(81)=-46116,\qquad
+ A_6(t)>A_6(110)=700645,
+\]
+\[
+ A_7(t)<A_7(110)=-5878565,\qquad
+ C_7(t)<C_7(144)=-2492559.
+\]
+For example, \(A_6'=-4725+420t-3t^2\) is positive on
+\([110,121]\), while \(A_7'\) is negative there; the other asserted
+monotonicities follow at once from their displayed derivatives.  Combining
+these signs with the quadrant signs of sine and cosine proves all sixteen
+entries.
+
+\subsection{Eight rational-wall signs}
+
+Substitution in \eqref{eq:P-rec} reduces each rational-wall sign to one
+of the following exact tangent comparisons.  The shifted angle is always
+in \((0,\pi/2)\), as already proved by the location table.
+\begin{center}
+\small
+\begin{tabular}{c|c|p{0.64\linewidth}|c}
+\toprule
+\((\ell,n)\)&wall&hand certificate&\(\sgn\mathsf j_\ell(w)\)\\
+\midrule
+\((1,2)\)&\(77/10\)&For \(u=5\pi/2-w\),
+ \(\tan u>3/20>10/77=1/w\); hence
+ \(\tan(w-2\pi)=\cot u<w\).&\(-\)\\
+\((2,2)\)&\(9\)&For \(u=3\pi-w\),
+ \(\tan u>21/50>9/26=3w/(w^2-3)\).&\(-\)\\
+\((3,2)\)&\(103/10\)&For \(u=7\pi/2-w\),
+ \(\tan u>69/100>621540/938227=(6w^2-15)/(w(w^2-15))\).&\(-\)\\
+\((5,2)\)&\(129/10\)&For \(y=w-4\pi\), \(0<y<17/50\), so
+ \(\tan y<1700/4711<177800829/427700150=-wC_5/A_5\).&\(-\)\\
+\((1,3)\)&\(21/2\)&For \(u=7\pi/2-w\),
+ \(\tan u>49/100>2/21=1/w\), hence
+ \(\tan(w-3\pi)<w\).&\(+\)\\
+\((2,3)\)&\(61/5\)&For \(u=4\pi-w\),
+ \(\tan u>9/25>915/3646=3w/(w^2-3)\).&\(+\)\\
+\((6,1)\)&\(10\)&For \(y=w-3\pi\),
+ \(4/7<y<29/50\), so
+ \(\tan y<2900/4159<188790/127579=-wC_6/A_6\).&\(+\)\\
+\((7,1)\)&\(23/2\)&For \(u=4\pi-w\),
+ \(\tan u>u+u^3/3>546377/375000>
+ 3153151489/2276518664=wC_7/A_7\).&\(+\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+For complete cross-multiplication visibility, the four less immediate
+positive gaps in that table are
+\begin{align*}
+ \frac{69}{100}-\frac{621540}{938227}
+ &=\frac{2583663}{93822700},\\
+ \frac{177800829}{427700150}-\frac{1700}{4711}
+ &=\frac{110529450419}{2014895406650},\\
+ \frac{188790}{127579}-\frac{2900}{4159}
+ &=\frac{415198510}{530601061},\\
+ \frac{546377}{375000}-\frac{3153151489}{2276518664}
+ &=\frac{3837851856583}{53355906187500}.
+\end{align*}
+The four small gaps are respectively
+\(31/1540,24/325,829/2100,9939/91150\).
+
+\subsection{Intermediate rational-wall signs used by the index induction}
+
+The coefficient signs make all unmentioned entries in the sign vectors
+immediate.  The remaining intermediate entries require the following exact
+thresholds.  At \(w=10\), with \(y=10-3\pi\),
+\[
+ \tan y<\frac{2900}{4159}<\frac{170}{117}<10,
+ \qquad
+ \tan y>y>\frac47>\frac{890}{21789}.
+\]
+Substitution in \(P_1,P_3,P_5\) gives
+\(\sgn(\mathsf j_1,\mathsf j_3,\mathsf j_5)=(+,-,-)\), and
+\(P_4=7P_3-w^2P_2<0\).  At \(w=103/10\), with
+\(u=7\pi/2-w\),
+\[
+ \tan u>\frac{69}{100}>\frac{10}{103},
+\]
+which gives \(\mathsf j_1(w)>0\).  At \(w=23/2\), with \(u=4\pi-w\),
+\[
+ \tan u>\frac{546377}{375000}>
+ \frac{3153151489}{2276518664}>
+ \frac{224020}{186301}>\frac{138}{517}.
+\]
+Besides the target \(\mathsf j_7\) sign, the last two thresholds give
+\(\mathsf j_4(w)<0\) and \(\mathsf j_2(w)>0\); the recurrence gives the
+intervening signs.  Finally, at \(w=129/10\), with \(y=w-4\pi\),
+\[
+ \tan y<\frac{1700}{4711}<
+ \frac{177800829}{427700150}<
+ \frac{651063}{327820}<\frac{129}{10}.
+\]
+Besides the target \(\mathsf j_5\) sign, this proves
+\(\mathsf j_3(w)>0\) and \(\mathsf j_1(w)<0\), and the recurrence gives
+the remaining signs.  Every sign used below is therefore supported by a
+displayed rational comparison.
+
+\subsection{Exact zero indices from adjacent-order interlacing}
+
+For \(x>0\), define the strict positive-zero count
+\[
+ Z_\ell(x):=\#\{n\in\mathbb N:j_{\ell+1/2,n}<x\}.
+\]
+
+\begin{lemma}[Interlacing-to-index principle]
+\label{lem:zero-index}
+For every \(\ell\in\mathbb N_0\) and \(n\in\mathbb N\),
+\begin{equation}
+ j_{\ell+1/2,n}<j_{\ell+3/2,n}<j_{\ell+1/2,n+1}.
+ \label{eq:adjacent-interlacing}
+\end{equation}
+If \(x\) is not a zero of
+\(\mathsf j_0,\ldots,\mathsf j_L\), then, for \(0\leq\ell<L\),
+\begin{equation}
+ Z_{\ell+1}(x)\in
+ \bigl\{\max\{Z_\ell(x)-1,0\},\,Z_\ell(x)\bigr\},
+ \qquad
+ \sgn\mathsf j_{\ell+1}(x)=(-1)^{Z_{\ell+1}(x)}.
+ \label{eq:index-recursion}
+\end{equation}
+Consequently \(Z_0(x)\), together with the signs of
+\(\mathsf j_1(x),\ldots,\mathsf j_L(x)\), determines all the counts
+\(Z_1(x),\ldots,Z_L(x)\) uniquely.
+\end{lemma}
+
+\begin{proof}
+DLMF~10.21.2 states, for \(\nu\geq0\),
+\[
+ j_{\nu,1}<j_{\nu+1,1}<j_{\nu,2}<j_{\nu+1,2}
+ <j_{\nu,3}<\cdots .
+\]
+Taking \(\nu=\ell+1/2\) proves
+\eqref{eq:adjacent-interlacing}.  Put \(q=Z_\ell(x)\).  The first
+inequality in \eqref{eq:adjacent-interlacing} shows that at most \(q\)
+zeros of order \(\ell+3/2\) lie below \(x\).  If \(q\geq1\), the second
+inequality shows that its first \(q-1\) zeros lie below
+\(j_{\ell+1/2,q}<x\).  Thus
+\[
+ \max\{q-1,0\}\leq Z_{\ell+1}(x)\leq q,
+\]
+which is the first assertion in \eqref{eq:index-recursion}.
+
+The spherical Bessel function \(\mathsf j_\ell\) is positive for all
+sufficiently small positive arguments.  Its positive zeros are simple by
+uniqueness for the Bessel equation, so its sign changes at every positive
+zero.  This proves the parity identity in
+\eqref{eq:index-recursion}.  When \(q\geq1\), the two possible counts have
+opposite parity; when \(q=0\), only zero is possible.  The sign therefore
+selects the count uniquely.
+\end{proof}
+
+Because \(\mathsf j_0(x)=\sin x/x\), one has
+\(j_{1/2,n}=n\pi\).  The strict locations in the first table therefore
+give \(Z_0(w)\) exactly.  Applying Lemma~\ref{lem:zero-index} successively
+to the nonzero sign vectors obtained from \eqref{eq:P-rec} and the exact
+tangent comparisons above gives:
+\begin{center}
+\scriptsize
+\renewcommand{\arraystretch}{1.16}
+\begin{tabular}{c|c|c|c|c|c}
+\toprule
+wall \(w\)&target \((\ell,n)\)&location of \(w\)&\(Z_0(w)\)&
+\(\sgn(\mathsf j_0,\ldots,\mathsf j_\ell)(w)\)&
+\((Z_0,\ldots,Z_\ell)(w)\)\\
+\midrule
+\(77/10\)&\((1,2)\)&\((2\pi,5\pi/2)\)&2&
+\((+,-)\)&\((2,1)\)\\
+\(9\)&\((2,2)\)&\((5\pi/2,3\pi)\)&2&
+\((+,+,-)\)&\((2,2,1)\)\\
+\(10\)&\((6,1)\)&\((3\pi,7\pi/2)\)&3&
+\((-,+,+,-,-,-,+)\)&\((3,2,2,1,1,1,0)\)\\
+\(103/10\)&\((3,2)\)&\((3\pi,7\pi/2)\)&3&
+\((-,+,+,-)\)&\((3,2,2,1)\)\\
+\(21/2\)&\((1,3)\)&\((3\pi,7\pi/2)\)&3&
+\((-,+)\)&\((3,2)\)\\
+\(23/2\)&\((7,1)\)&\((7\pi/2,4\pi)\)&3&
+\((-,-,+,+,-,-,-,+)\)&\((3,3,2,2,1,1,1,0)\)\\
+\(61/5\)&\((2,3)\)&\((7\pi/2,4\pi)\)&3&
+\((-,-,+)\)&\((3,3,2)\)\\
+\(129/10\)&\((5,2)\)&\((4\pi,9\pi/2)\)&4&
+\((+,-,-,+,+,-)\)&\((4,3,3,2,2,1)\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In every row the target component is \(Z_\ell(w)=n-1\), and the displayed
+sign is nonzero.  Hence, with the convention \(j_{\nu,0}=0\),
+\[
+ j_{\ell+1/2,n-1}<w<j_{\ell+1/2,n}.
+\]
+Thus the unique next zero is the claimed \(n\)-th zero, and the eight rows
+prove
+\begin{equation}
+\begin{gathered}
+ j_{3/2,2}>77/10,\qquad j_{5/2,2}>9,\qquad
+ j_{7/2,2}>103/10,\qquad j_{11/2,2}>129/10,\\
+ j_{3/2,3}>21/2,\qquad j_{5/2,3}>61/5,\qquad
+ j_{13/2,1}>10,\qquad j_{15/2,1}>23/2.
+\end{gathered}
+\label{eq:indexed-zero-registry}
+\end{equation}
+
+\subsection{Six Lorch rows and two wall-order rows}
+
+For \(\nu=\ell+1/2\), the second strict inequality, item~(ii), displayed
+in the published abstract of Lorch's article \emph{Some inequalities for
+the first positive zeros of Bessel functions}, SIAM J.\ Math.\ Anal.\
+\textbf{24} (1993), 814--823, doi:10.1137/0524050, is valid for
+\(-1<\nu<\infty\) and states
+\[
+ j_{\nu,1}^2>
+ \frac{24(\nu+1)^2}{1-2\nu+\sqrt{(2\nu+3)(2\nu+11)}}
+ -2(\nu^2-1)=:R_\ell.
+\]
+After rationalization,
+\[
+ R_\ell=\frac{3(2\ell+3)\sqrt{(\ell+2)(\ell+6)}
+ -2\ell^2+\ell+6}{4}.
+\]
+All sides being squared are positive, and the following integer residuals
+prove the three required strict specializations:
+\begin{center}
+\begin{tabular}{c|c|c}
+\toprule
+\(\ell\)&wall \(c\)&positive squared residual proving \(R_\ell>c^2\)\\
+\midrule
+8&\(71/6\)&\(1026^2\cdot35-6067^2=35171\)\\
+9&\(64/5\)&\(1575^2\cdot165-20059^2=6939644\)\\
+10&\(69/5\)&\(3450^2\cdot3-5911^2=767579\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+Since \(\mathsf j_\ell(x)>0\) for sufficiently small \(x>0\), and its
+first positive zero is strictly to the right of \(c\), these same three
+rows imply \(\mathsf j_\ell(c)>0\).  Thus the three executable sign rows
+are analytic corollaries, not independent numerical assumptions.  Finally,
+\[
+ \frac{103}{10}-\frac{81}{8}=\frac7{40}>0,
+ \qquad
+ \frac{61}{5}-\frac{21}{2}=\frac{17}{10}>0.
+\]
+
+The one-to-one zero registry is as follows.  Number the eight internal
+faces in the order of the location table.  For face \(r\), IDs
+\(Z_{5r-4},\ldots,Z_{5r}\) are, in order: right of the left half-period,
+left of the right half-period, left half-period sign, right half-period
+sign, and rational-wall sign.  This bijects IDs \(Z1\)--\(Z40\) with the
+first forty source rows.  The remaining bijection is
+\begin{center}
+\small
+\begin{tabular}{c|c|l}
+\toprule
+ID&source row&predicate\\
+\midrule
+Z41&41&Lorch specialization \(\ell=8,c=71/6\)\\
+Z42&42&positive sign at \(\ell=8,c=71/6\)\\
+Z43&43&Lorch specialization \(\ell=9,c=64/5\)\\
+Z44&44&positive sign at \(\ell=9,c=64/5\)\\
+Z45&45&Lorch specialization \(\ell=10,c=69/5\)\\
+Z46&46&positive sign at \(\ell=10,c=69/5\)\\
+Z47&47&\(103/10>81/8\)\\
+Z48&48&\(61/5>21/2\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{The forty-three lower-closure predicates}
+
+\subsection{Eight activation and exclusion rows}
+
+The complete arithmetic is
+\begin{align*}
+ (23/2)^2-114&=73/4>0,&10^2&=100,\\
+ (129/10)^2-114&=5241/100>0,
+ &103/10-81/8&=7/40>0,\\
+ (81/8)^2+8&=7073/64,
+ &(81/8)^2+18-114&=417/64>0,\\
+ (21/2)^2+4-114&=1/4>0,
+ &16\pi^2&>16\cdot3^2>114.
+\end{align*}
+These are exactly lower IDs L1--L8, corresponding to source rows 1--8.
+
+\subsection{Five Weyl payments}
+
+For \(0<\rho<\rc<1/7\), \eqref{eq:pi-bounds} yields the uniform analytic
+lower bound
+\begin{equation}
+ W(\rho,K)=\frac{2}{9\pi}(1-\rho^3)K^3
+ >\frac{38}{539}K^3.
+ \label{eq:weyl-coarse}
+\end{equation}
+Using \(d>9\) and \(\sqrt{7073}/8>21/2\), the five payments are the
+following exact positive reserves:
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\toprule
+ID&source row&threshold/cap&reserve from \eqref{eq:weyl-coarse}\\
+\midrule
+L9&10&\(K>d,\ 46\)&\((38/539)9^3-46=2908/539\)\\
+L10&11&\(K>10,\ 59\)&\((38/539)10^3-59=6199/539\)\\
+L11&12&\(K>81/8,\ 66\)&\((38/539)(81/8)^3-66=990435/137984\)\\
+L12&13&\(K>21/2,\ 69\)&\((38/539)(21/2)^3-69=555/44\)\\
+L13&14&\(K>\sqrt{7073}/8,\ 78\)&\((38/539)(21/2)^3-78=159/44\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The cap--395 cell: eighteen rows}
+
+Put \(R=367/20\), \(z_\ell=\ell+1/2\).  The analytic turning estimate
+\[
+ G_K(z)<\frac{(K-z)^{3/2}}{3\sqrt K}
+\]
+is increasing in \(K\), so on \(K<R\) a strict cap \(c_\ell\) follows
+from
+\begin{equation}
+ \frac{(R-z_\ell)^3}{9R}
+ =\frac{(357-20\ell)^3}{1321200}
+ <\left(c_\ell+\frac34\right)^2.
+ \label{eq:proxy-square}
+\end{equation}
+The following table gives all fifteen caps and the exact positive numerator
+\(82575(4c_\ell+3)^2-(357-20\ell)^3\) obtained by clearing the
+positive denominators in \eqref{eq:proxy-square}.
+\begin{center}
+\scriptsize
+\begin{tabular}{c|rrrrrrrr}
+\toprule
+\(\ell\)&0&1&2&3&4&5&6&7\\
+\midrule
+\(c_\ell\)&6&5&5&4&4&3&3&3\\
+margin
+&14697882&5409422&11827162&3611502&8555642
+&1604782&5267322&8361062\\
+\bottomrule
+\end{tabular}
+
+\medskip
+\begin{tabular}{c|rrrrrrr}
+\toprule
+\(\ell\)&8&9&10&11&12&13&14\\
+\midrule
+\(c_\ell\)&2&2&1&1&1&1&0\\
+margin&2346202&4446342&176282&1474822&2444562&3133502&286642\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus L15--L29 correspond bijectively to source rows 16--30, with
+L\((15+\ell)\) the \(\ell\)-th table column.  Since \(G_R(z)\) is
+strictly decreasing in \(z\), the \(c_{14}=0\) row removes every
+\(\ell\ge14\) tail; this is L30/source row 31.
+
+The weighted cap itself, L14/source row 15, is visible from the contributions
+\[
+ 6,15,25,28,36,33,39,45,34,38,21,23,25,27,
+ \qquad \sum_{\ell=0}^{13}(2\ell+1)c_\ell=395.
+\]
+Finally, on the exceptional cell \(\rho K\ge5/2\), with
+\(\rho<11/80\) and \(1/\pi>113/355\),
+\begin{align*}
+ W(\rho,K)
+ &>\frac{2}{9}\frac{113}{355}\left(\frac52\right)^3
+ \left[\left(\frac{80}{11}\right)^3-1\right]\\
+ &=\frac{160293325}{378004}
+ =395+\frac{10981745}{378004}>395.
+\end{align*}
+This is L31/source row 32.
+
+\subsection{Twelve floor and boundary-owner rows}
+
+The nine finite arithmetic rows are instances of one identity:
+\begin{equation}
+ \frac32(p+1)\le 2p+\frac12
+ \quad(p\ge2),\qquad
+ \left(2p+\frac12\right)-\frac32(p+1)=\frac{p-2}{2}\ge0.
+ \label{eq:floor-general}
+\end{equation}
+At \(p=2\), \((3/2)3=9/2\); this is L32/source row 33.
+For \(p=2,\ldots,9\), formula \eqref{eq:floor-general} is respectively
+L33--L40/source rows 34--41.
+
+The half-integer face is exact:
+\(5/2=2+1/2\).  Assigning it to the high side makes the interface
+remainder vanish and leaves the exceptional cell closed; this is
+L41/source row 42.  At \(K=2/\om\),
+\[
+ p=\lfloor\om K\rfloor=2,
+ \qquad \rho K\le\frac{2\rc}{\om}<3
+\]
+by T10.  This proves L42/source row 43.  Moreover
+\[
+ \rho K-\frac12<\frac52,\qquad
+ m=\left\lfloor\rho K-\frac12\right\rfloor\le2
+ \le 2p-1=3,
+\]
+and the strict exceptional condition \(K<2/\om\) fails at equality.
+Thus the complementary average-floor branch owns the equality face,
+proving L43/source row 44.
+More generally, if \(K\ge2/\om\), then \(p\ge2\) and
+\[
+ \rho K<\frac32(p+1)\le2p+\frac12,
+ \qquad m\le2p-1,
+\]
+so the finite instances conceal no unproved large-\(p\) case.
+
+\section{The supplemental cap--74 incompatibility}
+
+The propagated ball wall requires \(z^2>2409/100\), while the product
+wall requires \(z^2<70/3\).  They are incompatible because
+\[
+ \frac{2409}{100}-\frac{70}{3}
+ =\frac{7227-7000}{300}=\frac{227}{300}>0.
+\]
+This is supplemental ID S1 and is a hand proof, not merely a reported
+certificate value.
+
+\section{Census and source-visibility verdict}
+
+\begin{center}
+\begin{tabular}{l|r|l|l}
+\toprule
+family&count&IDs&hand-visible status before this note\\
+\midrule
+threshold remainder&11&T1--T11&printed, with a few implications compressed\\
+zero specializations&48&Z1--Z48&tables printed; several recurrence steps compressed\\
+lower remainder&43&L1--L43&payments printed; floor instances generated implicitly\\
+supplemental cap--74&1&S1&printed exactly\\
+\midrule
+total&103&&\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+No predicate in this 103-row allocation is an unsupported executable-only
+mathematical premise.  Before this note, the principal visibility gaps were
+the one-to-one expansion of the forty zero sign/location rows, the fact that
+the three Lorch-wall signs are logical corollaries of the strict first-zero
+bounds, and the expansion of the twelve floor/boundary rows.  The displayed
+recurrences, rational margins, general floor identity, and exact ownership
+arguments close those presentation gaps.
+
+\end{document}

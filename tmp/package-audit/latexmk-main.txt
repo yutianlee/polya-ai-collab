@@ -1,0 +1,1389 @@
+                      A Dirichlet Pólya Inequality for
+                     Three-Dimensional Spherical Shells
+                           Purely analytic main proof manuscript
+
+                                  Anonymous for peer review
+
+                                           17 July 2026
+
+
+     Scope and status. This manuscript proves a theorem for the class of genuine three-
+     dimensional spherical shells. It does not claim the general Pólya conjecture, literature
+     novelty, or priority. All shell-specific analytic reductions, regional arguments, boundary
+     assignments, exact constants, and all finite exact-rational decisions are stated in this
+     paper and its accompanying purely analytic supplement. Executable replay sources
+     and interval certificates are retained only as optional regression checks and are not
+     premises of the proof. The imported background and analytic results comprise explicitly
+     identified standard Sturm–Liouville and Bessel facts and published phase, Bessel-zero,
+     and one-dimensional floor-sum inequalities, each quoted with its precise scope.
+
+                                              Abstract
+        For 0 < r < R, let
+                                  Ar,R = {x ∈ R3 : r < |x| < R}.
+     We prove, with the strict Dirichlet counting convention, that
+                                                                 1
+                     ND (Ar,R , Λ) ≤ L3 |Ar,R |Λ3/2 ,    L3 =        ,   Λ ≥ 0.
+                                                                6π 2
+     The proof is purely analytic. It separates variables, converts the radial spectrum into
+     a strict multiplicity-weighted phase count, and combines an exact retained-remainder
+     identity with a ratio-sharp angular block estimate, a tangent-envelope radial minorant,
+     a universal ball quarter-layer, and an elementary scalar convexity argument. The low-
+     and middle-ratio proof starts at the first possible radial frequency; no finite Bessel-zero
+     staircase, event-state theorem, floating-point conclusion, or interval-arithmetic conclusion
+     is a proof premise. We also give an elementary proof that no genuine spherical shell
+     tiles R3 by congruent rigid-motion copies with disjoint interiors, under either exact or
+     almost-everywhere coverage.
+
+
+Contents
+1 Main results and conventions                                                                      3
+
+2 Separated spectrum and phase reduction                                                            4
+  2.1 The exact separated spectrum . . . . . . . . . . . . . . . . . . . . . . . . . . .            4
+  2.2 Uniform phase enclosures and the strict lattice proxy . . . . . . . . . . . . . .             8
+
+3 Product and complementary-action tools                                                            10
+  3.1 The product comparison . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .            11
+  3.2 The complementary-action comparison . . . . . . . . . . . . . . . . . . . . . .               12
+
+
+
+                                                  1
+Dirichlet Pólya inequality for spherical shells                           Purely analytic proof
+
+
+4 Global two-ratio closure                                                                  16
+  4.1 Ratio-sharp defect theorem below the optical strip . . . . . . . . . . . . . . .      16
+  4.2 All-frequency optical theorem . . . . . . . . . . . . . . . . . . . . . . . . . . .   17
+
+5 Proof of the spectral theorem                                                             19
+
+6 Proof that spherical shells do not tile                                                   20
+
+A External inputs and verification boundary                                                 21
+
+
+
+
+                                                  2
+Dirichlet Pólya inequality for spherical shells                                  Purely analytic proof
+
+
+1    Main results and conventions
+The eigenvalues of the Dirichlet Laplacian on a bounded domain Ω are listed with multiplicity
+as
+                                  0 < λD         D
+                                       1 (Ω) ≤ λ2 (Ω) ≤ · · · .
+
+Throughout we use the strict counting function
+
+                                  ND (Ω, Λ) := #{j : λD
+                                                      j (Ω) < Λ}.                                (1.1)
+
+This convention matters at every spectral wall. We write N = {1, 2, 3, . . .} and N0 =
+{0, 1, 2, . . .}.
+Theorem 1.1 (Spectral inequality). For every 0 < r < R and every Λ ≥ 0,
+
+                                   2                                                  1
+                ND (Ar,R , Λ) ≤      (R3 − r3 )Λ3/2 = L3 |Ar,R |Λ3/2 ,      L3 =          .      (1.2)
+                                  9π                                                 6π 2
+
+    The standard non-strict formulation follows without changing the constant. Indeed, if
+                                   ≤
+                                  ND (Ω, Λ) := #{j : λD
+                                                      j (Ω) ≤ Λ},
+
+then discreteness of the Dirichlet spectrum gives
+                                    ≤
+                                   ND (Ω, Λ) = lim ND (Ω, Λ + ε).                                (1.3)
+                                                  ε↓0
+
+                                                                              ≤
+Applying Theorem 1.1 at Λ + ε and passing to the limit proves (1.2) with ND     as well. Thus
+the strict convention used for the wall bookkeeping is equivalent here to the usual non-strict
+Pólya inequality.
+Theorem 1.2 (Non-tiling). For every 0 < r < R, no family of congruent rigid-motion copies
+of Ar,R has pairwise-disjoint interiors and covers R3 exactly or up to a three-dimensional
+Lebesgue-null set. The same conclusion holds when coverage is formulated using closed shells.
+   The two theorems concern literally the same complete shell family. Theorem 1.2 is logically
+independent of the spectral proof.
+
+Proof map
+For K > 0, the spectral argument has one global comparison, a no-mode region, and two
+high-frequency ratio owners. After scaling to Aρ,1 , separation of variables and the uniform
+Bessel-phase enclosure give a strict multiplicity-weighted lattice proxy P with
+
+                                         ND (Aρ,1 , K 2 ) ≤ P.
+
+In the original action variables of Part VII of the supplement, let R be the inverse action,
+F = R2 , and let M (r) count the half-integers strictly below r. The inverse action gives the
+exact layer-cake picture
+                                                                   Z T
+                              X                         2
+                      P =             M R(n − 1/4) ,         W =         R(t)2 dt,
+                              n≥1                                   0
+                            n−1/4<T
+
+whose scaled version is Lemma 3.3. Thus the master comparison is
+
+         W − P = Drad − Eang :         radial quadrature reserve pays angular rounding.          (1.4)
+
+                                                   3
+Dirichlet Pólya inequality for spherical shells                                        Purely analytic proof
+
+
+The exact definitions and the retained positive remainders in (1.4) are given in the accompa-
+nying Purely Analytic Supplement.
+   The parameter space is closed by the following disjoint owners.
+
+                  frequency range            ratio range           owner
+                  0 ≤ K ≤ π/(1 − ρ)          0<ρ<1                 strict no-mode bound
+                  K > π/(1 − ρ)              0 < ρ < 39/50         global defect theorem
+                  K > π/(1 − ρ)              39/50 ≤ ρ < 1         optical theorem
+
+Their union proves the unit-shell inequality; dilation proves the result for every Ar,R . The
+former finite staircase, 38-state theorem, and 611-row allocation are retained in the repository
+only as historical audit material; they have no implication into the proof below.
+
+
+2     Separated spectrum and phase reduction
+Throughout this section
+
+                          Aρ,1 = {x ∈ R3 : ρ < |x| < 1},                0 < ρ < 1,
+
+and the Dirichlet counting function is strict:
+
+                             ND (Aρ,1 , K 2 ) := #{j : λD            2
+                                                        j (Aρ,1 ) < K }.
+
+For x > 0 we use the strict positive-integer count
+
+                          [x]< := #{n ∈ N : n < x} = max{0, ⌈x⌉ − 1}.                                  (2.1)
+
+Thus [m]< = m − 1 for m ∈ N. This convention is retained at every eigenfrequency, phase
+level, and half-integer angular wall.
+
+2.1    The exact separated spectrum
+Let Hρ = −∆D
+           Aρ,1 be the Friedrichs operator associated with
+                                     Z
+                           q[f ] =          |∇f |2 dx,        D(q) = H01 (Aρ,1 ).
+                                     Aρ,1
+
+Choose an orthonormal spherical-harmonic basis satisfying
+
+                       −∆S2 Yℓm = ℓ(ℓ + 1)Yℓm ,              ℓ ∈ N0 ,    −ℓ ≤ m ≤ ℓ.
+
+Proposition 2.1 (Unitary decomposition and completeness). For
+
+                             d2    ℓ(ℓ + 1)
+                    Lℓ = −       +          ,            D(Lℓ ) = H 2 (ρ, 1) ∩ H01 (ρ, 1),
+                             dr2      r2
+one has the unitary equivalence
+                                                   ∞ M
+                                                   M ℓ
+                                            Hρ ≃                Lℓ .                                   (2.2)
+                                                   ℓ=0 m=−ℓ
+
+The exact form domain on the right is
+                                                                             
+                            
+                                      uℓm∈ H01 (ρ, 1),      
+                                                                   
+                                                                   
+                                       X
+                                                  2
+                            
+                              (uℓm ) :     ∥uℓm ∥2 + aℓ [uℓm ] < ∞  ,                                 (2.3)
+                                                                             
+                                         ℓ,m
+
+
+                                                         4
+Dirichlet Pólya inequality for spherical shells                                                    Purely analytic proof
+
+
+where                                          Z 1
+                                                                  ℓ(ℓ + 1) 2
+                                                                                    
+                                 aℓ [u] =              |u′ |2 +           |u| dr.
+                                                ρ                    r2
+The exact operator domain is
+                                                                                            
+                           
+                                     uℓm∈ D(Lℓ ),            
+                                                                   
+                                                                   
+                                      X
+                                                2            2
+                           
+                             (uℓm ) :     ∥uℓm ∥2 + ∥Lℓ uℓm ∥2 < ∞  .                                             (2.4)
+                                                                                            
+                                           ℓ,m
+
+Each Lℓ has positive, simple eigenvalues tending to infinity and a complete orthonormal
+eigenbasis. The full operator has compact resolvent.
+
+Proof. Write x = rω, so dx = r2 dr dω, and set
+                                  Z
+                     Rℓm (r) =            f (r, ω)Yℓm (ω) dω,                uℓm (r) = rRℓm (r).
+                                     S2
+
+Fubini, Tonelli, and Parseval on S2 give
+                                        XZ 1                                  XZ 1
+                    ∥f ∥2L2 (Aρ,1 ) =                |Rℓm (r)|2 r2 dr =                 |uℓm (r)|2 dr.
+                                        ℓ,m ρ                                 ℓ,m ρ
+
+Conversely, if (uℓm ) is square summable, the finite sums
+                                                    ℓ
+                                             1X X
+                                 fL (r, ω) =            uℓm (r)Yℓm (ω)
+                                             r ℓ≤L m=−ℓ
+
+are Cauchy in L2 (Aρ,1 ), and their limit maps back to the given family. Hence the coefficient
+map is unitary onto the Hilbert direct sum. Because r, 1/r ∈ W 1,∞ (ρ, 1), multiplication by
+either function is bounded on H 1 (ρ, 1) and preserves the two zero endpoint traces.
+    For a finite smooth harmonic expansion, polar coordinates and angular orthogonality
+yield                              Z            1                                       
+                                                          ′
+                                      X
+                           q[f ] =                   r2 |Rℓm |2 + ℓ(ℓ + 1)|Rℓm |2 dr.
+                                      ℓ,m ρ
+
+If u = rR, then
+                                                      u 2            (|u|2 )′ |u|2
+                             r2 |R′ |2 = u′ −             = |u′ |2 −         + 2 .
+                                                      r                 r      r
+Since                                                               !′
+                                           (|u|2 )′          |u|2            |u|2
+                                                    =                    +
+                                              r               r               r2
+and u(ρ) = u(1) = 0, integration gives
+                                          Z 1                     Z 1
+                                                       ′ 2
+                                                 2
+                                                r |R | dr =              |u′ |2 dr.
+                                           ρ                        ρ
+
+The angular term becomes ℓ(ℓ + 1)|u|2 /r2 . Closing finite harmonic expansions in the form
+norm proves (2.3): one inclusion follows from componentwise form convergence and Fatou’s
+lemma, while the reverse inclusion follows by first truncating the square-summable family in
+(ℓ, m) and then approximating its finitely many components by Cc∞ (ρ, 1). The uniqueness
+theorem for operators associated with closed semibounded forms gives (2.2).
+
+
+
+                                                             5
+Dirichlet Pólya inequality for spherical shells                                                   Purely analytic proof
+
+
+   For fixed ℓ, the potential ℓ(ℓ + 1)/r2 is continuous and bounded on [ρ, 1]. The regular one-
+dimensional Dirichlet form therefore has associated operator Lℓ with the displayed H 2 ∩ H01
+domain. The standard domain formula for an orthogonal operator sum gives (2.4).
+   The embedding H01 (ρ, 1) ,→ L2 (ρ, 1) is compact, so every block has compact resolvent.
+To pass to the infinite direct sum, note that r ≤ 1 implies
+                                                                               1
+                         Lℓ ≥ ℓ(ℓ + 1),           ∥(Lℓ + 1)−1 ∥ ≤                      .
+                                                                          1 + ℓ(ℓ + 1)
+
+The resolvent of the full operator is consequently the operator-norm limit of its finite-ℓ
+truncations, each of which is compact. Hence the full resolvent is compact.
+    Regular Dirichlet Sturm–Liouville theory gives a complete sequence of simple eigenvalues
+in every block. They are strictly positive because
+
+                                                                     π2
+                                           Z 1
+                                aℓ [u] ≥         |u′ |2 dr ≥               ∥u∥22 .
+                                            ρ                     (1 − ρ)2
+
+Simplicity also follows directly: two solutions of the same second-order equation that vanish
+at r = ρ have proportional initial derivatives and hence are proportional by uniqueness. If
+uℓ,n is a complete radial eigenbasis, then
+
+                                                uℓ,n (r)
+                                                         Yℓm (ω)
+                                                   r
+over all (ℓ, m, n) is exactly the inverse image of a complete orthonormal coordinate basis of
+the Hilbert direct sum. This proves global completeness.
+
+Proposition 2.2 (Bessel determinant and strict phase enumeration). Put ν = ℓ + 12 . The
+positive eigenfrequencies in the ℓ-th radial block are precisely the positive zeros of
+
+                              Dν,ρ (k) := Jν (ρk)Yν (k) − Yν (ρk)Jν (k).                                          (2.5)
+
+Every such zero is simple. With the continuous phase branch
+                                                                                                 π
+              Jν (x) + iYν (x) = Mν (x)eiθν (x) ,             Mν (x) > 0,             θν (0+) = − ,               (2.6)
+                                                                                                 2
+and
+                                                                                     Ψν,ρ (K)
+                      Ψν,ρ (K) = θν (K) − θν (ρK),                   γρ,K (ν) =               ,
+                                                                                        π
+the exact strict count is
+                                                   ∞
+                                                   X
+                            ND (Aρ,1 , K 2 ) =           (2ℓ + 1)[γρ,K (ℓ + 21 )]< .                              (2.7)
+                                                   ℓ=0
+
+The sum is finite. If K is a radial eigenfrequency in one or several angular channels, the root
+at K is excluded in each such channel and the excluded angular multiplicities add.
+
+Proof. For k > 0, the physical radial equation has the general solution
+
+                                R(r) = r−1/2 c1 Jν (kr) + c2 Yν (kr) .
+                                                                                
+
+
+The two Dirichlet conditions admit a nonzero coefficient vector exactly when
+                                                              !
+                                   J (ρk) Yν (ρk)
+                               det ν                              = Dν,ρ (k) = 0.
+                                   Jν (k) Yν (k)
+
+                                                          6
+Dirichlet Pólya inequality for spherical shells                                         Purely analytic proof
+
+
+The Wronskian
+                                                                2
+                                   Jν (x)Yν′ (x) − Jν′ (x)Yν (x) =                     (2.8)
+                                                               πx
+shows that the two entries in either row cannot vanish simultaneously. Thus the determinant
+criterion remains exact even if the Jν values, or the Yν values, happen to vanish at both
+endpoints.
+    For root simplicity define the left-normalized solution
+                                   √
+                                  π ρ√
+                      sℓ (r, k) =       r [Jν (ρk)Yν (kr) − Yν (ρk)Jν (kr)] .          (2.9)
+                                   2
+Equation (2.8) gives
+                                                                                √
+                                                                               π ρ
+                  sℓ (ρ, k) = 0,        ∂r sℓ (ρ, k) = 1,          sℓ (1, k) =     Dν,ρ (k).
+                                                                                2
+Let v = ∂k sℓ . Differentiating (Lℓ − k 2 )sℓ = 0 gives
+
+                          (Lℓ − k 2 )v = 2ksℓ ,           v(ρ, k) = ∂r v(ρ, k) = 0.
+
+At a positive determinant root, Lagrange’s identity yields
+                                                             Z 1
+                           ∂k sℓ (1, k) ∂r sℓ (1, k) = 2k          sℓ (r, k)2 dr > 0.                 (2.10)
+                                                              ρ
+
+Thus ∂k sℓ (1, k) ̸= 0, and the zero of the determinant is simple.
+   At zero energy the left-normalized solution is
+
+                                                     ρ−ℓ rℓ+1 − ρℓ+1 r−ℓ
+                                    sℓ (r, 0) =                          ,
+                                                            2ℓ + 1
+so
+                                          ρ−ℓ − ρℓ+1
+                                        sℓ (1, 0) =  > 0.
+                                            2ℓ + 1
+Equivalently, the standard small-argument expansions give
+                                                          ρ−ν − ρν
+                                       lim Dν,ρ (k) =              > 0.                               (2.11)
+                                       k↓0                   πν
+Hence the limiting phase level zero is not an eigenfrequency.
+   From (2.6),
+                            Jν = Mν cos θν ,     Yν = Mν sin θν ,
+and direct substitution gives the sign-sensitive factorization
+
+                                Dν,ρ (k) = Mν (ρk)Mν (k) sin Ψν,ρ (k).                                (2.12)
+
+The Wronskian also gives
+                                                         2
+                                         θν′ (x) =              > 0.
+                                                      πxMν (x)2
+Nicholson’s integral representation [5, Eq. (10.9.30)]
+                                               Z ∞
+                                   2 8
+                            Mν (x) = 2                cosh(2νt)K0 (2x sinh t) dt
+                                    π            0
+
+and the strict decrease of K0 imply that Mν (x)2 is strictly decreasing in x. Therefore
+                                              2                      
+                            Ψ′ν,ρ (k) =           Mν (k)−2 − Mν (ρk)−2 > 0.                           (2.13)
+                                             πk
+
+                                                         7
+Dirichlet Pólya inequality for spherical shells                                           Purely analytic proof
+
+
+The branch condition gives Ψν,ρ (0+) = 0, while the standard large-argument Bessel expansion
+gives
+                            Ψν,ρ (k) = (1 − ρ)k + O(k −1 ) −→ ∞
+for fixed ν and ρ. Hence the positive determinant roots are uniquely indexed by
+
+                               Ψℓ+1/2,ρ (kℓ,n ) = nπ,           n = 1, 2, . . . .
+
+Strict monotonicity gives
+
+                               kℓ,n < K        ⇐⇒         nπ < Ψℓ+1/2,ρ (K).
+
+The direct-sum decomposition supplies angular multiplicity 2ℓ + 1. If the same numerical
+eigenvalue occurs at distinct values of ℓ, the corresponding spherical-harmonic sectors are
+orthogonal and their multiplicities add. Finally, λℓ,n ≥ ℓ(ℓ + 1), so only finitely many angular
+channels can contribute below K 2 . These observations prove (2.7), including every strict
+spectral wall.
+
+   The only standard inputs in the preceding proof are completeness of the spherical
+harmonics, regular one-dimensional Dirichlet Sturm–Liouville theory, the Bessel equation,
+the Wronskian, Nicholson’s representation, and the usual small- and large-argument Bessel
+formulas; see [5].
+
+2.2    Uniform phase enclosures and the strict lattice proxy
+For a > 0, define
+                                   
+                                  1                    z
+                                      p                   
+                                       2   2
+                                       a − z − z arccos     ,               0 ≤ z ≤ a,
+                      Ga (z) =        π                            a                                    (2.14)
+                                  0,                                       z > a.
+                                  
+
+
+Lemma 2.3 (Elementary turning bound). For a > 0 and 0 ≤ z < a,
+
+                                                        (a − z)3/2
+                                             Ga (z) <       √      .                                    (2.15)
+                                                           3 a
+                                                                                     √
+Proof. Write t = cos θ. Concavity of sin on [0, π/4] gives sin(θ/2) ≥                    2 θ/π, and hence
+                                                π√
+                                  arccos t ≤      1 − t,         0 ≤ t ≤ 1.
+                                                2
+Since Ga (a) = 0 and
+                                            1 a       t
+                                                      Z
+                                                arccos dt,
+                                          Ga (z) =
+                                            π z       a
+integration gives the stated strict inequality.
+
+    For 0 ≤ z < a, put
+                                                       3a2 + 2z 2
+                                          Ha (z) =                     ,
+                                                     24π(a2 − z 2 )3/2
+and define                        (
+                                      max{Ga (z) − Ha (z), −1/4}, 0 ≤ z < a,
+                       Fa (z) =                                                                         (2.16)
+                                      −1/4,                       z ≥ a.
+   We use the following published Bessel-phase result, stated here with every hypothesis
+needed in the sequel.
+
+                                                          8
+Dirichlet Pólya inequality for spherical shells                                         Purely analytic proof
+
+
+Lemma 2.4 (External uniform Bessel-phase enclosure). With the branch (2.6), for every
+a > 0 and real z ≥ 0,
+                                   1  θz (a)           1
+                           Fa (z) − <        < Ga (z) − .                       (2.17)
+                                   4    π              4
+If 0 < µ < K, 0 ≤ z ≤ K, and
+
+                                                       θz (K) − θz (µ)
+                                       ΓK,µ (z) :=                     ,
+                                                              π
+then
+                                                                 1
+                        0 < ΓK,µ (z) < GK (z) − Fµ (z) ≤ GK (z) + .                                   (2.18)
+                                                                 4
+If 0 ≤ z ≤ µ, including z = µ, then also
+                                                                        1
+                          GK (z) − Gµ (z) < ΓK,µ (z) < GK (z) − Gµ (z) + .                            (2.19)
+                                                                        4
+No value of the divergent expression Hµ (µ) is used in the last statement.
+
+    Lemma 2.4 is Theorem 5.1 and Lemma 5.2 of [3], based on the real-order phase enclosures
+of [2]. The upper bound in (2.18) follows immediately by subtracting the lower bound for
+θz (µ) from the upper bound for θz (K) in (2.17); the correlated two-sided estimate (2.19)
+is the sharper part of the annulus result. Both theorems are stated for real order, so the
+half-integers z = ℓ + 12 require no interpolation.
+    Fix now K > 0, set µ = ρK, and define
+
+                                       Aρ,K (z) = GK (z) − Gµ (z).                                    (2.20)
+
+For 0 ≤ z ≤ K, let
+                  (
+                      min{Hµ (z), 1/4}, 0 ≤ z < µ,
+       sµ (z) =                                                    Uρ,K (z) = Aρ,K (z) + sµ (z).      (2.21)
+                      1/4,              µ ≤ z ≤ K,
+
+The second line, rather than Hµ , is always used at z = µ.
+
+Proposition 2.5 (Strict phase-to-lattice reduction). For 0 < ρ < 1 and K > 0,
+                                                         1
+                         γρ,K (z) < Uρ,K (z) ≤ Aρ,K (z) + ,                0 ≤ z ≤ K.                 (2.22)
+                                                         4
+Because every Ga is zero-extended, Aρ,K is the piecewise action GK − GρK below the inner
+interface and GK at and above it. Consequently,
+                                   X
+              ND (Aρ,1 , K 2 ) ≤           2νℓ [Uρ,K (νℓ )]<                                          (2.23)
+                                   νℓ <K
+                                                                          1                1
+                                               X                           
+                               ≤ Sρ,K :=              2νℓ Aρ,K (νℓ ) +      ,      νℓ = ℓ + .         (2.24)
+                                              νℓ <K
+                                                                          4                2
+
+The cutoff is strict: an order νℓ = K is inactive. At a true phase wall the radial count is one
+less than the ordinary floor; at a proxy wall the ordinary floor in (2.24) is retained. Moreover,
+                                Z ∞
+                                                                2
+                                       2zAρ,K (z) dz =            (1 − ρ3 )K 3 .                      (2.25)
+                                   0                           9π
+
+
+
+
+                                                        9
+Dirichlet Pólya inequality for spherical shells                                      Purely analytic proof
+
+
+Proof. For 0 ≤ z < µ, the first upper bound in (2.18) reads
+
+                               γρ,K (z) < Aρ,K (z) + Gµ (z) − Fµ (z).
+
+From (2.16),
+                            Gµ (z) − Fµ (z) = min{Hµ (z), Gµ (z) + 1/4}.
+The upper half of (2.19) also gives γρ,K (z) < Aρ,K (z) + 1/4. Taking the better of these two
+strict upper bounds, and using Gµ (z) + 1/4 ≥ 1/4, gives
+
+                         γρ,K (z) < Aρ,K (z) + min{Hµ (z), 1/4} = Uρ,K (z).
+
+For µ ≤ z ≤ K, one has Gµ (z) = 0, and (2.18) gives
+
+                                γρ,K (z) < GK (z) + 1/4 = Uρ,K (z).
+
+    Orders z ≥ K do not contribute. Indeed, (2.17) gives
+
+                                  θz (K)   1              θz (µ)   1
+                                         <− ,                    >− ,
+                                     π     4                π      2
+because GK (z) = 0 and Fµ (z) = −1/4. Together with phase monotonicity this yields
+
+                                                           1
+                                         0 < γρ,K (z) <      < 1,
+                                                           4
+so there is no positive phase level below K. This includes z = K.
+    For positive x < y, every positive integer strictly below x is also strictly below y, so
+[x]< ≤ [y]< ≤ ⌊y⌋. Applying this observation to the exact phase count (2.7), and then using
+sµ ≤ 1/4, proves (2.23)– (2.24) without changing either wall convention.
+    Finally, scaling z = ax gives
+
+                                       2a3
+                 Z a                         Z 1 p                 Z 1                
+                       2zGa (z) dz =               x 1 − x2 dx −          x2 arccos x dx .
+                  0                     π      0                     0
+
+The two elementary integrals are 1/3 and 2/9, respectively; hence the last expression is
+2a3 /(9π). Subtracting the result with a = µ = ρK from that with a = K proves (2.25).
+
+
+3    Product and complementary-action tools
+We now prove the Pólya inequality uniformly as the shell becomes thin. In this section the
+counting function is strict:
+
+                                 ND (Ω, K 2 ) = #{j : λj (Ω) < K 2 }.
+
+We retain the global convention [u]< := #{n ∈ N : n < u} = max{0, ⌈u⌉ − 1}. Thus a
+spectral level lying exactly on the wall K 2 is not counted. Put
+
+                                                                              ε2
+                           ε = 1 − ρ,         a = εK,       mε = 1 − ε +         .                   (3.1)
+                                                                              3
+Since 1 − ρ3 = 3εmε , the desired right-hand side has the two equivalent forms
+
+                                        2                1 2a3
+                                          (1 − ρ3 )K 3 = 2     mε .                                  (3.2)
+                                       9π               ε 3π
+
+
+                                                     10
+Dirichlet Pólya inequality for spherical shells                                                Purely analytic proof
+
+
+   The proof uses the optimized phase estimate already established in Proposition 2.5. We
+record precisely the consequence that is used here. For νℓ = ℓ + 12 , let γρ,K (νℓ ) be the
+normalized radial Bessel phase. If 0 ≤ νℓ ≤ K, that proposition gives
+                                                                   1
+                                          γρ,K (νℓ ) < Aρ,K (νℓ ) + ,                                          (3.3)
+                                                                   4
+where, after the scaling in (3.1), Aρ,K (ν) = A(εν) and A is the explicit action in (3.9) below.
+The exact radial count in channel ℓ is
+
+                                          #{n ≥ 1 : n < γρ,K (νℓ )}.                                           (3.4)
+
+In particular, (3.3) is an inequality for the strict count; it is not a replacement of that count
+by an ordinary floor.
+
+3.1    The product comparison
+Under the standard unitary radial transformation, the angular channel ℓ ∈ N0 is the Dirichlet
+operator
+                                 d2     ℓ(ℓ + 1)
+                         Lℓ = − 2 +               in L2 ((ρ, 1), dr),
+                                 dr        r2
+and it occurs with multiplicity 2ℓ + 1. The following lemma includes the direction of the
+min–max comparison and every strict radial and angular wall.
+
+Lemma 3.1 (Strict product majorant). Let 0 < ε < 1, a = εK, and define
+
+                                                       a
+                                                                         
+                                        N (a) = max 0,   −1 .                                                  (3.5)
+                                                       π
+
+For 1 ≤ n ≤ N (a), put
+                                                              s          
+                                                                 2
+                               p                                 bn   1 1
+                        bn =       a2 − n2 π 2 ,         Mn =       + −   .
+                                                              
+                                                                 ε   4 2
+
+Then
+                                                                         N (a)
+                                                                         X
+                                                    2
+                                    ND (Aρ,1 , K ) ≤ Pε (a) :=                   Mn2 .                         (3.6)
+                                                                         n=1
+
+In particular, the strict shell count is zero for 0 ≤ a ≤ π.
+
+Proof. The two quadratic forms have the common domain H01 (ρ, 1), and
+                   Z 1                                         Z 1
+                                    ℓ(ℓ + 1) 2
+                                                                                          
+                         |u′ |2 +           |u| dr ≥                   |u′ |2 + ℓ(ℓ + 1)|u|2 dr,
+                    ρ                  r2                       ρ
+
+because r ≤ 1. The min–max principle therefore gives
+                                                    2
+                                               nπ
+                                           
+                                λℓ,n ≥                   + ℓ(ℓ + 1),         n ≥ 1.
+                                                ε
+
+Consequently, a shell eigenvalue in this channel can be counted below K 2 only if
+
+                                           n2 π 2 + ε2 ℓ(ℓ + 1) < a2 .                                         (3.7)
+
+
+
+                                                           11
+Dirichlet Pólya inequality for spherical shells                                              Purely analytic proof
+
+
+The active radial integers are exactly those satisfying nπ < a, whose number is (3.5). For a
+fixed active n, condition (3.7) is
+                                             s
+                                                           2
+                                                      bn             1 1
+                                                  
+                                        ℓ<                      +     − .
+                                                       ε             4 2
+Hence the allowed angular indices are 0, . . . , Mn − 1, and their full spherical multiplicity is
+                                          n −1
+                                         MX
+                                                  (2ℓ + 1) = Mn2 .
+                                            ℓ=0
+
+Summing proves (3.6).
+    If a = mπ, the radial level n = m is excluded by the strict inequality nπ < a; thus
+N (a) = m−1. At an angular wall b2n /ε2 = L(L+1), the displayed expression inside the ceiling
+is exactly L, so Mn = L and the level ℓ = L is excluded. The jump of multiplicity 2L+1 occurs
+only above the wall. Finally, no positive integer satisfies nπ < a when 0 ≤ a ≤ π, including
+both endpoints, so the product majorant and hence the shell count are zero there.
+
+3.2    The complementary-action comparison
+For r ∈ {ρ, 1} and 0 ≤ y ≤ ar, define
+                                            q
+                                                                              y
+                                 Jr (y) =       a2 r2 − y 2 − y arccos           ,                           (3.8)
+                                                                              ar
+and set
+                                          J1 (y) − Jρ (y)
+                                        
+                                                          ,           0 ≤ y ≤ ρa,
+                                        
+                                        
+                                        
+                               A(y) =              πε                                                        (3.9)
+                                          J (y)
+                                         1
+                                        
+                                        
+                                                ,                     ρa ≤ y ≤ a.
+                                             πε
+We extend A(y) = 0 for y > a.
+
+Lemma 3.2 (Action geometry and curvature switch). The function A is continuous, contin-
+uously differentiable at y = ρa, and strictly decreasing from
+                                                       a
+                                  T := A(0) =                   to   A(a) = 0.
+                                                       π
+Let R : [0, T ] → [0, a] be its decreasing inverse, let
+
+                        τ = A(ρa),          F (t) = R(t)2 ,             g(t) = −F ′ (t).
+
+Then
+                         g decreases on (0, τ ),                g increases on (τ, T ),
+                           2                    2 2
+                                                                                                           (3.10)
+                 F (0) = a ,       F (τ ) = ρ a ,               F (T ) = 0,          g(T ) = 2πρa,
+where g(T ) denotes the one-sided limit. Moreover g(t) = O(t−1/3 ) as t ↓ 0.
+
+Proof. Direct differentiation on the appropriate open intervals gives
+                                                y                              1
+                         Jr′ (y) = − arccos        ,            Jr′′ (y) = p 2 2     .                     (3.11)
+                                                ar                          a r − y2
+
+At y = ρa, Jρ (ρa) = 0, and the two one-sided first derivatives of (3.9) both equal
+− arccos ρ/(πε). Thus the two pieces and their first derivatives match. Both derivatives are
+negative away from y = a, so the inverse exists on exactly the stated interval.
+
+                                                           12
+Dirichlet Pólya inequality for spherical shells                                                  Purely analytic proof
+
+
+    On the outer branch ρa < y < a, put α = arccos(y/a). If t = A(y), then
+                                                       2y     2πεy
+                                        g(t) = −       ′
+                                                            =      .                                           (3.12)
+                                                      A (y)    α
+The function y/α increases with y, whereas y = R(t) decreases with t; hence g decreases on
+0 < t < τ.
+   On the inner branch 0 < y < ρa, put
+                                          y           y
+                            δ(y) = arccos − arccos      > 0.
+                                          a          ρa
+Differentiating arccos(y/(ar)) with respect to r gives the exact identity
+                                                  Z 1
+                                       δ(y)                       dr
+                                            =               p                 .                                (3.13)
+                                        y          ρ    r       a2 r2 − y 2
+The integrand increases strictly with y, so δ(y)/y increases, and y/δ(y) decreases, with y.
+Since
+                                                2πεy
+                                        g(t) =
+                                                δ(y)
+and y = R(t) decreases, g increases on τ < t < T . Formula (3.12) and its inner counterpart
+agree at the interface.
+    The three values of F follow from R(0) = a, R(τ ) = ρa, and R(T ) = 0. As y ↓ 0, (3.13)
+gives
+                                            ε
+                                    δ(y) =    y + O(y 3 ),
+                                           ρa
+and therefore g(T ) = 2πρa.
+    Finally, on the outer branch write y = a cos θ. Then
+                   a                     aθ3          2πεa cos θ
+               t=    (sin θ − θ cos θ) ∼     , g(t) =            = O(t−1/3 ).        (3.14)
+                  πε                     3πε               θ
+This proves the asserted improper endpoint behavior. All square roots and arccosines in the
+proof are taken on their stated closed domains; every division occurs in an open interval
+where its denominator is positive, and the endpoint zeros are handled by the limits just
+computed.
+Lemma 3.3 (Strict phase-to-action layer cake). For ℓ ∈ N0 , set
+                                1                                  1
+                                                                                       X
+                 yℓ = ε ℓ +       ,       qℓ = A(yℓ ) +                ,          PA = ε         yℓ qℓ .       (3.15)
+                                2                                  4 <                     ℓ≥0
+
+Then
+                                                                      2PA
+                                        ND (Aρ,1 , K 2 ) ≤                .                                    (3.16)
+                                                                       ε2
+For n ≥ 1, put xn = n − 41 , and define
+                                            1                             x 1
+                                                                                           
+                  Mε (x) = # ℓ ∈ N0 : ε ℓ +                  < x = max 0,  −                          .        (3.17)
+                                            2                             ε 2
+The proxy has the exact finite representation
+                                              ε2 X
+                                      PA =          Mε (R(xn ))2 .                                             (3.18)
+                                              2 n≥1
+                                                  xn <T
+
+Moreover,
+                                                                  !
+                                         a3        ε2
+                        Z T
+                    1                                                         2I    2
+               I :=           F (t) dt =      1−ε+                    ,          =    (1 − ρ3 )K 3 .           (3.19)
+                    2    0               3π        3                          ε2   9π
+
+                                                        13
+Dirichlet Pólya inequality for spherical shells                                                                Purely analytic proof
+
+
+Proof. For yℓ < a, equations (3.3) and (3.4) show that the number of radial levels in channel
+ℓ is at most qℓ . If yℓ ≥ a, equivalently νℓ ≥ K, the product comparison gives
+                                       π2              π2        1
+                              λℓ,1 ≥      + ℓ(ℓ + 1) =    + νℓ2 − > K 2 ,
+                                       ε2              ε2        4
+so there is no radial level; at yℓ = a, the definition also gives qℓ = [1/4]< = 0. Multiplicity
+2ℓ + 1 = 2yℓ /ε now yields
+                                                                      X 2yℓ                  2PA
+                                   ND (Aρ,1 , K 2 ) ≤                                 qℓ =       ,
+                                                                      ℓ≥0
+                                                                                  ε           ε2
+
+which proves (3.16). If A(yℓ ) + 1/4 = m ∈ Z, then qℓ = m − 1, so the phase-proxy wall is
+excluded exactly as required.
+   For every y ≥ 0, the strict bracket is
+                                                1
+                                                   
+                                A(y) +              = #{n ≥ 1 : xn < A(y)}.
+                                                4 <
+The sums are finite. Since A and R are decreasing, xn < A(yℓ ) is equivalent to yℓ < R(xn ).
+Therefore                          X      X
+                            PA = ε              yℓ
+                                                  n≥1 yℓ <R(xn )
+                                                 xn <T
+                                                                 Mε (R(xn ))−1 
+                                                                                            1
+                                                    X                     X                     
+                                           =ε                ε                           ℓ+
+                                                  n≥1                     ℓ=0
+                                                                                            2
+                                                 xn <T
+                                                ε2 X
+                                           =                     Mε (R(xn ))2 ,
+                                                2    n≥1
+                                                    xn <T
+             −1
+because M                      2
+         P
+           ℓ=0 (ℓ + 1/2) = M /2. This proves (3.18). Formula (3.17) follows from the same
+strict counting; at x/ε = m + 1/2, it equals m, excluding ℓ = m.
+    Differentiation of (3.8) with respect to r gives
+                                                        s
+                                   ∂Jr (y)                            y2
+                                           =                a2 −                  (0 ≤ y ≤ ar).
+                                     ∂r                               r2
+Consequently the two cases of (3.9) combine as
+                                                                                       !1/2
+                                                                         y2
+                                                            Z 1
+                                           1                              2
+                                    A(y) =                            a − 2                   dr,                            (3.20)
+                                           πε                   ρ        r               +
+
+where s+ = max{s, 0}. The area identity for a decreasing inverse and Tonelli’s theorem give
+                                           Z T                             Z a
+                                       1                    2
+                                                    R(t) dt =                     yA(y) dy.
+                                       2    0                                 0
+
+Using (3.20) and then y = rz,
+                        Z a                              Z 1                  Z a p
+                                                    1
+                              yA(y) dy =                            r2 dr             z a2 − z 2 dz
+                         0                          πε      ρ                 0
+                                                                                                       !
+                                               a3                        a3                       ε2
+                                                            Z 1
+                                                                      2
+                                            =                     r dr =                     1−ε+          .
+                                              3πε               ρ        3π                       3
+
+This is (3.19); its final equality follows from 1 − ρ3 = 3εmε and K = a/ε.
+
+                                                                     14
+Dirichlet Pólya inequality for spherical shells                                                  Purely analytic proof
+
+
+Lemma 3.4 (Shifted sawtooth and radial quadrature deficit). Let
+                                                                                                 Z t
+          C(t) = #{n ≥ 1 : n − 14 < t},               w(t) = t − C(t),                  W(t) =         w(s) ds,
+                                                                                                  0
+and put Ψ(t) = W(t) − t/4. Then, for all t ≥ 0,
+                                              1      3
+                           W(t) ≥ 0,       − ≤ Ψ(t) ≤ .                                                           (3.21)
+                                             32      32
+Furthermore, with                  Z            T                       X
+                                  Drad =            F (t) dt −               F (xn ),                             (3.22)
+                                            0                         n≥1
+                                                                     xn <T
+one has
+                                          ρ2 a2 πρa
+                                          Drad ≥
+                                               −    .                                                             (3.23)
+                                           4     4
+Proof. On 0 ≤ t ≤ 3/4, C(t) = 0, and hence
+                                        1      1 2    1
+                                                                   
+                                Ψ(t) =     t−      − .                                                            (3.24)
+                                        2      4     32
+For xn = n − 1/4, n ≥ 1, and t = xn + u with 0 ≤ u ≤ 1, direct integration gives
+                                          1        1 2     1
+                                                                   
+                                   Ψ(t) =     u−        − .                                 (3.25)
+                                          2        2       32
+These formulas agree at cell endpoints and prove the two-sided bound for Ψ. On the first cell
+W = t2 /2 ≥ 0. Thereafter W = t/4 + Ψ ≥ t/4 − 1/32 > 0, proving (3.21). At a jump xn ,
+strict counting gives the one-sided values w(x−                     +
+                                                n ) = 3/4 and w(xn ) = −1/4, while W and Ψ
+are continuous.
+    Distributionally, dw = dt − dC. Since F (T ) = 0, an atom at xn = T has zero weight and
+is consistent with its exclusion from (3.22). Stieltjes integration by parts, first on [η, T ] and
+then with η ↓ 0, gives                      Z             T
+                                         Drad =               w(t)g(t) dt.                                        (3.26)
+                                                      0
+Indeed, (3.14), together with w(t) = t and W(t) = t2 /2 near zero, gives w(t)g(t) = O(t2/3 )
+and W(t)g(t) = O(t5/3 ) → 0, so the improper boundary term vanishes.
+   Split (3.26) at the actual value τ , with no assumption that τ belongs to any particular
+sawtooth cell. On (0, τ ), g decreases and W ≥ 0; hence
+                           Z τ                                Z τ
+                                 wg = W(τ )g(τ ) −                  W dg ≥ W(τ )g(τ ).                            (3.27)
+                            0                                  0
+On (τ, T ), g increases and w = 1/4 + Ψ′ almost everywhere. Adding its integration-by-parts
+identity to (3.27), and using W(τ ) = τ /4 + Ψ(τ ), cancels the interface value and yields
+                              F (τ ) τ g(τ )                    T                 Z
+                          Drad ≥    +         + Ψ(T )g(T ) −      Ψ dg.
+                                4        4                    τ
+Because dg is a positive measure on (τ, T ), the bounds (3.21) imply
+                                     F (τ ) g(T )          τ   3
+                                                                                       
+                                Drad ≥     −       + g(τ )   +
+                                       4      8            4 32
+                                     F (τ ) g(T )
+                                 ≥         −      .
+                                       4      8
+The two discarded quantities, − 0τ W dg and g(τ )(τ /4 + 3/32), are explicitly nonnegative.
+                                   R
+
+Substitution of F (τ ) = ρ2 a2 and g(T ) = 2πρa from Lemma 3.2 proves (3.23). Continuity of
+W, Ψ, g at the split shows that the same proof covers τ below, on, or above every sawtooth
+grid point.
+
+                                                          15
+Dirichlet Pólya inequality for spherical shells                                          Purely analytic proof
+
+
+4     Global two-ratio closure
+4.1    Ratio-sharp defect theorem below the optical strip
+For a > 0, let
+                    1 p 2                  z
+                                            
+        Ga (z) :=       a − z 2 − z arccos             (0 ≤ z < a),         Ga (z) := 0      (z ≥ a),
+                    π                      a
+and put
+                                                           (1 − ρ)K
+                          A(z) := GK (z) − GρK (z),           T :=  .
+                                                               π
+The strict phase reduction and the inverse-action layer cake give
+                                          X                                        Z T
+      ND (Aρ,1 , K 2 ) ≤ P,      P =               M (R(n − 1/4))2 ,        W =           R(t)2 dt,      (4.1)
+                                                                                     0
+                                       n−1/4<T
+
+where R is the decreasing inverse of A and M (r) counts half-integers strictly below r. Thus
+
+                                         W − P = Drad − Eang .
+
+    Write θ = arccos ρ and N = #{n ≥ 1 : n − 1/4 < T }. The exact action derivative satisfies
+−A′ ≤ θ/π. One disjoint left block per active layer therefore gives the ratio-sharp estimate
+
+                                         (1 − ρ2 )K 2            3π 1
+                                                                      
+                                Eang <                −N            −   .                                (4.2)
+                                              6                  8θ   4
+Strictness includes a half-integer angular wall.
+    For 0 < ρ ≤ 39/50 and K ≥ π/(1 − ρ), the curvature interface τ = KG1 (ρ) satisfies
+τ > 1/4. Replacing the shifted-sawtooth primitive by its C 1 tangent envelope
+                                             (
+                                                 t2 /2,      t ≤ 1/4,
+                                  L♯ (t) =
+                                                 t/4 − 1/32, t ≥ 1/4,
+
+and retaining the decreasing-branch Stieltjes remainder gives
+                                                                             Z 1/4
+                              πρK       πρK
+            Drad ≥ B0 (K) −         +           ,                B0 (K) :=           RB (t)2 dt,         (4.3)
+                            4(1 − ρ) 4 arccos ρ                               0
+                                                                    √
+where RB is the inverse ball action. The turning estimate G1 (s) ≥ 2 2(1 − s)3/2 /(3π) yields
+
+               K2                             6C           3C 2          (3π)2/3
+      B0 (K) ≥     − αK 4/3 + βK 2/3 , α =         , β =         , C  =          .                       (4.4)
+                4                           5 45/3        7 47/3            2
+                                    √
+    Since N ≥ 1 and arccos ρ ≤ (π/2) 1 − ρ, it remains to prove positivity of
+
+                                    1 + 2ρ2 2                      πρK
+                      G(ρ, K) :=           K − αK 4/3 + βK 2/3 −
+                                      12                         4(1 − ρ)
+                                                                                                         (4.5)
+                                         ρK        3      1
+                                    + √       + √       − .
+                                       2 1−ρ 4 1−ρ 4
+
+On the base K = π/(1−ρ), the substitution x = (1−ρ)−1/6 reduces (4.5) to one explicit degree-
+nine expression. The detailed support module proves it positive from 157/50 < π < 22/7,
+positive-side cubing, and
+                                  1                     5
+                           F (1) > ,         F ′ (1) > − ,        F ′′ (x) > 14.
+                                  4                     2
+
+                                                     16
+Dirichlet Pólya inequality for spherical shells                                                         Purely analytic proof
+
+
+It also proves that the base K-derivative is positive and
+
+                                                2             47447
+                                               ∂K G>                 > 0.
+                                                              443682
+These are finite exact inequalities, not sampled or interval premises.
+
+Theorem 4.1 (Global low- and middle-ratio theorem). For
+                                                       39                  π
+                                        0<ρ≤              ,         K≥        ,
+                                                       50                 1−ρ
+one has
+                                       ND (Aρ,1 , K 2 ) ≤ P < W (ρ, K).
+
+Proof. Equations (4.2)–(4.4) give
+
+                                                  W − P > G(ρ, K).
+
+The exact scalar closure just described proves the right side positive on the stated domain.
+All intermediate identities and the rational convexity proof are given in the accompanying
+analytic supplement.
+
+4.2    All-frequency optical theorem
+Lemma 4.2 (All-frequency optical theorem). For 39/50 ≤ ρ < 1 and K ≥ 0, ND (Aρ,1 , K 2 ) ≤
+W (ρ, K), with strict inequality for K > 0.
+
+Proof. Put ε = 1 − ρ ≤ 11/50, a = εK, and c = 1126/625. We use two inclusive screens
+meeting at a = c/ε.
+    For the product screen, the strict min–max condition (3.7) implies that a counted mode
+satisfies
+                                   n2 π 2 + ε2 ℓ(ℓ + 1) < a2 .
+There is no mode for a ≤ π. For a > π, write a/π = N + t, with N ≥ 1, 0 < t ≤ 1, assigning
+(N, t) = (m − 1, 1) at a = mπ. If
+                                p                                  q                               
+                         bn =    a2 − n 2 π 2 ,         Mn =            (bn /ε)2 + 1/4 − 1/2 ,
+
+the exact angular multiplicity is bounded by
+                                                                N
+                                                                X
+                                                  Pε (a) =            Mn2 .
+                                                                n=1
+
+Set
+                                                                          N
+                                               2a3
+                 Z a/π                                                    X
+      I0 (a) =           (a2 − π 2 x2 ) dx =       ,           S0 (a) =           b2n ,       D(a) = I0 (a) − S0 (a).
+                  0                            3π                         n=1
+
+Direct summation of the continuous-minus-discrete product deficit gives
+
+                                     D(a)   N2          1                             2t3
+                                                                             
+                                        2
+                                          =    + N t2 +                           +       .                             (4.6)
+                                      π     2           6                              3
+
+For CD = 1382/3125, the difference D/π 2 − CD (N + t)2 increases in N , and at N = 1 is
+minimized at t = CD , where it equals 1822532/91552734375 > 0. Thus D > CD a2 .
+
+                                                              17
+Dirichlet Pólya inequality for spherical shells                                               Purely analytic proof
+
+
+    For x > 0,
+                                       &r                  '2
+                                                 1 1
+                                             x2 + −             < x2 + x + 1.
+                                                 4 2
+        the ceiling is strictly smaller than x2 + 1/4 + 1/2, whose square is x2 + 1/2 +
+                                                        p
+Indeed
+  x2 + 1/4 < x2 + x + 1. Applying this with x = bn /ε, then using the monotone left-sum
+p
+
+estimate and the quarter-circle integral,
+                          N
+                                                                        a2
+                                       Z a/π p
+                          X                                                             a
+                                bn <              a2 − π 2 x2 dx =         ,       N<     ,
+                          n=1            0                              4               π
+
+gives
+                                         ε2 Pε < S0 + εa2 /4 + ε2 a/π.
+On a ≤ c/ε, using q = 106/333 > 1/π and ε ≤ 11/50, the exact reserve is
+                                    2cq   11                      39569
+                                                                   
+                      CD −              +     + (11/50)2 q 2 =            > 0.                                (4.7)
+                                     3    200                  2772225000
+Indeed, a ≤ c/ε, ε ≤ 11/50, a > π, and q > 1/π give
+
+                         εa2 ε2 a      2cq   11
+                                                                               
+                 εI0 +      +     < a2     +     + (11/50)2 q 2 < CD a2 < D.
+                          4   π         3    200
+Consequently
+                                     εa2 ε2 a
+                    ε2 Pε < I0 − D +     +      < (1 − ε)I0 < mε I0 = ε2 W,
+                                      4      π
+where the last identity is (3.2). This proves the low screen, including all radial and angular
+equality walls.
+    For the complementary-action screen, use the inverse-action construction proved in
+Lemma 3.2: let the decreasing shell action have inverse RA , put F = RA  2 , and g = −F ′ . If τ
+
+is the actual curvature interface and T = a/π, that lemma gives
+
+                          g decreasing on (0, τ ),              g increasing on (τ, T ),
+
+                     F (0) = a2 ,       F (τ ) = ρ2 a2 ,        F (T ) = 0,    g(T ) = 2πρa.
+For C(t) = #{n : n − 1/4 < t}, set w = t − C(t) and Ψ(t) = 0t w(s) ds − t/4. The complete
+                                                                               R
+
+sawtooth and Stieltjes calculation in Lemma 3.4, including the ungridded curvature interface
+τ , gives
+                                                               ρ2 a2 πρa
+                          Z T              X
+                 Drad :=      F (t) dt −         F (n − 1/4) ≥      −    .             (4.8)
+                           0
+                                         n−1/4<T
+                                                                4      4
+
+The exact half-integer angular count from Lemma 3.3 satisfies ε2 Mε (x)2 < (x + ε/2)2 , even
+on an angular wall. Since fewer than a/π + 1/4 radial layers occur, the angular error is
+strictly below                                        !
+                                       a 1         ε2
+                                           
+                                E=       +    εa +      .                               (4.9)
+                                       π 4          4
+On a ≥ c/ε, one has 1/a ≤ ε/c. Put
+
+                                                  (1 − ε)2 (22/7)(1 − ε)ε
+                                    Lopt (ε) :=           −               ,
+                                                     4           4c
+                                                           ε2   qε3    ε4
+                                      Aopt (ε) := qε +        +     +      .
+                                                           4c   4c    16c2
+
+                                                           18
+Dirichlet Pólya inequality for spherical shells                                        Purely analytic proof
+
+
+Dividing (4.8) and (4.9) by a2 , then using π < 22/7 and q > 1/π, gives
+                                 Drad                     E
+                                      ≥ Lopt (ε),            < Aopt (ε).
+                                  a2                      a2
+For 0 < ε ≤ 11/50 < 1/2,
+
+                                    1 − ε 22/7
+                    L′opt (ε) = −        −     (1 − 2ε) < 0,             A′opt (ε) > 0.
+                                      2    4c
+At ε = 11/50, the exact endpoint difference is
+                                                              14817541
+                      Lopt (11/50) − Aopt (11/50) =                       > 0.                       (4.10)
+                                                          472867032960000
+Thus the strict layer-cake sum is below the action integral, and the phase bridge proves the
+high screen. The common face lies in the nonzero radial range because
+                   c     c     2252   22                    2252 22   9714
+                     ≥       =      >    > π,                   −   =      > 0.
+                   ε   11/50   275     7                    275   7   1925
+
+Both screens include a = c/ε, so their union has neither a gap nor an unowned equality face.
+At K = 0 both sides vanish.
+
+
+5     Proof of the spectral theorem
+We now assemble the three disjoint phase-space owners. Fix 0 < ρ < 1 and put
+                                                          π
+                                            K0 (ρ) :=        .
+                                                         1−ρ
+If 0 ≤ K ≤ K0 (ρ), the strict product majorant in Lemma 3.1 gives
+
+                                           ND (Aρ,1 , K 2 ) = 0.                                       (5.1)
+
+This includes K = K0 (ρ): the first one-dimensional Dirichlet frequency lies on the spectral
+wall and is excluded.
+   It remains to take K > K0 (ρ). If 0 < ρ < 39/50, apply Theorem 4.1. If 39/50 ≤ ρ < 1,
+apply Lemma 4.2. These cases, together with (5.1), are disjoint and exhaustive. Therefore
+                                                 2
+                           ND (Aρ,1 , K 2 ) ≤      (1 − ρ3 )K 3       (K ≥ 0).                         (5.2)
+                                                9π
+     Now
+                          4π                ω3     1                          4π
+                   ω3 =      ,      L3 =       3
+                                                 = 2,             |Aρ,1 | =      (1 − ρ3 ),
+                           3               (2π)   6π                           3
+so
+                                                       2
+                                       L3 |Aρ,1 | =      (1 − ρ3 ).                                    (5.3)
+                                                      9π
+              √
+Taking K = Λ in (5.2) proves the unit-shell form of Theorem 1.1 for every Λ ≥ 0.
+   For arbitrary 0 < r < R, put ρ = r/R. The unitary dilation
+
+                                      (DR u)(x) = R−3/2 u(x/R)
+
+maps L2 (Aρ,1 ) onto L2 (Ar,R ), and its Dirichlet form scales by R−2 . Hence
+                                                    −2 D
+                                      λD
+                                       j (Ar,R ) = R λj (Aρ,1 ),
+
+
+                                                    19
+Dirichlet Pólya inequality for spherical shells                              Purely analytic proof
+
+
+and the strict threshold transforms as
+
+                                  ND (Ar,R , Λ) = ND (Aρ,1 , R2 Λ).                          (5.4)
+
+Applying the unit-shell result at R2 Λ,
+                                                     2
+                                ND (Ar,R , Λ) ≤         (1 − ρ3 )(R2 Λ)3/2
+                                                    9π
+                                                     2
+                                                  =     (R3 − r3 )Λ3/2
+                                                    9π
+                                                  = L3 |Ar,R |Λ3/2 .
+This proves Theorem 1.1 for every R > 0, including R < 1.
+
+
+6    Proof that spherical shells do not tile
+We prove Theorem 1.2 independently of the spectral argument. Set α = r/R ∈ (0, 1) and
+scale by 1/R. It suffices to consider
+
+                                   T = Aα,1 = {x : α < |x| < 1}.
+
+Every rigid motion has the form x 7→ Qx + a, with Q orthogonal. Because T is radial,
+Q(T ) = T , so every congruent copy is a translate
+
+                                Ta = a + T = {x : α < |x − a| < 1}.
+
+   Assume for contradiction that {Ta : a ∈ C} has pairwise-disjoint interiors and covers
+almost everywhere. Duplicate centers are impossible because they give the same nonempty
+open tile.
+   Fix a unit vector e and put
+                                         1+α                    1−α
+                                    c=       e,            δ=       .
+                                          2                      2
+Write B(x, s) = {y ∈ R3 : |y − x| < s} for the open Euclidean ball. Then B(c, δ) ⊂ T .
+Therefore Ta contains B(a + c, δ), and disjointness implies
+
+                                     |a − b| ≥ 1 − α         (a ̸= b).                       (6.1)
+
+Thus the centers are locally finite: a bounded set cannot contain infinitely many points with
+fixed positive separation. They are also countable, since
+                                              [
+                                        C=          (C ∩ B(0, m))
+                                             m≥1
+
+is a countable union of finite sets.
+    Each tile boundary is a union of two spheres and is three-dimensional null. The countable
+union                                         [
+                                         Z=      ∂Ta
+                                                     a∈C
+is therefore null. Exact open-shell coverage is already a special case of almost-everywhere
+coverage. If closed shells cover exactly or almost everywhere, removing Z shows that their
+open interiors still cover almost everywhere. Hence it is enough to assume
+
+                                                    [
+                                           R3 \          Ta = 0.                             (6.2)
+                                                   a∈C
+
+
+                                                     20
+Dirichlet Pólya inequality for spherical shells                              Purely analytic proof
+
+
+    Choose one tile Ta0 and its outer sphere
+
+                                       Σ = {x : |x − a0 | = 1}.
+
+Fix p ∈ Σ and put u = p − a0 . For n ≥ 1, let
+                                                 2 1
+                                                            
+                                       Un = B p + u, .
+                                                 n n
+
+Every Un lies outside Ta0 , is open, and has positive volume. By (6.2), choose xn ∈ Un ∩ Tan
+with an ̸= a0 . Since xn → p and |xn − an | < 1, the centers an eventually lie in a fixed bounded
+set. Local finiteness lets us pass to a subsequence with one fixed center a = ̸ a0 . Thus p ∈ Ta .
+    The point p is not in Ta . Otherwise some B(p, ε) lies in Ta . Choose
+
+                                       0 < t < min{ε, 1 − α}.
+
+Then p − tu ∈ Ta0 ∩ Ta , contradicting disjoint interiors. Therefore every p ∈ Σ belongs to the
+boundary of a neighboring tile.
+    If p ∈ Σ ∩ ∂Ta , then |p − a| ∈ {α, 1}, hence |a − a0 | ≤ 2. Only finitely many centers satisfy
+this bound. Consequently Σ is covered by finitely many neighboring inner or outer boundary
+spheres.
+    Translate so that a0 = 0. The intersection of Σ with a neighboring sphere {x : |x − a| = s},
+s ∈ {α, 1}, satisfies
+                                    |x|2 = 1,     |x − a|2 = s2 ,
+and hence
+                                        2a · x = |a|2 + 1 − s2 .                             (6.3)
+Because a = ̸ 0, (6.3) is a genuine plane. Its intersection with Σ is empty, a tangent point,
+or a circle, and therefore has zero surface measure on Σ. A finite union of such sets cannot
+cover Σ, whose area is 4π.
+    There is no coincident-sphere exception. A neighboring outer sphere equals Σ only when
+it has the same center, which is the original tile or a forbidden duplicate. A neighboring
+inner sphere cannot equal Σ because α < 1. We have reached a contradiction. Scaling back
+proves Theorem 1.2.
+
+
+A      External inputs and verification boundary
+The proof above is self-contained with respect to every shell-specific spectral reduction,
+weighted count, endpoint estimate, regional subtraction, fixed-channel variational comparison,
+boundary assignment, and finite exact-rational predicate. It uses the following conventional
+external results, each only in the scope stated where it enters the proof:
+    1. standard spherical-harmonic decomposition, regular Sturm–Liouville theory, the
+       contiguous-order zero interlacing in DLMF equation (10.21.2), and the classical Bessel
+       identities collected in [5];
+    2. the uniform one-variable Bessel-phase enclosure of [2], together with the explicitly
+       quoted floor-sum inequalities of [1, 3];
+    3. inequalities (i) and (ii), the two strict lower bounds in Lorch’s published abstract, for
+       the first positive zero of Jν on −1 < ν < ∞, in precisely the half-integer specializations
+       derived in the text [4].
+
+
+
+                                                      21
+Dirichlet Pólya inequality for spherical shells                              Purely analytic proof
+
+
+   All shell-specific finite decisions are exposed in the accompanying Purely Analytic Supple-
+ment. They require only exact integer and rational arithmetic, elementary integral inequalities,
+and the classical real functions already present in the analytic argument. The archived interval
+programs have no place in this verification boundary; they are optional regression checks
+only.
+
+
+References
+[1] N. Filonov, M. Levitin, I. Polterovich, and D. A. Sher, Pólya’s conjecture for Euclidean
+    balls, Invent. Math. 234 (2023), 129–169. doi:10.1007/s00222-023-01198-1.
+
+[2] N. Filonov, M. Levitin, I. Polterovich, and D. A. Sher, Uniform enclosures for the phase
+    and zeros of Bessel functions and their derivatives, SIAM J. Math. Anal. 56 (2024), no. 6,
+    7644–7682. doi:10.1137/24M1642032.
+
+[3] N. Filonov, M. Levitin, I. Polterovich, and D. A. Sher, Pólya’s conjecture for Dirichlet eigen-
+    values of annuli, J. Lond. Math. Soc. 113 (2026), no. 2, e70425. doi:10.1112/jlms.70425.
+
+[4] L. Lorch, Some inequalities for the first positive zeros of Bessel functions, SIAM J. Math.
+    Anal. 24 (1993), no. 3, 814–823. doi:10.1137/0524050.
+
+[5] NIST Digital Library of Mathematical Functions, Chapter 10: Bessel functions, in
+    particular equation (10.9.30), §10.21(i), equation (10.21.2), and equation (10.47.3), https:
+    //dlmf.nist.gov/10, accessed 16 July 2026.
+
+
+
+
+                                                  22
+

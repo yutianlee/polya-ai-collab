@@ -1,0 +1,12 @@
+\contentsline {paragraph}{Reading convention.}{1}{section*.1}%
+\contentsline {section}{Global census of the exact ledger}{1}{section*.2}%
+\contentsline {section}{\numberline {I}\ignorespaces Remaining hand-visible ledger rows}{3}{section.1}%
+\contentsline {section}{\numberline {II}\ignorespaces Universal arithmetic and checkpoint inventories}{10}{section.2}%
+\contentsline {section}{\numberline {III}\ignorespaces Connected high-event registry}{19}{section.3}%
+\contentsline {section}{\numberline {IV}\ignorespaces Seam and two-sided payments}{26}{section.4}%
+\contentsline {section}{\numberline {V}\ignorespaces Upper owner and optical screens}{32}{section.5}%
+\contentsline {section}{\numberline {VI}\ignorespaces Exact owner subtraction}{37}{section.6}%
+\contentsline {section}{\numberline {VII}\ignorespaces Global retained-remainder identity}{40}{section.7}%
+\contentsline {section}{\numberline {VIII}\ignorespaces Global middle-ratio angular bound}{46}{section.8}%
+\contentsline {section}{\numberline {IX}\ignorespaces Upward-closed scalar positivity}{52}{section.9}%
+\contentsline {section}{\numberline {X}\ignorespaces Final all-frequency residual closure}{60}{section.10}%

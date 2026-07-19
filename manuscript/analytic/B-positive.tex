@@ -1,0 +1,487 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\Ibar}{\overline{\mathcal I}}
+\newcommand{\Bcal}{\mathcal B}
+\newcommand{\Rbar}{\overline R}
+
+\title{A purely analytic lower bound for the aggregate reserve at \(K=200\)}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note proves analytically one base-frequency sign in the aggregate-tail
+argument.  Every definition is reproduced below.  The proof uses one
+concave tangent bound, one Young inequality,
+elementary rational enclosures, and two exact Bernstein-basis identities.
+In fact, it proves the uniform, hand-checkable estimate
+\[
+ \mathcal B(\rho,200)>60
+ \qquad\left(\frac7{51}\leq\rho\leq\frac{39}{50}\right).
+\]
+No decimal approximation or machine-generated sign enclosure is a premise.
+\end{abstract}
+
+\section{The exact assertion}
+
+For \(0<\rho<1\), put
+\[
+ G_1(s)=\frac{\sqrt{1-s^2}-s\arccos s}{\pi},
+ \qquad
+ \eta_\rho=G_1\!\left(\max\{\rho,\tfrac12\}\right),
+ \qquad
+ d_\rho=\frac{2\arcsin\rho}{\pi}.
+\]
+At the fixed frequency \(K=200\), define
+\[
+ \mu=200\rho,
+ \qquad
+ b=\frac{2\pi\rho}{1-\rho},
+ \qquad
+ c=bK=\frac{400\pi\rho}{1-\rho},
+ \qquad
+ \Rbar=\mu+\frac12,
+ \qquad
+ S=\sqrt{\Rbar^2+c},
+\]
+and
+\begin{equation}
+ \Ibar
+ =\frac12\left[
+      \Rbar S+c\operatorname{arsinh}\frac{\Rbar}{\sqrt c}
+      -\Rbar^2
+    \right].
+ \label{eq:I-definition}
+\end{equation}
+These are exactly the specializations at \(K=200\) of the aggregate-tail
+quantities in the main proof.  The reserve to be estimated is
+\begin{equation}
+\begin{aligned}
+ \Bcal(\rho,200)={}&
+ (\mu-\tfrac12)(200\eta_\rho-1)
+ +\frac{d_\rho}{2}(\mu-\tfrac32)(\mu-\tfrac12)\\
+ &-(1+d_\rho)\Ibar
+ -\frac{8(\mu+\tfrac12)}{15\sqrt\mu}.
+\end{aligned}
+\label{eq:B-definition}
+\end{equation}
+
+\begin{theorem}
+\label{thm:B-positive}
+For every
+\[
+       \frac7{51}\leq\rho\leq\frac{39}{50},
+\]
+one has
+\[
+       \Bcal(\rho,200)>60>0.
+\]
+\end{theorem}
+
+\section{A concave majorant for the integral term}
+
+Set
+\[
+ H(u)=\frac12\left[
+ u\sqrt{1+u^2}+\operatorname{arsinh}u-u^2
+ \right]
+ =\int_0^u\bigl(\sqrt{1+t^2}-t\bigr)\,dt.
+\]
+Scaling \eqref{eq:I-definition} by
+\(u=\Rbar/\sqrt c\) gives the exact identity
+\begin{equation}
+       \Ibar=cH(u).
+       \label{eq:I-scaled}
+\end{equation}
+
+\begin{lemma}[Concave tangent]
+\label{lem:H-tangent}
+For every \(u>0\),
+\begin{equation}
+       H(u)<\frac6{25}u+\frac{12}{25}.
+       \label{eq:H-tangent}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+One has
+\[
+ H'(u)=\sqrt{1+u^2}-u,
+ \qquad
+ H''(u)=\frac{u}{\sqrt{1+u^2}}-1<0.
+\]
+Thus every tangent line is a global upper bound.  Choose
+\[
+ u_0=\frac{589}{300},
+ \qquad
+ \sqrt{1+u_0^2}=\frac{661}{300}.
+\]
+Then
+\[
+ H'(u_0)=\frac6{25},
+ \qquad
+ \operatorname{arsinh}u_0
+ =\log\left(u_0+\sqrt{1+u_0^2}\right)
+ =\log\frac{25}{6},
+\]
+and hence
+\begin{equation}
+ H(u_0)-\frac6{25}u_0
+ =\frac12\left(\log\frac{25}{6}-\frac{589}{1250}\right).
+ \label{eq:tangent-intercept}
+\end{equation}
+
+For completeness, the elementary series
+\[
+ \log2=2\sum_{n=0}^{\infty}
+       \frac{1}{(2n+1)3^{2n+1}}
+\]
+gives
+\[
+ \log2
+ <\frac23+\frac23\sum_{n=1}^{\infty}3^{-(2n+1)}
+ =\frac{25}{36}.
+\]
+Also \(\log(1+x)<x\) for \(x>0\).  Therefore
+\[
+ \log\frac{25}{6}
+ =2\log2+\log\frac{25}{24}
+ <\frac{25}{18}+\frac1{24}
+ =\frac{103}{72}
+ <\frac{1789}{1250};
+\]
+the last difference is \(29/45000\).  Substitution in
+\eqref{eq:tangent-intercept} makes the tangent intercept strictly smaller
+than \(12/25\), proving \eqref{eq:H-tangent} by concavity.
+\end{proof}
+
+We shall rationalize the remaining square root using the elementary Young
+inequality
+\begin{equation}
+       \sqrt c\leq\frac{c}{2a}+\frac a2
+       \qquad(a>0),
+       \label{eq:young}
+\end{equation}
+which is equivalent to \((\sqrt c-a)^2\geq0\).  The classical bound
+\begin{equation}
+       \pi<\frac{22}{7}
+       \label{eq:pi-upper}
+\end{equation}
+follows, for example, from
+\[
+ 0<\int_0^1\frac{x^4(1-x)^4}{1+x^2}\,dx=\frac{22}{7}-\pi.
+\]
+Consequently
+\[
+       c<c_+(\rho):=\frac{8800}{7}\frac{\rho}{1-\rho}.
+\]
+Combining Lemma~\ref{lem:H-tangent} with \eqref{eq:young} gives, for every
+\(a>0\),
+\begin{equation}
+ \Ibar<Q_a(\rho):=
+ \frac{3\Rbar c_+(\rho)}{25a}
+ +\frac{3a\Rbar}{25}
+ +\frac{12c_+(\rho)}{25}.
+ \label{eq:Qa}
+\end{equation}
+All quantities on the right are rational functions of \(\rho\) when
+\(a\) is rational.
+
+\section{The coefficient of \(d_\rho\) is positive}
+
+The replacement of \(d_\rho\) by an elementary lower bound requires the
+sign of its coefficient.  We verify that sign before making any such
+replacement.
+
+\begin{lemma}
+\label{lem:d-coefficient}
+On \([7/51,39/50]\),
+\begin{equation}
+ \frac12(\mu-\tfrac32)(\mu-\tfrac12)-\Ibar>0.
+ \label{eq:d-coefficient-positive}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ \Phi(\rho)=\Rbar^2\frac{1-\rho}{\rho}.
+\]
+Since
+\[
+ \frac{d}{d\rho}\log\Phi(\rho)
+ =\frac{200\rho-400\rho^2-1/2}
+        {\rho(1-\rho)\Rbar},
+\]
+its two critical points are
+\[
+       q_\pm=\frac{10\pm7\sqrt2}{40}.
+\]
+The elementary bounds \(7/5<\sqrt2<3/2\) show
+\[
+ q_-<\frac1{200}<\frac7{51}<q_+<\frac{41}{80}<\frac{39}{50}.
+\]
+Thus \(\Phi\) increases and then decreases on the interval in question,
+so its minimum is attained at one of the two endpoints.  From
+\eqref{eq:pi-upper},
+\[
+ u^2=\frac{\Rbar^2(1-\rho)}{400\pi\rho}
+ >\frac{7\Rbar^2(1-\rho)}{8800\rho}.
+\]
+At the two endpoints the rational lower bounds on the right are
+\[
+ \frac{8128201}{2080800},
+ \qquad
+ \frac{685783}{124800},
+\]
+respectively, and
+\[
+ \frac{8128201}{2080800}-\frac{225}{64}
+ =\frac{1625777}{4161600}>0,
+ \qquad
+ \frac{685783}{124800}-\frac{225}{64}
+ =\frac{247033}{124800}>0.
+\]
+Hence \(u>15/8\) throughout the interval.
+
+By \eqref{eq:I-scaled} and Lemma~\ref{lem:H-tangent},
+\[
+ \frac{\Ibar}{\Rbar^2}
+ =\frac{H(u)}{u^2}
+ <\frac6{25u}+\frac{12}{25u^2}
+ \leq\frac{496}{1875}.
+\]
+Moreover \(\Rbar\geq2851/102>27\), and the function
+\[
+ \frac{(R-2)(R-1)}{2R^2}
+ =\frac12-\frac{3}{2R}+\frac1{R^2}
+\]
+is increasing for \(R>4/3\).  Therefore
+\[
+ \frac{(\mu-\tfrac32)(\mu-\tfrac12)}{2\Rbar^2}
+ \geq\frac{25\cdot26}{2\cdot27^2}
+ =\frac{325}{729}.
+\]
+Finally
+\[
+       \frac{325}{729}-\frac{496}{1875}
+       =\frac{82597}{455625}>0,
+\]
+which proves \eqref{eq:d-coefficient-positive}.
+\end{proof}
+
+\section{Rational lower envelopes}
+
+We use only the consequences
+\[
+ \frac1\pi>\frac7{22},
+ \qquad
+ \sqrt2>\frac75,
+ \qquad
+ \sqrt3>\frac53
+\]
+of elementary positive-side squaring and \eqref{eq:pi-upper}.
+
+On \(7/51\leq\rho\leq1/2\), one has
+\[
+ \eta_\rho=G_1(1/2)
+ =\frac{\sqrt3}{2\pi}-\frac16
+ >\frac{13}{132},
+ \qquad
+ d_\rho=\frac{2\arcsin\rho}{\pi}>\frac7{11}\rho.
+\]
+Also \(1400/51\leq\mu\leq100\), and
+\((26/5)^2<1400/51\), so
+\begin{equation}
+ \frac{8(\mu+1/2)}{15\sqrt\mu}
+ =\frac8{15}\left(\sqrt\mu+\frac1{2\sqrt\mu}\right)
+ <\frac8{15}\left(10+\frac5{52}\right)
+ =\frac{70}{13}.
+ \label{eq:E-low}
+\end{equation}
+Define
+\begin{equation}
+\begin{aligned}
+ \eta_<&=\frac{13}{132},
+ &d_<&=\frac7{11}\rho,
+ &E_<&=\frac{70}{13},\\
+ L_< (\rho)
+ &=(\mu-\tfrac12)(200\eta_<-1)
+ +\frac{d_<}{2}(\mu-\tfrac32)(\mu-\tfrac12)
+ -(1+d_<)Q_{18}(\rho)-E_<.
+\end{aligned}
+\label{eq:L-low}
+\end{equation}
+
+On \(1/2\leq\rho\leq39/50\), the integral representation
+\[
+ \eta_\rho=\frac1\pi\int_\rho^1\arccos t\,dt
+\]
+and \(\arccos t\geq\sqrt{2(1-t)}\) give
+\[
+ \eta_\rho\geq\frac{2\sqrt2}{3\pi}(1-\rho)^{3/2}.
+\]
+Here \(1-\rho\geq11/50>(23/50)^2\), and consequently
+\begin{equation}
+ \eta_\rho>\frac{1127}{8250}(1-\rho)=:\eta_>.
+ \label{eq:eta-high}
+\end{equation}
+The Maclaurin series for \(\arcsin\rho\) has positive coefficients, so
+\begin{equation}
+ d_\rho>\frac7{11}P_7(\rho)=:d_>,
+ \qquad
+ P_7(\rho)=\rho+\frac{\rho^3}{6}
+ +\frac{3\rho^5}{40}+\frac{5\rho^7}{112}.
+ \label{eq:d-high}
+\end{equation}
+Finally \(100\leq\mu\leq156<169\), whence
+\begin{equation}
+ \frac8{15}\left(\sqrt\mu+\frac1{2\sqrt\mu}\right)
+ <\frac8{15}\left(13+\frac1{20}\right)
+ =\frac{174}{25}<7.
+ \label{eq:E-high}
+\end{equation}
+Define
+\begin{equation}
+\begin{aligned}
+ E_>&=7,\\
+ L_>(\rho)
+ &=(\mu-\tfrac12)(200\eta_>-1)
+ +\frac{d_>}{2}(\mu-\tfrac32)(\mu-\tfrac12)
+ -(1+d_>)Q_{67}(\rho)-E_>.
+\end{aligned}
+\label{eq:L-high}
+\end{equation}
+
+Lemma~\ref{lem:d-coefficient}, the lower bounds for \(d_\rho\) and
+\(\eta_\rho\), the upper bounds for the last term, and
+\eqref{eq:Qa} now give the logically ordered implications
+\begin{equation}
+ \Bcal(\rho,200)>L_<(\rho)
+ \quad\left(\frac7{51}\leq\rho\leq\frac12\right),
+ \qquad
+ \Bcal(\rho,200)>L_>(\rho)
+ \quad\left(\frac12\leq\rho\leq\frac{39}{50}\right).
+ \label{eq:B-L}
+\end{equation}
+The overlap at \(\rho=1/2\) is harmless.
+
+\section{Exact Bernstein closure}
+
+For \(0\leq x\leq1\), write
+\[
+ B_{k,n}(x)=\binom nkx^k(1-x)^{n-k}.
+\]
+These functions are nonnegative and sum to one.  The conversion from a
+power polynomial \(\sum_{j=0}^nq_jx^j\) to Bernstein coefficients is the
+finite rational identity
+\begin{equation}
+ \sum_{j=0}^nq_jx^j
+ =\sum_{k=0}^n\left(
+   \sum_{j=0}^k\frac{\binom kj}{\binom nj}q_j
+  \right)B_{k,n}(x).
+ \label{eq:bernstein-conversion}
+\end{equation}
+Thus every entry below can be checked by additions and cross
+multiplications of integers.
+
+For the lower interval set
+\[
+ x_<=\frac{\rho-7/51}{1/2-7/51}=\frac{102\rho-14}{37}.
+\]
+Direct substitution of \eqref{eq:Qa} and \eqref{eq:L-low}, followed by
+\eqref{eq:bernstein-conversion}, gives the exact identity
+\begin{equation}
+ (1-\rho)L_<(\rho)
+ =\frac1{D_<}\sum_{k=0}^{4}N_{<,k}B_{k,4}(x_<),
+ \qquad
+ D_<=10835145921600,
+ \label{eq:low-bernstein}
+\end{equation}
+where
+\[
+\begin{array}{c|r}
+k&N_{<,k}\\ \hline
+0&2977383044192480\\
+1&4628920786869499\\
+2&5747338995812809\\
+3&6988840660610010\\
+4&6621947656848702
+\end{array}
+\]
+The smallest entry is \(N_{<,0}\), and
+\[
+ N_{<,0}-60D_<=2327274288896480>0.
+\]
+It follows from \eqref{eq:low-bernstein} that
+\begin{equation}
+       (1-\rho)L_<(\rho)>60.
+       \label{eq:low-sixty}
+\end{equation}
+
+For the upper interval set
+\[
+ x_>=\frac{\rho-1/2}{39/50-1/2}
+ =\frac{25}{7}\left(\rho-\frac12\right).
+\]
+The corresponding exact identity obtained from \eqref{eq:Qa},
+\eqref{eq:L-high}, and \eqref{eq:bernstein-conversion} is
+\begin{equation}
+ (1-\rho)L_>(\rho)
+ =\frac1{D_>}\sum_{k=0}^{10}N_{>,k}B_{k,10}(x_>),
+ \qquad
+ D_>=2487375000000000000000,
+ \label{eq:high-bernstein}
+\end{equation}
+where
+\[
+\begin{array}{c|r}
+k&N_{>,k}\\ \hline
+0&873011369240936279296875\\
+1&881095006796855712890625\\
+2&884923416376472412109375\\
+3&881704924277462068359375\\
+4&867541422038412498046875\\
+5&837327296894843418528125\\
+6&784608885866591053548975\\
+7&701387295930232136634075\\
+8&577837649792730661053099\\
+9&401902155200474706698937\\
+10&158688669397963044788415
+\end{array}
+\]
+The smallest entry is \(N_{>,10}\), and
+\[
+ N_{>,10}-60D_>
+ =9446169397963044788415>0.
+\]
+Therefore
+\begin{equation}
+       (1-\rho)L_>(\rho)>60.
+       \label{eq:high-sixty}
+\end{equation}
+
+Since \(0<1-\rho<1\), both \eqref{eq:low-sixty} and
+\eqref{eq:high-sixty} imply that the corresponding \(L\)-function is
+strictly larger than \(60\).  Combining this conclusion with
+\eqref{eq:B-L} proves Theorem~\ref{thm:B-positive}.
+
+\paragraph{Verification boundary.}
+The two Bernstein identities are finite polynomial identities over
+\(\mathbb Q\).  Formula \eqref{eq:bernstein-conversion} is a direct
+hand-checking recipe for every printed integer.  No interval evaluation,
+floating-point comparison, or unprinted case is used in the proof.
+
+\end{document}

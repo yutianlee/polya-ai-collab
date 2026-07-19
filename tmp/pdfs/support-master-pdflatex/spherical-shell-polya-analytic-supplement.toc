@@ -1,0 +1,16 @@
+\contentsline {paragraph}{Reading convention.}{1}{section*.1}%
+\contentsline {section}{Global census of the exact ledger}{1}{section*.2}%
+\contentsline {section}{\numberline {1}\ignorespaces I. Remaining hand-visible ledger rows}{3}{section.1}%
+\contentsline {section}{\numberline {2}\ignorespaces II. Universal arithmetic and checkpoint inventories}{10}{section.2}%
+\contentsline {section}{\numberline {3}\ignorespaces III. Connected high-event registry}{19}{section.3}%
+\contentsline {section}{\numberline {4}\ignorespaces IV. Seam and two-sided payments}{26}{section.4}%
+\contentsline {section}{\numberline {5}\ignorespaces V. Upper owner and optical screens}{32}{section.5}%
+\contentsline {section}{\numberline {6}\ignorespaces VI. Exact owner subtraction}{37}{section.6}%
+\contentsline {section}{\numberline {7}\ignorespaces VII. Compact retained-remainder identity}{40}{section.7}%
+\contentsline {section}{\numberline {8}\ignorespaces VIII. Compact angular-block bound}{46}{section.8}%
+\contentsline {section}{\numberline {9}\ignorespaces IX. Compact scalar positivity}{52}{section.9}%
+\contentsline {section}{\numberline {10}\ignorespaces X. Aggregate curvature floor}{60}{section.10}%
+\contentsline {section}{\numberline {11}\ignorespaces XI. Aggregate base derivative}{64}{section.11}%
+\contentsline {section}{\numberline {12}\ignorespaces XII. Aggregate base reserve}{67}{section.12}%
+\contentsline {section}{\numberline {13}\ignorespaces XIII. Analytic aggregate-tail theorem}{73}{section.13}%
+\contentsline {section}{\numberline {14}\ignorespaces XIV. Final analytic residual closure}{78}{section.14}%

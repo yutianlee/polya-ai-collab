@@ -1,0 +1,4 @@
+\contentsline {paragraph}{Reading convention.}{1}{section*.1}%
+\contentsline {section}{Live dependency graph}{1}{section*.2}%
+\contentsline {section}{\numberline {I}Ratio-sharp global defect closure}{2}{section.1}%
+\contentsline {paragraph}{Exact scalar reserve table.}{8}{section*.9}%

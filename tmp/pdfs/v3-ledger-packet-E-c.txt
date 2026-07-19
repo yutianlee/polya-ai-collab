@@ -1,0 +1,471 @@
+Upper-Owner and Optical Cleanup
+Analytic ledger replacement, Packet E
+Abstract
+This note replaces the executable scope checks surrounding the upper owner of the ﬁnal
+spherical-shell residual. It proves directly that the eligible upper wall is K0(ρ) and that k11(ρ) <
+K0(ρ) on the required ratio interval. It also records the symbolic identities that make the
+repeated optical ledger samples unnecessary.
+1 The upper owner
+For 0 < ρ < 1, set
+aρ :=
+2πρ
+1 − ρ
+, ηρ := G1(max{ρ, 1/2}) ,
+where
+G1(s) =
+√
+1 − s2 − s arccos s
+π
+, ω0 := G1(1/2) =
+√
+3
+2π
+−
+1
+6
+.
+Let C0 > 0, and deﬁne
+K0(ρ) :=
+(√
+aρ +
+√
+aρ + 4ηρC0
+2ηρ
+)2
+. (1)
+Also put
+ρc :=
+1
+1 + 2π
+, zρ :=
+π
+1 − ρ
+, k11(ρ) :=
+√
+z2
+ρ + 132.
+Lemma 1 (The ﬁnal upper wall is genuinely above the staircase). For
+ρc ≤ ρ <
+7
+8
+,
+one has
+k11(ρ) < 64 < U(ρ). (2)
+More precisely, U(ρ) = K0(ρ) > 64 for ρc ≤ ρ < 5/6, while
+U(ρ) =
+54
+(1 − ρ)2
+≥ 1944 (5/6 ≤ ρ < 7/8).
+In particular, on the ﬁnal surviving interval ρc ≤ ρ < 39/50, the upper owner is K0(ρ).
+Proof. We use only
+3 < π <
+22
+7
+,
+√
+3 <
+7
+4
+.
+1
+They imply
+ω0 =
+√
+3
+2π
+−
+1
+6
+<
+7/4
+6
+−
+1
+6
+=
+1
+8
+.
+Since
+G′
+1(s) = −
+arccos s
+π
+< 0 (0 ≤ s < 1), G1(1) = 0,
+one has 0 < ηρ ≤ ω0 < 1/8. The function aρ is increasing, and its value at ρc is exactly one:
+aρc =
+2π/(1 + 2π)
+2π/(1 + 2π)
+= 1.
+Thus aρ ≥ 1. Formula (1) and C0 > 0 give
+√
+K0(ρ) >
+√
+aρ
+ηρ
+> 8,
+so K0(ρ) > 64.
+On the other hand, ρ < 7/8, and therefore
+zρ < 8π <
+176
+7
+< 26.
+Consequently
+k11(ρ)2
+< 262
++ 132 = 808 < 642
+,
+which proves (2).
+The small-hole wall H0 is eligible only when ρ < ω0. But
+ρc >
+1
+8
+> ω0,
+because π < 22/7 < 7/2 implies 1 + 2π < 8. Also π > 3 gives the exact scope chain
+ρc <
+1
+7
+<
+39
+50
+<
+5
+6
+.
+For ρ < 5/6, the thin-seam wall is not eligible either, so the piecewise upper-owner formula gives
+U = K0 > 64. For 5/6 ≤ ρ < 7/8, the seam branch owns the equality face and
+U(ρ) =
+54
+(1 − ρ)2
+≥
+54
+(1/6)2
+= 1944 > 64.
+Combining this with k11 < 64 proves (2). Finally 39/50 < 5/6, so the ﬁnal surviving interval lies
+wholly in the K0 branch.
+2 Symbolic optical identities
+The optical ledger evaluates the same algebraic statements at several sample values. The following
+identities replace those repetitions.
+For a/π = N + t, with N ≥ 1 and 0 < t ≤ 1, the exact continuous-minus-product deﬁcit is
+D(a)
+π2
+=
+N2
+2
++ N
+(
+t2
++
+1
+6
+)
++
+2t3
+3
+. (3)
+2
+If CD = 1382/3125, direct subtraction gives
+D(a)
+π2
+− CD(N + t)2
+=
+(
+1
+2
+− CD
+)
+N2
++ N
+(
+t2
+− 2CDt +
+1
+6
+)
++
+2t3
+3
+− CDt2
+. (4)
+The coeﬃcient of N2 is positive. The diﬀerence between the right sides at N + 1 and N is
+2
+(
+1
+2
+− CD
+)
+N +
+(
+1
+2
+− CD
+)
++ t2
+− 2CDt +
+1
+6
+.
+The quadratic t2 − 2CDt + 1/6 has minimum 1/6 − C2
+D at t = CD. Consequently, for N ≥ 1, the
+displayed diﬀerence is at least
+3
+(
+1
+2
+− CD
+)
++
+1
+6
+− C2
+D =
+4229603
+29296875
+> 0.
+Therefore the deﬁcit increases in N, and it is enough to check N = 1. At N = 1, diﬀerentiation
+gives
+d
+dt
+(
+D(a)
+π2
+− CD(1 + t)2
+)
+= 2(t − CD)(t + 1).
+Thus the unique minimum on 0 < t ≤ 1 occurs at t = CD, where the exact value is
+1822532
+91552734375
+> 0. (5)
+This proves the product screen simultaneously for every N, t.
+Likewise, the twelve repeated angular block checks are all instances of
+m−1
+∑
+ℓ=0
+(2ℓ + 1) = m2
+(m ∈ N0), (6)
+proved by subtracting consecutive squares. At a radial equality wall the strict convention excludes
+the newly proposed layer, so no boundary sample is added. These symbolic statements cover every
+repeated optical row; the two exact endpoint reserves remain those printed in the main optical
+lemma.
+3 The two optical screens with all scaling shown
+For completeness, we now print the algebra that was compressed in the main optical lemma. Set
+ε0 =
+11
+50
+, c =
+1126
+625
+, q =
+106
+333
+, CD =
+1382
+3125
+.
+The inequalities
+π >
+333
+106
+, π <
+22
+7
+give q > 1/π, and 0 < ε ≤ ε0 < 1/2.
+Lemma 2 (Complete optical screen arithmetic). Let a = εK.
+1. If π < a ≤ c/ε, then
+CD >
+2cq
+3
++
+ε
+4
++ ε2
+q2
+. (L)
+3
+2. If a ≥ c/ε, deﬁne
+L(ε) :=
+(1 − ε)2
+4
+−
+(22/7)(1 − ε)ε
+4c
+,
+A(ε) := qε +
+ε2
+4c
++
+qε3
+4c
++
+ε4
+16c2
+.
+Then L(ε) > A(ε).
+3. The low and high domains are both closed at a = c/ε, so their union covers every a > π.
+Proof. For the low screen, D(a) > CDa2 was proved above. The suﬃcient product inequality
+obtained in the main optical argument is
+D(a) ≥ ε
+(
+2a3
+3π
++
+a2
+4
+)
++
+ε2a
+π
+. (1)
+After division by a2, the three terms on the right are bounded by
+2εa
+3π
+≤
+2cq
+3
+,
+ε
+4
+≤
+ε0
+4
+,
+ε2
+πa
+<
+ε2
+π2
+< ε2
+0q2
+.
+Exact subtraction gives
+CD −
+(
+2cq
+3
++
+11
+200
++
+(
+11
+50
+)2
+q2
+)
+=
+39569
+2772225000
+> 0. (7)
+This proves (L). For 0 ≤ a ≤ π, the strict radial count is zero, including a = π, so no low-frequency
+gap remains.
+For the high screen, the exact radial deﬁcit and angular ceiling error from the main analytic
+argument are
+Drad
+a2
+≥
+(1 − ε)2
+4
+−
+π(1 − ε)
+4a
+,
+E
+a2
+=
+ε
+π
++
+ε2
+4πa
++
+ε
+4a
++
+ε2
+16a2
+.
+Since a ≥ c/ε, one has 1/a ≤ ε/c. Using the two rational bounds for π therefore gives
+Drad
+a2
+≥ L(ε),
+E
+a2
+< A(ε).
+Moreover,
+L′
+(ε) = −
+1 − ε
+2
+−
+22/7
+4c
+(1 − 2ε) < 0 (0 < ε < 1/2),
+whereas A′(ε) > 0 coeﬃcientwise. Hence
+L(ε) − A(ε) ≥ L(ε0) − A(ε0).
+The endpoint subtraction is
+L(ε0) − A(ε0) =
+1
+4
+(
+39
+50
+)2
+−
+22
+7
+(39/50)(11/50)
+4(1126/625)
+−
+[
+11
+50
+q +
+(11/50)2
+4(1126/625)
++
+(11/50)3q
+4(1126/625)
++
+(11/50)4
+16(1126/625)2
+]
+=
+14817541
+472867032960000
+> 0.
+(8)
+4
+Thus the radial deﬁcit strictly exceeds the angular error.
+Finally,
+c
+ε
+≥
+c
+ε0
+=
+2252
+275
+>
+22
+7
+> π,
+2252
+275
+−
+22
+7
+=
+9714
+1925
+> 0.
+Therefore the common face lies in the low domain as well as the high domain, and
+{a : π < a ≤ c/ε} ∪ {a : a ≥ c/ε} = {a : a > π},
+and equality a = c/ε belongs to both pieces. Together with the zero-count interval 0 ≤ a ≤ π, this
+covers every a ≥ 0. At K = a = 0, both the spectral count and the Weyl term vanish.
+Ledger rows replaced. Lemma 1 replaces the eight executable verify_u_and_k11 scope checks.
+Equations (3)–(6) replace the repeated product samples and odd-block identities. These are rows of
+verify_optical_constants. Lemma 2 prints the remaining scaling, monotonicity, common-face,
+and exact-reserve implications. Thus all ﬁfty optical rows are consequences of displayed identities
+rather than executable predicates.
+5
+

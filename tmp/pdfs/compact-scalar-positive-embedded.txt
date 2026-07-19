@@ -1,0 +1,499 @@
+      Purely Analytic Positivity of the Upward-Closed Scalar Gap
+
+
+                                 Global middle-ratio analytic module
+
+
+                                                  Abstract
+          The angular-block reduction for the middle-ratio spherical-shell proxy leaves one smooth
+      scalar inequality. This note proves that inequality on the upward-closed region ρc ≤ ρ ≤
+      39/50, K ≥ k11 (ρ) without interval arithmetic or a ﬁnite numerical certiﬁcate. The loss integral
+      is ﬁrst diﬀerentiated with respect to the spectral cutoﬀ. A turning-point lower bound and an
+      exact beta integral show that the scalar gap is strictly increasing in that cutoﬀ for every K > 12.
+      At the base curve, a rational secant majorant gives a uniform analytic estimate for the loss. The
+      remaining one-variable inequality is then reduced to positivity of a degree-nine polynomial; all
+      of its Bernstein coeﬃcients on one rational interval are displayed and are positive. Thus there
+      is no upper-frequency cutoﬀ in the scalar-positivity theorem.
+
+
+1     The scalar gap
+For 0 ≤ s ≤ 1, put
+                                               1 (√                    )
+                                   G1 (s) :=        1 − s2 − s arccos s .                                   (1)
+                                               π
+Fix                                                            √
+                                      1                               π2
+                             ρc :=        ,       k11 (ρ) :=                + 132,                          (2)
+                                   1 + 2π                          (1 − ρ)2
+and consider                         {                                         }
+                                                          39
+                             Rc :=       (ρ, K) : ρc ≤ ρ ≤ ,        K ≥ k11 (ρ) .                           (3)
+                                                          50
+The scalar gap left by the angular-block estimate is
+
+                                         (1 + 2ρ2 )K 2                πρK       1
+                          S(ρ, K) :=                   − J (ρ, K) −         +
+                                              12                    4(1 − ρ) 2
+                                                     (                      )                               (4)
+                                             2πρK          KG1 (ρ)        3
+                                         +                             +      ,
+                                            arccos ρ 4(1 + 2KG1 (ρ)) 32
+
+where                                              ∫ 1
+                                             K2                 s
+                                 J (ρ, K) :=                             ds.                                (5)
+                                             2      ρ    (1 + 2KG1 (s))2
+
+Theorem 1 (Upward-closed scalar positivity). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11 (ρ),
+
+                                                S(ρ, K) > 0.                                                (6)
+
+
+
+
+                                                        1
+    We use only the elementary rational estimates
+                               157    22                140 √                5 √
+                                   <π< ,                   < 2,                < 3.          (7)
+                               50      7                99                   3
+The two square-root estimates follow immediately by squaring; the displayed bounds for π are the
+classical Archimedean bounds (with the lower one weakened to 157/50).
+
+
+2    Strict monotonicity in the spectral cutoﬀ
+The identity                                            ∫ 1
+                                                    1
+                                           G1 (s) =            arccos u du                   (8)
+                                                    π      s
+
+and 1 − cos v ≤ v 2 /2 imply                          √
+                                                     2 2
+                                            G1 (s) ≥     (1 − s)3/2 .                        (9)
+                                                      3π
+                     √
+Indeed, arccos u ≥       2(1 − u), and integration gives (9).
+Lemma 2 (Derivative of the boundary-layer loss). For every ﬁxed 0 < ρ < 1 and every K > 0,
+                                          ∫ 1
+                                                      s
+                          ∂K J (ρ, K) = K                    3
+                                                               ds.                       (10)
+                                            ρ (1 + 2KG1 (s))
+
+Moreover, if K > 12, then             ∫ 1
+                                                   s              88
+                                                           3
+                                                             ds <     .                     (11)
+                                       ρ    (1 + 2KG1 (s))        567
+Proof. Diﬀerentiating (5) under the integral sign gives
+                            ∫ 1                              ∫ 1
+                                       s                              sG1 (s)
+                 ∂K J = K                        2
+                                                   ds − 2K 2
+                                                                                 ds
+                             ρ  (1 + 2KG  1 (s))              ρ  (1 + 2KG1 (s))3
+                            ∫ 1
+                                       s
+                       =K                        3
+                                                   ds,
+                             ρ  (1 + 2KG  1 (s))
+
+             (10).
+which proves √
+   Set a = 4 2/(3π). By (9), the change of variable t = 1 − s, and s ≤ 1,
+                          ∫ 1                       ∫ ∞
+                                    s ds                      dt
+                                                3
+                                                  ≤
+                           ρ  (1 + 2KG   1 (s))      0  (1 + aKt3/2 )3
+                                                     8π
+                                                  = √ (aK)−2/3 .                            (12)
+                                                    27 3
+The last equality is the beta integral
+                                                 (         )
+                                 2                   2 7            8π
+                                   (aK)−2/3 B         ,        =     √ (aK)−2/3 .
+                                 3                   3 3           27 3
+At K = 12, the cube of the last member of (12) is
+
+                                                        π5
+                                                           √ .
+                                                     59049 3
+
+                                                           2
+Using (7),
+                                                            (     )
+                                   π5          5153632         88 3
+                                      √ <                <          ,
+                               59049 3       1654060905       567
+where the second strict inequality is the exact identity
+                           (     )
+                              88 3        5153632        27812576
+                                     −              =               > 0.
+                             567        1654060905     44659644435
+The right side of (12) decreases with K, proving (11).
+
+Proposition 3 (Monotonicity of the scalar gap). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11 (ρ),
+
+                                            ∂K S(ρ, K) > 0.                                      (13)
+
+Consequently,                                    (          )
+                                      S(ρ, K) ≥ S ρ, k11 (ρ) .                                   (14)
+Proof. Write
+                                  θ := arccos ρ,          y := KG1 (ρ).
+The derivative of the ﬁnal line of (4) is
+                                        (               )
+                                   2πρ     y(1 + y)   3     3ρ
+                                                    +     ≥    ,                                 (15)
+                                    θ     2(1 + 2y)2 32      8
+because θ ≤ π/2. Also
+                                            πρ          11ρ
+                                     −            >−           .
+                                         4(1 − ρ)    14(1 − ρ)
+Every K ≥ k11 (ρ) in the stated ratio interval is greater than 12; this also follows from the stronger
+estimate established in Lemma 4 below. Lemma 2 therefore gives
+                                     (                  )
+                                       1 + 2ρ2      88        3ρ        11ρ
+                          ∂K S > K              −          +     −
+                                          6         567        8     14(1 − ρ)
+                                     (             )
+                                        13      ρ2       3ρ        11ρ
+                               =K           +         +      −
+                                       1134     3         8     14(1 − ρ)
+                                   26            3ρ         11ρ
+                               >       + 4ρ2 +       −             .                              (16)
+                                  189             8     14(1 − ρ)
+   It remains to check the sign of the last expression. Multiplication by 1 − ρ produces
+                                            (                )
+                                               26         3ρ      11ρ
+                            p(ρ) := (1 − ρ)            2
+                                                  + 4ρ +        −     .                          (17)
+                                              189          8       14
+The bound π < 22/7 gives ρc > 7/51. On the larger rational interval [7/51, 39/50], set
+                                             ρ − 7/51
+                                     u :=                ∈ [0, 1].
+                                          39/50 − 7/51
+                                               ()
+In the degree-three Bernstein basis Bj,3 (u) = 3j uj (1 − u)3−j , exact expansion gives
+
+                                                  ∑
+                                                  3
+                                         p(ρ) =         bj Bj,3 (u),                             (18)
+                                                  j=0
+
+
+                                                    3
+with
+                                                 bj  j
+                                               335005
+                                          0
+                                              2785671
+                                              32947387
+                                          1                                                  (19)
+                                             196635600
+                                             281783183
+                                          2
+                                             578340000
+                                               231517
+                                          3
+                                              13500000
+All four coeﬃcients are positive. Since the Bernstein basis functions are nonnegative and sum to
+one, p(ρ) > 0. Equation (16) proves (13), and (14) follows by integration in K.
+
+
+3      An exact rational upper bound for the loss
+Lemma 4 (Uniform loss bound). For every ρc ≤ ρ ≤ 39/50 and every K ≥ k11 (ρ),
+                                                                  241
+                                                         K>                                              (20)
+                                                                   20
+and                                    ∫ 1
+                                                        x               17
+                                                                2
+                                                                  dx <     .                             (21)
+                                         ρ       (1 + 2KG1 (x))        100
+Proof. Since ρ ≥ ρc ,
+                                         π      π       1 91
+                                            ≥        =π+ > .
+                                        1−ρ   1 − ρc    2 25
+Consequently
+                                                         (         )2       (         )2
+                                                              91                241             471
+                         K ≥ k11 (ρ) > 132 +
+                            2                2
+                                                                        =                  +         ,
+                                                              25                 20            10000
+which proves (20). The rational bounds in (7) now give
+                       √
+                     4 2K       4(140/99)(241/20)    23618   36    478
+                             >                    =        =    +       .                                (22)
+                        3π           3(22/7)         3267    5    16335
+
+      Put y = 1 − x. Equations (9) and (22) yield
+                          ∫ 1                                ∫ 1−ρ
+                                       x dx                                   1−y
+                                                 <                                          dy
+                            ρ    (1 + 2KG1 (x))2              0         (1 + (36/5)y 3/2 )2
+                                                             ∫ 1
+                                                                         1−y
+                                                         ≤                             dy.               (23)
+                                                              0    (1 + (36/5)y 3/2 )2
+
+We bound the last integral by exact rational arithmetic. Set
+                                                  36                        1
+                                        c :=         ,       ϕ(z) :=              ,
+                                                   5                     (1 + z)2
+
+and use the rational grid
+                                             (                          )
+                                                   1 5 3 7 1 9 5 3 7
+                                (ti )10
+                                     i=0 =       0, , , , , , , , , , 1 .                                (24)
+                                                   4 16 8 16 2 16 8 4 8
+
+
+                                                              4
+For zi = ct3i , let
+                                           ϕ(zi+1 ) − ϕ(zi )
+                                  βi :=                      ,            αi := ϕ(zi ) − βi zi .
+                                              zi+1 − zi
+Because ϕ′′ (z) = 6(1 + z)−4 > 0, its secant satisﬁes
+
+                                       ϕ(z) ≤ αi + βi z               (zi ≤ z ≤ zi+1 ).
+
+After y = t2 , the integral in (23) is
+                                                   ∫ 1
+                                                         2t(1 − t2 )ϕ(ct3 ) dt.
+                                                    0
+
+Thus it is at most
+                                                        ∑
+                                                        9
+                                                          (                        )
+                                              Q :=            Fi (ti+1 ) − Fi (ti ) ,                           (25)
+                                                        i=0
+
+where the exact polynomial antiderivative is
+                                       (        )        ( 5      )
+                                             t4           t    t7
+                           Fi (t) := αi t −
+                                          2
+                                                  + 2cβi     −      .                                           (26)
+                                             2             5   7
+
+Every number in (25) is rational. Substitution of the grid (24) gives
+                      1305767238061446154064110434835938779253983373178558326887
+               Q=                                                                ,                              (27)
+                      7706446260271137290663804190970969288616921855152043745280
+and direct subtraction gives
+       17       21643130923235926743681388145629999054466710986445549053
+          −Q=                                                             > 0.                                  (28)
+      100     38532231301355686453319020954854846443084609275760218726400
+Equations (23)–(28) prove (21).
+
+
+4     The base curve
+Fix ρ and now set
+                                                                      √
+                              √                                                         π2
+                       t :=       1 − ρ,        k := k11 (ρ) =            132 +            ,     ρ = 1 − t2 .   (29)
+                                                                                        t4
+The middle-ratio range lies strictly inside the rational interval
+                                                           7    14
+                                                             <t< .                                              (30)
+                                                          15    15
+Indeed,
+                                                                      (        )2
+                                                              11          7
+                                                    t2 ≥         >                  ,
+                                                              50          15
+while ρ ≥ ρc > 7/51 gives
+                                                                           (            )2
+                                                      44                        14
+                                              t =1−ρ<
+                                               2
+                                                         <                                   .
+                                                      51                        15
+
+
+                                                                  5
+Lemma 5 (Analytic endpoint payment). For every ρc ≤ ρ ≤ 39/50, let t and k be as in (29), and
+let
+                                            100ρ2 − 1
+                                    C(ρ) :=                                               (31)
+                                               600
+and
+                                      11        14       3
+                             E(t) :=      −           − .                                 (32)
+                                     14t2 15(1 + 2t) 8t
+Then C(ρ) > 0, E(t) > 0, and
+                                                               1
+                                   S(ρ, k) > C(ρ)k 2 − ρE(t)k + .                                 (33)
+                                                               2
+Proof. First, ρ ≥ ρc > 7/51 > 1/10, so C(ρ) > 0. Lemma 4 and
+
+                                     1 + 2ρ2   17    100ρ2 − 1
+                                             −     =
+                                       12      200      600
+show that the ﬁrst two terms in (4) are strictly greater than C(ρ)k 2 .
+   Set θ = arccos ρ and Y = kG1 (ρ). For 0 ≤ t ≤ 1,
+                                                               t     πt
+                               θ = arccos(1 − t2 ) = 2 arcsin √ ≤ .                                (34)
+                                                                2     2
+                                                             √
+             √ inequality, use convexity of arcsin on [0,
+To see the last                                           1/ 2]: its graph lies below the chord joining
+(0, 0) to (1/ 2, π/4). Furthermore, (9) and k > π/t2 give
+                                                 √
+                                               2 2        14
+                                          Y >       t > t.                                         (35)
+                                                 3        15
+Since Y 7→ Y /(1 + 2Y ) is increasing, (34)–(35) imply
+                                        (                 )
+                                  2πρk        Y         3
+                                                    +
+                                    θ     4(1 + 2Y ) 32
+                                               (                )
+                                                     14       3
+                                          > ρk              +     .                               (36)
+                                                 15(1 + 2t) 8t
+
+Also
+                                          πρk      11ρk
+                                          −  2
+                                               >−       .
+                                          4t       14t2
+Combining these inequalities with (4) proves (33).
+  Finally,
+                           840t2 (1 + 2t)E(t) = 660 + 1005t − 1414t2 .                            (37)
+The quadratic on the right is concave, so its minimum on [7/15, 14/15] occurs at an endpoint. Its
+endpoint values are
+                                        184739      82406
+                                               ,          ,
+                                          225        225
+respectively. Both are positive, proving E(t) > 0.
+
+Proposition 6 (Rational positivity on the base curve). For every ρc ≤ ρ ≤ 39/50,
+                                        (          )
+                                       S ρ, k11 (ρ) > 0.                                          (38)
+
+                                                  6
+Proof. The elementary inequality
+                                     √                         66
+                                         x2 + 132 < x +                 (x > 0)
+                                                               x
+and (7) give
+
+                                                    (157/50)2
+                                             k 2 > 132 +      ,                                    (39)
+                                                        t4
+                                                22  3300t2
+                                              k< 2+        .                                       (40)
+                                                7t    157
+Since C(ρ) > 0 and ρE(t) > 0, Lemma 5 yields
+
+                                                 S(ρ, k) > R(t),                                   (41)
+
+where                                                 (         )
+                                                     (157/50)2
+                           R(t) := C(1 − t ) 132 +
+                                                 2
+                                                          t4
+                                                  (                )                               (42)
+                                                    22      3300t2    1
+                                   − (1 − t )E(t)
+                                           2
+                                                       2
+                                                         +           + .
+                                                    7t       157      2
+   It remains only exact polynomial algebra. Put
+
+                                             H(t) := t4 (1 + 2t)R(t).
+
+Using (37), its factorized form is
+                                                       (            (         )2 )
+                                                                        157
+                     H(t) = C(1 − t )(1 + 2t) 132t +
+                                         2                     4
+                                                                        50
+                                                                              (                )
+                               (1 − t2 )(660 + 1005t − 1414t2 )                   22 3300 4        (43)
+                             −                                                       +     t
+                                              840                                  7   157
+                               1
+                             + t4 (1 + 2t).
+                               2
+For an independently checkable expansion,
+                               20642567    6205067      547983 2 1033727 3
+                    H(t) = −             −          t+         t −        t
+                               24500000 12250000        122500     367500
+                               34911551 4 187093801 5 8679 6
+                             +          t +           t +        t                                 (44)
+                               16485000       8242500      1099
+                               138149 7 2101 8
+                             −       t −       t + 44t9 .
+                                2198       157
+   Set
+                                                     t − 7/15
+                                             u :=             ∈ [0, 1].
+                                                       7/15
+In the degree-nine Bernstein basis,
+
+                                ∑
+                                9                                     ( )
+                                                                       9 j
+                       H(t) =         dj Bj,9 (u),         Bj,9 (u) =     u (1 − u)9−j ,           (45)
+                                                                       j
+                                j=0
+
+
+
+                                                           7
+where exact conversion of (44) gives
+
+                                       j           dj
+                                             65408801807437
+                                       0
+                                           9463832437500000
+                                            299549381760793
+                                       1
+                                           1135659892500000
+                                           15904699805720773
+                                       2
+                                           28391497312500000
+                                           2765605256590021
+                                       3
+                                           3154610812500000
+                                           33203943051258761
+                                       4                                                      (46)
+                                           28391497312500000
+                                           38636221171331747
+                                       5
+                                           28391497312500000
+                                           2538003206646073
+                                       6
+                                           1892766487500000
+                                           28758289199580211
+                                       7
+                                           28391497312500000
+                                           12920786461478803
+                                       8
+                                           28391497312500000
+                                           3428732855971679
+                                       9
+                                           9463832437500000
+Every dj is positive. The Bernstein basis functions are nonnegative and sum to one; hence H(t) > 0
+throughout [7/15, 14/15]. Since t4 (1 + 2t) > 0, this proves R(t) > 0. Equation (41) proves (38).
+
+Proof of Theorem 1. Proposition 3 reduces every point of the upward-closed middle-ratio region
+to the base curve K = k11 (ρ). Proposition 6 proves strict positivity on that curve. Therefore
+S(ρ, K) > 0 throughout Rc , with no upper restriction on K.
+
+Remark 7 (Nature of the certiﬁcate). The rational secants and Bernstein expansions above are
+ﬁnite exact algebra, not interval arithmetic: convexity proves the functional majorant on each
+secant interval, and positivity follows from explicitly displayed rational coeﬃcients. No ﬂoating-
+point evaluation, sampled minimum, or numerical root isolation is used as a premise.
+
+
+
+
+                                                 8
+
