@@ -214,6 +214,44 @@ one-radius Jensen reduction.  The active order is now:
    \(\alpha\)-monotonicity is diagnostically false.  The root-free and
    conditional \(\mathcal C_{\max,8}\) routes are auxiliary only.  All Round
    22 and Round 26--33 witnesses are mandatory regression gates;
+   Round 44 now reconstructs the exact Gate-B scalar on the one-sided
+   upper-\(\alpha\), outer-\(B\) endpoint.  With the same fixed old-inverse
+   side vector in every term, \(B_{\rm lit}=B_0=Q=B-1\) and
+   \[
+    D_A(q)=L_T^++\mathcal R_{\rm tan}^+
+          =L_T^0+\mathcal R_{\rm tan}^0,
+   \]
+   where
+   \[
+    L_T^+=\Omega_-+B_0\zeta+\frac1{2\beta}-J,\qquad
+    L_T^0=\Omega_-+B_0\zeta+\frac9{16\beta}-J,
+   \]
+   and
+   \[
+    \mathcal R_{\rm tan}^+-\mathcal R_{\rm tan}^0
+    =L_T^0-L_T^+=\frac1{16\beta}.
+   \]
+   The \(1/(16\beta)\) term reconciles the two owners; it is not counted
+   twice as an additional reserve.  Exact shelf integration and the hinge
+   ledger prove
+   \[
+    R_p=\mathcal C_p+p(E-\tfrac12),\qquad
+    \mathcal C_p\ge a_p\Delta,
+   \]
+   hence
+   \[
+    \mathscr S-\Phi_\delta^+
+    =\mathcal R_{\rm tan}^++(\mathcal C_p-a_p\Delta)
+    =\frac1{16\beta}+\mathcal R_{\rm tan}^0
+     +(\mathcal C_p-a_p\Delta).
+   \]
+   The top-Bregman and elementary curvature estimates give one intrinsic
+   necessary condition for \(\mathscr S<0\), but do not prove that its
+   support is empty.  The independently audited verdict is **STRUCTURAL PASS — FINAL
+   SIGN OPEN**.  Finite searches found no negative exact-owner record but are
+   diagnostic, not coverage.  Gate A remains stopped, Gate B continues on
+   the localized support, Gate C is inactive, and all theorem and obligation
+   statuses remain unchanged;
 3. if pointwise CST fails, use the weighted aggregate and the positive
    branching bonus \(\mathcal B_d(A)\);
 4. use at most one compact, reproducible certificate in the final implication
@@ -267,15 +305,15 @@ strict retained-shelf \(p\)-convexity and the exact \(q\ge1000\) exclusion,
   \qquad H=(p+a_p)R_1,
  \]
  with its exact nonnegative loss ledger and a STRUCTURAL-PASS-only independent
- audit, but not \(\mathcal T_{42}\ge0\).  Round 43 then proves the radical and
- cap envelopes, a relaxed asymptotic obstruction, and the fixed-chart
- derivative \((E_f-E_*)'(t)>0\).  Its finite negative diagnostic fails only
- the exact hard inequality \(E<E_*\).  Since continuing across the sawtooth
- requires a forbidden \(f\)-, \(B\)-, or \(j\)-indexed wall family, Gate A has
- stopped.  No count-by-count, ratio-chamber, or new-certificate repair is
- authorized.  Gate B is active with
- \(\mathscr S=D_A(q)+R_p+dm/2\); retain all exact shelf, terminal, cap, and
- inverse-fraction correlations.  The endpoint, CST, and theorem remain open.
+ audit, but not \(\mathcal T_{42}\ge0\).  Round 43 proves the radical and cap
+ envelopes and stops Gate A because global continuation would require a
+ forbidden \(f/B/j\)-indexed wall family.  Round 44 reconstructs the exact
+ Gate-B terminal and shelf ledgers and localizes every hypothetical negative
+ point by one intrinsic continuous inequality, without a count, floor, ratio,
+ chamber, or certificate split.  Gate B remains active but localized: prove
+ that this support is empty, or sign the exact literal scalar directly using
+ the old Bregman areas and correlated first-shelf geometry.  Gate C remains
+ inactive.  The endpoint, CST, and theorem remain open.
 The exact lower bound
 \[
  \Phi_\delta^+

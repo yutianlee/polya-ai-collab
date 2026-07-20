@@ -183,6 +183,33 @@ The all-dimensional shell theorem is open.  Its exact live gaps are:
     Thus \(\mathcal T_{42}\ge0\), the endpoint, CST, and the theorem remain
     open, and the proof graph is unchanged.  The floor-free adjacent
    projections remain rejected on relaxed, non-shelf families.
+   Round 44 reconstructs the exact Gate-B terminal and shelf ledgers.  With
+   one fixed literal or adverse old-inverse side vector and
+   \(B_{\rm lit}=B_0=Q\),
+   \[
+    D_A(q)=L_T^0+\mathcal R_{\rm tan}^0
+          =L_T^++\mathcal R_{\rm tan}^+,
+    \qquad
+    \mathcal R_{\rm tan}^+-\mathcal R_{\rm tan}^0
+    =\frac1{16\beta}.
+   \]
+   Exact shelf integration proves
+   \(R_p=\mathcal C_p+p(E-1/2)\) and
+   \(\mathcal C_p\ge a_p\Delta\), hence
+   \[
+    \mathscr S-\Phi_\delta^+
+    =\mathcal R_{\rm tan}^++(\mathcal C_p-a_p\Delta)
+    =\frac1{16\beta}+\mathcal R_{\rm tan}^0
+     +(\mathcal C_p-a_p\Delta)\ge0.
+   \]
+   This comparison does not sign \(\mathscr S\), because
+   \(\Phi_\delta^+\) remains unsigned.  The top-Bregman and curvature
+   reserves give one exact necessary negative-support inequality; proving
+   that this support is empty is the remaining Gate-B task.  The clean-room and final
+   audit verdict is **STRUCTURAL PASS — FINAL SIGN OPEN**.  Finite searches
+   found no negative exact-owner record but are not coverage.  Gate A remains
+   stopped, Gate B continues localized, Gate C is inactive, and all
+   obligation statuses remain unchanged.
    The other live classes are higher equal-count \(Q_N\) and inverse faces,
    generic equal-count inverse faces, simultaneous \(\alpha=0\) \(B/Q\)
    corners, and general lower shelves outside the exact Round 32 and Round 39
@@ -192,10 +219,11 @@ The all-dimensional shell theorem is open.  Its exact live gaps are:
    Round 28's conditional Cmax candidates and the root-free scalar remain
    auxiliary.  Global \(\alpha\)-monotonicity is diagnostically false.  Keep
    all Round 22 and Round 26--33 witnesses as regression gates.  Gate B now
-   returns to the exact \(\mathscr S\), retaining the shelf trapezoid,
-   terminal surplus, cap, and inverse fractions.  If that pointwise route
-   fails, continue to the weighted aggregate.  The historical ratio ladder is
-   not closure.
+   continues from the exact Round 44 scalar and its localized
+   negative-support set, retaining all terminal Bregman areas, the exact shelf
+   trapezoid, cap, and inverse fractions.  If this exact pointwise route fails
+   under the revised stop rule, continue to the weighted aggregate.  The
+   historical ratio ladder is not closure.
 3. **Assembly.** Complete either the pointwise all-sector assembly or the
    weighted aggregate sufficient route.  Own the dimension-dependent
    no-mode equality face, the

@@ -800,6 +800,46 @@ This bank is separate from the completed Revision 2 proof.
   The exact-owner sign, endpoint, CST, theorem, and proof-graph statuses remain
   open or unchanged as before.
 
+- **Exact Gate-B terminal/trapezoid ledger and intrinsic negative-support
+  localization (Round 44, independently audited structural pass; final sign
+  open).**  On the exact one-sided upper-\(\alpha\), outer-\(B\) owner, the
+  literal count is \(B_{\rm lit}=B_0=Q\), while \(B=B_0+1\) is retained only
+  as gap-side bookkeeping.  Fixing the same literal or adverse old-inverse
+  side vector throughout, the exact terminal decompositions are
+  \[
+   D_A(q)=L_T^++\mathcal R_{\rm tan}^+
+         =L_T^0+\mathcal R_{\rm tan}^0,
+  \]
+  with
+  \[
+   L_T^+=\Omega_-+B_0\zeta+\frac1{2\beta}-J,\qquad
+   L_T^0=\Omega_-+B_0\zeta+\frac9{16\beta}-J,
+  \]
+  and
+  \[
+   \mathcal R_{\rm tan}^+-\mathcal R_{\rm tan}^0
+   =\frac1{16\beta}.
+  \]
+  Exact shelf integration and the hinge representation give
+  \[
+   R_p=\mathcal C_p+p(E-\tfrac12),\qquad
+   \mathcal C_p\ge a_p\Delta,
+  \]
+  so the complete restored-loss ledger is
+  \[
+   \mathscr S-\Phi_\delta^+
+   =\mathcal R_{\rm tan}^++(\mathcal C_p-a_p\Delta)
+   =\frac1{16\beta}+\mathcal R_{\rm tan}^0
+    +(\mathcal C_p-a_p\Delta).
+  \]
+  The top-Bregman and elementary curvature bounds imply the single
+  necessary negative-support inequality printed in the Round 44 lead note.
+  They do not prove that this support is empty.  The final audit verdict is
+  **STRUCTURAL PASS — FINAL SIGN OPEN**.  Diagnostics found no negative
+  exact-owner record but are non-covering.  Gate A remains stopped, Gate B
+  continues localized, Gate C is inactive, and the endpoint, CST, theorem,
+  and proof-graph statuses remain open or unchanged.
+
 No all-dimensional theorem follows until the high-floor first-drop
 residual is closed pointwise or by the weighted aggregate and the final
 assembly is audited.
