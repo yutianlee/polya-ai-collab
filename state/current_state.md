@@ -804,6 +804,64 @@ The exact-owner sign \(\mathcal T_{42}\ge0\), the endpoint, CST, and the
 theorem remain open.  The rejected floor-free adjacent projections remain
 invalid replacements and do not falsify the endpoint or CST.
 
+Round 44 reconstructs Gate B losslessly at the exact one-sided
+upper-\(\alpha\), outer-\(B\) endpoint.  At the literal outer wall
+\(B_{\rm lit}=B_0=Q\), while \(B=B_0+1\) is retained only as the gap-side
+label.  After fixing the same literal or adverse old-inverse side vector in
+every term,
+\[
+ D_A(q)=L_T^++\mathcal R_{\rm tan}^+
+       =L_T^0+\mathcal R_{\rm tan}^0,
+\]
+\[
+ L_T^+=\Omega_-+B_0\zeta+\frac1{2\beta}-J,\qquad
+ L_T^0=\Omega_-+B_0\zeta+\frac9{16\beta}-J,
+\]
+and
+\[
+ \mathcal R_{\rm tan}^+-\mathcal R_{\rm tan}^0=\frac1{16\beta}.
+\]
+Exact first-shelf integration gives
+\[
+ R_p=\mathcal C_p+p(E-\tfrac12),\qquad
+ \mathcal C_p\ge a_p\Delta,
+\]
+so the complete restored-loss identity is
+\[
+ \mathscr S-\Phi_\delta^+
+ =\mathcal R_{\rm tan}^++(\mathcal C_p-a_p\Delta)
+ =\frac1{16\beta}+\mathcal R_{\rm tan}^0
+  +(\mathcal C_p-a_p\Delta).
+\]
+The intrinsic bounds
+\[
+ \mathcal R_{\rm tan}^0\ge
+ \frac9{64\pi\sqrt{K^2-q^2}\,\beta^3},
+\qquad
+ \mathcal C_p\ge\frac{p^3}{6\pi}
+ \left(
+ \frac1{\sqrt{\mu^2-r^2}}-\frac1{\sqrt{K^2-r^2}}
+ \right)
+\]
+imply that every hypothetical negative point must satisfy
+\[
+\begin{aligned}
+ p(E_*-E)>{}&\Omega_-+B_0\zeta+\frac9{16\beta}-J\\
+ &+\frac9{64\pi\sqrt{K^2-q^2}\,\beta^3}
+ +\frac{p^3}{6\pi}
+ \left(
+ \frac1{\sqrt{\mu^2-r^2}}-\frac1{\sqrt{K^2-r^2}}
+ \right).
+\end{aligned}
+\]
+This is one necessary negative-support localization, not a positivity proof
+or certificate.  The clean-room and final independent verdicts are
+**STRUCTURAL PASS — FINAL SIGN OPEN**.  The finite searches found no negative
+exact-owner record but do not cover the continuum.  Gate A remains stopped,
+Gate B continues on the localized support, and Gate C is inactive.  The
+endpoint, high-floor CST, pointwise assembly, and all-dimensional theorem
+remain open; the proof graph and manuscript are unchanged.
+
 The Round 30 finite diagnostic still retains 933 necessary-condition records,
 none above \(q=33\), and finds minimum \(0.30090314669\ldots\) at
 \((q,r,p,m)=(5,1,3,1)\).  The observed sharper cutoff and the unarchived
@@ -818,23 +876,15 @@ proof may use at most one consolidated compact certificate.  Round 32 now
 selects that compact fallback for its finite shelf remainder, so the legacy
  first-floor certificate must be analytically replaced or consolidated before
  final assembly.  Round 41's second finite certificate is not authorized for
- that chain, and Rounds 42--43 introduce no certificate.  Gate A is exhausted;
- the next pointwise task is Gate B on the exact scalar
- \(\mathscr S=D_A(q)+R_p+dm/2\), retaining the first-shelf trapezoid, complete
- terminal surplus, cap, and inverse fractions.  Do not repair
- \(\mathcal T_{42}\) with a count, floor, ratio, chamber, or certificate
- family.  Activity and the
-outer-\(B\)/lower-shelf face are no longer
-live endpoints.  A certified feasible \(\Gamma_{\rm gap}<0\) stops that
-universal target and activates the prescribed exact-scalar fallback; no
-ratio/count partition is allowed.  The other live strata are higher
-\(Q_N\) faces \(N\ge2\), equal-count inverse faces, simultaneous
-\(\alpha=0\) \(B/Q\) corners, and general lower shelves outside the proved
- Round 32 and Round 39 scopes.  The constant-\(K\) hard-gap proof is scoped to
-\(r\ge1\) on the integer grid and
- \(r\ge3/2\) on the half-integer grid.  The Gate-B return to \(\mathscr S\) is
- now active; if the exact pointwise route fails under the revised stop rule,
- continue to the weighted aggregate, not a new lossy surrogate.
+ that chain, and Rounds 42--44 introduce no authorized certificate.  Gate A
+ is exhausted.  Gate B remains active and is now localized by the exact
+ Round 44 necessary-support implication.  The next single pointwise task is
+ to prove that this support is empty using the retained old-level Bregman areas and
+ exact first-shelf correlations, or to sign the literal exact inequality
+ directly.  Do not repair the target with a count, floor, ratio, chamber, or
+ certificate family.  Gate C is inactive; if Gate B genuinely fails under the
+ revised stop rule, continue to the weighted aggregate, not a new lossy
+ surrogate.
 
 ## Evidence and remaining work
 
@@ -844,13 +894,14 @@ The current mathematical audits include
 Independent passes reconstructed the angular, radial/ball, and scalar
 components and found no mathematical failure. Exact rational and
 outward-rounded interval scripts are optional transcription regressions only.
-The separate Round 38--43 general-dimensional notes each have an independent
+The separate Round 38--44 general-dimensional notes each have an independent
 audit and exact Mathematica replay at their stated structural scope.  Round
 41 is not an authorized analytic closure; Round 42 has only a structural PASS;
-Round 43 has an analytic structural PASS and Gate-A STOP.  Their finite
-falsification diagnostics remain diagnostic only.
-None of these changes the authoritative open status of high-floor CST or the
-all-dimensional theorem.
+Round 43 has an analytic structural PASS and Gate-A STOP; Round 44 has a
+**STRUCTURAL PASS — FINAL SIGN OPEN** and keeps Gate B active on its localized
+support.  Both Round 44 numerical searches are diagnostics, not coverage or
+certificates.  None of these changes the authoritative open status of
+high-floor CST or the all-dimensional theorem.
 
 Before external dissemination, the remaining work is:
 
