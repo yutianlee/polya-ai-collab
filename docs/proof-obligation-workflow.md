@@ -5,6 +5,9 @@ This workflow makes mathematical claims, independent reconstructions, and certif
 ## Core Files
 
 - `state/proof_obligations.yml`: authoritative claim graph.
+- `state/approach_registry.md`: non-authoritative discovery-route registry.
+- `human/inbox/general-d-next-discovery-portfolio.md`: current blind discovery
+  target packet.
 - `manifests/reading_packet.md`: compact graph-derived packet.
 - `state/next_round_prompts.md`: role-specific next tasks.
 - `state/last_validation_report.md`: latest patch-validation result.
@@ -12,7 +15,26 @@ This workflow makes mathematical claims, independent reconstructions, and certif
 - `sources/*.md`: source cards required before external theorem use.
 - `rounds/*`: attempts, reviews, certificates, and audit trail.
 
-## Cycle Flow
+## Discovery Flow
+
+Use discovery when no mechanism is selected or the current mechanism has
+stalled at a theorem-strength implication.
+
+1. Freeze one exact target packet without a favored derivation.
+2. Register incompatible mathematical approach families.
+3. Run bounded, read-only, independent Codex subagents on underexplored
+   families; keep most agents blind to the incumbent route.
+4. Freeze outputs before cross-pollination.
+5. Record each route's mechanism, strongest artifact, first gap,
+   falsification result, and disposition in `state/approach_registry.md`.
+6. Redirect later waves dynamically. Reopen a blocked route only for a
+   materially new mechanism.
+7. Promote only a bounded, falsifiable claim into the proof-obligation graph.
+
+Discovery can produce proofs, exact counterexamples, lemmas, or precise gaps,
+but it cannot promote mathematical status.
+
+## Certification Flow
 
 1. Select one primary obligation and at most one independent secondary obligation.
 2. Split broad bottlenecks before assigning proof attempts.
@@ -25,6 +47,10 @@ This workflow makes mathematical claims, independent reconstructions, and certif
 9. When the target theorem is assembled, run a fresh final referee audit before promotion.
 
 Independent obligations need not wait for one another. Barrier synchronization is limited to genuine dependencies.
+
+The native Codex discovery layer and the A1--A4 certification orchestrator are
+deliberately separate. Discovery maximizes independent mechanisms;
+certification maximizes reconstruction and audit quality.
 
 ## Bottleneck Fields
 

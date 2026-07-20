@@ -385,7 +385,17 @@ These are configurable functional roles, not a permanent mathematical hierarchy.
 
 ## Obligation Protocol
 
-Each cycle is organized around one primary proof obligation and at most one independent secondary obligation:
+The workflow separates discovery from certification. When a selected
+architecture has stalled at a theorem-strength gap, native Codex subagents run
+a blind portfolio across incompatible mechanisms using
+[`state/approach_registry.md`](state/approach_registry.md) and the current
+[discovery launch packet](human/inbox/general-d-next-discovery-portfolio.md).
+The root freezes and compares those attempts; discovery metadata never changes
+the proof graph.
+
+Once a route produces a concrete bounded claim, certification is organized
+around one primary proof obligation and at most one independent secondary
+obligation:
 
 1. The project lead prepares an exact obligation packet and assigns only needed roles.
 2. The incumbent author and clean-room solver work independently.
@@ -394,6 +404,11 @@ Each cycle is organized around one primary proof obligation and at most one inde
 5. One lead integrates discharged obligations and writes a machine-readable `State Patch`.
 6. The validator applies accepted changes and regenerates the reading packet.
 7. A fresh final referee audits an assembled theorem before promotion.
+
+Project-scoped Codex behavior lives in [`AGENTS.md`](AGENTS.md),
+[`.codex/config.toml`](.codex/config.toml), and the read-only custom agents in
+`.codex/agents/`. The existing A1--A4 web/API orchestrator remains the
+certification pipeline; it is not the discovery portfolio.
 
 The Revision 2 reviewed release uses the exact layer cake as its explanatory spine and
 has no live finite owner graph.  Its disjoint cover is: no mode for
@@ -426,6 +441,7 @@ math_collab/
   human.py
   normalize_markdown.py
 state/
+  approach_registry.md
   proof_obligations.yml
   next_round_prompts.md
   last_validation_report.md

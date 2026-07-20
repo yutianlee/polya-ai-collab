@@ -254,6 +254,23 @@ The old fixed-panel assumption is retired. A cycle does not require every agent 
 
 Independent workstreams may run concurrently. Barriers exist only at actual dependency boundaries: an adversarial audit waits for frozen proof attempts, manuscript assembly waits for its component obligations, and theorem promotion waits for required certificates and reviews.
 
+## Portfolio Discovery Before Assignment
+
+Obligation-centered assignment is the certification layer, not the whole
+research search. When a selected architecture stalls at a theorem-strength
+gap, the lead first runs a portfolio-discovery phase from one exact target
+packet. Native Codex subagents explore incompatible mechanisms independently;
+most do not receive the incumbent proof or favored route. The lead maintains
+`state/approach_registry.md`, redirects later waves toward underexplored
+families, and blocks repeated equivalent reductions. Discovery artifacts do
+not mutate the proof graph.
+
+A route enters the obligation pipeline only after it supplies a new bounded,
+falsifiable claim with explicit dependencies. The existing lead, clean-room,
+adversarial, certification, synthesis, and validation rules then apply
+unchanged. This separation prevents the rigorous review roles from prematurely
+herding the discovery population around one attractive reduction.
+
 ## Shell Phase Decomposition
 
 `SHELL-phase-enclosures` is an integration obligation, not a single indivisible lemma. It depends on separate regime obligations for oscillatory behavior, the outer turning point, the inner-boundary transition, evanescent exclusion, and global overlap compatibility. Parameter uniformity and the two endpoint limits remain separate downstream obligations.
