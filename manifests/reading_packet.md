@@ -3,14 +3,14 @@
 Run: `polya-main`
 
 Current phase: completed (d=3) shell theorem under review; separate active
-general-dimensional analytic extension.
+general-dimensional portfolio on the scoped (d=4) weighted aggregate.
 
 ## Authority
 
-The authoritative graph is `state/proof_obligations.yml`, with 124 unique
-obligations, selected target `SHELL-general-d-high-floor-first-drop-CST`,
+The authoritative graph is `state/proof_obligations.yml`, with 127 unique
+obligations, selected target `SHELL-general-d-weighted-aggregate-d4`,
 and SHA-256
-`a5b2489ab8a45a5d58b2b76b27cb42ba3fd6ff3c6b40c7dc9d9832789e9003d4`.
+`33d799d41dc625681a4299be532e7648e87064d7bfe4a591982201d2e244a230`.
 
 The historical **d=3** Round 22 State Patch must not be replayed. The current
 top-level `round_selection`, the Round 25 d=3 proof artifacts, the Revision 2
@@ -460,6 +460,17 @@ second witness, however,
   \(q=33\), together with the unarchived edge experiment, are non-premises.
   The exact scalar and then the
   weighted aggregate are the approved fallbacks.
+
+Round 48 follows the updated portfolio directive and selects the separate
+scoped node `SHELL-general-d-weighted-aggregate-d4`.  Two supporting nodes are
+now `proved_internal`: complete full-outer inverse-action cells have reserve
+(>19N/48+27/128), and complete deep-inner cells below
+(z=\mu/\sqrt2) have positive reserve.  The scoped aggregate itself remains
+`proposed` with no theorem-level implication.  Its first inverse-layer gap is
+the shallow-inner band, the possible interface-straddling cell, terminal
+truncation, and exact compensation with the unused top interval.  A directed
+interval counterexample rejects only the stronger continuous quarter-node
+polynomial comparison; literal discrete QCL is positive at that point.
 
 The general-dimensional theorem must not be stated as proved.  The historical
 ratio ladder and certificates remain provenance and fallback evidence only.

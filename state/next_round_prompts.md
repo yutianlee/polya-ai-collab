@@ -725,3 +725,26 @@ scope and constants. Do not infer novelty from absence in a limited search.
   certificate; before
   final assembly, analytically replace the legacy first-floor check or fold
   it into the same consolidated verification artifact as Round 32.
+
+## Round 49 selected portfolio continuation
+
+Work on the literal (d=4) inverse-layer residual left by Round 48.  You may
+use the certified full-outer and deep-inner cell lemmas, but must preserve
+literal strict ceilings and may not infer cellwise necessity from QCL.
+
+Primary bounded target: prove, falsify, or exactly compensate complete
+shallow-inner cells in
+
+\[
+ A(\mu)<t<A(\mu/\sqrt2),
+\]
+
+then treat the unique possible interface-straddling cell and terminal
+truncation together with the unused top interval.  A valid output must give
+an exact loss ledger and the first unsupported implication.
+
+Keep independent pressure on the Round 47 component-(U) route and the
+Round 48 row-cone (\Theta) adverse-wall reduction.  Do not reuse the
+interval-falsified continuous quarter-node polynomial comparison, do not
+transfer the pointwise (1/\sigma) slab lemma to the weighted
+(\xi^2/\sigma) kernel, and do not promote finite positive wall sweeps.

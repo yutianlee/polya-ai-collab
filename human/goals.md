@@ -178,3 +178,15 @@ not a solution of the general Pólya conjecture.
 - Do not claim the all-dimensional theorem until the remaining high-floor
   branch, moderate-frequency window, and every equality face have an explicit
   owner.
+
+## Round 48/49 general-dimensional goal
+
+The workflow now targets the literal (d=4) weighted aggregate through
+portfolio discovery.  Preserve the certified complete full-outer and
+deep-inner inverse-action cell lemmas.  Next prove, falsify, or exactly
+compensate the complete shallow-inner band, the possible interface-straddling
+cell, and terminal truncation with the unused top interval.  Keep QCL marked
+as sufficient rather than necessary, retain the interval counterexample to
+the unrestricted continuous quarter-node strengthening, and leave the
+general-dimensional theorem unproved until a complete aggregate or pointwise
+assembly passes certification.
