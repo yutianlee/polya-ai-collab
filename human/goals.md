@@ -115,14 +115,59 @@ not a solution of the general Pólya conjecture.
   milestone is narrowed by Round 36: \(B-Q\in\{0,1\}\), every
   one-level-gap point has \(L_T>1-J>6/7\), and the full selected scalar is
   positive for \(p-dm\le12/7\).  Round 37 further proves
-  \(B_0=Q=B-1\ge1\), the zero top interval, the lossless
+  \(B_0=Q=B-1\ge1\), the zero top interval, the selected-projection
   \(\Gamma_{\rm gap}\) normal form with \(\Omega>0\) and \(\Xi\ge0\), and
   the strict sufficient reduction \(\Phi_\delta^+>\mathcal H_\Delta\).
-  Neither form is yet signed.  First prove that exact residual sign for the
-  transported gap-wall endpoints \(p-dm>12/7\); then treat higher equal-count
-  \(Q_N\) and inverse faces, simultaneous \(\alpha=0\) \(B/Q\) corners,
-  and general lower shelves outside Round 32.  Retain the actual \(E\), inverse fractions, exact cap,
-  and top interval.
+  Round 38 proves \(0<u<\alpha/2<1/2\), the count--phase lemma
+  \(B_0(\pi/(2t)-1)>1/5\), and
+  \[
+   \Gamma_{\rm gap}>
+   \frac{37}{35}-\frac{p-dm}{2}.
+  \]
+  Hence every gap with \(p-dm\le74/35\), including every residual
+  \(p=2\) gap, is closed.  It also proves the unified
+  \(\chi\)-compensation bound.  Round 39 proves \(q\ge5\), \(J<1/10\), and
+  \[
+   \Gamma_{\rm gap}>
+   \frac{11}{10}-\frac{p-dm}{2},
+  \]
+  so \(p-dm\le11/5\) is closed and a residual \(p=3\) gap has
+  \(dm<4/5\).  It derives one exact intrinsic outer-\(B\) inequality and an
+  optional root-free projection, then closes the simultaneous
+  outer-\(B\)/lower-shelf endpoint by \(j\ge1\) and phase stretch.  Round 40
+  proves the strict midpoint action payment on the one-sided upper-\(\alpha\)
+  outer-\(B\) endpoint and reduces that face to one continuous target
+  \(\mathcal R_*(p,m,t)>0\).  Its two branches are strictly convex in one
+  auxiliary variable.  Round 41 gives exact rational enclosures and a
+  successful 4,405-sign Bernstein computation, but that computation is an
+  unauthorized new finite certificate and does not prove the final sign.
+  Treat the selected \(\Gamma_{\rm OB}\to\mathcal R_*\) projection as
+  analytically exhausted.  Round 42 completes the one permitted stronger
+  specialization and proves, as structural evidence only,
+  \[
+   \Phi_\delta^+>\mathcal T_{42}:=
+   \frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2},
+   \qquad H=(p+a_p)R_1.
+  \]
+  The exact loss ledger is (R42.17), and the independent verdict is
+  STRUCTURAL PASS only; final sign open.  Round 43
+  (`human/outbox/general-d-round-43-hard-remainder-isolation-and-gate-a-stop.md`)
+  proves \(H\ge\underline H\), \(h>U_q^3/(3\pi\mu^2)\), and the fixed-chart
+  derivative \((E_f-E_*)'(t)>0\).  Its relaxed asymptotic obstruction shows
+  that count--phase/radial data alone cannot sign \(\mathcal T_{42}\), and its
+  finite negative diagnostic fails the exact owner precisely at \(E<E_*\).
+  Global continuation requires the forbidden \(f/B/j\)-indexed wall analysis,
+  so Gate A has stopped.  Gate B is active with
+  \[
+   \mathscr S=D_A(q)+R_p+\frac{dm}{2}.
+  \]
+  Retain the exact first-shelf trapezoid, terminal surplus, cap, and inverse
+  fractions.  The exact-owner sign \(\mathcal T_{42}\ge0\), the endpoint, CST,
+  and the theorem remain open.  Then treat higher equal-count
+  \(Q_N\) and inverse faces,
+  simultaneous \(\alpha=0\) \(B/Q\) corners, and general lower shelves
+  outside Rounds 32 and 39.  Retain the actual \(E\), inverse fractions,
+  exact cap, and top interval.
   Root-free and conditional
   \(\mathcal C_{\max,8}\) signs are auxiliary only.  Positive finite samples
   remain diagnostic and are not theorem premises.

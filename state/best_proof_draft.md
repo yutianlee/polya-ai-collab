@@ -510,15 +510,200 @@ proves on every hard gap point that
 \]
 and that the terminal top interval is zero.  Defining the exact positive
 inverse-angle reserve \(\Omega\) and \(\Xi=E-M_4\ge0\), it obtains the
-lossless identity
+identity that is exact for the selected projected scalar
 \[
  \Gamma_{\rm gap}
  =1-J+\frac{B_0d}{2c}+\Omega
  +(p+a_p)M_4+p\Xi-\frac{p-dm}{2}.
 \]
 It also proves \(\Phi_\delta^+>\mathcal H_\Delta\) for a count-free maximum
-of three correlated shelf payments.  No sign of either right-hand side is
-proved on the remaining continuum.  Higher
-equal-count \(Q_N\) and inverse faces, the \(\alpha=0\) combined corners,
-and lower shelves outside Round 32 are still open.  No global
-\(\alpha\)-monotonicity shortcut or all-dimensional conclusion is available.
+of three correlated shelf payments.  Round 38 then puts
+\(u=\lambda-j\), \(S_q=A(q)-W\), and \(\chi=u-S_q\), and proves
+\[
+ 0<S_q\le u<S_q+h<\frac{\alpha}{2},
+ \qquad 0\le\chi<h,
+ \qquad 0<u<\frac{\alpha}{2}<\frac12.
+\]
+In particular there is no positive-alpha integer-\(\lambda\) wall.  With
+\(\widehat\Xi=\Delta-M_4\ge0\), it refines the selected scalar and proves
+the intrinsic count--phase bound
+\[
+ B_0\left(\frac{\pi}{2t}-1\right)>\frac15.
+\]
+Therefore
+\[
+ \Gamma_{\rm gap}>
+ \frac{37}{35}-\frac{p-dm}{2},
+\]
+which closes every one-level gap with \(p-dm\le74/35\), including every
+residual \(p=2\) gap.  All remaining one-level gap work has \(p\ge3\).
+Round 38 also proves a unified \(\chi\)-compensation lower bound for
+\(\Phi_\delta^+\) that interpolates between the \(Q\)-wall newest-inverse
+payment and the outer-\(B\) adjacent-action payment.  That lower bound is
+structural; it is not a new certificate.
+
+Round 39 first sharpens the cap on this residual sector.  Put
+\(x=r+p\) and \(q=x+m\).  Since \(p\ge3\), one has \(q\ge5\), and the cap
+monotonicity from Round 23 gives
+\[
+ J<2I_{q+1}(q)\le2I_6(5)<\frac1{10}.
+\]
+Together with \(B_0\zeta>1/5\), this yields
+\[
+ \Gamma_{\rm gap}>
+ \frac{11}{10}-\frac{p-dm}{2}.
+\]
+Hence every gap with \(p-dm\le11/5\) is closed.  In particular, any
+remaining \(p=3\) gap satisfies \(dm<4/5\).
+
+On the gap-side outer-\(B\) wall, put
+\[
+ \beta=\frac1\pi\arccos\frac qK,\qquad v=G_K(q),\qquad
+ U_z=(\mu^2-z^2)^{1/2},\qquad
+ g=\frac{U_r}{U_x}-1,\qquad
+ R_1=\frac{U_r-U_x}{U_x-U_q}.
+\]
+There \(B_0=v-3/4\), \(y_B=0\), and the selected scalar is exactly
+\[
+ \Gamma_{\rm OB}=
+ \frac1{2\beta}-J+\Omega_-+B_0\zeta
+ +p\Delta+a_pM_4+2pe_p-\frac{p-dm}{2}.
+\]
+The exact action coordinates and the adjacent-action and elasticity bounds
+give the single intrinsic inequality
+\[
+\begin{aligned}
+ \Gamma_{\rm OB}>F_{\rm OB}:={}&
+ \frac1{2\beta}-J+\Omega_-+(v-\tfrac34)\zeta\\
+ &+pR_1[A(x)-A(q)]+a_pg[A(x)-W]+2pe_p
+ -\frac{p-dm}{2}.
+\end{aligned}
+\]
+Its entire displayed loss is
+\[
+ p\{\Delta-R_1[A(x)-A(q)]\}
+ +a_p\{M_4-g[A(x)-W]\}>0.
+\]
+If an inverse-root-free projection is needed, retain
+\[
+ \Omega_-\ge\Omega_{\rm RF}:=
+ \frac{\pi^2}{2Kt^3\sin t}
+ (v-\tfrac34)(W-\tfrac v2+\tfrac18).
+\]
+This is a projection of the same inequality, not another global scalar or
+compact certificate.
+
+At the simultaneous outer-\(B\)/lower-shelf endpoint, \(e_p=0\).  Round 39
+proves from the exact endpoint floor geometry that \(j\ge1\), and then a
+single phase-stretch inequality makes the above intrinsic residual strictly
+positive.  Thus that complete endpoint is closed.  The one-sided
+upper-\(\alpha\) outer-\(B\) endpoint is the final Gate-A face addressed
+below.
+
+Round 40 returns on this endpoint to the exact \(p\Delta\) term.  For
+\[
+ \mathcal D(z)=b_K(z)-b_\mu(z),\qquad y=r+\frac p2,
+\]
+strict midpoint convexity and a cosine chord yield
+\[
+ p\Delta>p^2\delta_y,\qquad
+ \delta_y=\frac{y(1-\cos t)}
+ {\pi\sqrt{\mu^2-y^2\cos^2t}}.
+\]
+Writing \(N=p/2+m+1\), \(\rho=N/\mu\), and
+\[
+ C(\rho,t)=\frac{(1-\rho)(1-\cos t)}
+ {\pi\sqrt{\sin^2t+2\rho}},
+\]
+one has \(\delta_y>C\).  The outer count satisfies
+\(B_0>W/4+9/16\), hence
+\[
+ \Gamma_{\rm OB}>\mathcal R(\mu,p,m,t)
+ =\frac9{10}+\frac9{16}\zeta+\frac14\zeta\mu L_0(t)
+  +p^2C(\rho,t)-\frac{p-dm}{2}.
+\]
+This lower expression is strictly increasing in \(\mu\), while feasibility
+gives \(\mu\ge p+m+2\) and \(\mu>5/(4L_0)\).  Therefore the endpoint would
+close once the single sign
+\[
+ \mathcal R_*(p,m,t):=
+ \mathcal R\!\left(\max\left\{p+m+2,\frac5{4L_0(t)}\right\},p,m,t\right)>0
+\]
+is proved.  The two analytic branches are strictly convex in one auxiliary
+variable and agree at their seam.  Round 40 proves this reduction, not the
+last continuum sign.  Round 41 proves exact global rational enclosures and
+transports both branch signs to fixed rational polynomial problems.  Its
+exact replay checks 4,405 Bernstein coefficients (4,259 positive and 146
+zero) and ends in `round41BernsteinSignReplayOK=True`.  The independent audit
+verdict is NOT PASS as a strategy-authorized analytic closure and PASS only
+as an exact structural reduction and computer-assisted candidate.  The
+certificate is therefore not a premise of this draft: \(\mathcal R_*>0\) and
+the endpoint remain open.  The selected
+\(\Gamma_{\rm OB}\to\mathcal R_*\) projection is analytically exhausted; the
+last stronger Gate-A specialization is Round 42.  At
+\(\chi=h,\ y_B=0,\ \alpha\uparrow1^-\), put
+\[
+ H=(p+a_p)R_1,\qquad M=\min\{\zeta,H\}.
+\]
+The exact endpoint identity and the Round 38 adjacent-action bound imply the
+strict structural reduction
+\[
+ \boxed{\Phi_\delta^+>\mathcal T_{42}},\qquad
+ \mathcal T_{42}:=\frac9{10}+B_0M+Hh-\frac{p-dm}{2}.
+\]
+With
+\[
+ \mathcal A_{\rm adj}:=(p+a_p)
+  [\Delta-R_1(j+e_p+h)]>0,\qquad
+ \mathcal A_{\rm cap}:=\frac1{2\beta}-J-\frac9{10}>0,
+\]
+the complete loss ledger is the exact identity
+\[
+ \boxed{
+ \Phi_\delta^+-\mathcal T_{42}
+ =\mathcal A_{\rm cap}+\Omega_-+\mathcal A_{\rm adj}
+  +B_0(\zeta-M)+jH+(H+2p)e_p.}
+\]
+The algebra-only replay ends in
+`round42StrongerPhiReplayOK=True`.  The independent verdict is STRUCTURAL PASS
+only; final sign open.  Round 43 retains the exact hard correlation
+\[
+ E<E_*:=\frac{p-dm}{2p}
+\]
+and proves the hand-checkable envelopes
+\[
+ H\ge\underline H:=
+ \frac{(p+a_p)p(2r+p)}{m(2x+m)}
+ \min\!\left\{\frac{U_x}{U_r},
+ \sqrt{\frac{U_q}{U_r}}\right\},
+ \qquad h>\frac{U_q^3}{3\pi\mu^2}.
+\]
+An exact relaxed family has \(\lim\mathcal T_{42}/N<0\), so the count--phase
+and radial data alone cannot sign the target; the family leaves the common
+shelf.  A finite high-precision negative diagnostic satisfies the synchronized
+outer wall, activity, common shelf, and terminal first drop, but fails the
+hard owner precisely at \(E<E_*\).  It is not an interval certificate or a
+counterexample on the live owner.  For fixed \((r,p,m,f)\), Round 43 also
+proves
+\[
+ \boxed{\frac d{dt}(E_f-E_*)=
+ \frac1\pi\left[\tan t\left(\sqrt{K^2-r^2}+\sqrt{K^2-x^2}\right)
+ -\frac mp\right]>0}.
+\]
+This transport is chart-local: \(E_{f+1}=E_f-2\), while the outer face samples
+the separate integer \(B_0\)-walls.  Global continuation therefore requires
+the forbidden \(f\)-, \(B\)-, or \(j\)-indexed wall family.  The independently
+audited Round 43 decision is analytic structural PASS and **Gate A STOP**.
+Gate B is active and restores the exact shifted-tail scalar
+\[
+ \boxed{\mathscr S=D_A(q)+R_p+\frac{dm}{2}}.
+\]
+No sign of \(\mathcal T_{42}\) on its exact owner is proved:
+\(\mathcal T_{42}\ge0\), this endpoint, CST, and the theorem remain open.
+
+Higher
+equal-count \(Q_N\) and inverse faces, generic equal-count inverse faces, the
+\(\alpha=0\) combined corners, and lower shelves outside the proved Round 32
+and Round 39 scopes remain open.  The backbone audit, high-floor CST, final
+assembly, and all-dimensional theorem remain open; no global
+\(\alpha\)-monotonicity shortcut is available.

@@ -118,19 +118,84 @@ The all-dimensional shell theorem is open.  Its exact live gaps are:
     \qquad \Omega>0,\quad\Xi\ge0.
    \]
    It also proves the count-free strict sufficient reduction
-   \(\Phi_\delta^+>\mathcal H_\Delta\).  The exact selected gap is now the
-   sign of \(\Gamma_{\rm gap}\), or sufficiently
-   \(\mathcal H_\Delta\ge0\), on the transported endpoints with
-   \(p-dm>12/7\); both signs remain open.  The other live classes are higher equal-count
-   \(Q_N\) and inverse faces, simultaneous \(\alpha=0\) \(B/Q\) corners,
-   and general lower shelves outside the exact Round 32 domain.  The observed
+   \(\Phi_\delta^+>\mathcal H_\Delta\).  The normal form is exact only for
+   the selected projection; its discarded reserve relative to
+   \(\Phi_\delta^+\) is \(a_p(\Delta-M_4)\).
+   Round 38 proves the sharp position coordinate
+   \(0<u<\alpha/2<1/2\), so no finite integer-\(\lambda\) wall lies in the
+   positive-alpha gap.  It proves
+   \[
+    B_0\left(\frac{\pi}{2t}-1\right)>\frac15,\qquad
+    \Gamma_{\rm gap}>
+    \frac{37}{35}-\frac{p-dm}{2},
+   \]
+   and therefore closes every gap with \(p-dm\le74/35\), including all
+   \(p\le2\) gaps.  It also derives a unified proof-level
+   \(\chi\)-compensation for \(\Phi_\delta^+\).  Round 39 then proves
+   \(q\ge5\), \(J<1/10\), and
+   \[
+    \Gamma_{\rm gap}>
+    \frac{11}{10}-\frac{p-dm}{2}.
+   \]
+   Thus \(p-dm\le11/5\) is closed, and a residual \(p=3\) gap must have
+   \(dm<4/5\).  It derives one exact intrinsic outer-\(B\) inequality and its
+   optional root-free projection.  On the lower shelf, strict floor geometry
+   gives \(j\ge1\), and the phase-stretch lemma closes the entire simultaneous
+   outer-\(B\)/lower-shelf endpoint.  Round 40 restores the full exact shelf
+   drop on the one-sided upper-\(\alpha\) outer-\(B\) endpoint.  Strict
+   midpoint convexity, a fixed count interpolation, and monotone elimination
+   of \(\mu\) reduce that face to
+   \[
+    \mathcal R_*(p,m,t)=
+    \mathcal R\!\left(
+    \max\left\{p+m+2,\frac5{4L_0(t)}\right\},p,m,t\right)>0.
+   \]
+   Its two exact representations are strictly convex in one auxiliary
+   variable and agree at the seam.  Round 41 gives exact rational enclosures
+   and a fixed Bernstein reduction whose replay checks 4,405 coefficient
+   signs successfully.  This is an unauthorized new computer-assisted finite
+   certificate; the independent audit verdict is NOT PASS as an analytic
+   closure and PASS only as structural reduction/computer candidate.  The
+    sign and endpoint remain open.  The selected
+    \(\Gamma_{\rm OB}\to\mathcal R_*\) projection is analytically exhausted.
+    Round 42 completes the sole stronger Gate-A specialization and proves
+    structurally, for \(H=(p+a_p)R_1\),
+    \[
+     \Phi_\delta^+>\mathcal T_{42}:=
+     \frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2}.
+    \]
+    Its exact loss identity (R42.17) retains the cap, old-inverse,
+    adjacent-action, phase-minimum, floor, and \(e_p\) reserves.  The algebra
+    replay succeeds and the independent verdict is STRUCTURAL PASS only;
+    final sign open.  Round 43 proves the sharp radical envelope
+    \(H\ge\underline H\), the strict cap envelope
+    \(h>U_q^3/(3\pi\mu^2)\), an exact relaxed asymptotic obstruction with
+    \(\lim\mathcal T_{42}/N<0\), and the fixed-chart derivative
+    \((E_f-E_*)'(t)>0\).  The relaxed family leaves the common shelf.  Its
+    finite negative diagnostic satisfies the synchronized wall, activity,
+    shelf, and terminal drop but fails the exact hard owner precisely at
+    \(E<E_*\); it is not a certificate.  Global continuation requires the
+    forbidden \(f/B/j\)-indexed wall family.  The independent verdict is
+    analytic structural PASS and **Gate A STOP**.  Gate B is active with
+    \[
+     \mathscr S=D_A(q)+R_p+\frac{dm}{2}.
+    \]
+    Thus \(\mathcal T_{42}\ge0\), the endpoint, CST, and the theorem remain
+    open, and the proof graph is unchanged.  The floor-free adjacent
+   projections remain rejected on relaxed, non-shelf families.
+   The other live classes are higher equal-count \(Q_N\) and inverse faces,
+   generic equal-count inverse faces, simultaneous \(\alpha=0\) \(B/Q\)
+   corners, and general lower shelves outside the exact Round 32 and Round 39
+   domains.  The observed
    diagnostic disappearance above \(q=33\) and the unarchived finite-edge
    experiment are not theorem premises.
    Round 28's conditional Cmax candidates and the root-free scalar remain
    auxiliary.  Global \(\alpha\)-monotonicity is diagnostically false.  Keep
-   all Round 22 and Round 26--33 witnesses as regression gates.  If the exact
-   pointwise endpoint route fails, return to \(\mathscr S\) and then the
-   weighted aggregate.  The historical ratio ladder is not closure.
+   all Round 22 and Round 26--33 witnesses as regression gates.  Gate B now
+   returns to the exact \(\mathscr S\), retaining the shelf trapezoid,
+   terminal surplus, cap, and inverse fractions.  If that pointwise route
+   fails, continue to the weighted aggregate.  The historical ratio ladder is
+   not closure.
 3. **Assembly.** Complete either the pointwise all-sector assembly or the
    weighted aggregate sufficient route.  Own the dimension-dependent
    no-mode equality face, the

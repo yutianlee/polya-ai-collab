@@ -148,12 +148,72 @@ The live analytic gates are:
    transports the residual fixed-\(K\) wall candidates to general lower
    shelves or \(\alpha\to1^-\).  Round 37 proves
    \(B_0=Q=B-1\ge1\) throughout the hard one-level gap, removes the top
-   interval, and gives both a lossless \(\Gamma_{\rm gap}\) normal form and
+   interval, and gives both a selected-projection-exact
+   \(\Gamma_{\rm gap}\) normal form and
    the strict count-free sufficient reduction
-   \(\Phi_\delta^+>\mathcal H_\Delta\).  It does not sign either residual.
-   The selected next lemma is the exact sign of one of these Round 37 forms
-   on the transported endpoint faces, followed by the higher equal-count
-   \(Q_N\) faces;
+   \(\Phi_\delta^+>\mathcal H_\Delta\).  Round 38 proves the sharp
+   \(u,\chi\) gap coordinate, the count--phase estimate
+   \(B_0(\pi/(2t)-1)>1/5\), and
+   \[
+    \Gamma_{\rm gap}>
+    \frac{37}{35}-\frac{p-dm}{2}.
+   \]
+   It therefore closes \(p-dm\le74/35\), including every residual
+   \(p=2\) gap, and supplies one unified proof-level
+   \(\chi\)-compensation for the remaining \(p\ge3\) faces.  Round 39 uses
+   \(q\ge5\) to prove \(J<1/10\), and hence
+   \[
+    \Gamma_{\rm gap}>
+    \frac{11}{10}-\frac{p-dm}{2}.
+   \]
+   It closes \(p-dm\le11/5\), so a surviving \(p=3\) gap has
+   \(dm<4/5\).  On the gap-side outer-\(B\) wall it derives a single
+   intrinsic selected-scalar inequality, plus an optional root-free
+   projection, from the exact action coordinates.  The lower-shelf endpoint
+   forces \(j\ge1\), and one phase-stretch estimate closes that complete
+   outer-\(B\)/lower-shelf face.  Round 40 restores the exact shelf drop on
+   the one-sided upper-\(\alpha\) outer-\(B\) endpoint and proves the strict
+   midpoint payment
+   \[
+    p\Delta>p^2\frac{(r+p/2)(1-\cos t)}
+    {\pi\sqrt{\mu^2-(r+p/2)^2\cos^2t}}.
+   \]
+   A fixed count interpolation and monotone elimination of \(\mu\) reduce
+   the endpoint to the single continuous sign
+   \(\mathcal R_*(p,m,t)>0\), with
+   \(\mu_*=\max\{p+m+2,5/(4L_0(t))\}\).  Its two representations are
+   strictly convex in one auxiliary variable.  Round 41 gives exact global
+   rational enclosures and reduces their signs to a fixed 4,405-coefficient
+   Bernstein table.  The replay succeeds, but this is a new finite
+   computer-assisted certificate and is not authorized for promotion by the
+   revised Gate A rules.  Thus the endpoint remains open and the selected
+   \(\Gamma_{\rm OB}\to\mathcal R_*\) projection is analytically exhausted.
+   Round 42 performs the last stronger Gate-A specialization directly through
+   \(\Phi_\delta^+\).  Writing \(H=(p+a_p)R_1\), it proves only the exact
+   structural reduction
+   \[
+    \Phi_\delta^+>\mathcal T_{42}:=
+    \frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2}.
+   \]
+   Its exact loss ledger is (R42.17), and its algebra replay succeeds.  The
+   independent audit verdict is STRUCTURAL PASS only; final sign open.  Round
+   43 proves a sharp hand-checkable radical envelope \(H\ge\underline H\), the
+   strict cap envelope \(h>U_q^3/(3\pi\mu^2)\), and an analytic relaxed family
+   with \(\lim\mathcal T_{42}/N<0\).  The latter shows that the count--phase
+   and radial data alone are insufficient, not that the exact hard-owner sign
+   is false.  Its finite negative diagnostic satisfies the ordinary shelf and
+   terminal crossing and fails the hard owner precisely at \(E<E_*\).  On each
+   fixed-\(f\) chart it proves \((E_f-E_*)'(t)>0\), but continuation across
+   the shelf and outer-count jumps requires a forbidden \(f/B/j\)-indexed wall
+   family.  The independent verdict is analytic structural PASS and **Gate A
+   STOP**.  Gate B is active and restores
+   \[
+    \mathscr S=D_A(q)+R_p+\frac{dm}{2}.
+   \]
+   The sign \(\mathcal T_{42}\ge0\), the endpoint, CST, and the theorem remain
+   open; no obligation status changes.
+   After it, treat the higher equal-count \(Q_N\) and inverse faces,
+   the simultaneous \(\alpha=0\) corners, and the remaining lower shelves;
    root-free and conditional Cmax signs remain auxiliary and unproved;
 4. **WT fallback:** if pointwise compensation fails, prove the binomially
    weighted aggregate using \(\mathcal B_d(A)\);
@@ -224,6 +284,19 @@ Mathematica, Python, and arbitrary-precision searches may be used at the
 design and falsification.  They do not change a mathematical status.  In the
 general-dimensional track, computation must report separate minima for the
 exact defect, the exact reduced scalar, and the derived lower surrogate.
+The Round 41 exact-rational Bernstein replay is explicitly classified as an
+unauthorized compact computer candidate: its successful 4,405-sign table
+does not change the endpoint, CST, or theorem status.
+The Round 42 replay is instead an algebra-only symbolic sanity check of the
+count identity, minimum decomposition, and exact loss ledger.  It introduces
+no certificate and does not establish the open sign
+\(\mathcal T_{42}\ge0\).  Its 406-sample positive minimum is a
+`floating_point_experiment` only.
+The Round 43 replay checks the radical identities, fixed-chart derivative,
+asymptotic coefficient, and finite diagnostic.  It is an algebra and diagnostic
+replay, not a certificate.  Its finite negative record lies outside the hard
+owner because it fails \(E<E_*\), and no endpoint, CST, theorem, or obligation
+status is promoted.
 
 ## Proof Assembly and Final Review
 

@@ -8,7 +8,8 @@ The graph has 124 unique obligations and SHA-256
 
 ## Prompt A: lead analytic CST proof
 
-Work only in the exact Round 27--37 residual sector.  Put \(d=1-2t/\pi\) and
+Work only in the exact Round 27--42 residual sector, under
+`human/inbox/general-d-strategy_r2.md`.  Put \(d=1-2t/\pi\) and
 
 \[
  E=e_0+e_p,\qquad \Delta=e_0-e_p,
@@ -106,7 +107,8 @@ Work only in the exact Round 27--37 residual sector.  Put \(d=1-2t/\pi\) and
     B_0=Q=B-1\ge1,
     \qquad j=f-B=\lfloor\lambda\rfloor,
    \]
-   the top interval vanishes, and the selected scalar has the lossless form
+   the top interval vanishes, and the selected scalar has a normal form that
+   is exact for that selected projection:
    \[
     \Gamma_{\rm gap}
     =1-J+\frac{B_0d}{2c}+\Omega
@@ -115,14 +117,101 @@ Work only in the exact Round 27--37 residual sector.  Put \(d=1-2t/\pi\) and
    \]
    Round 37 also proves \(\Phi_\delta^+>\mathcal H_\Delta\), with the exact
    elasticity, quartic, and adjacent-action payments combined by one maximum.
-   Freeze these reductions but not their signs.  First prove
-   \(\Gamma_{\rm gap}>0\) or sufficiently \(\mathcal H_\Delta\ge0\) on the
-   transported outer, inverse, lower-shelf, and alpha-endpoint faces with
-   \(p-dm>12/7\), without splitting by \(B\) or \(j\).  Then treat higher
+   Round 38 sharpens the gap coordinate to
+   \[
+    0<S_q\le u<S_q+h<\frac{\alpha}{2},
+    \qquad 0\le\chi<h,
+    \qquad 0<u<\frac{\alpha}{2}<\frac12,
+   \]
+   proves \(B_0(\pi/(2t)-1)>1/5\), and consequently proves
+   \[
+    \Gamma_{\rm gap}>
+    \frac{37}{35}-\frac{p-dm}{2}.
+   \]
+   Freeze the resulting closure \(p-dm\le74/35\), including every residual
+   \(p=2\) gap.  Every remaining one-level gap has \(p\ge3\).  Round 38 also
+   proves the unified \(\chi\)-compensation bound (R38.20), retaining the
+   newest inverse payment at \(\chi=0\) and the adjacent-action payment at
+   \(\chi=h\).  Import Round 39 next: residual \(p\ge3\) forces \(q\ge5\),
+   \(J<1/10\), and
+   \[
+    \Gamma_{\rm gap}>
+    \frac{11}{10}-\frac{p-dm}{2}.
+   \]
+   Freeze \(p-dm\le11/5\) as closed and record that a residual \(p=3\) gap
+   has \(dm<4/5\).  On the gap-side outer-\(B\) wall use the single exact
+   intrinsic bound
+   \[
+   \begin{aligned}
+    \Gamma_{\rm OB}>F_{\rm OB}:={}&
+    \frac1{2\beta}-J+\Omega_-+(G_K(q)-\tfrac34)\zeta\\
+    &+pR_1[A(r+p)-A(q)]+a_pg[A(r+p)-W]+2pe_p
+    -\frac{p-dm}{2},
+   \end{aligned}
+   \]
+   with the proved root-free projection for \(\Omega_-\) available but not
+   mandatory.  Treat the simultaneous outer-\(B\)/lower-shelf endpoint as
+   closed by \(j\ge1\) and the phase-stretch lemma.  Import Round 40 on the
+   one-sided upper-\(\alpha\) outer-\(B\) endpoint.  With \(y=r+p/2\), strict
+   midpoint convexity proves
+   \[
+    p\Delta>
+    p^2\frac{y(1-\cos t)}{\pi\sqrt{\mu^2-y^2\cos^2t}}.
+   \]
+   Put
+   \[
+    L_0(t)=\frac{\tan t-t}{\pi},\quad
+    \rho=\frac{p/2+m+1}{\mu},\quad
+    C(\rho,t)=\frac{(1-\rho)(1-\cos t)}
+    {\pi\sqrt{\sin^2t+2\rho}}.
+   \]
+   The fixed count interpolation \(B_0>W/4+9/16\) gives
+   \[
+    \Gamma_{\rm OB}>\mathcal R(\mu,p,m,t)
+    =\frac9{10}+\frac9{16}\zeta+\frac14\zeta\mu L_0(t)
+     +p^2C(\rho,t)-\frac{p-dm}{2}.
+   \]
+   Since \(\mathcal R\) is strictly increasing in \(\mu\), Round 40 leaves
+   the target
+   \[
+    \mathcal R_*(p,m,t)=
+    \mathcal R\!\left(
+    \max\left\{p+m+2,\frac5{4L_0(t)}\right\},p,m,t\right)>0.
+   \]
+    Round 41 proves exact rational trigonometric enclosures and reduces both
+    branch signs to a fixed Bernstein replay with 4,405 load-bearing
+    coefficients.  The replay succeeds, but the independent audit verdict is
+   NOT PASS as a strategy-authorized analytic closure and PASS only as an
+   exact structural reduction and computer-assisted candidate.  Therefore
+   \(\mathcal R_*>0\) remains unproved and the selected
+    \(\Gamma_{\rm OB}\to\mathcal R_*\) route is analytically exhausted.  Do not
+    extend that route with another sign table, partition, or certificate, and
+    do not replace it by the rejected floor-free adjacent projections \(Q_0\)
+    or \(Q_{\rm exact}\).  Round 42 has made the last stronger exact Gate-A
+    specialization.  With \(H=(p+a_p)R_1\), it proves structurally
+    \[
+     \Phi_\delta^+>\mathcal T_{42}:=
+     \frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2},
+    \]
+    together with the exact loss identity (R42.17).  The independent verdict
+    is STRUCTURAL PASS only; final sign open.  Round 43 proves the sharp
+    radical/cap envelopes, an exact relaxed asymptotic obstruction, and
+    \((E_f-E_*)'(t)>0\) on every fixed-\(f\) chart.  Its finite negative
+    diagnostic fails the exact owner precisely at \(E<E_*\).  A global
+    continuation requires the forbidden \(f/B/j\)-indexed wall analysis, so
+    the independently audited decision is analytic structural PASS and **Gate
+    A STOP**.  Gate B is active.  Begin from
+    \[
+     \mathscr S=D_A(q)+R_p+\frac{dm}{2},
+    \]
+    retaining the exact first-shelf trapezoid, complete terminal surplus, cap,
+    and inverse fractions.  Do not repair \(\mathcal T_{42}\) with a count,
+    floor, ratio, chamber, or certificate split.  Then treat higher
    \(Q_N\) and equal-count inverse faces, exceptional
    \(\alpha=0\) simultaneous \(B/Q\) corners, and general lower shelves
-   outside \(e_p=0,\ B=Q=1,\ 2<y_1<3\).  The pure \(E=E_*\) seam is already strict because
-   \(a_p\mathcal K_4>0\).  Do not assume global monotonicity in \(\alpha\).
+   outside the proved Round 32 and Round 39 scopes.  The pure \(E=E_*\) seam
+   is already strict because \(a_p\mathcal K_4>0\).  Do not assume global
+   monotonicity in \(\alpha\).
 7. Reproduce the Round 22 and Round 26--33 regression cases.  In particular,
    the Round 27 tuple must be classified as automatic-sector with
    \(\mathcal R_J<-6/5\), \(\mathcal C_{\max,8}<-4/3\),
@@ -150,6 +239,14 @@ Work only in the exact Round 27--37 residual sector.  Put \(d=1-2t/\pi\) and
    all 15 exact identities plus `round37GapInterfaceReplayOK=True`.  Run
    `computations/general_d_round37_gap_rootfree_diagnostic.py` only as a
    finite ordinary-double falsification search; no sampled minimum is a
+   theorem premise.  Replay
+   `computations/general_d_round38_gap_position_replay.wl` and require
+   `round38GapPositionReplayOK=True`; keep its paired Python search
+   diagnostic-only.  Replay
+   `computations/general_d_round39_outer_face_replay.wl` and require
+   `round39OuterFaceReplayOK=True`.  Run
+   `computations/general_d_round39_outer_face_diagnostic.py` only as a finite
+   falsification and theorem-design search; no decimal margin or cutoff is a
    theorem premise.
 8. Keep \(\Psi^{\rm rf}_{4,E}\) and conditional
    \(\mathcal C_{\max,8}\) as auxiliary falsification gates only.  If the
@@ -219,19 +316,59 @@ Also treat the Round 31 convexity/large-\(q\) result and the Round 32 closure
 of the included retained-\(E\) shelf, plus the small-phase/Round 35 closure
 of the lower-\(Q\) hard sector and the Round 36 gap subfamily
 \(p-dm\le12/7\), as closed.  Treat the Round 37 synchronization,
-positive-interface reduction, zero top interval, lossless normal form, and
-strict \(\Phi_\delta^+>\mathcal H_\Delta\) bound as proved, but treat both
-residual signs as open.  Audit the piecewise
+positive-interface reduction, zero top interval, selected-projection normal
+form, and strict \(\Phi_\delta^+>\mathcal H_\Delta\) bound as proved.  Treat
+the Round 38 sharp \(u,\chi\) coordinate, \(B_0\zeta>1/5\), and the closure
+\(p-dm\le74/35\) as proved.  Treat the Round 39 sharpening \(J<1/10\), the
+closure \(p-dm\le11/5\), the exact intrinsic outer-\(B\) inequality and its
+root-free projection, and the full outer-\(B\)/lower-shelf endpoint sign as
+proved.  Treat the Round 40 strict midpoint payment, the normalized
+\(C(\rho,t)\) lower bound, the fixed \(k=1/4\) count interpolation, monotone
+\(\mu\)-elimination, and the two exact convex branch formulas as proved
+ structural reductions.  Treat Round 41's rational enclosures and branch
+ transport as exact structural evidence.  Its 4,405-sign Bernstein replay is
+ an unauthorized computer-assisted candidate: the independent audit verdict
+ is NOT PASS as an analytic closure.  Keep \(\mathcal R_*(p,m,t)>0\) and the
+ one-sided endpoint open, but mark the selected
+ \(\Gamma_{\rm OB}\to\mathcal R_*\) projection analytically exhausted.
+ Treat Round 42's exact endpoint identity, strict owner chain, minimum algebra,
+ strict \(\Phi_\delta^+>\mathcal T_{42}\) reduction, and complete loss ledger
+ as proved structural results.  Its independent verdict is STRUCTURAL PASS
+ only; final sign open.  Treat Round 43's radical envelope
+ \(H\ge\underline H\), cap envelope \(h>U_q^3/(3\pi\mu^2)\), relaxed
+ asymptotic obstruction, and fixed-chart derivative \((E_f-E_*)'(t)>0\) as
+ proved analytic structural results.  Its finite negative diagnostic fails the
+ exact owner precisely at \(E<E_*\) and is not a certificate.  The audit
+ verdict is analytic structural PASS and Gate A STOP because global
+ continuation requires forbidden \(f/B/j\)-indexed walls.  Keep
+ \(\mathcal T_{42}\ge0\), the endpoint, CST, and the theorem open.  No Round
+ 42 or Round 43 certificate exists.
+ Audit the piecewise
 \(m_0\) definition, the exact floor transitions, and the false untruncated
 \(m=1\) regressions near \(q=40\); never extend \(L_q\) beyond its certified
 truncated finite scope.  Search the endpoint families outside the proved scopes
-with exact shelf/activity tests and separate one-sided terminal walls.
-Concentrate first on the Round 37 failure patterns (9.2)--(9.4) on gap-wall
-endpoints with \(p-dm>12/7\), preserving \(\Omega\), \(\Xi\), \(e_p\),
-\(\{\lambda\}\), \(J\), and \(W\).  Then audit the other Round 36 classes:
+ with exact shelf/activity tests and separate one-sided terminal walls.
+ Concentrate first on Gate B's exact scalar
+ \[
+  \mathscr S=D_A(q)+R_p+\frac{dm}{2},
+ \]
+ keeping the exact first-shelf trapezoid, complete terminal surplus, cap, and
+ every inverse fraction until an intrinsic shelf--terminal theorem is visible.
+ Do not return to another compressed lower bound for \(\mathcal T_{42}\).
+ Audit the Round 41 branch reduction and certificate classification as a
+ regression, but do not treat its successful coefficient counts as an
+ authorized proof.  Test \(\Gamma_{\rm OB}\), \(\mathcal R(\mu,p,m,t)\),
+ \(\mathcal R_*\), \(\Phi_\delta^+\), \(\mathcal T_{42}\), and
+ \(\mathscr S\) separately; a
+ negative auxiliary value does not falsify an earlier exact scalar.  Retain
+ the relaxed family making \(Q_0,Q_{\rm exact}\to-\infty\)
+as a regression showing only that those two projections fail: it violates
+the same-floor/hard feasibility and is not an endpoint counterexample.
+Keep the already closed lower-shelf face as a regression.  Then audit the
+other Round 36 classes:
 higher \(Q_N\) faces \(N\ge2\), equal-count inverse faces,
 exceptional \(\alpha=0\) simultaneous \(B/Q\) corners, and general lower
-shelves/\(\alpha\)-endpoint closures outside Round 32.  Also inspect \(E\downarrow0\),
+shelves/\(\alpha\)-endpoint closures outside Rounds 32 and 39.  Also inspect \(E\downarrow0\),
 the elasticity/curvature switch, \(B_0=1\), \(\lambda\downarrow0\), and
 \(\alpha\uparrow1\).  Treat the pure \(E=E_*\) seam as already strict from
 \(a_p\mathcal K_4>0\); inspect only its collisions with another literal
@@ -337,6 +474,47 @@ Require all 15 Mathematica identities and
 ordinary-double, finite-owner/wall sampling with
 `scanCertification=diagnostic_only`; it is a regression and counterexample
 search, not a sign certificate.
+
+Also run:
+
+- `wolframscript.exe -file computations/general_d_round38_gap_position_replay.wl`;
+- `python -B computations/general_d_round38_gap_face_diagnostic.py`;
+- `wolframscript.exe -file computations/general_d_round39_outer_face_replay.wl`;
+- `python -B computations/general_d_round39_outer_face_diagnostic.py`;
+- `wolframscript.exe -file computations/general_d_round40_upper_midpoint_replay.wl`;
+- `python -B computations/general_d_round40_upper_face_diagnostic.py`;
+- `wolframscript.exe -file computations/general_d_round41_bernstein_sign_replay.wl`;
+- `wolframscript.exe -file computations/general_d_round42_stronger_phi_replay.wl`;
+- `wolframscript.exe -file computations/general_d_round43_hard_remainder_replay.wl`.
+
+Require `round38GapPositionReplayOK=True` and
+`round39OuterFaceReplayOK=True`, and
+`round40UpperMidpointReplayOK=True`, and
+`round41BernsteinSignReplayOK=True`, and
+`round42StrongerPhiReplayOK=True`, and
+`round43HardRemainderReplayOK=True`.  The Round 41 result owns 4,405
+load-bearing coefficient signs and is an unauthorized computer-assisted
+candidate; its independent audit verdict is NOT PASS as an analytic closure.
+It must not be used to promote \(\mathcal R_*>0\).  All Python programs are finite
+ordinary-double falsification searches and must identify their results as
+diagnostic only.  The Round 39 high-precision option is still noninterval and
+noncertifying, as are the Round 40 multiprecision replays.  No sampled
+positive minimum or successful Round 41 certificate proves the open
+\(\mathcal R_*\) endpoint sign in the authorized analytic chain; the
+outer-\(B\)/lower-shelf sign comes only from the printed analytic
+\(j\ge1\) and phase-stretch proof.  The negative Round 40
+\(Q_0,Q_{\rm exact}\) family rejects only those relaxed auxiliary targets,
+not the midpoint scalar, CST, or the theorem.
+The Round 42 replay checks only exact count, minimum, and loss identities.
+Its independent verdict is STRUCTURAL PASS only; final sign open.  Its
+406-sample minimum is diagnostic only, it creates no certificate, and neither
+the replay nor the samples prove \(\mathcal T_{42}\ge0\).
+The Round 43 replay checks radical and derivative identities, the asymptotic
+coefficient, and the finite diagnostic only.  The asymptotic family leaves the
+common shelf, and the finite negative record fails the hard owner precisely at
+\(E<E_*\).  Neither is a certificate or an endpoint counterexample.  The
+printed fixed-chart proof and strategy stop, not the replay, own the analytic
+structural PASS and Gate A STOP.
 
 ## Prompt E: d=3 clean-room mathematical reconstruction
 
@@ -465,13 +643,72 @@ scope and constants. Do not infer novelty from absence in a limited search.
   \(\alpha\downarrow0\) one-level-gap limit, and keep Round 32 restricted to
   \(e_p=0,\ B=Q=1,\ 2<y_1<3\).
 - Preserve Round 37's exact scope: \(B_0=Q=B-1\ge1\), the top interval is
-  zero, \(\Gamma_{\rm gap}\) is a lossless normal form, and
+  zero, \(\Gamma_{\rm gap}\) has an exact normal form for the selected
+  projection, and
   \(\Phi_\delta^+>\mathcal H_\Delta\) is only a sufficient reduction.
-  Neither residual sign, CST, nor the theorem is proved.  Next attack one of
-  these two exact residual signs on \(p-dm>12/7\), retaining \(\Omega\),
-  \(\Xi\), \(e_p\), \(\{\lambda\}\), \(J\), and \(W\).  Do not split by
-  \(B\) or \(j\).  If it resists, move to the exact shifted-tail
-  scalar and then the weighted aggregate before considering any certificate.
+  It is not lossless relative to \(\Phi_\delta^+\) or \(D_A(r)\).
+- Preserve Round 38's exact scope: no finite integer-\(\lambda\) wall occurs
+  in the positive-alpha gap; \(B_0\zeta>1/5\); and
+  \(p-dm\le74/35\), hence all \(p\le2\) gaps, are closed.  The
+  \(\chi\)-compensation (R38.20) is a proof-level lower bound, not a new
+  certificate or a proved global sign.
+- Preserve Round 39's exact scope: \(J<1/10\) on the residual \(q\ge5\)
+  sector; \(p-dm\le11/5\) is closed; and a residual \(p=3\) gap has
+  \(dm<4/5\).  The intrinsic \(F_{\rm OB}\) inequality and its root-free
+  projection are one-sided outer-\(B\) bounds.  The simultaneous
+  outer-\(B\)/lower-shelf endpoint is closed by \(j\ge1\) and phase stretch;
+  the one-sided upper-\(\alpha\) outer endpoint remains open.  Retain
+  \(J,W,\Omega_-,e_p,M_4\), and \(\widehat\Xi\).  Do not split by \(B\),
+  \(j\), or ratio intervals.
+- Preserve Round 40's exact scope: the midpoint/chord payment, the
+  \(C(\rho,t)\) denominator bound, fixed \(k=1/4\) interpolation, monotone
+  \(\mu\)-reduction, and the two convex branch formulas are proved.  The
+  continuum sign \(\mathcal R_*>0\) is open.  Branch I owns the seam;
+  Branch II is strict and has \(0<a<1\).  The relaxed negatives for
+  \(Q_0\) and \(Q_{\rm exact}\) reject only those auxiliaries.
+- Preserve Round 41's exact scope: its rational trigonometric enclosures and
+  polynomial branch reductions are valid, and the fixed exact replay ends in
+  `round41BernsteinSignReplayOK=True`.  Its 4,405 load-bearing coefficient
+  signs make it an unauthorized new finite certificate.  The independent
+  audit verdict is NOT PASS as a strategy-authorized analytic closure and
+  PASS only as an exact structural reduction and computer-assisted candidate.
+  Do not promote \(\mathcal R_*>0\), the endpoint, CST, or the theorem.  Treat
+  the selected \(\Gamma_{\rm OB}\to\mathcal R_*\) route as analytically
+  exhausted.
+- Preserve Round 42's exact scope: its endpoint identity, synchronized count,
+  strict owner chain \(0<h<u<\beta<1/2\), minimum algebra,
+  \(\Phi_\delta^+>\mathcal T_{42}\), and exact loss ledger are proved
+  structural results.  The independent audit verdict is STRUCTURAL PASS only;
+  final sign open.  Its algebra replay is not a sign proof, its 406-sample
+  minimum is diagnostic only, and it introduces no certificate.  The exact
+  owner target remains open:
+  \[
+   \mathcal T_{42}=
+   \frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2}\ge0,
+   \qquad H=(p+a_p)R_1.
+  \]
+- Preserve Round 43's exact scope: the radical envelope
+  \(H\ge\underline H\), strict cap envelope \(h>U_q^3/(3\pi\mu^2)\), relaxed
+  asymptotic obstruction, and \((E_f-E_*)'(t)>0\) on fixed-\(f\) charts are
+  proved.  The relaxed family is outside the common shelf; the finite negative
+  diagnostic fails the exact owner precisely at \(E<E_*\).  Global
+  continuation requires a forbidden \(f/B/j\)-indexed wall family, so the
+  independent verdict is analytic structural PASS and Gate A STOP.  Do not
+  promote the endpoint, CST, or theorem.  Gate B is active and restores
+  \[
+   \mathscr S=D_A(q)+R_p+\frac{dm}{2}.
+  \]
+  Start from the inherited exact identity
+  \[
+   \mathscr S=D_A(q)+\mathcal C_p+p(E-E_*),
+   \qquad D_A(q)+\mathcal C_p\ge p(E_*-E).
+  \]
+  Keep this target unrenamed.  Here \(D_A(q)\) is the literal one-sided
+  terminal defect and \(\mathcal C_p\) is the exact shelf trapezoid; do not
+  begin by substituting \(L_T\) or \(a_p\Delta\).
+  Retain the exact shelf trapezoid, terminal surplus, cap, and inverse
+  fractions; do not repair \(\mathcal T_{42}\) by another projection, split,
+  or certificate.
 - Keep the Round 30 \(q\le1000\) scan, its 933 retained records, sampled
   positive minimum, and observed \(q=33\) cutoff diagnostic-only.  None is an
   exact cutoff theorem or finite certificate.  Keep the unarchived Round 31
@@ -483,7 +720,8 @@ scope and constants. Do not infer novelty from absence in a limited search.
 - Treat the adaptive cusp only as diagnostic evidence against global
   \(\alpha\)-monotonicity.  Its positive decimal value is not a continuum
   premise.
-- Return first to the hard-sector residual, then to \(\mathscr S\) or the
-  weighted aggregate.  Do not propose another compact certificate; before
+- Return first to Gate B's exact \(\mathscr S\), then to the weighted aggregate
+  if the pointwise stop rule triggers.  Do not propose another compact
+  certificate; before
   final assembly, analytically replace the legacy first-floor check or fold
   it into the same consolidated verification artifact as Round 32.
