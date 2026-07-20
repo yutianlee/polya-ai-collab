@@ -251,7 +251,32 @@ one-radius Jensen reduction.  The active order is now:
    SIGN OPEN**.  Finite searches found no negative exact-owner record but are
    diagnostic, not coverage.  Gate A remains stopped, Gate B continues on
    the localized support, Gate C is inactive, and all theorem and obligation
-   statuses remain unchanged;
+   statuses remain unchanged.  Round 45 falsifies the proposed count-free
+   sufficient route (R45-CF) on directed exact owners, but every such record
+   has positive exact \(\mathscr S\); this is a route counterexample only.
+   On the exact literal support, inverse-action curvature proves
+   \[
+    \mathcal R_k\ge
+    \frac{7\pi^2}{48Kt^3\sin t},\qquad
+    \sum_{k=1}^{B_0}\mathcal R_k\ge
+    \frac{7\pi^2B_0}{48Kt^3\sin t}.
+   \]
+   Combining this only through the exact old/top decomposition with the
+   primary \(u\)-retaining \(\Omega_-\) bound gives
+   \[
+    \Omega_-+\mathcal R_{\rm tan}^0\ge
+    \frac{\pi^2B_0}{Kt^3\sin t}
+    \left(\frac W2-\frac{B_0}{4}+\frac1{48}\right)
+    +\frac9{64\pi\sqrt{K^2-q^2}\,\beta^3}.
+   \]
+   The exact support-slack identity signs every S30 point with
+   \(M_{30}\le7\pi^2B_0/(48Kt^3\sin t)\).  The independently audited verdict
+   is **STRUCTURAL PASS — FINAL SIGN OPEN** under Step A6(4).  Gate B
+   continues under this substantive partial, subject to human adjudication;
+   Gate C remains inactive and no status changes.  The next sole obligation
+   is the complete-owner proof of Round 45 equation (R45.18), retaining its
+   exact wall/action/phase/cap correlation and using no count, floor, ratio,
+   chamber, or second-certificate split;
 3. if pointwise CST fails, use the weighted aggregate and the positive
    branching bonus \(\mathcal B_d(A)\);
 4. use at most one compact, reproducible certificate in the final implication
@@ -309,11 +334,18 @@ strict retained-shelf \(p\)-convexity and the exact \(q\ge1000\) exclusion,
  envelopes and stops Gate A because global continuation would require a
  forbidden \(f/B/j\)-indexed wall family.  Round 44 reconstructs the exact
  Gate-B terminal and shelf ledgers and localizes every hypothetical negative
- point by one intrinsic continuous inequality, without a count, floor, ratio,
- chamber, or certificate split.  Gate B remains active but localized: prove
- that this support is empty, or sign the exact literal scalar directly using
- the old Bregman areas and correlated first-shelf geometry.  Gate C remains
- inactive.  The endpoint, CST, and theorem remain open.
+ point.  Round 45 proves the uniform \(7/48\) old-level Bregman aggregate,
+ combines it with the primary \(u\)-retaining \(\Omega_-\) bound, and signs
+ the portion
+ \(M_{30}\le7\pi^2B_0/(48Kt^3\sin t)\).  Its directed diagnostics falsify
+ only the count-free sufficient route; no negative exact \(\mathscr S\) is
+ certified.  The final verdict is **STRUCTURAL PASS — FINAL SIGN OPEN**.
+ Gate B remains active under the substantive partial, but a new round
+ requires human adjudication.  The next sole pointwise obligation is the
+ complete-owner proof of Round 45 equation (R45.18), equivalently exclusion
+ of its strict reverse, without a count, floor, ratio, chamber, or second
+ compact certificate.  Gate C remains inactive.  The endpoint, CST, and
+ theorem remain open.
 The exact lower bound
 \[
  \Phi_\delta^+
