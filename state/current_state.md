@@ -862,6 +862,44 @@ Gate B continues on the localized support, and Gate C is inactive.  The
 endpoint, high-floor CST, pointwise assembly, and all-dimensional theorem
 remain open; the proof graph and manuscript are unchanged.
 
+Round 45 first proves the strict implication
+\[
+ \mathrm{R45\text{-}CF}\Longrightarrow
+ \mathrm{S31\ empty}\Longrightarrow
+ \mathrm{S30\ empty}\Longrightarrow\mathscr S\ge0,
+\]
+but directed exact owners falsify R45-CF while retaining positive exact
+\(\mathscr S\).  This is a sufficient-route counterexample only.  Returning
+to the exact literal support, Round 45 proves the count-uniform old-level
+Bregman theorem
+\[
+ \mathcal R_k\ge\frac{7\pi^2}{48Kt^3\sin t},\qquad
+ \sum_{k=1}^{B_0}\mathcal R_k\ge
+ \frac{7\pi^2B_0}{48Kt^3\sin t}.
+\]
+Through the exact old/top decomposition and the primary \(u\)-retaining
+Round 38 bound this gives
+\[
+ \Omega_-+\mathcal R_{\rm tan}^0\ge
+ \frac{\pi^2B_0}{Kt^3\sin t}
+ \left(\frac W2-\frac{B_0}{4}+\frac1{48}\right)
+ +\frac9{64\pi\sqrt{K^2-q^2}\,\beta^3}.
+\]
+With the existing S30 margin,
+\[
+ \mathscr S=-M_{30}
+ +(\mathcal R_{\rm tan}^0-T_{\rm top})
+ +(\mathcal C_p-\mathcal C_{\rm curv}),
+\]
+so every S30 point with
+\(M_{30}\le7\pi^2B_0/(48Kt^3\sin t)\) is signed.  Every hypothetical
+negative point satisfies the strict reverse, which reduces exactly to the
+strict reverse of Round 45 equation (R45.18).  The independent verdict is
+**STRUCTURAL PASS — FINAL SIGN OPEN** under Step A6(4).  It does not prove
+(R45.18), the endpoint, high-floor CST, pointwise assembly, or the
+all-dimensional theorem.  Gate B continues under this substantive partial,
+Gate C remains inactive, and all proof-obligation statuses remain unchanged.
+
 The Round 30 finite diagnostic still retains 933 necessary-condition records,
 none above \(q=33\), and finds minimum \(0.30090314669\ldots\) at
 \((q,r,p,m)=(5,1,3,1)\).  The observed sharper cutoff and the unarchived
@@ -876,15 +914,15 @@ proof may use at most one consolidated compact certificate.  Round 32 now
 selects that compact fallback for its finite shelf remainder, so the legacy
  first-floor certificate must be analytically replaced or consolidated before
  final assembly.  Round 41's second finite certificate is not authorized for
- that chain, and Rounds 42--44 introduce no authorized certificate.  Gate A
+ that chain, and Rounds 42--45 introduce no authorized certificate.  Gate A
  is exhausted.  Gate B remains active and is now localized by the exact
- Round 44 necessary-support implication.  The next single pointwise task is
- to prove that this support is empty using the retained old-level Bregman areas and
- exact first-shelf correlations, or to sign the literal exact inequality
- directly.  Do not repair the target with a count, floor, ratio, chamber, or
- certificate family.  Gate C is inactive; if Gate B genuinely fails under the
- revised stop rule, continue to the weighted aggregate, not a new lossy
- surrogate.
+ Round 45 strengthened support implication.  The next single pointwise task
+ is the complete-owner proof of Round 45 equation (R45.18), equivalently
+ exclusion of its strict reverse, with the exact wall/action/phase/cap and
+ shelf-curvature correlation retained.  Do not repair the target with a
+ count, floor, ratio, chamber, or second-certificate family.  Gate C is
+ inactive; if Gate B genuinely fails under the revised stop rule, continue
+ to the weighted aggregate, not a new lossy surrogate.
 
 ## Evidence and remaining work
 
@@ -894,13 +932,13 @@ The current mathematical audits include
 Independent passes reconstructed the angular, radial/ball, and scalar
 components and found no mathematical failure. Exact rational and
 outward-rounded interval scripts are optional transcription regressions only.
-The separate Round 38--44 general-dimensional notes each have an independent
+The separate Round 38--45 general-dimensional notes each have an independent
 audit and exact Mathematica replay at their stated structural scope.  Round
 41 is not an authorized analytic closure; Round 42 has only a structural PASS;
-Round 43 has an analytic structural PASS and Gate-A STOP; Round 44 has a
-**STRUCTURAL PASS — FINAL SIGN OPEN** and keeps Gate B active on its localized
-support.  Both Round 44 numerical searches are diagnostics, not coverage or
-certificates.  None of these changes the authoritative open status of
+Round 43 has an analytic structural PASS and Gate-A STOP; Rounds 44--45 have
+**STRUCTURAL PASS — FINAL SIGN OPEN** verdicts and keep Gate B active on its
+localized support.  The Round 44--45 numerical searches are diagnostics, not
+coverage or certificates.  None of these changes the authoritative open status of
 high-floor CST or the all-dimensional theorem.
 
 Before external dissemination, the remaining work is:

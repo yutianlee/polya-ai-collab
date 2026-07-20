@@ -840,6 +840,54 @@ This bank is separate from the completed Revision 2 proof.
   continues localized, Gate C is inactive, and the endpoint, CST, theorem,
   and proof-graph statuses remain open or unchanged.
 
+- **Uniform old-level inverse-action aggregate and strengthened exact support
+  (Round 45, independently audited substantive structural pass; final sign
+  open).**  The count-free implication R45-CF \(\Rightarrow\) S31 empty
+  \(\Rightarrow\) S30 empty is strict and correct, but directed exact-owner
+  witnesses falsify R45-CF while retaining positive exact \(\mathscr S\).
+  This is a sufficient-route counterexample only.  For the outer inverse
+  action \(Y\), direct differentiation gives
+  \[
+   Y''(\ell)=\frac{\pi^2}{K\sin\theta\,\theta^3}.
+  \]
+  Since every old layer has \(0<\theta<t\) away from the harmless
+  \(\ell=0\) limit and \(\theta^3\sin\theta\) is strictly increasing,
+  strong convexity about \(\ell_k=k-1/4\) yields
+  \[
+   \mathcal R_k\ge
+   \frac{\pi^2}{Kt^3\sin t}
+   \int_{-3/4}^{1/4}s^2\,ds
+   =\frac{7\pi^2}{48Kt^3\sin t}.
+  \]
+  Therefore
+  \[
+   \sum_{k=1}^{B_0}\mathcal R_k\ge
+   \frac{7\pi^2B_0}{48Kt^3\sin t},
+  \]
+  and the exact old/top decomposition plus the primary \(u\)-retaining
+  \(\Omega_-\) bound gives
+  \[
+   \Omega_-+\mathcal R_{\rm tan}^0\ge
+   \frac{\pi^2B_0}{Kt^3\sin t}
+   \left(\frac W2-\frac{B_0}{4}+\frac1{48}\right)
+   +\frac9{64\pi\sqrt{K^2-q^2}\,\beta^3}.
+  \]
+  With the existing support margin,
+  \[
+   \mathscr S=-M_{30}
+   +(\mathcal R_{\rm tan}^0-T_{\rm top})
+   +(\mathcal C_p-\mathcal C_{\rm curv}),
+  \]
+  so the portion
+  \(M_{30}\le7\pi^2B_0/(48Kt^3\sin t)\) is signed and every negative point
+  must satisfy the strict reverse.  The remaining single continuous,
+  floor-free implication is Round 45 equation (R45.18).  It is not proved.
+  No hinge/curvature or old/top reserve is double-counted, and
+  \(1/(16\beta)\) remains owner reconciliation only.  The final verdict is
+  **STRUCTURAL PASS — FINAL SIGN OPEN** under Step A6(4).  Gate B continues
+  under the substantive partial, Gate C remains inactive, and every
+  proof-obligation status remains unchanged.
+
 No all-dimensional theorem follows until the high-floor first-drop
 residual is closed pointwise or by the weighted aggregate and the final
 assembly is audited.

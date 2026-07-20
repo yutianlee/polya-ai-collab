@@ -210,6 +210,30 @@ The all-dimensional shell theorem is open.  Its exact live gaps are:
    found no negative exact-owner record but are not coverage.  Gate A remains
    stopped, Gate B continues localized, Gate C is inactive, and all
    obligation statuses remain unchanged.
+   Round 45 proves that R45-CF would empty S31 and hence S30, but directed
+   exact owners falsify only that sufficient route while keeping exact
+   \(\mathscr S>0\).  Returning to the exact literal support, it proves
+   \[
+    \mathcal R_k\ge\frac{7\pi^2}{48Kt^3\sin t},\qquad
+    \sum_{k=1}^{B_0}\mathcal R_k\ge
+    \frac{7\pi^2B_0}{48Kt^3\sin t},
+   \]
+   and hence, through the exact old/top decomposition,
+   \[
+    \Omega_-+\mathcal R_{\rm tan}^0\ge
+    \frac{\pi^2B_0}{Kt^3\sin t}
+    \left(\frac W2-\frac{B_0}{4}+\frac1{48}\right)
+    +\frac9{64\pi\sqrt{K^2-q^2}\,\beta^3}.
+   \]
+   The exact support-slack identity signs the S30 portion
+   \(M_{30}\le7\pi^2B_0/(48Kt^3\sin t)\); every hypothetical negative point
+   must satisfy the strict reverse, equivalently the strict reverse of Round
+   45 equation (R45.18).  The independent verdict is
+   **STRUCTURAL PASS — FINAL SIGN OPEN** under Step A6(4).  Gate B continues
+   under the substantive partial, subject to human adjudication; Gate C
+   remains inactive and every obligation status is unchanged.  The next sole
+   obligation is complete-owner proof of (R45.18), without a count, floor,
+   ratio, chamber, or second-certificate split.
    The other live classes are higher equal-count \(Q_N\) and inverse faces,
    generic equal-count inverse faces, simultaneous \(\alpha=0\) \(B/Q\)
    corners, and general lower shelves outside the exact Round 32 and Round 39
@@ -219,11 +243,11 @@ The all-dimensional shell theorem is open.  Its exact live gaps are:
    Round 28's conditional Cmax candidates and the root-free scalar remain
    auxiliary.  Global \(\alpha\)-monotonicity is diagnostically false.  Keep
    all Round 22 and Round 26--33 witnesses as regression gates.  Gate B now
-   continues from the exact Round 44 scalar and its localized
-   negative-support set, retaining all terminal Bregman areas, the exact shelf
-   trapezoid, cap, and inverse fractions.  If this exact pointwise route fails
-   under the revised stop rule, continue to the weighted aggregate.  The
-   historical ratio ladder is not closure.
+   continues from the Round 45 strengthened exact support and its root-free
+   terminal inequality (R45.18), retaining the exact wall/action/phase/cap
+   correlation and the chosen shelf-curvature ledger.  If this exact
+   pointwise route fails under the revised stop rule, continue to the
+   weighted aggregate.  The historical ratio ladder is not closure.
 3. **Assembly.** Complete either the pointwise all-sector assembly or the
    weighted aggregate sufficient route.  Own the dimension-dependent
    no-mode equality face, the
