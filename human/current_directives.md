@@ -144,13 +144,71 @@ one-radius Jensen reduction.  The active order is now:
    that lower-\(Q\) sector analytically.  Treat it as closed.  Round 36 proves
    \(B-Q\in\{0,1\}\), \(L_T>1-J>6/7\) on the gap branch, and full
    positivity there for \(p-dm\le12/7\).  Round 37 proves
-   \(B_0=Q=B-1\ge1\), removes the top interval, and derives the lossless
-   \(\Gamma_{\rm gap}\) normal form and strict sufficient gate
-   \(\Phi_\delta^+>\mathcal H_\Delta\), without proving either sign.  Next
-   prove that Round 37 residual sign for \(p-dm>12/7\), then the higher
+   \(B_0=Q=B-1\ge1\), removes the top interval, and derives the
+   selected-projection-exact \(\Gamma_{\rm gap}\) normal form and strict
+   sufficient gate \(\Phi_\delta^+>\mathcal H_\Delta\).  Round 38 sharpens
+   the gap position to \(0<u<\alpha/2<1/2\), proves
+   \(B_0(\pi/(2t)-1)>1/5\), and closes \(p-dm\le74/35\), including every
+   residual \(p=2\) gap.  It also proves the unified
+   \(\chi\)-compensation (R38.20), without signing every remaining
+   \(p\ge3\) endpoint.  Round 39 proves \(q\ge5\), \(J<1/10\), and
+   \[
+    \Gamma_{\rm gap}>
+    \frac{11}{10}-\frac{p-dm}{2}.
+   \]
+   Hence \(p-dm\le11/5\) is closed, and every residual \(p=3\) gap has
+   \(dm<4/5\).  On the gap-side outer-\(B\) wall, retain the exact intrinsic
+   selected-scalar inequality and its root-free projection.  The simultaneous
+   outer-\(B\)/lower-shelf endpoint is now closed: its floor geometry forces
+   \(j\ge1\), and the phase-stretch lemma supplies the remaining sign.
+   Round 40 proves on the one-sided upper-\(\alpha\) outer-\(B\) endpoint
+   that strict midpoint convexity restores the full radial drop and reduces
+   the selected scalar to one continuous target
+   \[
+    \mathcal R_*(p,m,t)>0,
+    \qquad
+    \mu_*=\max\left\{p+m+2,\frac5{4L_0(t)}\right\}.
+   \]
+   Both analytic branches are strictly convex in one auxiliary variable.
+   Round 41 completes a global rational enclosure and an exact fixed-cell
+   Bernstein replay, but its 4,405 load-bearing coefficient signs constitute
+   a new computer-assisted certificate.  The revised strategy does not
+   authorize that certificate, so the final sign and endpoint remain open.
+   Treat the selected \(\Gamma_{\rm OB}\to\mathcal R_*\) route as
+   analytically exhausted.  Round 42 has now made the last stronger exact
+   Gate-A specialization.  With \(H=(p+a_p)R_1\), it proves structurally
+   \[
+    \Phi_\delta^+>\mathcal T_{42}:=
+    \frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2}.
+   \]
+   Preserve the exact loss ledger
+   \[
+    \Phi_\delta^+-\mathcal T_{42}
+    =\mathcal A_{\rm cap}+\Omega_-+\mathcal A_{\rm adj}
+     +B_0(\zeta-M)+jH+(H+2p)e_p,\qquad M=\min\{\zeta,H\},
+   \]
+   as structural evidence only.  The independent verdict is STRUCTURAL PASS
+   only; final sign open.  Round 43
+   (`human/outbox/general-d-round-43-hard-remainder-isolation-and-gate-a-stop.md`)
+   proves the sharp radical envelope \(H\ge\underline H\), the strict cap
+   envelope \(h>U_q^3/(3\pi\mu^2)\), and
+   \((E_f-E_*)'(t)>0\) on every fixed-\(f\) chart.  Its relaxed asymptotic
+   family proves only that count--phase/radial data cannot sign
+   \(\mathcal T_{42}\); its finite negative diagnostic satisfies the ordinary
+   shelf and terminal crossing but fails the exact hard owner precisely at
+   \(E<E_*\).  A global proof would require the forbidden \(f/B/j\)-indexed
+   wall analysis.  The independent audit therefore gives analytic structural
+   PASS and **Gate A STOP**.  Gate B is active: restore
+   \[
+    \mathscr S=D_A(q)+R_p+\frac{dm}{2}
+   \]
+   with the exact first-shelf trapezoid, terminal surplus, cap, and inverse
+   fractions.  Do not repair \(\mathcal T_{42}\) by a count, floor, ratio,
+   chamber, or certificate partition, and do not replace it with the rejected
+   floor-free adjacent projection.  Then treat the higher
    equal-count \(Q_N\)/inverse
    faces, simultaneous \(\alpha=0\) \(B/Q\) corners, and general lower
-   shelves outside the exact Round 32 scope.
+   shelves outside the exact Round 32 and Round 39 scopes.
    Retain every inverse fraction, exact cap,
    top interval, actual \(E\), and paired-shelf relation.  Global
    \(\alpha\)-monotonicity is diagnostically false.  The root-free and
@@ -192,9 +250,32 @@ strict retained-shelf \(p\)-convexity and the exact \(q\ge1000\) exclusion,
  Round 36 reduces every terminal count to \(B=Q\) or \(B=Q+1\), closes
  the latter when \(p-dm\le12/7\), and gives the exact remaining collision
  map.  Round 37 synchronizes \(B_0=Q=B-1\ge1\) on the residual gap and
- gives one lossless selected-scalar normal form plus one count-free
- sufficient gate; their signs remain open.  No count-by-count chamber split
- is authorized.
+ gives one selected-projection-exact normal form plus one count-free
+ sufficient gate.  Round 38 closes \(p-dm\le74/35\), confines the remaining
+ gap to \(p\ge3\), and supplies the unified \(\chi\)-compensation.  Round 39
+ sharpens the live threshold to \(p-dm\le11/5\), derives the exact intrinsic
+ outer-\(B\) inequality and its root-free projection, and closes the full
+ outer-\(B\)/lower-shelf endpoint without a count or ratio split.  Round 40
+ restores the exact shelf drop by midpoint convexity, eliminates \(\mu\)
+ monotonically, and leaves the sign \(\mathcal R_*(p,m,t)>0\) in two
+ convex representations.  Round 41 gives exact rational enclosures and a
+ successful but unauthorized 4,405-sign candidate; its selected projection is
+ exhausted.  Round 42 makes the last stronger specialization and proves
+ \[
+  \Phi_\delta^+>\mathcal T_{42}
+  =\frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2},
+  \qquad H=(p+a_p)R_1,
+ \]
+ with its exact nonnegative loss ledger and a STRUCTURAL-PASS-only independent
+ audit, but not \(\mathcal T_{42}\ge0\).  Round 43 then proves the radical and
+ cap envelopes, a relaxed asymptotic obstruction, and the fixed-chart
+ derivative \((E_f-E_*)'(t)>0\).  Its finite negative diagnostic fails only
+ the exact hard inequality \(E<E_*\).  Since continuing across the sawtooth
+ requires a forbidden \(f\)-, \(B\)-, or \(j\)-indexed wall family, Gate A has
+ stopped.  No count-by-count, ratio-chamber, or new-certificate repair is
+ authorized.  Gate B is active with
+ \(\mathscr S=D_A(q)+R_p+dm/2\); retain all exact shelf, terminal, cap, and
+ inverse-fraction correlations.  The endpoint, CST, and theorem remain open.
 The exact lower bound
 \[
  \Phi_\delta^+

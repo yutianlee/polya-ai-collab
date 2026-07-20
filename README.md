@@ -120,7 +120,19 @@ its [independent audit](human/outbox/general-d-round-35-independent-audit.md),
 the [Round 36 exact count-gap and collision reduction](human/outbox/general-d-round-36-exact-count-gap-collision-reduction.md),
 its [independent audit](human/outbox/general-d-round-36-independent-audit.md),
 the [Round 37 gap-interface synchronization and exact-shelf reduction](human/outbox/general-d-round-37-gap-interface-synchronization-and-root-free-gate.md),
-and its [independent audit](human/outbox/general-d-round-37-independent-audit.md).
+its [independent audit](human/outbox/general-d-round-37-independent-audit.md),
+the [Round 38 gap-position, count--phase, and face-compensation theorem](human/outbox/general-d-round-38-gap-position-count-phase-and-face-compensation.md),
+its [independent audit](human/outbox/general-d-round-38-independent-audit.md),
+the [Round 39 outer-face floor elimination and cap sharpening](human/outbox/general-d-round-39-outer-face-floor-elimination-and-cap-sharpening.md),
+its [independent audit](human/outbox/general-d-round-39-independent-audit.md),
+the [Round 40 upper-alpha midpoint reduction](human/outbox/general-d-round-40-upper-alpha-midpoint-reduction.md),
+its [independent audit](human/outbox/general-d-round-40-independent-audit.md),
+the [Round 41 rational enclosure and Bernstein candidate](human/outbox/general-d-round-41-rational-branch-elimination.md),
+its [independent NOT-PASS-as-analytic audit](human/outbox/general-d-round-41-independent-audit.md),
+the [Round 42 stronger upper-alpha specialization](human/outbox/general-d-round-42-stronger-upper-alpha-phi-specialization.md),
+its [independent structural-only audit](human/outbox/general-d-round-42-independent-audit.md),
+the [Round 43 hard-remainder isolation and Gate-A stop](human/outbox/general-d-round-43-hard-remainder-isolation-and-gate-a-stop.md),
+and its [independent audit](human/outbox/general-d-round-43-independent-audit.md).
 The terminal reserve and the zero-level first-floor corner are proved.  Round
 13 proves that the lossy Round 11--12 pre-shelf sign target is false even on
 the new extension grid; it does not falsify the true defect.  Round 14 restores
@@ -232,7 +244,7 @@ gap face and all old inverse-wall bad sides.  Higher \(Q_N\) walls have the
 exact terminal reserve \(L_T>3G_\mu(q)>0\), but their full scalar is not yet
 closed.  Round 37 synchronizes the hard gap interface as
 \(B_0=Q=B-1\ge1\), proves the top interval is exactly zero, and rewrites the
-selected residual losslessly as
+selected projected scalar exactly as
 
 \[
  \Gamma_{\rm gap}
@@ -242,12 +254,116 @@ selected residual losslessly as
 \]
 
 It also proves the count-free strict reduction
-\(\Phi_\delta^+>\mathcal H_\Delta\).  Neither residual expression has yet
-been signed on the continuum.  The current task is therefore the exact
-Round 37 gap sign on the transported outer, inverse, lower-shelf, and
-\(\alpha\)-endpoint faces, followed by higher \(Q_N\) faces, equal-count
-inverse faces, simultaneous \(\alpha=0\) \(B/Q\) corners, and lower shelves
-outside the precise Round 30--32 retained-shelf theorem.
+\(\Phi_\delta^+>\mathcal H_\Delta\).  This normal form is exact only for
+the selected projection, not relative to \(\Phi_\delta^+\) or \(D_A(r)\).
+Round 38 sharpens the gap coordinate to
+\[
+ 0<u<\frac{\alpha}{2}<\frac12,
+\]
+proves \(B_0(\pi/(2t)-1)>1/5\), and consequently obtains
+\[
+ \Gamma_{\rm gap}>
+ \frac{37}{35}-\frac{p-dm}{2}.
+\]
+Thus every one-level gap with \(p-dm\le74/35\) is closed, including every
+residual \(p=2\) gap.  It also proves a unified \(\chi\)-compensated
+proof-level lower bound for \(\Phi_\delta^+\).  Round 39 sharpens the residual
+cap: \(p\ge3\) forces \(q\ge5\), hence \(J<1/10\), and therefore
+\[
+ \Gamma_{\rm gap}>
+ \frac{11}{10}-\frac{p-dm}{2}.
+\]
+Thus every gap with \(p-dm\le11/5\) is closed; a residual \(p=3\) gap must
+have \(dm<4/5\).  On the gap-side outer-\(B\) wall, Round 39 also derives one
+intrinsic selected-scalar inequality from the exact action coordinates and
+its optional root-free projection.  It then proves that the simultaneous
+outer-\(B\)/lower-shelf endpoint has \(j\ge1\) and closes that entire endpoint
+by one phase-stretch argument.  This creates no new certificate and no
+\(B\)-, \(j\)-, or ratio-indexed theorem family.
+
+Round 40 keeps that one-sided upper-\(\alpha\) outer-\(B\) endpoint exact long
+enough to recover the full shelf drop.  Strict convexity of
+\(b_K-b_\mu\), with \(y=r+p/2\), gives
+\[
+ p\Delta>p^2\frac{y(1-\cos t)}
+ {\pi\sqrt{\mu^2-y^2\cos^2t}}.
+\]
+A fixed count interpolation and a root-free angular denominator then reduce
+the endpoint to one continuous scalar \(\mathcal R_*(p,m,t)\), obtained by
+setting
+\[
+ \mu_* = \max\left\{p+m+2,\frac5{4L_0(t)}\right\},
+ \qquad L_0(t)=\frac{\tan t-t}{\pi}.
+\]
+Both analytic branches are strictly convex in one auxiliary variable.  Round
+41 supplies global rational trigonometric enclosures and reduces both branches
+to a fixed exact Bernstein sign computation.  Its replay checks 4,405
+load-bearing coefficient signs (4,259 positive and 146 zero) and ends in
+`round41BernsteinSignReplayOK=True`.  This is a new computer-assisted finite
+certificate, not the short hand-checkable wall algebra authorized by the
+revised strategy.  The independent audit verdict is **NOT PASS as a
+strategy-authorized analytic closure; PASS only as an exact structural
+reduction and computer-assisted candidate**.  It therefore does not prove
+\(\mathcal R_*>0\) or close the
+endpoint.  The selected \(\Gamma_{\rm OB}\to\mathcal R_*\) projection is
+analytically exhausted.  Round 42 makes the last stronger Gate-A
+specialization directly through \(\Phi_\delta^+\).  With
+\[
+ H=(p+a_p)R_1,\qquad M=\min\{\zeta,H\},
+\]
+it proves the exact structural lower bound
+\[
+ \Phi_\delta^+>\mathcal T_{42},\qquad
+ \mathcal T_{42}:=\frac9{10}+B_0M+Hh-\frac{p-dm}{2}.
+\]
+Its complete loss ledger is the exact identity
+\[
+ \Phi_\delta^+-\mathcal T_{42}
+ =\mathcal A_{\rm cap}+\Omega_-+\mathcal A_{\rm adj}
+  +B_0(\zeta-M)+jH+(H+2p)e_p,
+\]
+where
+\(\mathcal A_{\rm cap}=1/(2\beta)-J-9/10>0\) and
+\(\mathcal A_{\rm adj}=(p+a_p)[\Delta-R_1(j+e_p+h)]>0\).
+The independent audit verdict is **STRUCTURAL PASS only; final sign open**,
+and the algebra replay ends in `round42StrongerPhiReplayOK=True`.  Round 43
+proves the hand-checkable envelopes
+\[
+ H\ge\underline H,\qquad
+ h>\frac{U_q^3}{3\pi\mu^2},\qquad
+ \underline H=\frac{(p+a_p)p(2r+p)}{m(2x+m)}
+ \min\!\left\{\frac{U_x}{U_r},\sqrt{\frac{U_q}{U_r}}\right\}.
+\]
+An exact relaxed asymptotic family has
+\(\lim \mathcal T_{42}/N<0\), proving that count--phase and radial data alone
+cannot close the sign.  A separate finite high-precision record satisfies the
+outer wall, activity, common shelf, and terminal first drop but fails the exact
+hard owner precisely at \(E<E_*=(p-dm)/(2p)\); it is diagnostic only.  Finally,
+Round 43 proves on each fixed-\(f\) chart that
+\[
+ \frac d{dt}(E_f-E_*)=
+ \frac1\pi\left[\tan t\left(\sqrt{K^2-r^2}+\sqrt{K^2-x^2}\right)
+ -\frac mp\right]>0.
+\]
+Global continuation would require tracking the discontinuous \(f\)-, \(B\)-,
+or \(j\)-indexed walls forbidden by the revised strategy.  The independent
+verdict is **analytic structural PASS; Gate A STOP**.  Gate B is now active and
+restores the exact shifted-tail scalar
+\[
+ \mathscr S=D_A(q)+R_p+\frac{dm}{2}.
+\]
+Equivalently, by the inherited exact shelf identity,
+\[
+ \mathscr S=D_A(q)+\mathcal C_p+p(E-E_*).
+\]
+The active Gate-B target is the same inequality, unrenamed:
+\(D_A(q)+\mathcal C_p\ge p(E_*-E)\), with the literal terminal defect and
+exact shelf trapezoid retained.
+The exact-owner sign \(\mathcal T_{42}\ge0\), this endpoint, CST, and the
+theorem remain open.  Higher equal-count \(Q_N\) and inverse faces,
+generic equal-count inverse faces, simultaneous \(\alpha=0\) \(B/Q\)
+corners, and lower shelves outside the proved Round 30--32 and Round 39 scopes
+remain open.
 The adaptive cusp is diagnostic only and shows that global
 \(\alpha\)-monotonicity is false.  If the exact endpoint route fails, return
 to \(\mathscr S\) and then the weighted aggregate.  At most one consolidated
@@ -393,13 +509,33 @@ Add `-SubmitPrompts` if you want the helper to press Enter after pasting prompts
 - Obtain conventional peer review and a current literature/novelty search
   before any publication claim.
 - On the separate general-dimensional track, treat the included retained-
-  \(E\) shelf and the lower-\(Q\) hard sector as closed.  Attack the exact
-  Round 37 residual gap sign: prove the lossless \(\Gamma_{\rm gap}\) form or
-  its \(\mathcal H_\Delta\) sufficient gate on \(B=Q+1\) with
-  \(p-d_m>12/7\) (including wall endpoints), then the higher
+  \(E\) shelf, lower-\(Q\) hard sector, every one-level gap with
+  \(p-dm\le11/5\), and the Round 39 outer-\(B\)/lower-shelf endpoint as
+  closed.  A residual \(p=3\) gap has \(dm<4/5\).  Round 41's unauthorized
+  4,405-sign candidate leaves \(\mathcal R_*>0\) open and exhausts the
+  selected \(\Gamma_{\rm OB}\to\mathcal R_*\) projection.  Round 42 performs
+  the last stronger Gate-A specialization and proves structurally
+  \[
+   \Phi_\delta^+>\mathcal T_{42}
+   =\frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2},
+   \qquad H=(p+a_p)R_1.
+  \]
+  Round 43 proves a sharp radical envelope for \(H\), an elementary lower
+  envelope for \(h\), and the fixed-chart derivative
+  \((E_f-E_*)'(t)>0\).  Its relaxed asymptotic obstruction shows the smooth
+  count--phase/radial data are insufficient, while its finite negative
+  diagnostic fails the exact owner only at \(E<E_*\).  Global continuation
+  requires the forbidden \(f/B/j\)-wall analysis, so Gate A has stopped and
+  Gate B is active.  Work from the restored exact scalar
+  \[
+   \mathscr S=D_A(q)+R_p+\frac{dm}{2},
+  \]
+  retaining the first-shelf trapezoid, terminal surplus, cap, and inverse
+  fractions.  Do not repair \(\mathcal T_{42}\) with a count, floor, ratio,
+  chamber, or certificate split.  Then treat the higher
   \(Q_N\) and generic equal-count inverse faces, the exceptional \(\alpha=0\)
   simultaneous \(B/Q\) corners, and the general lower-shelf or alpha-closure
-  configurations outside the retained Round32 compact certificate.
+  configurations outside the retained Round 32 and proved Round 39 scopes.
 - Treat Mathematica and other high-precision sweeps as falsification and
   theorem-design evidence unless a distinct certified finite obligation is
   created.

@@ -1,6 +1,6 @@
 # Current State
 
-Date: 19 July 2026
+Date: 20 July 2026
 
 The authoritative mathematical state is `state/proof_obligations.yml`.
 It contains 124 unique obligations, selects
@@ -593,7 +593,8 @@ Round 37 synchronizes the residual hard one-level gap:
 \]
 
 The terminal top interval is exactly zero.  With the exact positive reserve
-\(\Omega\) and \(\Xi=E-M_4\ge0\), the selected scalar has the lossless form
+\(\Omega\) and \(\Xi=E-M_4\ge0\), the selected scalar has an exact form
+relative to that selected projection:
 
 \[
  \Gamma_{\rm gap}
@@ -604,9 +605,204 @@ The terminal top interval is exactly zero.  With the exact positive reserve
 The stronger endpoint scalar also satisfies the count-free strict bound
 \(\Phi_\delta^+>\mathcal H_\Delta\), where \(\mathcal H_\Delta\) retains the
 maximum of the correlated elasticity, quartic-curvature, and adjacent-action
-payments.  These are exact reductions only: neither
-\(\Gamma_{\rm gap}>0\) nor \(\mathcal H_\Delta\ge0\) is yet proved on the
-residual continuum.
+payments.  This is not lossless relative to \(\Phi_\delta^+\) or \(D_A(r)\).
+
+Round 38 sharpens the gap coordinate.  With \(u=\lambda-j\),
+\(S_q=A(q)-W\), and \(\chi=u-S_q\), every literal positive-alpha gap owner
+satisfies
+
+\[
+ 0<S_q\le u<S_q+h<\frac{\alpha}{2},
+ \qquad 0\le\chi<h,
+ \qquad 0<u<\frac{\alpha}{2}<\frac12.
+\]
+
+Thus no finite integer-\(\lambda\) wall lies in the positive-alpha gap.  It
+also proves the count--phase compensation
+
+\[
+ B_0\zeta>\frac15,\qquad \zeta=\frac{\pi}{2t}-1,
+\]
+
+and, after writing
+\(\widehat\Xi=\Delta-M_4\ge0\), obtains
+
+\[
+ \Gamma_{\rm gap}>
+ \frac{37}{35}-\frac{p-dm}{2}.
+\]
+
+Consequently every one-level gap with
+\(p-dm\le74/35\) is closed, including every residual \(p=2\) gap; \(p=1\)
+was already closed in Round 36.  The remaining gap work has \(p\ge3\).
+Round 38 also proves one unified \(Q\)-wall/outer-\(B\) compensation bound
+that retains \(\chi\), the newest inverse level, \(\Omega_-\), and the actual
+adjacent action.  This is a proof-level lower bound for
+\(\Phi_\delta^+\), not a new certificate and not yet a sign on every
+\(p\ge3\) endpoint.  The obligation graph is intentionally unchanged in
+Round 38.
+
+Round 39 sharpens the residual cap.  With \(x=r+p\) and \(q=x+m\), residual
+\(p\ge3\) implies \(q\ge5\), and
+\[
+ J<2I_{q+1}(q)\le2I_6(5)<\frac1{10}.
+\]
+Consequently
+\[
+ \Gamma_{\rm gap}>
+ \frac{11}{10}-\frac{p-dm}{2},
+\]
+so every gap with \(p-dm\le11/5\) is closed.  A surviving \(p=3\) gap must
+satisfy \(dm<4/5\).
+
+On the gap-side outer-\(B\) wall, put \(x=r+p\),
+\(\beta=\pi^{-1}\arccos(q/K)\), \(v=G_K(q)\),
+\[
+ U_z=(\mu^2-z^2)^{1/2},\qquad
+ g=\frac{U_r}{U_x}-1,\qquad
+ R_1=\frac{U_r-U_x}{U_x-U_q}.
+\]
+The selected scalar has the exact outer-face form
+\[
+ \Gamma_{\rm OB}=
+ \frac1{2\beta}-J+\Omega_-+(v-\tfrac34)\zeta
+ +p\Delta+a_pM_4+2pe_p-\frac{p-dm}{2},
+\]
+and satisfies the single intrinsic bound
+\[
+\begin{aligned}
+ \Gamma_{\rm OB}>F_{\rm OB}:={}&
+ \frac1{2\beta}-J+\Omega_-+(v-\tfrac34)\zeta\\
+ &+pR_1[A(x)-A(q)]+a_pg[A(x)-W]+2pe_p
+ -\frac{p-dm}{2}.
+\end{aligned}
+\]
+The loss is exactly the sum of the positive adjacent-action and elasticity
+remainders.  The optional root-free projection retains
+\[
+ \Omega_-\ge
+ \frac{\pi^2}{2Kt^3\sin t}
+ (v-\tfrac34)(W-\tfrac v2+\tfrac18).
+\]
+Neither expression is a new certificate or a theorem family indexed by a
+count, floor, or shell ratio.
+
+At the simultaneous outer-\(B\)/lower-shelf endpoint, the exact floor geometry
+forces \(j\ge1\); Round 39 combines this with one phase-stretch inequality to
+prove \(\Gamma_{\rm OB}>0\).  This complete endpoint is therefore closed.
+The one-sided upper-\(\alpha\) outer-\(B\) endpoint is the final Gate-A face
+addressed below.
+
+Round 40 restores the exact radial shelf drop on this remaining endpoint.
+For
+\[
+ \mathcal D(z)=b_K(z)-b_\mu(z),\qquad y=r+\frac p2,
+\]
+strict convexity and an angular chord estimate give
+\[
+ \Delta>p\mathcal D(y)>
+ p\frac{y(1-\cos t)}{\pi\sqrt{\mu^2-y^2\cos^2t}},
+\]
+and hence the exact selected scalar has the strict midpoint payment
+\[
+ p\Delta>
+ p^2\frac{y(1-\cos t)}{\pi\sqrt{\mu^2-y^2\cos^2t}}.
+\]
+With
+\[
+ \rho=\frac{p/2+m+1}{\mu},\qquad
+ C(\rho,t)=\frac{(1-\rho)(1-\cos t)}
+ {\pi\sqrt{\sin^2t+2\rho}},
+\]
+the fixed count interpolation \(B_0>W/4+9/16\) yields
+\[
+ \Gamma_{\rm OB}>\mathcal R(\mu,p,m,t)
+ =\frac9{10}+\frac9{16}\zeta+\frac14\zeta\mu L_0(t)
+ +p^2C(\rho,t)-\frac{p-dm}{2}.
+\]
+This expression is strictly increasing in \(\mu\).  Every endpoint has
+\(\mu\ge p+m+2\) and \(\mu>5/(4L_0)\), so the single remaining sign is
+\[
+ \mathcal R_*(p,m,t):=
+ \mathcal R\!\left(\max\left\{p+m+2,\frac5{4L_0(t)}\right\},p,m,t\right)>0.
+\]
+Its geometric and phase representations are each strictly convex in one
+auxiliary variable and agree at the seam.  Round 40 does not prove this final
+continuum sign.  Round 41 supplies global exact rational enclosures and
+reduces both branch signs to a fixed Bernstein table.  The clean replay ends
+in `round41BernsteinSignReplayOK=True` after checking 4,405 load-bearing
+coefficients (4,259 positive and 146 zero).  This is a new finite
+computer-assisted certificate rather than the short hand-checkable wall
+algebra authorized by the revised strategy.  The independent audit verdict
+is NOT PASS as a strategy-authorized analytic closure and PASS only as an
+exact structural reduction and computer-assisted candidate.  It therefore does not prove
+\(\mathcal R_*>0\), close the endpoint, or alter any obligation status.  The
+selected \(\Gamma_{\rm OB}\to\mathcal R_*\) projection is analytically
+exhausted.  Round 42 performs the last stronger Gate-A specialization
+directly through \(\Phi_\delta^+\).  At
+\(\chi=h,\ y_B=0,\ \alpha\uparrow1^-\), define
+\[
+ H=(p+a_p)R_1,\qquad M=\min\{\zeta,H\},\qquad
+ \mathcal T_{42}:=\frac9{10}+B_0M+Hh-\frac{p-dm}{2}.
+\]
+The exact endpoint identity and adjacent-action inequality give
+\[
+ \Phi_\delta^+>\mathcal T_{42}.
+\]
+This is structural only.  With
+\[
+ \mathcal A_{\rm adj}:=(p+a_p)
+ [\Delta-R_1(j+e_p+h)]>0,\qquad
+ \mathcal A_{\rm cap}:=\frac1{2\beta}-J-\frac9{10}>0,
+\]
+the complete loss ledger is exactly
+\[
+ \Phi_\delta^+-\mathcal T_{42}
+ =\mathcal A_{\rm cap}+\Omega_-+\mathcal A_{\rm adj}
+  +B_0(\zeta-M)+jH+(H+2p)e_p.
+\]
+The algebra-only replay ends in
+`round42StrongerPhiReplayOK=True`.  The independent verdict is STRUCTURAL PASS
+only; final sign open.  Round 43, recorded in
+`human/outbox/general-d-round-43-hard-remainder-isolation-and-gate-a-stop.md`,
+retains \(E<E_*=(p-dm)/(2p)\) and proves
+\[
+ H\ge\underline H:=
+ \frac{(p+a_p)p(2r+p)}{m(2x+m)}
+ \min\!\left\{\frac{U_x}{U_r},\sqrt{\frac{U_q}{U_r}}\right\},
+ \qquad h>\frac{U_q^3}{3\pi\mu^2}.
+\]
+Its exact relaxed asymptotic family satisfies
+\(\lim\mathcal T_{42}/N<0\), showing that count--phase and radial data alone
+are insufficient.  It is outside the common-shelf owner.  A separate finite
+high-precision negative diagnostic satisfies the outer wall, activity, common
+shelf, and terminal first drop but fails the exact hard owner precisely at
+\(E<E_*\); it is noninterval and noncertifying.  On every fixed-\(f\) chart,
+Round 43 proves
+\[
+ \frac d{dt}(E_f-E_*)=
+ \frac1\pi\left[\tan t\left(\sqrt{K^2-r^2}+\sqrt{K^2-x^2}\right)
+ -\frac mp\right]>0.
+\]
+At a shelf jump \(E_{f+1}=E_f-2\), while the outer face lies on separate
+integer \(B_0\)-walls.  A global continuation therefore requires the
+forbidden \(f/B/j\)-indexed wall family.  The independent Round 43 verdict is
+analytic structural PASS and **Gate A STOP**.  Gate B is active and restores
+\[
+ \mathscr S=D_A(q)+R_p+\frac{dm}{2}.
+\]
+Using the inherited exact shelf identity, the active Gate-B form and its
+unrenamed target are
+\[
+ \mathscr S=D_A(q)+\mathcal C_p+p(E-E_*),
+ \qquad D_A(q)+\mathcal C_p\ge p(E_*-E).
+\]
+The literal terminal defect \(D_A(q)\) and exact trapezoid
+\(\mathcal C_p\) must be retained; do not restart from \(L_T\),
+\(a_p\Delta\), or another compressed scalar.
+The exact-owner sign \(\mathcal T_{42}\ge0\), the endpoint, CST, and the
+theorem remain open.  The rejected floor-free adjacent projections remain
+invalid replacements and do not falsify the endpoint or CST.
 
 The Round 30 finite diagnostic still retains 933 necessary-condition records,
 none above \(q=33\), and finds minimum \(0.30090314669\ldots\) at
@@ -620,20 +816,25 @@ sufficient route.  Only those assembly-level nodes imply the proposed
 all-dimensional theorem.  No new ratio ladder is authorized, and a final
 proof may use at most one consolidated compact certificate.  Round 32 now
 selects that compact fallback for its finite shelf remainder, so the legacy
-first-floor certificate must be analytically replaced or consolidated before
-final assembly.  The next pointwise task is one remaining-endpoint CST
-  theorem outside the precise Round 32 retained shelf and the lower-\(Q\)
-sector.  Activity is no longer a live endpoint.  The first task is to sign
-the Round 37 \(\Gamma_{\rm gap}\) normal form or its
-\(\mathcal H_\Delta\) sufficient gate on the transported one-level-gap wall
-endpoints with \(p-dm>12/7\).  The other live strata are higher
+ first-floor certificate must be analytically replaced or consolidated before
+ final assembly.  Round 41's second finite certificate is not authorized for
+ that chain, and Rounds 42--43 introduce no certificate.  Gate A is exhausted;
+ the next pointwise task is Gate B on the exact scalar
+ \(\mathscr S=D_A(q)+R_p+dm/2\), retaining the first-shelf trapezoid, complete
+ terminal surplus, cap, and inverse fractions.  Do not repair
+ \(\mathcal T_{42}\) with a count, floor, ratio, chamber, or certificate
+ family.  Activity and the
+outer-\(B\)/lower-shelf face are no longer
+live endpoints.  A certified feasible \(\Gamma_{\rm gap}<0\) stops that
+universal target and activates the prescribed exact-scalar fallback; no
+ratio/count partition is allowed.  The other live strata are higher
 \(Q_N\) faces \(N\ge2\), equal-count inverse faces, simultaneous
-\(\alpha=0\) \(B/Q\) corners, and general lower shelves outside Round 32.
-The constant-
-\(K\) hard-gap proof is scoped to \(r\ge1\) on the integer grid and
-\(r\ge3/2\) on the half-integer grid.  If the exact endpoint route fails,
-return to \(\mathscr S\) and then the weighted aggregate, not a new lossy
-surrogate.
+\(\alpha=0\) \(B/Q\) corners, and general lower shelves outside the proved
+ Round 32 and Round 39 scopes.  The constant-\(K\) hard-gap proof is scoped to
+\(r\ge1\) on the integer grid and
+ \(r\ge3/2\) on the half-integer grid.  The Gate-B return to \(\mathscr S\) is
+ now active; if the exact pointwise route fails under the revised stop rule,
+ continue to the weighted aggregate, not a new lossy surrogate.
 
 ## Evidence and remaining work
 
@@ -643,6 +844,13 @@ The current mathematical audits include
 Independent passes reconstructed the angular, radial/ball, and scalar
 components and found no mathematical failure. Exact rational and
 outward-rounded interval scripts are optional transcription regressions only.
+The separate Round 38--43 general-dimensional notes each have an independent
+audit and exact Mathematica replay at their stated structural scope.  Round
+41 is not an authorized analytic closure; Round 42 has only a structural PASS;
+Round 43 has an analytic structural PASS and Gate-A STOP.  Their finite
+falsification diagnostics remain diagnostic only.
+None of these changes the authoritative open status of high-floor CST or the
+all-dimensional theorem.
 
 Before external dissemination, the remaining work is:
 

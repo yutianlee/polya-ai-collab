@@ -37,7 +37,8 @@ and carries no novelty, priority, or publication claim.
 ### General-dimensional active packet
 
 1. `human/inbox/general-d_simplified_analytic_strategy.md` for the controlling
-   strategy and gates.
+   methodology and `human/inbox/general-d-strategy_r2.md` for the binding
+   Round 38 strategy and Gate A/B/C stop rules.
 2. `human/outbox/general-d-round-10-fractional-terminal-reserve-and-shelf-terminal-compensation.md`
    for WP1, the combined scalar, and the exact WP2 residual.
 3. `human/outbox/general-d-round-10-fractional-terminal-reserve-independent-audit.md`
@@ -179,19 +180,88 @@ and carries no novelty, priority, or publication claim.
     strict-bracket, jump, reserve, and threshold replays.
 46. `human/outbox/general-d-round-37-gap-interface-synchronization-and-root-free-gate.md`
     for hard-gap interface synchronization, the positive-interface
-    reduction, the lossless selected-scalar normal form, and the count-free
-    sufficient gate.
+    reduction, the normal form exact for the selected projected scalar, and
+    the count-free sufficient gate.
 47. `human/outbox/general-d-round-37-independent-audit.md` for the independent
     strict-floor, lower-sublevel, endpoint, algebra, loss, and scope audit.
 48. `computations/general_d_round37_gap_interface_replay.wl` for the 15 exact
     identities underlying the Round 37 reductions.
 49. `computations/general_d_round37_gap_rootfree_diagnostic.py` for the finite
     ordinary-double owner/wall counterexample search; it is diagnostic only.
-50. `manuscript/spherical-shell-polya-general-d.tex` for the preserved backbone
+50. `human/outbox/general-d-round-38-gap-position-count-phase-and-face-compensation.md`
+    for the sharp \(u,\chi\) gap coordinate, count--phase lemma,
+    \(p\le2\) gap closure, and unified endpoint compensation.
+51. `human/outbox/general-d-round-38-independent-audit.md` for the independent
+    proof, ownership, loss-ledger, replay, diagnostic, and scope audit.
+52. `computations/general_d_round38_gap_position_replay.wl` for exact symbolic
+    identity, derivative, minimum-algebra, and upper-alpha cap replays.
+53. `computations/general_d_round38_gap_face_diagnostic.py` for the finite
+    two-grid \(p\ge3\) transported-face search; it is diagnostic only.
+54. `human/outbox/general-d-round-39-outer-face-floor-elimination-and-cap-sharpening.md`
+    for \(J<1/10\), the \(p-dm\le11/5\) closure, the exact intrinsic
+    outer-\(B\) inequality and root-free projection, and the analytic closure
+    of the simultaneous outer-\(B\)/lower-shelf endpoint.
+55. `human/outbox/general-d-round-39-independent-audit.md` for the independent
+    cap, outer-face algebra, phase-stretch, ownership, loss-ledger, diagnostic,
+    and theorem-boundary audit.
+56. `computations/general_d_round39_outer_face_replay.wl` for the exact
+    outer-face, action-coordinate, loss-ledger, root-free, elastic-branch, cap,
+    and phase-stretch algebra replays.
+57. `computations/general_d_round39_outer_face_diagnostic.py` for the finite
+    ordinary-double and optional high-precision outer-face falsification
+    search; every reported minimum is diagnostic only.
+58. `human/outbox/general-d-round-40-upper-alpha-midpoint-reduction.md` for
+    the strict midpoint action payment, fixed count interpolation, monotone
+    outer-radius elimination, and two convex representations of the open
+    intrinsic target \(\mathcal R_*>0\).
+59. `human/outbox/general-d-round-40-independent-audit.md` for the independent
+    proof, ownership, loss-ledger, branch-domain, replay, diagnostic, and
+    theorem-boundary audit.
+60. `computations/general_d_round40_upper_midpoint_replay.wl` for the exact
+    midpoint-kernel derivatives, denominator slack, count interpolation,
+    monotone-\(\mu\) derivative, branch substitutions, and convexity replays.
+61. `computations/general_d_round40_upper_face_diagnostic.py` for the finite
+    exact-face and relaxed continuous falsification searches; all minima and
+    high-precision replays are diagnostic only.
+62. `human/outbox/general-d-round-41-rational-branch-elimination.md` for the
+    exact rational enclosures, fixed Bernstein reduction, explicit
+    4,405-sign computer-candidate classification, and revised-strategy stop
+    decision.  It does not promote the endpoint.
+63. `human/outbox/general-d-round-41-independent-audit.md` for the verdict
+    NOT PASS as a strategy-authorized analytic closure and PASS only as an
+    exact structural reduction and computer-assisted candidate.
+64. `computations/general_d_round41_bernstein_sign_replay.wl` for the fixed
+    exact-rational coefficient-sign replay ending in
+    `round41BernsteinSignReplayOK=True`; this is an unauthorized finite
+    certificate candidate, not an analytic theorem premise.
+65. `human/outbox/general-d-round-42-stronger-upper-alpha-phi-specialization.md`
+    for the exact endpoint specialization
+    \(\Phi_\delta^+>\mathcal T_{42}\), its complete loss ledger, the open
+    intrinsic sign, and the Gate-A/B stop decision.  It is structural only
+    and proposes no certificate.
+66. `human/outbox/general-d-round-42-independent-audit.md` for the
+    verdict STRUCTURAL PASS only; final sign open, with no state or
+    proof-obligation promotion.
+67. `computations/general_d_round42_stronger_phi_replay.wl` for the
+    algebra-only count, minimum-decomposition, stage-loss, and total-loss
+    replay ending in `round42StrongerPhiReplayOK=True`; it owns no sign of
+    \(\mathcal T_{42}\).
+68. `human/outbox/general-d-round-43-hard-remainder-isolation-and-gate-a-stop.md`
+    for the radical and cap envelopes, relaxed asymptotic obstruction,
+    hard-condition diagnostic, fixed-chart derivative, Gate-A stop, and
+    Gate-B restoration of \(\mathscr S\).
+69. `human/outbox/general-d-round-43-independent-audit.md` for the analytic
+    structural PASS, Gate A STOP verdict, exact-owner boundary, and unchanged
+    endpoint/CST/theorem statuses.
+70. `computations/general_d_round43_hard_remainder_replay.wl` for algebraic
+    radical and derivative identities plus the high-precision finite replay,
+    and `computations/general_d_round43_hard_remainder_diagnostic.py` for the
+    reproducible 406-sample sharpness statistics; neither is a certificate.
+71. `manuscript/spherical-shell-polya-general-d.tex` for the preserved backbone
     and earlier proved tail modules; its final theorem is not closed.
-51. `human/outbox/general-d-round-09-no-drop-f1-small-s.md` and its independent
+72. `human/outbox/general-d-round-09-no-drop-f1-small-s.md` and its independent
     audit for the retained partial no-drop theorem.
-52. `computations/general_d_fractional_terminal_probe.wl`,
+73. `computations/general_d_fractional_terminal_probe.wl`,
     `computations/general_d_round13_endpoint_counterexample.wl`, and
     the Round 14--20 and Round 23--32 replay/diagnostic scripts, including
     `computations/general_d_round31_retained_shelf_replay.wl`,
@@ -205,7 +275,7 @@ and carries no novelty, priority, or publication claim.
     counterexample certificate, endpoint/geometric diagnostics, finite
     rational wall checks, high-floor falsification sweep, and directed-Arb
     exact-cap check.
-53. `state/proof_obligations.yml` for authoritative status and dependencies.
+74. `state/proof_obligations.yml` for authoritative status and dependencies.
 
 ### Completed d=3 review packet
 
@@ -336,12 +406,55 @@ second witness, however,
   theorem and Round 35 close that sector in every phase.  The surviving
   pointwise task is narrowed by Round 36: \(B-Q\in\{0,1\}\), and the full
   gap scalar is positive for \(p-dm\le12/7\).  Round 37 proves
-  \(B_0=Q=B-1\ge1\), a zero top interval, the lossless
+  \(B_0=Q=B-1\ge1\), a zero top interval, the selected-projection
   \(\Gamma_{\rm gap}\) normal form, and the strict sufficient reduction
-  \(\Phi_\delta^+>\mathcal H_\Delta\), but signs neither residual.  The live
-  task is that exact transported gap sign, followed by higher equal-count \(Q_N\)/inverse
-  faces, simultaneous \(\alpha=0\) \(B/Q\) corners, and general lower
-  shelves outside Round 32.
+  \(\Phi_\delta^+>\mathcal H_\Delta\).  Round 38 proves
+  \(0<u<\alpha/2<1/2\), \(B_0\zeta>1/5\), and
+  \[
+  \Gamma_{\rm gap}>
+   \frac{37}{35}-\frac{p-dm}{2},
+  \]
+  closing \(p-dm\le74/35\), hence every \(p\le2\) gap.  It also proves the
+  unified \(\chi\)-compensation (R38.20).  Round 39 proves \(q\ge5\),
+  \(J<1/10\), and
+  \[
+   \Gamma_{\rm gap}>
+   \frac{11}{10}-\frac{p-dm}{2},
+  \]
+  closing \(p-dm\le11/5\); a residual \(p=3\) gap has \(dm<4/5\).  It also
+  derives the exact intrinsic outer-\(B\) selected-scalar inequality and its
+  root-free projection.  On the lower shelf, strict floor geometry gives
+  \(j\ge1\), and the phase-stretch lemma closes the complete simultaneous
+  outer-\(B\)/lower-shelf endpoint.  Round 40 restores the exact shelf drop
+  on the one-sided upper-\(\alpha\) outer-\(B\) endpoint by midpoint convexity
+  and reduces it to the single open sign \(\mathcal R_*(p,m,t)>0\), represented
+  by two convex branches of one continuous maximum.  Round 41 gives exact
+  rational enclosures and a successful fixed 4,405-sign Bernstein replay.
+  Because that replay is a new finite computer-assisted certificate, it is
+  unauthorized for promotion under the revised strategy.  The endpoint
+  remains open and the selected \(\Gamma_{\rm OB}\to\mathcal R_*\) projection
+  is analytically exhausted.  Round 42 makes the last stronger Gate-A
+  specialization and proves structurally, with \(H=(p+a_p)R_1\),
+  \[
+   \Phi_\delta^+>\mathcal T_{42}:=
+   \frac9{10}+B_0\min\{\zeta,H\}+Hh-\frac{p-dm}{2}.
+  \]
+  Its exact loss ledger is (R42.17) and the algebra replay succeeds.  The
+  independent verdict is STRUCTURAL PASS only; final sign open.  Round 43
+  proves \(H\ge\underline H\), \(h>U_q^3/(3\pi\mu^2)\), a relaxed asymptotic
+  family with \(\lim\mathcal T_{42}/N<0\), and the fixed-chart derivative
+  \((E_f-E_*)'(t)>0\).  The asymptotic family is outside the same-shelf owner,
+  and the finite negative diagnostic fails the exact owner precisely at
+  \(E<E_*\).  Global continuation would require forbidden \(f/B/j\)-indexed
+  walls, so Gate A has stopped.  Gate B is active with
+  \[
+   \mathscr S=D_A(q)+R_p+\frac{dm}{2}.
+  \]
+  The sign \(\mathcal T_{42}\ge0\), the endpoint, CST, and the theorem remain
+  open; the proof graph is unchanged.  The remaining work also
+  includes higher equal-count
+  \(Q_N\)/inverse faces, simultaneous \(\alpha=0\) \(B/Q\) corners, and
+  lower shelves outside the proved Round 32 and Round 39 scopes.
   The adaptive cusp rejects
   global \(\alpha\)-monotonicity; it and the observed diagnostic cutoff at
   \(q=33\), together with the unarchived edge experiment, are non-premises.
