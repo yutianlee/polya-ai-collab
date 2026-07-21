@@ -954,3 +954,28 @@ remain separate open programs.
 These dissemination gates concern the completed (d=3) theorem.  They do not
 close, delay, or silently promote the separate all-dimensional research
 obligations above.
+
+## General-dimensional Round 48 portfolio result
+
+The updated human workflow activates portfolio discovery on the literal
+(d=4) weighted aggregate.  Round 48 derives the exact inverse-layer ledger
+
+\[
+ W_4=\int_0^{A(0)}\frac{\xi(t)^3}{3}\,dt,
+ \qquad
+ P_4^<=\sum_{n-1/4<A(0)}S_2(\lceil\xi(n-1/4)\rceil-1).
+\]
+
+Two bounded cell obligations are now `proved_internal`: every complete
+full-outer cell has reserve (>19N/48+27/128), and every complete deep-inner
+cell below (z=\mu/\sqrt2) has positive reserve.  Both passed distinct lead,
+clean-room, and adversarial roles.
+
+The unrestricted continuous quarter-node polynomial strengthening is
+interval-falsified at an exact rational interface cell, while the literal
+discrete QCL cell remains positive there.  The scoped literal aggregate
+`SHELL-general-d-weighted-aggregate-d4` remains `proposed` and has no
+theorem-level implication.  The first inverse-layer gap is the complete shallow-inner band,
+the interface-straddling cell, terminal truncation, and their exact
+compensation with the unused top interval.  The all-dimensional theorem
+remains unproved, and the completed (d=3) theorem is unchanged.

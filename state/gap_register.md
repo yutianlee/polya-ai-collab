@@ -293,3 +293,14 @@ remains optional and is not a premise of the new explicit general-dimensional
 sector graph.  No alternate result may replace the live
 three-dimensional proof without an exact replacement map and fresh clean-room
 and adversarial audits.
+
+## Round 48 inverse-layer residual
+
+On the literal (d=4) aggregate, complete full-outer cells and complete
+deep-inner cells with (z\le\mu/\sqrt2) are now proved positive.  The open
+inverse-layer residual consists of complete shallow-inner cells, the possible
+interface-straddling cell, terminal truncation, and exact compensation with
+the unused top interval.  Cellwise QCL remains only sufficient for the
+literal target.  The continuous quarter-node polynomial replacement is
+exactly rejected and must not be reused.  No literal aggregate counterexample
+is known.

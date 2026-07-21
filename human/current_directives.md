@@ -379,3 +379,16 @@ or ratio partition.
 Do not rewrite `manuscript/spherical-shell-polya-general-d.tex` until the
 high-floor gate, backbone audit, and final whole-cover assembly close, or the
 proof completes the weighted aggregate route instead.
+
+## Round 48 workflow update
+
+`human/inbox/general-d-next-discovery-portfolio.md` supersedes the Round 47
+assignment of component (U) as the sole next obligation.  The selected
+target is the literal (d=4) weighted aggregate, explored through a diverse
+portfolio.  Round 48 certifies complete full-outer and deep-inner inverse
+cells only; it does not close the aggregate.  Continue on the exact
+shallow-inner/interface/truncation residual or another registered route.
+Preserve the exact interval counterexample to the unrestricted continuous
+quarter-node strengthening, keep numerical positive searches diagnostic,
+and leave the completed (d=3) theorem and unproved general-dimensional
+theorem statuses unchanged.

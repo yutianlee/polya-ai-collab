@@ -28,7 +28,10 @@ for all `Lambda >= 0`.  The full three-dimensional shell family has now been
 closed internally by the purely analytic route described below; its active
 work is proof reconstruction and external review.  A separate
 general-dimensional shell extension is active, but remains unproved in the
-residual high-floor first-drop branch; its preserved backbone and final
+residual high-floor first-drop branch.  The current portfolio target is the
+literal four-dimensional weighted aggregate.  Round 48 certifies its complete
+full-outer and deep-inner inverse-action cells, but leaves the shallow-inner,
+interface, and terminal residual open; the preserved backbone and final
 whole-cover assembly also still require independent audit.
 
 The parallel flagship track is the Dirichlet ellipse / Mathieu-function program. A lower-risk backup track is a Jiang-Lin-style certificate theorem for a smooth non-tiling comparison family.

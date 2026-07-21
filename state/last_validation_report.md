@@ -908,3 +908,51 @@ requires a human line-by-line reconstruction of every bottleneck lemma,
 manuscript-level notation and dependency checking, and a separate current
 literature search. Those human and literature tasks do not change the
 internal graph status and must not be represented as already completed.
+
+## Round 48 general-dimensional portfolio validation
+
+Verdict: **bounded promotions PASS; literal aggregate remains open**.
+
+Validated state:
+
+- `SHELL-general-d-weighted-aggregate` remains `proposed`;
+- `SHELL-general-d-weighted-aggregate-d4` is the separate scoped target and
+  remains `proposed`, with no implication to the all-dimensional theorem;
+- `SHELL-general-d-d4-full-outer-action-cell-round48` is
+  `proved_internal` after distinct lead, clean-room, and adversarial proofs;
+- `SHELL-general-d-d4-deep-inner-action-cell-round48` is
+  `proved_internal` after distinct lead, clean-room, and adversarial proofs;
+- the continuous quarter-node polynomial strengthening is recorded as a
+  rejected general-dimensional route, not as a counterexample to QCL or
+  (mathrm{WT}_4); and
+- the general-dimensional theorem and all completed (d=3) statuses are
+  unchanged.
+
+Reproduction ledger:
+
+- proof-graph validation: PASS, 127 unique obligations and all referenced
+  Round 48 evidence paths present;
+- `general_d_round48_outer_cell_replay.wl`: PASS under Wolfram 15.0.0;
+- `general_d_round48_deep_inner_replay.wl`: PASS under Wolfram 15.0.0;
+- `general_d_round48_counterexample_replay.wl`: PASS under Wolfram 15.0.0;
+- directed counterexample replay at 768 and 1400 Arb bits: both certify a
+  negative continuous margin and a positive literal QCL margin;
+- a 380-wall QCL sweep found no negative and explicitly reports
+  `positive_coverage_certificate: false`;
+- `git diff --check`: PASS; and
+- full computation tests: 360 passed, 1 strict expected xfail, 10 subtests
+  passed, and 1 unrelated pre-existing failure in the Revision-1 artifact
+  hash check.
+
+The pre-existing failure expects SHA-256
+`e456265c7e0c30a0ea0b56f1f8b9742548d2d6c0296671bd22ec60df5ad19fd4`
+for `manuscript/spherical-shell-polya-proof.tex`, while both the working file
+and its unchanged `HEAD` object hash to
+`9a26f2bd5dc0f82658b93ad910b579c1f0c2f53c540a249443e3ad3263c6dd6d`.
+Round 48 did not edit that manuscript or repair frozen Revision-1 provenance.
+
+A fresh read-only proof/state auditor then returned PASS on the corrected
+tree.  It reconstructed both bounded lemmas, confirmed the scoped d4/general
+aggregate split, replayed the interval route counterexample, checked all
+Round 48 evidence paths and IDs, and identified no remaining scope crossing
+or authorized status change.

@@ -25,9 +25,9 @@
     "primary_track": "shell_analytic",
     "secondary_track": "certified_computation",
     "target_obligations": [
-      "SHELL-general-d-high-floor-first-drop-CST"
+      "SHELL-general-d-weighted-aggregate-d4"
     ],
-    "round_rule": "The completed d=3 theorem remains frozen on its no-mode, ratio-sharp, and optical proof chain. The separate general-dimensional extension follows human/inbox/general-d_simplified_analytic_strategy.md and preserves the exact phase proxy, harmonic branching, signed primitive, and branching-defect identity. WP1 and WP2 are complete, and the sole selected analytic bottleneck remains high-floor first-drop CST. Rounds 20--32 establish the intrinsic complete-terminal reduction, reject the false global scalar owners, prove the remainder-rich sector, close the primary inverse component, and close the included retained-E lower shelf with one compact directed-Arb certificate. Round 33 proves strict lower-Q hard-arc monotonicity. Round 34 proves activity automatic on every high-floor first shelf and reduces the lower-Q exit to an exact correlated quadrature scalar. The small-phase adjacent-action argument and Round 35 exact face analysis prove that scalar on every lower-Q hard endpoint component. Round 36 proves the exact dichotomy B-Q in {0,1}, the B_N<Q_N wall order, literal/adverse collision ownership, and a fixed-K transport map. It closes the whole one-level-gap subfamily p-dm<=12/7, including all p=1 gap faces, and leaves an exhaustive five-class residual face list. Round 37 synchronizes B0=Q=B-1>=1 on the hard gap, removes the top interval, and rewrites the selected residual losslessly through Omega and Xi; it also proves the strict count-free sufficient bound Phi_delta^+>H_Delta. Neither residual scalar is signed. First prove Gamma_gap>0 or H_Delta>=0 on the transported gap endpoints; then treat the higher Q_N/equal-count inverse faces and exceptional alpha=0/general-shelf endpoints. Keep exact CST structure correlated; numerics are diagnostic only; do not introduce a ratio ladder, count ladder, chamber proliferation, or a second compact certificate. If a surviving analytic face resists, return to the exact scalar S and then the weighted aggregate using B_d(A). The all-dimensional theorem and final assembly remain open."
+    "round_rule": "The completed d=3 theorem remains frozen. The general-dimensional theorem remains unproved. Under human/inbox/general-d-next-discovery-portfolio.md, the selected discovery target is the literal d=4 weighted aggregate WT4 on the complete strict-active domain. Round 48 certifies positivity of every complete full-outer inverse-action cell and every complete deep-inner cell below z=mu/sqrt(2), but does not sign complete shallow-inner cells, an interface-straddling cell, terminal truncation, or their global compensation. The continuous quarter-node polynomial strengthening is interval-falsified at an exact rational interface cell while literal discrete QCL remains positive there. Continue on the exact residual inverse-layer ledger or another registered route; diagnostics are not coverage and no theorem status changes."
   },
   "proof_obligations": [
     {
@@ -6161,7 +6161,7 @@
       "track": "shell_analytic",
       "title": "Weighted aggregate fallback with branching bonus",
       "status": "proposed",
-      "statement_tex": "If pointwise CST does not close, prove B_d(A)+sum_m c_{d,m}D_A(r_m)>=0 by localizing every possible negative tail, deriving a quantitative cellwise lower bound for -Delta_d, and comparing the weighted negative tail mass with the resulting action moment. Treat d=4 first and use the completed d=3 theorem as the base case.",
+      "statement_tex": "If pointwise CST does not close, prove B_d(A)+sum_m c_{d,m}D_A(r_m)>=0 in every d>=4 by localizing every possible negative tail, deriving quantitative cellwise lower bounds, and comparing the weighted negative mass with the branching bonus. The scoped d=4 aggregate is a necessary first case but does not imply this all-dimensional statement by itself.",
       "dependencies": [
         "SHELL-general-d-branching-backbone",
         "SHELL-general-d-no-mode"
@@ -6170,8 +6170,9 @@
         "TARGET-shell-general-d"
       ],
       "blockers": [
-        "Round 37 gives exact gap normal forms and a strict sufficient gate, but leaves their sign and the other Round 36 face classes open; no support theorem yet localizes all possibly negative branching shifts",
-        "no quantitative lower bound for the branching bonus away from equality cells"
+        "the scoped d=4 obligation SHELL-general-d-weighted-aggregate-d4 remains open",
+        "no dimension-uniform support and branching-bonus theorem has been proved for d>=5",
+        "the preserved branching backbone remains derived_under_assumptions pending its own frozen audit"
       ],
       "evidence": {
         "positive": [],
@@ -6180,10 +6181,10 @@
           "manuscript/spherical-shell-polya-general-d.tex",
           "human/inbox/general-d_r3.md",
           "human/inbox/general-d_simplified_analytic_strategy.md",
-          "human/outbox/general-d-round-36-exact-count-gap-collision-reduction.md",
-          "human/outbox/general-d-round-36-independent-audit.md",
-          "human/outbox/general-d-round-37-gap-interface-synchronization-and-root-free-gate.md",
-          "human/outbox/general-d-round-37-independent-audit.md"
+          "human/outbox/general-d-round-47-d4-weighted-aggregate.md",
+          "human/outbox/general-d-round-47-independent-audit.md",
+          "human/outbox/general-d-round-48-portfolio-discovery.md",
+          "human/outbox/general-d-round-48-independent-audit.md"
         ]
       },
       "owner": "A3",
@@ -6204,9 +6205,173 @@
       ],
       "clean_room_artifacts": [],
       "adversarial_review_artifacts": [],
-      "next_action": "Remain the fallback while the exact Round 37 gap sign and the other Round 36 residual faces are attacked pointwise. If activated, localize the Round 37 failure region together with the remaining remainder-poor classes, treat d=4 first, and derive explicit support neighborhoods and branching-bonus constants before summing any error ansatz.",
-      "last_updated_round": 53,
-      "last_updated_at": "2026-07-19T23:00:00"
+      "next_action": "First close or falsify the scoped d=4 obligation without promoting this all-dimensional node. If d=4 closes, formulate and certify a separate dimension-uniform lifting mechanism for d>=5 and audit the preserved branching backbone before any theorem-level use.",
+      "last_updated_round": 64,
+      "last_updated_at": "2026-07-21T04:46:51"
+    },
+    {
+      "id": "SHELL-general-d-weighted-aggregate-d4",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Literal four-dimensional weighted shell aggregate",
+      "status": "proposed",
+      "statement_tex": "With A=G_K-G_mu, q_a=[A(a)+1/4]_<, 0<rho<1, mu=rho K, and K^2>pi^2/(1-rho)^2+3/4, prove WT4=(K^4-mu^4)/64-sum_{1<=a<K}a^2 q_a>=0. This scoped d=4 claim neither implies the all-dimensional weighted aggregate nor the general-dimensional shell theorem by itself.",
+      "dependencies": [
+        "SHELL-general-d-d4-full-outer-action-cell-round48",
+        "SHELL-general-d-d4-deep-inner-action-cell-round48"
+      ],
+      "implies": [],
+      "blockers": [
+        "the exact inverse-layer ledger still has unsigned complete shallow-inner cells between A(mu) and A(mu/sqrt(2)), the possible interface-straddling cell, and terminal truncation",
+        "cellwise QCL is sufficient rather than equivalent to WT4, and no exact compensation theorem yet combines the residual cells with the unused top interval",
+        "the alternative pointwise-D, component-U, and row-cone Theta routes remain unsigned; finite positive wall searches are diagnostic only"
+      ],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-general-d-d4-full-outer-action-cell-round48.md",
+          "rounds/polya-main/round_048/certification/outer-cell-lead.md",
+          "rounds/polya-main/round_048/certification/outer-cell-clean-room.md",
+          "rounds/polya-main/round_048/certification/outer-cell-adversarial-audit.md",
+          "computations/general_d_round48_outer_cell_replay.wl",
+          "state/lemma_packets/SHELL-general-d-d4-deep-inner-action-cell-round48.md",
+          "rounds/polya-main/round_048/certification/deep-inner-cell-lead.md",
+          "rounds/polya-main/round_048/certification/deep-inner-cell-clean-room.md",
+          "rounds/polya-main/round_048/certification/deep-inner-cell-adversarial-audit.md",
+          "computations/general_d_round48_deep_inner_replay.wl"
+        ],
+        "negative": [],
+        "inconclusive": [
+          "human/outbox/general-d-round-47-d4-weighted-aggregate.md",
+          "human/outbox/general-d-round-47-independent-audit.md",
+          "rounds/polya-main/round_048/discovery/portfolio-wave-ledger.md",
+          "rounds/polya-main/round_048/diagnostics/continuous-quarter-node-counterexample.md",
+          "human/outbox/general-d-round-48-portfolio-discovery.md",
+          "human/outbox/general-d-round-48-independent-audit.md"
+        ]
+      },
+      "owner": "A1",
+      "criticality": "bottleneck",
+      "lead_author": "A1",
+      "clean_room_reviewer": "A2",
+      "adversarial_reviewer": "A4",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [
+        "SHELL-general-d-d4-full-outer-action-cell-round48",
+        "SHELL-general-d-d4-deep-inner-action-cell-round48"
+      ],
+      "falsification_cases": [
+        "strict action walls and literal ceilings at integer inverse radii",
+        "integer and near-integer K or mu",
+        "complete shallow-inner and interface-straddling cells",
+        "terminal truncation and the unused top interval",
+        "the strict active wall and moderate frequency",
+        "rho approaching zero or one",
+        "double counting of branching bonus or neighboring-cell payments"
+      ],
+      "clean_room_artifacts": [],
+      "adversarial_review_artifacts": [],
+      "next_action": "Sign or exactly compensate the complete shallow-inner band, the unique possible interface-straddling cell, and terminal truncation with the unused top interval, preserving literal ceilings. Independent falsification may continue on QCL, Theta, component-U, and literal WT4; positive numerical sweeps are not proof.",
+      "last_updated_round": 64,
+      "last_updated_at": "2026-07-21T04:46:51"
+    },
+    {
+      "id": "SHELL-general-d-d4-full-outer-action-cell-round48",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Positive complete full-outer inverse-action cell in d=4",
+      "status": "proved_internal",
+      "statement_tex": "Let A=G_K-G_mu, H=A(0), xi=A^{-1}, F(t)=xi(t)^3/3, t_mu=A(mu), and let n>=1 be an integer with n<=t_mu. Put r=xi(n-1/4), N=ceil(r)-1, and L_n=int_{n-1}^n F(t)dt-S_2(N), with the literal ceiling convention. Then L_n>19N/48+27/128>0.",
+      "dependencies": [],
+      "implies": [
+        "SHELL-general-d-weighted-aggregate-d4"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-general-d-d4-full-outer-action-cell-round48.md",
+          "rounds/polya-main/round_048/certification/outer-cell-lead.md",
+          "rounds/polya-main/round_048/certification/outer-cell-clean-room.md",
+          "rounds/polya-main/round_048/certification/outer-cell-adversarial-audit.md",
+          "computations/general_d_round48_outer_cell_replay.wl"
+        ],
+        "negative": [],
+        "inconclusive": []
+      },
+      "owner": "A1",
+      "criticality": "standard",
+      "lead_author": "r48_generating",
+      "clean_room_reviewer": "r48_direct_layer",
+      "adversarial_reviewer": "r48_action_flow",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [],
+      "falsification_cases": [
+        "integer r, where N=r-1",
+        "r approaching N from the counted side",
+        "N=0 and n=1",
+        "the interface face n=t_mu",
+        "rho approaching zero",
+        "integer and near-integer K or mu",
+        "exclude interface-straddling and truncated cells"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_048/certification/outer-cell-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_048/certification/outer-cell-adversarial-audit.md"
+      ],
+      "reason_for_promotion": "A lead kernel comparison, an independent convex-quantile proof, and a later adversarial reconstruction all prove the same explicit strict reserve with literal ceiling arithmetic and no undeclared dependency.",
+      "next_action": "Use only for complete cells wholly in the outer branch. Do not extend it across the interface or to terminal truncation.",
+      "last_updated_round": 64,
+      "last_updated_at": "2026-07-21T04:46:51"
+    },
+    {
+      "id": "SHELL-general-d-d4-deep-inner-action-cell-round48",
+      "type": "lemma",
+      "track": "shell_analytic",
+      "title": "Positive complete deep-inner inverse-action cell in d=4",
+      "status": "proved_internal",
+      "statement_tex": "Let A=G_K-G_mu, H=A(0), t_*=A(mu/sqrt(2)), xi=A^{-1}, and F(t)=xi(t)^3/3. If n>=1 is an integer with n<=H and n-1>=t_*, put r=xi(n-1/4), N=ceil(r)-1, and L_n=int_{n-1}^n F(t)dt-S_2(N), with literal ceiling arithmetic. Then L_n>0.",
+      "dependencies": [],
+      "implies": [
+        "SHELL-general-d-weighted-aggregate-d4"
+      ],
+      "blockers": [],
+      "evidence": {
+        "positive": [
+          "state/lemma_packets/SHELL-general-d-d4-deep-inner-action-cell-round48.md",
+          "rounds/polya-main/round_048/certification/deep-inner-cell-lead.md",
+          "rounds/polya-main/round_048/certification/deep-inner-cell-clean-room.md",
+          "rounds/polya-main/round_048/certification/deep-inner-cell-adversarial-audit.md",
+          "computations/general_d_round48_deep_inner_replay.wl"
+        ],
+        "negative": [],
+        "inconclusive": []
+      },
+      "owner": "A1",
+      "criticality": "standard",
+      "lead_author": "r48_bonus_kernel",
+      "clean_room_reviewer": "r48_alt_spectral",
+      "adversarial_reviewer": "r48_discrete_major",
+      "review_independence": "clean_room",
+      "permitted_dependencies": [],
+      "falsification_cases": [
+        "integer r, where N=r-1",
+        "r approaching N from the counted side and N=0",
+        "the boundary n-1=A(mu/sqrt(2))",
+        "a complete cell ending at H",
+        "integer and near-integer K or mu",
+        "exclude shallower, interface-straddling, and truncated cells"
+      ],
+      "clean_room_artifacts": [
+        "rounds/polya-main/round_048/certification/deep-inner-cell-clean-room.md"
+      ],
+      "adversarial_review_artifacts": [
+        "rounds/polya-main/round_048/certification/deep-inner-cell-adversarial-audit.md"
+      ],
+      "reason_for_promotion": "The lead shell-mixture curvature proof, an independent phi-monotonicity proof, and a later adversarial reconstruction establish convexity throughout the exact deep-inner cell and close all packet boundary faces.",
+      "next_action": "Use only for complete cells with n-1>=A(mu/sqrt(2)). Do not infer a sign in the shallow-inner band, across the interface, or for terminal truncation.",
+      "last_updated_round": 64,
+      "last_updated_at": "2026-07-21T04:46:51"
     },
     {
       "id": "SHELL-general-d-pointwise-assembly",
@@ -7449,6 +7614,17 @@
       "last_updated_round": 8,
       "evidence": [
         "rounds\\polya-main\\round_008\\judge\\judge-008.md"
+      ]
+    },
+    {
+      "id": "general-d-d4-continuous-quarter-node-qcl",
+      "reason": "Reject the unrestricted continuous quarter-node strengthening p(xi(n-1/4))<=int_{n-1}^n xi(t)^3/3 dt. A directed Arb computation at exact rational K, mu and integer n certifies a negative margin below -572 while the literal discrete QCL cell at the same interface-straddling point has positive margin above 956715. This rejects only the continuous replacement, not discrete QCL, WT4, or the spectral theorem.",
+      "last_updated_at": "2026-07-21T04:46:51",
+      "last_updated_round": 64,
+      "evidence": [
+        "rounds/polya-main/round_048/diagnostics/continuous-quarter-node-counterexample.md",
+        "computations/general_d_round48_continuous_quarter_node_counterexample.py",
+        "computations/general_d_round48_counterexample_replay.wl"
       ]
     }
   ]
